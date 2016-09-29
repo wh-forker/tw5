@@ -1,0 +1,14 @@
+created: 20160908011748584
+modified: 20160908110018064
+tags: Blog Statistics
+title: Real Time Change-Point Detection
+type: text/vnd.tiddlywiki
+
+Papers reviewed in this post:
+
+# A Unifying Framework for Detecting Outliers and Change Points from Non-Stationary Time Series Data
+
+! The problem
+We want the outlier to be detected immediately after it appears. And the data is spouted in a non-stationary way. Online, a.k.a, a priori, change-point detection with 
+
+! 

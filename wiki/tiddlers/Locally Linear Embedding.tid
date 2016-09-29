@@ -1,0 +1,50 @@
+created: 20141221122547381
+modified: 20141223065639199
+tags: Speech
+title: Locally Linear Embedding
+type: text/vnd.tiddlywiki
+
+!! Algorithm
+The LLE algorithm is based on simple geometric intuitions. Suppose the data consist of $N$
+real-valued vectors $x_i$, each of dimensionality $D$, sampled from some smooth underlying manifold. Provided there is sufficient data (such that the manifold is well-sampled), we expect each data point and its neighbors to lie on or close to a locally linear patch of the manifold.
+
+We can characterize the local geometry of these patches by linear coefficients that reconstruct each data point from its neighbors. In the simplest formulation of LLE, one identifies $K$ nearest neighbors per data point, as measured by Euclidean distance. (Alternatively, one can identify neighbors by choosing all points within a ball of fixed radius, or by using more sophisticated rules based on local metrics.) Reconstruction errors are then measured by the cost function:
+$$
+E(W) = \sum_i\left|x_i - \sum_jW_{ij}x_j\right|^2,
+$$
+which adds up the squared distances between all the data points and their reconstructions.
+The weights $W_{ij}$ summarize the contribution of the $j$th data point to the $i$th reconstruction.
+
+To compute the weights $W_{ij}$, we minimize the cost function subject to two constraints: first, that each data point $x_i$ is reconstructed only from its neighbors, enforcing $W_{ij} = 0$ if $ x_j$ does not belong to this set; second, that the rows of the weight matrix sum to one: $\sum_jW_{ij} = 1$. The optimal weights $W_{ij}$ subject to these constraints are found by solving a least squares problem.
+
+Note that the constrained weights that minimize these reconstruction errors obey an important symmetry: for any particular data point, they are invariant to rotations, rescalings, and translations of that data point and its neighbors. the invariance to translations is enforced by the sum-to-one constraint on the rows of the weight matrix. A consequence of this symmetry is that the reconstruction weights characterize intrinsic geometric properties of each neighborhood, as opposed to properties that depend on a particular frame of reference.
+
+Suppose the data lie on or near a smooth nonlinear manifold of dimensionality $d\ll D$. To a good approximation, then, there exists a linear mapping—consisting of a translation, rotation, and rescaling—that maps the high dimensional coordinates of each neighborhood to global internal coordinates on the manifold. By design, the reconstruction weights $W_{ij}$ reflect intrinsic geometric properties of the data that are invariant to exactly such transformations. We therefore expect their characterization of local geometry in the original data space to be equally valid for
+local patches on the manifold. In particular, the same weights $W_{ij}$ that reconstruct the $i$th data point in $D$ dimensions should also reconstruct its embedded manifold coordinates in $d$
+dimensions.
+
+LLE constructs a neighborhood preserving mapping based on the above idea. In the final step of the algorithm, each high dimensional observation $x_i$ is mapped to a low dimensional vector $y_i$ representing global internal coordinates on the manifold. This is done by choosing $d$-dimensional coordinates $y_i$ to minimize the embedding cost function:
+$$
+\Phi(Y) = \sum_i\left|y_i - \sum_jW_{ij}y_j\right|^2
+$$
+
+This cost function—like the previous one—is based on locally linear reconstruction errors, but here we fix the weights $W_{ij}$ while optimizing the coordinates $y_i$. The embedding cost defines a quadratic form in the vectors $y_i$. Subject to constraints that make the problem well-posed, it can be minimized by solving a sparse $N\times N$ eigenvector problem, whose bottom $d$ non-zero eigenvectors provide an ordered set of orthogonal coordinates centered on the origin.
+
+!! Emotion Adaption
+!!! Problem
+Given the neutral records of each speaker $\{s\}$ and records under emotions $\{e\}$ for all but speaker $s_0$, we wish to construct the model to represent the distribution of $s_0$'s emotional records.
+
+We assume the neighbors of $s_0$ under emotionless speech is also his neighbors under emotional speech. And the emotional speech models are adapted with linear combination from the speaker's emotionless models.
+
+!!! Proposal
+We find the neighbors with statistical distances between same variance Gaussian distributions. Then find the best reconstruction of $s_0$'s emotionless speech model with his neighbors using LLE, $W$.
+$$
+\tilde\mu_{N0} = \sum_jW_{0j}\mu_{Nj}
+$$
+
+Then, we add models of $s_0$'s emotional speech with corresponding adapted means of his neighbor and the same set of linear combination $W$
+$$
+\tilde\mu_{e0} = \sum_jW_{0j}\mu_{ej}
+$$
+
+After linear transformations of the dimension reduction procedures, the spatial information is preserved.

@@ -1,0 +1,41 @@
+created: 20141010111756996
+modified: 20141016115929001
+tags: [[Open Courses]] [[Audio Signal Processing]]
+title: Audio Signal Processing for Music Applications
+type: text/vnd.tiddlywiki
+
+[[ASP Programming]]
+
+!! Lecture 1
+Frequency in radians is $2\pi k/N$.
+
+!! Lecture 2
+DFT of complex sinusoid
+$$
+x_1[n]=\exp(-j2\pi k_0n/N) \qquad n=0, \dots, N-1
+$$
+$$
+X_1[k]=\sum_{n=0}^{N-1}x_1[n]\exp(-j2\pi kn/N)=\frac{1-\exp(-j2\pi(k-k_0))}{1-\exp(-j2\pi(k-k_0)/N)}
+$$
+$X_1[k]=N$ for $k=k_0$ and $X_1[k]=0$ for $k\neq k_0$
+
+Inverse DFT
+$$
+x[n]=\frac 1 N\sum_{k=0}^{N-1}X[k]\exp(j2\pi kn/N) \qquad n=0,1,\dots,N-1
+$$
+Why the normalization factor?
+
+!!! Quizes
+# DFT of real sinusoids
+#* $\frac{A_0}{2}$ for $k=\pm k_0$ and $0$ for rest.
+# IDFT
+#* Int values of $s_k[n]$ for $N=4$: $[1,1,1,1],[1,j,-1.-j],[1,-1,1,-1],[1,-j,-1,j]$.
+
+!! Lecture 3
+[[ASP Theory 3]]
+
+!!! Quizes
+# Symmetry
+# phase unwrapping
+# zero-phase windowing
+# IDFT result: exactly the same.

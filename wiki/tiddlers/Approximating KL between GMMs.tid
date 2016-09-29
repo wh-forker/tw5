@@ -1,0 +1,10 @@
+created: 20141105075718086
+modified: 20141110114541062
+title: Approximating KL between GMMs
+type: text/vnd.tiddlywiki
+
+[[Kullback-Leibler divergence]] between two GMMs is not analytically tractable, nor does any efficient computational algorithm exist.
+
+The only method that really can estimate $D(f||g)$ for large values of $d$ with arbitrary accuracy is Monte Carlo simulation. The idea is to draw a sample $x_i$ from the pdf $f$ such that $E_f\log(f(x_i)/g(x_i))=D(f||g)$. The variance of the estimation error is $\frac{1}{n}\text{Var}_f\log(f/g)$.
+
+To compute $D_{\text{MC}}(f||g)$, we need to generate the i.i.d. samples from $f$ by drawing discrete samples from $\pi_a$ and then continuous samples from gaussian component $f_{a_i}(x)$.

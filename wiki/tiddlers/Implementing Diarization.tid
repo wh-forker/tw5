@@ -1,0 +1,8 @@
+created: 20141104093708593
+modified: 20141104093826527
+tags: Speech
+title: Implementing Diarization
+type: text/vnd.tiddlywiki
+
+!! MFCC
+Frame the signal into 20-40 ms frames. 25ms is standard.

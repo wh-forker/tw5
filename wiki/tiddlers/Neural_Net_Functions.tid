@@ -1,0 +1,36 @@
+created: 20150504080716988
+modified: 20160612072037036
+tags: [[Deep Learning]]
+title: Neural Net Functions
+type: text/vnd.tiddlywiki
+
+! Cross entropy loss function
+The cross entropy objective function for a single training pair $(x, y)$ is
+$$
+-\sum_{k=1}^K1\{y=k\}\log \hat y_k,
+$$
+where $K$ is the number of output classes, and $\hat y_k$ is the probability that the model assigns to the input example taking on label $k$.
+
+Cross entropy is a convex approximation to the ideal 0-1 loss for classification.
+
+!! The modified cross entropy
+$$
+E = -\sum_{j=1}^m(t^j\log\frac{y^j}{t^j}+(1-t^j)\log\frac{1-y^j}{1-t^j}).
+$$
+
+! Activation functions
+; Activation Funtion
+: An activation function is a function $h: \mathcal R\rightarrow\mathcal R$ that is differentiable almost everywhere.
+
+!! The sigmoid
+* Standard logistic function $f(x) = 1/(1+e^{-x})$
+* Hyperbolic tangent $f(x) = \tanh(x)$
+Symmetric sigmoids often converge faster than standard logistic function. A recommended sigmoid is $f(x) = 1.7159 \tanh(\frac 2 3 x)$ for centralized and rotated inputs. The variance of the outputs will also be close to 1 because the ''effective gain'' of the sigmoid is roughly 1 over its useful range:
+
+* $f(\pm)=\pm 1$
+* the second derivative is a maximum at $x = 1$
+* the effective gain is close to 1
+
+It is also said that target value should be chosen at the point of the maximum second derivative on the sigmoid so as to avoid saturating the output units. Otherwise, outputs would be on the tails of the sigmoid and makes the weights extremely large and stop updates. The uncertainty cannot be identified as well.
+
+[[Noisy Activation Fucntions]]

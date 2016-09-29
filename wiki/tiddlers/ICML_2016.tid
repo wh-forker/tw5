@@ -1,0 +1,42 @@
+created: 20160513083017510
+modified: 20160513083137461
+title: ICML 2016
+type: text/vnd.tiddlywiki
+
+[[List of all accepted papers|http://icml.cc/2016/?page_id=1649#]]
+
+!!! A Deep Learning Approach to Unsupervised Ensemble Learning
+RBM
+
+!!! Convolutional Rectifier Networks as Generalized Tensor Decompositions
+By analogy to convolutional arithmetic circuits, shows ReLU activation, average pooling losing universality; max pooling loses depth efficiency comparing to product pooling with linear activation. Therefore, authors argue convolutional arithmetic circuits if effectively trained, can have better expressive power and depth eff
+
+!!! End-to-End Speech Recognition in English and Mandarin
+From Baidu AI lab
+Connectionist Temporal Classification loss function to predict transcriptions from audio: coupled with an RNN model temporal information. Trained from scratch without the need of framewise alignments for pre-training.
+dataset: 11,940 hours in English, 9,400 hours in Mandarin.
+
+11 layers with many bidirectional recurrent layers and convolutional layers. Exploit long strides between RNN (reduces computation). 
+remark: multilayer RNN structure does not seem intuitive.
+
+BatchNorm (before non-linear activation) to accelerate training. 
+
+GRU better than 1-D RNN, but RNN scales better as data size increases. (optimization issues?)
+
+Language model: Kneser-Ney smoothed character level 5-gram model.
+English: 850mil n-grams trained with KenLM on Common Crawl Repository
+Chinese: 2bil n-grams
+
+!!! Inverse Optimal Control with Deep Networks via Policy Optimization
+paper not available
+
+Why Regularized Auto-Encoders learn Sparse Representation?
+Try to explain the effect of activation function and regularization on enforcing the sparsity of AEs. 
+
+	1. The suff condition on regularization
+	2. Case study on Denoising AE and Contractive AE
+
+
+efficiency than convolutional rectifier nets.
+
+!!! Training Neural Networks Without Gradients: A Scalabel ADMM Approach

@@ -1,0 +1,15 @@
+created: 20141023060316263
+modified: 20141023064456543
+tags: Speech
+title: Speaker diarization literatures
+type: text/vnd.tiddlywiki
+
+Typical speaker diarization tasks are carried with a two-stage procedure. The first is to segment the audio with some ([[changepoint algorithm|Changepoint algorithms]]).
+
+Then the inferred segments are grouped into a set of speaker labels. A common approach is to use hierarchical agglomerative clustering with BIC stopping criterion [chen98].
+
+This scheme suffers from the fact that errors made in the segmentation stage can degrade the performace of the subsequent clustering stage.
+
+A number of algorithms iterate between multiple stages of resegmentation and clustering. But agglomerative clustering is extremely sensitive to the specified threshold for clustering merging, with different settings leading to either over- or under-clustering of the segments into speakers.
+
+Clustering and segmentation are joint by employing HMMs to capture the repeated returns of speakers. Since the state space is unknown, [meignier00] uses an evolutive-HMM. The HMM is initialized to have one state and speakers are gradually added. [wooters07] starts with a number of states larger than the speakers and iteratively merge them according to metrics based on BIC. At each iteration, [[Viterbi decoding]] is performed to resegment the features of the audio.

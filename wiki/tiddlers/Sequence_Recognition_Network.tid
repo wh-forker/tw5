@@ -1,0 +1,14 @@
+created: 20160708033519344
+modified: 20160708050104605
+title: Sequence Recognition Network
+type: text/vnd.tiddlywiki
+
+! Papers
+
+# [[Robust Scene Text Recognition with Automatic Rectification|http://arxiv.org/abs/1603.03915]]
+# [[An End-to-End Trainable Neural Network for Image-based Sequence Recognition and Its Application to Scene Text Recognition|http://arxiv.org/abs/1507.05717]]
+
+! Github
+
+# [[Convolutional Recurrent Neural Network|https://github.com/bgshih/crnn]]
+# [[Attention OCR|https://github.com/da03/Attention-OCR]]

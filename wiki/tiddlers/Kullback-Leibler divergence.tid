@@ -1,0 +1,20 @@
+created: 20141022024049526
+modified: 20141117122231598
+tags: Statistics
+title: Kullback-Leibler divergence
+type: text/vnd.tiddlywiki
+
+KL divergence is also known as information divergence, information gain, relative entropy.
+
+! Motivation
+The motivation for Kullback and Leibler's work was to provide a rigorious definition of "information" in relation to Fisher's [[sufficient statistics]]. [[[p79 burnham02model|Model selection and multimodel inference]]]
+
+In information theory, the [[Kraft–McMillan theorem]] establishes that any directly decodable coding scheme for coding a message to identify one value $x_i$ out of a set of possibilities $X$ can be seen as representing an implicit probability distribution $q(x_i)=2^{-l_i}$ over $X$, where $l_i$ is the length of the code for $x_i$ in bits. Therefore, KL divergence can be interpreted as the expected extra message-length per datum that must be communicated if a code that is optimal for a given (wrong) distribution Q is used, compared to using a code based on the true distribution $P$.
+$$
+\begin{matrix}
+D_{\mathrm{KL}}(P\|Q) & = -& \sum_x p(x) \log q(x)& + & \sum_x p(x) \log p(x) \\
+& =  & H(P,Q) & - & H(P)\, \!
+\end{matrix}
+$$
+where $H(P,Q)$ is called the cross entropy of $P$ and $Q$, and $H(P)$ is the entropy of $P$ [[[wikipedia|http://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence#Motivation]]]. This notation $D_{\mathrm{KL}}(P\|Q)$ denotes the ''information lost when $Q$ is used to approximate $P$''. It is the logical basis for model selection in conjunction with likelihood inference. [[[p78 burnham02model|Model selection and multimodel inference]]]
+

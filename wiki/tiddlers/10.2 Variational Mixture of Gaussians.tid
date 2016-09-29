@@ -1,0 +1,42 @@
+created: 20150110123141827
+modified: 20150114062538461
+tags: PRML
+title: 10.2 Variational Mixture of Gaussians
+type: text/vnd.tiddlywiki
+
+! Variational distribution
+For each observation $x_n$ we have a corresponding latent variable $z_n$ comprising a $1$-of-$K$ binary vector.
+
+!! Priors
+The prior of $\pi$ is Dirichlet distribution
+$$
+p(\pi)=\text{Dir}(\pi\mid\alpha_0)=C(\alpha_0)\prod_{k=1}^K\pi_k^{\alpha_0-1}
+$$
+
+The prior of the mean and precision of each Gaussian component is an independent Gaussian-Wishart prior
+$$
+p(\mu,\Lambda)=p(\mu\mid\Lambda)p(\Lambda)=\prod_{k=1}^K\mathcal N(\mu_k\mid m_0, (\beta_0\Lambda_k)^{-1})\mathcal W(\Lambda_k\mid W_0,\nu_0)
+$$
+
+!! Conditional Distributions
+$$
+p(X\mid Z, \mu,\Lambda) = \prod_{n=1}^N\prod_{k=1}^K\mathcal N\left(x_n\mid\mu_k,\Lambda_k^{-1}\right)^{z_{nk}}
+$$
+is the conditional distribution of the observed data vector.
+$$
+p(Z\mid\pi)=\prod_{n=1}^N\prod_{k=1}^K\pi_k^{z_{nk}}
+$$
+is the conditional distribution of $Z$ given the mixing coefficient $\pi$. 
+
+The joint distribution of all of the random variables,
+$$
+p(X,Z,\pi,\mu,\Lambda= p(X\mid Z, \mu,\Lambda)p(Z\mid\pi)p(\mu\mid\Lambda)p(\Lambda)
+$$
+
+We consider a variational distribution which factorizes between the latent variables and the parameters so that
+$$
+q(Z,\pi, \mu, \Lambda)=q(Z)q(\pi, \mu, \Lambda)
+$$
+
+[[general result|10.1 Variational Inference]]
+

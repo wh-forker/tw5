@@ -1,0 +1,34 @@
+color: #006ad5
+created: 20141014071620480
+modified: 20160513091650597
+title: Speech
+type: text/vnd.tiddlywiki
+
+! Reports
+* [[Locally Linear Embedding]]
+* [[LSTM Research Proposal]]
+* [[Voice Conversion Research Proposal]]
+
+! [[Speech Experiments]]
+
+!! TODO
+!!! Experiments
+
+# Metric based classification
+#* Theory: [[Accoustic Saliency Summary]]
+#* Coding: [[Implementing Diarization]]
+# LLE
+#* Previous work: [[Emotion Code (Chen Li)]]
+# ScatNet
+#* [[Code reading|ScatNet Code]]
+
+! Speaker Recognition Techniques
+[[JFA & I-Vector]]
+
+! Speech Recognition Techniques
+!! [[HMM|Hidden Markov Model]]
+[[Baum-Welch]]
+
+[[HDP-HMM Diarization]]
+
+!! [[Recurrent Temporal RBM]]

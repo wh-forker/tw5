@@ -1,0 +1,16 @@
+created: 20150421094030094
+modified: 20150421115732035
+tags: [[Voice Conversion]]
+title: Maximum likelihood transformations for VC
+type: text/vnd.tiddlywiki
+
+[[link|http://mi.eng.cam.ac.uk/research/dialogue/papers/yeyo06.pdf]]
+
+! Transform-based
+* ''Feature extraction:'' The input speech examples are first analyzed to extract the spectral parameters that represent the speaker identity. Usually these parameters encode the short-term acoustic features, such as the spectrum shape and the formant structure. 
+* Train conversion
+* Transformation: The new spectral parameters are obtained by applying the trained conversion functions to the source parameters.
+* Synthesize speech from the parameters. Mapping the [[prosody]] is an equally important and challenging problem. The souce pitch is shifted and scaled to match the mean and variance of the target speaker.
+
+!! Spectral parameters
+Estimating the spectral envelope with LPC, cepstral coefficients and [[LSF|Line spectral frequencies]].

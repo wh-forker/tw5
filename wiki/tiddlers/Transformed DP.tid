@@ -1,0 +1,62 @@
+created: 20150310070813304
+modified: 20150320065921765
+tags: Papers
+title: Transformed DP
+type: text/vnd.tiddlywiki
+
+!! abstract
+Allows for components to share perturbed copies of atoms.
+
+! Details
+convert 128-dimensional SIFT descriptor to a vector quantized discrete value. 
+
+The goal is to allow the same global cluster to describe objects at many different locations. To accomplish this, we augment topic models with transformation variables, thereby ''shifting'' global clusters from a "canonical" coordinate frame to the object positions underlying a particular image.
+
+Let $\tau(\theta;\rho)$ denote a family of transformations of the parameter vector $\theta$, indexed by $\rho$
+
+! Hierarchical Models
+!! Fixed-Order Object Model
+Fixed number of shared parts. LDA like model
+
+* Unimodal Gaussian ''transformation priors'' $\rho_i$. Analogously to in-between-consonants (scale to uniform length).
+* Mixture component $z_j$
+* Multinomial appearance descriptors $W$
+* Object transform displacement Gaussian $v$
+
+<<<
+Marginalizing the unobserved assignments $z_{ij}$ of features to parts, we find that the graph defines object appearance via a finite mixture model:
+$$
+p(w_{ji},v_{ji}|\rho_j, o_j=l)=\sum_{k=1}^K\pi_{lk}\eta_k(w_{ji})N(v_{ji}; \tau(\mu_k,\Lambda_k;\rho_j))
+$$
+Parts are thus latent variables which capture dependencies in feature location and appearance, while ''reference transformations'' allow a common set of parts to model unaligned images. Removing these transformations, we recover a variant of the author-topic model, where objects correspond to authors, features to words, and parts to the latent topics underlying a given text corpus.
+<<<
+
+How to marginalize reference transformation $\rho$?
+
+!! Nonparametric Object Model
+[[HDP|Dirichlet Process Mixtures]] to learn the number of shared parts (topics) underlying a set of object categories. The more samples, the more classes.
+
+Let $H_w$ denote a Dirichlet prior on feature appearance distributions, $H_v$ a normal-inverse-Wishart prior on feature position distributions, and $H_w\times H_v$ the corresponding product measure. A global probability measure $G_0\sim DP(\gamma, H_w\times H_v)$ is first used to define an infinite set of shared parts:
+$$
+G_0(\theta)=\sum_{k=1}^\infty \beta_k\delta(\theta,\theta_k) \qquad \beta\sim GEM(\gamma) \qquad (\eta_k, \mu_k, \Lambda_k) = \theta_k\sim H_w\times H_v
+$$
+
+<<<
+This generalizes the parametric model by defining an infinite set of potential global parts, and using the Dirichlet process's stick-breaking prior to automatically choose an ''appropriate model order''. It also extends the original HDP by associating a different reference transformation with each ''training image''.
+<<<
+
+!! Fixed-Order Scene Model
+Learn the contextual relationship. (by transformations?)
+
+! Sampling
+Algorithm 1: Consider each training image $j$ in turn and sequential resampling of assignments $t_j$ of features to tables (category-specific copies of global parts) in the $j$th training image 
+$$
+t_{ji}\sim\sum_{t=1}^{T_l}N_{lt}f_{k_{lt}}(w_{ji}, v_{ji})\delta(t_{ji},t)+\frac{\alpha}{\gamma+\sum_kM_k}\left[\sum_{k=1}^KM_kf_l(w_{ji},v_{ji}+\gamma f_{\bar k}(w_{ji}, v_{ji})\right]\delta(t_{ji},\bar t)
+$$
+and the image's coordinate frame $\rho_j$ with an auxiliary variable method.
+
+<<<
+Rao-Blackwellization
+<<<
+
+Algorithm 2: examine each object category $l$, and sequential resample all samples assigments $\mathbf k_l$ of local tables (category-specific parts) to global parts for the $l$th object category, as well as the HDP concentration parameters.

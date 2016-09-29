@@ -1,0 +1,15 @@
+created: 20141224070022149
+modified: 20141224070429895
+tags: [[Graphical Model]]
+title: Variable Elimination Algorithm
+type: text/vnd.tiddlywiki
+
+To eliminate variables in a factorized probability equation, repeat:
+
+# choose a variable to eliminate
+# push in its sum as far as possible
+# compute the sum, resulting in a new factor
+
+The time and space complexities of Variable Elimination are dominated by the size of the largest intermediate factor. Choosing the elimination ordering that minimizes this complexity is an NP-hard problem.
+
+Graphical models are powerful tools for visualizing the independence properties of complex probability models.

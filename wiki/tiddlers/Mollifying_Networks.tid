@@ -1,0 +1,15 @@
+created: 20160818092243986
+modified: 20160824061031770
+tags: Optimization
+title: Mollifying Networks
+type: text/vnd.tiddlywiki
+
+[[link|http://arxiv.org/abs/1608.04980]]
+
+At [[ICML'2016 Workshop on Optimization Methods for the Next Generation of Machine Learning|http://optml.lehigh.edu/events/icml2016/]], Bengio gave a talk on [[From Curriculum Learning to Mollifying Networks|http://www.iro.umontreal.ca/~bengioy/talks/ICML-OptWorkshop-24June2016.pdf]]. I failed to find the videos.
+
+; Mollifier
+: is an infinitely differentialble funtiion that behaves as an approximate identity in the group of convolutions of integrable functions.
+
+A mollifier converges to the Dirac fuction if we rescale it appropriately. It controls the loss funtion to make the gradient exists and approximately convex at the beginning.
+

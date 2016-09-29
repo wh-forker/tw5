@@ -1,0 +1,25 @@
+created: 20150118133716881
+modified: 20150118143534080
+tags: SAHD
+title: Mondrian forests
+type: text/vnd.tiddlywiki
+
+! Background and Motivation
+[[Random forest]]
+
+! Mondrian Forests
+Mondrian process + Random forests: which can give same result as offline in a batch way
+
+[[Mondrian process]]
+
+!! Mondrian process distribution over $\mathcal T$
+Use $\mathcal {MP}(\lambda, [l_1, u_1], \dots, [l_d, u_d])$ as prior over decision trees $p(\mathcal T|X)$, where the range is given by $X$.
+
+Self-consistency: $p(\mathcal T|X)$ is restriction to range of $X$
+
+Online learning: unveil the decision trees on a larger range, conditional MP
+
+!! Online learning
+
+* the size and lifetime of a node control probability of new splits being introduced
+* self-consistent hierarchical Bayesian prior (Pitman-Yor) on the leaf parameters

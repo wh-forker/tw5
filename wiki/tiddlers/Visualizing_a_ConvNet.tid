@@ -1,0 +1,10 @@
+created: 20151112065923275
+modified: 20151112070132881
+title: Visualizing a ConvNet
+type: text/vnd.tiddlywiki
+
+Suppose that a ConvNet classifies an image as a dog. How can we be certain that it's actually picking up on the dog in the image as opposed to some contextual cues from the background or some other miscellaneous object? One way of investigating which part of the image some classification prediction is coming from is by plotting the probability of the class of interest (e.g. dog class) as a function of the position of an occluder object. That is, we iterate over regions of the image, set a patch of the image to be all zero, and look at the probability of the class. We can visualize the probability as a 2-dimensional heat map. This approach has been used in Matthew Zeiler's [[Visualizing and Understanding Convolutional Networks|http://arxiv.org/abs/1311.2901]]:
+
+[img height=400 [http://cs231n.github.io/assets/cnnvis/occlude.jpeg]]
+
+[[Jason Yosinski|http://yosinski.com/]] prodived [[a great visualization tool|http://devblogs.nvidia.com/parallelforall/harnessing-caffe-framework-deep-visualization/]] based on caffe, implementing the method mentioned above (with slight difference).

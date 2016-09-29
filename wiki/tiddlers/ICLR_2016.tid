@@ -1,0 +1,42 @@
+created: 20160513083244314
+modified: 20160912025835955
+title: ICLR 2016
+type: text/vnd.tiddlywiki
+
+! Keynote Talks
+[[Guaranteed Non-convex Learning Algorithms through Tensor Factorization]]
+
+! Papers
+
+!!! Generating images from captions with attention
+
+from reference, a machine translation result is mentioned (Bahdanau et al., 2015)
+combines
+bidirectional rnn: for script understanding
+inference/generative rnn: for latent sequence posterior estimation and image generation
+
+!!!  Neural variational inference for text processing
+NVDM, neural variational document model: MLP softmax BoW generation
+NASM, neural answer selection model: LSTM
+model trained with stochastic gradient variational bayes
+
+!!! All you need is a good init
+Unsupervised representation learning with deep convolutional generative adversarial networks
+
+Related works
+GANs
+
+	* generator and discriminator nets
+	* unstable to train
+
+
+this paper developed Deep Convolutional GAN
+
+Representation learning:
+
+	* classic: hierarchical clustering
+	* mainstream: autoencoders
+	* deep belief networks
+
+
+!!! Delving Deeper into Convolutional Networks for Learning Video Representations

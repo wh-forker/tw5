@@ -1,0 +1,60 @@
+created: 20141018023145852
+modified: 20160513084617004
+tags: [[Neural Science]] Talks
+title: IFIP IIP
+type: text/vnd.tiddlywiki
+
+!! Background
+[[Neuromorphic Cognitive Computing]]
+
+Karlheinz Meier - Neuromorphic Computing beyond von Neumann
+
+Cons of von Neumann:
+
+# Uniform
+# No separation of memory and computing
+# Not programmed
+# No established theory (in brain science?)
+
+Firing patterns represents the action potential
+
+Mimic this activity in microscopic level
+
+Biology Cell Level Simulation
+
+# 10,000 reconstructed neurons
+# 2 mWalt:100 Walt
+# 1000 times slower
+
+Timing problem is foundamental: e.g. simulating brain envolvement within 15yrs
+
+!! Definition
+Neuromorphic computing simulates neurons with silicon substrates. And it can solve time and energy issues (?)
+
+# massive parallel
+# configurability
+# asnchronous communication
+
+# SpiNNaker: 18 ARM 6 inter chip connections
+# IBM Almaden: 45nm processors, real programming model for AI problems
+# 10,000 faster than biology: 50mil synapses
+# real time approach analog cells (Boahen, stanford)
+# Qualcomm Neural Processing Units
+
+!! Interests
+
+# Cell properties
+## Cell firing patterns, synchronisations, stability, order-chaos
+# Closed loops reverse engineering
+## Functional units,  cortical structures
+## small brains: insect brain, 3 layer NN
+## owl hearing: coincident neurons
+# test theories
+# Neuromorphic computing outside neural science
+
+
+
+!! Questions
+Lateral Prefrontal Cortex volume lossing (simulating this?)
+
+How is this related to von Neuman machine?

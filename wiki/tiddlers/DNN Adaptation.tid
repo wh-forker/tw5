@@ -1,0 +1,71 @@
+created: 20150507093710512
+modified: 20150525122551200
+tags: [[Deep Learning]]
+title: DNN Adaptation
+type: text/vnd.tiddlywiki
+
+! Linear Transformations
+Linear tarnsformations can be applied at
+
+# input features
+# activation of hidden layer
+# input to the softmax layer
+
+No matter where the linear transformation is applied, it is typically trained from an ''identity weight matrix'' and ''zero bias'' to optimize either the cross-entropy (CE) training criterion.
+
+''Remark'': The activations inside the DNN are not linear, so maybe softmax is where the transformation is resonable.
+
+!! Linear Input Networks
+LIN claims that speaker-dependent features can be linearly transformed to match the average behavior which the speaker-independent DNN model described. LIN is impleneted by adding a linear layer $W^{LIN}$ to the input feature.
+
+''Remark'': Lienar transformation (esp. fer frame) is too simple to handle speaker dependent feature.
+
+!! Linear Output Networks
+Since the last hidden layer can be considered as the transformed feature, it is (presumably) reasonable to apply a linear transformation on the last hidden layer for a specific speaker so that after the linear transformation it matches better to the average speaker.
+
+This can be added before the last hidden layer or the output layer depending on which has a smaller number of parameters.
+
+! Conservative Training
+Surprisingly, adapting all parameters in DNN to optimize the adaptation criterion over the adaptation set can destroy previously learned information.
+
+CT adds regularization to the adaptation criterion, e.g. to adapt only selected weights.
+
+!! $L_2$ Regularization
+The basic idea of the $L_2$ regularized CT is to add the $L_2$ norm of the model parameter difference
+$$
+R_2(W_{SI}-W) = \|vec(W_{SI}-W)\|^2_2
+$$
+Then the adapation criterion becomes
+$$
+J_{L_2}(w, b;S) = J(W, b;S)+\lambda R_2(W_{SI}, W),
+$$
+
+!! KL-Divergence Regularization
+$$
+R_{KLD}(W_{SI}, b_{SI}; W, b; S) = \frac 1 M\sum_{m=1}^M\sum_{i=1}^CP_{SI}(i|o_m;W_{SI}, b_{SI})\log P(i|o_m;W, b),
+$$
+$P_{SI}(i|o_m;W_{SI}, b_{SI})$ and $P(i|o_m;W, b)$ are the probability that the $m$th observation $o_m$ belongs to class $i$, estimated from the speaker-independent and the adapted DNNs,respectively.
+
+KLD regularization constrains the output probabilities rather than the model parameters. The KLD regularized adaptation technique can be easily extended to the ''sequence-discriminative training''. To prevent overfitting the ''frame smoothing'' is often used in the sequence-discriminative training which leads to the interpolated training criterion
+
+''TODO'': consider changing $P_{SI}$ to a distribution independent from speaker features.
+
+!! Reducing Per-Speaker Footprint
+Conservative training cannot solve the problem that a huge adapted model needs to be saved for each speaker (model is too large).
+
+! Subspace Methods
+!! PCA
+PCA subspace construction aims to simplify the adapation weights to speed up the adaptation.
+
+We extend the problem to a general condition, the adaptation aims to estimate a speaker-specific vector $a$ for each speaker. This approach assumes that new speakers can be represented as a point in the space spanned by the $S$ speakers. For each new speaker,
+$$
+a = \bar a+\tilde U\tilde g_a
+$$
+where $\tilde U$ and $\tilde g_a$ are reduced eigen matrix and reduced projection of the adaptation parameter vector and $\bar a$ is the mean of the adaptation parameters.
+
+!! Tensor
+The speaker and speech subspaces can also be estimated and combined using three-way connections. An example is disjoint factorized DNN.  The speaker posterior probability $p(s|x_t)$ is estimated from the acoustic feature $x_t$ using a DNN. The class posterior probability $p(y_t = i|x_t)$ is estimated as
+$$
+p(y_t = i|x_t) = \sum_s\frac{\exp(s^\top W_iv_t^{L-1})}{\sum_j\exp(s^\top W_jv_t^{L-1})}p(s|x_t)
+$$
+where $W\in R^{N_L\times S\times N_{L-1}}$ is a tensor, $S$ is the numebr of output classes in the speaker identification DNN.

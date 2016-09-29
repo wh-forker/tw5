@@ -1,0 +1,17 @@
+created: 20160810033635437
+modified: 20160810083913987
+tags: [[Object Detection With CNNs]]
+title: Face Detection
+type: text/vnd.tiddlywiki
+
+! Face Recognition
+
+# Yaniv Taigman, Ming Yang, Marc'Aurelio Ranzato, Lior Wolf, DeepFace: Closing the Gap to Human-Level Performance in Face Verification, CVPR, 2014. [[link|https://www.cs.toronto.edu/~ranzato/publications/taigman_cvpr14.pdf]]
+# Yi Sun, Ding Liang, Xiaogang Wang, Xiaoou Tang, DeepID3: Face Recognition with Very Deep Neural Networks, 2015. [[link|http://arxiv.org/abs/1502.00873]]
+Florian Schroff, Dmitry Kalenichenko, James Philbin, FaceNet: A Unified Embedding for Face Recognition and Clustering, CVPR, 2015. [[link|http://arxiv.org/abs/1503.03832]]
+
+! Facial Landmark Detection
+# Yue Wu, Tal Hassner, Kang Geon Kim, Gerard Medioni, Prem Natarajan, Facial Landmark Detection with Tweaked Convolutional Neural Networks, 2015. [[link|http://arxiv.org/abs/1511.04031]] [[Project|http://www.openu.ac.il/home/hassner/projects/tcnn_landmarks/]]
+
+! Others
+# Spoofing 2D Face Detection: Machine See People Who Aren't There [[link|http://128.84.21.199/abs/1608.02128]]

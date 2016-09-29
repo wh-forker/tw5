@@ -1,0 +1,40 @@
+created: 20160728061437870
+modified: 20160816103840501
+title: Gradient-based Hyperparameter Optimization through Reversible Learning
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1502.03492]]
+
+[[talk|http://videolectures.net/icml2015_duvenaud_reversible_learning/?q=icml%202015]]
+
+TL;DR: We can compute the gradient of learning procedures. The only problem is it's memory inefficient. But if we do the reversible learning thing, we can scale to optimize thousands hyperparameters.
+
+This talk is given on ICML 2015 Bayesian optimization workshop. But interestingly, this paper has nothing to do with Bayesian optimization.
+
+Hyperparameter optimization looks like the most important part of machine learning, and we have to do it without gradient. We can find some continuous relaxation of what we are trying to do, take the gradient and optimize it with gradient descent. So we can think SGD as a funtion and take its gradients. 
+
+Think of SGD as a function. If we fix the random seed, with twice differentiable loss from e.g. a deterministic loss funtion of all the hyperparameters. Hyperparameter opt like optimizing the output of the function of SGD.
+
+We can differentiate the SGD. In each for-loop, different samples are in it. It seems like optimizing thousand layer net. Now we have automatic differentiation engines. Why this is not done 20yrs ago, because memory consumption would kill you. The naive reverse-mode differentiation is infeasible from a memory perspective.
+
+! Hyper gradient
+!! Reversible learning with finite precision arithmetic
+The Hessian-vector product of weights w and loss parameter $\theta$ can be computed exactly by applying RMD to the dot product of the gradient with a vector. The time complexity to reverse SGD is the same as forwarding.
+
+However, the naive reverse would fail due to finite numerical precision. Each multiplication by momentem decay $\gamma < 1$ shifts bits to the right, destroying the least significant bits. By repeatedly multiplying $1/\gamma$ accumulates errors exponentially. A $\gamma > 1$ results in unstable dynamics, and $\gamma = 1$ recovers the leap frog integrator, a perfectly reversible set of dynamics, but one that does not converge.
+
+The $\gamma$ term is analogous to a drag term in the simulation of Hamilton dynamics. Having $\gamma < 1$ corresponds to //dissipative// dynamics which generates heat, increases the entropy of the environment and is not therefore not reversible. 
+
+!! Optimal storage of discarded entropy
+The number of destroyed bits is $-\log_2(\gamma)$
+
+We can take derivation of cross validation loss.
+
+The computation is huge. 10GB memory. 
+
+The naive reverse will go astray
+
+Use a buffer to store the destroyed bits.
+if $\beta$ is one, it is Hamiltonian dynamics. Hamiltonian Monte Carlo.
+
+What about Bayesian optimization?

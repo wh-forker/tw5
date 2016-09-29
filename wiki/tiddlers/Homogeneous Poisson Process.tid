@@ -1,0 +1,11 @@
+created: 20141010094642448
+modified: 20141010095652213
+tags: Statistics
+title: Homogeneous Poisson Process
+type: text/vnd.tiddlywiki
+
+The homogeneous Poisson process counts events that occur at a constant rate; it is one of the most well-known [[Levy processes|Levy Process]]. This process is characterized by a rate parameter $\lambda$, also known as //intensity//, such that the number of events in time interval $(t, t+\tau]$ follows a [[Poisson distribution|Poisson Distribution]] with associated parameter $\lambda\tau$. This relation is given as
+$$
+P [N(t+ \tau) - N(t) = k] = \frac{e^{-\lambda \tau} (\lambda \tau)^k}{k!}  \qquad k= 0,1,\ldots,
+$$
+where $N(t + \tau) − N(t) = k$ is the number of events in time interval $(t, t + \tau]$.

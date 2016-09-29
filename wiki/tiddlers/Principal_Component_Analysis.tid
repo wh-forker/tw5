@@ -1,0 +1,16 @@
+created: 20150708142245979
+modified: 20150708143253327
+tags: Statistics
+title: Principal Component Analysis
+type: text/vnd.tiddlywiki
+
+The most common definition of PCA, due to Hotelling (1933), is that, for a set of observed $d$-dimensional data vectors $\{t_n\}$, the $J$ principal axes $w_j$, are those orthonormal axes onto which the retrained variance under projection is maximal. It can be shown that the vectors $w_j$ are given by the $q$ dominant eigenvectors of the sample covariance matrix 
+$$
+S = \sum_n(t_n-\bar t)(t_n-\bar t)^\top/N
+$$
+such that 
+$$
+Sw_j = \lambda_jw_j.$$
+The vector $x_n = W^\top(t_n-\bar t)$ is thus a $q$-dimensional reduced representation of the observed vector $t_n$.
+
+A complementary property of PCA, and that most closely related to the original discussions of Pearson (1901), is that the projection onto the pricipal subspace minimizes the squared reconstruction error $\sum\|t_n-\bar t\|^2$.

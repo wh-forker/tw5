@@ -1,0 +1,93 @@
+created: 20150718072238476
+modified: 20150803120015530
+title: Probabilistic View of JFA
+type: text/vnd.tiddlywiki
+
+! The 
+
+The classical MAP assumes the speaker supervector has prior
+$$
+m_s = m + Dz_s
+$$
+where $m$ is the UBM supervector, $D$ is a block diagonal matrix (assuming mixture components are independent) with each block $F\times F$ (often set as diagonal, as GMM model has diagonal covariances) and $z_s$ is drawn from $N(0, I)$, assuming supervectors of different speakers are independent. 
+
+Provided that $d$ is non-singular, classical MAP adaptation is guaranteed to be asymptotically equivalent to ''speaker-dependent training''. When the number of mixture components is large, a large amount of enrollment data are needed. \cite{Kenny05jointfactor}.
+
+The simplest neighborhood preserving emotional model is to add the emotion supervector to the speaker dependent $s$. Which is the same as JFA. The basic assumption of JFA is that a speaker and channel dependent supervector of means $m_s$ can be decomposed into:
+$$
+m_s = s + c, \quad s = m + Vy + Dz, \text{ and }c = Ux.
+$$
+Here $x$ and $y$ are also drawn from standard Gaussian. To implement MAP estimation on $m_s$, we have to know the posterior of hidden variables $x$, $y$ and $z$. To precisely calculate ''the posterior'' of $m_s$, all recordings have to be processed since they share the same $y_s$ and $z_s$. Sequential estimation algorithm also works if we apply ''speaker-dependent hyperparameters'' $m_s$.
+
+''Remark'': The hyperparameters $m$, $v$, $d$ can be seen as sparse matrix thus related techniques can be introduced.
+
+!! Similarity with sparse representation
+We rewrite the sparse representation problem with JFA notations:
+$$
+
+
+! Estimation (Training the PCA System)
+\cite{Kenny2005Factor} proved MAP point estimate of $y$ and $z$ is sufficient but $x$ is integrated. \cite{Glembek2009Comparison} used even more simplified point estimation of $x$ and linear scoring function and showed comparable results.
+
+''Remark'': Currently the point estimate, integration scoring either work. I guess the emotion matrix learning is problematic. Per-speaker projection of merged emotion factors shows the speaker-emotion factors are very random.
+
+! Scoring
+We compute the log-likelihood ratio between the target speaker model s and the UBM.
+!! Log-Likelihood
+The classical frame-by-frame GMM log-likelihood evaluation is given by:
+$$
+\log P(\chi|s) = \sum_{t=1}^T\log\sum_{c=1}^Cw_cN(o_t;\mu_c, \Sigma_c),
+$$
+
+The conditional likelihood of the test utterance $P(\chi|s, x)$. Lemma 1 in \cite{kenny2005eigenvoice} using the ''Baum-Welch statistics'' extracted from the utterance. Marginal $P(\chi|s)$ can be calculated by integrating out the standard normal distribution. See Proposition 2 in \cite{kenny2005eigenvoice} for the closed form expression. The expression for the likelihood function is (19) in \cite{kenny2007joint}.
+
+In practice the speaker supervector $s$ has to be estimated for the hypothesized speaker. $Cov(s, s)$ in introduced into $tr(\Sigma^{-1}S_s$ term to diminish the likelihood value inversely proportional to the amount of the speaker's enrollment data.
+
+!! Integrating over Channel Distribution
+(13) in \cite{kenny2007joint}:
+$$
+P(\chi|s) = \int P(\chi|s, x)N(x;0, I)dx \quad (1)
+$$
+Integrating out the channel is computationally infeasible, so $x$ is estimated with MAP. But it seems to be feasible for the emotional case.
+
+By using fixed alignment of fames of Gaussians, the log-likelihood can be approximated using ''the GMM EM auxiliary function'', a lower bound to (1):
+$$
+\log \tilde P(\chi|s) = \sum_{c=1}^CN_c\log\frac{1}{2\pi^{F/2}|\Sigma_c|^{1/2}}-\frac 1 2\text{tr}(\Sigma^{-1}S_s)-\frac 1 2\log|L|+\frac 1 2\|L^{-1/2}U^*\Sigma^{-1}F_s\|^2.
+$$
+The definition of $N$, $F_s$ and $S_s$ can be found in (14-19) in \cite{kenny2007joint}. $N_c$, the number of data assigned to component $c$ is equal for UBM and the target model so the first term can be canceled out in LLR computation.
+
+In the second term, $S_s$ is the second order moment of $\chi$ around speaker $s$, 
+$$
+S_s = S - 2\text{diag}(Fs^*)+\text{diag}(Nss^*),
+$$
+where $S$ is the block diagonal second order stats and independent of speaker, thus along with third term $L = I+U^*\Sigma^{-1}NU$, is also canceled out.
+
+$L^{-1/2}$ in the fourth term is the inverse of the Cholesky decomposition of $L$. The scoring function we care about is 
+$$
+Q_{int}(\chi|s) = \text{tr}(\Sigma^{-1}\text{diag}(Fs^*))-\frac 1 2\text{tr}(\Sigma^{-1}\text{diag}(Nss^*))+\frac 1 2\|L^{-1/2}U^*\Sigma^{-1}F_s\|^2.
+$$
+
+!! Channel Point Estimate
+If we knew the channel factor $x$, there would be no need for integrating over the whole distribution of x, but only use the point estimate in LLR. The formula is adopted from thm 1 in \cite{Kenny05jointfactor}
+
+The log likelihood ratio formula is adopted from \cite{Kenny05jointfactor}.
+$$
+\log \tilde P(\chi|s) = \sum_{c=1}^CN_c\log\frac{1}{2\pi^{F/2}|\Sigma_c|^{1/2}}-\frac 1 2\text{tr}(\Sigma^{-1}S) + M^*\Sigma^{-1}F + \frac 1 2M^*N\Sigma^{-1}M,
+$$
+where $M$ is $m_s$ in (1). Leading to scoring function
+$$
+Q_x(\chi|s, x) = M^*\Sigma^{-1}F + \frac 1 2M^*N\Sigma^{-1}M
+$$
+hence
+$$
+LLR_x(\chi|s) = Q_x(\chi|s, x_s) - Q_s(\chi|UBM, x_{UBM})
+$$
+
+$$
+LLR_x(\chi|s) = Q_x(\chi|s, x_s) - Q_s(\chi|UBM, x_{UBM})
+$$
+!! Linear Scoring
+\cite{Dalmasso2009Loquendo} assumes the channel shift is identical to test recordings and UBM. The channel factor $x$ for utterance $\chi$ are estimated using UBM:
+$$
+LLR_{LPT}(\chi|s) = Q_x(\chi|s, x_{UBM}) - Q_s(\chi|UBM, x_{UBM})
+$$

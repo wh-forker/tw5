@@ -1,0 +1,54 @@
+created: 20150428113235257
+modified: 20150505093605949
+tags: Speech
+title: DNN ASR
+type: text/vnd.tiddlywiki
+
+! Related works
+
+Early hybrids of ANN and HMM have been used in ASR systems. Using only backpropagation to train the ANN makes it challenging to exploit more than two hidden layers and the ''context-dependent model'' described above does not take advantage of the numerous effective techniques developed for GMM-HMMs.
+
+Neural networks for producing bottle-neck features are very similar architecturally to autoencoders since both typically have a small code layer. Deeper neural networks are known to be difficult to train with backpropagation alone.
+
+! Problems to Concern
+!! Network architecture
+* size, #layers.
+* increasing model size leads to overfitting
+
+!! About Pretraining
+Initializing DNN weights with unsupervised pre-training was initially thought to be important for good performance, but researchers later found that purely supervised training from random initial
+weights yields nearly identical final system performance [19 of Baidu].
+
+! Baidu 15 Arxiv
+!! NN Acoustic Models
+Hybrid HMM systems uses a neural network to approximate the probability of speech feature $x$ conditioned on HMM state label $y$, $p(x|y)$. We can view the neural networks as a classifier of senones given acoustic input.
+$$
+p(x|y) = \frac{p(y|x)p(x)}{p(y)}
+$$
+The prior of acoustic features $p(x)$ is usually not tractable, but fixed during decoding. The construction involves 5 steps:
+
+# Label Set. context-dependent triphone senones.
+# Forced Alignment. generate a forced alignment with HMM-GMMM system.
+# Neural Net Architecture. CNN, RNN
+# [[Neural Net Loss Function]]. cross entropy loss function is default for classification tasks, but it ignores ''the DNN as a component of the larger ASR system''. 
+# Optimization Algorithm. SGD, quasi-Newton
+
+!! DNN Computations
+Each layer has a weight matrix $W$ and bias vector $b$. We compute vector $h$ of first layer activations of a DNN using,
+$$
+h^{(i)}(x) = \sigma(W^{(i)\top}h^{(i-1)}+b^{(i)}).
+$$
+where $\sigma(z)$ is a point-wise nonlinearity function. Rectified linear units (ReLU) is shown to have better performance for classification tasks.
+$$
+\sigma(z) = \max(z, 0)
+$$
+The final layer is a softmax nonlinearity to output a properly formed probability distribution over the possible output categories,
+$$
+\hat y_j = \frac{\exp(W_j^{(L)\top}h^{(L-1)}+b_j^{(L)})}{\sum_{k=1}^N\exp(W_k^{(L)\top}h^{(L-1)}+b_k^{(L)})}.
+$$
+
+[[Deep Convolutional Neural Networks]]
+
+!! Important refs
+* Overview of HMM-based speech recognition systems [8-12]
+* discriminative loss functions [38-41]

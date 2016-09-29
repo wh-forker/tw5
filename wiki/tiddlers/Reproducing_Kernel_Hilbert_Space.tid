@@ -1,0 +1,17 @@
+created: 20160121094234831
+modified: 20160513092207174
+tags: [[Learning Theory]]
+title: Reproducing Kernel Hilbert Space
+type: text/vnd.tiddlywiki
+
+; RKHS
+: We say that $\mathcal H$ is a reproducing kernel Hilbert space of functions $f:\mathcal X\rightarrow\mathcal Y$, when for any $y\in\mathcal Y$ and $x\in\mathcal X$ the linear functional which maps $f\in\mathcal H$ to $(y,f(x))$ is continuous on $\mathcal H$.
+
+We conclude from the [[Reisz Lemma]] that, for every $x\in\mathcal X$ and $y\in\mathcal Y$, there is a linear operator $K_x:\mathcal Y\rightarrow\mathcal H$ such that
+$$
+(y, f(x))=\langle K_xy,f\rangle.
+$$
+For every $x, t\in\mathcal X$ we also introduce the linear operator $K(x, t):\mathcal Y\rightarrow\mathcal Y$ defined, for every $y\in\mathcal Y$, by
+$$
+K(x,t)y:=(K_ty)(x).
+$$

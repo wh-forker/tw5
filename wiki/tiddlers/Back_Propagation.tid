@@ -1,0 +1,7 @@
+created: 20150625075007877
+modified: 20150628115013725
+title: Back Propagation
+type: text/vnd.tiddlywiki
+
+! Stochastic vs batch learning
+According to chapter 1 of [[Neural Networks: Tricks of the Trade]], stochastic learning is faster and results better solution because less redundant data is used during the training. While the convergence conditions and other theoretical analyses are easier to conduct on batch learning.

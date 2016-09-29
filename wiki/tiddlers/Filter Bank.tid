@@ -1,0 +1,7 @@
+created: 20141016054815982
+modified: 20141016054945682
+tags: [[Audio Signal Processing]]
+title: Filter Bank
+type: text/vnd.tiddlywiki
+
+A filter bank is an array of [[band-pass filters|Band-pass Filter]] that separates the input signal into multiple componets, each one carrying single frequency sub-band of the original signal.

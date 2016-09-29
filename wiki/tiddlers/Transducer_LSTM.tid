@@ -1,0 +1,29 @@
+created: 20150622112842171
+modified: 20150622122434917
+title: Transducer LSTM
+type: text/vnd.tiddlywiki
+
+```
+@inproceedings{graves2013speech,
+  title={Speech recognition with deep recurrent neural networks},
+  author={Graves, Alan and Mohamed, Abdel-rahman and Hinton, Geoffrey},
+  booktitle={Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE International Conference on},
+  pages={6645--6649},
+  year={2013},
+  organization={IEEE}
+}
+```
+
+! Experiments
+
+|Training Method	|Dev PER	|Test PER	|
+|CTC				|19.05+-0.11|21.57+-0.25|
+|CTC (Noise)		|16.34+-0.07|18.63+-0.16|
+|Transducer			|15.97+-0.28|18.07+-0.24|
+
+Both networks consisted of five bidirectional hidden levels, each containing 2 LSTM layers of 250 cells, along with a size 62 softmax output layer (one unit for each phoneme, plus an extra blank unit).
+
+* CTC: Connectionist Temporal Classification (6.8M weights). The CTC were first trained to convergence with no noise, then retrained with weight noise (std 0.075).
+* Transducer: Sequence Transduction (7.4M weights) with an additional phoneme prediction network with a hidden layer of 250 LSTM cells, and an output network with a single hidden layer of 250 tanh units. Single best transducer run is 17.7.
+
+All networks were trained using SGD, with learning rate $10^{-4}$, momentum 0.9 and random initial weights drawn uniformly from $[-0.1,0.1]$.

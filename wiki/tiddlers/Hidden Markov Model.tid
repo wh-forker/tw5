@@ -1,0 +1,7 @@
+created: 20150529071832903
+modified: 20160513084840503
+tags: Speech [[Stochastic Processes]]
+title: Hidden Markov Model
+type: text/vnd.tiddlywiki
+
+HMM combine non-linearity with tractable inference by using a posterior that is a discrete distribution over a fixed number of mutually exclusive alternatives, which makes them exponentially inefficient at dealing with componential structure: to allow the history of a sequence to impose N bits of constraint on the future of the sequence, an HMM requires at least $2^N$ nodes.

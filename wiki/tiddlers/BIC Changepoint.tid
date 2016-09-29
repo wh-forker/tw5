@@ -1,0 +1,47 @@
+created: 20141103080902323
+modified: 20141231115059443
+tags: Speech
+title: BIC Changepoint
+type: text/vnd.tiddlywiki
+
+[[Bayesian information criterion]]
+
+!!Model Selection
+We can use Bayes' Theorem to find the posterior of each model. We assume equal prior probabilities for each model then the ratio of the odds becomes the Bayes factor $B_{ij} = P(M_i|y)/P(M_j|y)$. [[Schwarz 1978]] showed that in many kinds of models $B_{ij}$ can be roughly approximated by $\text{exp}(-\frac{1}{2}BIC_i+\frac{1}{2}BIC_j)$
+
+The derivation of BIC holds both the model set and the data-generating model fixed as sample size goes to infinity. It is also clear that if the model set contains the true (generating) model, them BIC selection converges with probability 1 to that generating model as $n\rightarrow \infty$ (and the posterior probability of that model goes to 1). [[Cavanaugh and Neath (1999)]] make it clear that the derivation of BIC does not require the true model being in the set.
+
+The difference between AIC and BIC is the $\log(n)$ in BIC, which is needed for idealized asymptotic consistency. BIC assumes equal prior probability for each model. The marginal probability is
+$$
+\int\left[\prod_{i=1}^ng(x_i|\theta)\right]\pi(\theta)d\theta
+$$
+Under ''general regularity conditions'', as sample size increases the likelihood function "near" the MLE, $\hat\theta$ can be approximated as
+$$
+\mathcal L(\theta|x, g) = \mathcal L(\hat\theta|x, g)\exp(-\frac{1}{2}(\theta-\hat\theta)'V(\hat\theta)^{-1}(\theta-\hat\theta)).
+$$
+where $V(\hat\theta)$ is the estimated $K\times K$ variance-covariance matrix of the MLE.
+
+!!Segmentation
+The BIC is probably the most extensively used segmentation and clustering metric due to its simplicity and effectiveness. It is likelihood criterion penalized by the model complexity (number of free parameters in the model) introduced by [[Schwarz (1971)]] and [[Schwarz (1978)]] as a model selection criterion. For a given acoustic segment $X_i$, the BIC value of a model $M_i$ applied to it indicates how well the model fits the data, and is determined by:
+$$
+BIC(M_i) = \log L(X_i, M_i)-\lambda\frac{1}{2}\#(M_i)\log(N_i)
+$$
+$\log L(X_i,M_i)$ is the log-likelihood of the data given the considered model. $\lambda$ is a free design parameter dependent on the data being modeled, estimated using development data; $N_i$ is the number of frames in the considered segment and $\#(M_i)$ the number of free parameters to estimate in model $M_i$. Such expression is an approximation of the Bayes Factor (BF) ([[Kass and Raftery (1995)]], [[Chickering and Heckerman (1997)]]) where the acoustic models are trained via ML methods and $N_i$ is considered big.
+
+In order to use BIC to evaluate whether a change point occurs between both segments it evaluates the hypothesis that $X$ better models the data versus the hypothesis that $X_i+X_j$ does instead, like in the GLR ([[Generalized Likelihood Ratio]]), by computing:
+$$
+\Delta BIC(i,j) = -R(i, j)+\lambda P
+$$
+where $P$ is the penalty term, which is a function of the number of free parameters in the model. For a full covariance matrix it is
+$$
+P =\frac{1}{2}(p+\frac{1}{2}p(p+1)\log(N)
+$$
+The penalty term accounts for the likelihood increase of bigger models versus smaller ones. The term $R(i)$ can be written for the case of models composed on a single Gaussian as:
+$$
+R(i, j) =\frac{N}{2}\log|\sum_X|-\frac{N_i}{2}\log|\sum_{X_i}|-\frac{N_j}{2}\log|\sum_{x_j}|
+$$
+For cases where GMM models with multiple Gaussian mixures are used, $\Delta BIC$ is written as
+$$
+\Delta BIC(M_i) = \log L(X, M)-(\log L(X_i, M_i)+\log L(X_j, M_j))-\lambda\Delta\#(i, j)\log(N)
+$$
+where $\Delta\#(i, j)$ is the difference between two $BIC(i)$ criteria in the combined model versus the two individual models.

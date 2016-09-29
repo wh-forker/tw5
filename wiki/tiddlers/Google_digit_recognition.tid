@@ -1,0 +1,35 @@
+created: 20151123055300923
+modified: 20160614033127992
+tags: [[Object Detection With CNNs]]
+title: Google digit recognition
+type: text/vnd.tiddlywiki
+
+! Output
+Six softmax outputs, one determines the number of digits, the others specify each one of them.
+
+! Experiments
+!! SVHN
+!!! Data preprocessing
+
+# find rectangle bounding of all digits
+# expand the bounding box by 30%
+# resize to 64x64
+# crop 54x54 from it
+
+!!! Model architecture
+8 CONV5x5, 1 locally connected layer (maxout), 2 FCs.
+
+!! Internal
+No ground truth bounding boxes
+
+!!! Data preprocessing
+
+# find door centroid
+# crop 128x128
+
+!!! Model architecture
+No dropout, 5 CONV5x5
+
+!! CAPTCHA
+!!! Model architecture
+No dropout, 9 CONV5x5

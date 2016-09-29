@@ -1,0 +1,36 @@
+created: 20150330064455177
+modified: 20150427121652593
+title: Speech Synthesis
+type: text/vnd.tiddlywiki
+
+! Problem
+Given a bunch of training voices and target texts, generate the speech.
+
+The output contains spectral features and excitation parameters (pitch and aperiodic energy) and their time derivatives of first and second order. Tools to extract these features include EMIME project and STRAIGHT acoustic analysis.
+
+! HMM/GMM Based Systems
+
+* MAP
+* MLLR
+* CMLLR derived from ML based optimization in HMM forced alignment
+
+In the conventional HMM-based approach, a decision tree based contextual clustering is used to model the relationship between text and corresponding voice features.
+
+!! Models
+Multi-space probability distributions HMM (MSD HMM) to model observation sequences with continuous log F0 (voiced) and discrete symbol (unvoiced).
+
+The use of HSMMs allow us to incorporate state duration models explicitly not only in the synthesis part but also in the training part of the system.
+
+!! Examples
+
+[[HTS]]
+
+! DNN based models
+[[Qian et al|DNN for parametric TTS]] 
+
+!! [[Google DNN TTS]]
+
+! Data
+CMU ARCTIC database of 7 speakers, 
+
+[[Voice Conversion]]

@@ -1,0 +1,13 @@
+created: 20150103105338516
+modified: 20150103111307011
+tags: Bayesian [[Bayesian Choice]]
+title: 1.3.5 Maximum likelihood estimation
+type: text/vnd.tiddlywiki
+
+MLE can be situated at the fringe of the Bayesian paradigm. Extended coverage can be found in Lehmann and Casella (1998)
+
+The drawbacks of MLE are
+
+# The practical maximization of $l(\theta|x)$ can be quite complex, especially in multidimensional and constrained settings. Numerical procedures like EM for missing data and Robertson et al. (1997) for order-restricted parameter spaces have beem tailored to this approach but unsolved difficulties remain.
+# A maximization technique is bound to give estimators that lack smoothness, as opposed to integration for instance. [[Saxena and Alam 1982]] show that, if $x\sim\chi_p^2(\lambda)$, the MLE of $\lambda$ is equal to 0 for $x<p$. MLE can be quite unstable.
+# It lacks decision-theoretic and probabilistic supports. For instance, tests are not possible in a purely maximum likelihood context: it is necessary to call for frequentist justifications, even if they are based upon a likelihood ratio [[see Section 5.3]]. Similarly, confidence regions of the form $C=\{\theta;l(\theta)/l(\hat\theta)\ge c\}$, which are asymptotically shortest, will not depend solely on teh likelihood function if the bound $c$ is to be chosen to achieve coverage at a given level $\alpha$.

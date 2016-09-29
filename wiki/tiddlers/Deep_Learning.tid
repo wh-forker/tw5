@@ -1,0 +1,27 @@
+created: 20150625074434077
+modified: 20160519060417791
+tags: 
+title: Deep Learning
+type: text/vnd.tiddlywiki
+
+[[Deep Learning Bib]]
+
+[[Deep Learning Overview]]
+
+! Basics
+* [[Neural Net Functions]]
+* [[Deep Neural Networks Architectures]]
+* [[Back Propagation]]
+* [[Optimization Methods]]
+* [[Deep Learning Tricks]]
+
+! [[Tools|Deep Learning Tools]]
+
+! Applications
+!! Image
+[[Representation Learning]]
+[[Image retrieval]]
+
+! [[Convolutional Neural Network]]
+
+! [[Recurrent Neural Networks]]

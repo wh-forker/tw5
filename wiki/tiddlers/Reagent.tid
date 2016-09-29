@@ -1,0 +1,12 @@
+created: 20150309131031084
+modified: 20150309133333539
+tags: clojure
+title: Reagent
+type: text/vnd.tiddlywiki
+
+Atoms are one of the few mutable data structure in Clojure. Reagent extends a Clojure Atom by ensuring that whenever an Atom is mutated, any component that uses it is rerendered
+
+! Example
+[[link|http://dhruvp.github.io/2015/02/23/mailchimip-clojure/]]
+
+got problem with map??

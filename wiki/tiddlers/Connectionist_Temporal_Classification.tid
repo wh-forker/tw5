@@ -1,0 +1,8 @@
+created: 20160115030728989
+modified: 20160115030812110
+tags: [[DNN for ASR]]
+title: Connectionist Temporal Classification
+type: text/vnd.tiddlywiki
+
+Baidu just released [[their code|https://github.com/baidu-research/warp-ctc]].
+

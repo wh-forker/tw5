@@ -1,0 +1,21 @@
+created: 20150330094404851
+modified: 20150425135436982
+tags: Speech Open-source [[Speech Synthesis]]
+title: HTS
+type: text/vnd.tiddlywiki
+
+Installing all dependencies for HTS demo CMU Arctic slt
+
+* HTS 2.2 patch for HTK 3.4.1, installed
+* [[Festival]] (festvox): festival requires a bunch of files to download and comes with a dataset
+* hts_engine API, installed
+* SPTK: requires csh, installed tcsh on Arch machine
+* tcl/tk (already up to date)
+
+! Model
+$$
+P(O|\lambda) = \sum_{Q}P(O,Q|\lambda)
+$$
+where $O$ is speech parameter vector sequence, $Q$ is state and $\lambda$ is the continuous mixture HMM. The speech parameter vector $o_t$ consists of the static feature vector (e.g. cepstral coefficients) and dynamic feature vectors (delta, delta2 cepstral coefficients) that is $o_t = [c_t, \Delta c_t, \Delta^2c_t]$. 
+
+The model is solved by alternating gradient descend.

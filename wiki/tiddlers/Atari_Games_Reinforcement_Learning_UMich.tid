@@ -1,0 +1,64 @@
+created: 20160606103212082
+modified: 20160606133418228
+tags: NIPS
+title: Atari Games Reinforcement Learning UMich
+type: text/vnd.tiddlywiki
+
+Fundamental challenges in RL:
+
+* Exploration vs exploitation
+* Dealing with delays
+
+Functional approximation in RL with NN. (NeuroDynamicProgramming, Tdgammon). Combine DL and RL.
+
+Atari game challenges:
+
+* sequential decision making
+* partial observability
+* delayed reward (above handled by RL)
+* high dimensional observations
+* multiple interacting objects (above handled by DL)
+
+Variety of:
+* perspection
+* rules
+* dynamics
+
+! Related work summary
+!! Deep Q Network by DeepMind
+CNN + Q-Learning.
+The system is not in real-time. Game pauses after each frame, Use Monte-Carlo Tree Search (UCT) for computing approximate Q-values. 
+
+!!! UCT-based Planning Agent
+Action selection after planning:
+$$
+\pi^{uct}(s) = \mbox{argmax}_aQ(s, a)
+$$
+
+To expand the search tree:
+$$
+\pi(s_1') = \mbox{argmax}_a Q(s_1', a) + c_{ucb}\sqrt{\log(n(s_1'))/n(s_1', a)}
+$$
+
+* $Q(s_1', a)$: estimated value of action a
+* $n(s_1')$: number of times state $s_1'$ has been visited
+* $n(s_1', a)$: number of times action a was selected under $s_1'$
+* $c_{ucb}$: exploitation vs exploration
+
+The complexity can be measured by depth (0.3k) and trajectories (10k).
+
+!! Combining with deep learning
+Compress UCT policy/value function into a CNN.Converting CNN output to:
+
+* Q-value
+* UCT result.
+
+The problem is training player dist is different from real UCT states. Several CNNs are stacked to reduce the error.
+
+!! DeepMind's Nature
+With larger model and more training, best real-time performance right now.
+
+! This work
+Can we learn a transition model with such high dimensional observations?
+
+With encoder-decoder. The 

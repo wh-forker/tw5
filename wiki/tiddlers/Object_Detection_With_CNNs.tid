@@ -1,0 +1,37 @@
+created: 20160614032240671
+modified: 20160810033806855
+tags: [[ConvNet Applications]]
+title: Object Detection With CNNs
+type: text/vnd.tiddlywiki
+
+Girshick et al.'s Region-CNN framework is a combination of region proposals and CNN features. It has three broad stages:
+
+# generating object proposals
+# extracting CNN feature maps of each proposal
+# filtering the proposal through class specific SVMs
+
+The bottleneck of performance of R-CNN is extracting feature maps for each region. In [[Fast R-CNN|Fast-RCNN]], they obtain $100\times$ speedup over R-CNN by computing the CNN features once and pooling them locally for each proposal; they also streamline the last two stages of R-CNN into a single multi-task learning problem. 
+
+After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://arxiv.org/abs/1506.06981]] drop the region proposal and use a constant set of regions learnt through K-means clustering on the PASCAL VOC data. [[Faster RCNN by Ren et al.|http://arxiv.org/abs/1506.01497]] starts from a fixed set of proposal, but refined them prior to detection by using a Region Proposal Network which shares weights with the later detection network and streamlines the multi-stage R-CNN framework.
+
+! Examples
+# [[Google digit recognition]]
+# [[CNN for OCR]]
+# [[Face Detection]]
+
+! Models
+!! Regressor
+# [[Faster R-CNN]]
+# [[darknet You Only Look Once (YOLO)|http://arxiv.org/abs/1506.02640]]
+# [[Single Shot Multibox Detector (SSD)|http://arxiv.org/abs/1512.02325]]
+# [[Inside Out Net (ION)|http://arxiv.org/abs/1512.04143]]
+
+!! Iterative
+# [[AttentionNet|http://arxiv.org/abs/1506.07704]]
+# [[G-CNN|http://arxiv.org/abs/1512.07729]]
+
+!! Other
+# [[R-FCN|http://arxiv.org/abs/1605.06409]]
+
+!! Implementation
+# [[ReInspect|http://arxiv.org/abs/1506.04878]]: [[tf|https://github.com/Russell91/TensorBox]]

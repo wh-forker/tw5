@@ -1,0 +1,14 @@
+created: 20150311064150745
+title: sudderth08describing.txt
+type: text/plain
+
+@article{sudderth2008describing,
+  title={Describing visual scenes using transformed objects and parts},
+  author={Sudderth, Erik B and Torralba, Antonio and Freeman, William T and Willsky, Alan S},
+  journal={International Journal of Computer Vision},
+  volume={77},
+  number={1-3},
+  pages={291--330},
+  year={2008},
+  publisher={Springer}
+}

@@ -1,0 +1,39 @@
+created: 20141117122502667
+modified: 20141124132433256
+tags: [[Information Theory]]
+title: Akaike's information criterion
+type: text/vnd.tiddlywiki
+
+[[Model Selection]]
+
+AIC estimates the relative K-L distance of the likelihood function specified by a fitted candidate model, from the unknown true likelihood function that generated the data. The fitted model closest to the truth in the KL sense would not necessarily be the model which best fits the observed sample, since the observed sample can often be fit arbitary well by making the model more and more complex. The best KL model is the model that most accurately describes ''the population distribution and hence future samples from it''.
+
+$$
+AIC = -2\log(\mathcal L(\hat\theta|y))+2K.
+$$
+
+Let the "true" value of $\theta$ for model $g$ be $\theta_0$. If $g$ is the K-L best model, then the MLE $\hat\theta$ would estimate $\theta_0$.
+
+Akaike showed that the critical issue for getting a applied K-L model selection criterion was to estimate
+$$
+E_yE_x[\log(g(x|\hat\theta(y)))],
+$$
+where $x$ and $y$ are independent random samples from the same distribution and both statistical expectations are taken w.r.t. truth ($f$), is the ''model selection target'' of all model selection approaches, based on K-L information. 
+
+Akaike (1973) showed that the maximized log-likelihood is biased upward as an estimator of it. He also found that under certain conditions, this bias is approximately equal to $K$, the number of estimatable parameters in the approximating model.
+
+An approximately unbiased estimator of this target for large samples and "good" models is
+$$
+\log(\mathcal L(\hat\theta|data))-K.
+$$
+This result is equivalent to
+$$
+\log(\mathcal L(\hat\theta|data))-K = \text{constant}-\hat E_{\hat\theta}[I(f, \hat g)],
+$$
+where $\hat g=g(\cdot|\hat\theta)$.
+
+An approximately unbiased estimate of $E_t(l(y))$ would be a constant plus $l-\text{tr}(\hat {\mathbf J}^{-1}\hat{\mathbf K})$. $\hat{\mathbf J}$ is an estimator for the corvatiance matrix of the parameters based on the ''second-derivatives matrix of $l$'' in the parameters and $\hat{\mathbf K}$ is an estimator based on the ''cross-products of first derivatives'' [[Claeskens & Hjort, 2008, pp. 26-7]]. They are asymptotically equal for the true model, so that the trace becomes approximately $p$.
+
+!! Criteria related to AIC
+It may be that the crucial AIC approximation is too optimistic and the resulting penalty for model complexity is too weak. AIC_c and AIC3 sometimes perform better. The Deviance Information Criterion has some relationship to AIC. Also, some criteria like Mallows' C_p, and leave-one-out cross-validation are asymptotically equivalent to AIC.
+

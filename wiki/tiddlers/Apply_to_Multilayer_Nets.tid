@@ -1,0 +1,7 @@
+created: 20150629111229278
+modified: 20150629115728550
+tags: [[Second Order Methods]]
+title: Apply to Multilayer Nets
+type: text/vnd.tiddlywiki
+
+Most second order methods require a line-search and cannot be used in the stochastic mode. A carefully tuned SGD is hard to beat on large classification problems. CG offers best combination of speed, reliability and simplicity for smaller accurate real-valued outputs.

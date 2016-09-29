@@ -1,0 +1,67 @@
+created: 20150420121614819
+modified: 20150427123344760
+tags: [[Speech Synthesis]]
+title: Voice Conversion
+type: text/vnd.tiddlywiki
+
+! Introduction
+Many state-of-art researches focus on spectral conversion techniques. 2 categories
+
+* rule based methods: e.g. move the position of formants. most of the details are retained. ''The information (e.g. formants) for building the converion function is usually difficult to be extracted accurately.''
+* statistical methods: construct a more precise mapping function using complex statistical models.
+
+! 3 major issues
+Sinusoidal model can support modifications to both the prosody and the spectral characteristics.
+
+Acoustic features which enable humans to identify speakers must be extracted and coded. These features should be independent of the message and the environment so that whatever and wherever the source speaker speaks, his/her voice characteristics can be successfully transformed to sound like the target speaker.
+
+The type of conversion function and method of training and applying the conversion function must be decided.
+
+! Basic methods: parallel training
+* [[Codebook mapping method for VC]]
+** Standard - vector quantization: generate the 1-1 correspondence between source and target spectral codebook. But the linear transformation from a limited set of vectors to form the target centroids may leads to discontinuous in the synthesised voice and degrade of speech quality.
+** Weighted - Line spectral frequencies (LSFs) are used to weigh the target codebooks. This is proposed to leviate the discontinous problem.
+* Formant mapping is prone to formant tracking errors.
+* Linear multivariate regression for VC
+
+$$
+\hat y_t = A_mx_t+B_m,
+$$
+
+* ANN can handle nonlinear transformation functions.
+
+! HMM/GMM
+[[GMM for VC]]
+
+!! HMM sequence-to-frame mapping
+Let $p(x|s)$ denote a state-observation probability of frame vector $x$ given state $s$, and $p(s'|s)$ represent a state-transition probability from state $s$ to $s'$. Given state $s$ and source vector $x$, we assume that target vector $y$ has the following linear-Gaussian distribution,
+$$
+p(y|s, x) = N(y|B_sx+b_s,\Sigma_s),
+$$
+The mapping can be learned with least mean square or
+
+!! GP based model
+This is a variation of GMM. Solve the mapping function as a regression problem and apply Gaussian process to solve it. Assign a GP for each dimension of the target spectra.
+
+! Segmentation Based
+[[Maximum likelihood transformations for VC]]
+
+! Model-based VC
+!! Expression conversion model
+
+The advantage of model based VC method is it does not require parallel corpora for training. It describe the relationship between expressions of source and target speaker with linear transforms.
+
+$$
+\log(f0_c) = \mu_t+\frac{\sigma_t}{\sigma_s}(\log(f0_s)-\mu_s)
+$$
+
+[[VC with factorised HMM-TTS models]]
+
+! Speaker adaptation techniques
+Generate "average voice" model from multiple speakers' recordings.
+* Feature-space MLLR
+
+! Deep Neural Network
+[[USTC DNN VC]]
+
+[[Proposal|VC Research Proposal]]

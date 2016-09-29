@@ -1,0 +1,32 @@
+created: 20150529081651323
+modified: 20150615053527690
+tags: [[Deep Learning]]
+title: Hessian-Free Optimization
+type: text/vnd.tiddlywiki
+
+HF is a practical large scale implementation of Newton's method to learn deep neural networks from random initializations.
+
+$$
+q_{\theta_n}(\theta) = M_{\theta_n}(\theta)+\lambda R_{\theta_n}(\theta),
+$$
+where $M_{\theta_n}(\theta)$ is a $\theta_n$-dependent "local" quadratic approximation to $f(\theta)$ given by
+$$
+M_{\theta_n}(\theta) = f(\theta_n)+f'(\theta_n)^\top\delta_n+\frac{\delta_n^\top C_n\delta_n}{2},
+$$
+where $C_n$ is an approximation to the curvature of $f$ at $\theta_n$, $\delta_n=\theta-\theta_n$, and $R_{\theta_n}(\theta)$ is a damping function that penalizes the solution according to the difference between $\theta$ and $\theta_n$, thus encouraging $\theta$ to remain close to $\theta_n$.
+
+In standard HF, A.K.A. truncated-Newton, $C_n = d^2f(\theta_n)$ and $R_{\theta_n}(\theta)=\|\delta_n\|^2/2$. Unlike with quasi-Newton approaches like L-BFGS there is no low-rank or diagonal approximation involved, and as a consequence, fully optimizing the sub-objective $q_{\theta_n}$ can require a matrix inversion or some similarly expensive operation. The HF approach circumvents this problem by performing a much cheaper partial optimization of $q_{\theta_n}$ using the ''linear conjugate gradient algorithm'' (CG).
+
+CG is invoked for minimizing quadratic function $\phi(z) = z^\top (C_n+\lambda I)z/2 - f'(\theta_n)^\top z$ starting from $z = \delta_{n-1}$. The Hessian-vector products is computed within a black-box function. The modifications on HF on neural networks include:
+
+# using the positive semi-definite [[Gauss-Newton curvature matrix]] $G_f$ in place of the possibly indefinite Hessian
+# using damping function for $R_{\theta_n}(\theta)=\|\delta_n\|^2/2$ with the damping parameter $\lambda$ adjusted by Levenberg-Marquardt style heuristics
+# using a criterion based directly on the value of $q_{\theta_n}$ in order to terminate CG (not residual-error $\|Bz-b\|^2/2$)
+# computing the curvature-matrix products $Bv$ using mini-batches and the gradients with much larger mini-batches.
+
+!! [[Structral Damping]]
+
+! Expriments
+ HF algorithm is capable of training RNNs to solve problems with very long-term dependencies.
+ 
+ [[TIMIT HF]]

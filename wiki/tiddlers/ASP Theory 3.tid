@@ -1,0 +1,54 @@
+created: 20141016103158427
+modified: 20141016114343439
+tags: [[Audio Signal Processing]] [[Open Courses]]
+title: ASP Theory 3
+type: text/vnd.tiddlywiki
+
+!! Linearity
+$$
+DFT(ax_1[n]+bx_2[n]) = aX_1[k]+bX_2[k]
+$$
+
+!! Shift
+$$
+DFT(x[n-n_0]) = e^{-j2\pi kn_0/N}X[k]
+$$
+
+!! Symmetry
+|!part|!$x[n]$ real|!$x[n]$ real and even|
+|$\mathfrak R\{X[k]\}$ real part|even|even|
+|$\mathfrak I\{X[k]\}$ imaginary part|odd|0|
+|$\lvert X[k]\rvert$ magnitude|even|even|
+|$<X[k]$ phase|odd|0|
+
+!! Convolution
+$$
+DFT(x_1[n]*x_2[n]) = X_1[k]\times X_2[k]
+$$
+$$
+DFT(x_1[n]\times x_2[n]) = X_1[k]*X_2[k]
+$$
+
+!! Energy conservation & decibels
+The energy of a signal can be measured in time/frequency domain
+$$
+\sum_{n=-N/2}^{N/2-1}|x[n]|^2=\frac{1}{N}\sum_{k=-N/2}^{N/2-1}|X[k]|^2
+$$
+
+Decibel: $20\log(|X|)$
+
+!! Phase unwrapping
+For visualizing the phase spectrum, when reaching $2\pi$, let it grow.
+
+!! Zero padding
+Zero-padding a signal is done by adding zeros at the end of the signal.
+
+By adding samples of zeros. The spectrum will be smooth. We will get more interpolated samples in between.
+
+!! Fast Fourier Transform
+Coley-Tukey algorithm: breaks down recursively the DFT of a power of 2 size into two pieces of size N/2.
+
+!! FFT and zero-phase windowing
+Split the signal and add zero to the center. We avoid getting shifting distortion would occur if we had not centered all the samples.
+
+!! Analysis/synthesis

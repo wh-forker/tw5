@@ -1,0 +1,10 @@
+created: 20151112093214096
+modified: 20151112095730301
+tags: [[Deep Learning]] Papers
+title: Understanding Dropout
+type: text/vnd.tiddlywiki
+
+The main motivation behind the algorithm is to prevent the co-adaptation of feature detectors, or overfitting, by forcing neurons to be robust and rely on population behavior, rather than on the activity of other specific units.
+
+It is also noted that for a single logistic unit dropout performs a kind of "geometric averaging" (normalized weighted geometric mean) over the ensemble of possible subnetworks (proof in 3.1), and conjectured that something similar may occur also in multilayer networks.
+

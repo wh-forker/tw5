@@ -1,0 +1,14 @@
+created: 20150427123659545
+title: chen14voice.txt
+type: text/plain
+
+@article{chen2014voice,
+  title={Voice conversion using deep neural networks with layer-wise generative training},
+  author={Chen, Ling-Hui and Ling, Zhen-Hua and Liu, Li-Juan and Dai, Li-Rong},
+  journal={IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP)},
+  volume={22},
+  number={12},
+  pages={1859--1872},
+  year={2014},
+  publisher={IEEE Press}
+}

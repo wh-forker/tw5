@@ -1,0 +1,11 @@
+created: 20150518113505865
+title: martens2011learning.txt
+type: text/plain
+
+@inproceedings{martens2011learning,
+  title={Learning recurrent neural networks with hessian-free optimization},
+  author={Martens, James and Sutskever, Ilya},
+  booktitle={Proceedings of the 28th International Conference on Machine Learning (ICML-11)},
+  pages={1033--1040},
+  year={2011}
+}

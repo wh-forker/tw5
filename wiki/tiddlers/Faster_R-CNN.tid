@@ -1,0 +1,18 @@
+created: 20160703060558871
+modified: 20160708031537928
+tags: [[Object Detection With CNNs]]
+title: Faster R-CNN
+type: text/vnd.tiddlywiki
+
+[[link|http://papers.nips.cc/paper/5638-faster-r-cnn-towards-real-time-object-detection-with-region-proposal-networks]]
+
+! Anchors
+
+! Loss function
+$$
+L(\{p_i\}, \{t_i\}) = \frac {1} {N_{cls}} \sum_iL_{cls}(p_i, p_i^*) + \lambda \frac {1} {N_{reg}} \sum_ip_i^*L_{reg}(t_i, t_i^*)
+$$
+where $p_i^*$ is the probability of this anchor being an object. $L_{cls}$ is the log loss over 2 classes. $L_{reg}(t_i, t_i^*) = R(t_i-t_I^*)$ is the robust loss function (smooth $L_1$).
+
+! Optimization
+randomly sample 256 anchors to compute the loss in a mini-batch to keep positive and negative sample ratio to 1:1. However, if there is not enough positive samples, negative samples are padded.

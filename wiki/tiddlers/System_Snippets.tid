@@ -1,0 +1,11 @@
+created: 20160525034506356
+modified: 20160525034532065
+tags: Snippets
+title: System Snippets
+type: text/vnd.tiddlywiki
+
+! Windows add permanent static route
+
+```
+route add -p 10.0.0.0 mask 255.0.0.0 192.168.0.1
+```

@@ -1,0 +1,26 @@
+created: 20141011140002656
+modified: 20160525043143923
+tags: Tools Snippets
+title: Editor Shortcuts
+type: text/vnd.tiddlywiki
+
+! cider-jack-in
+!! cider-mode
+|load current buffer|`C-c C-k`|
+
+! Emacs
+|delete spaces between 2 words|`M-\`|
+|reload current file|`M-x` `load-file`|
+
+! Paredit
+[[Paredit Reference Card|http://pub.gajendra.net/src/paredit-refcard.pdf]]
+
+|slurpage|`ctl`+`<left>`/`<right>`|
+|split quote|`M-s`|
+
+! Vim
+[[ Vim Command Cheat Sheet|http://www.fprintf.net/vimCheatSheet.html]]
+
+|toggle case|`~`|
+|change 3 char|`c3l`|
+|global replace (confirmation)|`:%s/OLD/NEW/g(c)`|

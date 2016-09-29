@@ -1,0 +1,16 @@
+created: 20141014075021236
+modified: 20141014075059204
+tags: clojure
+title: clojure Snippets
+type: text/vnd.tiddlywiki
+
+Empty seqeuence
+
+```clojure
+user=> (every? empty? ["" [] () '() {} #{} nil])
+true
+
+;example of recommended idiom for testing if not empty
+user=> (every? seq ["1" [1] '(1) {:1 1} #{1}])
+true
+```

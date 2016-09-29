@@ -1,0 +1,23 @@
+created: 20150106083126299
+modified: 20150106090839812
+tags: [[Bayesian Choice]]
+title: 5.2.6 Pseudo-Bayes factors
+type: text/vnd.tiddlywiki
+
+Given an improper prior $\pi$, a sample $(x_1, \dots, x_n)$ is a training sample if the corresponding posterior $\pi(\cdot\mid x_1, \dots, x_n)$ is proper and is a minimal ''training sample'' if no subsample is a training sample.
+
+The idea is then to use a minimal training sample. $x_{(l)}$ say, to "properize" the improper prior $\pi$ into $\pi(\cdot\mid x_{(l)})$, and then to use the posterior distribution as if it were a regular proper prior for the remainder of the sample, $x_{(-l)}$ say, in order to avoid the data twice, as in the proposal of Aitkin (1991). When facing a hypothesis $H_0$ with a prior distribution $\pi_0$, with a broader alternative $H_1$ with a prior distribution $\pi_1$, if the minimal training sample under $H_1$ is such that $\pi_0(\cdot\mid x_{(l)})$ is also proer, the pseudo-Bayes factor
+$$
+B_{10}^{(l)} = \frac{\int_{\Theta_1}f_1(x\mid\theta_1)\pi_1(\theta_1)d\theta_1}{\int_{\Theta_0}f_0(x\mid\theta_0)\pi_0(\theta_0)d\theta_0}
+$$
+is then independent from the normalizaing constants used in both $\pi_0$ and $\pi_1$.
+
+There are enough difficulties to make us question their use in testing and model choice problems:
+
+# Most pseudo-Bayes factors do not, even though the fractional Bayes factor satisfies $B_{01}^F = 1/B_{10}$.
+# When the pseudo-Bayes factors can be expressed as true Bayes factors, the corresponding intrinsic priors are not necessarily appealing and these priors do depend on the choice of the improper reference priors $\pi_0$ and $\pi_1$, hence are hardly intrinsic.
+# The pseudo-Bayes factors may also exhibit a bias in favor of one of the hypothesis, in the sence that they can be expressed as a true Bayes factor multiplied by a certain factor. in such cases, it can be seen as modifying the probability of both hypothesis from the reference value $1/2$, a feature we will also encounter for [[least favorables bounds in Section 2.5.2|2.5.2 The absolute error loss]].
+# Most often, however, the pseudo-Bayes factors do not correspond to any true Bayes factor, and they may give strongly biased solutions.
+# Pseudo-Bayes factors may simply not exist for a whole class of models.
+# There are many ways of defining pseudo-Bayes factors and, while most are arguably logical, there is no coherent way of ordering them. Pseudo-Bayes factors, as defined here, do agree with the Likelihood Principle, but the multiplication of possible answers, even if those are close, is not a good signal to users.
+# The issue of computing pseudo-Bayes factors.

@@ -1,0 +1,69 @@
+created: 20150518111120636
+modified: 20160513085856129
+tags: [[Deep Learning]] Speech
+title: LSTM Research Proposal
+type: text/vnd.tiddlywiki
+
+! Previous Work
+!! Traditional Methods
+!!! Bilinear Model
+[[Style & Content]]
+
+!! Normalizing Speaker Variations
+!!! Vocal tract length normalization
+VTLN warps the frequency axis of the filter-bank analysis to account for the fact that the locations of vocal-tract resonances vary roughly monotonically with the vocal tract length of the speaker.
+
+The filter bank process with frequency warping can be written as:
+$$
+O_\alpha(n) = \sum_{w = l_n}^{h_n}T_n(w)X(\varphi_\alpha(w))\quad 0\le n\le N-1
+$$
+where $\varphi_\alpha(w)$ is the warping function, $\alpha$ is the warping factor, $X$ is the speech signal and $T_n$ is the n-th filter bank.
+
+This is done in both training and testing with 20 quantized warping factors from 0.8 to 1.18. During the training, the optimal warping factor can be found using the expectation–maximization (EM) algorithm by repeatedly selecting the best factor given the current model and then updating the model using the selected factor. 
+
+!!! Feature-space maximum likelihood linear regression
+fMLLR applies an affine transform to the feature vector so that the transformed feature better matches the model.
+
+It is typically applied to the testing utterance by first generating recognition results using the raw feature and then re-recognizing the speech with the transformed feature.
+
+In GMM-HMM systems, these feature transformed speaker-adaptation techniques are critical (9%), but the effect is very small in CD-DNN-HMM (2%), which means a well-trained DNN should be quite robust to speaker variaions. Its effect on more complex and solely DNN models is unknown. It is reasonable to guess even less. And both adaptation techniques can be implemented by adding a layer between the hidden and input layer.
+
+!! Neural Nets
+!!! Adaptation
+
+!!! Transfer Learning
+Transfer learning aims at developing a reasonably performed system for a new task, domain, or distribution efficiently and effectively by retaining and leveraging the knowledge learned from one or more similar tasks, domains, or distributions.
+
+!!! Multitask Learning
+Adding new tasks that share part of the representation can improve the original task performance. This is referred to as maultitask learning. Each layer of a neural net can be seen as a representation. The general structure of a MTL net can be described as 2 nets dedicated to each task sharing some part of their layers.
+
+
+
+
+
+! Net Architectures
+!! RNN
+The standard RNN output, $y_O^{(t)}$, at a time step $t$ is calculated as:
+$$
+y_H^{(t)} = f_H(W_Hy^{(t-1)}+W_Ix^{(t)}),
+$$
+$$
+y_O^{(t)}=f_O(W_Oy_H^{(t)},
+$$
+where $W_H$, $W_I$ and $W_O$ are the hidden, input and output weight matrices, $x_t$ is the input vector at time step $t$, vectors $y_H$ represent the hidden neuron activations. Functions $f_H$ and $f_O$ are the nonlinear activation functions.
+
+!! Clockwork RNN
+The main difference between CW-RNN and an RNN is that at each CW-RNN time step $t$, only the output of modules $i$ that satisfy $t \mod T_i = 0$ are executed.
+
+!![[LSTM|Long Short Term Memory]]
+LSTM is an RNN architecture that elegantly addresses the vanishing gradients problem using "memory units". Besides hidden units, the network contains input gates and output gates that controls when the memory to be updated and the information to leave the unit.
+
+! Some Tuning on the Problem
+
+can the sparse coding like thing be used in this?
+
+! Training
+[[Thesis Training RNN]]
+
+! Dataset
+TIMIT is used in [[the original LSTM paper|graves2005framewise.txt]]. They used 184 of the 3696 training set utterances (randomly chosen, constant for experiments) as ''validation set'' and trained on the rest.

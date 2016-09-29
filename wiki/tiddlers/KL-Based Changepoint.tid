@@ -1,0 +1,141 @@
+created: 20141020071216521
+modified: 20141202091051137
+tags: Bayesian Speech Blog
+title: KL-Based Changepoint
+type: text/vnd.tiddlywiki
+
+! Model
+We imagine that data points from a training set are presented sequentially, we can consider that the posterior distribution after the $N$-th point becomes the prior for the next iteration.
+
+With the Bayesian approach, the background information of an observer is captured by his //prior// probability distribution $P_{t-1}(M) = P(M|\mathcal O_{t-1})$ given previous inputs $\mathcal O_{t-1}$ over the models $M$. The effect of a new data $o_t$ on the observer is to change the prior into the //posterior// distribution $P_t(M) = P(M|\mathcal O_t)$ where $\mathcal O_t = o_t\cup\mathcal O_{t-1}$.
+
+!! Acoustic Surprise
+
+The surprise $S(o_t)$ is measured as the [[Kullback-Leibler divergence]] $D_{\text{KL}}$ between $P_{t-1}$ and $P_t$, 
+$$
+S(o_t) \doteq D_{\text{KL}}(P_{t-1}||P_{t}) = E_{p_{t-1}}\log\frac{P_{t-1}}{P_{t}}.
+$$
+And the single model surprise of $M$ is given by
+$$
+S(o_t, M) = \log\frac{P_{t-1}}{P_{t}}.
+$$
+The unit of surprise, representing a 2-fold variation between $P_t$ and $P_{t-1}$ is called a ''wow''. Under this definition, the surprise can be understood as
+$$
+H(P_t, P_{t-1}) - H(P_{t-1})
+$$
+where $H(P,Q)$ is the cross entropy of $P$ and $Q$, and $H(P)$ is the entropy of $P$.
+
+KL-dviergence is not symmetric, the first parameter is often referred to as ''true'' and the second ''approximate''. [baldi10bits] and [schuerte13wow] use opposite distribution orders which is somehow bad.
+
+Now the problem is how to define these two distributions. A convenient way to represent posteriors of certain distributions (data generating processes) is [[conjugate prior|Conjugate Prior]].
+
+!!! Poisson [itti06bayesian]
+Suppose that data $x_1, \dots, x_n$ are independent and identically distributed from a Poisson process where $\mu$, the mean, is unknown. The value of each $x_i$ is an integer greater than or equal to zero. For data from a Poisson process, the likelihood function, $L(\mu|x_1,\dots,x_n)$, with respect to $\mu$, is 
+$$
+L(\mu|x_1,\dots,x_n)\propto \mu^{\sum x_i}\exp(-n\mu), \qquad x_i>0.
+$$
+
+The sufficient statistics are $n$, the number of data points, and $\sum x_i$ the sum of the data. This likelihood factor is proportional to a gamma distribution of $\mu$. The conjugate prior, $g(\cdot)$, is a gamma distribution with hyperparameters $k, \theta > 0$,
+$$
+g(\mu|k,\theta)=\frac{\mu^{k-1}\exp\frac{-\mu}{\theta}}{\Gamma(k)\theta^k},\qquad \mu>0.
+$$
+and the posterior is also a gamma $\mu \sim \Gamma(\mu|k',\theta')$ where the updated hyperparameters are
+$$
+k' = k+\sum x_i, \qquad \theta' = \frac {\theta}{1+n}.
+$$
+
+The KL-divergence of $\Gamma(k_p, \theta_p)$ from $\Gamma(k_q,\theta_q)$ is given by
+$$
+D_{\mathrm{KL}}(k_p,\theta_p; k_q, \theta_q) =  (k_p-k_q)\psi(k_p) - \log\Gamma(k_p) + \log\Gamma(k_q) + k_q(\log \theta_q - \log \theta_p) + k_p\frac{\theta_p - \theta_q}{\theta_q} 
+$$
+where $\psi$ is the digamma function
+$$
+\psi(x) =\frac{d}{dx} \ln{\Gamma(x)}= \frac{\Gamma'(x)}{\Gamma(x)}.
+$$
+
+It is shown (applying [[Stirling's formula|Stirling's Formula]]) that as $N\rightarrow\infty$, $S$ grows linearly according to with $n$ the number of data
+$$
+S(o_n) \approx n\left(k\theta - \bar\mu (1-\log\bar\mu+\psi(k)+\log\theta)\right).
+$$
+As the input data accumulates, it is believed old data is not as important. So a decay factor $0<\zeta<1$ is used in [schuerte13wow]
+$$
+k'_n = \zeta k'_{n-1}+ x_n, \qquad \frac{1}{\theta_n'} = \zeta\frac{1}{\theta'_{n-1}}+\frac 1\theta.
+$$
+
+!!! Generalization [baldi10bits]
+The result can be easily extended onto [[exponential family|Exponential Family]], which all have conjugate prior and thus easier to compute the posterior. The likelihood of a observation from an exponential family with parameter $\boldsymbol \eta$ is
+$$
+P(x|\boldsymbol \eta) = h(x) g(\boldsymbol\eta) \exp\left(\boldsymbol\eta^{\rm T} \mathbf{T}(x)\right)
+$$
+Then, for data $\mathbf{X} = (x_1,\ldots,x_n)$, the likelihood is computed as follows:
+$$
+p(\mathbf{X}|\boldsymbol\eta) =\left(\prod_{i=1}^n h(x_i) \right) g(\boldsymbol\eta)^n \exp\left(\boldsymbol\eta^{\rm T}\sum_{i=1}^n \mathbf{T}(x_i) \right)
+$$
+Then, for the above conjugate prior:
+$$
+\begin{align}p_\pi(\boldsymbol\eta|\boldsymbol\chi,\nu) &= f(\boldsymbol\chi,\nu) g(\boldsymbol\eta)^\nu \exp(\boldsymbol\eta^{\rm T} \boldsymbol\chi) \propto g(\boldsymbol\eta)^\nu \exp(\boldsymbol\eta^{\rm T} \boldsymbol\chi)\end{align}
+$$
+We can then compute the posterior as follows:
+$$
+\begin{align}
+p(\boldsymbol\eta|\mathbf{X},\boldsymbol\chi,\nu)& \propto p(\mathbf{X}|\boldsymbol\eta) p_\pi(\boldsymbol\eta|\boldsymbol\chi,\nu) \\
+&= \left(\prod_{i=1}^n h(x_i) \right) g(\boldsymbol\eta)^n \exp\left(\boldsymbol\eta^{\rm T} \sum_{i=1}^n \mathbf{T}(x_i)\right)
+f(\boldsymbol\chi,\nu) g(\boldsymbol\eta)^\nu \exp(\boldsymbol\eta^{\rm T} \boldsymbol\chi) \\
+&\propto g(\boldsymbol\eta)^n \exp\left(\boldsymbol\eta^{\rm T}\sum_{i=1}^n \mathbf{T}(x_i)\right) g(\boldsymbol\eta)^\nu \exp(\boldsymbol\eta^{\rm T} \boldsymbol\chi) \\
+&\propto g(\boldsymbol\eta)^{\nu + n} \exp\left(\boldsymbol\eta^{\rm T} \left(\boldsymbol\chi + \sum_{i=1}^n \mathbf{T}(x_i)\right)\right)
+\end{align}
+$$
+
+Compute the surprise yields
+$$
+S(o_t|\boldsymbol\eta(M)) = \log g(\boldsymbol\eta)+E_{p_t}\boldsymbol\eta^{\rm T}\mathbf T(o_t)
+$$
+Examples given in [baldi10bits] are
+
+* Discrete data
+** Multinomial
+** Poisson
+* Gaussian
+** Unknown mean/known variance
+** Known mean/unknown variance
+** Unknown mean/unknown variance
+
+!!! Gaussian [schuerte13wow]
+If we model the data as a Gaussian $P\sim\mathcal G(\mu, \Sigma)$, we can get a closed form of saliency.
+
+$$
+\begin{align*}
+D_{\text{KL}} &= \int \frac 1 2\left[\log\frac{|\Sigma_2|}{|\Sigma_1|} - (x-\mu_1)^T\Sigma_1^{-1}(x-\mu_1)+(x-\mu_2)^T\Sigma_2^{-1}(x-\mu_2)\right]P_t(x)dx\\
+&= \frac 1 2\left[\log\frac{|\Sigma_2|}{|\Sigma_1|} - E_{P_t}[(x-\mu_1)^T\Sigma_1^{-1}(x-\mu_1)]+E_{P_t}[(x-\mu_2)^T\Sigma_2^{-1}(x-\mu_2)]\right]\\
+&= \frac 1 2\left[\log\frac{|\Sigma_2|}{|\Sigma_1|} - \text{tr}(I_d)+\text{tr}(\Sigma_2^{-1}\Sigma_1)+(\mu_1-\mu_2)^T\Sigma_2^{-1}(mu_1-\mu_2)\right]\\
+\end{align*}
+$$
+
+!! Bits (Entropy) and Wows (Surprise)
+* For a uniform prior model with $P(o_t)\ll 1$
+** Entropy: $\underset{p\rightarrow0+}{\text{lim}}p\log p = 0$
+** Surprise: $0$, because the posterior does not change.
+* For a very unlikely data
+** Entropy: cannot exceed 1
+** Surprise: can be quite large ($\log N$, where $N$ is #models)
+
+! Neural Network Implementation
+
+* Input: dyadic image pyramids as feature maps
+* Layer: 5 chained cascade of surprise detectors at every pixel in every feature map
+** Temporal $SL$: Gaussian/Poisson Likelihood
+** Addtion $SS$: spatial surprises
+** $S \leftarrow S(SL+SS/20)^{1/3}$ (from LMS)
+* Application in eye movements: CRCNS eye-tracking
+
+! In Speech
+!! Frequency Spectrogram [schuerte13wow]
+The squared magnitude spectrum of:
+
+# Short-time Fourier transform (STFT)
+# Short-time cosine transform (STCT)
+# Modified discrete cosine transform (MDCT)
+$G(t,\omega) = |F(t,\omega)|^2$ is used to characterize the audio features.
+
+!! Speaker diarization task
+This can be used to employ a segmentation algorithm ([[Changepoint algorithms]])

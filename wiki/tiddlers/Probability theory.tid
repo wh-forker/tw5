@@ -1,0 +1,12 @@
+created: 20141224063852124
+modified: 20141224064241832
+title: Probability theory
+type: text/vnd.tiddlywiki
+
+The three axioms of Probability theory
+
+# $P(A)\ge0$ for all events $A$
+# $P(\Omega) = 1$
+# $P(A\cup B)=P(A)+P(B)$ for disjoint events $A$ and $B$
+
+[[Gaussian]]

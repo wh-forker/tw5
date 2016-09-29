@@ -1,0 +1,60 @@
+created: 20160517021239314
+modified: 20160520054605749
+tags: [[Stanford NLP Course]] [[Convolutional Neural Network]] [[CNN for NLP]]
+title: Stanford CNN for NLP
+type: text/vnd.tiddlywiki
+
+! From RNNs to CNNs
+Recursive neural networks are a special type of trees. Recursive NN require a parse tree, which is in some way suboptimal because we have separate objective functions that need to find a good parse tree and then apply NN architecture. Ideally we want only raw input and perform a end 2 end learning.
+
+Recurrent NN could do that but fails to capture specific phrases without prefix context (which always modifies our hidden representation) and often capture too much of last words in final vector (in standard RNN, which forgets).
+
+RNN can only get compositional vectors for grammatical phrases. We can instead use CNN to compute every possible phrase. This method is not very linguistically or cognitively plausible but does not introduce much noise. 
+
+! Architecture in [[Kim (2014)|Convolutional Neural Networks for Sentence Classification]]
+!! Conv
+We can use the first layer to compute all bigrams as a convolution over the word vectors. For each pair:
+$$
+p = \tanh\left(W\left[\begin{array}{c} x \\ y \end{array}\right]+b\right)
+$$
+
+Here we are doing more matrix operations than in RNNs, but we can parallelize them. With a softmax classifier on top of this vector and propagate down to all the phrases.
+
+A convolution filter $w\in\mathbb R^{hk}$ goes over $h$ words. Then the value of the neuron is:
+$$
+c_i = f(w^\top x_{i:i+h-1}+b)
+$$
+
+The resulting feature map: $c=[c_1, \cdots, c_{n-h+1}]$. We use zero-padding for short sentense, and for very long sentenses, we can do pooling.
+
+!! [[Pooling Layer]]
+Here we introduce the max-over-time pooling. Pooled single number: $\hat c = \max\{\mathbf c\}$. To have more features we can use different window sizes and multiple weights. 
+
+!! [[Dropout Layer]]
+We randomly mask/dropout/set to 0 some of the feature weights $z$. First create masking vector $r$ of Bernoulli random variables with probability $p$ of being 1. And delete some of our feature $z$:
+$$
+y = softmax(W^{(S)}(r\circ z)+b)
+$$
+The idea behind this is we can prevent co-adaptation. If the model is too powerful, we can learn very specific feature constellations. At test time, there is no dropout
+
+!! Regularization
+Constrain $l_2$ norms of weight vectors of each class (row in softmax weight $W^{(S)}$ to fixed number $s$.
+
+!! Details and Results
+The hyperparameters chosen are:
+
+* ReLU
+* window filter size: 3-5
+* each filter size has 100 feature maps
+* dropout p=0.5
+* L2 constraint s for rows of softmax s=3
+* mini batch size for SGD training: 50
+* word vectors: pre-training with word2vec, k=300
+
+! Similarity between Recursive NN to CNN
+* We can set stride size to make CNN word features never overlap, which gives a similar structure as RNN. And to use weighted average pooling instead of max pooling to make every child node contribute to the parent.
+* We can tie weights of filters inside vs across different layers in CNN
+* Other differences are CNN have multiple filters, and max-pooling.
+* In RNN we use an input specific tree.
+
+Computational trade-off.

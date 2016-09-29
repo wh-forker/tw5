@@ -1,0 +1,14 @@
+created: 20160519092048382
+modified: 20160519093837666
+tags: [[NLP Datasets]]
+title: Sentense Classification Datasets
+type: text/vnd.tiddlywiki
+
+* [[''MR'': sentence polarity dataset|http://www.cs.cornell.edu/people/pabo/movie-review-data/]], altogether 12662 sent.
+* [[''Subj'': Subjectivity dataset|http://www.cs.cornell.edu/people/pabo/movie-review-data/]], 10000 sent., subject part of ''MR''.
+* [[''SST'': Stanford Sentiment Treebank|http://nlp.stanford.edu/sentiment/treebank.html]], 9645 sent. Small but well organized with detailed structure.
+* [[''TREC'': Question classification dataset|http://cogcomp.cs.illinois.edu/Data/QA/QC/]], 15500 sent. (?), if overlapped, use the last one.
+* [[''CR'': Customer review dataset|https://www.cs.uic.edu/~liub/FBS/sentiment-analysis.html]], see Data Sets section.
+* [[''MPQA'': Opinion polarity dataset|http://mpqa.cs.pitt.edu/corpora/mpqa_corpus/]], 535 articles.
+* [[''Opi'': Opinosis Dataset|https://archive.ics.uci.edu/ml/datasets/Opinosis+Opinion+%26frasl%3B+Review]] 51 topics with each 100 sent., which comprises sentences extracted from user reviews on a given topic, e.g. "sound quality of ipod nano". Author's homepage won't work, pointing to UCI site.
+* [[''Irony''|https://github.com/bwallace/ACL-2014-irony]] 16,006 sent. from reddit.

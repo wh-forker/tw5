@@ -1,0 +1,38 @@
+created: 20150420121821992
+modified: 20150428074141245
+tags: [[Voice Conversion]]
+title: GMM for VC
+type: text/vnd.tiddlywiki
+
+The advantage of GMM-based technique is that it enables the continuous mapping of acoustic features between speakers on the basis of ''soft clustered conversion functions''. 
+
+GMM-based statistical mapping methods have improved the performance of VC to a great extent. Sylianou et al proposed a conversion method with Gaussian mixure that realizes continuous mapping based on soft clustering as follows:
+$$
+\hat y_t = \sum_{m=1}^Mw_{m,t}^{(x)}(A_mx_t+b_m).
+$$
+GMM models the densities of source cepstral vectors or joint cepstral vectors, but the map is frame-to frame thus cannot take account of the contextual information.
+
+! JDGMM
+GMM is employed as the generative model to describe the distribution of the joint spectral feature space. The distribution of the GMM is defined as
+$$
+P(v_t) = \sum_{m=1}^M\alpha_mN(v_t;\mu_m^{(v)}, \Sigma_m^{(v)}), \sum_{m=1}^M\alpha_m=1,
+$$
+The covariancea and cross-diagonal covs are diagonal, these matrices are suitable for modeling the mel-cepstra with weak inter-dimensional correlations.
+
+At the conversion stage, the conditional distribution is
+$$
+P(y_t|x_t,\lambda^{(v)}) = \sum_{m=1}^M\beta_{m, t}N(y_t;\mu_{m, t}^{(y|x)},\Sigma_m^{(y|x)}),
+$$
+
+!!! Problems with GMM
+GMM-based models suffer from overfitting and oversmoothing.
+
+* overfitting: using relatively small dataset but overly complex model very likely leads to overfitting.
+* oversmoothing: the converted spectra tend to be very smooth as a result of the averaging nature of GMM. Some details in the spectra are lost.
+* piecewise linear
+* local discontinuity [Toda et al. 2007]
+* Source feature clustering because of low inter-speaker covariance. Which can make the sound muffled due to lower variance in converted voice.
+* delta and delta2 are not good contextual (dynamic) information.
+
+
+To build the model, parallel utterances are required for training. Recording of the two speakers are first aligned with DTW (or dynamic programming) and then an F0 transformation is used for the excitation features.

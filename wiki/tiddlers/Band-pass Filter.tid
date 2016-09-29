@@ -1,0 +1,7 @@
+created: 20141016055117542
+modified: 20141016055202647
+tags: [[Audio Signal Processing]]
+title: Band-pass Filter
+type: text/vnd.tiddlywiki
+
+A band-pass filter is a device that passes frequencies within a certain range and rejects (attenuates) frequencies outsides that range.

@@ -1,0 +1,24 @@
+created: 20141103134232161
+modified: 20141103135528630
+tags: clojure
+title: Transducer
+type: text/vnd.tiddlywiki
+
+Transducers promise to separate the element transformation from the actual traversal of the input data. This allows the very same transducer pipeline to be used in `reduce` (resp. the transducer specific variant `transduce`) and at the same time apply the exact same transformation logic to asynchronous channels as provided by `core.async`.
+
+Just as well we could create a traditional lazy sequence from the transducer. The promise is to provide the laziness we know from sequences, but save the cons cells created in each step of the transformation pipeline. This is more efficient and reduces the load on the garbage collector.
+
+Do transducer deliver on that promise?
+
+Following is an example of a transducer:
+
+```clojure
+(defn neighbourhood
+  [n]
+  (list (dec n) n (inc n)))
+  
+(def example-t
+  (comp
+    (mapcat neighbourhood)
+    (map str))
+```

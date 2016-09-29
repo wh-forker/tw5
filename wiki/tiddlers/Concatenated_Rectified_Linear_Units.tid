@@ -1,0 +1,18 @@
+created: 20160630125522315
+modified: 20160703121930307
+tags: [[ConvNet Layers]]
+title: Concatenated Rectified Linear Units
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1603.05201]]
+
+''Hypothesis'': the lower convolution layers learn redundant filters to extract both positive and negative phase information of an input signal. 
+
+''Fact'': The first few conv layers of a deep CNN manage to capture both negative and positive phase information through learning pairs or groups of negatively correlated filters. So there exists a redundancy among the filters from the lower conv layers.
+
+''pairing filter'': $\bar\phi_i = \text{argmin}_{\phi_j}\langle\phi_i, \phi_j\rangle$ where $\phi_j\in\Phi$
+
+; CReLU denoted by $\rho_c:\mathbb R\rightarrow \mathbb R^2$
+: $\forall x\in \mathbb R, \rho_c(x) \triangleq ([x]_+, [-x]_+)$
+
+Conv layers with CReLU are easier to reconstruct inputs.

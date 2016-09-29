@@ -1,0 +1,9 @@
+created: 20150114062559893
+modified: 20150114062710428
+tags: PRML
+title: 10.1 Variational Inference
+type: text/vnd.tiddlywiki
+
+$$
+\ln q_j^*(\mathbf Z_j) = \mathbb E_{i\ne j}[\ln p(\mathbf X, \mathbf Z)]+C
+$$

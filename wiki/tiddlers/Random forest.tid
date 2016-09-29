@@ -1,0 +1,23 @@
+created: 20150118141207236
+modified: 20150118141231270
+tags: Algorithms
+title: Random forest
+type: text/vnd.tiddlywiki
+
+''Goal'': predict label $y_*$ for test data $x_*$
+Random forest:
+
+* Ensemble of randomized decision trees
+* sota real world prediction: robust and paralizable
+
+$$
+p(y_*|x_*) = \frac{1}{M}\sum_m p(y_*|x_*,\mathcal T_m, X, Y)
+$$
+
+* Breiman;s RF: Bagging + subsamples
+*Extremely RF: random $k$ sample and choose the best split
+** no bagging
+** labels do not guide ERT-1
+
+Pros: fast, no overfitting
+Cons: not possible to train incrementally

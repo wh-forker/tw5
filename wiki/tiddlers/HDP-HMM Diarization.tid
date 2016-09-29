@@ -1,0 +1,22 @@
+created: 20141023052025689
+modified: 20141023060143936
+tags: Speech Bayesian
+title: HDP-HMM Diarization
+type: text/vnd.tiddlywiki
+
+! Intro
+!! Model
+HDP-HMM inadequately models the temporal persistence of states, in which the Bayesian bias toward simpler models is insufficient to prevent the HDP-HMM from giving high posterior probability to models with unrealistically rapid switching.
+
+* Transition distribution
+* Emmision distribution
+** the conditional distribution of observations given states
+** high performance HMMs generally use finite Gaussian mixtures as emission distributions
+** nonparametric, used Dirichlet
+
+* Computation
+** classical: forward-backward
+** nonparametric: Gibbs sampler
+
+!! The speaker diarization task
+[[Speaker diarization literatures]]

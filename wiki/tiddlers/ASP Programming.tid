@@ -1,0 +1,21 @@
+created: 20141016115951111
+modified: 20141016120642957
+tags: [[Audio Signal Processing]] [[Open Courses]]
+title: ASP Programming
+type: text/vnd.tiddlywiki
+
+Submission Password: DvQMF9N8BK
+
+The programming assignment environment uses `python2`. So first activate [[Python virtualenv]]
+
+```
+source ~/virtualenvs/python2/bin/activate
+```
+Then enter `ipython2`, under interactive command:
+
+```
+In [1]: import A3Part1
+
+In [2]: 
+```
+Finally, submit with `python submitA3.py`.

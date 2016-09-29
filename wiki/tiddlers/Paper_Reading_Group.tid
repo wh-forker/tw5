@@ -1,0 +1,73 @@
+created: 20160531030419123
+modified: 20160920070114604
+tags: Papers [[Deep Learning Bib]]
+title: Paper Reading Group
+type: text/vnd.tiddlywiki
+
+! MI Team reading schedule
+!! Guidelines
+
+# The lecturer is encouraged to pick his own material, even beyond the list or our recent study fields, as long as he finds his topic more helpful to the group. If so, create your own entry in the list beforehand.
+# The lecturer is suggested to upload the slides to [[this git repo|https://g.hz.netease.com/mi-tools/mi-course/tree/dev/seminar]] before seminar. 
+# The scribe should keep the notes of the seminar for later reference. A nice script format is `.pdf` or `.html`. Choosing between LaTeX/Markdown as the markup language according to the lecture content is strongly recommended. You may download the LaTeX template from [[here|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/template.zip]].
+
+!! Rotation
+|!Lecturer |!Scribe |
+|郭贺 |杨旭东 |
+|张晓博 |陈昊 |
+|侯章军 |李一夫 |
+|周立峰 |郭贺 |
+|杨旭东 |张晓博 |
+|陈昊 |侯章军 |
+|刘丽娟 |周立峰 |
+|李一夫 |刘丽娟 |
+
+!! Listed papers
+
+|!Subject |!Title |!Conf |!Lecturer |!(Planned) Date |!Materials |
+|Theory |[[Understanding Deep Convolutional Networks|Understanding Deep ConvNets (Scattering Repr)]] | PTA 2016| xiaobo| 7/26/2016||
+|Theory |[[Provable Bounds for Learning Some Deep Representations|http://arxiv.org/abs/1310.6343]] | ICML 2014||||
+|Theory |[[Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift|Batch Normalization]] | JMLR 2015| 李一夫|  8/2/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/16.8.2Batch_Normalization.pptx]]|
+|Theory |[[Rethinking the Inception Architecture for Computer Vision (Inception-v3)|http://arxiv.org/abs/1512.00567]] |ArXiv 12/2015| 刘丽娟| 8/23/2016|[[slides]]|
+|Theory |[[Understanding and Improving Convolutional Neural Networks via Concatenated Rectified Linear Units|Concatenated Rectified Linear Units]] | ICML 2016||||
+|Theory |[[Noisy Activation Functions|http://arxiv.org/abs/1603.00391]] | ArXiv 3/2016||||
+|Theory |[[Large-Margin Softmax Loss for Convolutional Neural Networks|http://jmlr.org/proceedings/papers/v48/liud16.pdf]] | ICML 2016||||
+|Theory |[[Layer Normalization|https://arxiv.org/abs/1607.06450]]| ArXiv 7/2016||||
+|Tricks |[[Efficient BackProp|http://yann.lecun.com/exdb/publis/pdf/lecun-98b.pdf]]| 1992||||
+|Tricks |[[Mollifying Networks]]| ArXiv 8/2016||||
+|Others |[[Gradient-based Hyperparameter Optimization through Reversible Learning]] | ICML 2015|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/hypergrad-talk.pdf]]|
+|Others |[[Synthesized Classifiers for Zero-Shot Learning|https://arxiv.org/abs/1603.00550]] | CVPR 2016|||[[vgg slides]]|
+|Others |[[Kernel Mean Embedding of Distributions: A Review and Beyonds|http://arxiv.org/abs/1605.09522]] | ArXiv 5/2016| 陈昊| 7/19/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/20160719_kernel_tricks.pdf]]|
+|Others |[[Escaping From Saddle Points - Online Stochastic Gradient for Tensor Decomposition|http://arxiv.org/abs/1503.02101]] | ICML 2016||||
+|Vision |[[Deep Face Recognition|http://www.robots.ox.ac.uk:5000/~vgg/publications/2015/Parkhi15/parkhi15.pdf]]  [[FaceNet: A Unified Embedding for Face Recognition and Clustering|http://120.52.73.12/www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Schroff_FaceNet_A_Unified_2015_CVPR_paper.pdf]]  [[Deeply learned face representations are sparse, selective, and robust|http://120.52.73.11/www.cv-foundation.org/openaccess/content_cvpr_2015/papers/Sun_Deeply_Learned_Face_2015_CVPR_paper.pdf]] | BMVC 2015| 杨旭东| 6/21/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/85ffa6afd1cc7c897e0ab7b07020228a787d3ef8/seminar/20160621_Face_Recognition.pptx]]  [[notes]]|
+|Vision |[[Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks|Faster R-CNN]] | NIPS 2015| 郭贺| 7/5/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/Object_Detection.pptx]] [[notes]] |
+|Vision |[[Going Deeper With Convolutions (GoogLeNet)|GoogLeNet]] | CVPR 2015| xiaobo| 6/7/2016|[[notes|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/lecture-notes/seminar1.pdf]]|
+|Vision |[[Augmenting Supervised Neural Networks with Unsupervised Objectives for Large-scale Image Classification|http://jmlr.org/proceedings/papers/v48/zhangc16.pdf]] | ICML 2016||||
+|Vision |[[Learning End-to-end Video Classification with Rank-Pooling|http://jmlr.org/proceedings/papers/v48/fernando16.pdf]] | ICML 2016||||
+|Vision |[[Bottom-Up and Top-Down Reasoning With Hierarchical Rectified Gaussians|https://arxiv.org/abs/1507.05699]] | CVPR 2016|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/RG21Jul16_VGG.pdf]]|
+|Vision |[[DenseCap: Fully Convolutional Localization Networks for Dense Captioning|http://cs.stanford.edu/people/karpathy/densecap/]] | CVPR 2016||||
+|Vision |[[G-CNN: an Iterative Grid Based Object Detector|http://arxiv.org/abs/1512.07729]] | CVPR 2016|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/GCNN.pdf]]|
+|Vision |[[Learning Deep Features for Discriminative Localization|https://github.com/jazzsaxmafia/Weakly_detector]] | CVPR 2016| 郭贺| 5/31/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/16.5.31.guohe.pptx]] [[notes]]|
+|Vision |[[NetVLAD: CNN Architecture for Weakly Supervised Place Recognition|http://arxiv.org/abs/1511.07247]] | CVPR 2016|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/NetVLAD.pptx]]|
+|Vision |[[Newtonian Scene Understanding: Unfolding the Dynamics of Objects in Static Images|http://arxiv.org/abs/1511.04048]] | CVPR 2016|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/RG21Jul16_VGG.pdf]]|
+|Vision |[[Synthetic Data for Text Localisation in Natural Images]]| CVPR 2016| 陈昊| 6/14/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/20160614_Reading_Text_in_Natural_Images.pptx]] [[notes|Synthetic Data for Text Localisation in Natural Images]]|
+|Vision |[[Identity Mappings in Deep Residual Networks|https://arxiv.org/abs/1603.05027]] | ArXiv 7/2016||||
+|Vision |[[T-CNN: Tubelets with Convolutional Neural Networks|http://gitxiv.com/posts/do59FBaD68smgdpF6/t-cnn-tubelets-with-convolutional-neural-networks]] | ArXiv 5/2016||||
+|NLP |[[Distributed Representations of Words and Phrases and their Compositionality(word2vec)|Word2Vec]] | NIPS 2013| 周立峰| 9/27/2016||
+|NLP |[[Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling|https://arxiv.org/abs/1412.3555]] | NIPS 2014| xiaobo| 8/30/2016||
+|NLP |[[Convolutional Neural Networks for Sentence Classification]] | EMNLP 2014| 周立峰| 7/5/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/Convolutional-Neural-networks-for-sentence-classification.pptx]] [[notes]]|
+|NLP |[[A Neural Conversational Model|https://github.com/macournoyer/neuralconvo]] | ICML 2015||||
+|NLP |[[Virtual Adversarial Training for Semi-Supervised Text Classification|http://arxiv.org/abs/1605.07725]] | ArXiv 5/2016| 周立峰| 8/9/2016||
+|Vision |[[Recent Advances in Convolutional Neural Networks|http://arxiv.org/abs/1512.07108]] | ArXiv 12/2015| 郭贺| 8/16/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/blob/dev/seminar/2016_8_16_CNN_survey_gh.pptx]] [[notes]]|
+|RNN |[[LSTM: A Search Space Odyssey|http://arxiv.org/abs/1503.04069]]| ArXiv 3/2015| 侯章军| 6/28/2016 (posponded to 7/5)|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/20160705_lstm.pptx]] [[notes|Long short-term memory]]|
+|RNN |[[Zoneout: Regularizing RNNs by Randomly Preserving Hidden Activations]] | ArXiv 6/2016||||
+|RNN |[[Learning to learn by gradient descent by gradient descent|https://arxiv.org/abs/1606.04474]] | ArXiv 6/2016||||
+|RL |[[Action-Conditional Video Prediction using Deep Networks in Atari Games|http://arxiv.org/abs/1507.08750]] | NIPS 2015||||
+|RL |[[Asynchronous Methods for Deep Reinforcement Learning|https://arxiv.org/abs/1602.01783]] | ICML 2016||||
+|RL |[[Value Iteration Networks|http://arxiv.org/abs/1602.02867]] | ICML 2016||||
+|DL Applications |[[Unsupervised Deep Embedding for Clustering Analysis|http://jmlr.org/proceedings/papers/v48/xieb16.pdf]] | ICML 2016||||
+|DL Applications |[[Learning Convolutional Neural Networks for Graphs|http://jmlr.org/proceedings/papers/v48/niepert16.pdf]] | ICML 2016|  |||
+|DL Applications |[[Deep Speech 2 : End-to-End Speech Recognition in English and Mandarin |http://jmlr.org/proceedings/papers/v48/amodei16.pdf]] | ICML 2016||||
+
+!! Other talks
+# 6/21/2016, Boosting, 李一夫, [[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/lecture-notes/20160621.pptx]] [[notes|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/lecture-notes/seminar4.pdf]]

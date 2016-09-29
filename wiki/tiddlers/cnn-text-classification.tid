@@ -1,0 +1,38 @@
+created: 20160520062323733
+modified: 20160524140444501
+tags: [[CNN for NLP]] TensorFlow
+title: cnn-text-classification
+type: text/vnd.tiddlywiki
+
+[[blog|http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/]]
+
+! Tweaks
+
+* Learn embeddings from scratch, no pre-trained word2vec, and no static channel.
+* L2 norm constraints left out
+
+! Implementation
+!! Inputs
+
+```python
+# Placeholders for input, output and dropout
+self.input_x = tf.placeholder(tf.int32, [None, sequence_length], name="input_x")
+self.input_y = tf.placeholder(tf.float32, [None, num_classes], name="input_y")
+self.dropout_keep_prob = tf.placeholder(tf.float32, name="dropout_keep_prob")
+```
+
+* `sequence_length` - truncanated to 59.
+
+!! Embedding layer
+has input size `[vocabulary_size, embedding_size]`. To utilize `conv2d`, we have to add 1 dim of pure 1s to the embedding output.
+
+```python
+with tf.device('/cpu:0'), tf.name_scope("embedding"):
+    W = tf.Variable(
+        tf.random_uniform([vocab_size, embedding_size], -1.0, 1.0),
+        name="W")
+    self.embedded_chars = tf.nn.embedding_lookup(W, self.input_x)
+    self.embedded_chars_expanded = tf.expand_dims(self.embedded_chars, -1)
+```
+
+`W` is learned during training.

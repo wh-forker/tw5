@@ -1,0 +1,15 @@
+created: 20150708143911858
+modified: 20150807124407278
+tags: Statistics
+title: Factor Analysis
+type: text/vnd.tiddlywiki
+
+Factor analysis is the most common example of latent variable model, using a linear function as the mapping.
+$$
+t = Wx + \mu + \epsilon
+$$
+Conventionally, the latent variables are defined to be independent and Gaussian with unit variance, so $x\sim N(0, I)$. The noise model is also Gaussian such that $\epsilon\sim N(0, \Psi)$. As a result, $t\sim N(\mu, \Psi+WW^\top)$.
+
+The key motivation for this model is that, because of the diagnality of $\Psi$, the observed variables $t$ are conditionally independent given the latent variables, or factors, $x$. The intention is that the dependencies between the data variables $t$ are explained by a smaller number of latent variables $x$, while $\epsilon$ represents variance unique to each observation variable. This is in contrast to conventional PCA, which effectively treats both variance and covariance identically.
+
+There is no closed-form analytic solution for $W$ and $\Psi$, and so their values must be determined by iterative procedures.

@@ -1,0 +1,14 @@
+created: 20160822072835753
+modified: 20160823053149325
+tags: [[Deep Learning Tricks]]
+title: Neural Nets Optimizations
+type: text/vnd.tiddlywiki
+
+! Tricks
+# [[Batch Normalization]]: addressing the problem of the internal covariate shift
+# learning with a curriculum (Bengio et al., 2009)
+# training with diffusion (Mobahi, 2016) - a form of continuation method
+# noisy activation functions improve performance on a wide variety of tasks (Gulcehre et al., 2016)
+# [[Mollifying Networks]]: 
+
+Impact of noise injection (Neelakantan et al., 2015)

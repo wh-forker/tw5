@@ -1,0 +1,33 @@
+created: 20150106115444441
+modified: 20150106120002656
+tags: Statistics
+title: Rao-Blackwell Theorem
+type: text/vnd.tiddlywiki
+
+! Definitions
+A ''Rao–Blackwell estimator'' $\delta_1(X)$ of an unobservable quantity $\theta$ is the conditional expected value $E(\delta(X)\mid T(X))$ of some estimator $\delta(X)$ given a sufficient statistic $T(X)$. Call $\delta(X)$ the "original estimator" and $\delta_1(X)$ the "improved estimator". It is important that the improved estimator be observable, i.e. that it not depend on $\theta$. Generally, the conditional expected value of one function of these data given another function of these data does depend on $\theta$, but the very definition of sufficiency given above entails that this one does not.
+
+! The theorem
+!! Mean-squared-error version
+One case of Rao–Blackwell theorem states:
+
+<<<
+The mean squared error of the Rao–Blackwell estimator does not exceed that of the original estimator.
+<<<
+In other words
+$$
+\operatorname{E}((\delta_1(X)-\theta)^2)\leq 
+\operatorname{E}((\delta(X)-\theta)^2).\,\!
+$$
+The essential tools of the proof besides the definition above are the law of total expectation and the fact that for any random variable $Y$, $E(Y^2)$ cannot be less than $[E(Y)]^2$. That inequality is a case of Jensen's inequality, although it may also be shown to follow instantly from the frequently mentioned fact that
+$$
+0 \leq \operatorname{Var}(Y) = \operatorname{E}((Y-\operatorname{E}(Y))^2) = 
+\operatorname{E}(Y^2)-(\operatorname{E}(Y))^2.\,\!
+$$
+
+!! Convex loss generalization
+The more general version of the Rao–Blackwell theorem speaks of the "expected loss" or risk function:
+$$
+\operatorname{E}(L(\delta_1(X)))\leq \operatorname{E}(L(\delta(X)))\,\!
+$$
+where the "loss function" $L$ may be any convex function. For the proof of the more general version, Jensen's inequality cannot be dispensed with.

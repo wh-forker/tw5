@@ -1,0 +1,56 @@
+created: 20160614012853560
+modified: 20160614093651187
+tags: [[CNN for OCR]]
+title: Synthetic Data for Text Localisation in Natural Images
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1604.06646]]
+
+! Backgroud
+We call the image patches containing single character proposals. The pipelines generating char proposal are suboptimal. They combines genral purpose features such as HoG, EdgeBoxes and Aggregate Channel Features. The proposals are then classified with e.g. CNN as specific letters/words.
+
+!! [[Object Detection With CNNs]]
+
+As in R-CNN, [[Jaderberg et al.'s text spotting method|Reading Text in the Wild with CNN]] also uses a similar pipeline for detection. 
+
+The performance of the detection pipeline becomes the new bottleneck of text spotting: recognition accuracy for correctly cropped words is 98% whereas the end-to-end text spotting F-score is only 69% mainly due to incorrect and missed word region proposals. Also, they are slow and inelegant.
+
+! Synthetic datasets
+Synthetic datasets with character-level region labels are very suitable for training detectors. Since we don't care natural image that much
+
+! Fully-Convolutional Regression Network
+!! Region proposals
+Let $x$ denote an image, the most common approach for CNN-based detection is to propose a number of image regions $R$ that may contain the target object, and use a CNN $c = \phi(crop_R(x)) \in \{0, 1\}$ to classify. This approach, popularized by R-CNN, is considerably slow since it evaluates the CNN thousands of times per image.
+
+An alternative faster way is to construct a fixed field of predictors $(c, \mathbf p) = \phi_{uv}(x)$, each of which specialises in predicting the presence $c\in\mathbb R$ and pose $\mathbf p = (x-u, y-v, w, h)$ of an object around a specific image location $(u, v)$. Here the pose parameters $(x,y)$ and $(w, h)$ denote respectively the location and size of a bounding box tightly enclosing the object. This can be implemented by Implicit Shape Models (ISM) and Hough voting. There a predictor $\phi_{uv}$ looks at a local image patch, centered at $(u,v)$, and tries to predict whether there is an object around $(u, v)$, and where the object is located relative to it.
+
+To create a net which performs prediction densely, at every image location. Makes prediction about a class label (text/not text) and the parameters of a bounding box enclosing the word cnetered at that location (idea borrowed from You Only Look Once (YOLO) of Redmon et al.). 
+
+The differences:
+
+# ISM and Hough voting aggregate individual predictions across the image by voting while YOLO uses individual predictions directly. This can accelerate detections.
+# Hough voting predictors $\phi_{uv}(x)$ are local and translation invariant, whereas YOLO pools evidence from the whole image and uses different functions at different locations.
+
+!! FCRN
+''Single-scale features.'' Structure similar to VGG is used, only smaller. 9 CONVs each followed by a ReLU, and occasionally by a POOL. Max pooling is performed over 2x2 windows with a stride of 2 samples.
+
+With 4 downsampling layers, the stride of these dense features is 16px, each containing 512 channels $\phi_{uv}^f(x)$.
+
+''Bounding box prediction.'' The dense text predictors $\phi_{uv}(x) = \phi_{uv}^r\circ\phi^f(x)$. Where $\phi_{uv}^r$ is a (C-7-5x5) linear filter, regressing the object presence confidence c, and up to six object pose parameters $\mathbf p = (x-u, y-v, w, h, \cos\theta, \sin\theta)$ where $\theta$ is the bounding box rotation.
+
+To constrain one word per cell, a denser predictor may be needed.
+
+''Multi-scale detection.'' To detect larger text, input image is scaled down by factors $\{1, 1/2, 1/4, 1/8\}$. The largest scoring proposal over all overlapped detections is selected.
+
+''Training loss.'' squared loss for each output. If a cell does not contain a ground-truth, loss ignores all parameters but $c$.
+
+''Comparing to YOLO.'' YOLO imposes strong spatial constraints on bounding box predictions since each grid cell only predicts two boxes and can only have one class. This spatial constraint limits the number of nearby objects that our model can predict. Our model struggles with small objects that appear in groups, such as flocks of birds.
+
+YOLO has its 90% parameters in the last two fully-connected layers. YOLO retains image size. This makes YOLO harder to train and less efficient.
+
+! Experiment
+Trained with 800,000 images from SynthText in the Wild dataset. Net is optimized with SGD with batch-normalization after each convolutional layer except the last one. Batch size is 16, momentum 0.9, weight-decay $5^{-4}$. Initial learning rate $10^{-4}$ and reduced to $10^{-5}$ when the training loss plateaus.
+
+As only a small number of grid-cells contain text, non-text probability error term is weighed down by multiplying 0.01 at the begining, and gradually increased to 1. Or all result collapse to zero due to class imbalance.
+
+The result is best on IC3 with high-recall profile. Not as good as [[Jaderberg 2015|Reading Text in the Wild with CNN]] on SVT but is 45 times faster.

@@ -1,0 +1,35 @@
+created: 20151124072333190
+modified: 20160705115426079
+tags: [[Deep Learning]]
+title: Fast-RCNN
+type: text/vnd.tiddlywiki
+
+[[ArXiv|http://arxiv.org/abs/1504.08083]]
+
+This is an exciting model for detection allowing fine-tuning from previous networks.
+
+! Training
+!! Multi-task loss
+$$
+L(p, u, t^u, v) = L_{cls}(p, u)+\lambda[u\ge1]L_{loc}(t^u, v)
+$$
+where $L_{cls}(p, u)=-\log p_u$ and 
+$$
+L_{loc}(t^u, v) = \sum_{i\in\{x, y, w, h\}}\text{smooth}_{L_1}(t_i^u-v_i),
+$$
+where
+$$
+\text{smooth}_{L_1} = \left\{\begin{array}{rr}
+0.5x^2 & |x| < 1\\
+|x|-0.5 & \text{otherwise,}
+\end{array}\right.
+$$
+
+!! Mini-batch sampling
+2 images, 64 RoIs each. 25% of them have at least intersection over union (IoU) with gt, others have $[0.1, 0.5)$.
+
+! Region Pooling SPP-Net
+unify the conv feature map dimensions by convolutions.
+
+Fast-RCNN use ROI pooling to unify the dimensions and replaces SVM with softmax. Use bbox regressor to refine the regions.
+

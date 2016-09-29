@@ -1,0 +1,19 @@
+created: 20141010095955800
+modified: 20141010100248770
+tags: Statistics
+title: Poisson Distribution
+type: text/vnd.tiddlywiki
+
+A discrete random variable $X$ is said to have a Poisson distribution with parameter $\lambda > 0$, if, for $k = 0, 1, 2, \ldots$, the probability mass function of $X$ is given by:
+$
+\!f(k; \lambda)= \Pr(X=k)= \frac{\lambda^k e^{-\lambda}}{k!},
+$
+where
+
+* $e$ is Euler's number ($e = 2.71828\dots$)
+* $k!$ is the factorial of $k$.
+The positive real number $\lambda$ is equal to the expected value of $X$ and also to its variance
+$$
+\lambda=\operatorname{E}(X)=\operatorname{Var}(X).
+$$
+The Poisson distribution can be applied to systems with a large number of possible events, each of which is rare. How many such events will occur during a fixed time interval? Under the right circumstances, this is a random number with a Poisson distribution.

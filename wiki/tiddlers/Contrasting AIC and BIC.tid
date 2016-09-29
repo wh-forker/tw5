@@ -1,0 +1,40 @@
+created: 20141118053811927
+modified: 20160630092458803
+tags: Blog [[Information Theory]]
+title: Contrasting AIC and BIC
+type: text/vnd.tiddlywiki
+
+! Criteria
+!! BIC
+[[BIC Changepoint]]
+
+!! A Heuristic Derivation of BIC
+
+!! AIC
+[[Akaike's information criterion]]
+
+Each of these simple criteria involves choosing the model with the best penalized log-likelihood (i.e., the highest value of $l−A_np$ where $l$ is the log-likelihood, $A_n$ is some constant
+or some function of the sample size $n$, and $p$ is the number of parameters in the model). For
+historical reasons, instead of finding the highest value of $l$ minus a penalty, this is sometimes
+expressed as finding the lowest value of $−2l$ plus a penalty, i.e.,
+$$
+-2l+A_np.
+$$
+For AIC, $A_n = 2$ and for BIC, $A_n = \ln(n)$.
+
+! Comparing
+In some simple cases, the comparison of two models using information criteria can be viewed as equivalent to a likelihood ratio test, with different models representing different [[alpha levels|Alpha level]] (i.e., different emphases on sensitivity or specificity; Lin & Dayton 1997). AIC or BIC could be preferable, depending on sample size and on the relative importance one assigns to sensitivity versus specificity.
+
+An alternative view the lack of consistent selection in AIC is that it attempts to find the model with good performance in some predictive sense. If $n$ is small, then we may have to choose a smaller model to get more reliable coeffecient estimates. However, if $n$ is large, then standard errors will be small and one can afford to use a rich model. Thus from an AIC perspective and for large $n$, Type II error (an underfit model) is considered worse than a Type I error (overfit model). In contrast, with BIC we are willing to take a higher risk of choosing too small a model, to improve our probability of choosing the true model. BIC considers Type I and Type II errors to be about equally undesirable while AIC considers Type II errors to be worse unless $n$ is very small.
+
+!! KL based comparison
+Both selection criteria can be derived, and applied, without assuming the true model is in the model set. However, the defining characteristic of BIC (i.e., what is it trying to do) is only evident asymptotically in relation to the concept of a ''quasi-true model''. In contrast AIC
+seeks to select only a best model at a given sample size; “best” is in relation to an expected estimated K-L criterion which serves to recognize a bias-variance trade-off in model selection. For AIC, “best” varies with $n$.For BIC, its “best,” i.e., the quasi-true model, does not depend on $n$. However, on average the BIC-selected model approaches its target “best” model from below in terms of the model ordering imposed here by the $I(f,g_r)$. How researchers assess AIC and BIC performance depends on the performance criteria they adopt (true model or best model), the assumptions they make (usually only implicitly, as in simulation studies) about the underlying K-L values, $I(f,g_r)$, $r=1,\dots,R$, and the sample sizes considered. Failure to properly recognize all of these factors and issues has led to much confusion in the model selection literature
+about AIC versus BIC.
+
+!! Discussion
+Most of the simulations shown here illustrated similar principles. AIC and similar criteria often risk choosing too large a model, while BIC and similar criteria often risk choosing too small a model. For small n, the most likely error is underfitting, so the criteria with lower underfitting rates, such as AIC, often seem better. For larger $n$, the most likely error is overfitting, so more parsimonious criteria, such as BIC, often seem better. Unfortunately, the point at which the $n$ becomes “large” depends on numerous aspects of the situation. In simulations, the relative performance of the ICs at a given $n$ depended on the nature of the “true model” (the distribution from which the data came). This finding is unhelpful for real data, where the truth is unknown. It may be more helpful to think about which aspects of performance (e.g. sensitivity or specificity) are most important in a given situation.
+
+Underfitting and overfitting could be defined as underestimating and overestimating the true number of classes or factors. For observed data for which models are only approximations to reality, more care is required in considering what it means for a model to be too small, correct, or too large (Burnham & Anderson, 2002, p. 32) Performance can be expressed in terms of a quantitative criterion such as MSE, avoiding the use of a “correct” size, but this may favor AIC-like over BIC-like criteria.
+
+There is no obvious conclusion about whether or when to use ICs, instead of some other approach. Kadane and Lazar (2004) suggested that ICs might be used to “deselect” very poor models (p. 279), leaving a few good ones for further study, rather than indicating a single best model. One could use the ICs to suggest a range of model sizes to consider; for example, one could use the BIC-preferred model as a minimum size and the AIC-preferred model as a maximum, and make further choices based on other kinds of fit criteria, on theory, or on subjective inspection of the results (Collins & Lanza 2010). If BIC indicates that a model is too small, it may well be too small (or else fit poorly for some other reason). If AIC indicates that a model is too large, it may well be too large for the data to warrant. Beyond this, theory and judgment are needed.

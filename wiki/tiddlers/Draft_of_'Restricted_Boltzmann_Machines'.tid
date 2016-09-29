@@ -1,0 +1,27 @@
+created: 20150514071547700
+draft.of: Restricted Boltzmann Machines
+draft.title: Restricted Boltzmann Machines
+modified: 20160929022906525
+tags: [[Deep Learning]]
+title: Draft of 'Restricted Boltzmann Machines'
+type: text/vnd.tiddlywiki
+
+RBMs can learn excellent generative models and RBM plays an important role in the training of Deep Belief Networks, as a good initialization for the FNN.
+
+! Formalization
+The RBM is a parameterized family of probability distributions over binary vectors. It defines a joint dsitribution over $v\in\{0, 1\}^{N_v}$ and $h\in\{0, 1\}^{N_h}$ via the following equation
+$$
+P(v, h) = \frac{\exp(h^\top Wv+v^\top b_v + h^\top b_h)}{Z(\theta)}
+$$
+The partition function $Z(\theta)$ is an sum of exponentially many terms and cannot be efficiently approximated to a constant multiplicative factor. The probability of the visible units is computed by marginalizing over the hidden units, also the probability of observing the data $X$, given the weights $W$:
+
+$$p(X|W) = p(v) = \frac{1}{Z(v, h)}\sum_he^{-E(v, h)}$$
+
+We can break the likelihood into 2 parts:
+$$
+\mathcal L = \ln p(v) = \ln\sum_he^{-E(v, h)}-\ln Z(v, h)
+$$
+//Clamped// ''Free Energy'' $F^c(v)$ and the standard ''Free Energy'' $F(v, h)$. First one is easy to evaluate in the RBM formalism, whereas $F(v, h)$ is computationally intractable. Knowing the $Z(v, h)$ is //like// knowing the equilibrium distribution function, and methods like RBMs appear to approximate it in some form or another.
+
+! Training
+RBMs are usually trained via Contastive Divergence. 

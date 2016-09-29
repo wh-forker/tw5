@@ -1,0 +1,69 @@
+created: 20160825062557484
+modified: 20160929020644913
+tags: Blog
+title: On Optimization in Deep Learning
+type: text/vnd.tiddlywiki
+
+There are at least exponentially many global minima for a neural net. Since permuating the nodes in one layer does not change the loss. Finding such points is not easy. Before certain techniques such as momentum came out, those nets were considered impossible to learn. 
+
+Thanks to the constantly envolving hardwares and libraries, we do not have to worry about training time //that much// at least for convnets. Empirically, the non-convexity of neural nets seems not to be an issue. In practice, SGD works pretty well in optimizing very large networks even though the problem is proved to be NP-hard. However, researchers never stop studying the loss surface of deep neural nets and searching for better optimization strategies.
+
+[[This paper|https://arxiv.org/abs/1605.07110]] has been renewed on ArXiv recently, which leads me to [[this discussion|https://news.ycombinator.com/item?id=11765111]]. Following are what I find interesting.
+
+! Saddle points
+We start from discussing saddle points, the vast majority of critical points on the error surfaces of neural networks.
+
+<<<
+Here we argue, ... that a deeper and more profound difficulty originates from the proliferation of saddle points, not local minima, especially in high dimensional problems of practical interest. Such saddle points are surrounded by high error plateaus that can dramatically slow down learning, and give the illusory impression of the existence of a local minimum.
+<<< Dauphin et al, [[Identifying and attacking the saddle point problem in high-dimensional non-convex optimization|http://arxiv.org/abs/1406.2572]]
+
+The authors introduce saddle-free Newton method which requires the estimation of Hessian. Our paper can be regarded as a confirmation of above saddle point hypothesis.
+
+<<<
+It is believed that for many problems including learning deep nets, almost all local minimum have very similar function value to the global optimum, and hence finding a local minimum is good enough.
+<<< Rong Ge,  [[Escaping from Saddle Points|http://www.offconvex.org/2016/03/22/saddlepoints/]]
+
+As the model grows deeper, local minima have loss closer to global minima. On the other hand, we do not care about global minimum because it often leads to overfitting. 
+
+Saddle points exist along the paths between local minima, most objective functions have exponentially many of those. However, first order optimization algorithms may get stuck at saddle points. Strict saddle points can be escaped and global minima can be achieved in polynomial time [[(Ge et al., 2015)|http://arxiv.org/abs/1503.02101]]. Stochastic gradient introduces noise and help to push the current point away from saddle points.
+
+Non-convex problems can have ''degenerate saddle points'', whose Hessian is p.s.d. and have 0 eigenvalues. The performance of SGD on these kind of tasks is still not well studied. 
+
+To conclude this part, AFAIK, we should care more about escaping from saddle point. And gradient based methods can do a better job than second-order methods in practice.
+
+! Spin-glass Hamiltonian
+Both papers mentioned above use ideas from statistical physics and spin-glass models.
+
+!! Hamiltonians
+Statistical physicists refer to $H_x(y)\equiv-\ln p(y|x)$ as the ''Hamiltonian'', quantifying the energy of $y$ given the parameter $x$. And $\mu\equiv -\ln p$ as ''self-information''. We can rewrite Bayes' formula as:
+
+$$
+p(y) = \sigma(-H(y)-\mu)
+$$
+
+We can see the features yield by a neural net as Hamiltonian and the softmax computes the classification probability.
+
+!! Spin-glass
+<<<
+The long-term behavior of certain neural network models are governed by the statistical mechanism of infinite-range Ising spin-glass Hamiltonians
+<<< LeCun et. al.,  [[The Loss Surfaces of Multilayer Networks, 2015|https://arxiv.org/abs/1412.0233]]
+
+In this paper, he tries to explain the optimization paradigm with spin-glass theory.
+
+A bolder hypothesis is that deep networks are spin funnels. And as the net gets larger, the funnel gets sharper. If this is true, our major concern should be to avoid over-training rather than the convexity of the network.
+
+! No poor local minima
+Finally we arrive at the paper itself. The author claims that every local minimum is a global minimum and "bad" saddle points (degenerated ones) exists for deeper nets. Thm 2.3 gives clear result on linear networks.
+
+The main result Thm 3.2 generalizes [[Choromanska et al, 2015|https://arxiv.org/abs/1412.0233]]'s idea for nonlinear network relies on 4 (seemingly strong) assumptions:
+
+# The dimensionality of the output is smaller than the input.
+# The inputs are random and decorrelated.
+# A connection in the network is activated or not is random with the same probability of success across the network. (ReLU thresholding happens randomly.)
+# The network activations are independent of the input, the weights and each other.
+
+They relax the majority of the asssumptions, which is very promising, but leave a weaker condition A1u-m and A5u-m [[(from reddit post)|https://www.reddit.com/r/MachineLearning/comments/4ktqeu/160507110_deep_learning_without_poor_local_minima/]].
+
+Even though deep learning energy landscapes appear to be roughly convex, or as this post referred to, local minimal free, a deep model has to include more engineering details to aid its convergence. Problems such as covariance shift and overfitting still have to be handled by engineering techniques.
+
+! Partition Functions and RBMs

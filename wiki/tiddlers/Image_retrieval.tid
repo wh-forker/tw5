@@ -1,0 +1,25 @@
+created: 20151125023155589
+modified: 20151127033956549
+tags: 
+title: Image retrieval
+type: text/vnd.tiddlywiki
+
+! Autoencoders
+
+[[MNIST example|https://github.com/BVLC/caffe/blob/master/examples/mnist/mnist_autoencoder.prototxt]]
+ 
+and there are several convolutional autoencoders in caffe and pylearn. However, I don't find it convincing that object level infomation can be extracted this way, considering how [[easily ConvNets can be fooled|http://www.evolvingai.org/fooling]].
+
+! Search algorithms for binary codes
+The search time on large-scale retrival database should be sub-linear in the number of examples. Hashing is widely used in this case because it's quick and require only binary data. It uses all dimension in query in contrast to tree-based algorithms.
+
+!! Linear scan in Hamming space
+Paralleling `xor`s and 1 counting's are trival in machine level. Easy speedup for multiples cores/machines, and gracefully scaling to longer code lengths.
+
+!! Semantic hashing
+Binary codes correspond to addresses in memory. 
+
+# provided the radius is small, it is quick ($\mu$s)
+# constructing the database is also fast.
+
+The deficit is in codelength scaling, which makes the Hamming ball exponentially larger. In addition, a 32-bit code requires 4Gb memory.

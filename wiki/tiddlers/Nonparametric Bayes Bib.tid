@@ -1,0 +1,9 @@
+created: 20150311063355493
+modified: 20150324062853504
+title: Nonparametric Bayes Bib
+type: text/vnd.tiddlywiki
+
+* Casella G, Robert C P. Rao-Blackwellisation of sampling schemes[J]. Biometrika, 1996, 83(1): 81-94. ([[BibTeX|casella1996rao.txt]])
+* Harati Nejad Torbati A H, Picone J, Sobel M. Applications of Dirichlet Process Mixtures to speaker adaptation[C]. Acoustics, Speech and Signal Processing (ICASSP), 2012 IEEE International Conference on. IEEE, 2012: 4321-4324. ([[BibTeX|harati12applications.txt]])
+* Rosen-Zvi M, Griffiths T, Steyvers M, et al. The author-topic model for authors and documents[C]. Proceedings of the 20th conference on Uncertainty in artificial intelligence. AUAI Press, 2004: 487-494. ([[BibTeX|rosen2004author.txt]])
+* Sudderth E B, Torralba A, Freeman W T, et al. [[Describing visual scenes using transformed objects and parts[J]|Transformed DP]]. International Journal of Computer Vision, 2008, 77(1-3): 291-330. ([[BibTeX|sudderth08describing.txt]])

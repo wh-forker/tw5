@@ -1,0 +1,18 @@
+created: 20141021055613856
+modified: 20141021055645457
+tags: Combinatorics
+title: Stirling's Formula
+type: text/vnd.tiddlywiki
+
+The formula as typically used in applications is
+$$
+\ln(n!) = n\ln(n) - n +O(\ln(n))
+$$
+The next term in the O(ln(n)) is (1/2)ln(2πn); a more precise variant of the formula is therefore
+$$
+n! \sim \sqrt{2 \pi n}\left(\frac{n}{e}\right)^n
+$$
+Being an asymptotic formula, Stirling's approximation has the property that
+$$
+\lim_{n \to \infty} \frac{n!}{\sqrt{2\pi n} \left(\frac{n}{e}\right)^n} = 1.
+$$

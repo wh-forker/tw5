@@ -1,0 +1,9 @@
+created: 20151112063528906
+modified: 20151113071634722
+tags: [[Deep Learning]]
+title: Doubts on Caffenet
+type: text/vnd.tiddlywiki
+
+! Normalization across channels?
+
+! First CONV 11x11?

@@ -1,0 +1,24 @@
+created: 20141022063116281
+modified: 20141022063748903
+tags: Statistics
+title: Dirichlet-multinomial distribution
+type: text/vnd.tiddlywiki
+
+It is also called the ''multivariate Polya distribution''.
+
+! Multinomial distribution over category counts
+For a random vector of category counts $\mathbf{x}=(n_1,\dots,n_K)$, distributed according to a multinomial distribution, the marginal distribution is obtained by integrating out $\mathbf p$:
+$$
+\Pr(\mathbf{x}\mid\boldsymbol{\alpha})=\int_{\mathbf{p}}\Pr(\mathbf{x}\mid \mathbf{p})\Pr(\mathbf{p}\mid\boldsymbol{\alpha})\textrm{d}\mathbf{p}
+$$
+which results in the following explicit formula:
+$$
+\Pr(\mathbf{x}\mid\boldsymbol{\alpha})=\frac{N!}
+{\prod_{k}\left(n_{k}!\right)}\frac{\Gamma\left(A\right)}
+{\Gamma\left(N+A\right)}\prod_{k}\frac{\Gamma(n_{k}+\alpha_{k})}{\Gamma(\alpha_{k})}
+$$
+where $A$ is defined as the sum $A = \sum \alpha_k$. Note that this differs crucially from the above formula in having an extra term at the front that looks like the factor at the front of a multinomial distribution. Another form for this same compound distribution, written more compactly in terms of the beta function, $B$, is as follows:
+$$
+\Pr(\mathbf{x}\mid\boldsymbol{\alpha})=\frac{N B\left(A,N\right)}
+{\prod_{k:n_k>0} n_k B\left(\alpha_k,n_k \right)} .
+$$

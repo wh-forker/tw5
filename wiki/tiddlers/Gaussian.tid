@@ -1,0 +1,12 @@
+created: 20141224064322010
+modified: 20141224064758902
+tags: [[Probability theory]]
+title: Gaussian
+type: text/vnd.tiddlywiki
+
+Importance of the Gaussian
+
+# The Gaussian density is the only density for real random variables that is "closed" under marginalization and ''multiplication''.
+# A linear (or affine) function of a Gaussian random variable is Gaussian; and, a sum of Gaussian variables is Gaussian.
+# Some graphical model algorithms will be tracable only for finite random variables or Gaussian random variables.
+# Non-Gaussian variables will be approximated using discrete and Gaussian tools

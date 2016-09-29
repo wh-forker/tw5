@@ -1,0 +1,50 @@
+created: 20150413065507637
+modified: 20150514071518906
+tags: Speech
+title: CRBM for audio
+type: text/vnd.tiddlywiki
+
+[[Restricted Boltzmann Machines]]
+
+! Algorithms
+!! Convolutional deep belief networks
+The difference with regular RBMs is that the weights between $H$ and $V$ are shared among all locations in the hidden layer.
+
+[[Probabilistic max-pooling]]
+
+!! Solving CRBM
+Since all units in one layer are conditionally independent given the other layer, inference can be performed using block Gibbs sampling.
+
+! Feature learning
+First convert time-domain signals into spectrograms (160 channels). Apply [[PCA whitening|Whitening transformation]] to create lower dimensional representations. Feed in $n_c$ channels of one-dimensional vectors of length $n_V$, where $n_c$ is #PCA components.
+
+For TIMIT, spectrogram had a 20ms window size with 10ms overlaps. PCA whitening reduces the dimension to 80. 300 first-layer bases with a ''filter length'' ($n_W$) of 6 and a max-pooling ratio (local neighborhood size) of 3 were trained.
+
+! Code
+error and sparsity_hid are criteria in batches.
+
+!! `train_tirbm_audio_v1.m`
+
+```matlab
+1 function train_tirbm_audio_v1(ws, num_bases, spacing, pbias, pbias_lb, pbias_lambda, epsilon, l2reg, epsdecay, nPC, sigmaPC) 
+```
+
+PCA is done with 1000 sampled data
+
+```matlab
+14 [X startframe_list] = concatenate_speech_data(Pall, randsample(length(Pall), min(length(Pall), 1000)));
+```
+
+Although it's a samping algorithm, it still needs momentum. (A network basic property?)
+
+```matlab
+111 initialmomentum  = 0.5; % used for first 5 trials
+112finalmomentum    = 0.9; % used then
+```
+
+Contrastive Divergence?
+
+```matlab
+188 function [ferr dW_total dh_total dv_total poshidprobs poshidstates negdata stat] = ...
+    fobj_tirbm_CD_LB_sparse_audio(imdata, W, hbias_vec, vbias_vec, pars, CD_mode, bias_mode, spacing, l2reg)
+```

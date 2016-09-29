@@ -1,0 +1,50 @@
+created: 20160225022832003
+modified: 20160703115437750
+tags: [[Scattering Representation]]
+title: Understanding Deep ConvNets (Scattering Repr)
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1601.04920]]
+
+! Definitions
+
+; Separation
+: If we can write $f(x)=f_0(\Phi(x))$ where $\Phi(x)$.
+
+This is always used to reduce the dimension of the data. We further impose the separation is Lipschitz:
+$$
+\exists\epsilon>0 \forall(x, x')\in\Omega^2, \epsilon\|f(x) - f(x')\| \leq \|\Phi(x) - \Phi(x')\|.
+$$ which implies $f_0$ is Lipschitz continuous.
+
+; Linearization
+: On the other hand, we can linearize the variations of $f$ by projecting the data into a much larger space of dim $d'$. $\Phi(x)=\{\phi_k(x)\}_{k\leq d'}$. We say that $\Phi$ separates $f$ linearly if $f(x)$ is well approximated by a one-dimensional projection:
+$$
+\tilde f(x) = \langle\Phi(x), w\rangle=\sum_{k=1}^{d'}w_k\phi_k(x).
+$$
+
+; Local symmetries
+: We suppose there is a metric $|g|_G$ which measures the distance between $g\in G$ and the identity. A function $f$ is locally invariant to the action of G if
+$$
+\forall x\in \Omega, \exists C_x>0, \forall g\in G \ni |g|_G<C_x, f(g.x)=f(x)
+$$
+
+; Translations
+: The translation group $G=\mathbb R^n$ is an example of Lie group. The action of $g\in G=\mathbb R^n$ over $x\in\Omega$ is $g.x(u)=x(u-g)$.
+
+; Diffeomorphisms
+: A small diffeomorphism acting on $x(u)$ can be written as a translation of $u$ by a $g(u)$: $g.x(u) = x(u-g(u))$ with $g\in\mathbf C^{\mathbf 1}(\mathbb R^n)$.
+
+; Averaging
+: A linear operator can compute local invariants to the action of the translation group $G$, by averaging $x$ along the orbit $\{g.x\}_{g\in G}$. This is done with a convolution by an averaging kernel $\phi_J(u)=2^{-nJ}\phi(2^{-J}u)$ of size $2^J$, with $\int\phi(u)du=1$:
+$$
+\Phi_Jx(u)=x\star\phi_J(u)
+$$
+It is Lipschitz continuous to diffeomorphisms but eliminates the variation above the frequency $c2^{-J}$.
+
+; Wavelet transform
+: We define $K$ wavelets $\psi_k(u)$ for $u\in\mathbb R^n$. They are regular functions with a fast decay and zero average. These $K$ wavelets are dilated by $2^j$: $\psi_{j,k}(u)=2^{-jn}\psi_k(2^{-j}u$.
+
+! Remarks
+The set of convolution filters, which are wavelets, is overcomplete in order to be able to fully recover the original input signals. On the on hand, similar to ReLU, each individual activation within the scattering network only preserves partial information of the input. On the other hand, different to ReLU, scattering network activatio perserves the energy information, i.e. keeping only the modulus of the convolution responses and erasing the phase information; ReLU retains the phase information but eliminates the modulus information when the phase of a response is negative.
+
+See [[Concatenated Rectified Linear Units]] for an alternative ReLU.

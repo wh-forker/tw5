@@ -1,0 +1,17 @@
+created: 20160513093405231
+modified: 20160513095523837
+tags: 
+title: Welcome Page
+type: text/vnd.tiddlywiki
+
+Welcome to my personal wiki. I think it would be helpful if I share my notes. I kept my notes in a very non-linear way. So be sure to dig really deep until you find what you are looking for.
+
+Here are some nice places to start:
+
+* [[Deep Learning]]: This is the root of deep learning related materials I am following.
+* [[Deep Learning Bib]]: I write some of my paper summaries here.
+* [[Readings]]: Some good old resources.
+* [[Speech]]: If you are interested in my works during graduate study. 
+* [[Programming]]: Here are some more hackery stuff, focusing majorly on [[clojure]].
+
+''Notice'': please don't change anything.

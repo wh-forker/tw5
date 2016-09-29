@@ -1,0 +1,20 @@
+color: #6495ED
+created: 20141010022803228
+modified: 20141010070101979
+tags: Tools Open-source
+title: TiddlyWiki
+type: text/vnd.tiddlywiki
+
+! First Impression
+Like it very much, customizable and beautiful!
+
+! About TiddlyWiki
+!! It is a Quine
+And very interestingly, it is a practical Quine. Wikipedia [[defines a Quine|http://en.wikipedia.org/wiki/Quine_(computing)]] as //a computer program which takes no input and produces a copy of its own source code as its only output//.
+
+TiddlyWiki is an unusual example of a practical quine: it is this ability to produce a copy of its own source code that lies at the heart of TiddlyWiki's ability to independently save changes to itself.
+
+! Plugins
+* [[MathJax Plugin]]
+* [[Highlight]]
+* [[CodeMirror]]

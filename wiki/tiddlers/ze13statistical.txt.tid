@@ -1,0 +1,12 @@
+created: 20150427121825077
+title: ze13statistical.txt
+type: text/plain
+
+@inproceedings{ze2013statistical,
+  title={Statistical parametric speech synthesis using deep neural networks},
+  author={Ze, Heiga and Senior, Andrew and Schuster, Mike},
+  booktitle={Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE International Conference on},
+  pages={7962--7966},
+  year={2013},
+  organization={IEEE}
+}

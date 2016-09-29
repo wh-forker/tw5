@@ -1,0 +1,25 @@
+color: #e21783
+created: 20141010021510118
+modified: 20160513093123854
+tags: Programming
+title: Languages
+type: text/vnd.tiddlywiki
+
+[[Programming category]]
+
+! Tutorials
+* [[Learn X in Y Minutes]]
+
+! Functional Programming
+
+!! Languages
+* [[clojure]]
+* Elixir
+* Scala
+
+!! Concepts
+* Side effects
+
+! Scientific Computing
+* [[MATLAB]]
+* [[Python]]

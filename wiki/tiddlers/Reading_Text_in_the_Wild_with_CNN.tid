@@ -1,0 +1,14 @@
+created: 20160614074653723
+modified: 20160614093128000
+tags: [[CNN for OCR]]
+title: Reading Text in the Wild with CNN
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1412.1842]]
+
+! End-to-end text spotting pipeline
+[img[end2end_text_spotting_pipeline.png]]
+
+! Text Detection
+This operates in a low-precision, high-recall mode – rather than using a single word location proposal, we carry a sufficiently high number of candidates through several stages of our pipeline.
+

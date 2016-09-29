@@ -1,0 +1,30 @@
+created: 20141020093404381
+modified: 20141022062958186
+tags: Statistics
+title: Conjugate Prior
+type: text/vnd.tiddlywiki
+
+!! The Idea
+If the posterior distribution are in the same family as the prior probability distribution, the prior and posterior are then called ''conjugate distributions'', and the prior is called a conjugate prior for the likelihood funtion. The likelihood function is usually well-determined from a statement of the data-generating process. Different choices of the prior distribution may make teh integral more or less difficult to calculate, and the posterior may take one algebraic form or another. For certain choices of the prior, the posterior has the same algebraic for as the prior. Such a choice is a conjugate prior.
+
+For example, the Gaussian family is conjugate to itself w.r.t. a Gaussian likelihood function. If the likelihood function is Gaussian, choosing a Gaussian prior over the mean will ensure that the posterior distribution is also Gaussian.
+
+Another widely used example is [[Dirichlet-multinomial distribution]].
+
+!! How to choose
+Experimenters are often in the position of having had collected some data from which they want to make inferences about the process that produced those data. Bayes theorem,
+$$
+g(\theta|x_1, \dots, x_n)=\frac{\pi(\theta)L(\theta|x_1, \dots, x_n)}{\int \pi(\theta)L(\theta|x_1, \dots, x_n)d\theta}
+$$
+is can be used. However the integral is always not tractable. 
+
+We consider a likelihood funtion which can be factored as:
+$$
+L(\theta|x_1, \dots, x_n) = u(x_1,\dots,x_n)v(T(x_1, \dots, x_n), \theta),
+$$
+where the second term is known as the kernel function and $T(\cdot)$ is the sufficient statistics. The conjugate prior is defined propotional to the kernel function,
+$$
+g(\theta)\propto v(T(x_1, \dots, x_n), \theta).
+$$
+
+[[Exponential Family]] all have conjugate prior.

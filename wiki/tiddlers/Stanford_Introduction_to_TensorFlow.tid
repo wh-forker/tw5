@@ -1,0 +1,63 @@
+created: 20160516064506710
+modified: 20160517044309105
+tags: [[Stanford NLP Course]] TensorFlow
+title: Stanford Introduction to TensorFlow
+type: text/vnd.tiddlywiki
+
+At the time this note is edited, TensorFlow is still a quite new technology and this seems to be the first decent TensorFlow tutorial.
+
+TensorFlow provides primitives for defining functions on tensors and automatically computing their derivatives.
+
+! Deep-Learning Package Choices
+There are a zoo of deep learning libraries. Each major company and many acedemic labs have their own deep learning libraries. We need to start ask the questions, what lib should we use and why should we use it.
+
+The first property we concern is that, when we are writing deep learning models, are we writing configuration files or programs. Caffe, DistBelief and CNTK use files to specify the complicated deep models. This is kind of convenient and easy to copy-and-paste. However, for very deep models, things get exremely heavy. ResNet have 7k lines of configuration file. So we want the model description to be part of our programs and use standard programming structures like for-loops to deal with that. We can use 10 LOC to construct a RNN in tf, while caffe don't let us do that. 
+
+Numerical computation with high-level languages wrapped over cpp save us from concerning about memory management, etc, and let us focus on the model itself. Lua and Python are the two choices in deep learning area. Lua is a game engine allowing fast calling to C. Torch makes good use of Lua and ties directly down to the Lua numerical system. Python has a richer community and library infrastructure.
+
+Theano is a symbolic tensor manipulation package in python. It has been around longer. TensorFlow has more support for building giant models with distributed systems and has support from Google. 
+
+The downside of TensorFlow is that it is a bit slower. We hope Google can fix that soon. Models from other library should have no problem migrating to TensorFlow.
+
+! What is TensorFlow
+TensorFlow is numerical packages dealing with math construct called tensors. 
+
+; Tensor
+: are mulilinear maps from vector spaces to the real numbers ($V$ vector space, and $V^*$ dual space)
+$$
+f: V^*\times\cdots V^*\times V\times\cdots V\rightarrow \mathbb R
+$$
+Common to have fixed basis, so a tensor can be represented as a multidimensional array of numbers.
+
+TensorFlow is similar to ''numpy'', but with GPU support and automatically compute derivatives.
+
+numpy:
+
+```python
+a = np.zeros((2,2)); b = np.ones((2,2))
+np.sum(b, axis=1)    # array([ 2., 2.])
+a.shape              # (2,2)
+np.reshape(a, (1,4)) # array([[ 0., 0., 0., 0.]])
+```
+
+TensorFlow:
+
+```python
+tf.InteractiveSession()
+a = tf.zeros((2,2)); b = tf.ones((2,2))
+tf.reduce_sum(b, reduction_indices=1).eval()    # array([ 2., 2.], dtype=float32)
+a.get_shape()                                   # TensorShape([Dimension(2), Dimension(2)])
+np.reshape(a, (1,4)).eval()                     # array([[ 0., 0., 0., 0.]], dtype=float32)
+```
+
+A lot of numpy operations can be carried to TensorFlow. But TensorFlow is different that it requires explicit evaluation. Its computations define a ''computation graph'' and `.eval()` runs the graph in the context. While numpy is doing those operations on memory, TensorFlow compiles them at first.
+
+! [[TensorFlow Basics]]
+
+! Examples
+!! [[Linear Regression in TensorFlow]]
+
+! Comments
+TensorFlow can be seen as a numpy wrapper, but is less mature, not as many operations are supported. We can convert tensors to numpy arrays and print, e.g. matrices indexing not as convenient, so the natural softmax representation in numpy is not feasible in TensorFlow.
+
+TensorBoard could be useful.

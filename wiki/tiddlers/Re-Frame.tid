@@ -1,0 +1,13 @@
+created: 20150309081411529
+modified: 20150312135721859
+tags: clojure Tutorials
+title: Re-Frame
+type: text/vnd.tiddlywiki
+
+[[link|http://dhruvp.github.io/2015/03/07/re-frame/]] and [[previous reagent tutorial|Reagent]]
+
+The project is based on [[reagent|http://dhruvp.github.io/2015/02/23/mailchimip-clojure/]] and is in cljs
+
+I came to a problem in step 2 that phones-component requires a for to generate the view but the for takes 5 arguments.
+
+Problem solved by changing the for sentence. But now the page just does not show anything.

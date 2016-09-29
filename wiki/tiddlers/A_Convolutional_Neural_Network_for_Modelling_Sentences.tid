@@ -1,0 +1,15 @@
+created: 20160428022432570
+modified: 20160519070610752
+tags: [[CNN for NLP]]
+title: A Convolutional Neural Network for Modelling Sentences
+type: text/vnd.tiddlywiki
+
+! Intro
+A CNN architecture with multiple convolution layers, positing latent, dense and low-dimensional word vectors (initialized to random values) as inputs.
+
+One must represent a sentence in terms of features that depend on the words and short //n//-grams that are frequently observed. 
+@@color:#859900;
+In our case, new (and irregular) words are often to appear so perhaps char is a good entity.
+@@
+
+The net consists of 1-dim conv and dynamic //k//-max pooling, which pools //k// values (k is dynamically determined). There are multiple feature maps. 

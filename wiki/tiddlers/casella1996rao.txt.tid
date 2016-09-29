@@ -1,0 +1,14 @@
+created: 20150324062224865
+title: casella1996rao.txt
+type: text/plain
+
+@article{casella1996rao,
+  title={Rao-Blackwellisation of sampling schemes},
+  author={Casella, George and Robert, Christian P},
+  journal={Biometrika},
+  volume={83},
+  number={1},
+  pages={81--94},
+  year={1996},
+  publisher={Biometrika Trust}
+}

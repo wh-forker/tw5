@@ -1,0 +1,9 @@
+created: 20151112084159734
+modified: 20151112093858491
+title: Thoughts about ConvNets
+type: text/vnd.tiddlywiki
+
+* On [[GoogLeNet]]
+** Moving its POOLs outside of Inception module, do it in traditional way
+** What about adding another layer of Inception with no POOL?
+* Use handcrafted Gabor filters (or some wavelet filters) instead of first layer CONVs, which takes much space in optimization

@@ -1,0 +1,13 @@
+created: 20141010121015831
+modified: 20141010121504085
+tags: Languages Python
+title: Python virtualenv
+type: text/vnd.tiddlywiki
+
+I have replaced old `virtualenv2` with the new `virtualenv` package on my ArchBox so as to unify the location of pip packages installed by different virtual environments.
+
+To trigger python2 virtualenv
+
+```
+source ~/virtualenvs/python2/bin/activate
+```

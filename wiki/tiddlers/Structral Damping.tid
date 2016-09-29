@@ -1,0 +1,18 @@
+created: 20150529143734309
+modified: 20150611133331723
+title: Structral Damping
+type: text/vnd.tiddlywiki
+
+For RNNs, $\lambda$ can be adjusted to be much larger.
+
+For large values of $\lambda$ any Tikhonov-damped 2nd-order optimization approach (e.g. HF) wil behave similarly to a 1st-order approach and crucial low-curvature directions whose associated curvature is significantly smaller than $\lambda$ will be effectively masked-out.
+
+One hypothesis is that for certain small changes in $\theta$ there can be large and highly non-linear changes in the hidden state sequence $h$ (given that $W_{hh}$ is applied iteratively to potentially hundreds of temporal 'layers') and these will not be accurately approximated by $M_{\theta_n}$. 
+
+A damping function $R$ that can penalize directions in parameter space that despite not large in magnitude, can nontheless lead to large changes in the hidden-state sequence. The structural damping function:
+$$
+R_{\theta_n}(\theta) = \frac 1 2\|\delta_n\|^2+\mu S_{\theta_n}(\theta)
+$$
+where $\mu>0$ is a weighting constant and $S_{\theta_n}(\theta)$ is a function which quantifies change in the hidden units as a function of the change in parameters. With the inclusion of $\mu S_{\theta_n}(\theta)$, we hope that the quadratic model will tend to be more accurate at its optimum even for smaller values of $\lambda$.
+
+Since $S$ is not generally quadratic in $\theta$, CG cannot be applied in $R$. We have to approximate $S$.

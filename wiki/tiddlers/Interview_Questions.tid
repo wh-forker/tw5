@@ -1,0 +1,22 @@
+created: 20160616112424990
+modified: 20160616112808762
+tags: 
+title: Interview Questions
+type: text/vnd.tiddlywiki
+
+! Deep learning
+# What is an auto-encoder? Why do we “auto-encode”? Hint: it’s really a misnomer.
+# What is a Boltzmann Machine? Why a Boltzmann Machine?
+# Why do we use sigmoid for an output function? Why tanh? Why not cosine? Why any function in particular?
+# Why are CNNs used primarily in imaging and not so much other tasks?
+# Explain backpropagation. Seriously. To the target audience described above.
+# Is it OK to connect from a Layer 4 output back to a Layer 2 input?
+# Can they derive the back-propagation and weights update?
+# Extend the above question to non-trivial layers such as convolutional layers, pooling layers, etc.
+# How to implement dropout?
+# Their intuition when and why some tricks such as max pooling, ReLU, maxout, etc. work. There are no right answers but it helps to understand their thoughts and research experience.
+# Can they abstract the forward, backward, update operations as matrix operations, to leverage BLAS and GPU?
+
+! Machine learning
+# [[What are the best interview questions to evaluate a machine learning researcher?|https://www.quora.com/What-are-the-best-interview-questions-to-evaluate-a-machine-learning-researcher]]
+# [[Machine Learning Engineer interview questions|http://resources.workable.com/machine-learning-engineer-interview-questions]]

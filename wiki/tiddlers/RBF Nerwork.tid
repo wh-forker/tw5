@@ -1,0 +1,19 @@
+created: 20141011073602083
+modified: 20150529081842472
+tags: [[Deep Learning]]
+title: RBF Nerwork
+type: text/vnd.tiddlywiki
+
+Radial basis function (RBF) networks are feed-forward networks that have universal approximation properties. Their main advantage is the simplicity of computation of the network paramters. They typically have three layers: an input layer, a hidden layer with a non-linear RBF activation function and a linear output layer. The input can be modeled as a vector of real numbers $\mathbf{x} \in \mathbb{R}^n$. The output of the network is then a scalar function of the input vector,   $\varphi : \mathbb{R}^n \to \mathbb{R}$, and is given by
+$$
+\varphi(\mathbf{x}) = \sum_{i=1}^N a_i \rho(||\mathbf{x}-\mathbf{c}_i||)
+$$
+where $N$ is the number of neurons in the hidden layer, $\mathbf c_i$ is the center vector for neuron $i$, and $a_i$ is the weight of neuron $i$ in the linear output neuron. $\rho$ is a function that depend only on the distance form a center vector radially symmetric about the input, hence the name radial basis function. The norm is typically taken to be Euclidean, but Mahalanobis distance can do better (?) and the radial basis function is commonly taken to be Gaussian
+$$
+\rho \big ( \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert \big ) = \exp \left[ -\beta \left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert ^2 \right].
+$$
+The Gaussian basis functions are local to the center vector in the sense that
+$$
+\lim_{||x|| \to \infty}\rho(\left \Vert \mathbf{x} - \mathbf{c}_i  \right \Vert) = 0
+$$
+i.e. changing parameters of one neuron has only a small effect for input values that are far away from the center of that neuron.

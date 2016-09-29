@@ -1,0 +1,9 @@
+created: 20150505093817222
+modified: 20150507093309301
+tags: [[Deep Learning]]
+title: Deep Convolutional Neural Networks
+type: text/vnd.tiddlywiki
+
+The overall architecture of a DCNN consists of one or more layers of convolution followed by pooling followed by densely connected hidden layers and a softmax classifier.
+
+The initial layers in a DCNN use convolutional layers in place of the standard fully-connected layers. [Baidu 15 Arxiv] use convolution and (max) pooling first layer architecture. The hyperparameters introduced are #convolutional 

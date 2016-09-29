@@ -1,0 +1,30 @@
+created: 20141010085424246
+modified: 20141010094619144
+tags: Statistics
+title: Renewal Processes
+type: text/vnd.tiddlywiki
+
+Renewal processes are generalizations of the Poisson process on the real line whose intervals are drawn i.i.d. from some distribution.
+
+! Formal definition
+Let $S_1 , S_2 , S_3 , S_4 , S_5, \ldots$ be a sequence of positive independent identically distributed random variables such that
+$$
+0 < \mathbb{E}[S_i] < \infty. 
+$$
+We refer to the random variable $S_i$ as the "$i$th" holding time.
+
+Define for each $n > 0$:
+$$
+J_n = \sum_{i=1}^n S_i,
+$$
+each $J_n$ referred to as the "$n$th" //jump time// and the intervals $[J_n,J_{n+1}]$ being called renewal intervals.
+
+Then the random variable $(X_t)_{t\geq0}$ given by
+$$
+X_t = \sum^{\infty}_{n=1} \mathbb{I}_{\{J_n \leq t\}}=\sup \left\{\, n: J_n \leq t\, \right\}
+$$
+(where $\mathbb{I}$ is the indicator function) represents the number of jumps that have occurred by time $t$, and is called a ''renewal process''.
+
+! Special Cases
+* [[Homogeneous Poisson Process]]
+* Modulated Renewal Process

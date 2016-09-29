@@ -1,0 +1,56 @@
+created: 20150629105042912
+modified: 20150630075630445
+title: Second Order Methods
+type: text/vnd.tiddlywiki
+
+! Newton Algorithm
+Assuming a quadratic loss function $E$ we can compute the weight update along the lines of 
+$$
+\Delta w = \eta\left(\frac{\partial^2E}{\partial W^2}\right)^{-1}\frac{\partial E}{\partial W} = \eta H^{-1}\frac{\partial E}{\partial w}
+$$
+The algorithm itself is unusable for neural nets because the Hessian is not positive definite and the algorithm will diverge.
+
+! Conjugate Gradient
+It works only for batch learning. The descent direction $\rho_k$ at iteration $k$ is given as
+$$
+\rho_k = -\nabla E(w_k) + \beta_k\rho_{k-1}
+$$
+where the choice of $\beta_k$ can be done either according to Fletcher and Reeves or Polak and Ribiere. Two directions $\rho_k$ and $\rho_{k-1}$ are defined as conjugate if
+$$
+\rho_k^\top H\rho_{k-1} = 0
+$$
+i.e. conjugate directions are orthogonal directions in the space of an identy Hessian matrix.
+
+! Quasi-Newton
+This kind of method iteratively computes an estimate of the inverse of Hssian and is $O(N^2)$. The estimated inverse Hessian $M$ is positive definite and the search direction is set to:
+$$
+\rho(t) = M(t)\nabla E(w(t))
+$$
+The most successful Quasi-Newton approach is BFGS, which updates the estimate as:
+$$
+M(t) = M(t-1)\left(1+\frac{\phi^\top M\phi}{\delta^\top\phi}\right)\frac{\delta\delta^\top}{\delta^\top\phi}-\left(\frac{\delta\phi^\top M+M\phi\delta^\top}{\delta^\top\phi}\right).
+$$
+where $\phi$ and $\delta$ are $N\times 1$ vectors:
+$$
+\begin{align}
+\phi &= \nabla E(w(t)) - \nabla E(w(t-1))\\
+\delta &= w(t)-w(t-1).
+\end{align}
+$$
+
+! Gaussian-Newton and Levenberg Marquardt
+''They work only for [[mean square error loss functions|Neural Net Functions]]''. They use the square Jacobi approximation for Hessian:
+$$
+\Delta w = \left(\sum_p \frac{\partial f(w,x_p)^\top}{\partial w}\frac{\partial f(w,x_p)}{\partial w}\right)^{-1}\nabla E(w)
+$$
+The Leven Marquardt method has a regularization parameter $\mu$ that prevents it from blowing up, if some eigenvalues are small
+$$
+\Delta w = \left(\sum_p \frac{\partial f(w,x_p)^\top}{\partial w}\frac{\partial f(w,x_p)}{\partial w}+\mu I\right)^{-1}\nabla E(w)
+$$
+A similar procedure also works with Kullback-Leibler cost and is called Natural Gradient.
+
+[[Block-diagonal LM]] used the diagonal approximation of the Jacobi product in LM algorithm for RNN.
+
+! [[On Computing Hessian]]
+
+! [[Apply to Multilayer Nets]]

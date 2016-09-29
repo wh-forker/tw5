@@ -1,0 +1,19 @@
+created: 20150529070659283
+modified: 20150529081801106
+tags: [[Deep Learning]]
+title: Recurrent Temporal RBM
+type: text/vnd.tiddlywiki
+
+! Motivation
+Using an undirected model for the interaction between the hidden and visible variables helps to capture many of the regularities that cannot be modeled efficiently by HMMs. This ensures that the  contribution of the likelihood term to the posterior over the hidden variables is approximately ''factorial'', which greatly facilitates inference. Properties of this model family:
+
+# Componential hidden state (exponentially large state space)
+# Non-linear dynamics and multimodal predictions
+# Simple on-line filtering procedure
+# Efficient learning algorithm (maximum likelihood is intractable)
+# Simple to learn multiple layers of hidden variables
+
+Models that use latent variables to propagate information through time can be divided into two classes depending on whether there is an efficient procedure for inferring the exact posterior distribution:
+
+# tractable models: linear dynamic systems, HMM
+# intractable models

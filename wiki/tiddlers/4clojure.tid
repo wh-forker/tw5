@@ -1,0 +1,15 @@
+created: 20141010025927258
+modified: 20141014074042248
+tags: clojure Tutorials
+title: 4clojure
+type: text/vnd.tiddlywiki
+
+[[link|https://www.4clojure.com/problems]]
+
+I am using the offline-4clojure solution provided by thattommyhall. To run problem #30 by
+
+```
+lein run -m offline-4clojure.p30
+```
+! Progress
+[img[4clojure.png]]

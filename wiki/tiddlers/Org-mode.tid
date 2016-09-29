@@ -1,0 +1,13 @@
+created: 20141120113401567
+modified: 20141120120637228
+tags: Tools
+title: Org-mode
+type: text/vnd.tiddlywiki
+
+[[start from here|http://doc.norang.ca/org-mode.html]]
+
+I have created the most simple .org file under `~/Documents`
+
+! Ideas
+* tag is for tasks.
+* fast data/time

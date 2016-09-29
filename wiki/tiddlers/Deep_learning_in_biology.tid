@@ -1,0 +1,61 @@
+created: 20160224053402536
+modified: 20160921080223973
+tags: [[Deep Learning]] Bengio Talks
+title: Deep learning in biology
+type: text/vnd.tiddlywiki
+
+[[link|https://www.youtube.com/watch?v=lKVIXI8Djv4]] [[slides|https://drive.google.com/file/d/0BwMz1xbo9yErdEI0UHh3YzRLNXM/view]]
+
+The lecturer discussed how to relate human brain with deep learning optimization.
+
+The central problem is credit assignment in hidden layers (or and through time). [This work|?] explains some relation between hidden layers' credit with brain.
+
+Spike-timing Dependent Plasticity (STDP): there is a relationship between the timing of pre-synaptic spike with post spike on the weight change. Learning rule is modeled like STDP. ''Hypothesis 1'':
+
+$$
+\delta W_{i,j}\propto \dot{s_i}\rho(s_j)
+$$
+
+''Coincidence'': This simulation works
+
+''Hypothesis 2'':
+This matches SGD if the rate of change of neurons corresponds to the gradient of an objective function.
+$$
+\dot{s_i} = -\frac{\partial J}{\partial s_i}
+$$
+and
+$$
+s_i=a+b\sum_iW_{ij}\rho(s_j)
+$$
+
+Leaky integrator neurons with state (integrated voltage) s:
+$$
+\dot{s_i} = \epsilon(R(s)-s)=-\epsilon\frac{\partial E}{\partial s}
+$$
+where $R(s)$ is where the neuron's activation would converge
+$$
+R(s)\propto b+W\rho(s)
+$$
+
+''coincidence'': Denoising auto-encoders with reconstruction function $R(s)$ converge towards $R(s)-s$ = gradient of energy.
+
+''Hypothesis #3'': neural computation = inference:
+Neural activations tend to noisily move towards configurations making neurons' activations more compatible with each other according to some energy function.
+
+We would like to choose an energy function that:
+$$
+\frac{\partial E(s)}{\partial s} = s-R(s)
+$$
+Lyapunov function has this property, and are some other pretty ones.
+
+''coincidence'': auto-encoders tends to be symmetric
+
+''coincidence'': early inference in continuous-variable energy-based models approximates back propagation.
+
+Near a fixed point, this kind of network updates like back propagation.
+
+SGD update gives a contrastive Hebbian learning step: 
+$$
+\delta W_{ij}\propto \frac{\partial}{\partial \beta_y}\rho(s_i)\rho(s_j)\approx\rho(s_i^+)\rho(s_j^+)-\rho(s_i^-)\rho(s_j^-)
+$$
+

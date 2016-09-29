@@ -1,0 +1,13 @@
+created: 20141010064617507
+modified: 20141010104105554
+tags: Languages done
+title: WikiText
+type: text/vnd.tiddlywiki
+
+! Snippets
+!! WikiLinks
+* `[[Tiddler Name]]`
+* `[[Link Name|Link Address]]`
+
+!! Images
+First import the image. Then include it with `[img[img_name.ext]]`

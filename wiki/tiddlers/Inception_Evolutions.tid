@@ -1,0 +1,43 @@
+created: 20160630071046902
+modified: 20160708080912327
+tags: [[Case study of ConvNets]]
+title: Inception Evolutions
+type: text/vnd.tiddlywiki
+
+! Batch Normalizations
+[[BN-Inception|Batch Normalization]]
+
+! Guidelines
+[[link|http://arxiv.org/abs/1512.00567]]
+General rules are:
+
+# Avoid representational bottlenecks, especially early in the network.
+# Add filters per tile in CONVs to get higher dimensional representations
+# Spatial aggregation (dimension reduction) before CONVs
+# Balance the width and depth.
+
+Grid reduction: avoiding representational bottleneck or too much params. Reduce size with pooling and conv together:
+
+[img[inception_reduction.PNG]]
+
+! Inception-v2
+# 7x7 to 3 3x3 CONVs, output size is 35x35x288
+# 3 traditional Inceptions, keep size
+# Change size to 17x17x768 with grid reduction
+# 5 factorized Inceptions, with [1x7, 7x1] CONVs replacing the 3x3 ones
+# Change size to 8x8x1280 with grid reduction
+# 2 factorized Inceptions, with [1x3, 3x1] CONVs replacing the 3x3 ones with 2048 filters
+ 
+All together 42 layers.
+
+BN auxiliary as regularizers.
+
+!! Remarks
+Historically, Inception-v3 had inherited a lot of the baggage of the earlier incarnations. The technical constraints chiefly came from the need for partitioning the model for distributed training using DistBelief.
+
+! Inception-v4 and Inception-ResNet
+[[link|http://arxiv.org/abs/1602.07261]]
+
+Has a more uniform simplified architecture and more inception modules than Inception-v3.
+
+Introduces residual connections: Inception-ResNet. Difference is batch-normalization is only on top of the traditional layers, but not on top of the summations because otherwise, the network won't fit into one GPU.

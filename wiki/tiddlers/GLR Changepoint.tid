@@ -1,0 +1,11 @@
+created: 20141112055927357
+modified: 20141112061905270
+tags: Speech
+title: GLR Changepoint
+type: text/vnd.tiddlywiki
+
+The GLR is a likelihood-based metric that proposes a ratio between two hypotheses: on one hand $H_0$ considers that both segments are uttered by the same speaker, therefore $X=X_i\cup X_j\sim M(\mu,\sigma)$ represents better the data. H_1 considers that each segment has been uttered by a different speaker, therefore $X_i\sim M_i(\mu_i,\sigma_i)$ and $X_j\sim M_j(\mu_j,\sigma_j)$ together suit better the data. The ratio test is computed as a likelihood ratio between the two hypotheses as
+$$
+GLR(i,j)=\frac{H_0}{H_1}=\frac{\mathcal L(X, M(\mu,\sigma))}{\mathcal L(X_i, M(\mu_i,\sigma_i))\mathcal L(X_j, M(\mu_j,\sigma_j))}
+$$
+and determining the distance as $D(i,j)=-\log(GLR(i,j))$ which, upon using an appropriate threshold one can decide whether both segments belong to the same speaker or otherwise.

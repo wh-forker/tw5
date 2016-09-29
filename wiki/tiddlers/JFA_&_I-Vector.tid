@@ -1,0 +1,51 @@
+created: 20150701105609743
+modified: 20160513092118542
+tags: Speech
+title: JFA & I-Vector
+type: text/vnd.tiddlywiki
+
+! Introduction
+The i-vector extaction could be seen as a probabilistic compression process that reduces the dimensionality of speech-session super-vectors according to a linear-Gaussian model. The speaker- and channel- dependent super-vector $M_{(s, h)}$ of concatenated GMM means is projected in a low dimensionality space, named Total Variability space, as follows
+$$
+M_{(s, h)} = m + Tw_{(s, h)}
+$$
+where $m$ is the mean super-vector of a ''gender-dependent'' UBM, $T$ is called Total Variability matrix and $w_{(s, h)}$ is the resulting i-vector.
+
+! Joint Factor Analysis
+A given speaker GMM supervector $s$ can be decomposed as follows:
+$$
+s = m + Vy + Ux +Dz
+$$
+where $m$ is a speaker-independent supervector from UBM, $V$ $(U)$ is the eigenvoice (eigenchannel) matrix, $y$ $(x)$ is the speaker factors, with prior $N(0, 1)$, $D$ is the residual matrix and $z$ is the speaker-specific residual factors.
+
+For a 512-mixture GMM-UBM, 300 eigenvoice and 100 eigenchannel components are used.
+
+''Remark'': GMM weights makes the variances of different components vary. How does JFA perform on unnormalized supervectors?
+
+!! Training
+[[Factor Analysis and PCA]]
+
+First train $V$ assuming $U$ and $D$ are zeroes, then train $U$ given $V$, and so on. Estimating $V$:
+
+# Accumulate the 0th, 1st and 2nd order sufficient statistics for each speaker $s$ and Gaussian mixture component $c$, $N$, $F$ and $S$.
+# Center the 1st and 2nd order statistics to get $\tilde F$, $\tilde S$
+# Expand the statistics into matrices, $NN(s) = \text{diag}(N_1(s)I, \dots, N_C(s)I)$, $SS(s) = \text{diag}(\tilde S_1(s),\dots, \tilde S_C)$, $FF(s) = [\tilde F_1(s);\dots;\tilde F_C(s)]$.
+# Iterate the estimation of $V$ and $y$ according to the distribution.
+
+Estimation of $U$ is similar except the centering of $F$ is done by $\tilde F = F - N(m+Vy)$ and second order is not used. $D$ with no exception.
+
+[[Deduction|JFA Explaination]]
+
+[[Training Eigenemotion]]
+
+! I-Vector Approach
+Training thetotal variability vector $T$ is the same as training $V$ but with all recordings regarded as from different speakers.
+
+!! Channel compensation
+Perform LDA then WCCN (techniques empirically determined to perform well) on i-vectors.
+
+The most popular post i-vector process is PLDA.
+
+! ALIZE Example
+
+! DET Curve

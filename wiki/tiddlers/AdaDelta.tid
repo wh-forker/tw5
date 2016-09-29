@@ -1,0 +1,14 @@
+created: 20160406094442413
+modified: 20160406125416825
+title: AdaDelta
+type: text/vnd.tiddlywiki
+
+The benefits of Adadelta are as follows:
+
+* No manual setting of a learning rate.
+* Insensitive to hyperparameters.
+* Separate dynamic learning rate per-dimension.
+* Minimal computation over gradient descent.
+* Robust to large gradients, noise and architecture choice.
+* Applicable in both local or distributed environments.
+

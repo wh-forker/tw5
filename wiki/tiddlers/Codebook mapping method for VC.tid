@@ -1,0 +1,16 @@
+created: 20150420113415276
+modified: 20150420121849857
+tags: [[Voice Conversion]]
+title: Codebook mapping method for VC
+type: text/vnd.tiddlywiki
+
+This method is based on hard clustering and discrete mapping.
+
+The converted feature vector $\hat y_t$ at frame $t$ is determined by quantizing the source feature vector $x_t$ to the nearest centroid vector of the source codebook and substituting it with a corresponding centroid vector $c_m^{(y)}$ of the mapping codebook. The large quantization error due to hard clustering is effectively reduced by adopting ''fuzzy vector quantization'' (VQ) that realizes ''soft clustering''. Continuous weights $w_{m,t}^{(x)}$ for individual clusters are determined at each frame according to the source feature vector.
+$$
+\hat y_t = \sum_{m=1}^Mw_{m,t}^{(x)}c_M^{(y)},
+$$
+where $M$ is the number of centroid vectors. Another way is
+$$
+\hat y_t = x_t + \sum_{m=1}^Mw_{m,t}^{(x)}(c_M^{(y)}-c_M^{(x)}).
+$$

@@ -1,0 +1,12 @@
+created: 20150228031428007
+modified: 20150228031542258
+tags: clojure Tools
+title: Overtone
+type: text/vnd.tiddlywiki
+
+Done:
+
+* add user to `audio` group
+* installed `jack2`
+
+Failed because cannot connect to internal server with `(use 'overtone.live)`

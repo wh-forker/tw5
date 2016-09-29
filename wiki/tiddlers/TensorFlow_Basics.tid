@@ -1,0 +1,105 @@
+created: 20160516083205664
+modified: 20160517034221224
+tags: TensorFlow [[Stanford NLP Course]]
+title: TensorFlow Basics
+type: text/vnd.tiddlywiki
+
+!! Session object
+
+<<<
+Session object encapsulates the environment in which Tensor objects are evaluated.
+<<< TensorFlow Docs
+
+```python
+c = a * b
+with tf.Session() as sess:
+    print(sess.run(c))
+    print(c.eval()) # c.eval() is just syntatic sugar for sess.run(c) in the currently active session
+```
+
+* `c` is symbolic value until we actually evaluate it. 
+* `tf.InteractiveSession()` is useful for debugging
+* `sess.run(c)` is an example of a TensorFlow ''Fetch''. First data are ''Fed'' into the computation graph and 'Fetch' take the result out.
+
+!! TensorFlow computation graph
+
+<<<
+TensorFlow programs are usually structured into a construction phase, that assembles a graph, and an execution phase that uses a session to execute ops in the graph.
+
+All computations add nodes to global default graph.
+<<< TensorFlow Docs
+
+Functions exist in global graph memory.
+
+!! TensorFlow variables
+
+<<<
+When you train a model you use variables to hold and update parameters. Variables are in-memory buffers containing tensors.
+<<< TensorFlow Docs
+
+```python
+W = tf.Variable(tf.zeros((2,2)), name="weights")
+tf.initialize_all_variabes().eval() # explicit initialization.
+W.eval()
+```
+
+Variable tensors always have to be intitialized.
+
+```python
+state = tf.Variable(0, name="counter")
+new_value = tf.add(state, tf.constant(1)) # make a new value
+update = tf.assign(state, new_value)      # assign the value to var
+with tf.Session() as sess:
+    sess.run(tf.initialize_all_variables())
+    for _ in range(3):
+        sess.run(update)
+        print(sess.run(state))
+```
+
+The name of variables is like an index allowing other programs to communicate with the graph.
+
+!! Inputting data
+We can import tensors from numpy.
+
+```python
+a = np.zeros((3,3))
+ta = tf.convert_to_tensor(a)
+```
+
+The above method does not scale. `tf.placeholder` vars are dummy nodes where we can put data in. And `feed_dict` is a python dictionary mapping from `tf.placeholder` vars to data.
+
+```python
+In [96]: input1 = tf.placeholder(tf.float32)
+In [97]: input2 = tf.placeholder(tf.float32)
+In [98]: output = tf.mul(input1, input2)
+In [99]: with tf.Session() as sess:
+   ....:     print(sess.run([output], feed_dict={input1:[7.], input2:[2.]}))
+   ....:
+   
+[array([ 14.], dtype=float32)]
+```
+
+!! Variable scope
+
+* `tf.variable_scope()` provides name-spacing
+* `tf.get_variable()` creates/accesses variables from within a variable scope.
+
+```python
+with tf.variable_scope("foo"):
+    with tf.variable_scope("bar"):
+        v = tf.get_variable("v", [1])
+assert v.name == "foo/bar/v:0"
+```
+
+`reuse_variables()` is useful to implement weight sharing in RNNs:
+
+```python
+with tf.variable_scope("foo"):
+    v = tf.get_variable("v", [1])
+    tf.get_variable_scope().reuse_variables() # setting reuse=True in the scope
+    v1 = tf.get_variable("v", [1])
+assert v1 == v
+```
+
+!! Gradient Computation
+When people define a graph, a gradient operation is attached to the node. Backprop computes gradients for all variables in graph.

@@ -1,0 +1,60 @@
+created: 20141017053911779
+modified: 20141018023247480
+tags: [[Neural Science]]
+title: Neuromorphic Cognitive Computing
+type: text/vnd.tiddlywiki
+
+# Computing for neuroscience
+## Euro Brain Project
+# Neuroscience for computing
+
+BBD: interaction with real env
+
+Human brain is parallel: simulating takes 1000 times longer
+
+postsynapc potential: EPSP (+) / IPSP (-)
+
+A single neuron receives potentials from roughly 10,000 synapses. (Signal is binary?)
+
+Neural models with temporal dynamics. Leaky Integrate-and-Fire model (LIF).
+
+!! Neural Information Encoding
+
+Coding Schemes
+
+!!! Rate coding
+$$
+r=\frac{n_{sp}}{T}
+$$
+easy to measure firing rates. neglects all the information possibly contained in the exact timing of the spikes. In real life information can be carried within milisecs.
+
+# Temporal coding
+$$
+s(t) = \sum_i\delta(t-t_i)
+$$
+Spike train. Temporal patterns. 
+
+# Latency encoding: the earlier fire, stronger.
+# Phase encoding
+# Population coding: joint activites of a number of neurons
+
+!!! Encoding models
+Temporal coding by controlling exact time of spike
+
+!! Synapic Learning Algorithms
+Pre-synapse-post
+
+# Spike Timing Dependent Plasticity (STDP)
+## long-term potentiation
+## long-time depression
+
+!! Integrated Model of Coding and Learning
+
+# Latency and phase encoding
+## The original image is partitioned into RFs
+## Encoding in RF1
+## Compressed
+
+!! Learning, Memory and Embodied Cognition
+
+!! Neuro-Cognitive Robot

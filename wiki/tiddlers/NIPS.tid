@@ -1,0 +1,18 @@
+color: #00dc64
+created: 20141010100529635
+modified: 20160606134300679
+title: NIPS
+type: text/vnd.tiddlywiki
+
+! Paper Reviews
+[[Gaussian process modulated renewal processes]]
+
+! 2015 Paper Reading
+Currently focusing on neural network ones
+
+[[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
+
+!! Deep Reinforcement Learning Workshop
+[[Atari Games Reinforcement Learning UMich]]
+
+[[Faster Deep Reinforcement Learning]]

@@ -1,0 +1,10 @@
+created: 20160129025105036
+modified: 20160513091913156
+tags: [[Dimension Reduction]]
+title: t-Distributed Stochastic Neighbor Embedding
+type: text/vnd.tiddlywiki
+
+This is a very popular method to generate image feature 2-d visualization.
+
+The input of t-SNE consists of a collection of pairwise (Euclidean) distance $\delta_{ij}$ between the $n$ input objects, that are converted into conditional probabilities as $p_{j|i}=\frac{\exp(-\delta_{ij}^2/2\sigma_i)}{\sum_{k\ne i}\exp(-\delta_{ij}^2/2\sigma_i)}$ (a normalized [[Gaussian kernel]]?), which joint to obtain a joint probability matrix entries $p_{ij}=\frac{p_{j|i}+p_{i|j}}{2n}.
+

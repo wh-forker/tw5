@@ -1,0 +1,32 @@
+created: 20141023060908756
+modified: 20141112055830614
+tags: Speech
+title: Changepoint algorithms
+type: text/vnd.tiddlywiki
+
+Denote by $\mathbf x=\{x_j\in\mathbb R, j=1, \dots,n\}$ a multivariate time series of length $n$, and assume that some of its characteristics are changing at $k-1$ instants $t_1,t_2,\dots,t_{k-1}$, with the convention $t_0=0$ and $t_k=n$. To reflect this situation, we assume that the distribution of $\mathbf x$ is defined piecewise on the resulting $k$ segments by $\xi$. The model is defined as
+$$
+\mathcal M_\theta:\left\{ \begin{array}{l}
+p(\mathbf x|\mathbf \xi) = \prod_{i=1}^kp(x_{t_{i-1}+1},\dots,x_{t_i}|\xi_i)\\
+\pi(\mathbf \xi|\mu) = \prod_{i=1}^k\pi(\xi_i|\mu)
+\end{array}\right.
+$$
+where $\pi(\cdot|\mu)$ denotes an [[informative prior distribution|Prior Classes]]. We follow a model selection strategy that involves choosing the model with the largest posterior probability:
+$$
+p(\mathcal M_\theta|\mathbf x)\propto\pi(\mathcal M_\theta)\int p(\mathbf x|\mathbf \xi)\pi(\mathbf \xi|\mu)d\mathbf \xi
+$$
+
+The Bayesian framework is useful for the general purpose of model selection because it offers the possibility of computing a posterior model probability on the set of all possible models, provided some prior probability can be established on this set. An alternative is to base model selection on the Bayes factor, which asymptotically leads to the same result.
+
+!! [[BIC|Bayesian information criterion]]
+[reynolds04] A penalized likelihood ratio test is used to compare whether the data within a fixed window are better modeled via a single Gaussian or two Gaussians. The window gradually grows at each test until a changepoint is inferred, at which point the window is reinitialized at the inferred changepoint.
+
+[[BIC Changepoint]]
+
+!! KL divergence
+[siegler97] uses fixed length windows and computes the symmetric KL divergence between a pair of Gaussians each fit by the data in their respective windows. A post-processing step then sets the changepoints equal to the peaks of the computed KL that exceed a predetermined threshold.
+
+[[KL Changepoint]]
+
+!! Generalized Likelihood Ratio (GLR)
+[[GLR Changepoint]]

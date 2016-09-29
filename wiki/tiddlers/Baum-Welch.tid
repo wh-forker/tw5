@@ -1,0 +1,36 @@
+created: 20141119084150577
+modified: 20141217083640076
+tags: Speech Algorithms
+title: Baum-Welch
+type: text/vnd.tiddlywiki
+
+! Setup
+Let us consider discrete (categorical) HMMs of length $T$ (each observation sequence is $T$ observations long). Let the space of observations be $X = \{1, 2, \dots, N\}$, and let the space of underlying states be $Z = \{1, 2, \dots, M\}$. An HMM $\theta = (\pi, A, B)$ is parameterized by the initial state matrix $\pi$, the state transition matrix $A$, and the emission matrix $B$;
+$\pi_i = P(z_1 = i)$, $A_{ij} = P(z_{t+1} = j|z_t = 1)$, and $B_i(j) = P(x_t = j|z_t = i)$. See [[PRML]] for a more detailed treatment of HMMs.
+
+We study the probability of learning the parameterization of $\theta$ from a dataset of $D$ observations. Let $\mathcal X = (X^1, \dots, X^D)$, where each $X^i = (x_1^i, x_2^i, \dots, x_T^i)$. We assume each observation is drawn iid. The learning problem is nontrivial because we are not given the latent variables $Z^i$ for each $X^i$, otherwise we could directly compute $\theta^* = \text{argmax}_\theta P(\mathcal X, \mathcal Z;\theta)$. And there are too many values of $z$ to try.
+
+! Baum-Welch
+Baum-Welch can be described as repeating following steps until convergence:
+
+# Compute $Q(\theta, \theta^s)=\sum_{z\in\mathcal Z}\log[P(\mathcal X,z;\theta)]P(z|\mathcal X;\theta^s)$.
+# Set $\theta^{s+1} = \underset{\theta}{\text{argmax}}Q(\theta, \theta^s)$.
+
+$$
+\underset{\theta}{\text{argmax}}Q(\theta, \theta^s) = \underset{\theta}{\text{argmax}}\sum_{z\in\mathcal Z}\log[P(\mathcal X,z;\theta)]P(z, \mathcal X;\theta^s)
+$$
+since $P(\mathcal X)$ is not affected by the choice of $\theta$.
+$$
+P(z,\mathcal X;\theta) = \prod_{d = 1}^D\left(\pi_{z_1^d}B_{z_1^d}(x_1^d)\prod_{t=2}^TA_{z_{t-1}^dz_t^d}B_{z_t^d}(x_t^d)\right)
+$$
+
+We can optimize with Lagrange multipliers requiring that $\pi, A_i, B_i(\cdot)$ form valid probability distributions.
+$$
+\hat L(\theta, \theta^s) = \hat Q(\theta, \theta^s)-\lambda_\pi\left(\sum_{i=1}^M\pi_i-1\right)-\sum_i^M\lambda_{A_i}\left(\sum_{j=1}^MA_{ij}-1\right)-\sum_i^M\lambda_{B_i}\left(\sum_{j=1}^NB_{i}(j)-1\right)
+$$
+$$
+\begin{align*}
+\frac{\partial\hat L(\theta, \theta^s)}{\partial\pi_i}&=\\
+&=
+\end{align*}
+$$

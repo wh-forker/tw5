@@ -1,0 +1,17 @@
+created: 20150622133057716
+modified: 20150623081537537
+title: LSTM Phoneme Classification
+type: text/vnd.tiddlywiki
+
+[[graves05framewise|graves2005framewise.txt]] shows that LSTM is well suited to framewise phoneme classification, and that bidirectional networks are able to capture time dependencies in speech that elude unidirectional nets.
+
+! Backward Pass
+
+# reset all partial derivatives to 0. (What exactly does that mean?)
+# starting at time $\tau_1$, propagate the output errors backwards through the unfolded net, using the standard BPTT equations:
+$$
+\begin{align}
+\delta_k(\tau) &= \frac{\partial E(r)}{\partial x_k}\\
+\epsilon_j(\tau_i) &= e_j(\tau_1)
+\end{align}
+$$

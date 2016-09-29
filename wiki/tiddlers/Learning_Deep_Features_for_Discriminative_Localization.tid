@@ -1,0 +1,13 @@
+created: 20160525093406571
+modified: 20160527075942132
+tags: [[CVPR 2016]]
+title: Learning Deep Features for Discriminative Localization
+type: text/vnd.tiddlywiki
+
+[[GitHub link|https://github.com/jazzsaxmafia/Weakly_detector]]
+
+! Running the program
+
+Label names start with 'n' in imagenet.
+
+Importing tf seems to introduce segmentation fault.

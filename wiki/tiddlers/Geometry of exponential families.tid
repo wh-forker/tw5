@@ -1,0 +1,14 @@
+created: 20150213083006365
+modified: 20150213083727667
+tags: Statistics
+title: Geometry of exponential families
+type: text/vnd.tiddlywiki
+
+For an [[exponential family|Exponential Family]], the [[Kullback-Leibler divergence]] is a [[Bregman divergence]] on the natural parameters. Using Taylor approximation with exact remainder, we get $KL(\theta||\theta+d\theta)=\frac{1}{2}d\theta^T\nabla^2F(\theta)d\theta$. Where $F(\theta)$ is the log-normalizer. The [[Fisher information|Fisher information metric]] is the Hessian of the log-normalizer:
+$$
+I(\theta) = \left[\frac{\partial\eta}{\partial\theta}\right]=\nabla^2F(\theta) = I^{-1}(\eta) = \left[\frac{\partial\theta}{\partial\eta}\right]
+$$
+
+To a given Riemannian manifold $\mathcal M$ with tensor $G$, we may associate a probability measure as follows: Let $p(\theta)=\frac{1}{V}\sqrt{\det G(\theta)}$ with overall volume $V=\int_{\theta\in\Theta}\sqrt{G(\theta)}d\theta$. These distributions are built from infinitesimal volume element and bear the names of Jeffreys priors.
+
+In an exponential family manifold, teh geometry is flat and $\theta/eta$ are dual coordinate systems.

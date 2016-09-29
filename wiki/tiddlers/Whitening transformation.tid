@@ -1,0 +1,15 @@
+created: 20150417071142626
+modified: 20150417073233135
+tags: Algorithms [[Audio Signal Processing]]
+title: Whitening transformation
+type: text/vnd.tiddlywiki
+
+A whitening tranformation is used for decorrelation. It transforms a set of variables into a new set with covariance equals $I$.
+
+Typically whitening $X$ means multiplying by $M^{-1/2}$ where $M = E[XX^\top]$. Whitening transformation is not unique. Whitened data will stay whitened after rotations, which means $W = RM^{-1/2}$ with orthogonal matrix $R$ will also be a whitening transformation.
+
+Whitening can be done with PCA, let $M$ have eigenvectors in columns of $E$ and eigenvalues on the diagonal of $D$, so that $C = EDE^\top$. A "normal" PCA transformation if given by $W_{PCA} = D^{-1/2}E^\top$. $M^{-1/2}$ can also be obtained with PCA by rotating with $E$, we call this ZCA whitening
+$$
+W_{ZCA} = ED^{-1/2}E^\top = M^{-1/2}.
+$$
+ZCA tries to transform the data as little as possible. Since correlations in natural data (e.g. images) are mostly very local, so decorrelation filters can also be local.

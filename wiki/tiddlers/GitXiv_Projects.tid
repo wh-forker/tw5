@@ -1,0 +1,33 @@
+created: 20160525092322258
+modified: 20160601053731226
+tags: [[Deep Learning]]
+title: GitXiv Projects
+type: text/vnd.tiddlywiki
+
+! Image
+
+[[Faster R-CNN Features for Instance Search|http://gitxiv.com/posts/WKiQ5mLBat7qZQozX/faster-r-cnn-features-for-instance-search]]
+
+!! Captioning
+[[densecap|https://github.com/jcjohnson/densecap]]
+
+!! Applications
+[[Age & Gender Classification|http://gitxiv.com/posts/sKTDSvwzoiRaojLG6/age-and-gender-classification-using-convolutional-neural]]
+
+!! Visualization
+
+!!! Weakly localization
+[[Learning Deep Features for Discriminative Localization]]
+
+[[ccnn|https://github.com/pathak22/ccnn]]
+
+[[wsd|https://github.com/marcopede/wsd]]
+
+! NLP
+!! Classification
+[[Convolutional Neural Networks for Sentence Classification|http://gitxiv.com/posts/2SAx7ccSYYDvNXq8Y/convolutional-neural-networks-for-sentence-classification]]
+
+!! Application
+[[A Convolutional Attention Network for Extreme Summarization of Source Code|https://github.com/mast-group/convolutional-attention]]
+
+$\mathbin{\rotatebox[origin=c]{180}{\amalg}}$

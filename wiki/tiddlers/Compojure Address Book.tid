@@ -1,0 +1,22 @@
+created: 20150119070724184
+modified: 20150206151333138
+title: Compojure Address Book
+type: text/vnd.tiddlywiki
+
+[[link|http://www.jarrodctaylor.com/posts/Compojure-Address-Book-Part-1/]]
+
+Tools involved:
+
+* Compojure
+* Ring
+* Midje: testing
+* hiccup: render html
+
+To run the project
+`lein ring server`
+
+Test/auto test
+`lein midje (:auto)`
+
+Start postgres:
+`systemctl start postgresql`

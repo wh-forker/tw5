@@ -1,0 +1,37 @@
+created: 20151110035108056
+modified: 20160708073821287
+tags: [[Case study of ConvNets]]
+title: GoogLeNet
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1409.4842]]
+
+GoogLeNet uses 12$\times$ fewer parameter than most current deep architectures while achieves the best performance.
+
+! Basic idea
+!! Inception module
+<<<
+Neurons that fire together, wire together.
+<<< Hebbian principle
+
+[[Arora et al.|http://arxiv.org/abs/1310.6343]] states that if the distribution of the data-set is representatable by a large, very sparse deep network, then the optimal network topology can be constructed layer by layer by analyzing the correlation statistics of the activations of the last layer and clustering neurons with highly correlated outputs.
+
+(A personal interpretation would be as long as the net is sparse enough, the depth does not matter.)
+
+In image, correlations tend to be local. The very local clusters can be covered by 1x1 CONVs, and less local ones by 3x3 and 5x5 ones. This leads to the naive version of Inception:
+
+[img height=250 [naive_inception.png]]
+
+The pooling path is an adoptation of current deep learning interest which is believed to be beneficial. However, the output number of POOL is the same as the total output of the previous Inception module. And CONV 5x5 are expensive when the number of filters are large. The final design deals with this filter explosion and looks like this:
+
+[img height=250 [inception.png]]
+
+Notice that pooling results (192=>32 in `inception_3a`) and CONV 5x5 inputs (16) are all sharply reduced. All of the CONVs and POOLs are ReLUed.
+
+!! Auxiliary classifiers
+There are 2 additional classifiers connected to the intermediate layers where discriminative features may already been generated. So that the gradient signal propagated back can get increased and additional regularization is provided.
+
+! Training
+Asynchronous stochastic gradient descent with 0.9 momentum and stepwise learning rate (decreasing by 4% every 8 epochs). Polyak averaging was used to create the final model used at inference time. Several interpolation methods (bilinear, area, nearest neighbor and cubic) are used for resize, since it is quite random, no further practices can be assured to be helpful.
+
+! [[General Design Principles|Inception Evolutions]]

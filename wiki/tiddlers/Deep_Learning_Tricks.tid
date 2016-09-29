@@ -1,0 +1,24 @@
+created: 20160519060432418
+modified: 20160822072808861
+tags: [[Deep Learning]]
+title: Deep Learning Tricks
+type: text/vnd.tiddlywiki
+
+! Choosing Hyperparameter
+* Random search ([[Bengio 2012|Neural Networks: Tricks of the Trade]])
+* Bayesian optimization  ([[Yogatama and Smith, 2015|http://arxiv.org/abs/1503.00693]]; [[Bergstra et al., 2013|http://www.jmlr.org/proceedings/papers/v28/bergstra13.pdf]])
+
+!! Examples
+* [[Sentense classification|A Sensitivity Analysis of CNN for Sentence Classification]]
+* [[Unsupervised feature learning|http://www.jmlr.org/proceedings/papers/v15/coates11a/coates11a.pdf]]
+* [[Hyperparameter in SGD|http://arxiv.org/abs/1508.02788]]
+
+However, sophisticated search methods require previous knowledge about which hyperparameters are worth exploring to begin with. And Bayesian optimization is quite far from practical usage.
+
+! Using mini-batches
+Using mini-batchesof examples, as opposedto one example at a time, is helpful in several ways. First, the gradient of the loss over a mini-batch is an estimate of the gradient over the training set, whose quality improves as the batch size increases. Second, computation over a batch can be much more efficient than m computations for individual examples, due to the parallelism afforded by the modern computing platforms.
+
+! Special Layers
+[[Batch Normalization]]
+
+! [[Neural Nets Optimizations]]

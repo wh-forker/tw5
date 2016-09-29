@@ -1,0 +1,85 @@
+created: 20160516084215560
+modified: 20160517034245218
+tags: TensorFlow [[Stanford NLP Course]] [[Python Snippets]]
+title: Linear Regression in TensorFlow
+type: text/vnd.tiddlywiki
+
+We show how to use TensorFlow to fit the linear function with sinusoidal noise:
+
+```python
+import numpy as np
+import seaborn
+
+# Define input data
+X_data = np.arange(100, step=.1)
+y_data = X_data + 20 * np.sin(X_data/10)
+
+# Plot input data
+plt.scatter(X_data, y_data)
+```
+
+First we need placeholders to manage the input
+
+```python
+# Define data size and batch size
+n_samples = 1000
+batch_size = 100
+
+# Tensorflow is finicky about shapes, so resize
+X_data = np.reshape(X_data, (n_samples,1))
+y_data = np.reshape(y_data, (n_samples,1))
+
+# Define placeholders for input
+X = tf.placeholder(tf.float32, shape=(batch_size, 1))
+y = tf.placeholder(tf.float32, shape=(batch_size, 1))
+```
+
+Implement the algorithm. Define the loss:
+
+$$
+J(W, b) = \frac 1 N\sum_{i=1}^N(y_i-(Wx_i+b))^2
+$$
+
+```python
+# Define variables to be learned
+with tf.variable_scope("linear-regression"): # resuse=False so tensors created anew
+    W = tf.get_variable("weights", (1, 1),
+                        initializer=tf.random_normal_initializer())
+    b = tf.get_variable("bias", (1),
+                        initializer=tf.constant_initializer(0.0))
+    y_pred = tf.matmul(X, W) + b
+    loss = tf.reduce_sum((y - y_pred)**2/n_samples)
+```
+
+Run one step of gradient descent
+
+```python
+# Sample code to run one step of gradient descent
+In [136]: opt = tf.train.AdamOptimizer()
+In [137]: opt_operation = opt.minimize(loss)
+In [138]: with tf.Session() as sess:
+   .....:     sess.run(tf.initialize_all_variables())
+   .....:     sess.run([opt_operation], feed_dict={X: X_data, y: y_data})
+```
+
+The optimizer is a special node in the computational graph. It can figure out what to optimize, computes the gradient and use assign to do the update.
+
+And to learn the model
+
+```python
+# Sample code to run full gradient descent:
+# Define optimizer operation
+opt_operation = tf.train.AdamOptimizer().minimize(loss)
+
+with tf.Session() as sess:
+    # Initialize Variables in graph
+    sess.run(tf.initialize_all_variables())
+    # Gradient descent loop for 500 steps
+    for _ in range(500):
+        # Select random minibatch
+        indices = np.random.choice(n_samples, batch_size) # use np to get random samples, doubting if it's good
+        X_batch, y_batch = X_data[indices], y_data[indices]
+        # Do gradient descent step
+        _, loss_val = sess.run([opt_operation, loss], feed_dict={X: X_batch, y: y_batch})
+```
+

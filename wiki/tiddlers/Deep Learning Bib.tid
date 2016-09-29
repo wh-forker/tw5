@@ -1,0 +1,41 @@
+created: 20150316045415915
+modified: 20160921075103254
+tags: [[Deep Learning]]
+title: Deep Learning Bib
+type: text/vnd.tiddlywiki
+
+! Theory
+!! General
+* [[Neural Networks: Tricks of the Trade]] Second Edition, Editors: Grégoire Montavon, Geneviève B. Orr, Klaus-Robert Müller, 2012.
+
+!! RNN
+* Martens J, Sutskever I. Learning recurrent neural networks with hessian-free optimization[C]. Proceedings of the 28th International Conference on Machine Learning (ICML-11). 2011: 1033-1040. [[BibTeX|martens2011learning.txt]]
+* Hochreiter, Sepp, and Jürgen Schmidhuber. [[Long short-term memory]]. Neural computation 9.8 (1997): 1735-1780.
+* Sutskever, Ilya. [[Training recurrent neural networks|Thesis Training RNN]]. Diss. University of Toronto, 2013.
+* Chan, Lai-Wan, and Chi-Cheong Szeto. [[Training recurrent network with block-diagonal approximated Levenberg-Marquardt algorithm|Block-diagonal LM]]. Neural Networks, 1999. IJCNN'99. International Joint Conference on. Vol. 3. IEEE, 1999.
+
+! Vision
+* [[Fast-RCNN]]
+
+! Speech
+!! ASR
+* Dahl G E, Yu D, Deng L, et al. [[Context-dependent pre-trained deep neural networks for large-vocabulary speech recognition|DNN ASR]][J]. Audio, Speech, and Language Processing, IEEE Transactions on, 2012, 20(1): 30-42.
+* Graves, Alex, and Jürgen Schmidhuber. [[Framewise phoneme classification with bidirectional LSTM and other neural network architectures|LSTM Phoneme Classification]] Neural Networks 18.5 (2005): 602-610. [[BibTeX|graves2005framewise.txt]]
+* Graves, Alan, Abdel-rahman Mohamed, and Geoffrey Hinton. [[Speech recognition with deep recurrent neural networks.|Transducer LSTM]] Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE International Conference on. IEEE, 2013.
+* Graves, Alan, Navdeep Jaitly, and Abdel-rahman Mohamed. [[Hybrid speech recognition with deep bidirectional LSTM." Automatic Speech Recognition and Understanding (ASRU)|Hybrid LSTM]], 2013 IEEE Workshop on. IEEE, 2013.
+
+!! Feature learning
+* Wang W, Arora R, Livescu K, et al. UNSUPERVISED LEARNING OF ACOUSTIC FEATURES VIA DEEP CANONICAL CORRELATION ANALYSIS[J].
+* Lee H, Pham P, Largman Y, et al. [[Unsupervised feature learning for audio classification using convolutional deep belief networks|CRBM for audio]][C]. Advances in neural information processing systems. 2009: 1096-1104. ([[BibTeX|lee09unsupervised.txt]])
+
+!! TTS
+* Ze H, Senior A, Schuster M. [[Statistical parametric speech synthesis using deep neural networks|Google DNN TTS]][C]. Acoustics, Speech and Signal Processing (ICASSP), 2013 IEEE International Conference on. IEEE, 2013: 7962-7966. ([[BibTeX|ze13statistical.txt]])
+
+!! Voice conversion
+* Chen L H, Ling Z H, Liu L J, et al. [[Voice conversion using deep neural networks with layer-wise generative training|USTC DNN VC]][J]. IEEE/ACM Transactions on Audio, Speech and Language Processing (TASLP), 2014, 22(12): 1859-1872. ([[BibTeX|chen14voice.txt]])
+* Desai S, Black A W, Yegnanarayana B, et al. Spectral mapping using artificial neural networks for voice conversion[J]. Audio, Speech, and Language Processing, IEEE Transactions on, 2010, 18(5): 954-964. ([[BibTeX|desai10spectral.txt]])
+* Nakashika T, Takashima R, Takiguchi T, et al. Voice conversion in high-order eigen space using deep belief nets[C]. INTERSPEECH. 2013: 369-372. ([[BibTeX|nakashika13voice.txt]])
+
+! [[TODO List|Paper Reading Group]]
+
+# [[top 5 arxiv papers|http://www.kdnuggets.com/2015/10/top-arxiv-deep-learning-papers-explained.html/2]]

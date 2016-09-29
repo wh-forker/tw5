@@ -1,0 +1,8 @@
+created: 20150403070319302
+modified: 20150404051149789
+title: VC with factorised HMM-TTS models
+type: text/vnd.tiddlywiki
+
+! References
+* Model-based VC [11-13]
+* Maximum-likelihood parameter generation (MLPG) is robus against variance modifications [22]

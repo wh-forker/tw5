@@ -1,0 +1,10 @@
+created: 20141010062010749
+modified: 20160420021621289
+tags: TiddlyWiki
+title: CodeMirror
+type: text/vnd.tiddlywiki
+
+! TODO
+* Autocomplete
+* Vim bindings
+* Switch to markdown?

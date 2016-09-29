@@ -1,0 +1,36 @@
+created: 20150115115104400
+modified: 20150115122611225
+tags: [[Bayesian Choice]]
+title: 5.3.2 Least favorable prior distributions
+type: text/vnd.tiddlywiki
+
+Consider $H_0:\theta\in\Theta_0$ to be tested against a point alternative $H_1:\theta\in\Theta_1$ with $\pi$ a prior distribution on $\Theta_0$. From a Bayesian point of view, the test problem can be represented as the test of $H_\pi: x\sim m_\pi$ versus $H_1:x\sim f(x|\theta_1)$, where $m$ is the marginal distribution under $H_0$
+$$
+m_\pi(x)=\int_{\Theta_0}f(x|\theta)\pi(\theta)d\theta.
+$$
+Since both hypothesis ($H-\pi$ and $H_1$) are point hypotheses, the [[Neyman-Pearson lemma]] ensures the existence of a UMP test $\varphi_\pi$, at significance level $\alpha$, with power $\beta_\pi = P_{\theta_1}(\varphi_\pi(x) = 0)$. This test is of the form
+$$
+\varphi_\pi(x) = \left\{ \begin{array}{ll}
+	1 & \mbox{if } m_\pi(x)>kf(x|\theta_1),\\
+    0 & \mbox{otherwise}.
+\end{array}\right.
+$$
+
+'' Definition 5.3.7'' A least favorable distribution is any prior distribution $\pi$ which maximizes the power $\beta_\pi$.
+
+''Theorem 5.3.8'' If the UMP test $\varphi_\pi$ at level $\alpha$ for $H_\pi$ versus $H_1$ satisfies
+$$
+\underset{\theta\in\Theta_0}{\sup}\mathbb E_\theta[L(\theta,\varphi_\pi)]\le\alpha,
+$$
+then
+
+# $\varphi_\pi$ is UMP at level $\alpha$;
+# if $\varphi_\pi$ is the unique $\alpha$-level test of $H_\pi$ versus $H_1$, $\varphi_\pi$ is the unique UMP test at level $\alpha$ to test $H_0$ versus $H_1$; and
+# $\pi$ is a least favorable distribution.
+
+<<<
+The constraint in the above theorem may seem unnecessary, but notice that $\varphi_\pi$ is defined by
+$$
+\int_{\{m_\pi(x)>kf(x|\theta_1)\}}m_\pi(x)dx=\alpha.
+$$
+<<<

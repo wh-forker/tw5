@@ -1,0 +1,16 @@
+created: 20150115121445288
+modified: 20150119063203816
+tags: Statistics
+title: Neyman-Pearson lemma
+type: text/vnd.tiddlywiki
+
+If the null and alternative hypotheses are point hypotheses, the Neyman-Pearson lemma establishes that there exist [[UMP|5.3.1 UMP and UMPU tests]] test procedures and that they are of the form
+$$
+\varphi_\pi(x) = \left\{ \begin{array}{ll}
+	1 & \mbox{if } f(x|\theta_1)<kf(x|\theta_0),\\
+    0 & \mbox{otherwise},
+\end{array}\right.
+$$
+$k$ being related to the selected significance level $\alpha$.
+
+proof: Lehmann (1986, p. 79)

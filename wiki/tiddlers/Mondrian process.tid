@@ -1,0 +1,19 @@
+created: 20150118141303405
+modified: 20150118142340499
+tags: [[Probability theory]]
+title: Mondrian process
+type: text/vnd.tiddlywiki
+
+A stochastic process over binary hierarchical axis-aligned partitions of $\mathbb R^d$.
+
+$\mathcal{MP}(\lambda,[l_1, u_1],[l_2, u_2])$
+
+# Draw $\Delta_\epsilon$ from exponential with rate $u_1-l_1+u_2-l_2$
+# if $\Delta_\epsilon > \lambda$ stop,
+# else, sample a split
+#* split dimension: choose dimension $j$ with prob $\propto u_j-l_j$
+#* split location: choose cut location uniformly from $[l_j, u_j]$
+#* recurse on left and right subtrees with parameter $\lambda-\Delta_\epsilon$
+
+self-consistency of MP:
+The restriction has distribution $\mathcal{MP}(\lambda,[l'_1, u'_1],[l'_2, u'_2])$

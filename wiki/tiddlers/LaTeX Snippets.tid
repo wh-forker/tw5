@@ -1,0 +1,29 @@
+created: 20141010095317608
+modified: 20150115121119481
+tags: LaTeX
+title: LaTeX Snippets
+type: text/vnd.tiddlywiki
+
+Inline separation
+
+```
+P [N(t+ \tau) - N(t) = k] = \frac{e^{-\lambda \tau} (\lambda \tau)^k}{k!}  \qquad k= 0,1,\ldots,
+```
+$$
+P [N(t+ \tau) - N(t) = k] = \frac{e^{-\lambda \tau} (\lambda \tau)^k}{k!}  \qquad k= 0,1,\ldots,
+$$
+
+equation array
+
+```
+\varphi_\pi(x) = \left\{ \begin{array}{ll}
+	1 & \mbox{if } m_\pi(x)>kf(x|\theta_1),\\
+    0 & \mbox{otherwise}.
+\end{array}\right.
+```
+$$
+\varphi_\pi(x) = \left\{ \begin{array}{ll}
+	1 & \mbox{if } m_\pi(x)>kf(x|\theta_1),\\
+    0 & \mbox{otherwise}.
+\end{array}\right.
+$$

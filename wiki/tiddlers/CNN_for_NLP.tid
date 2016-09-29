@@ -1,0 +1,13 @@
+created: 20160518070249069
+modified: 20160614033016393
+tags: NLP [[ConvNet Applications]]
+title: CNN for NLP
+type: text/vnd.tiddlywiki
+
+First read this post [[Understanding CNN for NLP|http://www.wildml.com/2015/11/understanding-convolutional-neural-networks-for-nlp/]]
+
+And this course： [[Stanford CNN for NLP]]
+
+[[A Convolutional Neural Network for Modelling Sentences]]: A good paper to read. The model is kind of too complex.
+
+[[Convolutional Neural Networks for Sentence Classification]]: A one-layer CNN approach with simplicity and empirical performance. This has become the standard baseline for new text classification publications.

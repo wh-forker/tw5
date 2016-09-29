@@ -1,0 +1,7 @@
+created: 20141020064936315
+modified: 20141020065236809
+tags: Analysis
+title: Laplace's Method
+type: text/vnd.tiddlywiki
+
+Azevedo-Filho & Shachter 1994 reviews Laplace's method results (univariate and multivariate) and presents a detailed example showing the method used in parameter estimation and probabilistic inference under a Bayesian perspective. Laplace's method is applied to a meta-analysis problem from the medical domain, involving experimental data, and compared to other techniques.

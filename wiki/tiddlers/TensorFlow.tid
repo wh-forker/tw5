@@ -1,0 +1,13 @@
+created: 20160516024031881
+modified: 20160530014353033
+tags: [[Deep Learning Tools]]
+title: TensorFlow
+type: text/vnd.tiddlywiki
+
+[[CS224D 2016|Stanford NLP Course]] has a decent tf tutorial.
+
+[[TensorBoard]]
+
+[[Projects|TensorFlow Projects]]
+
+[[TensorFlow Workarounds]]

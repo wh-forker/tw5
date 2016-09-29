@@ -1,0 +1,38 @@
+color: #643ca0
+created: 20141010021751138
+modified: 20150324111411111
+tags: Languages
+title: clojure
+type: text/vnd.tiddlywiki
+
+! Learning clojure
+[[Learn clojure in Y Minutes]]
+
+!! Websites
+[[4clojure]]
+
+[[braveclojure.com|http://www.braveclojure.com]]
+
+! Properties
+[[Transducer]]
+
+[[clojure Snippets]]
+
+! Examples
+* [[cljs quick start|https://github.com/clojure/clojurescript/wiki/Quick-Start]]
+* [[Compojure Address Book]]
+* [[Re-Frame]]
+
+! Tools
+* [[Om]]
+* [[Datomic]]
+* [[Overtone]]
+* Figwheel
+** Figwheel autoreloads and compiles your clojurescript code so that you can live code and see your changes update in the browser. It also comes with a repl for your clojurescript so you can evaluate your code there. This will come in handy.
+* [[Reagent]]
+** Reagent wraps the React.js library and provides a neat Clojurescript interface to it. This is my first time using it and it’s been very simple to pick up and use.
+* Ring
+** Ring is a simple abstraction for HTTP in Clojure. It allows you to create a webserver, define middleware etc.
+
+! Engineering Projects
+[[Onyx|https://github.com/MichaelDrogalis/onyx]]

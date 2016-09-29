@@ -1,0 +1,9 @@
+created: 20141020065405150
+modified: 20141020071203579
+tags: Papers Speech Bayesian
+title: Bayesian GMM
+type: text/vnd.tiddlywiki
+
+[[Laplace's Approximation|Laplace's Method]] is used to evaluate teh marginalized score.
+
+! Bayesian speaker identification framework

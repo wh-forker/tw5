@@ -1,0 +1,65 @@
+created: 20160425022224634
+modified: 20160519091949359
+tags: 
+title: NLP
+type: text/vnd.tiddlywiki
+
+[[NLP Bibs]]
+
+The performance is always dominated by the size of high quality data.
+
+<<<
+Probably the most successful concept is to use distributed representation of words. For example, neural network based language models significantly outperform N-gram models.
+<<< [[Efficient Estimation of Word Representations in Vector Space|Word2Vec]]
+
+! Data
+Size of vocabulary: speech 20K, PTB 50K, Google 1T
+
+This is what Baidu used in //End-to-End Speech Recognition in English and Mandarin//
+
+* Language model: Kneser-Ney smoothed character level 5-gram model.
+* English: 850mil n-grams trained with KenLM on Common Crawl Repository
+* Chinese: 2bil n-grams
+
+!! Chinese vs English
+Chinese characters are more similar to English syllables than English characters. In speech, there are 14.1 chars/s in English, 3.3 chars/s in Mandarin. Shannon entropy per char 4.9 bits in English, 12.6 bits in Mandarin.
+
+!! Datasets
+Lee collected [[these datasets|http://www.cs.cornell.edu/home/llee/data/]].
+
+!!! [[Sentense Classification Datasets]]
+
+! Features
+* BoW
+* Distributed word embeddings
+* Continuous ''vector'' representation of words
+** co-occurrence stats to obtain vectors for long phrases
+** LSA, fail to preserve linear regularities among words
+** LDA, computationally expensive on large datasets
+** [[Word2Vec]]
+** [[GloVe|Global Vectors for Word Representation]]
+
+! Sentence model
+is to analysis and represent the semantic content of a sentence for purposes of classification or generation.
+
+* sentiment analysis
+* paraphrase detection
+* entailment recognition
+* summarisation
+* discourse analysis
+* grounded language learning
+* image retrieval
+
+!! Reviews
+* Composition based methods for 
+** vector representation of words or
+** tied to particular syntactic relations or word types
+* automatically extracted logical forms
+* neural networks @@color:#d33682;
+''advantages'': can be trained to obtain feature by predicting the context. can be powerful classifier/sentence generator
+@@
+** neural BoW or bag-of-//n//-grams
+** recursive nets
+** time-delay nets based on convolutional operations
+
+! [[CNN for NLP]]

@@ -1,0 +1,34 @@
+created: 20150622094925734
+modified: 20160513085952886
+tags: [[Speech Experiments]]
+title: TIMIT
+type: text/vnd.tiddlywiki
+
+! Implementations
+
+[[TIMIT HF]]
+
+! Recent Results
+
+Best TIMIT result in the literature: [[Transducer LSTM]]
+
+TIMIT Results with End-To-End Training
+
+|Training Method	|Dev PER	|Test PER	|
+|CTC				|19.05+-0.11|21.57+-0.25|
+|CTC (Noise)		|16.34+-0.07|18.63+-0.16|
+|Transducer			|15.97+-0.28|18.07+-0.24|
+
+Both networks consisted of five bidirectional hidden levels, each containing 2 LSTM layers of 250 cells, along with a size 62 softmax output layer (one unit for each phoneme, plus an extra blank unit).
+
+* CTC: Connectionist Temporal Classification (6.8M weights). The CTC were first trained to convergence with no noise, then retrained with weight noise (std 0.075).
+* Transducer: Sequence Transduction (7.4M weights) with an additional phoneme prediction network with a hidden layer of 250 LSTM cells, and an output network with a single hidden layer of 250 tanh units. Single best transducer run is 17.7.
+
+All networks were trained using SGD, with learning rate $10^{-4}$, momentum 0.9 and random initial weights drawn uniformly from $[-0.1,0.1]$.
+
+TIMIT Results with [[Hybrid Training|Hybrid LSTM]]i
+
+|Network		|Dev PER	|Test PER	|Dev FER	|Test FER	|Dev CE		|Test CE	|
+|DBRNN			|19.91+-0.22|21.92+-0.35|30.82+-0.31|31.91+-0.47|1.07+-0.010|1.12+-0.014|
+|DBLSTM			|17.44+-0.16|19.34+-0.15|28.43+-0.14|29.55+-0.31|0.93+-0.011|0.98+-0.019|
+|DBLSTM (Noise)	|16.11+-0.15|17.99+-0.13|26.64+-0.08|27.88+-0.16|0.88+-0.008|0.93+-0.004|

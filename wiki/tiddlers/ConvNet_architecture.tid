@@ -1,0 +1,19 @@
+created: 20151112065228634
+modified: 20151112065317425
+title: ConvNet architecture
+type: text/vnd.tiddlywiki
+
+Here we use Caffenet (Alexnet) as an example
+
+```
+[INPUT-[CONV-RELU-POOL-NORM]*2-[CONV-RELU]*3-POOL-[FC-RELU-DROP]*2-FC-LOSS]
+```
+
+In more detail, [[and even more|ConvNet layer details]]:
+
+* INPUT [3x227x227] holds image of size [227x227] with 3 color channels (RGB).
+* CONV layer will compute the output of neurons that are connected to local regions in the input, each computing a dot product between their weights and the region they are connected to in the input volume. The first results in a [96x55x55] by a stride of 4, but later don't change the blob height and width, only depth (#filters).
+* RELU layer will apply an elementwise activation function, such as the $\max(0,x)$ thresholding at zero. This leaves the size of the volume unchanged.
+* POOL layer will perform a downsampling operation along the spatial dimensions (width, height). Each will downsample by 2 in height and width.
+* NORM layer is used to normalize the channel response.
+* FC (i.e. fully-connected) layer will compute the class scores, resulting in volume of size [1x1xC], where each of the C numbers correspond to a class score, such as among the 1000 categories of ImageNet. As with ordinary Neural Networks and as the name implies, each neuron in this layer will be connected to all the numbers in the previous volume.

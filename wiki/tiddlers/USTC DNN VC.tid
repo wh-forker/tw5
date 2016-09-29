@@ -1,0 +1,24 @@
+created: 20150427122254238
+modified: 20150428071100556
+tags: [[Voice Conversion]]
+title: USTC DNN VC
+type: text/vnd.tiddlywiki
+
+Using DNN to construct a global non-linear mapping relationship between the spectral envelopes of two speakers. 
+
+! Model
+The DNN is trained by cascading 2 RBMs, which model the distributions of spectral envelopes of source and target speakers, using a Bernoulli BAM.
+
+The model is proposed to convert the [[spectral envelopes|Spectral envelope]] directly instread of melcepstra.
+
+! Learning
+!! Training stage
+Construct a generative model $\lambda^{(v)}$ to describe the distribution of the joint spectral space. The features of the joint space are ''concatenations'' of the time-aligned source and target spectral features, $v=[x, y]$.
+
+!! Conversion stage
+Maximum output probability parameter generation
+$$
+\tilde y^{(s)} = arg \underset{y^{(s)}}{\max}P(y|x,\lambda^{(v)})
+$$
+s.t. $y=My^{(s)}$. The constraint makes sure the observation sequences are fixed ''linear transformations'' of the static sequences (since the delta and delta-delta are computed by difference).
+

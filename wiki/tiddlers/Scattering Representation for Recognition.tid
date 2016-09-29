@@ -1,0 +1,7 @@
+created: 20141010104813479
+modified: 20141016054740002
+tags: [[Scattering Representation]] Papers
+title: Scattering Representation for Recognition
+type: text/vnd.tiddlywiki
+
+The structure resembles a [[convolutional network|Convolutional Networks]], instead of learning the [[filter banks|Filter Bank]], [[wavelets|Wavelet Transform]] are used to capture transform invariant features.

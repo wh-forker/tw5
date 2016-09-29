@@ -1,0 +1,15 @@
+created: 20160614032949712
+modified: 20160926054256472
+tags: [[Convolutional Neural Network]]
+title: ConvNet Applications
+type: text/vnd.tiddlywiki
+
+! Categories
+
+# [[Object Detection With CNNs]]
+# [[CNN for Video]]
+# [[CNN for NLP]]
+
+! Resources
+
+# [[Awesome Deep Learning|https://github.com/kjw0612/awesome-deep-vision#video-captioning]]

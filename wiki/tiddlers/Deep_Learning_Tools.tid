@@ -1,0 +1,23 @@
+created: 20160516024046072
+modified: 20160516043628984
+tags: [[Deep Learning]]
+title: Deep Learning Tools
+type: text/vnd.tiddlywiki
+
+For Speech
+
+* [[Kaldi]]
+
+Programmatic generation
+
+* [[Torch]]
+* [[Theano]]
+* [[TensorFlow]]
+
+Configuration file
+
+* [[Caffe]]
+* [[DistBelief]]
+* [[CNTK]]
+
+The problem with this setting is that when we have a very large model, e.g. MS'es 150-layer one, the unit has to be copied many many times.

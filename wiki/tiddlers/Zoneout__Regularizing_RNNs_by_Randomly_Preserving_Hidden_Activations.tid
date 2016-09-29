@@ -1,0 +1,9 @@
+created: 20160612074319976
+modified: 20160612091632842
+tags: RNN
+title: Zoneout: Regularizing RNNs by Randomly Preserving Hidden Activations
+type: text/vnd.tiddlywiki
+
+[[link|http://arxiv.org/pdf/1606.01305v1.pdf]]
+
+In RNN, this has a similar structure as dropout, only different by passing the activations from the previous time-step. Idea should work with ConvNet, result not very pretty.

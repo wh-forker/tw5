@@ -1,0 +1,11 @@
+created: 20150427124729221
+title: nakashika13voice.txt
+type: text/plain
+
+@inproceedings{nakashika2013voice,
+  title={Voice conversion in high-order eigen space using deep belief nets.},
+  author={Nakashika, Toru and Takashima, Ryoichi and Takiguchi, Tetsuya and Ariki, Yasuo},
+  booktitle={INTERSPEECH},
+  pages={369--372},
+  year={2013}
+}

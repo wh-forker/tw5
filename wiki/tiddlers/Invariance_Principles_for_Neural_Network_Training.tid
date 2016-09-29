@@ -1,0 +1,67 @@
+created: 20160817114243410
+modified: 20160818113955140
+tags: ICML
+title: Invariance Principles for Neural Network Training
+type: text/vnd.tiddlywiki
+
+[[link|http://arxiv.org/abs/1602.08007]]
+
+[[video|https://www.youtube.com/watch?v=5rYiDpVFXV8]]
+
+! examples modeling structured text
+# Synthetic music notes: constraints that notes belong to a perfect chord.
+# Nesting: Matching quotes and one style of text in each scope.
+# Long distance xor
+# $a^nb^n$
+
+! Model rewriting
+Consider a gated RNN which reads $(x_1, \cdots, x_t)$. The activities are
+$$
+h^{t+1} = sigm(b_i+\rho_{ix}+\sum_jh^t_jw_{jix})
+$$
+where $x$ is the latest character read, $w_{jix}$ are the weights when reading $x$ and $\rho_{ix}$ are the input weights.
+
+''remark:'' layer normalization?
+
+Removing bias worsen the performance, so we can try the reverse thing. Substituting $w_{jix}\rightarrow w_{jix} + w_{ji}^{base}$
+
+The bias has to balance $n$ weights $w_{ij}$ which change at each training step, rewrite $b = nb$. For backprop, amounts to multiplying the learning rate of b_i by $n^2$. Not compensated by Adagrad.
+
+Training on data $x$ is not equivalent to training on data $1-x$.
+
+! Avoid model rewritings
+# identify the best vars
+# Use a learning algorithm that is insensitive to model rewriting
+
+Standard answer is to use natural gradient using the inverse Fisher metric. But its algorithmic cost is $O(\#params)^2 dim(output))$ per data point. This is unsuable for larger than 100 neurons.
+
+Invariance often provides:
+# Fewer arbitrary choices, no model rewriting, fewer magic numbers
+# Often, better performance
+# Performance transfer
+
+!! Gradient descent
+$\theta\leftarrow\theta-\eta\frac{\partial L}{\partial \theta}$ is not homogenous unless unit of $\eta = $ unit of $\theta^2$.
+
+For a small learning rate $\eta$, this is equivalent (up to $O(\eta^2)$) to
+$$
+\theta^{k+1} = \underset{\theta}{arg min} L(\theta)+\frac{1}{2\eta}\|\theta-\theta^k\|^2
+$$
+ minimizing loss and not moving too far. This depends on the numerical representation of $\theta$.
+ 
+The solution is to use a norm depends on what the network does, rather than how $\theta$ is represented. Riemannian metrics are norms
+$$
+\|\delta\theta\|^2 = \delta\theta^\top M(\theta)\delta\theta
+$$
+with $M(\theta)$ a well-chosen positive definite matrix depending on $\theta$.
+
+Riemannian gradient descent:
+$$
+\theta^{k+1} = \theta^k -\eta M(\theta)^{-1}\frac{\partial L(\theta^k)}{\partial \theta}
+$$
+
+For natural gradient which defines $\|\theta-\theta^k\|^2$ as the KL divergence, $M(\theta)$ is Fisher information matrix. Two possible strategies:
+
+# Try to scale down the natural gradient
+# Backprop a metric on the output, but keeping only the diagonal of Hessian breaks invariance
+

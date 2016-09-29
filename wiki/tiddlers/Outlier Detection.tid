@@ -1,0 +1,11 @@
+created: 20141202090526191
+modified: 20141202090738809
+tags: Statistics
+title: Outlier Detection
+type: text/vnd.tiddlywiki
+
+One question that outlier detection aims to answer can be phrased:
+
+<<<
+Given $n$ independent random variables from a common, but unknown, distribution $\mu$, does a new input $X$ belong to the support of $\mu$?
+<<<

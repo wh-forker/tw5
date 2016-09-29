@@ -1,0 +1,89 @@
+created: 20150615053606349
+modified: 20160513090055019
+tags: [[Deep Learning]] [[Speech Experiments]]
+title: TIMIT HF
+type: text/vnd.tiddlywiki
+
+! Kaldi 
+!! Preprocessing
+
+# Data preparation (`data_prep.sh`)
+#* converting sphere files
+#* and lexicon in text to fst format
+#* generating utterance to speaker maps
+#* transcriptions to symbol table ints
+# Following steps
+#* `prepare_graphs.sh`
+#* symbol tables for words and phones
+#* binary format FSTs: data/{G.fst, L.fst, L_disambig.fst}
+#* files indicating silences
+# Raw MFCC features
+#* differ script (scp) and archive (ark) files (Table concept: specifiers)
+# [[HMM Alignments]] Monophone training
+#* `$feats` treated as an rspecifier
+#* creates `$dir/topo` which specifies phone topologies
+#* Initialization
+#* creates decoding graphs
+# Triphone training
+
+!! Karel's setting
+
+it relies on CUDA
+
+!!! Original
+Karel works on fMLLR and gmms.
+
+# RBM pretraining [[geoff's tutorial|http://www.cs.toronto.edu/~hinton/absps/guideTR.pdf]]
+# frame cross-entropy
+# sequence-training optimizing sMBR
+
+!!! LSTM
+Use fbank features.
+
+# For dev & training set
+## copy data
+## make fbank
+## compute cmvn
+# split the training set with `subset_data_dir_tr_cv.sh`
+
+```
+ # Train
+  $cuda_cmd $dir/log/train_nnet.log \
+    steps/nnet/train.sh --network-type lstm --learn-rate 0.0001 \
+      --cmvn-opts "--norm-means=true --norm-vars=true" --feat-type plain --splice 0 \
+      --train-opts "--momentum 0.9 --halving-factor 0.5" \
+      --train-tool "nnet-train-lstm-streams --num-stream=4 --targets-delay=5" \
+      --proto-opts "--num-cells 512 --num-recurrent 200 --num-layers 2 --clip-gradient 50.0" \
+    ${train}_tr90 ${train}_cv10 data/lang $ali $ali $dir || exit 1;
+```
+
+!!! Multitask
+
+```
+ $cuda_cmd $dir/log/train_nnet.log \
+    steps/nnet/train.sh \
+      --cmvn-opts "--norm-means=true --norm-vars=true" \
+      --delta-opts "--delta-order=2" --splice 5 \
+      --labels "scp:$dir/pasted_post.scp" --num-tgt $output_dim \
+      --proto-opts "--block-softmax-dims='$ali1_dim:$ali2_dim'" \
+      --learn-rate 0.008 \
+      ${train_tr90_wsj} ${train}_cv10 lang-dummy ali-dummy ali-dummy $dir || exit 1;
+```
+|				|lstm	|multitask	|
+|network-type	|lstm	|			|
+|learn-rate		|0.0001	|0.008		|
+|cmvn-opts		|norm-means/vars|	|
+|feat-type		|plain	|			|
+|delta-otps		|		|order =2	|
+|splice			|0		|5			|
+|train-opts		|momentum 0.9 halving-factor 0.5|		|
+|train-tool		|nnet-train-lstm-streams num-stream=4 target-delay=5| |
+|labels			| |pasted_post.scp|
+|num-tgt		| |$output_dim|
+|proto-opts		|num-cells 512 num-recurrent 200 num-layers 2 clip-gradient 50.0|block-softmax-dims|
+
+
+! Demo Comments
+Initialization is important
+
+RNNs can be used in phoneme classification but the final speech recognition system has to incorparate HMMs.

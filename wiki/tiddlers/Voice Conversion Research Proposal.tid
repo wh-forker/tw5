@@ -1,0 +1,43 @@
+created: 20150423132347672
+modified: 20150510025745742
+tags: Blog [[Voice Conversion]]
+title: Voice Conversion Research Proposal
+type: text/vnd.tiddlywiki
+
+Build the speaker acoustic model with dynamic information.
+
+* HMM
+* Conditional RBM
+* Gaussian process dynamic model
+
+! Previous works
+Related works of [[DNN ASR]]
+
+[[DNN Adaptation]]
+
+[[Multitask Learning for Phone label and State]]
+
+! Model
+An ASR-like model to extract speaker's acoustic feature from the text label (and prosody). Then learn the transformation between target and source features.
+
+I kind of think a flexible voice conversion system can work as a semi-TTS. So the training data need to be as large unless personal acoustic features can be precisely modeled. The difference is personal prosody (and maybe [[glottal flow|Glottis]]) features does not need to be learnt.
+
+We can see this problem as learning to sing. 
+
+# Extract target and source acoustic features (enough to reconstruct the language, or unless the target sentence).
+# Learn the exact matching (the matching matrix is sparse, but linear is not a good idea)
+# We learn the score and lyrics (prosody and text) from the target voice. Using the other part of the same model.
+# Send the converted features and the script back to the TTS-like feature extraction model and get the voice back at the other end.
+
+!! Extracting vocal tract
+A time series indicating the speech text and prosody characteristics of the sentence, multiplying the speaker's acoustic features for these variables makes a series of spectra.
+
+!!! Sparse coding
+
+!!! Deep feature generation
+
+!! Learning the transformation
+maximum output probability parameter generation
+$$
+\tilde y^{(s)} = arg \underset{y^{(s)}}{\max}P(y|x,\lambda^{(v)})
+$$

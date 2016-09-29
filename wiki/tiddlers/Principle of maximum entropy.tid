@@ -1,0 +1,11 @@
+created: 20141112044257179
+modified: 20141112050713002
+tags: Statistics
+title: Principle of maximum entropy
+type: text/vnd.tiddlywiki
+
+The principle states that, subject to precisely stated prior data, the probability distribution which best represents the current state of knowledge is the one with largest entropy.
+
+The principle of maximum entropy expresses a claim of maximum ignorance. The selected distribution is the one that makes the least claim to being informed beyond the stated prior data, i.e., admitting the most ignorance beyond the stated prior data.
+
+[[Pitman-Koopman theorem]] states that the necessary and sufficient condition for a sampling distribution to admit sufficient statistics of bounded dimension is that it have the general form of a maximum entropy distribution.

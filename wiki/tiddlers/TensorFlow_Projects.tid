@@ -1,0 +1,11 @@
+created: 20160520062435490
+modified: 20160530093639336
+tags: TensorFlow
+title: TensorFlow Projects
+type: text/vnd.tiddlywiki
+
+! Tutorials
+[[MNIST multiclass|https://www.tensorflow.org/versions/r0.8/tutorials/mnist/beginners/index.html]]
+
+! Applications
+[[cnn-text-classification]]

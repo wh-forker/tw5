@@ -1,0 +1,32 @@
+created: 20150413052032388
+modified: 20150525075906544
+tags: Speech
+title: Style & Content
+type: text/vnd.tiddlywiki
+
+! MIT 1999 paper
+A general framework for learning to solve two-factor tasks using bilinear models, which provide sufficiently expressive representations of factor interactions but can nontheless be fit to data using efficient algorithms based on the singular value decomposition and expectation-maximization.
+
+!! Bilinear models
+!!! Symmetric model
+$$
+y_k^{sc} = \sum_{i=1}^I\sum_{j=1}^Jw_{ijk}a_i^sb_j^c.
+$$
+$a_i^s$ and $b_j^c$ are style and content parameters, $y_k^{sc}$ is a $K$-dimensional observation vector in style $s$ and content class $c$.
+
+!!! Asymmetric model
+$$
+a_{jk}^s = \sum_iw_{ijk}^sa_i^s,
+$$
+giving
+$$
+y_k^{sc} = \sum_{j}a_{jk}^sb_j^c.
+$$
+Style and content can be viewed as 2 hidden layers in a neural net and they are interconnected by weight $W_k$.
+
+!! Model fitting
+Both model can be solved by matrix factorization techniques. 
+
+In the experiment, asymmetric model is fitted with 4-dimensional style parameter selected by cross validation. And before a test of recognition, a separable mixture model with $S\times C$ gaussian components is trained with EM.
+
+The content is predicted while the style matrix of test case is learned in EM. However, the model is tricky to solve. "Overfitting" behavior is often observed, where as EM iterates, test case is assigned to incorrect class and the likelihood grows. With 15 speakers, best precision can get is 74.6% not significantly better than 1-NN, 63.9%.

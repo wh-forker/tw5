@@ -1,0 +1,25 @@
+created: 20141009094649982
+modified: 20141010024618945
+tags: TiddlyWiki LaTeX
+title: MathJax Plugin
+type: text/vnd.tiddlywiki
+
+Using [[kpe's plugin|https://github.com/kpe/tw5-mathjax-plugin/tree/v0.1.0]], [[the previous one|https://gist.github.com/kpe/cc0547b318e6f8d4ddaa]] uses `MutationObserver` and gets error.
+
+! Usage
+
+!! Inline
+We can render inline math like $a2+b2=c2$ by surrounding the MathJax markup with single dollar symbols like so: `$a^2 + b^2 = c^2$`.
+
+!! Block
+To generate standalone blocks of math, add double dollar symbols on new lines before and after the markup.
+
+```
+$$
+P(E)   = {n \choose k} p^k (1-p)^{ n-k}
+$$
+```
+
+$$
+P(E)   = {n \choose k} p^k (1-p)^{ n-k}
+$$

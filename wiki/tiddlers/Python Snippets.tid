@@ -1,0 +1,15 @@
+created: 20150312095330467
+modified: 20160513085718774
+tags: Python Snippets
+title: Python Snippets
+type: text/vnd.tiddlywiki
+
+Display a number with leading zeros
+
+```python
+"%02d" % (1,)
+'{num:02d}'.format(num=i)
+```
+
+! Machine learning
+[[Outlier]]

@@ -1,0 +1,13 @@
+created: 20160517074416292
+modified: 20160518030442297
+tags: [[Functional Analysis]] [[Convolutional Neural Network]]
+title: Convolution
+type: text/vnd.tiddlywiki
+
+1d discrete convolution generally:
+
+$$
+(f * g)[n] = \sum_{m=-M}^M f[n-m]g[m]
+$$
+
+Convolution is great to extract features from images.

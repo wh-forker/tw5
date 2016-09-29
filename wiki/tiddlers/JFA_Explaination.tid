@@ -1,0 +1,44 @@
+created: 20150714111926759
+modified: 20150718072155905
+title: JFA Explaination
+type: text/vnd.tiddlywiki
+
+[[Probabilistic View of JFA]]
+
+! Training JFA
+The joint posterior in a general JFA model is hard to compute. brute force [4] or much more efficiently by the Gauss-Seidel method [17].
+
+!! Gauss-Seidel
+It provides a very good approximation to the joint posterior and is guaranteed to find the ''mode'' of the posterior when converge.
+
+The posterior dsitribution of $y(s)$ conditioned on the acoustic observations of the speaker is
+$$
+N(l^{-1}(s)v^*\Sigma^{-1}\tilde F(s), l^{-1}(s))
+$$
+where
+$$
+l(s) = I + v^*\Sigma^{-1}N(s)v
+$$
+
+!! Updating UBM variance
+TODO: Do I need to update it? during eigenvoice or eigenemotion?
+
+!! Variational Bayes EM training
+The Gauss-Seidel method is an instance of variational Bayes. These methods are needed when dealing with general cases of JFA when assignments of frames to Gaussians are treated as hidden variables.
+
+! Why i-vector works
+When there is no UBM adaptation, the calculation of joint posterior of hidden variables is straightforward.
+
+The feature vector extracted from one recording rather than multiple recordings as in the JFA case seems to be less reliable. I-vector averaging can be used to merge multiple i-vectors into one.
+
+!! PLDA
+This gives the state-of-the-art speaker recognition performance.
+
+The success of i-vector/PLDA cascade can be viewed as one way of decomposing JFA into front-end and back-end models.
+
+''Uncertainty propagation'' incorporates 
+
+!! Does LDA/WCCN help with emotions
+
+!! Cosine Similarity vs Likelihood Ratio
+

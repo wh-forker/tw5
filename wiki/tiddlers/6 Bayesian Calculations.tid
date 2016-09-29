@@ -1,0 +1,14 @@
+created: 20150120125413219
+modified: 20150120130716653
+tags: [[Bayesian Choice]]
+title: 6 Bayesian Calculations
+type: text/vnd.tiddlywiki
+
+Given a loss function $L$ and a prior distribution $\pi$, the Bayes estimate associated with an observation $x$ is the (usually unique) decision $d$ minimizing the posterior loss
+$$
+L(\pi, d|x) = \int_\Theta L(\theta, d)\pi(\theta|x)d\theta.
+$$
+Its minimization can be hindered by two difficulties in practice:
+
+# the explicit computation of the posterior distribution, $\pi(\theta|x)$, may be impossible; and
+# even if $\pi(\theta|x)$ is known, this does not necessarily imply that minimizing it is an easy task; indeed, when analytic integration is impossible, numerical minimization sometimes calls for a formidable amount of computing time, especially when $\Theta$ and $\mathcal D$ have large dimensions.

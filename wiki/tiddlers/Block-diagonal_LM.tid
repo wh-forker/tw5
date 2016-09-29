@@ -1,0 +1,16 @@
+created: 20150629131210770
+modified: 20150629132206538
+title: Block-diagonal LM
+type: text/vnd.tiddlywiki
+
+```
+@inproceedings{chan1999training,
+  title={Training recurrent network with block-diagonal approximated Levenberg-Marquardt algorithm},
+  author={Chan, Lai-Wan and Szeto, Chi-Cheong},
+  booktitle={Neural Networks, 1999. IJCNN'99. International Joint Conference on},
+  volume={3},
+  pages={1521--1526},
+  year={1999},
+  organization={IEEE}
+}
+```

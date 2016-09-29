@@ -1,0 +1,28 @@
+created: 20160530014404742
+modified: 20160530091623197
+tags: TensorFlow
+title: TensorFlow Workarounds
+type: text/vnd.tiddlywiki
+
+! Version 0.80r is not compatible with skimage
+* workaround: import skimage before tf.
+* clean solution: not supported yet.
+
+! GPU1 not visible
+* workaround: run as `CUDA_VISIBLE_DEVICES=gpuid python myscript.py`
+* clean solution: maybe graph level specification works but not perceived.
+
+! Imbalanced class
+* workarounds:
+** increase batch size
+** oversampling
+* should also try:
+** advanced sampling methods (e.g. [[SMOTE|http://arxiv.org/abs/1106.1813]])
+** modify loss fun
+
+```python
+  z * -log(sigmoid(x)) + (1 - z) * -log(1 - sigmoid(x))
+= x - x * z + log(1 + exp(-x))
+
+cost = tf.reduce_mean(-tf.reduce_sum(y*tf.log(_pred) + (1-y)*tf.log(1-_pred), reduction_indices=1))
+```

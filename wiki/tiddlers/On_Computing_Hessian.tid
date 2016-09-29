@@ -1,0 +1,23 @@
+created: 20150629110112814
+modified: 20150630100406965
+tags: [[Second Order Methods]]
+title: On Computing Hessian
+type: text/vnd.tiddlywiki
+
+! Backpropagating the Diagonal Hessian
+Assume each layer has the functional form $o_i = f(y_i) = f(\sum_jw_{ij}x_j)$. The iteration is obtained using the Gaussian-Newton approximation (dropping the term that contain $d^2f(y)$). The cost of computing the diagonal second derivatives is essentially the same as the regular backpropagation. This technique is applied in the ''optimal brain damage'' pruning procedure.
+
+!! Diagonal Bayesian Penalty
+Chp4 of [[Neural Networks: Tricks of the Trade]]. The hyperparameters have to be updated to make sure the augmented Hessian is p.d. 
+
+The ''evidence for a network'' evaluated with cross-entropy error is as follows:
+$$
+\ln p(D|\alpha) = -\frac{1}{2}\sum_{i=1}^n\alpha_{[i]}w_i^2-E-\frac{1}{2}|H|+\sum_c\frac{n_c}{2}\ln\alpha_c-\frac N 2\ln(2\Pi)
+$$
+This algorithm is very sensitive to small eigenvalues of Hessian (which can be omitted). So I don't know what is going on here.
+
+! Computing the Product of the Hessian and a Vector
+The finite difference method:
+$$
+Hv\sim\frac{1}{\alpha}\left(\frac{\partial E}{\partial w}(w+\alpha v)-\frac{\partial E}{\partial w}(w)\right)
+$$

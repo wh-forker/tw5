@@ -1,0 +1,55 @@
+color: #00c800
+created: 20141010100558233
+modified: 20160921075209031
+title: Papers
+type: text/vnd.tiddlywiki
+
+[[Conferences]]
+
+! Reading List
+!! Audio
+!!! Speech
+* [[Emotional Speaker Recognition Thesis]]
+* [[Bayesian GMM]]
+* [[Salient Acoustic Event Detection]]
+* [[Speech Synthesis]]
+* [[Sytle & Content]]
+
+[[Feature Extraction]]
+
+!!! [[Scattering Representation]]
+!!!! Unfinished
+<$list filter="[!has[draft.of]tag[Scattering Representation]!tag[done]sort[created]]">
+
+<$checkbox tag="done"> <$link to={{!!title}}><$view field="title"/></$link></$checkbox>
+</$list>
+!!!! Finished
+<$list filter="[!has[draft.of]tag[Scattering Representation]tag[done]sort[created]]">
+
+<$checkbox tag="done"> ~~<$link to={{!!title}}><$view field="title"/></$link>~~</$checkbox>
+</$list>
+
+!! Machine Learning
+[[Nonparametric Bayes]]
+
+!!! [[NIPS]]
+
+!!! [[ICML]]
+
+!!!! Unfinished
+<$list filter="[!has[draft.of]tag[NIPS]!tag[done]sort[created]]">
+
+<$checkbox tag="done"> <$link to={{!!title}}><$view field="title"/></$link></$checkbox>
+</$list>
+!!!! Finished
+<$list filter="[!has[draft.of]tag[Scattering Representation]tag[done]sort[created]]">
+
+<$checkbox tag="done"> ~~<$link to={{!!title}}><$view field="title"/></$link>~~</$checkbox>
+</$list>
+
+! Bibliographies
+
+* [[Nonparametric Bayes|Nonparametric Bayes Bib]]
+* [[Superiorization|http://math.haifa.ac.il/YAIR/bib-superiorization-censor.html]]
+* [[Deep Learning|Deep Learning Bib]]
+* [[Audio Signal Processing]]

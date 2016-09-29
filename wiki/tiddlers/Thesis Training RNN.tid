@@ -1,0 +1,70 @@
+created: 20150514053612701
+modified: 20150629124155331
+tags: [[Deep Learning]]
+title: Thesis Training RNN
+type: text/vnd.tiddlywiki
+
+```
+@phdthesis{sutskever2013training,
+  title={Training recurrent neural networks},
+  author={Sutskever, Ilya},
+  year={2013},
+  school={University of Toronto}
+}
+```
+
+A modern theory of why RNNs fail to learn long-term dependencies because simple gradient descent fails to optimize them correctly. One attempt to mitigate this problem is Hessian Free (HF) optimization
+
+Hessian Free
+(Stocahstic) Gradient Descent
+Momentum methods (Hinton, Nesterov)
+
+Initialization is important in DNNs. Is pretraining important or not?
+
+! Background
+!! RNN Algorithms
+!!! Echo-State Networks
+The Echo-State Network (ESN; Jaeger and Haas, 2004) is a standard RNN that is trained with the ESN
+training method, which learns neither the input-to-hidden nor the hidden-to-hidden connections, but sets them to ''draws from a well-chosen distribution'', and only uses the training data to learn the hidden-to-output connections.
+
+Unlike random projections or convolutional neural networks with random weights, RNNs are highly sensitive to the scale of the random recurrent weight matrix, which is a consequence of the ''exponential relationship between the scale and the evolution of the hidden states''. When the recurrent connections are sparse and are scaled so that their spectral radius is slightly less than 1, the hidden state sequence remembers its inputs for a limited but nontrivial #timesteps while applying many random transformations to it.
+
+Despite its impressive performance on the synthetic problems from Martens and Sutskever (2011),
+the ESN has a number of limitations. Its capacity is limited because ''its recurrent connections are not learned'', so it cannot solve data-intensive problems where high-performing models must have millions of parameters. And the size of high-performing ESNs grows very quickly with the information that the hidden state needs to carry.  This explanation is consistent with the performance characteristics of random convolutional networks, which excel only when the number of labelled cases is very small, so systems that adapt all the parameters of the neural network lose because of overfitting.
+
+!!! Mapping Long Sequences to Short Sequences
+Connectionist Sequence Classification
+
+!!! Truncated Backpropagation Through Time
+Truncated BPTT processes the sequence one timestep at a time, and every $k_1$ timesteps, it runs BPTT for $k_2$ timesteps, so a parameter update can be cheap if $k_2$ is small. Consequently, its hidden states have been exposed to many timesteps and so may contain useful information about the far past, which would be opportunistically exploited.
+
+! Training RNNs with Hessian-Free Optimization
+RNNs trained by HF can significantly outperform similarly sized LSTMs.
+
+!! [[Hessian-Free Optimization]]
+
+! Language Modelling with RNNs
+!! Tensor RNN
+$$
+h_t = \tanh(W_{hv}v_t+W_{hh}^{(v_t)}h_{t-1}+b_h)
+$$
+each character specifies a different hidden-to-hidden weight matrix. $W_{hh}^{(v_t)}$ can be defined with a tensor
+$$
+W_{hh}^{(v_t)} = \sum_{m=1}^Mv_t^{(m)}W_{hh}^{(m)}
+$$
+
+!! Multiplicative RNN
+The storage of $W_{hh}^{(m)}$ can be prohibitive. $W_{hh}^{(v)}$ can be factored with
+$$
+W_{hh}^{(v_t)} = W_{hf}\text{diag}(W_{fv}v_t)W_{fh}
+$$
+
+! Things to Do
+Compare SGD and second order methods for RNN, CW-RNN and LSTM.
+
+Second order algorithms to try:
+
+* HF
+* BP of diagonal Hessian
+
+Plot the Eigenvalue order of the Hessian.

@@ -1,0 +1,16 @@
+created: 20150309061946151
+modified: 20150504060845905
+tags: Speech
+title: Feature Extraction
+type: text/vnd.tiddlywiki
+
+[[RNN for ASR|http://research.microsoft.com/pubs/164627/4085.pdf]]: Using features other than MFCCs has long been a focus of research. A common technique to merge streams is to use a Tandem method, in which sun
+
+How to generate good spectro-temporal modulation features?
+
+!! Deep Learning
+
+!! wu10robust
+It is used to deal with noisy environment.
+
+Constrained nonnegative tensor factorization (cNTF) using common tensor decomposition methods such as CANCECOMP/PARAFAC model with nonnegative constraints.

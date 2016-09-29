@@ -1,0 +1,27 @@
+color: #aa0088
+created: 20141014071420927
+modified: 20150422084514602
+title: MATLAB
+type: text/vnd.tiddlywiki
+
+! Properties
+[[MATLAB Snippets]]
+
+! Vectorization
+[[link|http://ufldl.stanford.edu/wiki/index.php/Logistic_Regression_Vectorization_Example]]
+!! Logistic regression vectorization
+Consider training a logistic regression model using batch gradient ascent. Suppose our hypothesis is
+$$
+h_\theta(x) = \frac{1}{1+\exp(-\theta^Tx)},
+$$
+we let $x_0=1$, so that $x \in \Re^{n+1}$ and $\theta \in \Re^{n+1}$, and $\theta_0$ is our intercept term. We have a training set $\{(x^{(1)}, y^{(1)}), \ldots, (x^{(m)}, y^{(m)})\}$ of $m$ examples, and the batch gradient ascent update rule is $\theta := \theta + \alpha \nabla_\theta \ell(\theta)$, where $\ell(\theta)$ is the log likelihood and $\nabla_\theta \ell(\theta)$ is its derivative.
+
+We thus need to compute the gradient:
+$$
+\nabla_\theta \ell(\theta) = \sum_{i=1}^m \left(y^{(i)} - h_\theta(x^{(i)}) \right) x^{(i)}_j.
+$$
+
+```matlab
+% Implementation 3
+grad = x * (y- sigmoid(theta'*x))';
+```

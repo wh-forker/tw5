@@ -1,0 +1,20 @@
+created: 20160519065827958
+modified: 20160531065157202
+tags: [[CNN for NLP]]
+title: Convolutional Neural Networks for Sentence Classification
+type: text/vnd.tiddlywiki
+
+[[link|http://arxiv.org/abs/1408.5882]]: A one-layer CNN approach with simplicity and empirical performance. This has become the standard baseline for new text classification publications. Here is a [[tensorflow implementation|cnn-text-classification]].
+
+! Structure
+
+* Input: pretrained word vectors, such as [[Word2Vec]] or [[GloVe|Global Vectors for Word Representation]].
+* Components: 1 layer 1-d Conv, 1-Max pooling, Dropout, l2 regularization, softmax
+* Loss: categorical cross-entropy loss.
+
+! Datasets
+[[Sentense Classification Datasets]]
+
+! Empirical Results
+
+[[A Sensitivity Analysis of CNN for Sentence Classification]]

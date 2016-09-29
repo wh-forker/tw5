@@ -1,0 +1,22 @@
+created: 20160920023056205
+modified: 20160920070203883
+tags: [[Deep Learning Bib]] [[Object Tracking]]
+title: Fully-Convolutional Siamese Networks for Object Tracking
+type: text/vnd.tiddlywiki
+
+[[code|https://github.com/bertinetto/siamese-fc]]
+
+! Siamese architecture
+Given an exampler image $z$ to a candidate image $x$, siamese networks apply an identical transformation $\phi$ to both inputs and then combine their representations using another function $g$ according to $f(z, x) = g(\phi(z), \phi(x))$.
+
+We say that a function is fully-convolutional if it commutes with translation. We can provide a larger search image and convolve the features to compute the similarity:
+$$
+f(z, x) = \phi(z)\star\phi(x)+b
+$$
+
+! Training
+On positive and negative pairs and adotping the logistic loss
+$$
+l(y, v) = \log(1+\exp(-yv))
+$$
+where $v$ is the real-valued score and $y\in\{+1, -1\}$ is its ground truth label. 

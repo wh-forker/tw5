@@ -1,0 +1,14 @@
+created: 20150427125352379
+modified: 20150427131158409
+tags: [[Audio Signal Processing]] Speech
+title: Spectral envelope
+type: text/vnd.tiddlywiki
+
+A spectral envelope is a curve in the frequency-amplitude plane, derived from a Fourier magnitude spectrum. It describes one point in time (one window, to be precise).
+
+! Spectral envelope correction
+[[link|http://recherche.ircam.fr/anasyn/schwarz/da/specenv/3_3Spectral_Envelopes.html]]
+
+In speech or in the singing voice, the spectral envelope is quite independent of the pitch (see section 2.4 for why this is so). However, if we transpose the vowel in figure 2.23 up by one octave by multiplying the frequencies of all partials by 2 and performing an additive resynthesis, the spectral envelope will necessarily be transposed also. Figure 2.26 shows this effect which sounds quite unnatural (it is sometimes termed the mickey mouse effect ). The unnaturalness comes from the fact that the formants are shifted up one octave, which corresponds to shrinking the vocal tract to half of its length. Obviously, this is not the natural behaviour of the vocal tract.
+
+To avoid this, the spectral envelope has to be kept constant, while the partials ''slide'' along it to their new values. This means that the amplitude of a transposed partial is no longer determined by the amplitude of the original partial, but by the value of the spectral envelope at the frequency of the transposed partial, as in figure 2.27. This way, only the partials are shifted, but the spectral envelope and thus the formant locations stay the same, making the vowel sound natural.

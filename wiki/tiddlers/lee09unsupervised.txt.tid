@@ -1,0 +1,11 @@
+created: 20150413064736757
+title: lee09unsupervised.txt
+type: text/plain
+
+@inproceedings{lee2009unsupervised,
+  title={Unsupervised feature learning for audio classification using convolutional deep belief networks},
+  author={Lee, Honglak and Pham, Peter and Largman, Yan and Ng, Andrew Y},
+  booktitle={Advances in neural information processing systems},
+  pages={1096--1104},
+  year={2009}
+}

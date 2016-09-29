@@ -1,0 +1,108 @@
+created: 20151112065545766
+modified: 20160612071551871
+tags: [[Convolutional Neural Network]]
+title: ConvNet Layers
+type: text/vnd.tiddlywiki
+
+!! Convolutional
+[img height=250 [http://cs231n.github.io/assets/cnn/depthcol.jpeg]][img height=250  [http://cs231n.github.io/assets/nn1/neuron_model.jpeg]]
+
+In Caffenet, the 96 neurons of the first conv layer has a reception field of $3\times3$. Since input volume is cropped beforehead, no padding is needed:
+
+```css
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  /* learning rate and decay multipliers for the filters */
+  param { lr_mult: 1 decay_mult: 1 }
+  /* learning rate and decay multipliers for the biases */
+  param { lr_mult: 2 decay_mult: 0 }
+  convolution_param {
+    num_output: 96     /* learn 96 filters */
+    kernel_size: 11    /* each filter is 11x11 */
+    stride: 4          /* step 4 pixels between each filter application */
+    weight_filler {
+      type: "gaussian" /* initialize the filters from a Gaussian */
+      std: 0.01        /* distribution with stdev 0.01 (default mean: 0) */
+    }
+    bias_filler {
+      type: "constant" /* initialize the biases to zero (0) */
+      value: 0
+    }
+  }
+}
+```
+This layer learns the Gabor filters which looks like this
+
+[img height=250  [http://cs231n.github.io/assets/cnn/weights.jpeg]]
+
+There are many convolution kernels in each layer, and each kernel is replicated over the entire image with the same parameters. The function of the convolution operators is to extract different features of the input. The capacity of a neural net varies, depending on the number of layers. The first convolution layers will obtain the low-level features, like edges, lines and corners. The more layers the network has, the higher-level features it will get.
+
+!!! Backpropagation
+The parameters of each convolution kernel are trained by the backpropagation algorithm. The backward pass for a convolution opteration (for both the data and the weights) is also a convolution (but with spatially-flipped filters).
+$$
+\frac{\partial L}{\partial a(p, q)} = \sum_{u, v}\frac{\partial L}{\partial z(p-u, q-v)}\frac{\partial z(p-u, q-v)}{\partial a(p, q)}=\frac{\partial L}{\partial z(u, v)}*\text{flip}(w)
+$$
+$$
+\frac{\partial L}{\partial w(u, v)} = \sum_{p, q}\frac{\partial L}{\partial z(p, q)}\frac{\partial z(p, q)}{\partial w(u, v)}=a(u, v)*\frac{\partial L}{\partial z}
+$$
+
+Caffe implements convolution as matrix multiplication. We reorganize the input into $\mathbf A$ so that each column is the patch to be convoluted ($11\times11\times3$) in the previous case, and the total number of columns is the output size of each filter ($55\times55$). So the objective function becomes:
+$$
+L = f(\mathbf Z) = f(\mathbf W\mathbf A)
+$$
+by applying matrix derivation:
+$$
+\frac{\partial L}{\partial \mathbf W} = \frac{\partial L}{\partial \mathbf Z}\mathbf A^\top
+$$
+
+!! [[Pooling|Pooling Layer]]
+
+!! ReLU
+ReLU is the abbreviation of Rectified Linear Units. This is a layer of neurons that use the non-saturating activation function $f(x) = \max(0, x)$. It increases the nonlinear properties of the decision function and of the overall network without affecting the receptive fields of the convolution layer.
+
+Other functions are used to increase nonlinearity. For example the saturating hyperbolic tangent $f(x) = \tanh(x)$, $f(x) = |\tanh(x)|$, and the sigmoid function $f(x) = (1 + e ^{-x})^{-1}$. Compared to tanh units, the advantage of ReLU is that the neural network trains several times faster.
+
+''advantages'': 
+
+# enforces hard zeros in representation.
+# avoids vanishing gradient somehow.
+
+!! Local Response Normalization(LRN)
+The local response normalization layer performs a kind of ''lateral inhibition'' by normalizing over local input regions. In `ACROSS_CHANNELS` mode, the local regions extend across nearby channels, but have no spatial extent (i.e., they have shape `local_size x 1 x 1`). In `WITHIN_CHANNEL mode`, the local regions extend spatially, but are in separate channels (i.e., they have shape `1 x local_size x local_size`). Each input value is divided by $(1+(\alpha/n)\sum_ix^2_i)^\beta$, where $n$ is the size of each local region, and the sum is taken over the region centered at that value (zero padding is added where necessary).
+
+!! Fully-connected
+This is what is used in traditional neural networks. It gives the network more flexibility to convert a FC to CONV, allowing us to 'slide' the original ConvNet across a larger image.
+
+!! [[Dropout|Dropout Layer]]
+
+!! Loss
+We can use different loss functions for different tasks. 
+
+''Sigmoid cross-entropy loss'' is used for predicting K independent probability values in [0,1]. In logistic regression, our hypothesis took the form:
+$$
+h_\theta(z) = \frac{1}{1+\exp(-\theta\top z)},
+$$
+and the model parameters $\theta$ were trained to minimize the cost function:
+$$
+L(\theta) = -\left(\sum_{i=1}^my_i\ln\log h_\theta(z_i)+(1-y_i)\log(1-h_\theta(z_i))\right)
+$$
+
+Softmax loss is used for predicting a single class of $K$ mutually exclusive classes. Our hypothesis takes the form:
+$$
+h(\mathbf z, j) = \frac{e^{z_j}}{\sum_{k=1}^Ke^{z_k}},\qquad j = 1, \dots, K,
+$$
+and the loss function will be:
+$$
+J(z) = -\left(\sum_{i=1}^m\sum_{k=1}^K1_{y_i = k}\log h(z, k)\right).
+$$
+which is a generalized case of logistic regression loss. (When $K=2$, the softmax reduces to logistic regression).
+
+Since the function maps a vector and a specific index i to a real value, the derivative needs to take the index into account. For the cross entropy cost, we have:
+$$
+\frac{\partial L}{\partial z_k} = -\sum_{i=1}^m(1_{y_i=k}-h(\mathbf z, k))
+$$
+
+Euclidean loss is used for regressing to real-valued labels [-inf,inf]

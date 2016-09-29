@@ -1,0 +1,82 @@
+created: 20150623081723820
+modified: 20160803085811369
+title: Long short-term memory
+type: text/vnd.tiddlywiki
+
+Bibtex
+
+```
+@article{hochreiter1997long,
+  title={Long short-term memory},
+  author={Hochreiter, Sepp and Schmidhuber, J{\"u}rgen},
+  journal={Neural computation},
+  volume={9},
+  number={8},
+  pages={1735--1780},
+  year={1997},
+  publisher={MIT Press}
+}
+```
+
+Here is [[a great article|http://colah.github.io/posts/2015-08-Understanding-LSTMs/]] for an introduction to LSTMs in particular.
+
+LSTMs are able to learn long-term dependencies which classic RNNs fail to.
+
+! Comparing to RNN
+[img width=600 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-SimpleRNN.png]]
+
+The repeating module in a standard RNN caontains a single layer
+
+[img width=600 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-chain.png]]
+
+The repeating module in an LSTM contains four interacting layers.
+
+! Detailed structure
+!! Cell state
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-C-line.png]]
+
+Cell state runs down the entire chain, the information can be added or removed, regulated by structures called gates.
+
+!! Gates
+[img width=100 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-gate.png]]
+
+Gates are composed out of a sigmoid neural net layer and a pointwise multiplication operation. The sigmoid output with value of one means "let everything through". A LSTM has three gates.
+
+!!! Forget gate
+With forget gate, we decide what information we're going to throw away from the cell state.
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-f.png]]
+
+One scenario where forget gate could be useful is in word generation. In such a problem, the cell state might include the gender of the present subject, so that the correct pronouns can be used. When we see a new subject, we want to forget the gender of the old subject.
+
+!!! Input gate joining with new value
+The we want to decide what to add to the cell state.
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-i.png]]
+
+Then we add the regulated old value with the new one:
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-C.png]]
+
+!!! Output gate
+We filter our output with output gate. First, we run a sigmoid layer which decides what parts of the cell state we’re going to output. Then, we put the cell state through ''tanh'' (to push the values to be between −1 and 1) and multiply it by the output of the sigmoid gate.
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-focus-o.png]]
+
+! Variants on LSTM
+[Gers & Schmidhuber (2000)|ftp://ftp.idsia.ch/pub/juergen/TimeCount-IJCNN2000.pdf] adds "peehole connections" to let the gate layers look at the cell state.
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-peepholes.png]]
+
+Another variation is to use coupled forget and input gates, by making these two decisions together.
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-tied.png]]
+
+''GRU'' ([[Cho, et al. (2014)|http://arxiv.org/pdf/1406.1078v3.pdf]]) is a slightly more dramatic variation on the LSTM. It combines the forget and input gates into a single “update gate.” It also merges the cell state and hidden state, and makes some other changes. The resulting model is simpler than standard LSTM models, and has been growing increasingly popular.
+
+[img width=500 [http://colah.github.io/posts/2015-08-Understanding-LSTMs/img/LSTM3-var-GRU.png]]
+
+$$
+\sum_i^\infty i
+$$

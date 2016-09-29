@@ -1,0 +1,27 @@
+created: 20141117112441105
+modified: 20141118065036333
+tags: [[Information Theory]]
+title: Model Selection
+type: text/vnd.tiddlywiki
+
+! Notations
+Truth or full reality is denoted as $f$,  and $f(x)$ is the integration over the variable $x$. $g_i(x|\theta)$ denotes the $i$th approximating model.
+
+! Overview of Model Selection Criteria
+There are two different classes of model selection methods: These have been labeled //efficient// and //consistent//.
+
+Under the frequentist paradigm for model selection one generally has three main approaches:
+
+# optimization of some selection criteria
+## based on some form of mean squared error (e.g., Mallows' $C_p$, 1973) or mean squared prediction error (e.g., PRESS, Allen 1970)
+## estimates of K-L information (e.g., TIC and the special cases AIC, AIC$_c$ and QAIC$_c$)
+## consistent estimators of $K$, the dimension of the "true model" (e.g., [[BIC|BIC Changepoint]])
+# tests of hypotheses
+# as hoc methods.
+
+!! Estimates of K-L Information
+AIC, AIC$_c$ and QAIC$_c$ are estimates of the relative K-L distance between truth $f(x)$ and the approximating model $g(x)$.
+
+* Hypothesis testing of [[Outlier]]
+* [[Kullback-Leibler divergence]]
+* [[Akaike's information criterion]] gives same result as [[GLR Changepoint]]. The relationship between it and KL remains unknown. According to Akaike's result, they are the same if the model is K-L best.

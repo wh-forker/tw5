@@ -1,0 +1,25 @@
+created: 20141224063156564
+modified: 20160513093008069
+tags: Statistics
+title: Graphical Model
+type: text/vnd.tiddlywiki
+
+[[The link to the short course|http://ai.stanford.edu/~paskin/gm-short-course/]]
+
+Probability is the basic. There are alternatives to probability theory:
+
+* Dempster-Shafer theory
+* Disjunctive uncertainty, etc. 
+* (Fuzzy logic is about imprecision, not uncertainty.)
+
+The reason probality theory is better is de Finetti's theory:
+
+<<<
+if you fo not reasone according to [[Probability theory]], you can be made to act irrationally.
+<<<
+
+[[Variable Elimination Algorithm]]
+
+[[Hammersley-Clifford Theorem]]
+
+[[Junction Tree Algorithm]]

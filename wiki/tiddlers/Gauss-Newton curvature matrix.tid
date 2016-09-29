@@ -1,0 +1,13 @@
+created: 20150529141825803
+modified: 20150529143453664
+title: Gauss-Newton curvature matrix
+type: text/vnd.tiddlywiki
+
+[[Deduction|http://andrew.gibiansky.com/blog/machine-learning/gauss-newton-matrix/]]
+
+The usual view of the Gauss-Newton matrix is that it is simply a positive semi-definite approximation to the Hessian. 
+
+Martens 2010 found that using the Gaussian-Newton matrix instead of $H$ was highly preferable because:
+
+# $H$ is general indefinite, the sub-objective $q_{\theta_n}$ may not be bounded below. Infinite reduction will be possible along any directions of negative curvature that have a non-zero inner product with the gradient.
+# The parameter updates produced by using $G_f$ performed much better in practice of neural network learning.

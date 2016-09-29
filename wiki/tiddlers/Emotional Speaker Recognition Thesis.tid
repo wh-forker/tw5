@@ -1,0 +1,38 @@
+created: 20141011071209939
+modified: 20141016013035241
+tags: Papers Speech
+title: Emotional Speaker Recognition Thesis
+type: text/vnd.tiddlywiki
+
+! Other Models
+* Speaker Model Synthesis
+* Feature Mapping
+
+The idea is different because this is speaker dependent.
+
+<<<
+The alignment indicates that the neutral and emotional utterances have the same content
+<<< p33 premilinary
+Does that mean it's text-dependent?
+
+* How to align Gaussian components
+* Emotional vector generation could be different for different person unless Gaussian components are utterances
+
+If the relationship between the utterances (emo/neutral) can be determined before the mapping learning process, then linear regression is likely enough for local translations.
+
+! Approaches
+!! Neural Net
+The neural net uses a [[rbf|RBF Nerwork]] for activation function.
+
+!!! Questions
+
+* How to match gaussian componets
+* How many input samples are there
+* Performance relies on #samples
+* If the input is different speech samples and the output is one paticular speech sample, lots of text-based knowledge may affect the result
+
+!! Sparse Representation
+
+!!! Questions
+
+* How to get $D_e$

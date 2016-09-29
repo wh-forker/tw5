@@ -1,0 +1,12 @@
+created: 20160420020617017
+modified: 20160420130322776
+tags: [[Deep Learning]]
+title: Noisy Activation Fucntions
+type: text/vnd.tiddlywiki
+
+; Saturation
+: An activation function $h(x)$ with derivative $h'$ is said to be right saturate if its limit as $x\rightarrow\infty$ is zero. 
+
+; Hard and Soft Saturation
+: Let $c$ be a constant such that $x > c$ implies $h'(x) = 0$, etc.
+

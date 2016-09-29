@@ -1,0 +1,11 @@
+created: 20150427121704431
+modified: 20150427121705976
+tags: [[Speech Synthesis]]
+title: Google DNN TTS
+type: text/vnd.tiddlywiki
+
+33,000 utterance, the topologies are similar to HTS (2005). Speech data are downsampled from 48 kHz to 16kHz. 40 melceps, logarithmic fundamental frequency (log $F_0$) values, and 5-band aperiodicities (0-1, 1-2, 2-4, 4-6, 6-8 kHz) were extracted every 5 ms. The feature is consisted of these and their delta, delta-delta feaures ($3\times(40+1+5)=138$). Five-state, left=to-right, no-skip hidden semi-Markov models (HSMMs) were used. A multi-space probability distribution was used to model log $F_0$ sequences consisting of voiced and unvoiced observations. 2554 questions are used for the decision tree-based context clustering.
+
+The input of DNN included 342 binary features for categorical linguistic contexts (phonemes indentities) and 25 numerical features (the number of syllables in a word, position of the current syllable in phrase), 3 numerical features for ''coarse-coded'' position of the current phoneme and 1 numerical feature for duration of the current segment.
+
+The output features are same aas HMM-based systems. To model $\log F_0$ sequences by a DNN, the continuous $F_0$ with explicit voicing modeling approach was used; voiced/unvoiced binary value was added to the output features. 

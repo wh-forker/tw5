@@ -1,0 +1,19 @@
+created: 20141103132052330
+modified: 20160921080333516
+tags: Conferences
+title: Talks
+type: text/vnd.tiddlywiki
+
+! By Conferences
+
+* [[ICML 2015]]
+* [[KDD 2016]]
+
+! TODO List
+
+# [[KDD 2016]]
+# Shen: A sufficiently advanced Lisp
+# [[SAHD]]
+
+!! Others
+* [[Towards bridging the gap between deep learning and biology|Deep learning in biology]]

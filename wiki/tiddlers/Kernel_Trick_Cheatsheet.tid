@@ -1,0 +1,16 @@
+created: 20160715052751386
+modified: 20160719074941814
+title: Kernel Trick Cheatsheet
+type: text/vnd.tiddlywiki
+
+* Bochner integral: 
+* Borel measure: 
+* Characteristic funtion: If a random variable admits a density function, then the characteristic function is its dual, in the sense that each of them is a Fourier transform of the other.
+* Gram matrix is positive semidefinite:$\sum_{i, j=1}^nc_ic_jk(x_i, x_j)\ge 0$ for any $n\in\mathbb N$, any choice of $x\in\mathcal X$ and any $c\in\mathbb R$.
+* Hilbert space: compelete normed space where the norm is induced by an inner product. Element can be functions.
+** standard Euclidean space $\mathbb R^d$ with $\langle x, y\rangle$ being the dot product
+** space of square summable sequences $l^2$ with an inner product $\langle x, y\rangle = \sum_{i=1}^\infty x_iy_i$
+** space of square-integrable functions $L_2[a, b]$ with inner product $\langle f, y\rangle = \int_a^b f(x)g(x)dx$
+* Hausdorff space: where distinct points have disjoint neighbors.
+* Moment generating funtion: Essentially the Laplace transformatino of a random variable $X$. $E[e^{tx}]$
+* Positive Semidefinite: In linear algebra, a symmetric $n\times n$ real matrix $M$ is said to be positive definite if the scalar $z^{\mathrm {T} }Mz$ is positive for every non-zero column vector $z$ of $n$ real numbers.

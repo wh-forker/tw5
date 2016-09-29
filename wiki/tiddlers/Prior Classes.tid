@@ -1,0 +1,13 @@
+created: 20141029122932643
+modified: 20141029131732553
+tags: Statistics
+title: Prior Classes
+type: text/vnd.tiddlywiki
+
+Priors have traditionally belonged to one of two classes: informative priors and uninformative priors.
+
+! Informative Priors
+Ibrahim and Chen indtroduced the power prior. The power prior is a class of informative prior distribution that takes previous data and resuts into account. 
+
+! Weakly Informative Priors
+Weakly Informative Prior distributions use prior information for regularization and stabilization, providing enough prior information to prevent results that contradict our knowledge or problems such as an algorithmic failure to explore the state-space.

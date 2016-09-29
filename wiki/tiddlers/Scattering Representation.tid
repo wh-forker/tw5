@@ -1,0 +1,83 @@
+color: #15ea32
+created: 20141010104843623
+modified: 20160225025042111
+tags: [[Audio Signal Processing]]
+title: Scattering Representation
+type: text/vnd.tiddlywiki
+
+! Details
+[[Understanding Deep ConvNets (Scattering Repr)]]
+
+! Paper Summary
+* [[Group Invariant Scattering]]
+* [[Scattering Representation for Recognition]]
+* [[Scattering Representation of Modulated Sounds]]
+
+! Notes of the Talk
+There was a very interesting [[talk on Techion|https://www.youtube.com/watch?v=wHhYvtnY2zI]]. I recently found my research is getting more and more related to it so I decide to sort it out.
+
+Considering classification of high dimensional signals $x$. Dimension can be as large as $10^6$ for images. Interpolation methods that works well in low dimension meets problem in high dimensional counterparts. Because you cannot cover the whole very large space with samples anymore and the samples from the same class could be very far way from each other.
+
+That leads to the need of dimension reduction. If the signal can be represented with low dimensional subsets $\Omega$, then there would be no curse of dimensionality. Find a good $\Omega$ turns to be problems like manifold learning or sparsity dictionary representations. However complex signals like image and audio have very correlated information that more or less influence the result, and thus such a subspace have to be deduced with the knowledge of $f$, the classification goal. That makes the problem supervised.
+
+Let formulate the volume reduction problem. The signal domain $\Omega$ is reduced with a contractive operator $\Phi$ (non-linear) so that $\Phi(\Omega)$ could be a much smaller volume. A key element of this process is that $f$ should maintain regularity, i.e.,
+$$
+|f(x) - f(x')| \leq C\|\Phi(x) - \Phi(x')\|
+$$
+which is called Lipschitz regularity. This insures the reduced space preserves discriminability. The way of doing that is to build $\Phi(x)$ by contracting along directions where $f(x)$ is invariant: reduce intra-class variability.
+
+On the other hand, we also want to increase the dimension so that original data can be easier to classify (e.g. by linear functions).
+
+Deep neural networks have shown ability to do both things well. Typical deep neural nets combine linear and non-linear transformations and iterate between them and finally separate the output with linear classification. The impressive part of the work is the scale, a neural network can have billions of parameters. 
+
+The result on ImageNet containing $10^6$ images and $10^3$ classes is very impressive. The error rate is below $17\%$, very close to human ability. Speech recognition has not been moved for twenty years and now new speech recognition systems are implemented with neural nets. Now many companies are hiring people developing this kind of systems. 
+
+The question is why does it work. For the first two layers of image and audio classifications are learned with gradient descent, back propagation algorithms which looks like wavelets.
+
+Let take an example in digit recognition, because the physical invariant is known. After a translation of rotations and small deformations, the sample remains in the same class. FYI, speech recognition requires subspace with time-frequecy translation and deformation invariance. 
+
+Ways to impose translate invariance is normalizing by zero mass or killing the face of Fourier transform. Diffeomorphisms is a little bit of different. We require Lipschitz stability,
+$$
+\forall\tau, \|\Phi(x_\tau) - \Phi(x)\|\leq C \underset{t}{\sup}|\nabla\tau(t)|\|x\|
+$$
+where $x_\tau(t) = x(t-\tau(t))$ is a small deformation of $x$ and the supremum is the diffeomorphism metric. This means the change of $\Phi(x)$ should be of the order of the deformation. If we move the distribution or perform Fourier transform, it will not be stable. 
+
+To deal with deformation, we have to use wavelets. Wavelets are functions that are localized, if we slightly deform a wavelet, we still have something that looks like a wavelet. To understand complex wavelet, think about a Gaussian modulated by sin and cos. We have a real part and an imaginary part, 
+$$
+\psi(t) = \psi^a(t)+i\psi^b(t).
+$$
+And dilate it with
+$$
+\psi_\lambda(t)=2^{-j}\psi(2^{-j}t)
+$$
+with $\lambda = 2^{-j}$. The wavelet transformation averages the low frequencies and carries the high frequencies by their coefficients. The energy of wavelet transform will restore the original because it is unitary:
+$$
+\|Wx\|^2 = \|x\|^2.
+$$
+For scale and separation in 2D, the rotated and dilated wavelet is
+$$
+\psi_\lambda(t) = 2^{-j}\psi(2^{-j}r_\theta t)
+$$
+The wavelet can separate different different information within different scale. 
+
+To compute the invariance, we take a signal $x$ and make it as uniform as possible. The only linear function that is translation invariant is constant. To make a signal locally translation invariant, we locally average a signal by $x\star\phi(x)$. We take the modulus of the wavelet $|Wx|$
+$$
+|x\star\psi_{\lambda_t}(t)| = \sqrt{|x\star\psi^a_{\lambda_t}(t)|^2 + |x\star\psi^b_{\lambda_t}(t)|^2}
+$$
+which is unitary and contractive:
+$$
+\||W|x - |Wx'|\|\leq \|x-x'\|.
+$$
+The norm is preserved. The idea is to get the average of low frequencies and get the envelop of high frequencies, then we'll get a new set of invariant coefficients. 
+
+Put is all together, to get the first layer,
+
+# we first compute the average of the image,
+# then the high frequencies by wavelet transform,
+# and take the modulus of the coefficients.
+
+Now we compute the wavelet coefficients of these modulus, and there will be many images in the second layer of the network. The iteration goes on and on. The outcome is a convolution network. While compressing $x$ with the modulus, we keep increasing the dimensionality.
+
+For other specific complex cases, we have to learn the invariant first. Basicly any contractive operator $|W_k|$ that preserves the norm can be used. The problem is how to learn it with small support.
+
+Haar filtering is an orthogonal transformation computed by pairing the even and odd coefficients, adding and subtracting them. If we cascade it, we get the Haar wavelet. So we can learn the contraction by finding the right pairing that don't bring closer the points from different classes. Iin the unsupervised case, make sure points don't collapse (data aren't compressed too much), which is equivalent to minimize the mixed l-2/l-1 sparsity norm.

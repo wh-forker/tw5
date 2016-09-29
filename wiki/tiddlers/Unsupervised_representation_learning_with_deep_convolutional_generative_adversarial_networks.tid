@@ -1,0 +1,21 @@
+created: 20160419080828523
+modified: 20160909061321236
+tags: [[ICLR 2016]] [[Generarive Adversarial Network]]
+title: Unsupervised representation learning with deep convolutional generative adversarial networks
+type: text/vnd.tiddlywiki
+
+!! Related works
+''GANs''
+
+	* generator and discriminator nets
+	* unstable to train
+
+this paper developed Deep Convolutional GAN
+
+A stable Deep Convolutional GAN should:
+
+* Replace any pooling layers with strided convolutions (discriminator) and fractional-strided convolutions (generator).
+* Use batchnorm in both the generator and the discriminator.
+* Remove fully connected hidden layers for deeper architectures.
+* Use ReLU activation in generator for all layers except for the output, which uses Tanh.
+* Use LeakyReLU activation in the discriminator for all layers.

@@ -1,0 +1,20 @@
+created: 20150522075837305
+modified: 20160516024148265
+tags: [[Deep Learning Tools]]
+title: Kaldi
+type: text/vnd.tiddlywiki
+
+! Installing
+
+!! With OpenBLAS
+Kaldi now supports linking against the OpenBLAS library, which is an implementation of BLAS and parts of LAPACK. OpenBLAS also automatically compiles Netlib's implementation of LAPACK, so that it can explort LAPACK in its entirety. OpenBLAS is a fork of the GotoBLAS project (an assembler-heavy implementation of BLAS) which is no longer being maintained. In order to use GotoBLAS you can cd from "src" to "../tools", type "make openblas", then cd to "../src" and give the correct option to the "configure" script to use OpenBLAS (look at the comments at the top of the configure script to find this option). Thanks to Sola Aina for suggesting this and helping us to get this to work.
+
+!! Bulding
+
+```
+./configure --openblas-root=/
+```
+
+! Refs
+
+[[kaldi lectures|https://sites.google.com/site/dpovey/kaldi-lectures]]

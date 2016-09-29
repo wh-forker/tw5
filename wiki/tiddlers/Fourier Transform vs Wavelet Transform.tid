@@ -1,0 +1,8 @@
+created: 20141016045923176
+modified: 20141016052430500
+tags: Analysis
+title: Fourier Transform vs Wavelet Transform
+type: text/vnd.tiddlywiki
+
+Short time Fourier transform (STFT) suffers from resolution problem. We have equal time and frequency resolution at all frequencies in STFT.
+

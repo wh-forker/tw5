@@ -1,0 +1,19 @@
+created: 20150213071121294
+modified: 20150213080426712
+tags: Analysis Statistics
+title: Fisher information metric
+type: text/vnd.tiddlywiki
+
+Fisher information metric is the only Riemannian metric that "makes sense" for [[statistical manifolds|Statistical manifold]]:
+$$
+I(\theta) = \left[\int\frac{\partial\log p(x;\theta)}{\partial\theta_i}\frac{\partial\log p(x;\theta)}{\partial\theta_j}p(x;\theta)dx\right]=[g_{ij}]
+$$
+The [[Infinitesimal length element]] is given by
+$$
+ds^2 = \sum_{i=1}^d\sum_{j=1}^dd\theta_i^T\nabla^2F(\theta)d\theta_j
+$$
+
+Cencov proved that for a non-singular transformation of the parameters $\lambda=f(\theta)$, the information matrix
+$$
+I(\lambda)=\left[\frac{\partial\theta_i}{\partial\lambda_j}\right]I(\theta)\left[\frac{\partial\theta_i}{\partial\lambda_j}\right].
+$$

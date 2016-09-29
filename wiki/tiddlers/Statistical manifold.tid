@@ -1,0 +1,13 @@
+created: 20141112051659101
+modified: 20141112052411218
+tags: Statistics
+title: Statistical manifold
+type: text/vnd.tiddlywiki
+
+A statistical manifold is a Riemannian manifold, each of whose points is a probability distribution. Statistical manifolds provide a setting for the field of [[Information geometry]]. The [[Fisher information metric]] provides a metric on these manifolds.
+
+Let $X$ be an orientable manifold, and let $(X,\Sigma,\mu)$ be a measure on $X$. Equivalently, let $(\Omega,\mathcal F,P)$ be a probability space on $\Omega=X$, with [[sigma algebra]] $\mathcal F=\Sigma$ and probability $P=\mu$.
+
+The statistical manifold $S(X)$ of $X$ is defined as the space of all measures $\mu$ on $X$ (with the sigma-algebra $\Sigma$ held fixed). Note that this space is infinite-dimensional; it is commonly taken to be a [[Frechet space]]. The points of $S(X)$ are measures.
+
+Rather than dealing with an infinite-dimensional space $S(X)$, it is common to work with a finite-dimensional submanifold, defined by considering a set of probability distributions parameterized by some smooth, continuously-varying parameter $\theta$. That is, one considers only those measures that are selected by the parameter. If the parameter $\theta$ is n-dimensional, then, in general, the submanifold will be as well. All finite-dimensional statistical manifolds can be understood in this way

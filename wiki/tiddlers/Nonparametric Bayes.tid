@@ -1,0 +1,34 @@
+created: 20150309051500379
+modified: 20150310074935195
+tags: Bayesian
+title: Nonparametric Bayes
+type: text/vnd.tiddlywiki
+
+When modeling complex datasets, it can be hard to determine an appropriate number of clusters. In Bayesian statistics, Dirichlet processes avoid model selection by defining priors on infinite models.
+
+! Related Works
+!! Teh et al HDP
+HDP serves as a prior over the base distributions of individual DP models to introduce a sharing mechanism allows for sharing of atoms across multiple groups. ''When all data are contained in a single group, sharing the same mixture component across multiple cluster distributions leads to shared mixure components being statistically unidentifiable.''
+
+!! Sudderth et al. [[Transformed DP|]]
+Allows for components to share perturbed copies of atoms.
+
+!!! Background
+SIFT
+
+!!! Hierarchical Models
+
+
+!! Rodriguez et al. nested DP
+
+!! I2GMM
+Has advantage clustering data sets with skewed and multi-modal distributions.
+
+! Thoughts
+
+* A way to include temporal features must be considered.
+** First order deviation of MFCC can be seen as direction (SIFT)
+** Transforming the clusters in GMM is in spectral not spatial.
+** For speaker recognition, vowels are more important than consonants, but in speech, vice versa. Consider them as colors and edges.
+** Is timbre a combination of harmonies? Consider it as texture?
+* Large part of prior distributions should be shared between clusters

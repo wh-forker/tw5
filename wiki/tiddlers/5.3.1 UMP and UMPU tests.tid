@@ -1,0 +1,59 @@
+created: 20150106104814277
+modified: 20150120124609641
+tags: [[Bayesian Choice]]
+title: 5.3.1 UMP and UMPU tests
+type: text/vnd.tiddlywiki
+
+'' Definition 5.3.1'' The power of a testing procedure $\varphi$ is the probability of rejecting $H_0$ under the alternative hypothesis, that is, $\beta(\theta) = 1-\mathbb E_\theta[\varphi(x)]$ when $\theta\in\Theta_1$. The quantity $1-\beta(\theta)$ is called ''type-two error'', while the ''type-one error'' is $E_\theta[\varphi(x)]$ when $\theta\in\Theta_0$.
+
+'' Definition 5.3.2'' If $\alpha\in[0,1]$ and $\mathcal C_\alpha$ is the class of the procedures $\varphi$ satisfiying the following constraint on the type I error:
+$$
+\sup_{\theta\in\Theta_0}\mathbb E_\theta[L(\theta, \varphi(x))]=\sup_{\theta\in\Theta_0}P_\theta(\varphi(x)=0)\le\alpha,
+$$
+a test procedure $\varphi$ is said to be uniformly most powerful at level $\alpha$ (''UMP'') if it minimizes the risk $\mathbb E_\theta[L(\theta, \varphi(x))]$ uniformly on $\Theta_1$ in $\mathcal C_\alpha$.
+
+This optimality is much weaker than the notion of admissibility developed in [[Section 2.4|2.4 Two optimalities: minimaxity and admissibility]].
+
+''Proposition 5.3.3'' Consider $f(x|\theta)$ with a monotone likelihood ratio in $T(x)$. For $H_0:\theta\le\theta_0$ and $H_1:\theta>\theta_0$ there exists a UMP test such that
+$$
+\varphi_\pi(x) = \left\{ \begin{array}{ll}
+	1 & \mbox{if } T(x) < c,\\
+    \gamma & \mbox{if } T(x) = c,\\
+    0 & \mbox{otherwise}.
+\end{array}\right.
+$$
+
+<<<
+A major difficulty with the Neyman-Pearson approach, namely, that arbitrary significance levels are not necessarily attainable unless one calls for randomization. For discrete cases, $\varphi(x)=\gamma$ means that $\varphi(x) = 1$ with probability $\gamma$. Such procedures are incompatible with the [[Likelihood Principle]].
+<<<
+
+''Proposition 5.3.5'' Consider an exponential family
+$$
+f(x|\theta) = e^{\theta T(x)-\psi(\theta)}h(x)
+$$
+and $H_0:\theta\le\theta_1$ or $\theta\ge\theta_2$, $H_1:\theta_1<\theta<\theta_2$. There exists a UMP test such that
+$$
+\varphi_\pi(x) = \left\{ \begin{array}{ll}
+	0 & \mbox{if } c_1 < T(x) < c_2,\\
+    \gamma_i & \mbox{if } T(x) = c_i \qquad (i=1,2),\\
+    1 & \mbox{otherwise}.
+\end{array}\right.
+$$
+with $(i = 1, 2)$
+$$
+\mathbb E_{theta_i}[\varphi(x)]=\alpha.
+$$
+
+<<<
+There is no corresponding UMP test for the opposite case, i.e., $H_0:\theta_1<\theta<\theta_2$
+<<<
+
+The Neyman-Pearson solution is to propose an additional reduction of the class of test procedures by considering unbiased tests, i.e., those also satisfying
+$$
+\sup_{\Theta_0}P_\theta(\varphi(x) = 0)\le\inf_{\Theta_1}P_\theta(\varphi(x) = 0).
+$$
+In other words, $\varphi$ must also satisfy
+$$
+\inf_{\Theta_0}\mathbb E_\theta[\varphi(x)]\ge\sup_{\Theta_1}\mathbb E_\theta[\varphi(x)].
+$$
+The notion of ''uniformly most powerful unbiased'' tests (UMPU) then follows.

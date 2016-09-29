@@ -1,0 +1,36 @@
+created: 20160615090746926
+modified: 20160715060506312
+tags: [[Deep Learning Tricks]]
+title: Batch Normalization
+type: text/vnd.tiddlywiki
+
+[[link|http://arxiv.org/abs/1502.03167]]
+
+! Problem
+; Internal covariate shift
+: The distribution of each layer's input change as a function of previou layer parameters.
+
+[img[https://qph.is.quoracdn.net/main-qimg-89eac2a45ba389b24a0c29ad84209b8f?convert_to_webp=true]]
+
+This slows down training. To solve this problem, intermediate layers of deep nets should be constraint by whitening or use batch normalization.
+
+In long column analogy, you have two options for constrains:Fixed (Fig-c) and Pinned (Fig-d). If intermittent supports are fixed with column, support have to carry bending as well as lateral load, which usually are used in concrete column and beam monolithic configuration. If intermittent supports are pinned, such supports resist only lateral loads on compromise of column rotation at that location. Such connections are used in steel structure.  
+
+Similarly, we have two options to apply whiten constrained in every hidden layers: Fixed and Pinned. For fixed whiten constrains, we have to apply such whitening in every hidden layer such that before proceed to the next layer, it will be whiten. But, zero mean, unit variance with decorrelation for every dimension for every layer and every gradient update with batch gradient descent and computation of correlation matrices is very storage and computation intensive. 
+
+So, alternatively for pinned case similar to rotation flexibility of column section, we can introduce some mean (shift) and variance (scale) for every layer and every dimension, which will be trained as well with weights and bias parameters of the networks through backpropagation. Extra flexibility will increase learning capacity. But, computational complexity remains high.
+
+Batch Normalization solves such problem with some additional assumptions. Followings are the properties of Batch Normalization with mean and variance for a mini batch version:
+
+# Learning faster: Learning rate can be increased compare to non-batch-normalized version.
+# Increase Accuracy: Flexibility on mean and variance value for every dimension in every hidden layer provides better learning, hence accuracy of the network.
+# Normalization or Whitening of the inputs to each layer: Zero means, unit variances and or not decorrelated.
+# To remove the ill-effect of Internal Covariate shift:Transformation makes data to big or to small; change of the input distribution away from normalization due to successive transformation.
+# Not-Stuck in the saturation mode: Even if ReLU is not used.
+# Integrate Whitening within the gradient descent optimization: Decoupled Whitening between training steps, which modifies network directly, reduces the effort of optimization. So, model blows up when normalization parameters are computed outside the gradient descent step.
+# Whitening within gradient descent: Requires inverse square root of covariance matrix as well as derivatives for backpropagation
+# Normalization of Individual dimension:  Individual dimension of hidden layers are normalized independently rather than joint covariances. So, features are not decorrelated. 
+# Normalization of mini-batch: Estimation of mean and variance are computed after each mini-batch rather than entire training set. Even ignoring the joint covariance as it will create singular co-variance matrices for such small number of training sample per mini-batch compare to high dimension size of the hidden layer. 
+# Learning of scale and shift for every dimension: Scaled and shifted values are passed to the next layer, whether mean and variances are calculated after getting all mini-batch activation of current layer. So, forward pass of all the samples within the mini-batch should pass layer wise. Backpropagation is required for getting gradient of weights as well as scaling (variance) and shift (mean).
+# Inference: During inference moving averaged mean and variance parameters during mini batch training are considered.
+# Convolution Neural Network: Whitening of intermediate layers, before or after the nonlinearity creates a lot of new innovation pathways

@@ -1,0 +1,24 @@
+created: 20150514071547700
+modified: 20160929020445394
+tags: [[Deep Learning]]
+title: Restricted Boltzmann Machines
+type: text/vnd.tiddlywiki
+
+The RBM is a parameterized family of probability distributions over binary vectors. It defines a joint dsitribution over $v\in\{0, 1\}^{N_v}$ and $h\in\{0, 1\}^{N_h}$ via the following equation
+$$
+P(v, h) = \frac{\exp(h^\top Wv+v^\top b_v + h^\top b_h)}{Z(\theta)}
+$$
+
+and the probability of the visible units is computed by marginalizing over the hidden units, also the probability of observing the data $X$, given the weights $W$:
+
+$$p(X|W) = p(v) = \frac{1}{Z(v, h)}\sum_he^{-E(v, h)}$$
+
+We can break the likelihood into 2 parts:
+$$
+\mathcal L = \ln p(v) = \ln\sum_he^{-E(v, h)}-\ln Z(v, h)
+$$
+
+The partition function $Z(\theta)$ is an sum of exponentially many terms and cannot be efficiently approximated to a constant multiplicative factor.
+
+However, it can learn excellent generative models and RBM plays an important role in the training of Deep Belief Networks, as a good initialization for the FNN.
+

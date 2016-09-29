@@ -1,0 +1,47 @@
+created: 20160513090322888
+modified: 20160614032943479
+tags: [[Deep Learning]]
+title: Convolutional Neural Network
+type: text/vnd.tiddlywiki
+
+Many of the materials borrowed form [[this page|http://cs231n.github.io/convolutional-networks/]], a very good place to start.
+
+Convolutional Networks are a specific class of neural networks which obtain invariant signal representations by cascading trainable filter banks with non-linearities and subsampling and pooling operators. They have been successfully applied to a variety of image and audio recognition tasks. Each layer of the network is connected to the previous one by establishing "connections" or filters, whose output is processed with a non-linearity such as sigmoids or rectifications. The spatial localization is progressively lost by successively "pooling", or subsampling, the resulting feature maps with local averages or general $L^p$ norms.
+
+Convolutional network architectures were originally learnt over a collection of labeled examples, using a backpropagation algorithm, which optimizes a classification error loss function using a gradient descent across the network. As opposed to general neural networks, convolutional networks incoporate a translation invariance prior, which greatly reduces the number of parameters to learn and hence its efficiency in a number of recognition tasks.
+
+It can be trained with unsupervised data with [[sparse autoencoders|Sparse Autoencoder]].
+
+! [[Convolution]]
+
+!! [[Architecture|ConvNet architecture]]
+* [[ConvNet Layers]]
+* [[Design|Designing a ConvNet]]
+* [[Visualization|Visualizing a ConvNet]]
+
+!! Tools
+[[caffe]]
+
+!! [[Case study|Case study of ConvNets]]
+
+! [[ConvNet Applications]]
+
+! Practices
+!! Data augmentation
+* ''Color'': multiply the projection of each patch pixel onto the principle components of the set of all pixels by a factor between 0.5 and 2
+* ''Contrast'': raise saturation and value (S and V components of the HSV color representation) of all pixels to a power between 0.25 and 4.
+
+!!! Utilizing pretrained models
+Empirical results proved the efficiency of adopting a large pretrained network and training with new data for a new smaller task. Related ideas are these:
+
+* ''Fine-tuning''. In [[Flickr Style|https://github.com/BVLC/caffe/tree/master/models/finetune_flickr_style]] setting of finetuning caffenet, the last FC is replaced with a new one and is trained with a 10× larger learning rate, and the general learning rate starts smaller. Other settings are left unchanged.
+* ''Transfer learning''. In this setting, the first several layers of the network is kept unchanged while the later ones are retrained from scratch.
+
+It has been shown that transfer learning (even using the same data for the same task) can suffer from co-adaptation performance drops and (otherwise) representation specifity limits. While finetuning can deal all these problems smoothly.
+
+!! Fighting overfitting
+* [[Photometric distortions|http://arxiv.org/abs/1312.5402]], e.g. lighting, color etc.
+* Crops vary in size, aspect ratio (e.g. 140 per image)
+* Multiple models, 7 vs 1
+
+[[ideas|Thoughts about ConvNets]]

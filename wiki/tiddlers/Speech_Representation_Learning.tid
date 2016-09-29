@@ -1,0 +1,16 @@
+created: 20150505114933170
+modified: 20160513092449258
+tags: [[DNN for ASR]]
+title: Speech Representation Learning
+type: text/vnd.tiddlywiki
+
+! Speaker Variations
+!! GMM-HMM
+vocal tract length normalization (VTLN): warps the frequency axis of the filter-bank analysis to account for the fact the locations of vocal-tract resonances vary roughly monotonically with the ''vocal tract length'' of the speaker. The optimal ''warping factor'' is found using EM by repeatedly selecting the best factor given the current model and then updating the model using the selected factor.
+
+feature-space Maximum Likelihood Linear Regression (fMLLR): applies an affine transform to the feature vector so that the transformed feature better matches the model. It is typically applied to testing utterance by first generating recognition results using the raw feature and then re-recognizing the speech with the transformed feature, (which can be iterated several times). 
+
+!! DNN
+For GMM-HMMs, fMLLR transforms are estimated to maximize the likelihood of the adaptation data given the model. For DNNs, they are optimized to maximize cross entropy (with backpropagation). This procedure is thus referred as feature-space discriminative linear regression (fDLR).
+
+Experiments show that DNNs do not depend on these transforms as GMM-HMM and shallow MLPs.

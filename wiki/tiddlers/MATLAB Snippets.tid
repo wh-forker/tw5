@@ -1,0 +1,13 @@
+created: 20141014022958989
+modified: 20141014023212931
+tags: MATLAB
+title: MATLAB Snippets
+type: text/vnd.tiddlywiki
+
+Logical Indexing
+
+Setting values below a threshold to be zero
+
+```matlab
+S(S<th) = 0;
+```

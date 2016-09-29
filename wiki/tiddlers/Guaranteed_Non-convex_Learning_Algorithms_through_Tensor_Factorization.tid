@@ -1,0 +1,83 @@
+created: 20160912030009799
+modified: 20160913081018999
+tags: [[ICLR 2016]] Talks
+title: Guaranteed Non-convex Learning Algorithms through Tensor Factorization
+type: text/vnd.tiddlywiki
+
+Note of [[a talk given by Anandkumar|http://videolectures.net/iclr2016_anandkumar_nonconvex_learning/]] at ICLR 2016 Keynotes.
+
+Mentioned papers:
+
+# Anandkumar et al. 2012, [[Tensor decompositions for learning latent variable models|http://arxiv.org/abs/1210.7559]]
+# Agarwal et al. 2014, [[Learning Sparsely Used Overcomplete Dictionaries via Alternating Minimization|https://arxiv.org/abs/1310.7991]]
+# Anandkumar et al. 2015, [[Convolutional Dictionary Learning through Tensor Factorization|https://arxiv.org/abs/1506.03509]]
+
+! Non-convexity in unsupervised learning
+How do we overcome non-convexity and why Tensors are something everybody should think about to solve this problem. Currently, we have enough data to make supervised neural nets work, however, unsupervised learning is not improved that much. 
+
+In the case of unsupervised learning, our goal is to learn model parameters $\theta$ from observations $x$ that maximize the likelihood $p(x; \theta)$. It is reasonable to assume that local optima (or saddle points) should be a problem since there are always exponential no. of critical points according to dimensions. 
+
+Traditional local search methods such as SGD, EM and Variational Inference could have problem dealing with those critical points and GAN should also have a non-convex architecture.
+
+! Tensor methods
+We can always alter the objective of max likelihood to best tensor decomposition. Under infinite sample condition, the global optimum is preserved:
+$$
+\arg\underset{\theta}{\max} p(x;\theta) = \arg\underset{\theta}{\min}\|\hat T(x) - T(\theta)\|^2_F
+$$
+We will later show this technique can suceed with many algorithms.
+
+We can extract latent factors with matrix factorization but the solution is not unique. So we always add orthogonal constraints. There are two drawbacks:
+
+# If the matrix is not orthogonal, the solution is hard to get.
+# Latent information is constrained by the rank of matrix.
+
+To overcome these, we can collect more information and apply shared matrix decompotion, generalizing it to tensor decomposition. 
+
+A simple example similar to this talk's is given by [[Ge|http://www.offconvex.org/2015/12/17/tensor-decompositions/]]. [[Kruskal|http://www.sciencedirect.com/science/article/pii/0024379577900696]] gave sufficient conditions for such decompotisions to be unique, i.e., when rank one pairs are linearly independent. This is much weaker than the matrix case (orthogonal).
+
+!! Implementing tensor decomposition
+[[The general tensor decomposition is NP-hard|http://arxiv.org/abs/0911.1393]]. Ge introduced [[a generalized version of Jenrich's method|http://dl.acm.org/citation.cfm?id=173234]] to 
+
+We can use power method to iteratively find eigenvectors. For matrices, we take a random vector, muliply and normalize it and repeat. Then we can get the top eigenvector, substract it and repeat this process. We can do the same for tensors
+
+We extends the notion of matrix product with tensor contraction:
+$$
+T(u, v, \cdot) = \sum_{i,j}u_iv_jT_{i, j, :}
+$$
+
+We contract the tensor along two directions, if we repeat this for orthogonal tensors, we get the eigenvectors. For orthogonal tensors, all the vectors of the decomposition are stationary points. But in the general case, tensor decomposition is non-linear and there are exponentially many of stationary points.
+
+For non-orthogonal tensors, we orthogonalize it with a matrix $W$, which can be found with SVD. When $v_i$'s linearly independent, the orthogonalization is invertible. [[Anandkumar et al. 2012|http://arxiv.org/abs/1210.7559]] gives a proof that tensor power method is efficient and robust to noise.
+
+! Applications
+!! Finding latent variables
+Authors apply tensor decomposition to clustering problems like topic modeling and [[community detection|https://arxiv.org/abs/1302.2684]], vast improvements are observed in both running time and likelihood comparing to variational inference. This method can speed up probability models in a great extend.
+
+!! Learning representations
+One of the use of unsupervised learning is to learn representations. A very popular model is sparse coding. There is strong evidence that neuron conducts sparse coding. In its more simplified form, every sample is a sparse linear combination of dictionary elements. When the dictionary components a linear coherent, we can learn this overcomplete representation [[through tensor method|https://arxiv.org/abs/1506.03509]]. This is a natural assumption because we want these elements to be not redundant. This requires analysing composition of the tensor where the number of components can exceed the dimension, which is impossible for matrix to recover.
+
+We want to find shift-invariant features in e.g. vision applications, convolutional models handle this properly. With convolution constraints, we translate the problem to a tensor where the components are tied to one another. When the componets shift, we can resolve structures efficiently through different operations. 
+
+[[Huang et al. 2015|https://arxiv.org/abs/1309.0787]] train text corpus for para-phrase detection. With 4k samples on MSR corpus, the performance is very similar to skipthought's, which relies on extra large book corpus. 
+
+Similar story with [[holographic embeddings for knowledge bases|http://arxiv.org/abs/1510.04935]].
+
+!! Reinforcement learning
+Another application is reinforcement learning. One challenging aspect is to think about partially observable processes, where we model the environment with hidden state. If we incorporate with Markov DP framework, we can solve these hidden variables through tensor methods. In the author's example, they use memoryless policies to reduce complexity of long history information. First regret bounds are given and exploitation-exploration can be done efficiently under this framework. They also show that tensor methods can have a better reward than CNNs on Atari game playing.
+
+An insight on why this is possible is that the tensor methods are first looking into learning latent representations, and planning in the hidden space could make predictions more effective.
+
+!! Tensors in deep learning
+In many recent works, tensors have been effectively used in deep learning frameworks. One natural question is whether SGD is the only thing we can do. Few researchers are dare to train their model from scratch, the major concern is how to avoid bad critical points.
+
+[[Local optima are easy to construct|https://arxiv.org/abs/1511.06856]]. There are mechanisms to overcome these local optima. [[Janzamin et al. 2014|https://arxiv.org/abs/1412.2863]] proposed a method using the score functions. By looking are the relationship between the input and output, it's possible to train a one layer NN with one hidden layer with guarantees. The idea is to look at transformations of the input using score funtions. If we look at the predicted label $y$ and the score funtion of the input $\mathcal S_m(x)$, we will get a linear combination of the weight vectors of the first layer. Now we can construct a hierarchy of them. If we go to 2nd order score funtions, we'll get a decomposition where each rank 1 component correspond to the weight vectors. By resolving with the tensor decomposition, it is possible to learn the weight vectors of the first layer of the two layer network.
+
+Here we require the notion of score funtions to do the transformation. The idea is to overcome the nonlinearity of these neurons here, we also need to transform the input by the score funtions. We need the derivatives of the input model. For example, if we have a Gaussian input, we get Hermite polynomials.
+
+[[Novikov et al. 2015|http://arxiv.org/abs/1509.06569]] uses tensor to compress the dense layers of CNNs. The notion of tensor train format compresses the weight. The idea is we can get a compact representation of these weight matrices. There is potential for a huge compression rate.
+
+[[Cohen et al. 2015|https://arxiv.org/abs/1509.05009]] use hierarchical Tucker tensors for representating arithmetic convnets to study the expressive power of deep neural nets. Decomposition described before is called the [[CP decomposition|https://en.wikipedia.org/wiki/Tensor_rank_decomposition]], whereas the Tucker one is different from the fact that there can be an arbitrary core tensor. The idea is to look at the input tensor and decompose it into a core tensor and its transformation with different factor matrices. In the CP decomposition this core tensor will be a diagonal one. We can do a hierarchical Tucker decomposition by progressively decomposing this core into various representations. They have algebraic arguments to show that deep is better than shallow. Transfering  a deep net into a shallow one would require exponentially many parameters.
+
+[[Tensors have also been used in memory model|https://arxiv.org/abs/1511.07972]].
+
+Tensor is a useful tool. Improvements can be done in [[scaling up tensor with dimensionality reduction|https://arxiv.org/abs/1506.04448]] and [[speeding up on computation platforms|http://arxiv.org/abs/1606.05696]]

@@ -1,0 +1,21 @@
+created: 20141014060309911
+modified: 20141217084015273
+tags: Speech
+title: ScatNet Code
+type: text/vnd.tiddlywiki
+
+! Variables
+
+* `filt_opt`: filter bank options
+** `Q`
+** `J`: the maximal wavelet scale
+
+! Functions
+
+!! wavelet_factory_1d.m
+
+<<<
+Each filter bank is then used to create a layer operator, using the function WAVELET_LAYER_1D.
+<<<
+
+translation-invariant representations in one dimension
