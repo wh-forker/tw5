@@ -1,5 +1,5 @@
 created: 20160825062557484
-modified: 20160929020644913
+modified: 20160929094445932
 tags: Blog
 title: On Optimization in Deep Learning
 type: text/vnd.tiddlywiki
@@ -67,3 +67,19 @@ They relax the majority of the asssumptions, which is very promising, but leave 
 Even though deep learning energy landscapes appear to be roughly convex, or as this post referred to, local minimal free, a deep model has to include more engineering details to aid its convergence. Problems such as covariance shift and overfitting still have to be handled by engineering techniques.
 
 ! Partition Functions and RBMs
+<<<
+Knowing the Parittion function $Z(v, h)$ is not the same as knowing the distribution $p(v)$.
+<<< [[Why Does Deep and Cheap Learning Work so Well?]]
+
+This is a small but important technical oversight. Scaling Energy does not change $Z(v, h)$. A connection between RBMs and Kadanoff VRG approach is explained in [[Charlse's post|https://charlesmartin14.wordpress.com/2015/04/01/why-deep-learning-works-ii-the-renormalization-group/]]. A more detailed connection between deep learning and Statistical Mechanics is shown [[here|An exact mapping between the Variational Renormalization Group and Deep Learning]]. 
+
+<<<
+RG procedure must preserve more information about the distribution than the free energy.
+<<< [[Comment on “Why does deep and cheap learning work so well?”|http://arxiv.org/pdf/1609.03541v1.pdf]]
+
+Also in the training of RBMs, the idea of preserving Free Energy, via either a ''trace condition'' or say, by layer normalization, is the important point. In variational RG, on the renomalization operator $T(v, h)$:
+$$
+\text{Tr}_he^{T(v, h)}=1
+$$
+
+similar to ''Size-Consistency and/or Size-Extensivity'' in Quantum Chemistry.

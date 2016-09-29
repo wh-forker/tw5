@@ -1,9 +1,9 @@
 created: 20151112063528906
-modified: 20151113071634722
+modified: 20160929060356417
 tags: [[Deep Learning]]
 title: Doubts on Caffenet
 type: text/vnd.tiddlywiki
 
-! Normalization across channels?
+AlexNet takes 227x227x3 images
 
-! First CONV 11x11?
+! Normalization across channels?

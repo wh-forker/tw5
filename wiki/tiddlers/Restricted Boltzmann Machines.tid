@@ -1,5 +1,5 @@
 created: 20150514071547700
-modified: 20160929034514969
+modified: 20160929061032710
 tags: [[Deep Learning]]
 title: Restricted Boltzmann Machines
 type: text/vnd.tiddlywiki
@@ -22,4 +22,18 @@ $$
 //Clamped// ''Free Energy'' $F^c(v)$ and the standard ''Free Energy'' $F(v, h)$. First one is easy to evaluate in the RBM formalism, whereas $F(v, h)$ is computationally intractable. Knowing the $Z(v, h)$ is //like// knowing the equilibrium distribution function, and methods like RBMs appear to approximate it in some form or another.
 
 ! Training
-RBMs are usually trained via Contastive Divergence. 
+RBMs are usually trained via Contastive Divergence. The Energy funtion, being quadratic, lets us readily factor $Z$ using a mean field approximation, leading to simple expressions for the conditional probabilities:
+$$
+\begin{align}
+p(h_i=1|v) &= \sigma(b_i+W_ih)\\
+p(v_i=1|h) &= \sigma(a_i+W_iv)
+\end{align}
+$$
+and weight update rule
+$$
+dw = \langle v, h\rangle_+-\langle v, h\rangle_\infty
+$$
+
+$\langle v, h\rangle_\infty$ is evaluated in the limit of infinite sampling, at the so-called equilibrium distribution. But we don't take the infinite limit.
+
+CD approximates the (mean field) Free Energy by running only 1 (or more) steps of Gibbs Sampling.

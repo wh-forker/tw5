@@ -1,5 +1,5 @@
 created: 20160513083244314
-modified: 20160912025835955
+modified: 20160929092337554
 title: ICLR 2016
 type: text/vnd.tiddlywiki
 
@@ -7,6 +7,10 @@ type: text/vnd.tiddlywiki
 [[Guaranteed Non-convex Learning Algorithms through Tensor Factorization]]
 
 ! Papers
+!! Theory
+[[Data-dependent Initializations of Convolutional Neural Networks]]
+
+!! Older ones
 
 !!! Generating images from captions with attention
 
