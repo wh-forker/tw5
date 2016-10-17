@@ -1,5 +1,5 @@
 created: 20150514055814821
-modified: 20150514071427897
+modified: 20161012083650833
 tags: [[Deep Learning]]
 title: Recurrent Neural Networks
 type: text/vnd.tiddlywiki
@@ -10,3 +10,5 @@ The gradients of the RNN are easy to compute with BPTT, RNNs are difficult to tr
 
 ! Vanishing gradient problem
 Consider the term $\frac{\partial L(z_T;y_T)}{\partial W_{hh}}$, 
+
+[[Sequential Models]]

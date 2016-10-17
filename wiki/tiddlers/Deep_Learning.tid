@@ -1,5 +1,5 @@
 created: 20150625074434077
-modified: 20160519060417791
+modified: 20161012084419818
 tags: 
 title: Deep Learning
 type: text/vnd.tiddlywiki
@@ -17,11 +17,14 @@ type: text/vnd.tiddlywiki
 
 ! [[Tools|Deep Learning Tools]]
 
+! [[Theory|Deep Learning Theory]]
+
 ! Applications
 !! Image
 [[Representation Learning]]
 [[Image retrieval]]
 
-! [[Convolutional Neural Network]]
+! Families
+!! [[Convolutional Neural Network]]
 
-! [[Recurrent Neural Networks]]
+!! [[Recurrent Neural Networks]]

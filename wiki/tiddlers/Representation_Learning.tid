@@ -1,35 +1,60 @@
-created: 20160114070250481
-modified: 20160513085446236
-tags: [[Deep Learning]]
+created: 20161014064037895
+modified: 20161017073356809
+tags: [[Learning Theory]]
 title: Representation Learning
 type: text/vnd.tiddlywiki
 
-	* classic: hierarchical clustering
-	* mainstream: autoencoders
-	* deep belief networks
+! Theory
+!! Curse of Dimensionality
+In a finite-dimensional, bounded space, all metrics are equivalent:
 
-! DNN for image retrieval
-With a CNN learned on large labeled set, the output of the intermediate layers can be used as image descriptors. Global CNN descriptors lack geometric invariance [[link|http://arxiv.org/abs/1403.1840]]. 
+<<<
+For each $x\in\Omega$, exists constants $c, C$ such that $\forall x'\in\Omega$, $cd(x, x')\le\tilde d(x, x')\le Cd(x, x')$.
+<<<
 
-[[Deep patches|https://hal.inria.fr/hal-01207966/document]] does not require supervision and utilizes outputs from different layers. Images are processed under the three-step pipeline:
+But as the dimension increases, metrics start to diverge. In particular, the Euclidean distance in high-dimensional spaces is typically a poor measure of similarity for practical purposes. Local decisions around training do not extend to the whole space.
 
-# Interest point detection. Use Hessian-Affine detector to extract points at their characteristic scale and estimate for each point an affine-invariant local region (rotate to dominate gradient orientation).
-# Interest point description. Map the affine region to a square and learn its representation.
-# Patch matching. Given a clustering of the feature space consisting of $k$ centroids $\{c_1, \dots, c_k\}$, VLAD encodes a set of descriptors as the total shift with respect to their assigned centroid.
+To avoid the curse of dimensionality, we need a guiding principle that plays well with our data (images, sounds, etc.) We need features that linearize intra-class variability and perserve inter-class variability.
 
-To extend CNNs for image retrieval, it is possible to use a unsupervicsed net such as convolutional kernel network. The feature representation of CKN is based on a kernel (feature) map and hence data-independent. Let $M$ and $M'$ be two patches of size $m\times m$, and $\Omega=\{1,\dots,m\}^2$ be a set of pixel locations. The sub-patch $p_z$ from $M$ is of fixed size.
+!! Generalization Error
+It is easy to construct discriminative features:
 
-! Generating natural images
-''Non-parametric'': texture synthesis, super-resolution, in-painting
+* Using a Gaussian RBF, it suffices to let $\sigma\rightarrow0$.
+* The estimator converges to the nearest neighbor classifier:
+$$
+\hat f(x) = f(x_{i(x)}), i(x) = \arg\underset{i}{\min}\|x-x_i\|
+$$
 
-''parametric''
+While it may be easy to correctly classify our training examples, we do not necessarily improve our generalization error:
+$$
+\mathbb E_{(x, y)}(\mathcal l(\hat f(x), y))
+$$
 
-* variational sampling
-* iterative forward diffution process
-* GANs
-** laplacian pyramid extension
-* RNN
-* deconvolution nets
+!! Linearization
+We want to obtain a representation $\Phi(x)$ such that
+$$
+\hat f(x) = \text{sign}(a^\top\Phi(x)+b)
+$$
+is a good approximation of $f(x)$. Thus $f(x)$ is approximately linearized by $\Phi(x)$:
+$$
+f(x) \approx \text{sign}(a^\top\Phi(x)+b)
+$$
+In particular, we should have
+$$
+a^\top(\Phi(x)-\Phi(x') = 0 \Rightarrow f(x)=f(x').
+$$
 
-! Papers
-[[Unsupervised representation learning with deep convolutional generative adversarial networks]]
+!! Invariance and Symmetry
+A global symmetry is an operator $\varphi\in Aut(\Omega)$ that leaves $f$ invariant:
+$$
+\forall x\in\Omega, f(\varphi(x)) = f(x)
+$$
+They can be absorbed by $\Phi$ to varying degrees:
+
+* ''Invariants'': $\Phi(\varphi(x)) = \Phi(x)$ for each $x$.
+* ''Covariants'': $\Phi(\varphi(x)) = A_\varphi\Phi(x)$ for each $x$, where $A_\varphi$ is "simpler" than $\varphi$.
+
+[[Image Representation Learning]]
+
+! Algorithms
+[[t-Distributed Stochastic Neighbor Embedding]]

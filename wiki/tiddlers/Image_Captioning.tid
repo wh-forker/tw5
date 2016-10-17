@@ -1,0 +1,8 @@
+created: 20161012081206780
+modified: 20161012081241540
+tags: [[DL Applications]]
+title: Image Captioning
+type: text/vnd.tiddlywiki
+
+! Implementations
+[[Google|https://github.com/tensorflow/models/tree/master/im2txt]]

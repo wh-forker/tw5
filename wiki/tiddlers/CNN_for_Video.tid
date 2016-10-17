@@ -1,6 +1,6 @@
 created: 20160810015649477
-modified: 20160928060041943
-tags: [[ConvNet Applications]]
+modified: 20161009065753404
+tags: [[DL Applications]]
 title: CNN for Video
 type: text/vnd.tiddlywiki
 
@@ -37,7 +37,7 @@ Due to the limited ability of capturing spatial-temporal patterns, using video d
 
 [img[slow_fusion.PNG]]
 
-[[Tran et al. ICCV 2015|https://arxiv.org/abs/1412.0767v1]] argues that previous models loss temporal information because they perform CONVs and POOLs only spatially. Slow Fusion can handle temporal information better because temporal information are grouped gradually. They propose C3D architecture that uses full frames as input, with 3x3x3 CONVs and 2x2x2 POOLs and achieve 72.26% on UCF101.
+[[Tran et al. ICCV 2015|https://arxiv.org/abs/1412.0767v4]] argues that previous models loss temporal information because they perform CONVs and POOLs only spatially. Slow Fusion can handle temporal information better because temporal information are grouped gradually. They propose C3D architecture that uses full frames as input, with 3x3x3 CONVs and 2x2x2 POOLs and achieve 72.26% on UCF101.
 
 ''Remark'': it is not CNN's strength to capture temporal information, spatial and temporal pooling works differently in human perception. And the 3D conv architecture is very memory and time consuming.
 

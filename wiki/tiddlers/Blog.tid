@@ -1,10 +1,12 @@
 created: 20160818075557033
-modified: 20160929043332280
+modified: 20161017062847123
 tags: 
 title: Blog
 type: text/vnd.tiddlywiki
 
+* [[Dropout as a Bayesian Approximation]]
 * [[CNN for Video]]
-* [[Generarive Adversarial Network]]
+* [[Generative Adversarial Network]]
 * [[Guaranteed Non-convex Learning Algorithms through Tensor Factorization]]
 * [[On Optimization in Deep Learning]]
+* [[Scattering Representation]]

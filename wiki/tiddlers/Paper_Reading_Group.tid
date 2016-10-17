@@ -1,5 +1,5 @@
 created: 20160531030419123
-modified: 20160920070114604
+modified: 20161009083019588
 tags: Papers [[Deep Learning Bib]]
 title: Paper Reading Group
 type: text/vnd.tiddlywiki
@@ -51,8 +51,11 @@ type: text/vnd.tiddlywiki
 |Vision |[[NetVLAD: CNN Architecture for Weakly Supervised Place Recognition|http://arxiv.org/abs/1511.07247]] | CVPR 2016|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/NetVLAD.pptx]]|
 |Vision |[[Newtonian Scene Understanding: Unfolding the Dynamics of Objects in Static Images|http://arxiv.org/abs/1511.04048]] | CVPR 2016|||[[vgg slides|http://www.robots.ox.ac.uk/~vgg/rg/slides/RG21Jul16_VGG.pdf]]|
 |Vision |[[Synthetic Data for Text Localisation in Natural Images]]| CVPR 2016| 陈昊| 6/14/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/20160614_Reading_Text_in_Natural_Images.pptx]] [[notes|Synthetic Data for Text Localisation in Natural Images]]|
+|Vision |[[WarpNet: Weakly Supervised Matching for Single-View Construction|https://arxiv.org/abs/1604.05592]] | CVPR 2016||||
 |Vision |[[Identity Mappings in Deep Residual Networks|https://arxiv.org/abs/1603.05027]] | ArXiv 7/2016||||
 |Vision |[[T-CNN: Tubelets with Convolutional Neural Networks|http://gitxiv.com/posts/do59FBaD68smgdpF6/t-cnn-tubelets-with-convolutional-neural-networks]] | ArXiv 5/2016||||
+|Video |[[Deep learning for detecting multiple space-time action tubes in videos|http://www.robots.ox.ac.uk/~vgg/rg/papers/saha16bmvc.pdf]] | BMVC 2016||||
+|Video |[[Multi-region two-stream R-CNN for action detection|http://www.robots.ox.ac.uk/~vgg/rg/papers/peng16eccv.pdf]] | ECCV 2016||||
 |NLP |[[Distributed Representations of Words and Phrases and their Compositionality(word2vec)|Word2Vec]] | NIPS 2013| 周立峰| 9/27/2016||
 |NLP |[[Empirical Evaluation of Gated Recurrent Neural Networks on Sequence Modeling|https://arxiv.org/abs/1412.3555]] | NIPS 2014| xiaobo| 8/30/2016||
 |NLP |[[Convolutional Neural Networks for Sentence Classification]] | EMNLP 2014| 周立峰| 7/5/2016|[[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/Convolutional-Neural-networks-for-sentence-classification.pptx]] [[notes]]|
@@ -71,3 +74,4 @@ type: text/vnd.tiddlywiki
 
 !! Other talks
 # 6/21/2016, Boosting, 李一夫, [[slides|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/lecture-notes/20160621.pptx]] [[notes|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/lecture-notes/seminar4.pdf]]
+# 10/9/2016, Survey: CNN for Video Classification, 陈昊, [[slides|https://docs.google.com/presentation/d/1iAWg2vwUe7CI0AcaMVfIPxDfjW-o1KEOZVsVrqsEMis/edit?usp=sharing]]

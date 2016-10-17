@@ -1,10 +1,16 @@
 created: 20160425022224634
-modified: 20160519091949359
+modified: 20161008113202631
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
 
 [[NLP Bibs]]
+
+! Task & State-of-the-art techniques
+
+* Question answering (babl): Strongly Supervised MemNN (Weston et al. 2015) 93.3%; Dynamic Memory Network 93.6%
+* Sentiment Analysis (SST): Tree-LSTMs (Tai et al. 2015); DMN 88.5%
+* Part of speech tagging (PTB-WSJ): Bi-directional LSTM-CRP (Huang et al. 2015); 
 
 The performance is always dominated by the size of high quality data.
 

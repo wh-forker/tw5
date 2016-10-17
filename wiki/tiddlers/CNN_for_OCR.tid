@@ -1,5 +1,5 @@
 created: 20160614075440602
-modified: 20160822064417932
+modified: 20161011081555206
 tags: [[Object Detection With CNNs]]
 title: CNN for OCR
 type: text/vnd.tiddlywiki
@@ -31,6 +31,7 @@ Segments pixels into characters, and then group characters into words. Previous 
 
 # [[Sequence Recognition Network]]
 # [[Seq2Seq|http://arxiv.org/abs/1607.06125]]
+# Learning Spatial-Semantic Context with Fully Convolutional Recurrent Network for Online handwritten Chinese Text Recognition: residual multilayerd BLSTM
 
 ! 自然图片文字检测预研
 !! 数据集

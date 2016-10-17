@@ -1,5 +1,5 @@
 created: 20160825062557484
-modified: 20160929094445932
+modified: 20161014062113016
 tags: Blog
 title: On Optimization in Deep Learning
 type: text/vnd.tiddlywiki
@@ -9,6 +9,9 @@ There are at least exponentially many global minima for a neural net. Since perm
 Thanks to the constantly envolving hardwares and libraries, we do not have to worry about training time //that much// at least for convnets. Empirically, the non-convexity of neural nets seems not to be an issue. In practice, SGD works pretty well in optimizing very large networks even though the problem is proved to be NP-hard. However, researchers never stop studying the loss surface of deep neural nets and searching for better optimization strategies.
 
 [[This paper|https://arxiv.org/abs/1605.07110]] has been renewed on ArXiv recently, which leads me to [[this discussion|https://news.ycombinator.com/item?id=11765111]]. Following are what I find interesting.
+
+! Why SGD works
+[Choromaska et al, AISTATS'15] (also [Dauphin et al, ICML'15] use tools from Statistical Physics to explain the behavior of stochastic gradient methods when training deep neural networks. This offers a macroscopic explanation of why SGD "works", and gives a characterization of the network depth. The model is strongly simplified, and convolution is not considered.
 
 ! Saddle points
 We start from discussing saddle points, the vast majority of critical points on the error surfaces of neural networks.

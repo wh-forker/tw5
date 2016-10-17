@@ -1,0 +1,24 @@
+created: 20161011061032329
+modified: 20161017062640258
+title: UCB - Topics in Deep Learning
+type: text/vnd.tiddlywiki
+
+[[link|https://joanbruna.github.io/stat212b/]]
+
+! Lecture 1
+We can take deep learing as
+
+<<<
+A class of parametrized non-linear representations encoding appropriate domain knowledge (invariance
+and stationarity) that can be (massively) optimized efficiently using stochastic gradient descent
+<<<
+
+CNN is able to capture high level image properties more efficiently than previous models. How can we explain these advantage?
+
+* model architecture? non-linearity/convolution/depth/invariance
+* optimization? normalization/no local minima/stochastic optimization/equivalent local solutions
+
+[[Deep Learning Theory]]
+
+! Lecture 2
+[[Representation Learning]]

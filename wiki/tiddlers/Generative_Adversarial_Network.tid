@@ -1,7 +1,7 @@
 created: 20160909061350995
-modified: 20160921065203091
+modified: 20161014054556375
 tags: [[Case study of ConvNets]] [[ICML 2015]] Blog Talks
-title: Generarive Adversarial Network
+title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
 
 GANs are recent approaches to modelling data in high dimensional spaces. Following are notes from [[Ian Goodfellow's ICML DL Workshop 2015 talk|https://www.youtube.com/watch?v=LXDuuYSNtUY]].
@@ -12,36 +12,6 @@ Papers relative in this post:
 * Conditional Generative Adversarial Nets
 * On Distinguiashability Criteria for Estimating Generative Models
 * Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks
-
-! Generative modeling
-In real life we always encounter problems where data generator are so complicated that its distribution cannot be evaluated. Probably drawn from super high dimensional space (image/audio). Suppose we have trainig examples $x\sim p_{data}(x)$ and want a model that can draw samples: $x\sim p_{model}(x)$ where $p_{model} = p_{data}$. Of course this is the idealized scenario. 
-
-When given input of certain conditions, it can generate output with structure as rich as the input. This technique can be applied to speech synthesis, text translation etc. And it can generate data for other models, simulate the experiment environment and support reinforcement learning or simulate the reward of each action and use it in planning. 
-
-Finally this might help us to leverage the unlabeled data problem. This possibility has not been demonstrated yet but we can assume the intermediate layers of GAN can be used as features for supervised tasks.
-
-! Previous training methods
-People always train a generative model that represents the probability distribution. And fit this model using maximum likelihood. 
-
-$$
-\theta^* = \underset{\theta}{max}\frac 1 m\sum_{i=1}^m\log p(x^{(i)};\theta)
-$$
-
-Until a few years ago the most popular way is to use undirected graphical models. And the flagship under the context of neural network is ''Deep Boltzmann machines'', where we define an energy function over the visible units and several hidden layers. We define an unnormalized probability distribution by taking $e$ to the negative energy fucntion, which has no constraint on it. And we normalize this positive functions to obtain a probability distribution function:
-
-$$
-\begin{align}
-p(h, x) &= \frac 1 Z \tilde p(h, x)\\
-\tilde p(h, x) &= \exp(-E(h, x))\\
-Z&=\sum_{h, x}\tilde p(h, x)
-\end{align}
-$$
-
-Unfortunately, computing that normalizing constant is NP-complete and our ability to approximate it is limited. In particular, if we train a Boltzmann machine well enough to represent the sharp distribution of widely separated modes, then our ability to approximate it decays. Our best approximation to the partition function is based on drawing samples from the model using ''MCMC''. And this Monte Carlo method works well as long as it is able to move between different modes. As the modes become sharper and better separated, we have a more difficult time transitioning between them. There are a lot of strategies to increase the temperature of the distribution temperarily in order to force the Markov chain to mix. But this problem is not solved to our satisfaction.
-
-Some have been studying directed graphical models, where a similar problem arises. To compute the partition function, we need to sum over all configuartions of hidden states. ''Variational learning'' has been used to solve this. Where we maximize $\log p(x)-\mathcal D_{KL}(q(x)||p(z|x))$. And one of the most popular deep directed model is the ''Variational Autoencoder''. The basic idea is we have a distribution of the hidden units $q(z)$, and we can draw samples from this distribution with a neural network and some noise. This idea of a differentiable decoder, a.k.a. a generative net is very wide spread and serveral approaches to train the generative decoder nets.
-
-Another popular model is generative stochastic networks. These networks learn the transition probability of the Markov chains. Which are very similar to GANs. The basic strategy is to give up on having an explicit formula for $p(x)$, just learn to sample incrementally. The drawback is it is difficult for Markov chains to mix from one example to another extremely dissimilar example.
 
 ! Generative adversarial networks
 The general idea of GAN is to learn a sampling mechanism. We will learn to generate some input noise from a fixed prior distribution and then transform that noise into data space. 
@@ -119,3 +89,14 @@ Both use backprop through continuous random number generation
 * If so, how can we prevent non-convergence?
 * Is there a better loss function for generator?
 
+! [[Learning in Implicit Generative Models|https://arxiv.org/abs/1610.03483|]]
+The objective is to make the density ratio funtion $r(x) = p^*(x)/q(x)$ to be one, where $p*(x)$ is the true data distribution and $q(x)$ is the model distribution. By estimating this value, we can avoid computing the marginal likelihood. There are four ways of achieving this objective:
+
+!! Class probability estimation
+As in the GANs, we specify a discriminator, $\mathcal D(x;\phi) = p(y|x)$, and a scoring rule.
+
+!! Statistical distance minimization
+
+!! Ratio matching
+
+!! Moment matching

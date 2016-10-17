@@ -1,6 +1,6 @@
 created: 20160622120645080
-modified: 20160719072534393
-tags: Statistics
+modified: 20161014064115027
+tags: [[Learning Theory]]
 title: Kernel Mean Embedding
 type: text/vnd.tiddlywiki
 
@@ -56,7 +56,7 @@ The measure $\Lambda$ determines which frequency component occurs in the kernel 
 Radial kernels: $k(x, y) = \varphi (\|x-y\|^2)$ where $\varphi$ is positive definite. Well known radial kernels include Gaussian RBF, mixture-of-Gaussians, inverse multiquadratic and Matern kernel. 
 
 ; Schoenberg's theoren
-: Suppose $f: \mathbf R_+\rightarrow\mathbf R_+ is continuous. Then, the following are equivalent:
+: Suppose $f: \mathbf R_+\rightarrow\mathbf R_+$ is continuous. Then, the following are equivalent:
 # The function $\mathbf R^n\ni x \rightarrow f(\|x\|_n)$ is positive semi-definite.
 # The function $\mathbf R^n\ni t \rightarrow f(\sqrt{t})$ is the Laplace transform of a finite Borel measure on $\mathbf R_+$.
 
@@ -80,6 +80,8 @@ $$
 f(x) = \langle f, k(x,\cdot)\rangle_{\mathscr H}
 $$
 Take $k(y,\cdot)$ as $f$, we get $f(x) = k(y, x) = \langle\phi(x), \phi(y)\rangle_{\mathscr H}$. We do not need to know the feature map explicitly, the inner product can be calculated directly from $k(x, y)$.
+
+!! [[Representation learning]]
 
 ! Hilbert Space Embedding of Marginal Distributions
 The idea of Kernel mean embedding is to extend the feature map $\phi$ to the space of probability distributions by representing each distribution $\mathbb P$ as a mean function

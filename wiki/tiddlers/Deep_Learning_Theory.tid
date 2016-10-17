@@ -1,0 +1,39 @@
+created: 20161012084433429
+modified: 20161014061351120
+tags: [[Deep Learning]]
+title: Deep Learning Theory
+type: text/vnd.tiddlywiki
+
+! Approximiation Theory
+Deep Networks define a class of "universal approximators":
+
+''Theorem'' [C'89, H'91] Let $\rho()$ be a bounded, non-constant continuous function. Let $I_m$ denote the $m$-dimensional hypercube, and $C(I_m)$ denote the  space of continuous functions on $I_m$. Given any $f\in C(I_m)$ and $\epsilon > 0$, there exists $N > 0$ and $v_i, w_i, b_i, i=1, \dots, N$ such that
+$$
+F(x) = \sum_{i\le N}v_i\rho(w_i^\top x + b_i)\qquad\text{satisfies}
+$$
+$$
+\underset{x\in I_m}{\sup} |f(x)-F(x)|<\epsilon
+$$
+
+This guarantees that  even a single hidden-layer network can represent any classification problem in which the boundary is locally linear (smooth). But we do not know how to choose a good architecture, or how to optimize it.
+
+! Estimation Theory
+''Theorem'' [Barron'92] The mean integraded square error between the estimated network $\hat F$ and the target function $f$ is bounded by
+$$
+O\left(\frac{C_f^2}{N}\right) + O\left(\frac{Nm}{K}\log K\right),
+$$
+where $K$ is the number of training points, $N$ is the number of neurons, $m$ is the input dimension, and $C_f$ measures the global smoothness of $f$.
+
+This formula combines approximation and estimation error. We cannot explain why @@color:#dc322f;online/stochastic optimization works better than batch normalization@@. 
+
+! Plausible Optimization
+[[On Optimization in Deep Learning]]
+
+! Statistical Learning Theory
+The complexity or capacity of NNs can be computed by measuring how many configurations can be shattered (VC-dimension)
+
+The capacity of the network, if measured by the number of pieces in a piecewise linear approximation, increases exponentially with depth. [Montufar, Pascanu et al, '14]
+
+These results quantify an upper bound on the empirical risk of deep neural networks. But the bounds might be very pessimistic. We still have to figure out @@color:#dc322f;the superior generalization properties of CNNs versus models with similar capacity@@. 
+
+There is a functional equivalence between models of different depths at equal capacity [Ba and Caruana '14].

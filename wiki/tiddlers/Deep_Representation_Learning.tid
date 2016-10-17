@@ -1,0 +1,37 @@
+created: 20160114070250481
+modified: 20161017091121413
+tags: [[DL Applications]]
+title: Deep Representation Learning
+type: text/vnd.tiddlywiki
+
+	* classic: hierarchical clustering
+	* mainstream: autoencoders
+	* deep belief networks
+
+! DNN for image retrieval
+With a CNN learned on large labeled set, the output of the intermediate layers can be used as image descriptors. Global CNN descriptors lack geometric invariance [[link|http://arxiv.org/abs/1403.1840]]. 
+
+[[Deep patches|https://hal.inria.fr/hal-01207966/document]] does not require supervision and utilizes outputs from different layers. Images are processed under the three-step pipeline:
+
+# Interest point detection. Use Hessian-Affine detector to extract points at their characteristic scale and estimate for each point an affine-invariant local region (rotate to dominate gradient orientation).
+# Interest point description. Map the affine region to a square and learn its representation.
+# Patch matching. Given a clustering of the feature space consisting of $k$ centroids $\{c_1, \dots, c_k\}$, VLAD encodes a set of descriptors as the total shift with respect to their assigned centroid.
+
+To extend CNNs for image retrieval, it is possible to use a unsupervicsed net such as convolutional kernel network. The feature representation of CKN is based on a kernel (feature) map and hence data-independent. Let $M$ and $M'$ be two patches of size $m\times m$, and $\Omega=\{1,\dots,m\}^2$ be a set of pixel locations. The sub-patch $p_z$ from $M$ is of fixed size.
+
+! Generating natural images
+''Non-parametric'': texture synthesis, super-resolution, in-painting
+
+''parametric''
+
+* variational sampling
+* iterative forward diffution process
+* GANs
+** laplacian pyramid extension
+* RNN
+* deconvolution nets
+
+
+
+! Papers
+[[Unsupervised representation learning with deep convolutional generative adversarial networks]]

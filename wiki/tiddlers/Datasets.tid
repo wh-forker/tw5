@@ -1,0 +1,15 @@
+created: 20161010103308316
+modified: 20161012081117243
+title: Datasets
+type: text/vnd.tiddlywiki
+
+[[Sentense Classification Datasets]]
+
+! Images
+[[Open Images|https://github.com/openimages/dataset]]
+
+! Deep Scene Understanding
+[[Places2|http://places2.csail.mit.edu/]]
+
+! Video Classification
+Youtube-8M

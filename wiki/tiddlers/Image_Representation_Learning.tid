@@ -1,0 +1,44 @@
+created: 20161017062746224
+modified: 20161017091535044
+tags: [[Representation Learning]]
+title: Image Representation Learning
+type: text/vnd.tiddlywiki
+
+! Rigit transformation symmetries
+
+* Translations: $\{\varphi_v;v\in\mathbb R^2\}$, with $\varphi_v(x)(u)=x(u-v)$.
+* Dilations: $\{\varphi_s;s\in\mathbb R_+\}$, with $\varphi_s(x)(u)=s^{-1}x(s^{-1}u)$.
+* Rotations: $\{\varphi_\theta;\theta\in[0, 2\pi)\}$, with $\varphi_\theta(x)(u)=x(R_\theta u)$.
+* Mirror symmetry: $\{e, M\}$, with $Mx(u_1, u_2) = x(-u_1, u_2)$.
+
+We can combine all these transformations into a single group, the Affine Group $Aff(\mathbb R^2)$. It has 6 degrees of freedom, in the representation
+$$
+\left(\begin{array}{c}u_1\\u_2\end{array}\right)\rightarrow
+\left(\begin{array}{c}v_1\\v_2\end{array}\right)
+\left(\begin{array}{cc}a_1&a_2\\a_3&a_4\end{array}\right)
+\left(\begin{array}{c}u_1\\u_2\end{array}\right)
+$$
+This is in general a //non-commutative// group. For some groups, we might only observe partial invariance. In speech, the underlying group modeling time-frequency shifts is the ''Heisenberg'' group.
+
+Given a transformation group $G$ and an input $x$, the ''action of $G$'' onto $x$ is called an ''orbit'':
+$$
+G\cdot x = \{\varphi_g(x), g\in G\}
+$$
+With a linear $\Phi(x)$, a 6-dim curvy space looks flat in a high-dimensional space. Group symmetries are not sufficient to beat the curse of dimensionality. It is to strict.
+
+! Stablity
+Image and audio recognition is ''stable'' to local deformations. Let $x\in L^2(\mathbb R^m)$ be the data, $\tau:\mathbb R^m\rightarrow\mathbb R^m$ be the diffeomorphism. And $x_\tau = \varphi_\tau(x)$, where $\varphi_\tau$ is a change of variables: (think of $x_\tau$ as adding noise to the pixel //locations// rather than to the pixel values). $x_\tau(u) = x(u=\tau(u))$.
+
+Informally, if $\|\tau\|$ measures the amount of deformation, many recognition tasks satisfy
+$$
+\forall x, \tau, |f(x)-f(x_\tau)\lesssim\|\tau\|
+$$
+Thus $F:\tau\mapsto\Phi(x_\tau)$ is Lipschitz w.r.t. the deformation metric $\|\tau\|$ uniformly on $x$. If our representation is stable, then
+$$
+\forall x, \tau, \|\Phi(x)-\Phi(x_\tau)\|\le C\|\tau\|\Rightarrow|\hat f(x)-\hat f(x_\tau)|\le\tilde C\|\tau\|
+$$
+
+The stablity can be represented by sampling from a Ergodic process:
+
+* In statistical physics, a process with an ''Integral Scale'' is ergodic
+* In statistics, linear processes are ergodic (provided the moments are finite).

@@ -1,5 +1,5 @@
 created: 20160706060121767
-modified: 20160803090304293
+modified: 20161008113157517
 tags: [[Case study of ConvNets]]
 title: ResNet
 type: text/vnd.tiddlywiki
@@ -7,6 +7,9 @@ type: text/vnd.tiddlywiki
 Residual connection were introduced by He et al. in [[Deep Residual Learning for Image Recognition|https://arxiv.org/abs/1512.03385]] in which they  give convincing theoretical and practical evidence for the advantages of utilizing additive merging of signals both for image recognition, and especially for object detection.
 
 [[Wide Residual Network|http://arxiv.org/abs/1605.07146]]
+
+! On the absence of pooling
+
 
 ! Repos
 [[resnet.torch|https://github.com/facebook/fb.resnet.torch]]

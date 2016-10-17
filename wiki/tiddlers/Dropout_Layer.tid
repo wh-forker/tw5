@@ -1,5 +1,5 @@
 created: 20160518024924373
-modified: 20160612071621836
+modified: 20161010062759676
 tags: [[ConvNet Layers]]
 title: Dropout Layer
 type: text/vnd.tiddlywiki
@@ -13,3 +13,5 @@ In the training stages, the probability a hidden node will be retained (i.e. not
 At testing time after training has finished, we would ideally like to find a sample average of all possible 2^n dropped-out networks; unfortunately this is infeasible for large n. However, we can find an approximation by using the full network with each node's output weighted by a factor of p, so the expected value of the output of any node is the same as in the training stages. This is the biggest contribution of the dropout method: although it effectively generates $2^n$ neural nets, and as such allows for model combination, at test time only a single network needs to be tested.
 
 By avoiding training all nodes on all training data, dropout decreases overfitting in neural nets. The method also significantly improves the speed of training. This makes model combination practical, even for deep neural nets.
+
+! [[Bayesian interpretation|Dropout as a Bayesian Approximation]]
