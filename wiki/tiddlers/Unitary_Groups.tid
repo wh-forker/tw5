@@ -1,0 +1,42 @@
+created: 20161017093019627
+modified: 20161018053508846
+tags: [[Group Theory]] [[Representation Learning]]
+title: Unitary Groups
+type: text/vnd.tiddlywiki
+
+! Definition
+A one-parameter unitary group $\{\varphi_t\in Aut(\Omega)\}_{t\in\mathbb R}$ satisfies:
+
+# $\forall t, s, \varphi_{s+t}=\varphi_t\varphi_s$,
+# $\lim_{s\rightarrow t}\|\varphi_s-\varphi_t\| = 0$,
+# $\forall t\in\mathbb R, x\in\Omega, \|\varphi_tx\|=\|x\|$.
+
+In particular, these are Abelian groups
+
+* Rotation and translations are $1$-parameter unitary groups
+* Dilations can be made unitary: $\varphi_sx(u)=s^{1/2}x(su)$.
+
+! Global Invariants
+!! Stone's theorem
+''Theorem:'' Suppose $\Omega$ is a Hilbert space. There is a one-to-one correspondence betweeen self-adjoint operators on $\Omega$ and one-parameter unitary groups of $Aut(\Omega)$. Given $\{\varphi_t\}_{t\in\mathbb R}$, there exists $A$ self-adjoint such that $\forall t$, $\varphi_t=e^{itA}$ ([[Matrix exponential]]). Conversely, if $A$ is self-adjoint, the family $\{e^{itA}\}_t$ is a one-parameter unitary group.
+
+[[Proof|http://www2.maths.lth.se/media/thesis/2010/MATX01.pdf]]
+
+!! Stone theorem, Fourier and Global Invariants
+@@color:#859900;Translations are simultaneously diagonalized by Fourier atoms.@@
+
+The Stone theorem formalizes the fact that a collection of “nice” commuting operators simultaneously diagonalizes (in a complex basis):
+$$
+A=V^*\text{diag}(\lambda_1, \dots, \lambda_n)V
+$$
+Unitary condition implies that eigenvalues are unitary complex numbers.
+
+On larger Abelian (commuting) groups, we can factorize them into one-parameter groups (e.g. translations in R2)
+$$
+G=G_1\times G_2\times \dots G_l
+$$
+
+Thus $\Phi(x)=|Vx|$ is global invariant:
+$$
+\forall x, t, \Phi(\varphi_t(x))=\Phi(x).
+$$

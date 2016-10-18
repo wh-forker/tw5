@@ -1,5 +1,5 @@
 created: 20161017062746224
-modified: 20161017091535044
+modified: 20161018054859831
 tags: [[Representation Learning]]
 title: Image Representation Learning
 type: text/vnd.tiddlywiki
@@ -18,15 +18,36 @@ $$
 \left(\begin{array}{cc}a_1&a_2\\a_3&a_4\end{array}\right)
 \left(\begin{array}{c}u_1\\u_2\end{array}\right)
 $$
+
+A particular simple example is given by [[continuous one-parameter unitary transformations|Unitary Groups]].
+
 This is in general a //non-commutative// group. For some groups, we might only observe partial invariance. In speech, the underlying group modeling time-frequency shifts is the ''Heisenberg'' group.
 
 Given a transformation group $G$ and an input $x$, the ''action of $G$'' onto $x$ is called an ''orbit'':
 $$
 G\cdot x = \{\varphi_g(x), g\in G\}
 $$
-With a linear $\Phi(x)$, a 6-dim curvy space looks flat in a high-dimensional space. Group symmetries are not sufficient to beat the curse of dimensionality. It is to strict.
+With a linear $\Phi(x)$, a 6-dim curvy space looks flat in a high-dimensional space. Group symmetries are not sufficient to beat the curse of dimensionality. It is too strict.
 
-! Stablity
+!! Limits of Group Diagonalisation
+
+A shallow (1 layer) network is thus sufficient to achieve invariance to commutative group transformations. However, this architecture has a number of shortcomings.
+
+!!! Non-commutative groups
+''Proposition:''  If $G = \{\varphi t\}_t$ is non-commutative, then there is no basis $V$ that diagonalises simultaneously all $\varphi_t$.
+
+Roto-translation is a group that is non-commutative: $(v', \theta')\cdot(v,\theta)=(v+R_{-\theta}v', \theta+\theta')$
+
+!!! Losing degrees of freedom
+Because of Hermitic symmetry, $\Phi:\mathbb R^n\rightarrow\mathbb R^{\lceil n/2\rceil}$, we “pay” $n/2$ degrees of freedom to remove group variability, independently of the group dimensionality.
+
+If the group has dimension $p$, a G-invariant representation could have up to $n-p$ d.f.: we are losing discriminability when $p$ is small.
+
+Fourier Phases encode most of the relevant signal information. 
+
+! Stability
+[[Shallow invariants are unstable|Deformation Metric]]
+
 Image and audio recognition is ''stable'' to local deformations. Let $x\in L^2(\mathbb R^m)$ be the data, $\tau:\mathbb R^m\rightarrow\mathbb R^m$ be the diffeomorphism. And $x_\tau = \varphi_\tau(x)$, where $\varphi_\tau$ is a change of variables: (think of $x_\tau$ as adding noise to the pixel //locations// rather than to the pixel values). $x_\tau(u) = x(u=\tau(u))$.
 
 Informally, if $\|\tau\|$ measures the amount of deformation, many recognition tasks satisfy

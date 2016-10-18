@@ -1,0 +1,21 @@
+created: 20161018015519094
+modified: 20161018021231936
+tags: Analysis
+title: Fourier Transform
+type: text/vnd.tiddlywiki
+
+! Definition
+The Fourier transform of a function $x\in L^2(\mathbb R)$ is defined as
+$$
+\hat x(\omega)=\int x(u)e^{-iwu}du
+$$
+
+! Properties
+
+* Linear: $z=\alpha x+\beta y\Rightarrow\hat z=\alpha\hat x+\beta y$.
+* Parseval identity: $\|\hat x\|=\|x\|, \langle x, y\rangle=\langle\hat x, \hat y\rangle$.
+* Inverse Fourier transform: $x(u) = \int\hat x(\omega)e^{-iwu}dw$.
+* Translation: $y(u) = x(u-u_0)\Rightarrow\hat y(\omega)=e^{iwu_0}\hat x(\omega)$.
+* Dilation: $y(u)=x(su)$ for $s>0\Rightarrow\hat y(\omega)=s^{-1}\hat x(s^{-1}\omega)$.
+
+[[Fourier Transform vs Wavelet Transform]]

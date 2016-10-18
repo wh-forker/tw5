@@ -1,5 +1,5 @@
 created: 20160225022832003
-modified: 20161017073459993
+modified: 20161018064958515
 tags: [[Scattering Representation]]
 title: Understanding Deep ConvNets (Scattering Repr)
 type: text/vnd.tiddlywiki
@@ -7,6 +7,28 @@ type: text/vnd.tiddlywiki
 [[link|https://arxiv.org/abs/1601.04920]]
 
 ! [[Image Representation Learning]]
+
+! Averaging and Wavelets
+[[Fourier transform|Fourier Transform vs Wavelet Transform]] are unstable in high-frequency. We apply a local translation invariance:
+$$
+\|\Phi(x)-\|\Phi(\varphi_vx)\|\le C2^{-J}\|v\|
+$$
+we can do a local averaging within the translation orbit with $\phi(v)$:
+$$
+\Phi(x)=2^{-dJ}\int_v\phi(2^{-J}v)\varphi_vxdv
+$$
+In coordinates, it becomes
+$$
+\Phi(x)(u)=\int\phi_J(v)v(u-v)dv=x\ast\phi_J(u)
+$$
+with
+$$
+\phi_J(v)=2^{-Jd}\phi(2^{-J}v)
+$$
+
+But the low-pass information is insufficient. We want to capture high-frequency with a measure involving a non-linearity. We want them to preserve stability to deformations and inter-class variability.
+
+Have to understand why wavelets are a good idea. [[Think about 2|TODOs]]
 
 ! Definitions
 

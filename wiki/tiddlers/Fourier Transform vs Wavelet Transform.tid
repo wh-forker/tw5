@@ -1,8 +1,10 @@
 created: 20141016045923176
-modified: 20141016052430500
-tags: Analysis
+modified: 20161018063810924
+tags: [[Fourier Transform]]
 title: Fourier Transform vs Wavelet Transform
 type: text/vnd.tiddlywiki
 
 Short time Fourier transform (STFT) suffers from resolution problem. We have equal time and frequency resolution at all frequencies in STFT.
 
+Fourier modulus is unstable: high-frequency information spans a large linear subspace as soon as
+there is non-rigid deformation. So we want to smooth along the orbits. 

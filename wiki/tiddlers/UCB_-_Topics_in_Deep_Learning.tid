@@ -1,5 +1,5 @@
 created: 20161011061032329
-modified: 20161017062640258
+modified: 20161018092923072
 title: UCB - Topics in Deep Learning
 type: text/vnd.tiddlywiki
 
@@ -22,3 +22,6 @@ CNN is able to capture high level image properties more efficiently than previou
 
 ! Lecture 2
 [[Representation Learning]]
+
+! Lecture 3
+[[Understanding Deep ConvNets (Scattering Repr)]]

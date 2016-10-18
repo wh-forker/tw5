@@ -1,0 +1,15 @@
+created: 20161018053520399
+modified: 20161018055015367
+tags: [[Image Representation Learning]]
+title: Deformation Metric
+type: text/vnd.tiddlywiki
+
+We consider the following deformatin cost:
+$$
+\|\tau\|:=2^{-J}\|\tau\|_\infty+\|\nabla\tau\|_\infty.
+$$
+Scale $J$ controls how much we pay for absolute displacements. Stability criterion: $\forall \|x\|=1, \tau, \|\Phi(x)-\Phi(x_\tau)\|\le C\|\tau\|$. [[Think about 1|TODOs]]
+
+We can define similar metrics for di↵eomorphisms associated with other transformation groups (e.g. rotation).
+
+[[Fourier Transform vs Wavelet Transform]]
