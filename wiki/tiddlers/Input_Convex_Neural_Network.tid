@@ -1,0 +1,7 @@
+created: 20161019094126230
+modified: 20161019104053193
+tags: [[Deep Energy Based Learning]]
+title: Input Convex Neural Network
+type: text/vnd.tiddlywiki
+
+The inference is done by solving a convex optimization problem about the input. Thus the net should be made ''input convex''.

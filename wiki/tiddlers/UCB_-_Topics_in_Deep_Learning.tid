@@ -1,11 +1,11 @@
 created: 20161011061032329
-modified: 20161018092923072
+modified: 20161019092129040
 title: UCB - Topics in Deep Learning
 type: text/vnd.tiddlywiki
 
 [[link|https://joanbruna.github.io/stat212b/]]
 
-! Lecture 1
+! Lec1
 We can take deep learing as
 
 <<<
@@ -20,8 +20,11 @@ CNN is able to capture high level image properties more efficiently than previou
 
 [[Deep Learning Theory]]
 
-! Lecture 2
+! Lec2
 [[Representation Learning]]
 
-! Lecture 3
+! Lec3 Groups, Invariants and Filters
 [[Understanding Deep ConvNets (Scattering Repr)]]
+
+! Lec4 Scattering Convolutional Networks
+Why are wavelets a good 
