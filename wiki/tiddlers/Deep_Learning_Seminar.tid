@@ -1,0 +1,51 @@
+created: 20161019015132102
+modified: 20161019071539560
+tags: Books
+title: Deep Learning Seminar
+type: text/vnd.tiddlywiki
+
+! Guidelines
+We will walk through Part II of the [[Deep Learning textbook|http://www.deeplearningbook.org/]] by Goodfellow et al. A pdf version can be found [[here|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/textbooks/deep_learning.pdf]]. Some of Goodfellow's most noticeable works are:
+
+# ''Generative Adversarial Network'': ICML 2015 DL Workshop talk [[transcript|Generative Adversarial Network]] [[video|https://www.youtube.com/watch?v=LXDuuYSNtUY]]
+# ''Adversarial Examples'': HORSE 2016 talk [[slides|https://goodfeli.github.io/slides/2016_09_19_horse.pdf]] [[video|https://www.youtube.com/watch?v=f95EhYFmsj0]]
+
+Unless otherwise specified the course lectures and meeting times are:
+
+Tuesday 19:00-20:00
+
+# Suggested reading materials are listed to enhance understanding of the textbook. Extra reading materials are welcomed to add to the list. The lecturer is not obliged to cover those papers/blog posts. 
+# The lecturer is suggested to upload the slides to [[this git repo|https://g.hz.netease.com/mi-tools/mi-course/tree/dev/seminar]] before seminar. 
+# The scribe should keep the notes of the seminar for later reference. A nice script format is `.pdf` or `.html`. Choosing between LaTeX/Markdown as the markup language according to the lecture content is strongly recommended. You may download the LaTeX template from [[here|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/template.zip]]. @@color:#859900;The materials already covered in the book is not necessary to be taken down, a reference of certain position in the book is enough.@@
+
+!! Rotation
+|!Lecturer |!Scribe |
+|郭贺 |刘丽娟 |
+|张晓博 |李一夫 |
+|侯章军 |白海 |
+|周立峰 |齐狄浩 |
+|杨旭东 |曽杨 |
+|陈昊 |张鹏 |
+|刘丽娟 |郭贺 |
+|李一夫 |张晓博 |
+|白海 |侯章军 |
+|齐狄浩 |周立峰 |
+|曽杨 |杨旭东 |
+|张鹏 |陈昊 |
+
+! Schedule and Syllabus
+|!No. |!Chapter |!Description |!Course Materials |!Lecturer |
+|1 |6.{1-4} |XOR example, neural net architecture, loss, activations |Suggested Readings:<br><li>[[PReLU|https://arxiv.org/abs/1502.01852]]</li> | |
+|2 |6.{5-6} |Backprop |Suggested Readings:<br><li>[[Backprop with Tensorflow|http://blog.aloni.org/posts/backprop-with-tensorflow/]]</li> | |
+|3 |7.{1-3} |Parameter regularization |Suggested Readings:<br><li>[[Regularization insights|https://arxiv.org/abs/1207.0580]]</li> | |
+|4 |7.{4-11} |Data augmentation, label smoothing, early stopping, ensemble methods |Suggested Reading:<br>TBD | |
+|5 |7.{12-14} |Dropout, adverasrial training, learning on manifold |Suggested Readings:<br><li>[[Dropout|http://jmlr.org/papers/v15/srivastava14a.html]]</li><li>[[Adversarial training|https://arxiv.org/abs/1412.6572]]</li> | |
+|6 |8.{1-2} |Optimization in Deep Learning |Suggested Readings:<br><li>[[Qualitatively characterizing neural network optimization problems|https://arxiv.org/abs/1412.6544]]</li><li>[[Reddit: deep learning without local minima|https://news.ycombinator.com/item?id=11765111]]</li><li>[[Why does Deep Learning work?|https://charlesmartin14.wordpress.com/2015/03/25/why-does-deep-learning-work/]]</li> | |
+|7 |8.{3-5} |SGD, momentum, adaptive learning rate |Suggested Readings:<br><li>[[Unit tests for stochastic optimization|https://arxiv.org/abs/1312.6055]]</li> | |
+|8 |8.{7} |Batch normalization, running average, other strategies. (skipping chapter 6) |Suggested Readings:<br><li>[[Thesis: 2nd Order RNN|http://www.cs.utoronto.ca/~ilya/pubs/ilya_sutskever_phd_thesis.pdf]]</li> | |
+|9 |9.{1-5} |CONV, POOL, other strategies |Suggested Readings:<br><li>[[Fast Algorithms for Convolutional Neural Networks|https://arxiv.org/abs/1509.09308]]</li> | |
+|10 |9.{6-11} |Structured output, unsupervised training, relation with neuroscience |Suggested Readings:<br><li>[[Fully Convolutional Networks for Semantic Segmentation|https://arxiv.org/abs/1411.4038]]</li><li>[[Super resolution with CONV|https://arxiv.org/abs/1609.07009]]</li> | |
+|11 |10.{1-3} |RNN, Bi-RNN |Suggested Readings:<br><li>[[Speech recognition with RNN|http://www.cs.toronto.edu/~fritz/absps/RNN13.pdf]]</li><li>[[The Unreasonable Effectiveness of RNN|http://karpathy.github.io/2015/05/21/rnn-effectiveness/]]</li> | |
+|12 |10.{4-6} |Seq2seq, recursive NN |Suggested Readings:<br><li>[[Sequence to Sequence Learning with Neural Networks|https://arxiv.org/abs/1409.3215]]</li><li>[[Tensorflow Tutorial: Sequence-to-Sequence Models|https://www.tensorflow.org/versions/r0.11/tutorials/seq2seq/index.html]]</li><li>[[Parsing Natural Scenes and Natural Language with Recursive NNs|http://www-nlp.stanford.edu/pubs/SocherLinNgManning_ICML2011.pdf]]</li> | |
+|13 |10.{7-12} |Long-term dependency, echo state networks, Gated RNNs, optimization, explicit memory |Suggested Readings:<br><li>[[MemNN|http://arxiv.org/pdf/1410.3916v8.pdf]]</li><li>[[LSTM: A Search Space Odyssey|http://arxiv.org/abs/1503.04069]]</li><li>[[Towards AI-Complete Question Answering: A Set of Prerequisite Toy Tasks|https://arxiv.org/abs/1502.05698]]</li> | |
+|14 |11.{1-6} |Tuning model performance w.r.t. hyperparameters, debugging strategies, SVT example |Suggested Readings:<br><li>[[Google Street View paper|https://arxiv.org/abs/1312.6082v4]]</li> | |
