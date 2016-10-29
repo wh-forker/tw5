@@ -1,14 +1,16 @@
 created: 20150514055814821
-modified: 20161012083650833
+modified: 20161027085800753
 tags: [[Deep Learning]]
 title: Recurrent Neural Networks
 type: text/vnd.tiddlywiki
+
+! Introduction
 
 RNN is a very deep feedforward neural newwork that has a layer for each timestep. Its weights are shared across time.
 
 The gradients of the RNN are easy to compute with BPTT, RNNs are difficult to train, especially on problems with long-range temporal dependencies due to their nonlinear iterative nature. The derivative of the loss function at one time can be exponentially large w.r.t. the hidden activations at a much earlier time.
 
-! Vanishing gradient problem
+!! Vanishing gradient problem
 Consider the term $\frac{\partial L(z_T;y_T)}{\partial W_{hh}}$, 
 
-[[Sequential Models]]
+! [[Sequential Models]]

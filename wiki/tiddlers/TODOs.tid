@@ -1,7 +1,13 @@
 created: 20161018054301211
-modified: 20161018065058372
+modified: 20161029104004238
 title: TODOs
 type: text/vnd.tiddlywiki
 
-# [[Deformation Metric]]: Can this stability criterion be used as perceptual feature loss for neural style?
+# Side-project: [[Daily News for Stock Market Prediction]]
+# Energy based learning
+## [[Deformation Metric]]: Can this stability criterion be used as perceptual feature loss for neural style?
+## try (S)GAN as base
+## Wait for Google Stlye transfer
+## 
+# Try visual attentions
 # [[Averaging and Wavelets|Understanding Deep ConvNets (Scattering Repr)]]: Continue UBC deep learning topic lecture 3 on wavelets.

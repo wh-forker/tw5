@@ -1,102 +1,21 @@
-created: 20160909061350995
-modified: 20161019092817523
-tags: [[ICML 2015]] Blog Talks [[Deep Energy Based Learning]]
+created: 20161021080332245
+modified: 20161028023453590
+tags: [[Deep Energy Based Learning]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
 
-GANs are recent approaches to modelling data in high dimensional spaces. Following are notes from [[Ian Goodfellow's ICML DL Workshop 2015 talk|https://www.youtube.com/watch?v=LXDuuYSNtUY]].
+! [[Theory|Generative Adversarial Network Talk]]
 
-Papers relative in this post:
+! Bibs
 
-* Generative Adversarial Networks
-* Conditional Generative Adversarial Nets
-* On Distinguiashability Criteria for Estimating Generative Models
-* Deep Generative Image Models using a Laplacian Pyramid of Adversarial Networks
+!! Extensions
 
-! Generative adversarial networks
-The general idea of GAN is to learn a sampling mechanism. We will learn to generate some input noise from a fixed prior distribution and then transform that noise into data space. 
+* [[Unsupervised representation learning with deep convolutional generative adversarial networks]]
+* Laplacian Pyramid of GANs is further suggested to generate high quality image in a coarse-to-fine manner.
+* [[DCGAN|Unsupervised representation learning with deep convolutional generative adversarial networks]]
+* [[SeqGAN|http://arxiv.org/abs/1609.05473]]
 
-* The advantage over generative stochastic network is there is no Markov chain involved so no issue of mixing.
-* The advantage over VAE is that there is no variational lower bound.
+!! Applications
 
-!! Game theory: the basics
-GANs are trained by //playing a game//. In game theory we consider the following senario:
-
-	* N>1 players
-	* Clearly defined set of actions each player can take
-	* Clearly defined relationship between actions and outcomes
-	* Clearly defined value of each outcome
-	* Can't control the other player's actions, which is different from maximization.
-
-Each player tries to maximize his reward during the game. While simulating the game, we are looking for an equilibrium form, where no player can improve his reward by changing their own strategies.
-
-We are going to formulate the simplest GAN as a two-player zero-sum game, where:
-
-	* Your winnings + your opponent's winnings = 0
-	* ''Minimax theorems'': a rational strategy exists for all such finite games
-	* Strategy: specification of which moves you make in which circumstances.
-	* Equilibrium: each player's strategy is the best possible for their opponent's strategy.
-
-This setup is simple because players don't have to think about cooperating with other players. In GAN, we are using a continuous game, but there is a special case where minimax does apply. When players take action randomly it is called ''mixed stategy'' and the equilibrium is called ''mixied strategy equilibrium''.
-
-!! Adversarial nets game
-The game is between two players: ''Discriminator'' $D$, and ''Generator'' $G$. The generator is the same thing as the decoder. The discriminater tries to discriminate between:
-
-* A sample from the data distribution
-* And a sample from the generator $G$
-
-While $G$ tries to "trick" $D$ by generating samples that are hard for $D$ to distinguish from data. This is a game theory model, we try to do gradient descent on one side and ascent on the other.
-
-The value function takes the form of a binary discrimination task:
-
-$$
-\underset{G}{\min}\underset{D}{\max} V(D, G) = E_{x\sim p_{data}}(x)[\log D(x)]+E_{z\sim p_z(x)}[\log(1-D(G(z)))]
-$$
-
-At every step, if the discriminator is optimal, it is going to take on this particular form, the optimal strategy for any $p_{model}(x)$ is always
-
-$$
-D(x) = \frac{p_{data}(x)}{p_{data}(x)+p_{model}(x)}
-$$
-
-!!! Noise contaction estimation
-This is the same function used in noise contraction estimation. The different is that NCE is learning a model that used implicitly to define the discriminator, and here we're learning the generator. And in NCE, the generator is fixed. This function has a close connection to likelihood. 
-
-MLE is NCE modified such that the discriminators believes the data distribution are copied into the generator network at every step. NCE is computationally cheaper because it does not update the generator. And because of this, it is failing to obtain the same asymptotic error rate as MLE.
-
-!! Theoretical properties
-This process has some nice theoretical properties, if we assume we can optimize directly over probability distributions, then there is one unique global optimum, this saddle point corresponds to the true distribution.  Assuming infinite data, infinite model capacity, direct updating of generator's distribution, converge to optimum guaranteed. But in practice, there is no proof that SGD will converge, where we are training gradient steps by opposite sign on the parameters of each model.
-
-This is different from the usually analyzed statistical estimator, where we have an optimization problem where we minimize a function, and we show that in function space, the minimum of our objective function corresponds to recovering the true distribution. In this case we are not guaranteed to reach a critical point, that makes it more problematic when it comes to nonconvex optimization. In particular, we can have a network that oscilates forever.
-
-! GANs vs VAEs
-Both use backprop through continuous random number generation
-
-* VAE:
-** generator gets direct output target
-** need Reinforce to do discrete latent variables
-** possible underfitting due to variational approximation
-** gets global image composition right but blurs details
-* GAN
-** generator never sees the data
-** need Reinforce to do discrete visible variables
-** possible underfitting due to non-convergence
-** gets local image features right but not global structure
-
-! Open problems
-
-* Is non-convergence a serious problem in practice?
-* If so, how can we prevent non-convergence?
-* Is there a better loss function for generator?
-
-! [[Learning in Implicit Generative Models|https://arxiv.org/abs/1610.03483|]]
-The objective is to make the density ratio funtion $r(x) = p^*(x)/q(x)$ to be one, where $p*(x)$ is the true data distribution and $q(x)$ is the model distribution. By estimating this value, we can avoid computing the marginal likelihood. There are four ways of achieving this objective:
-
-!! Class probability estimation
-As in the GANs, we specify a discriminator, $\mathcal D(x;\phi) = p(y|x)$, and a scoring rule.
-
-!! Statistical distance minimization
-
-!! Ratio matching
-
-!! Moment matching
+* [[Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling|https://arxiv.org/abs/1610.07584]]
+* [[Semi-Supervised Learning with Generative Adversarial Networks|http://arxiv.org/abs/1606.01583]]

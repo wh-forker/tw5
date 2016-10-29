@@ -1,6 +1,6 @@
 created: 20161019092508242
-modified: 20161019092929232
-tags: [[DL Applications]]
+modified: 20161027130434260
+tags: [[Deep Learning Applications]]
 title: Deep Energy Based Learning
 type: text/vnd.tiddlywiki
 
@@ -9,3 +9,6 @@ type: text/vnd.tiddlywiki
 [[Generative Adversarial Network]]
 
 [[Input Convex Neural Network]]
+
+! Applications
+[[Neural Style]]

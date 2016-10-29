@@ -1,5 +1,5 @@
 created: 20150625074434077
-modified: 20161012084419818
+modified: 20161027130248394
 tags: 
 title: Deep Learning
 type: text/vnd.tiddlywiki
@@ -18,6 +18,10 @@ type: text/vnd.tiddlywiki
 ! [[Tools|Deep Learning Tools]]
 
 ! [[Theory|Deep Learning Theory]]
+
+! [[Applications|Deep Learning Applications]]
+
+! [[Engineering|Deep Learning Engineering]]
 
 ! Applications
 !! Image

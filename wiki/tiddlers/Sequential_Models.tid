@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20161012083846266
+modified: 20161027085952006
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -8,7 +8,12 @@ type: text/vnd.tiddlywiki
 
 ! Differentiable Memory structures
 
-* LSTM
+* [[LSTM|Long short-term memory]]
 * Tapes
 * Arrays
 * Stacks
+
+! Memory networks
+!! Bibs
+
+* [[MemN2N|http://arxiv.org/abs/1604.06045]]

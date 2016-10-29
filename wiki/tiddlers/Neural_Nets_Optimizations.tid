@@ -1,5 +1,5 @@
 created: 20160822072835753
-modified: 20160823053149325
+modified: 20161027082935324
 tags: [[Deep Learning Tricks]]
 title: Neural Nets Optimizations
 type: text/vnd.tiddlywiki
@@ -12,3 +12,6 @@ type: text/vnd.tiddlywiki
 # [[Mollifying Networks]]: 
 
 Impact of noise injection (Neelakantan et al., 2015)
+
+!! Using mini-batches
+Using mini-batchesof examples, as opposedto one example at a time, is helpful in several ways. First, the gradient of the loss over a mini-batch is an estimate of the gradient over the training set, whose quality improves as the batch size increases. Second, computation over a batch can be much more efficient than m computations for individual examples, due to the parallelism afforded by the modern computing platforms.

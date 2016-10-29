@@ -1,0 +1,13 @@
+created: 20161027083034244
+modified: 20161027083547214
+tags: [[Deep Learning Tricks]]
+title: Data Augmentation
+type: text/vnd.tiddlywiki
+
+! Implementations
+!! Caffe
+ * Data augmentation on the fly
+ 
+ ! Papers
+ 
+ * [[A data augmentation methodology for training machine/deep learning gait recognition algorithms|https://arxiv.org/abs/1610.07570]]: simulated walking posture data.

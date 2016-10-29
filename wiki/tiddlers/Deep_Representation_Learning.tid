@@ -1,6 +1,6 @@
 created: 20160114070250481
-modified: 20161017091121413
-tags: [[DL Applications]]
+modified: 20161027130816938
+tags: [[Deep Learning Applications]]
 title: Deep Representation Learning
 type: text/vnd.tiddlywiki
 
@@ -19,6 +19,10 @@ With a CNN learned on large labeled set, the output of the intermediate layers c
 
 To extend CNNs for image retrieval, it is possible to use a unsupervicsed net such as convolutional kernel network. The feature representation of CKN is based on a kernel (feature) map and hence data-independent. Let $M$ and $M'$ be two patches of size $m\times m$, and $\Omega=\{1,\dots,m\}^2$ be a set of pixel locations. The sub-patch $p_z$ from $M$ is of fixed size.
 
+!! Bib
+
+* [[End-to-end Learning of Deep Visual Representations for Image Retrieval|https://arxiv.org/abs/1610.07940]]
+
 ! Generating natural images
 ''Non-parametric'': texture synthesis, super-resolution, in-painting
 
@@ -34,4 +38,3 @@ To extend CNNs for image retrieval, it is possible to use a unsupervicsed net su
 
 
 ! Papers
-[[Unsupervised representation learning with deep convolutional generative adversarial networks]]

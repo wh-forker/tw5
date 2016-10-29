@@ -1,5 +1,5 @@
 created: 20161019015132102
-modified: 20161019085525683
+modified: 20161027055624560
 tags: Books
 title: Deep Learning Seminar
 type: text/vnd.tiddlywiki
@@ -8,7 +8,7 @@ type: text/vnd.tiddlywiki
 We will walk through Part II of the [[Deep Learning textbook|http://www.deeplearningbook.org/]] by Goodfellow et al. A pdf version can be found [[here|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/textbooks/deep_learning.pdf]]. Some of Goodfellow's most noticeable works are:
 
 # ''Generative Adversarial Network'': ICML 2015 DL Workshop talk [[(transcript)|Generative Adversarial Network]] [[(video)|https://www.youtube.com/watch?v=LXDuuYSNtUY]]
-# ''Adversarial Examples'': HORSE 2016 talk [[(slides)|https://goodfeli.github.io/slides/2016_09_19_horse.pdf]] [[(video)|https://www.youtube.com/watch?v=f95EhYFmsj0]]
+# ''Adversarial Examples'': HORSE 2016 talk [[(slides)|https://goodfeli.github.io/slides/2016_09_19_horse.pdf]] [[(video)|https://www.youtube.com/watch?v=f95EhYFmsj0]] [[transcript|Adversarial Examples]]
 
 Unless otherwise specified the course lectures and meeting times are:
 

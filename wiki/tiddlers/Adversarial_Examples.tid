@@ -1,0 +1,40 @@
+created: 20161027055701742
+modified: 20161027072851466
+tags: [[Deep Learning Tricks]]
+title: Adversarial Examples
+type: text/vnd.tiddlywiki
+
+! Reading list
+The talk generalizes following works:
+
+* “Intriguing Properties of Neural Networks” Szegedy et al, 2013
+* “Explaining and Harnessing Adversarial Examples” Goodfellow et al 2014
+* “Adversarial Perturbations of Deep Neural Networks” Warde-Farley and Goodfellow, 2016
+* “Transferability in Machine Learning: from Phenomena to Black-Box Attacks using Adversarial Samples” Papernot et al 2016
+* “Practical Black-Box Attacks against Deep Learning Systems using Adversarial Examples” Papernot et al 2016
+* “Adversarial Perturbations Against Deep Neural Networks for Malware Classification” Grosse et al 2016 (not my own work)
+* “Distributional Smoothing with Virtual Adversarial Training” Miyato et al 2015 (not my own work)
+* “Virtual Adversarial Training for Semi-Supervised Text Classification” Miyato et al 2016
+* “Adversarial Examples in the Physical World” Kurakin et al 2016
+
+Neural networks (esp. softmax regressions) are easily fooled. We can add noise-like filters to attack a neural net, misleading it to wrong prediction while making no perceptional difference to human. For example, we can perform gradient ascent on the input to change its prediction.
+
+! Explaining the Weakness
+First guess is the model is overfitted. Rather than randomly misclassification, there is a systematic behavior. 
+
+This can be explained better, if we imagine the decision surface being far too linear, rather than too complex. Actually, modern deep nets are indeed very piecewise linear. By moving the input along the adversarial direction, images always tend to be mistaken as another fixed class, defending this linear assumption.
+
+Deep neural nets cannot make intentional decisions like human, they learn in a wrong way. They don't learn the contour of the input space, but just some general directions. Adversarial examples unveil its limitations.
+
+! Fast Gradient Sign Method
+Maximize
+$$
+J(x, \theta)+(\tilde x-x)^\top\nabla_xJ(x)
+$$
+subject to
+$$
+\|\tilde x-x\|_\infty \le \epsilon
+$$
+
+! Library
+[[cleverhans|https://github.com/openai/cleverhans]]

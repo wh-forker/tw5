@@ -1,0 +1,33 @@
+created: 20161029053257205
+modified: 20161029105954516
+tags: [[CNN for NLP]]
+title: Daily News for Stock Market Prediction
+type: text/vnd.tiddlywiki
+
+! Introduction
+Data and task are posted [[here|https://www.kaggle.com/aaron7sun/stocknews]]. I am curious about how to take a whole sentence as an entity in a higher hierarchy, i.e., we have to find a representation for headlines to be the input of each day's stock prediction.
+
+Following is my take on this task:
+
+# Run TF-IDF+SVM baseline: running [[the code|https://www.kaggle.com/hsrobo/d/aaron7sun/stocknews/tf-idf-svm-baseline]] yields ROC-AUC .563. Actually better than bare guesses.
+# Replace TF-IDF with pretrained word2vec on Google News
+# Replace SVM with LSTM
+# Compare with a sequence prediction LSTM with no news input
+# If all of above works, things should get interesting
+# Use CNN with fixed word embedding for sentence feature extraction
+# Fine-tune the word embedding (deeply doubt if this works, too few words in dataset, should generalize poorly)
+# There's very little chance this small dataset can support a dilated convolution layer. That is what I am up to in the very end.
+
+! Results
+!! Simple tweaks
+Added called nltk tokenizer to preprocess the data. ROC-AUC dropped to .527. Too much new words.
+
+Should try fasttext, got memory error loading the word embeddings.
+
+!! Convnet moves ahead
+As in the baseline approach, we can join the 25 headlines, we can carry on classification with CNN. Here are two approaches in Tensorflow:
+
+* [[WildML one|http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/]]
+* [[The new one on Github with pretrained word embedding|https://github.com/mangate/ConvNetSent]]
+
+!! 

@@ -1,0 +1,8 @@
+created: 20161027080318158
+modified: 20161027080402386
+tags: [[Deep Learning]]
+title: Deep Learning Engineering
+type: text/vnd.tiddlywiki
+
+! Parallell Training
+* [[A Framework for Parallel and Distributed Training of Neural Networks|https://arxiv.org/abs/1610.07448]]
