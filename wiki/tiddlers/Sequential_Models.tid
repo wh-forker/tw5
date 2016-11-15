@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20161027085952006
+modified: 20161103060436605
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -12,6 +12,10 @@ type: text/vnd.tiddlywiki
 * Tapes
 * Arrays
 * Stacks
+
+!! Bibs
+
+* [[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
 
 ! Memory networks
 !! Bibs

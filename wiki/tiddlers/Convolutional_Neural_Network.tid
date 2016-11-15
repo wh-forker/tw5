@@ -1,6 +1,6 @@
 created: 20160513090322888
-modified: 20161009020020127
-tags: [[Deep Learning]]
+modified: 20161103060121228
+tags: [[Deep Neural Networks Architectures]]
 title: Convolutional Neural Network
 type: text/vnd.tiddlywiki
 
@@ -19,12 +19,7 @@ It can be trained with unsupervised data with [[sparse autoencoders|Sparse Autoe
 * [[Design|Designing a ConvNet]]
 * [[Visualization|Visualizing a ConvNet]]
 
-!! Tools
-[[caffe]]
-
 !! [[Case study|Case study of ConvNets]]
-
-! [[DL Applications]]
 
 ! Practices
 !! Data augmentation

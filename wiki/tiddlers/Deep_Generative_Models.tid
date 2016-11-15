@@ -1,0 +1,27 @@
+created: 20161019092508242
+modified: 20161109112519975
+tags: [[Deep Learning Applications]]
+title: Deep Generative Models
+type: text/vnd.tiddlywiki
+
+! [[Overview|Deep Generative Model Overview]]
+
+! Models
+
+* [[Variational Autoencoder]]
+* [[Generative Adversarial Network]]
+* [[Input Convex Neural Network]]
+* [[Variational Generative Models]]
+* [[Pixel-CNN]]
+* [[TCL|Time-Contrastive Learning]]
+
+[[GANs vs VAEs]]
+
+! Bibs
+
+[[yingzhen's reading list|http://www.yingzhenli.net/home/blog/?p=566]]
+
+* [[What does it take to generate natural textures?]]
+
+! Applications
+[[Neural Style]]

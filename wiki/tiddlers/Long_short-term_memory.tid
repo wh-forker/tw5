@@ -1,5 +1,5 @@
 created: 20161027093636025
-modified: 20161027133050815
+modified: 20161031070149283
 title: Long short-term memory
 type: text/vnd.tiddlywiki
 
@@ -8,5 +8,8 @@ type: text/vnd.tiddlywiki
 * [[LSTM Basic]]
 
 ! Bib
-
-* [[A-LSTM|http://arxiv.org/abs/1610.06258]]: a decaying recent hidden state weight matrix called fast accociative memory.
+* [[Recurrent Highway Networks|http://arxiv.org/abs/1607.03474]]
+** Residual connection for RNN
+* [[A-LSTM|http://arxiv.org/abs/1610.06258]]
+** a decaying recent hidden state weight matrix called fast accociative memory.
+** can be used in visual attention

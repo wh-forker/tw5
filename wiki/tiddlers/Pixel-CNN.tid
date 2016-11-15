@@ -1,0 +1,9 @@
+created: 20161107062404477
+modified: 20161107062456072
+tags: [[Deep Generative Models]]
+title: Pixel-CNN
+type: text/vnd.tiddlywiki
+
+! Implementations
+
+* [[Pixel-CNN++|https://github.com/openai/pixel-cnn]]: OpenAI implementation with python3/tf.

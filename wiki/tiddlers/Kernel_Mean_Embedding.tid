@@ -1,5 +1,5 @@
 created: 20160622120645080
-modified: 20161014064115027
+modified: 20161103065330784
 tags: [[Learning Theory]]
 title: Kernel Mean Embedding
 type: text/vnd.tiddlywiki
@@ -80,8 +80,6 @@ $$
 f(x) = \langle f, k(x,\cdot)\rangle_{\mathscr H}
 $$
 Take $k(y,\cdot)$ as $f$, we get $f(x) = k(y, x) = \langle\phi(x), \phi(y)\rangle_{\mathscr H}$. We do not need to know the feature map explicitly, the inner product can be calculated directly from $k(x, y)$.
-
-!! [[Representation learning]]
 
 ! Hilbert Space Embedding of Marginal Distributions
 The idea of Kernel mean embedding is to extend the feature map $\phi$ to the space of probability distributions by representing each distribution $\mathbb P$ as a mean function

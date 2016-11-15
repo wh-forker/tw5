@@ -1,9 +1,0 @@
-created: 20151112063528906
-modified: 20160929060356417
-tags: [[Deep Learning]]
-title: Doubts on Caffenet
-type: text/vnd.tiddlywiki
-
-AlexNet takes 227x227x3 images
-
-! Normalization across channels?

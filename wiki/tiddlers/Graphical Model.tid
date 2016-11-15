@@ -1,8 +1,18 @@
 created: 20141224063156564
-modified: 20160513093008069
+modified: 20161107063201290
 tags: Statistics
 title: Graphical Model
 type: text/vnd.tiddlywiki
+
+! Overview
+
+The graph learning problem is formulated as follows:
+
+* we are given a set of nodes, each with some observed numeric attributes $x_i$.
+* For each node we'd like to predict an output or label $y_i$. We observe these labels for some, but not all, of the nodes.
+* We are also given a set of weighted edges, summarised by an adjacency matrix $A$. The main assumption is that when predicting the output $y_i$ for node $i$, the attributes and connectivity of nearby nodes provide useful side information or additional context.
+
+! Resources
 
 [[The link to the short course|http://ai.stanford.edu/~paskin/gm-short-course/]]
 
@@ -18,8 +28,13 @@ The reason probality theory is better is de Finetti's theory:
 if you fo not reasone according to [[Probability theory]], you can be made to act irrationally.
 <<<
 
+! Inference
 [[Variable Elimination Algorithm]]
 
 [[Hammersley-Clifford Theorem]]
 
 [[Junction Tree Algorithm]]
+
+! Deep Learning
+
+* [[Graph Convolution]]

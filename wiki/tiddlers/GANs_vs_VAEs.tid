@@ -1,0 +1,22 @@
+created: 20161031132711476
+modified: 20161103094226856
+tags: [[Deep Generative Models]]
+title: GANs vs VAEs
+type: text/vnd.tiddlywiki
+
+[[reddit discussion|https://www.reddit.com/r/MachineLearning/comments/4r3pjy/variational_autoencoders_vae_vs_generative/]]
+
+Both use backprop through continuous random number generation
+
+* VAE:
+** generator gets direct output target
+** need Reinforce to do discrete latent variables
+** possible underfitting due to variational approximation
+** gets global image composition right but blurs details
+* GAN
+** generator never sees the data
+** need Reinforce to do discrete visible variables
+** possible underfitting due to non-convergence
+** gets local image features right but not global structure
+
+GAN can train any differentiable generative network by avoiding the maximum likelihood principle altogether. The metrics that measure the diversity in the generated samples are currently intractable. 

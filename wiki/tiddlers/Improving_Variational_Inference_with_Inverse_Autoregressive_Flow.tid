@@ -1,0 +1,22 @@
+created: 20161103082456074
+modified: 20161103090300277
+tags: [[Variational Generative Models]] Papers
+title: Improving Variational Inference with Inverse Autoregressive Flow
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1606.04934]] [[github|https://github.com/openai/iaf]]
+
+IAF improves nomalizing flow to be computationally cheap to:
+
+# compute and differentiate for its probability density $q(z|x)$
+# to sample from, parallizable. (sample $z$?)
+# parallizable of these operations across dimensions of $z$
+
+The autoregressive whitening operation makes $y$ with complicated distribution into $z$ with i.i.d. elements. The transformation $y\rightarrow z$ can be completely vectorized:
+$$
+z = (y-\mu(y))/\sigma(y)
+$$
+where subtraction and division are elementwise. This has a lower triangular jacobian matrix, whose diagonal elements are the elements of $\sigma(y)$, and:
+$$
+\log\det\left|\frac{dz}{dy}\right| = -\sum_{i=1}^D\log\sigma_i(y)
+$$

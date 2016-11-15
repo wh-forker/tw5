@@ -1,6 +1,6 @@
 color: #15ea32
 created: 20141010104843623
-modified: 20161017062818248
+modified: 20161114063141971
 tags: [[Audio Signal Processing]] [[Representation Learning]]
 title: Scattering Representation
 type: text/vnd.tiddlywiki
@@ -12,6 +12,8 @@ type: text/vnd.tiddlywiki
 * [[Group Invariant Scattering]]
 * [[Scattering Representation for Recognition]]
 * [[Scattering Representation of Modulated Sounds]]
+* [[Linear Time Complexity Deep Fourier Scattering Network and Extension to Nonlinear Invariants|http://openreview.net/pdf?id=SJiFvr9el]]
+** $|c|^2$ as higher order nonlinearity. FFT computation is derived.
 
 ! Notes of the Talk
 There was a very interesting [[talk on Techion|https://www.youtube.com/watch?v=wHhYvtnY2zI]]. I recently found my research is getting more and more related to it so I decide to sort it out.

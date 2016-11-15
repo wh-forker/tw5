@@ -1,8 +1,60 @@
 created: 20161009032729712
-modified: 20161009053949884
-tags: [[Case study of ConvNets]]
+modified: 20161109122632585
+tags: [[Case study of ConvNets]] [[Deep Generative Models]]
 title: Variational Autoencoder
 type: text/vnd.tiddlywiki
 
-[[Neural Variational Inference and Learning in Belief Networks|https://arxiv.org/abs/1402.0030]]
+Some references
 
+* [[Neural Variational Inference and Learning in Belief Networks|https://arxiv.org/abs/1402.0030]]
+* [[Tutorial on Variational Autoencoders|https://arxiv.org/abs/1606.05908]]
+* [[Auto-Encoding Variational Bayes|https://arxiv.org/abs/1312.6114]]
+* [[Stochastic Backpropagation and Approximate Inference in Deep Generative Models|https://arxiv.org/abs/1401.4082]]
+* [[Semi-Supervised Learning with Deep Generative Models|https://arxiv.org/abs/1406.5298]]
+* [[Rényi Divergence Variational Inference|https://arxiv.org/abs/1602.02311]]
+** This paper is definitely worth a read, and has a lot more to it than just deriving the bound. It proposes a practical algorithm VR-max, which uses $\alpha\rightarrow\infty$ and a smaller number of Monte Carlo samples. This method perfroms similarly to IWAE but requires fewer backpropagation iterations.
+
+! Background
+''Directed graphical models'' rely on an ''ancestral sampling procedure'', which is appealing both for its conceptual and computational simplicity. They lack, however, the conditional independence structure of undirected models, making exact and approximate posterior inference on latent variables cumbersome [[Saul et al. 1996|https://arxiv.org/abs/cs/9603102]]. Recent advances in ''stochastic variational inference'' and ''amortized inference'', allowed efficient approximate inference and learning of deep directed graphical models by maximizing a variational lower bound on the log-likelihood. In particular, VAE simultaneously learns a generative network, that maps gaussian latent variables $z$ to samples $x$, and semantically meaningful features by exploiting the reparametrization trick.
+
+! Introduction
+[[Reddit discussion|https://www.reddit.com/r/MachineLearning/comments/4r3pjy/variational_autoencoders_vae_vs_generative/]]
+
+VAEs are a probabilistic graphical model whose ''explicit goal'' is latent modeling, and accounting for or marginalizing out certain variables (as in the semi-supervised work above) as part of the modeling process. They ''can'' make good generations (cf [[inverse autoregressive flow|https://arxiv.org/abs/1606.04934]], [[discriminative regularization|https://arxiv.org/abs/1602.03220]]) though they are ideal in settings where the latent is important (see [[variational fair autoencoder|https://arxiv.org/abs/1511.00830]]). The VAE naturally collapses most dimensions in the latent representations, and you generally get very interpretable dimensions out, the the training dynamics are generally a bit weird.
+
+The ability to set [[complex priors|https://arxiv.org/abs/1605.06197]] in the latent is also nice especially in cases where you know something should make sense or you have a desired latent distribution. You can also do distributed latents (and priors) over time, as in the [[VRNN paper|https://arxiv.org/abs/1506.02216]] or fixed latents over a sequence as in VRAE, STORN, and Generating Sentences from a Continuous Latent Space. These all learn interesting and powerful latent representations for sequences, and can be combined with many existing models for sequence modeling.
+
+! Theory
+
+The basic idea is [[Variational Inference]]. We wish to optimize $\theta$ such that we can sample $z$ from $P(z)$ and with high probability, $f(z;\theta)$ will be like the $X$'s in the dataset.
+
+VAE assumes the latent factor $z$ that decides the properties of the image can be drawn from a simple distribution, i.e., $\mathcal N(0, I)$. Take this as a normalized random variable. The straightforward MC estimation $P(X)\approx\frac 1 n\sum_iP(X|z_i)$ is not feasible, because very similar samples are hard to genrate.
+
+VAE attempts to sample values of $z$ from a new distribution $Q(z|X)$ that are likely to produce $X$. And compute $E_{z\sim Q}P(X|z)$. The relationship between $E_{z\sim Q}P(X|z)$ from $P(X)$ is one of the cornerstones of variational Bayesian methods. 
+
+Within SGD scheme, we only have to compute the gradient of
+$$
+\log P(X|z)-\mathcal D[Q(z|X)\|P(z)]
+$$
+We assume $Q(z|X)$ is a Gaussian of $X$, $\mathcal N(\mu(X), \Sigma(X))$. 
+
+To derive the variational autoencoder (VAE) from here you only need two more ingredients. Following borrowed from [[here|http://www.inference.vc/variational-renyi-lower-bound/]].
+
+!! Amortised Inference
+
+The bound above assumes that we observe a single sample, but usually we want to apply it on an entire dataset of i.i.d. samples. In this case, we need to introduce a separate auxiliary $q_n$ for each datapoint $x_n$, each with paramters $\psi_n$ that we need to optimise. This is feasible if the number of datapoints is small. In VAE we instead make the $q_n$s share parameters and make them depend on the datapoint $x_n$, basically $q_n(z)=q(z\|x_n,\psi)$. This conditional auxiliary distribution is called the recognition model or inference network and can be used directly to perform approximate inference of latent variables given previously unseen data.
+
+!! Monte Carlo and reparametrisation
+
+Often, the variational lower bound can just be computed in closed form and optimized via gradient descent or via iterative methods. However, $\mathbb E_q$ involves an integral that is not always trivial to compute, and this is the case when we use a deep generative model as in VAE. Instead, we can sample from $q$ and approximate the lower-bound via Monte Carlo. This estimate will be unbiased, but have high variance if the number of samples is small. VAE uses a small reparametrisation trick to backpropagate through the sampling process and calculate derivatives with respect to $\theta$. Since Backprop does not flow through stochastic units, we perform a ''reparameterization trick'', sampling $z$ from $z = \mu(X) + \Sigma^{1/2}(X)\epsilon$, where $\epsilon\sim\mathcal(0, I)$.
+
+! Remarks
+[[From Variational auto-encoders do not train complex generative models|http://dustintran.com/blog/variational-auto-encoders-do-not-train-complex-generative-models]]
+
+The neural network used in the encoder (variational distribution) does not lead to any richer approximating distribution. It is a way to amortize inference such that the number of parameters does not grow with the size of the data (an incredible feat, but not one for expressivity!) ([[Stuhlmüller et al., 2013|https://papers.nips.cc/paper/4966-learning-stochastic-inverses]]). This is better explained from the perspective of variational inference than auto-encoders. For example, suppose we have a model with latent variables that are Gaussian a priori (as in VAEs). We may choose a fully factorized Gaussian as the variational distribution, where each latent variable is rendered independent. The inference network takes data as input and outputs the local variational parameters relevant to each data point. The optimal inference network outputs the set of Gaussian parameters which maximizes the variational objective. This means a variational auto-encoder with a perfect inference network can only do as well as a fully factorized Gaussian with no inference network.
+
+[[Much recent work, including my own, has tried to improve this simple approximation to improve our approximate inference.|Variational Generative Models]]
+
+! Bib
+
+* [[Auto-Encoding Variational Bayes|https://arxiv.org/abs/1312.6114/]]

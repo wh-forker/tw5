@@ -1,6 +1,6 @@
 created: 20150518111120636
-modified: 20160513085856129
-tags: [[Deep Learning]] Speech
+modified: 20161103063816865
+tags: Speech
 title: LSTM Research Proposal
 type: text/vnd.tiddlywiki
 
@@ -37,10 +37,6 @@ Transfer learning aims at developing a reasonably performed system for a new tas
 !!! Multitask Learning
 Adding new tasks that share part of the representation can improve the original task performance. This is referred to as maultitask learning. Each layer of a neural net can be seen as a representation. The general structure of a MTL net can be described as 2 nets dedicated to each task sharing some part of their layers.
 
-
-
-
-
 ! Net Architectures
 !! RNN
 The standard RNN output, $y_O^{(t)}$, at a time step $t$ is calculated as:
@@ -55,7 +51,7 @@ where $W_H$, $W_I$ and $W_O$ are the hidden, input and output weight matrices, $
 !! Clockwork RNN
 The main difference between CW-RNN and an RNN is that at each CW-RNN time step $t$, only the output of modules $i$ that satisfy $t \mod T_i = 0$ are executed.
 
-!![[LSTM|Long Short Term Memory]]
+!![[LSTM|Long short-term memory]]
 LSTM is an RNN architecture that elegantly addresses the vanishing gradients problem using "memory units". Besides hidden units, the network contains input gates and output gates that controls when the memory to be updated and the information to leave the unit.
 
 ! Some Tuning on the Problem

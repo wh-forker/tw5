@@ -1,6 +1,7 @@
 created: 20150627124407152
-modified: 20160420033631459
-title: Optimization Methods
+modified: 20161115080503075
+tags: Optimization
+title: Optimization Algorithms
 type: text/vnd.tiddlywiki
 
 ! Tricks
@@ -71,6 +72,8 @@ w_t&=w_{t-1}+v_t
 $$
 
 To find more about the optimizers, [[caffe document|http://caffe.berkeleyvision.org/tutorial/solver.html]] is a good place to start.
+
+We can find similarity between SGD and Spike-timing Dependent Plasticity in [[this talks|Deep learning in biology]]
 
 ! [[Second Order Methods]]
 !! Remarks

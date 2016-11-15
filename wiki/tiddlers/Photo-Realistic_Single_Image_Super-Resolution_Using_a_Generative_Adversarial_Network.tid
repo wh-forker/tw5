@@ -1,0 +1,13 @@
+created: 20161031032034053
+modified: 20161031065624824
+tags: [[Generative Adversarial Network]] [[Deep Super-Resolution]]
+title: Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1609.04802]]
+
+* Lower SNR than SRResNet
+* The tweak on perceptual ResNet might be useful
+
+! Models
+Generator does not downsample

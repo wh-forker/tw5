@@ -1,5 +1,5 @@
 created: 20150629105042912
-modified: 20150630075630445
+modified: 20161103064511564
 title: Second Order Methods
 type: text/vnd.tiddlywiki
 
@@ -51,6 +51,6 @@ A similar procedure also works with Kullback-Leibler cost and is called Natural 
 
 [[Block-diagonal LM]] used the diagonal approximation of the Jacobi product in LM algorithm for RNN.
 
-! [[On Computing Hessian]]
+! [[Computing Hessian]]
 
 ! [[Apply to Multilayer Nets]]

@@ -1,0 +1,33 @@
+created: 20161115080334482
+modified: 20161115084919731
+tags: Math
+title: Optimization
+type: text/vnd.tiddlywiki
+
+! Basics
+* [[Optimization Algorithms]]
+
+! Convex Optimization
+!! Bib
+* [[Convex Optimization: Algorithms and Complexity|https://arxiv.org/abs/1405.4980]]
+
+! Non-Convex Optimization
+!! Some properties to look for in non-convex optimization
+References
+
+* [[Geometry of linearized neural networks|http://blogs.princeton.edu/imabandit/2016/11/13/geometry-of-linearized-neural-networks/]]
+* [[Linear Convergence of Gradient and Proximal-Gradient Methods Under the Polyak-Łojasiewicz Condition|https://arxiv.org/abs/1608.04636]]
+
+We say that a function $f$ admits ''first order optimality'' if all critical points of $f$ are global minima. in particular with first order optimality one has that gradient descent converges to the global minimum, and with second order optimality this is also true provided that @@color:#859900;one avoids saddle points@@. To obtain rates of convergence it can be useful to make more quantitive statements, e.g. $\alpha$-Polyak:
+$$
+\|\nabla f(x)\|^2\ge\alpha(f(x)-f^*).
+$$
+Clearly $\alpha$-Polyak implies first order optimality, also implies linear convergence rate. A variant of this condition is $\alpha$-weak-quasi-convexity:
+$$
+\langle\nabla f(x), x-x^*\rangle\ge\alpha(f(x)-f^*)
+$$
+in which case gradient descent converges at the slow non-smooth rate $1/\sqrt{t}$.
+
+! Deep Learning
+* [[On Optimization in Deep Learning]]
+* [[Identity Matters in Deep Learning]]

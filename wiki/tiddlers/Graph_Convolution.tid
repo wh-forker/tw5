@@ -1,0 +1,15 @@
+created: 20161107061334068
+modified: 20161107071436501
+tags: [[Convolutional Layer]] [[Graphical Model]]
+title: Graph Convolution
+type: text/vnd.tiddlywiki
+
+Convolutions in Fourier-domain are simple pointwise multiplications of the Fourier-transform of a signal. This, however, is a very impractical view: computing the spectrum of signal over general graphs @@color:#859900;involves matrix diagonalisation@@, which generally has cubic complexity in the number of nodes. Computing exact convolutions over graphs is thus computationally intensive.
+
+! Bib
+
+* [[Convolutional Neural Networks on Graphs with Fast Localized Spectral Filtering|https://arxiv.org/abs/1606.09375]]
+* [[Semi-Supervised Classification with Graph Convolutional Networks|https://arxiv.org/abs/1609.02907]]
+** [[author's blog|http://tkipf.github.io/graph-convolutional-networks/]]
+** [[discussion of expressiveness|http://www.inference.vc/how-powerful-are-graph-convolutions-review-of-kipf-welling-2016-2/]]
+

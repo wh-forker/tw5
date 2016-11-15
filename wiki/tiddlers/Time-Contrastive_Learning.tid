@@ -1,0 +1,15 @@
+created: 20161109112526674
+modified: 20161109121217838
+tags: [[Deep Generative Models]]
+title: Time-Contrastive Learning
+type: text/vnd.tiddlywiki
+
+* [[link|https://arxiv.org/abs/1605.06336]]
+* [[blog|http://www.inference.vc/temporal-contrastive-learning-for-latent-variable-models/]]
+
+The activations in the last hidden layer will learn to represent something fundamental, the log-odds-ratios in a probabilistic generative model. The model relies on a not very practical assumption about the time series data.  
+
+It's not hard to see that TCL is analogous to a temporal version of the [[jigsaw puzzle method|http://www.inference.vc/notes-on-unsupervised-learning-of-visual-representations-by-solving-jigsaw-puzzles/]]. 
+
+This is yet another example of using logistic regression as a proxy to estimating log-probability-ratios directly from data. This insight provides new ways in which unsupervised or semi-supervised tasks can be reduced to supervised learning problems. 
+As classification is now considered significantly easier than density estimation, direct probability ratio estimation may provide the easiest path forward for representation learning.

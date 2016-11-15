@@ -1,0 +1,12 @@
+created: 20161115084712161
+modified: 20161115115001678
+tags: Optimization ResNet Blog
+title: Identity Matters in Deep Learning
+type: text/vnd.tiddlywiki
+
+Refs
+
+* [[Lecture Notes on Linear System Theory|http://control.ee.ethz.ch/~ifalst/docs/LectureNotes.pdf]]
+* [[Geometry of linearized neural networks|http://blogs.princeton.edu/imabandit/2016/11/13/geometry-of-linearized-neural-networks/]]
+* [[Identity Matters in Deep Learning|https://arxiv.org/abs/1611.04231]]
+

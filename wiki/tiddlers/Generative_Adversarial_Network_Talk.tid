@@ -1,6 +1,6 @@
 created: 20160909061350995
-modified: 20161027055824166
-tags: [[ICML 2015]] Blog Talks [[Deep Energy Based Learning]] [[Generative Adversarial Network]]
+modified: 20161103094128195
+tags: [[ICML 2015]] Blog Talks [[Generative Adversarial Network]]
 title: Generative Adversarial Network Talk
 type: text/vnd.tiddlywiki
 
@@ -17,7 +17,7 @@ Papers relative in this post:
 The general idea of GAN is to learn a sampling mechanism. We will learn to generate some input noise from a fixed prior distribution and then transform that noise into data space. 
 
 * The advantage over generative stochastic network is there is no Markov chain involved so no issue of mixing.
-* The advantage over VAE is that there is no variational lower bound.
+* The advantage over [[VAE|Variational Autoencoder]] is that there is no variational lower bound.
 
 !! Game theory: the basics
 GANs are trained by //playing a game//. In game theory we consider the following senario:
@@ -69,19 +69,7 @@ This process has some nice theoretical properties, if we assume we can optimize 
 
 This is different from the usually analyzed statistical estimator, where we have an optimization problem where we minimize a function, and we show that in function space, the minimum of our objective function corresponds to recovering the true distribution. In this case we are not guaranteed to reach a critical point, that makes it more problematic when it comes to nonconvex optimization. In particular, we can have a network that oscilates forever.
 
-! GANs vs VAEs
-Both use backprop through continuous random number generation
-
-* VAE:
-** generator gets direct output target
-** need Reinforce to do discrete latent variables
-** possible underfitting due to variational approximation
-** gets global image composition right but blurs details
-* GAN
-** generator never sees the data
-** need Reinforce to do discrete visible variables
-** possible underfitting due to non-convergence
-** gets local image features right but not global structure
+! [[GANs vs VAEs]]
 
 ! Open problems
 

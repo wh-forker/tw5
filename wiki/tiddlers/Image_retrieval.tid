@@ -1,8 +1,12 @@
 created: 20151125023155589
-modified: 20151127033956549
-tags: 
-title: Image retrieval
+modified: 20161103070055004
+tags: [[Deep Learning Applications]]
+title: Image Retrieval
 type: text/vnd.tiddlywiki
+
+! Traditional Methods
+!! Descriptors
+* [[LATCH: Learned Arrangements of Three Patch Codes|https://github.com/csp256/cudaLATCH]]
 
 ! Autoencoders
 

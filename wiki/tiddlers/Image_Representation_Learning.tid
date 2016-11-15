@@ -1,5 +1,5 @@
 created: 20161017062746224
-modified: 20161018054859831
+modified: 20161114071024672
 tags: [[Representation Learning]]
 title: Image Representation Learning
 type: text/vnd.tiddlywiki
@@ -63,3 +63,13 @@ The stablity can be represented by sampling from a Ergodic process:
 
 * In statistical physics, a process with an ''Integral Scale'' is ergodic
 * In statistics, linear processes are ergodic (provided the moments are finite).
+
+! Bib
+!! Deep Identity and Invariance
+!!! ICLR 2017 openreview
+* [[Identity Matters in Deep Learning|http://openreview.net/pdf?id=ryxB0Rtxx]]
+** Discuss the representation power of ResNet. Deviced a not very powerful model though. The performance needs further investigation.
+* [[Learning Invariant Representations Of Planar Curves|http://openreview.net/pdf?id=BymIbLKgl]]
+** Linking to numerical differential geometry. Using a Siamese architecture to learn (rotation) invariance. Should help generative model.
+* [[Warped Convolutions: Efficient Invariance to Spatial Transformations|http://openreview.net/pdf?id=BkmM8Dceg]]
+** Handles scale, rotation and spatial translation with warp and generalized conv. Good performance in pose estimation with ''soft argmax''. Hinders general classification.

@@ -1,0 +1,20 @@
+created: 20161109113629523
+modified: 20161109115809720
+tags: [[ConvNet Layers]]
+title: Softmax Layer
+type: text/vnd.tiddlywiki
+
+In ''multinomial logistic regression'', if we see the process as a set of independent binary regressions, we run $K-1$ independent binary logistic regression models for $K$ possible outcomes. 
+$$
+\ln\frac{p(y_i=j)}{p(y_i=1)} = \mathbf w^T_j\mathbf x_i+b_j
+$$
+The probability sum to one so
+$$
+p(y_i=j) = \frac{\exp(w^T_j\mathbf x_i+b_j)}{1+\sum_{k=2}^K\exp(w^T_k\mathbf x_i+b_k)}
+$$
+Or we can see it as a log-linear model:
+$$
+p(y_i=j) = \text{softmax}(j, \mathbf w^T_1\mathbf x_i+b_1, \cdots, \mathbf w^T_K\mathbf x_i+b_K)
+$$
+
+The softmax function thus serves as the equivalent of the logistic function in binary logistic regression.

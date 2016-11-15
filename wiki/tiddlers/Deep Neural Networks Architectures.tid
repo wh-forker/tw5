@@ -1,13 +1,13 @@
 created: 20150505093817222
-modified: 20150505113342795
-tags: [[Deep Learning]]
+modified: 20161103062934673
+tags: [[Deep Learning Basics]]
 title: Deep Neural Networks Architectures
 type: text/vnd.tiddlywiki
 
-! Deep Convolutional Neural Network
-The overall architecture of a DCNN consists of one or more layers of convolution followed by pooling followed by densely connected hidden layers and a softmax classifier.
+! Old fashioned
+* [[RBF Nerwork]]
+* [[Restricted Boltzmann Machines]]
 
-The initial layers in a DCNN use convolutional layers in place of the standard fully-connected layers. [Baidu 15 Arxiv] use convolution and (max) pooling first layer architecture. The hyperparameters introduced are #convolutional layers, ''input region size'' for convolution and pooling layers and pooling fucntion.
-
-! Deep Local United Neural Network
-DLUNN differs from a DCNN by using different weights at each location of the first hidden layer. A united neural neural network can be thought of as convolutional neural networks using locally connected computations and without weight-sharing.
+! State-of-the-Art
+* [[Convolutional Neural Network]]
+* [[Recurrent Neural Networks]]

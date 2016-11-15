@@ -1,0 +1,62 @@
+created: 20161107061201728
+modified: 20161107061314760
+tags: [[ConvNet Layers]]
+title: Convolutional Layer
+type: text/vnd.tiddlywiki
+
+[img height=250 [http://cs231n.github.io/assets/cnn/depthcol.jpeg]][img height=250  [http://cs231n.github.io/assets/nn1/neuron_model.jpeg]]
+
+In Caffenet, the 96 neurons of the first conv layer has a reception field of $3\times3$. Since input volume is cropped beforehead, no padding is needed:
+
+```css
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data"
+  top: "conv1"
+  /* learning rate and decay multipliers for the filters */
+  param { lr_mult: 1 decay_mult: 1 }
+  /* learning rate and decay multipliers for the biases */
+  param { lr_mult: 2 decay_mult: 0 }
+  convolution_param {
+    num_output: 96     /* learn 96 filters */
+    kernel_size: 11    /* each filter is 11x11 */
+    stride: 4          /* step 4 pixels between each filter application */
+    weight_filler {
+      type: "gaussian" /* initialize the filters from a Gaussian */
+      std: 0.01        /* distribution with stdev 0.01 (default mean: 0) */
+    }
+    bias_filler {
+      type: "constant" /* initialize the biases to zero (0) */
+      value: 0
+    }
+  }
+}
+```
+This layer learns the Gabor filters which looks like this
+
+[img height=250  [http://cs231n.github.io/assets/cnn/weights.jpeg]]
+
+There are many convolution kernels in each layer, and each kernel is replicated over the entire image with the same parameters. The function of the convolution operators is to extract different features of the input. The capacity of a neural net varies, depending on the number of layers. The first convolution layers will obtain the low-level features, like edges, lines and corners. The more layers the network has, the higher-level features it will get.
+
+! Backpropagation
+The parameters of each convolution kernel are trained by the backpropagation algorithm. The backward pass for a convolution opteration (for both the data and the weights) is also a convolution (but with spatially-flipped filters).
+$$
+\frac{\partial L}{\partial a(p, q)} = \sum_{u, v}\frac{\partial L}{\partial z(p-u, q-v)}\frac{\partial z(p-u, q-v)}{\partial a(p, q)}=\frac{\partial L}{\partial z(u, v)}*\text{flip}(w)
+$$
+$$
+\frac{\partial L}{\partial w(u, v)} = \sum_{p, q}\frac{\partial L}{\partial z(p, q)}\frac{\partial z(p, q)}{\partial w(u, v)}=a(u, v)*\frac{\partial L}{\partial z}
+$$
+
+Caffe implements convolution as matrix multiplication. We reorganize the input into $\mathbf A$ so that each column is the patch to be convoluted ($11\times11\times3$) in the previous case, and the total number of columns is the output size of each filter ($55\times55$). So the objective function becomes:
+$$
+L = f(\mathbf Z) = f(\mathbf W\mathbf A)
+$$
+by applying matrix derivation:
+$$
+\frac{\partial L}{\partial \mathbf W} = \frac{\partial L}{\partial \mathbf Z}\mathbf A^\top
+$$
+
+! Generalization
+
+* [[Graph Convolution]]

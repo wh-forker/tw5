@@ -1,0 +1,15 @@
+created: 20161031015418167
+modified: 20161114031807300
+tags: [[Deep Generative Models]] TODOs
+title: Deep generative model tryouts
+type: text/vnd.tiddlywiki
+
+! Fast Neural Style
+
+! Image2Vec
+# Follow reddit posts on [[VAE vs GAN|https://www.reddit.com/r/MachineLearning/comments/4r3pjy/variational_autoencoders_vae_vs_generative/]] and [[VAE Tutorial|https://www.reddit.com/r/MachineLearning/comments/4paxkq/160605908_tutorial_on_variational_autoencoders/]]
+# [[Deformation Metric]]: Can this stability criterion be used as perceptual feature loss for neural style?
+# run on chinese char and face
+# try (S)GAN as base. @@color:#859900;DoctorTeeth/supergan repo is not there.@@
+# Wait for Google Stlye transfer
+# GAN super resolution [[in torch|https://github.com/leehomyc/Photo-Realistic-Super-Resoluton]]

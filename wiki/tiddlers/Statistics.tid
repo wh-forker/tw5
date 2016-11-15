@@ -1,6 +1,7 @@
 color: #00e600
 created: 20141010100715798
-modified: 20160513093011894
+modified: 20161103065815339
+tags: Math
 title: Statistics
 type: text/vnd.tiddlywiki
 
@@ -14,3 +15,5 @@ type: text/vnd.tiddlywiki
 [[Stochastic Processes]]
 
 [[Graphical Model]]
+
+[[Bayesian]]

@@ -1,8 +1,13 @@
 created: 20161012084433429
-modified: 20161014061351120
+modified: 20161103063941566
 tags: [[Deep Learning]]
 title: Deep Learning Theory
 type: text/vnd.tiddlywiki
+
+! Dealing non-linearity
+Nonlinearity of problems like XOR popularized [[non-linear hidden layers|http://dl.acm.org/citation.cfm?id=104293]] and kernel methods.
+
+Another well-known example is [[the parity problem|https://en.wikipedia.org/wiki/Perceptrons_(book)]]: although a single non-linear hidden layer is sufficient to represent any function, it is not guaranteed to represent it efficiently, can even require exponentially many more parameters than a deeper model.
 
 ! Approximiation Theory
 Deep Networks define a class of "universal approximators":

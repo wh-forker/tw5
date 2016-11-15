@@ -1,5 +1,5 @@
 created: 20161011084441404
-modified: 20161021090509553
+modified: 20161031022415338
 tags: 
 title: Neural Style
 type: text/vnd.tiddlywiki
@@ -10,4 +10,11 @@ type: text/vnd.tiddlywiki
 
 ! Implementations
 
-* Fast neural style: [[github|https://github.com/jcjohnson/fast-neural-style]]
+* Fast neural style: [[github|https://github.com/jcjohnson/fast-neural-style]].
+** Use perceptual loss to guide image generation
+** Downsample and then upsample
+** Don't like VAE, no 1-d representation
+** First realtime implementation
+** written in lua
+* Google's [[Supercharging Style Transfer|https://research.googleblog.com/2016/10/supercharging-style-transfer.html]]
+** No code released

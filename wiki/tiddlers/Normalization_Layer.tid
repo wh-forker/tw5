@@ -1,0 +1,30 @@
+created: 20161103092937981
+modified: 20161104052640394
+tags: [[ConvNet Layers]]
+title: Normalization Layer
+type: text/vnd.tiddlywiki
+
+[[Batch Normalization]]
+
+! Variations
+!! [[Weight Normalization|https://arxiv.org/abs/1602.07868]]
+openai uses this on ResNet VAEs for IAF. We express the weight vectors in terms of the new parameters using
+$$
+\mathbf w = \frac{g}{\|\mathbf v\|}\mathbf v
+$$
+where $\mathbf v$ is a $k$-dimensional vector, $g$ is a scalar, and $\|\mathbf v\|$ denotes the Euclidean norm of $\mathbf v$. We can differentiate this to obtain the gradient of a loss function $L$ with
+$$
+\nabla_gL = \frac{\mathbf v^\top}{\|\mathbf v\|}\nabla_{\mathbf w}L
+$$
+and the gradient w.r.t. $\mathbf v$ is
+
+$$
+\begin{array}
+&&\\
+\nabla_\mathbf{v}L&=&\frac{\partial\mathbf w}{\partial\mathbf v}\nabla_\mathbf{w}L\\
+&=&\frac{g}{\|\mathbf{v}\|}I\nabla_\mathbf{w}L-\frac{\partial\mathbf w}{\partial\|\mathbf v\|}\frac{\partial\|\mathbf v\|}{\partial\mathbf v}\nabla_\mathbf{w}L\\
+&=&\frac{g}{\|\mathbf{v}\|}I\nabla_\mathbf{w}L-\left(\frac{g}{\|\mathbf v\|^2}\mathbf v\right)\frac{\partial\|\mathbf v\|}{\partial\mathbf v}\nabla_\mathbf{w}L\\
+&=&\frac{g}{\|\mathbf{v}\|}\nabla_\mathbf{w}L-\frac{g\mathbf{v}\mathbf{v}^\top}{\|\mathbf{v}\|^3}\nabla_\mathbf{w}L\\
+&=&\frac{g}{\|\mathbf{v}\|}\nabla_\mathbf{w}L-\frac{g\nabla_gL}{\|\mathbf{v}\|^2}\mathbf{v}\\
+\end{array}
+$$

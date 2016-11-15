@@ -1,7 +1,7 @@
-created: 20161014054047998
-modified: 20161014061146078
-tags: [[Deep Learning]]
-title: Unsupervised Deep Learning
+created: 20161107062348968
+modified: 20161107062355396
+tags: [[Deep Generative Models]]
+title: Deep Generative Model Overview
 type: text/vnd.tiddlywiki
 
 ! Generative modeling
@@ -21,6 +21,8 @@ Finally this might help us to leverage the unlabeled data problem. This possibil
 This task is challenging because we have to learn a representation from unlabeled data that captures regularity and complexity.
 
 ! Previous training methods
+[[Survey of earlier work|http://yann.lecun.com/exdb/publis/pdf/lecun-06.pdf]]
+
 People always train a generative model that represents the probability distribution. And fit this model using maximum likelihood. 
 
 $$
@@ -44,7 +46,3 @@ Unfortunately, computing that normalizing constant is NP-complete and our abilit
 Some have been studying directed graphical models, where a similar problem arises. To compute the partition function, we need to sum over all configuartions of hidden states. ''Variational learning'' has been used to solve this. Where we maximize $\log p(x)-\mathcal D_{KL}(q(x)||p(z|x))$. And one of the most popular deep directed model is the [[Variational Autoencoder]]. The basic idea is we have a distribution of the hidden units $q(z)$, and we can draw samples from this distribution with a neural network and some noise. This idea of a differentiable decoder, a.k.a. a generative net is very wide spread and serveral approaches to train the generative decoder nets.
 
 Another popular model is generative stochastic networks. These networks learn the transition probability of the Markov chains. Which are very similar to GANs. The basic strategy is to give up on having an explicit formula for $p(x)$, just learn to sample incrementally. The drawback is it is difficult for Markov chains to mix from one example to another extremely dissimilar example.
-
-
-! Models
-[[Generative Adversarial Network]]

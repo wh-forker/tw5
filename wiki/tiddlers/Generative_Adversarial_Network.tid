@@ -1,6 +1,6 @@
 created: 20161021080332245
-modified: 20161028023453590
-tags: [[Deep Energy Based Learning]]
+modified: 20161107090109231
+tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
 
@@ -11,11 +11,19 @@ type: text/vnd.tiddlywiki
 !! Extensions
 
 * [[Unsupervised representation learning with deep convolutional generative adversarial networks]]
-* Laplacian Pyramid of GANs is further suggested to generate high quality image in a coarse-to-fine manner.
+** Laplacian Pyramid of GANs is further suggested to generate high quality image in a coarse-to-fine manner.
 * [[DCGAN|Unsupervised representation learning with deep convolutional generative adversarial networks]]
 * [[SeqGAN|http://arxiv.org/abs/1609.05473]]
+* [[InfoGAN]]
+
+!! Theory
+
+* [[Towards Principled Methods for Training Generative Adversarial Networks]]
+* [[Energy-Based GANs]]
 
 !! Applications
 
 * [[Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling|https://arxiv.org/abs/1610.07584]]
 * [[Semi-Supervised Learning with Generative Adversarial Networks|http://arxiv.org/abs/1606.01583]]
+** Better images than DCGAN are generated adding the classification label
+* [[Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network]]

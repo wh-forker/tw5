@@ -1,7 +1,8 @@
 created: 20151112064159415
-modified: 20151112064742351
+modified: 20161107072354942
 tags: Books
 title: Pattern Recognition and Machine Learning
 type: text/vnd.tiddlywiki
 
-[[10.2 Variational Mixture of Gaussians]]
+* 10.1 [[Variational Inference]]
+* 10.2 [[Variational Mixture of Gaussians]]

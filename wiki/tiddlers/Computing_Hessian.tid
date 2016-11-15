@@ -1,7 +1,7 @@
 created: 20150629110112814
-modified: 20150630100406965
+modified: 20161103064519677
 tags: [[Second Order Methods]]
-title: On Computing Hessian
+title: Computing Hessian
 type: text/vnd.tiddlywiki
 
 ! Backpropagating the Diagonal Hessian
@@ -21,3 +21,5 @@ The finite difference method:
 $$
 Hv\sim\frac{1}{\alpha}\left(\frac{\partial E}{\partial w}(w+\alpha v)-\frac{\partial E}{\partial w}(w)\right)
 $$
+
+! [[Hessian-Free Optimization]]

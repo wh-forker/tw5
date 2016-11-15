@@ -1,0 +1,14 @@
+created: 20161009094500297
+modified: 20161111024212059
+tags: [[Deep Learning Tricks]]
+title: Deep Model Compression
+type: text/vnd.tiddlywiki
+
+! Bib
+* [[Accelerating Deep Convolutional Networks using low-precision and sparsity|http://arxiv.org/abs/1610.00324v1]]
+
+!! Pruning
+* [[The Incredible Shrinking Neural Network: New Perspectives on Learning Representations Through The Lens of Pruning|http://openreview.net/pdf?id=BkV4VS9ll]]
+** A rather theoretical study of pruning. 2-nd order Taylor without retraining.
+
+!! Tensor Factorisation

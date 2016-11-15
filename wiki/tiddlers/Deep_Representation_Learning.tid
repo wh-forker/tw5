@@ -1,5 +1,5 @@
 created: 20160114070250481
-modified: 20161027130816938
+modified: 20161114023922452
 tags: [[Deep Learning Applications]]
 title: Deep Representation Learning
 type: text/vnd.tiddlywiki
@@ -34,7 +34,5 @@ To extend CNNs for image retrieval, it is possible to use a unsupervicsed net su
 ** laplacian pyramid extension
 * RNN
 * deconvolution nets
-
-
 
 ! Papers

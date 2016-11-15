@@ -1,5 +1,5 @@
 created: 20160519060432418
-modified: 20161027083026387
+modified: 20161103065017891
 tags: [[Deep Learning]]
 title: Deep Learning Tricks
 type: text/vnd.tiddlywiki
@@ -16,10 +16,10 @@ type: text/vnd.tiddlywiki
 However, sophisticated search methods require previous knowledge about which hyperparameters are worth exploring to begin with. And Bayesian optimization is quite far from practical usage.
 
 ! Special Layers
-[[Batch Normalization]]
+[[Batch Normalization]]: addressing the problem of the internal covariate shift
 
-! [[Adversarial Examples]]
-
-! [[Data Augmentation]]
-
-! [[Neural Nets Optimizations]]
+! Topics
+* [[Adversarial Examples]]
+* [[Data Augmentation]]
+* [[Deep Optimization Tricks]]
+* [[Deep Model Compression]]

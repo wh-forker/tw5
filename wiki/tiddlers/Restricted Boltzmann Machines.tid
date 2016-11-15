@@ -1,6 +1,6 @@
 created: 20150514071547700
-modified: 20161029104634269
-tags: [[Deep Learning]]
+modified: 20161103063641278
+tags: [[Deep Neural Networks Architectures]]
 title: Restricted Boltzmann Machines
 type: text/vnd.tiddlywiki
 
@@ -40,3 +40,7 @@ CD approximates the (mean field) Free Energy by running only 1 (or more) steps o
 
 ! Applications
 RBMs are basicly a solved problem. 10 years ago, we use them to pretrain deep supervised nets. They still outperform VAEs on simple datasets. RBM research continues in areas like semi-supervised deep learning with deep hybrid architectures, temperature dependence, infinitely deep RBMs, etc.
+
+! Bibs
+* [[Improving RBMs with physical chemistry|https://charlesmartin14.wordpress.com/2016/10/21/improving-rbms-with-physical-chemistry/]]
+* [[Recurrent Temporal RBM]]
