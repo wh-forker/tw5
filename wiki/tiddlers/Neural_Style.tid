@@ -1,12 +1,47 @@
 created: 20161011084441404
-modified: 20161031022415338
+modified: 20161212031301556
 tags: 
 title: Neural Style
 type: text/vnd.tiddlywiki
 
 ! Papers
 
-[[Instance Normalization: The Missing Ingredient for Fast Stylization|https://arxiv.org/abs/1607.08022]] claims replacing batch normalization with instance normalization significantly improves the quality of feedforward style transfer models.
+* [[Instance Normalization: The Missing Ingredient for Fast Stylization|https://arxiv.org/abs/1607.08022]]
+** claims replacing batch normalization with instance normalization significantly improves the quality of feedforward style transfer models.
+* [[Neural Style Representations and the Large-Scale Classification of Artistic Style|https://arxiv.org/abs/1611.05368]]
+** for classification
+* [[Scribbler: Controlling Deep Image Synthesis with Sketch and Color|https://arxiv.org/abs/1612.00835]]
+** color sketches by training GAN on generated inputs
+** brilliant idea and result
+* [[A Learned Representation For Artistic Style|http://arxiv.org/abs/1610.07629]]
+** conditional instance normalization, surprising result, why should this work?
+
+! Basic
+!! Objective
+In its original formulation, the neural algorithm of artistic style proceeds as follows: starting from some innitialization of $p$ (e.g. $c$, or some random initialization), the algorithm adapts $p$ to minimize the loss function
+$$
+\cal L(s, c, p) = \lambda_s\cal L_s(p) + \lambda_c\cal L_c(p),
+$$
+where $\cal L_s(p)$ is the style loss, $\cal L_c(p)$ is the content loss. Given a set of "style layers" $\cal S$ and a set of "content layers" $\cal C$, the style and content losses are themselves defined as
+$$
+\cal L_s(p)=\sum_{i\in\cal S}\frac{1}{U_i}\|G(\phi_i(p))-G(\phi_i(s))\|^2_F
+$$
+$$
+\cal L_c(p)=\sum_{j\in\cal C}\frac{1}{U_j}\|\phi_j(p)-\phi_j(s)\|^2_2
+$$
+where $\phi_l(x)$ are the classifier activations at layer $l$, $U_l$ is the total number of units at layer $l$ and $G(\phi_l(x))$ is the Gram matrix associated with the layer $l$ activations.
+
+!! Fast neural style
+A style transfer network $T$ takes a content image $c$ as input and output pastiche image $p$ directly. With this we can achieve real-time style transfer. The downside is one net is tied to one specific style. 
+
+!! Style representation
+
+The straightforward solution is to condition the net on the style $s$: $p = T(c, s)$. A very surprising fact about the role of normalization in style transfer networks: to model a style, @@color:#859900;it is sufficient to specialize scaling and shifting parameters after normalization to each specific style@@. In other words, all convolutional weights of a style transfer network can be shared across many styles, and it is sufficient to tune parameters for an affine transformation after normalization for each style.
+
+Conditioning on a style is achieved as follows:
+$$
+z = \gamma_s\left(\frac{x-\mu}{\sigma}\right)+\beta_s
+$$
 
 ! Implementations
 

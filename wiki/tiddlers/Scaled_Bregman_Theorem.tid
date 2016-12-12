@@ -1,0 +1,27 @@
+created: 20161208121105971
+modified: 20161209024813919
+tags: NIPS
+title: Scaled Bregman Theorem
+type: text/vnd.tiddlywiki
+
+[[paper|https://arxiv.org/abs/1607.00360]]
+
+The Bregman distortion is the residual of Taylor expansion of a function:
+$$
+R(x\|y) = \varphi(x) - \varphi(y)-(x-y)^\top\nabla\varphi(y)
+$$
+when $\varphi$ is not convex, this value can be positive, negative or zero. When $\varphi$ is convex, the Bregman divergence $D_\varphi(x\|y)$ has some good properties:
+
+* triangle equality
+* dual symmetry w.r.t. convex conjugate
+* population minimizer = average
+
+We can extend this with a differentiable function $g$. We define a new generator
+$$
+\breve{\varphi}\doteq g(x)\varphi\left(\frac{x}{g(x)}\right)
+$$
+in terms of the perspective transform of $\varphi$. It turns out the perspective transform of the divergence
+$$
+g(x)D_\varphi\left(\frac{x}{g(x)}\parallel\frac{y}{g(y)}\right) = D_{\breve\varphi}(x\|y)
+$$
+equals the divergence of the perspective transform iff $g$ is affine or $\varphi(x)$ is (restricted) positive homogenuos of degree 1. $\breve\varphi$ does not have to be convex.

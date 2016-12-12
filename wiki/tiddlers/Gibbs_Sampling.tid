@@ -1,0 +1,17 @@
+created: 20161208114704592
+modified: 20161208120658647
+tags: [[Probabilistic Inference]]
+title: Gibbs Sampling
+type: text/vnd.tiddlywiki
+
+Gibbs sampling is one of the most popular MCMC techniques.
+
+It takes an unnormalized distribution which can be specified by a factor graph, along with a list of variables values that can be arbitrarily initialized. Gibbs sampling iteratively selects a variable and then samples the chosen variable from its conditional distribution.
+
+! Scan order in Gibbs sampling
+The scan order in Gibbs sampling determines which variable is selected in each step:
+
+# random scan
+# systematic scan selects a fixed permutation and repeatedly samples the variables in that order
+
+In [[Scan Order in Gibbs Sampling: Models in Which it Matters and Bounds on How Much|https://arxiv.org/abs/1606.03432]], a theorem bounding the relative mixing times of random and systematic scan is proved. Under mild conditions, this theorem implies that the mixing times differ by only polynomial factors.

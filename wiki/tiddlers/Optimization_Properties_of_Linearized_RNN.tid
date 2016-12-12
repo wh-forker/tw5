@@ -1,0 +1,36 @@
+created: 20161116082025079
+modified: 20161116091937408
+tags: [[Optimizing RNN]]
+title: Optimization Properties of Linearized RNN
+type: text/vnd.tiddlywiki
+
+refs
+
+* [[Geometry of linearized neural networks|https://blogs.princeton.edu/imabandit/2016/11/13/geometry-of-linearized-neural-networks/]]
+* Gradient Descent Learns Linear Dynamical Systems
+** [[blog|http://www.offconvex.org/2016/10/13/gradient-descent-learns-dynamical-systems/]]
+** [[paper|https://arxiv.org/abs/1609.05191]]
+* [[Lecture Notes on Linear System Theory|http://control.ee.ethz.ch/~ifalst/docs/LectureNotes.pdf]]
+
+The simplest version of a recurrent neural network is as follows. It is a mapping of the form $(x_1,\dots,x_T) \mapsto (y_1,\dots,y_T)$ (we are thinking of doing sequence to sequence prediction). In these networks the hidden state is updated as $h_{t+1} = \sigma_1(A h_{t} + B x_{t})$ (with $h_1=0$) and the output is $y_t = \sigma_2(C h_t + D x_t)$. With assumption that $(x_t)$ is an i.i.d. isotropic sequence we can decouple $D$ from $A, B, C$ and can be ignored because it's convex. We can consider the idealized risk:
+$$
+(\hat{A},\hat{B}, \hat{C}) \mapsto \sum_{k=0}^{+\infty} \|\hat{C} \hat{A}^{k} \hat{B} - C A^{k} B\|_F^2 .
+$$
+
+Consider the series $r_k = C A^k B$ and its Fourier transform:
+$$
+G(\theta) = \sum_{k=0}^{+\infty} r_k \exp(i k \theta) = C (\sum_{k=0}^{+\infty} (\exp(i \theta) A)^k) B = C(\mathrm{I} - \exp(i \theta) A)^{-1} B .
+$$
+By Parseval’s theorem the idealized risk is equal to the $L_2$ distance between $G$ and $\hat{G}$ (i.e. $\int_{[-\pi, \pi]} \|G(\theta)-\hat{G}(\theta)\|_F^2 d\theta$). We will now show that under appropriate further assumptions, for any $\theta$ that $\|G(\theta) - \hat{G}(\theta)\|_F^2$ is weakly-quasi-convex in $(\hat{A},\hat{B},\hat{C})$ (in particular this shows that the idealized risk is weakly-quasi-convex).
+
+<<<
+''The big assumption''<br>
+the system is a “single-input single-output” model, that is both $x_t$ and $y_t$ are scalar.
+<<<
+
+In Section 9.2 of the lecture notes, it is proved that if a single-inupt single-output system $(A,B,C,D)$ satisfies @@color:#859900;$[B, AB, \dots, A^{n-1}B]\in \mathbb{R}^{n\times n}$ is of full rank@@, then there exists an invertible matrix $T$ such that $(TAT^{-1}, TB, CT^{-1}, D)$ is an equivalent system with the canonical controllable form where $B=(0,\dots,0,1)$, $C=(c_1,\dots,c_n)$ and $A$ has zeros everywhere except on the upper diagonal where it has ones and on the last row where it has $a_n,\dots, a_1$. This kind of system is called controllable system (for some other reason).
+
+<<<
+''Theorem'' [Hardt, Ma, Recht 2016]<br>
+Let $C(a) := \{z^n + a_1 z^{n-1} + \dots + a_n , z \in \mathbb{C}, |z|=1\}$ and assume there is some cone $\mathcal{C} \subset \mathbb{C}^2$ of angle less than $\pi/2-\alpha$ such that $C(a) \subset \mathcal{C}$. Then the idealized risk is $\alpha$-weakly-quasi-convex on the set of $\hat{a}$ such that $C(\hat{a}) \subset \mathcal{C}$.
+<<<

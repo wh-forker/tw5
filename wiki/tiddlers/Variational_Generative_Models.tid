@@ -1,5 +1,5 @@
 created: 20161102063110959
-modified: 20161103094143916
+modified: 20161130055103869
 tags: Bayesian [[Deep Generative Models]]
 title: Variational Generative Models
 type: text/vnd.tiddlywiki
@@ -14,5 +14,4 @@ type: text/vnd.tiddlywiki
 * Hierarchical Variational Models
 * Auxiliary Deep Generative Models
 * Variational inference for Monte Carlo objectives
-* [[Density estimation using Real NVP|https://arxiv.org/abs/1605.08803]]
 * [[Improving Variational Inference with Inverse Autoregressive Flow]]

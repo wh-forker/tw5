@@ -1,10 +1,31 @@
 created: 20160129025105036
-modified: 20161103064728134
+modified: 20161208072219404
 tags: [[Representation Learning]]
 title: t-Distributed Stochastic Neighbor Embedding
 type: text/vnd.tiddlywiki
 
-This is a very popular method to generate image feature 2-d visualization.
+! Introduction
+* PCA tries to perserve large pairwise distance, which is not a good idea for visualization. For instance, 2 distant points along a swiss roll manifold can be near in Euclidean space.
+* Isomap tries to estimate the distance over the manifold.
+* Locally linear embedding is similar with t-sne in the sense that they both try to preserve short distances within local structure.
 
-The input of t-SNE consists of a collection of pairwise (Euclidean) distance $\delta_{ij}$ between the $n$ input objects, that are converted into conditional probabilities as $p_{j|i}=\frac{\exp(-\delta_{ij}^2/2\sigma_i)}{\sum_{k\ne i}\exp(-\delta_{ij}^2/2\sigma_i)}$ (a normalized [[Gaussian kernel]]?), which joint to obtain a joint probability matrix entries $p_{ij}=\frac{p_{j|i}+p_{i|j}}{2n}.
+T-sne is a very popular method to generate image feature 2-d visualization.
+
+! Basic
+The input of t-SNE consists of a collection of pairwise (Euclidean) distance $\delta_{ij}$ between the $n$ input objects, that are converted into conditional probabilities as $p_{j|i}=\frac{\exp(-\delta_{ij}^2/2\sigma_i)}{\sum_{k\ne i}\exp(-\delta_{ij}^2/2\sigma_i)}$, and which joint to obtain a joint probability matrix entries $p_{ij}=\frac{p_{j|i}+p_{i|j}}{2n}$ (for symmetry). @@color:#859900;$\sigma$ varies per object and are set such that the conditional has fixed perplexity.@@
+
+The embedding similarity $Q$ is modeled by a normalized Student-t kernel with 1 DOF, which is very more heavy-tailed, making dissimilar points can be far enough in the embedding.
+
+Locations are determined by minimizing $KL(P\|Q)$. Due to the asymmetry of the Kullback-Leibler divergence, the objective function focuses on modeling high values of $p_{ij}$ (similar objects) by high values of $q_{ij}$ (nearby points in the embedding space). This is typically solved by SGD:
+$$
+\frac{\partial C}{\partial\mathbf y_i} = 4\sum_{j\ne i}(p_{ij}-q_{ij})(1+\|\mathbf y_i - \mathbf y_j\|^2)^{-1}(\mathbf y_i - \mathbf y_j)
+$$
+
+! Tree-Based Algorithms
+We can approximate the distribution with the $\lfloor 3u\rfloor$ neighbors. 
+!! Barnes-Hut approximation
+Computing the attractive forces are easier. We can approximate repulsive forces by the intuition that many of the pairwise interactions are very similar. Barnes-Hut approximation is first used by astrophysicists to compute the interaction between stars. If a ceil in quadtree:
+
+# is small enough
+# sufficiently far away from point $\mathbf y_i$
 

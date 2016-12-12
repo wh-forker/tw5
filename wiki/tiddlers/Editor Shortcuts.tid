@@ -1,5 +1,5 @@
 created: 20141011140002656
-modified: 20160525043143923
+modified: 20161207121232349
 tags: Tools Snippets
 title: Editor Shortcuts
 type: text/vnd.tiddlywiki
@@ -24,3 +24,4 @@ type: text/vnd.tiddlywiki
 |toggle case|`~`|
 |change 3 char|`c3l`|
 |global replace (confirmation)|`:%s/OLD/NEW/g(c)`|
+|open all folds|`zR`|

@@ -1,0 +1,11 @@
+created: 20161209033609466
+modified: 20161209034017804
+tags: Clustering NIPS
+title: Fast and Provably Good Seeding for k-Means
+type: text/vnd.tiddlywiki
+
+Random seeding can lead to arbitrarily bad clustering result. K-means++ is slow.
+
+A Markov chain sampling process with the stationary distribution exactly the same as k-means++ is proposed. The result is provably good without any assumptions of the data.
+
+The performance is of up to 1,064x speedup and 1.32% relative error comparing to k-means++

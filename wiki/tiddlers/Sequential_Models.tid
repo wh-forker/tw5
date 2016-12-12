@@ -1,23 +1,27 @@
 created: 20161012083717362
-modified: 20161103060436605
+modified: 20161129030908562
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
 
-! Attention mechanisms
-
-! Differentiable Memory structures
+! Models
 
 * [[LSTM|Long short-term memory]]
 * Tapes
 * Arrays
 * Stacks
+* [[QRNN|http://metamind.io/research/new-neural-network-building-block-allows-faster-and-more-accurate-text-understanding/]]
 
 !! Bibs
 
 * [[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
+* [[Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision|https://arxiv.org/abs/1611.00020]]
+** non-differentiable memory optimized with REINFORCE, improved weakly supervised semantic parsing on WebQuestionsSP.
 
 ! Memory networks
 !! Bibs
 
 * [[MemN2N|http://arxiv.org/abs/1604.06045]]
+* [[Can Active Memory Replace Attention?|https://arxiv.org/abs/1610.08613]]
+** Extended Neural GPU with an output tape tensor $p$, which has access to @@color:#859900;all previous outputs@@.
+** Use teacher forcing in training.

@@ -1,0 +1,8 @@
+created: 20161205070110685
+modified: 20161205070619546
+tags: [[Deep Learning Applications]]
+title: Deep Physical Simulation
+type: text/vnd.tiddlywiki
+
+* [[A Compositional Object-Based Approach to Learning Physical Dynamics|https://arxiv.org/abs/1612.00341]]
+** SGD to learn simple physical laws?

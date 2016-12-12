@@ -1,5 +1,5 @@
 created: 20161103053934603
-modified: 20161103054211030
+modified: 20161116030455206
 tags: [[Deep Learning]]
 title: Deep Learning Basics
 type: text/vnd.tiddlywiki
@@ -7,5 +7,5 @@ type: text/vnd.tiddlywiki
 * [[Neural Net Functions]]
 * [[Deep Neural Networks Architectures]]
 * [[Back Propagation]]
-* [[Optimization Methods]]
+* [[Optimization Algorithms]]
 * [[Deep Learning Tricks]]

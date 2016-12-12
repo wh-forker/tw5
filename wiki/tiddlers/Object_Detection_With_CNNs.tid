@@ -1,5 +1,5 @@
 created: 20160614032240671
-modified: 20161103060910846
+modified: 20161212031518240
 tags: [[Deep Learning Applications]]
 title: Object Detection With CNNs
 type: text/vnd.tiddlywiki
@@ -18,6 +18,7 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 # [[Google digit recognition]]
 # [[CNN for OCR]]
 # [[Face Detection]]
+# [[Semantic Segmentation]]
 
 ! Models
 !! Regressor
@@ -25,6 +26,10 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 # [[darknet You Only Look Once (YOLO)|http://arxiv.org/abs/1506.02640]]
 # [[Single Shot Multibox Detector (SSD)|http://arxiv.org/abs/1512.02325]]
 # [[Inside Out Net (ION)|http://arxiv.org/abs/1512.04143]]
+# [[Speed/accuracy trade-offs for modern convolutional object detectors|https://arxiv.org/abs/1611.10012]]
+## FRCNN accurate, SSD fast.
+## SSD does not work well on small objects? or the information is inferred else where?
+# [[ARC-FCN|https://arxiv.org/abs/1612.00534]]
 
 !! Iterative
 # [[AttentionNet|http://arxiv.org/abs/1506.07704]]
@@ -32,6 +37,7 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 
 !! Other
 # [[R-FCN|http://arxiv.org/abs/1605.06409]]
+## [[Implementation|https://github.com/Orpine/py-R-FCN]]
 
 !! Implementation
 # [[ReInspect|http://arxiv.org/abs/1506.04878]]: [[tf|https://github.com/Russell91/TensorBox]]

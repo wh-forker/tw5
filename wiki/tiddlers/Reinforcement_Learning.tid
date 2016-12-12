@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20161103065616213
+modified: 20161205071047325
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -10,3 +10,4 @@ type: text/vnd.tiddlywiki
 
 ! Bibs
 * [[Faster Deep Reinforcement Learning]]
+* [[Playing Doom with SLAM-Augmented Deep Reinforcement Learning|https://arxiv.org/abs/1612.00380]]

@@ -1,0 +1,13 @@
+created: 20161212033553883
+modified: 20161212042604104
+tags: [[Convolutional Layer]] [[Semantic Segmentation]]
+title: Dilated Convolution
+type: text/vnd.tiddlywiki
+
+Let $l$ be a dilated factor and let $*_l$ be defined as
+$$
+(F*_lk)(\mathbf p) = \sum_{\mathbf s+l\mathbf t=\mathbf p}F(\mathbf s)k(\mathbf t)
+$$
+The dilated convolution operator has been referred to in the past as “convolution with a dilated filter”. It plays a key role in the //algorithme à trous//, an algorithm for wavelet decomposition.
+
+Dilated convolutions support exponential expanding receptive fields without losing resolution or coverage. 

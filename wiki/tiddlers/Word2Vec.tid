@@ -1,10 +1,15 @@
 created: 20160425022459698
-modified: 20160701031239700
+modified: 20161130110802651
 tags: [[Stanford NLP Course]]
 title: Word2Vec
 type: text/vnd.tiddlywiki
 
-[[link|https://arxiv.org/abs/1310.4546]]
+refs:
+
+* [[Distributed Representations of Words and Phrases and their Compositionality|https://arxiv.org/abs/1310.4546]]
+* [[Enriching Word Vectors with Subword Information|https://arxiv.org/abs/1607.04606]]
+* [[Bag of Tricks for Efficient Text Classification|https://arxiv.org/abs/1607.01759]]
+** [[fasttext implementation|https://github.com/facebookresearch/fastText]]
 
 Word similarity is hard to represent. High-dim vectors are not robust. Usually around 25-1000 dim.
 

@@ -1,10 +1,12 @@
 created: 20161021080332245
-modified: 20161107090109231
+modified: 20161209085256522
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
 
-! [[Theory|Generative Adversarial Network Talk]]
+! Theory
+
+* Ian's [[Generative Adversarial Network Talk]]
 
 ! Bibs
 
@@ -19,7 +21,7 @@ type: text/vnd.tiddlywiki
 !! Theory
 
 * [[Towards Principled Methods for Training Generative Adversarial Networks]]
-* [[Energy-Based GANs]]
+* [[Divergence Classed GANs]]
 
 !! Applications
 
@@ -27,3 +29,5 @@ type: text/vnd.tiddlywiki
 * [[Semi-Supervised Learning with Generative Adversarial Networks|http://arxiv.org/abs/1606.01583]]
 ** Better images than DCGAN are generated adding the classification label
 * [[Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network]]
+* [[Learning to Pivot with Adversarial Networks|https://arxiv.org/abs/1611.01046]]
+** joint training adversarial networks to constrain the predictive model to be robust on nuisance parameter.

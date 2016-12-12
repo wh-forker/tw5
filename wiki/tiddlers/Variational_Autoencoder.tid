@@ -1,5 +1,5 @@
 created: 20161009032729712
-modified: 20161109122632585
+modified: 20161206125918085
 tags: [[Case study of ConvNets]] [[Deep Generative Models]]
 title: Variational Autoencoder
 type: text/vnd.tiddlywiki
@@ -13,6 +13,10 @@ Some references
 * [[Semi-Supervised Learning with Deep Generative Models|https://arxiv.org/abs/1406.5298]]
 * [[Rényi Divergence Variational Inference|https://arxiv.org/abs/1602.02311]]
 ** This paper is definitely worth a read, and has a lot more to it than just deriving the bound. It proposes a practical algorithm VR-max, which uses $\alpha\rightarrow\infty$ and a smaller number of Monte Carlo samples. This method perfroms similarly to IWAE but requires fewer backpropagation iterations.
+
+Nice models
+
+* [[PixelVAE|https://arxiv.org/abs/1611.05013]]: not much perceptual gain but a good point to start.
 
 ! Background
 ''Directed graphical models'' rely on an ''ancestral sampling procedure'', which is appealing both for its conceptual and computational simplicity. They lack, however, the conditional independence structure of undirected models, making exact and approximate posterior inference on latent variables cumbersome [[Saul et al. 1996|https://arxiv.org/abs/cs/9603102]]. Recent advances in ''stochastic variational inference'' and ''amortized inference'', allowed efficient approximate inference and learning of deep directed graphical models by maximizing a variational lower bound on the log-likelihood. In particular, VAE simultaneously learns a generative network, that maps gaussian latent variables $z$ to samples $x$, and semantically meaningful features by exploiting the reparametrization trick.
@@ -42,7 +46,7 @@ To derive the variational autoencoder (VAE) from here you only need two more ing
 
 !! Amortised Inference
 
-The bound above assumes that we observe a single sample, but usually we want to apply it on an entire dataset of i.i.d. samples. In this case, we need to introduce a separate auxiliary $q_n$ for each datapoint $x_n$, each with paramters $\psi_n$ that we need to optimise. This is feasible if the number of datapoints is small. In VAE we instead make the $q_n$s share parameters and make them depend on the datapoint $x_n$, basically $q_n(z)=q(z\|x_n,\psi)$. This conditional auxiliary distribution is called the recognition model or inference network and can be used directly to perform approximate inference of latent variables given previously unseen data.
+The bound above assumes that we observe a single sample, but usually we want to apply it on an entire dataset of i.i.d. samples. In this case, we need to introduce a separate auxiliary $q_n$ for each datapoint $x_n$, each with paramters $\psi_n$ that we need to optimise. This is feasible if the number of datapoints is small. In VAE we instead make the $q_n$s share parameters and make them depend on the datapoint $x_n$, basically $q_n(z)=q(z|x_n,\psi)$. This conditional auxiliary distribution is called the recognition model or inference network and can be used directly to perform approximate inference of latent variables given previously unseen data.
 
 !! Monte Carlo and reparametrisation
 
@@ -58,3 +62,9 @@ The neural network used in the encoder (variational distribution) does not lead 
 ! Bib
 
 * [[Auto-Encoding Variational Bayes|https://arxiv.org/abs/1312.6114/]]
+
+!! Applications
+* [[Variational Deep Embedding: A Generative Approach to Clustering|https://arxiv.org/abs/1611.05148]]
+** Hidden units conditioned on GMM as clustering assignment
+* [[Deep Variational Inference Without Pixel-Wise Reconstruction|https://arxiv.org/abs/1611.05209]]
+** Improve real NVP with VAE.

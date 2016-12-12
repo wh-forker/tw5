@@ -1,5 +1,5 @@
 created: 20161115080334482
-modified: 20161115084919731
+modified: 20161116082009782
 tags: Math
 title: Optimization
 type: text/vnd.tiddlywiki
@@ -31,3 +31,4 @@ in which case gradient descent converges at the slow non-smooth rate $1/\sqrt{t}
 ! Deep Learning
 * [[On Optimization in Deep Learning]]
 * [[Identity Matters in Deep Learning]]
+* [[Optimizing RNN]]

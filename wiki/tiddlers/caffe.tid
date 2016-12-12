@@ -1,5 +1,5 @@
 created: 20150514112544567
-modified: 20161103055940095
+modified: 20161117074905316
 tags: Open-source [[Deep Learning Tools]]
 title: Caffe
 type: text/vnd.tiddlywiki
@@ -9,5 +9,6 @@ type: text/vnd.tiddlywiki
 
 # As comparison, what would be the closest way to implement this functionality with existing layers? I presume a inner product that has num_output: N*K, re-size into (N,K) and then do a normal softmax that compares this to a (N,1) label.
 # And how is this PR better than that.
+# See [[this example|http://nbviewer.jupyter.org/github/BVLC/caffe/blob/master/examples/pascal-multilabel-with-datalayer.ipynb]] for accuracy test
 
 !! Invalid Device Ordinal

@@ -1,12 +1,57 @@
 created: 20161115084712161
-modified: 20161115115001678
+modified: 20161123024410454
 tags: Optimization ResNet Blog
 title: Identity Matters in Deep Learning
 type: text/vnd.tiddlywiki
 
+! Linearized ResNet
+
 Refs
 
-* [[Lecture Notes on Linear System Theory|http://control.ee.ethz.ch/~ifalst/docs/LectureNotes.pdf]]
 * [[Geometry of linearized neural networks|http://blogs.princeton.edu/imabandit/2016/11/13/geometry-of-linearized-neural-networks/]]
 * [[Identity Matters in Deep Learning|https://arxiv.org/abs/1611.04231]]
 
+We consider a linearized net, simplified to a product of matrices:
+$$
+g(A_0,\dots, A_L) = \mathbb{E}_{(x,y) \sim \nu} \|\prod_{i=0}^L A_i x - y\|^2 ,
+$$
+which, although non-convex, satisfies the second-order optimality condition:
+
+<<<
+''Proposition'' [[[Kawaguchi 2016|https://arxiv.org/abs/1605.07110]]]<br>
+Assume that $x$ has a full rank covariance matrix and that $y=Rx$ for some deterministic matrix $R$. Then all local minima of $g$ are global minima.
+<<<
+
+The residual network looks like this:
+$$
+f(A_0,\dots, A_L) = \mathbb{E}_{(x,y) \sim \nu} \|\prod_{i=0}^L (A_i+\mathrm{I}) x - y\|^2 .
+$$
+
+<<<
+''Proposition'' [Hardt and Ma 2016]<br>
+Assume that $x$ has a full rank covariance matrix and that $y=Rx$ for some deterministic matrix $R$. Then $f$ has first order optimality on the set $\{(A_0, \dots, A_L) : \|A_i\| \lt 1\}$.
+<<<
+
+''Proof'': One has with $E = R - \prod_{i=0}^L (A_i+\mathrm{I})$ and $\Sigma = xx^{\top}$,
+$$
+f = (E x)^{\top} Ex = \mathrm{Tr}(E \Sigma E^{\top}) =: \|E\|_{\Sigma}^2 ,
+$$
+so with $E_{\lt i} = \prod_{j\lt i} (A_j + \mathrm{I})$, and $E_{\gt i}=\prod_{j\gt i} (A_j + \mathrm{I})$,
+
+$$
+\begin{eqnarray*} 
+f(A_0,\dots, A_i + V, \dots, A_L) & = & \|R - \prod_{j \lt i} (A_j + \mathrm{I}) \times (A_i + V +\mathrm{I}) \times \prod_{j\gt i} (A_j + \mathrm{I})\|_{\Sigma}^2 \\ 
+& = & \|E + E_{\lt i} V E_{\gt i}\|_{\Sigma}^2 \\ 
+& = & \|E\|_{\Sigma}^2 + 2 \langle \Sigma E, E_{\lt i} V E_{\gt i} \rangle + \|E_{\lt i} V E_{\gt i}\|_{\Sigma}^2 , 
+\end{eqnarray*}
+$$
+which exactly means that the derivative of $f$ with respect to $A_i$ is equal to $E_{\gt i}^{\top} \Sigma E E_{\lt i}^{\top}$. On the set under consideration one has that $E_{\gt i}$ and $E_{\lt i}$ are invertible (and so is $\Sigma$ by assumption), and thus if this derivative is equal to 0 it must be that $E=0$ and thus $f=0$ (which is the global minimum).
+
+! Remark
+* Since non-linearity is so important in deep learning, how similar is it with linear system analysis?
+* Similar result is given for RNN in [[Optimization Properties of Linearized RNN]].
+
+! Equivalence of ResNet and RNN
+Refs
+
+* [[Bridging the Gaps Between Residual Learning, Recurrent Neural Networks and Visual Cortex|https://arxiv.org/abs/1604.03640]]

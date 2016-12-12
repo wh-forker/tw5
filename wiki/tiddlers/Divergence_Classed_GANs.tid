@@ -1,13 +1,14 @@
 created: 20161107021510958
-modified: 20161108101924874
+modified: 20161209093937001
 tags: [[Generative Adversarial Network]]
-title: Energy-Based GANs
+title: Divergence Classed GANs
 type: text/vnd.tiddlywiki
 
 references:
 
 * [[paper|https://arxiv.org/abs/1609.03126]]
 * [[blog|http://www.inference.vc/are-energy-based-gans-actually-energy-based/]]
+* [[A Connection between Generative Adversarial Networks, Inverse Reinforcement Learning, and Energy-Based Models|https://arxiv.org/abs/1611.03852]]
 
 ! Relationship with mutual information
 Original GAN objective itself can be derived from mutual information, and in fact, the discriminator $D$ can be thought of as a variational auxillary variable, exactly the same role as the recognition model $q(c|x)$ in the [[InfoGAN]] paper.
@@ -49,3 +50,24 @@ $$
 the same as logistic regression but without the logarithm, and this turns out to be a very important difference. For the very simple and intuitive derivation , see [[Kanamori et al, 2009|http://www.jmlr.org/papers/volume10/kanamori09a/kanamori09a.pdf]].
 
 This is similar to the definition of the Rényi $\alpha$-divergence I wrote about last week, except for a missing logarithm. If you choose a nonlinearity $(x)=x^{\alpha−2}$, you can recover Rényi divergences for different alpha.
+
+! f-divergences
+[[f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization|https://arxiv.org/abs/1606.00709]]
+
+GAN can be generalized to the class of $f$-divergence.
+
+Every convex function $f$ has a convex Fenchel conjugate $f^*$ so that
+$$
+f(u) = \underset{t\in\text{dom}_{f^*}}{\sup}\{tu-f^*(t)\}
+$$
+
+$$
+\begin{align}
+D_f(P\|Q) &= \int_Xq(x)f\left(\frac{p(x)}{q(x)}\right)dx \\
+&= \int_Xq(x)\underset{t_x\in\text{dom}_{f^*}}{\sup}\left\{t_x\frac{p(x)}{q(x)}-f^*(t_x)\right\}dx \\
+&\ge \underset{T\in\mathcal T}{\sup}\left(\int_Xp(x)T(x)dx-\int_Xq(x)f^*(T(x))dx\right) \\
+&= \underset{T\in\mathcal T}{\sup}\left(\mathbb E_{x\sim P}[T(x)]-\mathbb E_{x\sim Q}[f^*(T(x))]\right)
+\end{align}
+$$
+
+This has a structural similarity with GAN

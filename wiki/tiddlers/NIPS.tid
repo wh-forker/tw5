@@ -1,18 +1,36 @@
 color: #00dc64
 created: 20141010100529635
-modified: 20160606134300679
+modified: 20161209084054108
 title: NIPS
 type: text/vnd.tiddlywiki
 
 ! Paper Reviews
-[[Gaussian process modulated renewal processes]]
 
 ! 2015 Paper Reading
-Currently focusing on neural network ones
-
-[[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
-
+* [[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
+* [[Gaussian process modulated renewal processes]]
 !! Deep Reinforcement Learning Workshop
-[[Atari Games Reinforcement Learning UMich]]
 
-[[Faster Deep Reinforcement Learning]]
+* [[Atari Games Reinforcement Learning UMich]]
+* Faster Deep Reinforcement Learning
+** Online Hogwild!-style asynchronous updates
+
+! 2016 Paper Reading
+!! Videos
+[[Spotlight Videos|http://nuit-blanche.blogspot.com/2016/12/spotlight-videos-at-nips2016.html]]
+
+* [[Scaled Bregman Theorem]]
+* On Regularizing Rademacher Observation Losses
+** Adversarial network for different measure regularization
+* [[Fast and Provably Good Seeding for k-Means]], exciting result, looking forward to the oral.
+* Natual-Parameter Networks: A Class of Probabilistic Neural Networks
+** Model activation functions with different distributions
+* SURGE: Surface Regularized Geometry Estimation from a Single Image
+** CNN outputs depth, normal, plane and edge. Embed surface planar information to regularize the surface with a multitask objective function.
+* CNNpack: Packing Convolutional Neural Networks in the Frequency Domain.
+** prune conv filters after DCT. idea is simple, and sure it will work. But how can this help training and model structure?
+* Cooperative Graphical Models
+** For a large class of high-order probabilistic models:
+*** new variational lower and upper bounds
+*** efficient inference algorithms
+*** thorough empirical evaluation

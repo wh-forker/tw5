@@ -1,0 +1,14 @@
+created: 20161207061931967
+modified: 20161207063631036
+tags: 
+title: Intel Altera FPGA
+type: text/vnd.tiddlywiki
+
+[[link|https://www.altera.com/en_US/pdfs/literature/solution-sheets/efficient_neural_networks.pdf]]
+
+Data is passed from one layer to the next through a mechanism called OpenCL Channels or Pipes, which allow data to move from one kernel to the next without sending data to the external memory. 
+
+KNL based on socket, no PCIE, 72 cores each with 2 512bit VPU 384g ddr4, 80G/S, 16G MCDRAM
+
+CAFFE-MPI
+

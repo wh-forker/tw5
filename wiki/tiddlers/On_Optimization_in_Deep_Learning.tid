@@ -1,5 +1,5 @@
 created: 20160825062557484
-modified: 20161014062113016
+modified: 20161206125918072
 tags: Blog
 title: On Optimization in Deep Learning
 type: text/vnd.tiddlywiki
@@ -35,6 +35,8 @@ Non-convex problems can have ''degenerate saddle points'', whose Hessian is p.s.
 To conclude this part, AFAIK, we should care more about escaping from saddle point. And gradient based methods can do a better job than second-order methods in practice.
 
 ! Spin-glass Hamiltonian
+[[Charlse Martin: Why Does Deep Learning Works?|https://charlesmartin14.wordpress.com/2015/03/25/why-does-deep-learning-work/]]
+
 Both papers mentioned above use ideas from statistical physics and spin-glass models.
 
 !! Hamiltonians
@@ -56,7 +58,7 @@ In this paper, he tries to explain the optimization paradigm with spin-glass the
 A bolder hypothesis is that deep networks are spin funnels. And as the net gets larger, the funnel gets sharper. If this is true, our major concern should be to avoid over-training rather than the convexity of the network.
 
 ! No poor local minima
-Finally we arrive at the paper itself. The author claims that every local minimum is a global minimum and "bad" saddle points (degenerated ones) exists for deeper nets. Thm 2.3 gives clear result on linear networks.
+Finally we arrive at the paper itself. Nets are optimized well by local gradient methods and seems not to be affected by local minima. The author claims that every local minimum is a global minimum and "bad" saddle points (degenerated ones) exists for deeper nets. Thm 2.3 gives clear result on linear networks.
 
 The main result Thm 3.2 generalizes [[Choromanska et al, 2015|https://arxiv.org/abs/1412.0233]]'s idea for nonlinear network relies on 4 (seemingly strong) assumptions:
 
@@ -67,22 +69,6 @@ The main result Thm 3.2 generalizes [[Choromanska et al, 2015|https://arxiv.org/
 
 They relax the majority of the asssumptions, which is very promising, but leave a weaker condition A1u-m and A5u-m [[(from reddit post)|https://www.reddit.com/r/MachineLearning/comments/4ktqeu/160507110_deep_learning_without_poor_local_minima/]].
 
+Recently DeepMind came up with [[another paper|https://arxiv.org/abs/1611.06310]] claiming the assumptions are too strong for real data. And devised counter examples with finite datatets for rectified MLPs. For finite sized models/datasets, one does not have a globally good behavior of learning regardless of the model size.
+
 Even though deep learning energy landscapes appear to be roughly convex, or as this post referred to, local minimal free, a deep model has to include more engineering details to aid its convergence. Problems such as covariance shift and overfitting still have to be handled by engineering techniques.
-
-! Partition Functions and RBMs
-<<<
-Knowing the Parittion function $Z(v, h)$ is not the same as knowing the distribution $p(v)$.
-<<< [[Why Does Deep and Cheap Learning Work so Well?]]
-
-This is a small but important technical oversight. Scaling Energy does not change $Z(v, h)$. A connection between RBMs and Kadanoff VRG approach is explained in [[Charlse's post|https://charlesmartin14.wordpress.com/2015/04/01/why-deep-learning-works-ii-the-renormalization-group/]]. A more detailed connection between deep learning and Statistical Mechanics is shown [[here|An exact mapping between the Variational Renormalization Group and Deep Learning]]. 
-
-<<<
-RG procedure must preserve more information about the distribution than the free energy.
-<<< [[Comment on “Why does deep and cheap learning work so well?”|http://arxiv.org/pdf/1609.03541v1.pdf]]
-
-Also in the training of RBMs, the idea of preserving Free Energy, via either a ''trace condition'' or say, by layer normalization, is the important point. In variational RG, on the renomalization operator $T(v, h)$:
-$$
-\text{Tr}_he^{T(v, h)}=1
-$$
-
-similar to ''Size-Consistency and/or Size-Extensivity'' in Quantum Chemistry.

@@ -1,0 +1,42 @@
+created: 20161122065117181
+modified: 20161206125918076
+tags: Vision
+title: Visual Attention
+type: text/vnd.tiddlywiki
+
+!! Bib
+For supervised tasks
+
+* [[Recurrent Models of Visual Attention|https://arxiv.org/abs/1406.6247]]
+** Use RNN to generate glimpse location
+** [[Torch blog|http://torch.ch/blog/2015/09/21/rmva.html]]
+* Learning to combine foveal glimpses with a third-order boltzmann machine
+* What and where: A Bayesian inference theory of attention
+* [[Show, Attend and Tell: Neural Image Caption Generation with Visual Attention|https://arxiv.org/abs/1502.03044]]
+** Hard/soft attention. focus on single element, hard to learn.
+* Neural variational inference and learning in belief networks
+* Learning wake-sleep recurrent attention models
+
+For unsupervised tasks
+
+* [[DRAW: A Recurrent Neural Network For Image Generation|https://arxiv.org/abs/1502.04623]]
+** [[Magenta review|https://github.com/tensorflow/magenta/blob/master/magenta/reviews/draw.md]]: the foveation attention model is differentiable and so can be trained end to end with backpropagation. Instead of simply cropping a patch from the input image, DRAW extracts the pixels in the patch by Gaussian interpolation.
+
+!! Attention types
+* Reading attentions are widely used in discriminative tasks, usually transforms an image into a representation in a canonical coordinate space, with the parameters controlling the attentino learned by gradient descent.
+* Writing (generative) attentions decide which part to generate
+* Randomized
+* Error-based
+
+!! Spatially-transformed attention
+refs:
+
+* Spatial transformer networks
+* Efficient inference in occlusion-aware generative models of images
+** develop occlusion-aware generative models that make use of spatial transformers in this way.
+
+Rather than selecting a patch of an image (taking glimpses) as other methods do, a more powerful approach is to use a mechanism that provides invariance to shape and size of objects (general affine transformations). ''Spatial transformers'' process an input image $x$ using parameters $\lambda$ to generate an output:
+$$
+\operatorname{ST}(x, \lambda) = [\kappa_h(\lambda)\otimes\kappa_w(\lambda)]\ast x,
+$$
+where $\kappa_h$ and $\kappa_w$ are $1$-dimensional kernels, $\otimes$ indicates the tensor outer-product of the two kernels and $\ast$ indicates a convolution. When used for reading attention, spatial transformers allow the model to observe the input image @@color:#859900;in a canonical form, providing the desired invariance@@. When used for writing attention, it allows the generative model to independently handle position, scale and rotation of parts of the generated image, as well as their content. 

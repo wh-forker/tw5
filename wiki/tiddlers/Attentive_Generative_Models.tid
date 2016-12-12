@@ -1,0 +1,15 @@
+created: 20161122030025792
+modified: 20161201075516647
+tags: [[Deep Generative Models]] Blog
+title: Attentive Generative Models
+type: text/vnd.tiddlywiki
+
+* [[Visual Attention]]
+
+! Sequential Generative Models
+refs:
+
+* [[DRAW: A Recurrent Neural Network For Image Generation|https://arxiv.org/abs/1502.04623]]
+* [[Attend, Infer, Repeat: Fast Scene Understanding with Generative Models|https://deepmind.com/research/publications/attend-infer-repeat-fast-scene-understanding-generative-models/]]
+** understanding 3D scenes
+** where is the attention is yet to find

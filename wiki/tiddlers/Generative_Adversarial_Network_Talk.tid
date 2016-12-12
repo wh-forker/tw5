@@ -1,5 +1,5 @@
 created: 20160909061350995
-modified: 20161103094128195
+modified: 20161209084357774
 tags: [[ICML 2015]] Blog Talks [[Generative Adversarial Network]]
 title: Generative Adversarial Network Talk
 type: text/vnd.tiddlywiki
@@ -52,6 +52,7 @@ The value function takes the form of a binary discrimination task:
 $$
 \underset{G}{\min}\underset{D}{\max} V(D, G) = E_{x\sim p_{data}}(x)[\log D(x)]+E_{z\sim p_z(x)}[\log(1-D(G(z)))]
 $$
+Together this forms a mathematical saddle-point problem.
 
 At every step, if the discriminator is optimal, it is going to take on this particular form, the optimal strategy for any $p_{model}(x)$ is always
 
@@ -77,7 +78,7 @@ This is different from the usually analyzed statistical estimator, where we have
 * If so, how can we prevent non-convergence?
 * Is there a better loss function for generator?
 
-! [[Learning in Implicit Generative Models|https://arxiv.org/abs/1610.03483|]]
+! [[Learning in Implicit Generative Models|https://arxiv.org/abs/1610.03483]]
 The objective is to make the density ratio funtion $r(x) = p^*(x)/q(x)$ to be one, where $p*(x)$ is the true data distribution and $q(x)$ is the model distribution. By estimating this value, we can avoid computing the marginal likelihood. There are four ways of achieving this objective:
 
 !! Class probability estimation

@@ -1,5 +1,5 @@
 created: 20160519060432418
-modified: 20161103065017891
+modified: 20161212022315900
 tags: [[Deep Learning]]
 title: Deep Learning Tricks
 type: text/vnd.tiddlywiki
@@ -23,3 +23,5 @@ However, sophisticated search methods require previous knowledge about which hyp
 * [[Data Augmentation]]
 * [[Deep Optimization Tricks]]
 * [[Deep Model Compression]]
+* Distributed training
+** [[Distributed Training of Deep Neural Networks: Theoretical and Practical Limits of Parallel Scalability|http://arxiv.org/abs/1609.06870]]

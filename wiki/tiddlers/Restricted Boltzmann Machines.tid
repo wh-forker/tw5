@@ -1,5 +1,5 @@
 created: 20150514071547700
-modified: 20161103063641278
+modified: 20161125054906679
 tags: [[Deep Neural Networks Architectures]]
 title: Restricted Boltzmann Machines
 type: text/vnd.tiddlywiki
@@ -41,6 +41,28 @@ CD approximates the (mean field) Free Energy by running only 1 (or more) steps o
 ! Applications
 RBMs are basicly a solved problem. 10 years ago, we use them to pretrain deep supervised nets. They still outperform VAEs on simple datasets. RBM research continues in areas like semi-supervised deep learning with deep hybrid architectures, temperature dependence, infinitely deep RBMs, etc.
 
-! Bibs
+! Partition Functions related with Quantum Chemistry
+
+refs
+
 * [[Improving RBMs with physical chemistry|https://charlesmartin14.wordpress.com/2016/10/21/improving-rbms-with-physical-chemistry/]]
+
+<<<
+Knowing the Parittion function $Z(v, h)$ is not the same as knowing the distribution $p(v)$.
+<<< [[Why Does Deep and Cheap Learning Work so Well?]]
+
+This is a small but important technical oversight. Scaling Energy does not change $Z(v, h)$. A connection between RBMs and Kadanoff VRG approach is explained in [[Charlse's post|https://charlesmartin14.wordpress.com/2015/04/01/why-deep-learning-works-ii-the-renormalization-group/]]. A more detailed connection between deep learning and Statistical Mechanics is shown [[here|An exact mapping between the Variational Renormalization Group and Deep Learning]]. 
+
+<<<
+RG procedure must preserve more information about the distribution than the free energy.
+<<< [[Comment on “Why does deep and cheap learning work so well?”|http://arxiv.org/pdf/1609.03541v1.pdf]]
+
+Also in the training of RBMs, the idea of preserving Free Energy, via either a ''trace condition'' or say, by layer normalization, is the important point. In variational RG, on the renomalization operator $T(v, h)$:
+$$
+\text{Tr}_he^{T(v, h)}=1
+$$
+
+similar to ''Size-Consistency and/or Size-Extensivity'' in Quantum Chemistry.
+
+! Bibs
 * [[Recurrent Temporal RBM]]

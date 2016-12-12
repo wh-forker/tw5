@@ -1,0 +1,12 @@
+created: 20161116081814547
+modified: 20161116081941417
+tags: [[Recurrent Neural Networks]] Optimization
+title: Optimizing RNN
+type: text/vnd.tiddlywiki
+
+The gradients of the RNN are easy to compute with BPTT, RNNs are difficult to train, especially on problems with long-range temporal dependencies due to their nonlinear iterative nature. The derivative of the loss function at one time can be exponentially large w.r.t. the hidden activations at a much earlier time.
+
+! Vanishing gradient problem
+Here is a second order approach: [[Thesis Training RNN]]. Not considered a good solution now.
+
+! [[Optimization Properties of Linearized RNN]]

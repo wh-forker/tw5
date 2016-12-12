@@ -1,5 +1,5 @@
 created: 20161019092508242
-modified: 20161109112519975
+modified: 20161205111347046
 tags: [[Deep Learning Applications]]
 title: Deep Generative Models
 type: text/vnd.tiddlywiki
@@ -8,20 +8,29 @@ type: text/vnd.tiddlywiki
 
 ! Models
 
+* Denoising Autoencoder
+** [[Plug & Play Generative Networks: Conditional Iterative Generation of Images in Latent Space|https://arxiv.org/abs/1612.00005]]
 * [[Variational Autoencoder]]
 * [[Generative Adversarial Network]]
 * [[Input Convex Neural Network]]
 * [[Variational Generative Models]]
 * [[Pixel-CNN]]
 * [[TCL|Time-Contrastive Learning]]
+* Inverse Autoregressive Flow
+** [[paper|https://arxiv.org/abs/1606.04934]], [[tf implementation|https://github.com/openai/iaf]]
+* [[Real NVP|http://arxiv.org/abs/1605.08803]]
+* [[Attentive Generative Models]]
 
 [[GANs vs VAEs]]
 
 ! Bibs
 
-[[yingzhen's reading list|http://www.yingzhenli.net/home/blog/?p=566]]
+* [[yingzhen's reading list|http://www.yingzhenli.net/home/blog/?p=566]]
+* [[Magenta's reviews|https://github.com/tensorflow/magenta/tree/master/magenta/reviews]]
 
 * [[What does it take to generate natural textures?]]
 
 ! Applications
-[[Neural Style]]
+* [[Neural Style]]
+* [[High-Resolution Image Inpainting using Multi-Scale Neural Patch Synthesis|https://arxiv.org/abs/1611.09969]]
+** Autoencoder with perceptual loss

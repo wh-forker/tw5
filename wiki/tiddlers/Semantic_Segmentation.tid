@@ -1,0 +1,13 @@
+created: 20161212031525021
+modified: 20161212033523492
+tags: [[Object Detection With CNNs]]
+title: Semantic Segmentation
+type: text/vnd.tiddlywiki
+
+! Bib
+
+* [[Multi-Scale Context Aggregation by Dilated Convolutions|https://arxiv.org/abs/1511.07122]]
+** 2015 paper still state-of-the-art result
+** [[Dilated Convolution]]s
+* [[The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation|http://arxiv.org/abs/1611.09326v2]]
+** similar architecture as PixelCNN++

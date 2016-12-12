@@ -1,11 +1,18 @@
 created: 20161018054301211
-modified: 20161115074351559
+modified: 20161209072654194
 title: TODOs
 type: text/vnd.tiddlywiki
 
+# Here is a very interesting visual attention idea
+## conventional projections scale features and lose details
+## in frequency domain we can compress information without lossing resolution of certain part of the image.
+## mult is implemented with FFT, so probably frequency domain alright?
+## scattering representation, dilated convolutional, draw inspirations...
+## differentiable attention location
 # Side-project: [[Daily News for Stock Market Prediction]]
 # Wait for mxnet problem to be solved at [[Kaggle|https://www.kaggle.com/drn01z3/the-nature-conservancy-fisheries-monitoring/mxnet-xgboost-simple-solution/comments]]
 # Reading generative model papers, follow the reading list.
+## Since best results came from PixelCNN, and the probability is exact. Should follow this lead and extract feature with it. Currently resolution seems to be a big problem
 # [[Deep generative model tryouts]]
 # Try visual attentions: Juana is doing it.
 # [[Averaging and Wavelets|Understanding Deep ConvNets (Scattering Repr)]]: Continue UBC deep learning topic lecture 3 on wavelets.
