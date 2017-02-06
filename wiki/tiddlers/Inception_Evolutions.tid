@@ -1,8 +1,13 @@
 created: 20160630071046902
-modified: 20160708080912327
+modified: 20170205065636326
 tags: [[Case study of ConvNets]]
 title: Inception Evolutions
 type: text/vnd.tiddlywiki
+
+! Implementations
+
+* Tensorflow models
+* [[Keras|https://github.com/kentsommer/keras-inceptionV4]]
 
 ! Batch Normalizations
 [[BN-Inception|Batch Normalization]]

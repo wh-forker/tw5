@@ -1,0 +1,10 @@
+created: 20170205113544907
+modified: 20170205121415554
+tags: [[Stochastic Gradient Descent]]
+title: On SGD’s Failure in Practice: Characterizing and Overcoming Stalling
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1702.00317]]
+
+SGD stalling has often been attributed to its sensitivity to the conditioning of the problem. But the reason should be more complicated.
+

@@ -1,5 +1,5 @@
 created: 20160518024726106
-modified: 20160612033847591
+modified: 20161214031444692
 tags: [[ConvNet Layers]]
 title: Pooling Layer
 type: text/vnd.tiddlywiki
@@ -23,13 +23,14 @@ $$
 z_n = \text{subsample}(x, g)[n] = g(x_{(n-1)m+1:nm})
 $$
 
-!!! Max pooling
+! Basic
+!! Max pooling
 $$
 g(x) = \max(x), \frac{\partial g}{\partial x_i} = 1_{x_i = \max(x)}
 $$
 In backpropagation, the backward pass for a $\max(x, y)$ operation has a simple interpretation as only routing the gradient to the input that had the highest value in the forward pass.
 
-!!! $L^p$ pooling
+!! $L^p$ pooling
 $$
 g(x) = \|x\|_p = \left(\sum_{k=1}^m|x_k|^p\right)^{1/p}, \frac{\partial g}{\partial x_i} = \left(\sum_{k=1}^m|x_k|^p\right)^{1/p-1}|x_i|^{p-1}
 $$
@@ -37,9 +38,10 @@ Mean pooling is a special case where $p=1$.
 
 But i am confused by [[this post|http://ufldl.stanford.edu/tutorial/supervised/ConvolutionalNeuralNetwork/]].
 
-!!! Recent developments
+! Recent developments
 
 * [[Fractional Max-Pooling|http://arxiv.org/abs/1412.6071]] suggests a method for performing the pooling operation with filters smaller than 2x2. This is done by randomly generating pooling regions with a combination of 1x1, 1x2, 2x1 or 2x2 filters to tile the input activation map. The grids are generated randomly on each forward pass, and at test time the predictions can be averaged across several grids.
 * [[Striving for Simplicity: The All Convolutional Net|http://arxiv.org/abs/1412.6806]] proposes to discard the pooling layer in favor of architecture that only consists of repeated CONV layers. To reduce the size of the representation they suggest using larger stride in CONV layer once in a while.
+* Parts-based pooling: detect ROIs and concat pooled features for each part to form the image representation. Used in fine-grained classification and image retrieval.
 
 Due to the aggressive reduction in the size of the representation (which is helpful only for smaller datasets to control overfitting), the trend in the literature is towards discarding the pooling layer in modern ConvNets.

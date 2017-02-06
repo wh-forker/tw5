@@ -1,0 +1,15 @@
+created: 20170124065811910
+modified: 20170124070135967
+tags: [[CNN for OCR]]
+title: OCR with BiLSTM
+type: text/vnd.tiddlywiki
+
+! Dataset
+* 10k real internet images
+* 15k synthetic images simulating online ads in Chinese
+* 20k synthetic images simulating text in the wild in English
+
+! Architecture
+* Horizontal BiLSTM after feature map
+* Faster RCNN for character feature extraction
+* RFCN for bounding box feature extraction

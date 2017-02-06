@@ -1,5 +1,5 @@
 created: 20161021080332245
-modified: 20161209085256522
+modified: 20170105063410216
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
@@ -22,6 +22,7 @@ type: text/vnd.tiddlywiki
 
 * [[Towards Principled Methods for Training Generative Adversarial Networks]]
 * [[Divergence Classed GANs]]
+* [[Density Ratio GANs]]
 
 !! Applications
 

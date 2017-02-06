@@ -1,0 +1,25 @@
+created: 20170118034236112
+modified: 20170120093902473
+tags: ICLR
+title: ICLR 2017
+type: text/vnd.tiddlywiki
+
+2017 papers
+
+* [[Hunting through the ICLR 2017 submissions|http://smerity.com/articles/2016/iclr_2017_submissions.html]]
+
+! Identity Mapping
+* [[Identity Matters in Deep Learning]]
+
+! Optimization
+* [[On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima]]
+* Inefficiency of Stochastic Gradient Descent with Large Mini-batches (and More Learners)
+
+! Network
+* [[Understanding Deep Learning Requires Re-thinking Generalization|https://arxiv.org/abs/1611.03530]]
+* [[Categorical Reparameterization with Gumbel-Softmax|https://arxiv.org/abs/1611.01144]]
+
+! RNN
+
+! NLP
+* [[Tracking the world state with recurrent entity networks|https://arxiv.org/abs/1612.03969]]

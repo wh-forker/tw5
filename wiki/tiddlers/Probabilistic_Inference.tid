@@ -1,9 +1,9 @@
 created: 20161208114834459
-modified: 20161208115022972
+modified: 20161215074625352
 title: Probabilistic Inference
 type: text/vnd.tiddlywiki
 
 Probabilistic inference is used to handle noisy and imprecise data. Exact inference is difficult, so approximate methods like Gibbs sampling are used.
 
 * [[Variational Inference]]
-* [[Gibbs Sampling]]
+* [[MCMC]]

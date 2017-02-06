@@ -1,0 +1,48 @@
+created: 20161103082456074
+modified: 20161212092957311
+tags: [[Variational Generative Models]] Papers
+title: Improving Variational Inference with Normalizing Flows
+type: text/vnd.tiddlywiki
+
+Normalizing flows are a series of invertible transformations to latent variables with a simple posterior.
+
+! General Normalizing Flows
+Aim at formulating the flow for which the Jacobian-determinant is relatively easy to compute. Example is [[Variational Inference with Normalizing Flows|https://arxiv.org/abs/1505.05770]]
+
+! Volume-Preserving Flows
+Design series of transformations s.t. the Jacobian-determinant equals 1 while still it allows to obtain flexible posterior distributions.
+
+Examples:
+
+* Non-linear Independent Components Estimation
+* Hamiltonian Variational Inference
+
+!! Inverse Autoregressive Flow
+[[link|https://arxiv.org/abs/1606.04934]] [[github|https://github.com/openai/iaf]]
+
+IAF is the lower triangular inverse Cholesky matrix with ones on the diagonal. It improves nomalizing flow to be computationally cheap to:
+
+# compute and differentiate for its probability density $q(z|x)$
+# to sample from, parallizable. (sample $z$?)
+# parallizable of these operations across dimensions of $z$
+
+The autoregressive whitening operation makes $y$ with complicated distribution into $z$ with i.i.d. elements. The transformation $y\rightarrow z$ can be completely vectorized:
+$$
+z = (y-\mu(y))/\sigma(y)
+$$
+where subtraction and division are elementwise. This has a lower triangular jacobian matrix, whose diagonal elements are the elements of $\sigma(y)$, and:
+$$
+\log\det\left|\frac{dz}{dy}\right| = -\sum_{i=1}^D\log\sigma_i(y)
+$$
+
+!! Householder Flow
+[[paper|http://arxiv.org/abs/1611.09630]]
+
+The absolute value of Jacobian-determinant of an orthogonal matrix is 1. Any orthonogal matrix can be represented in the following form:
+
+<<<
+$\bf U=I-YSY^\top$
+<<< [[The Basis-Kernel Representation of Orthogonal Matrices]]
+
+
+

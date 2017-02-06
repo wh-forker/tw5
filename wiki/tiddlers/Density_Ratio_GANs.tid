@@ -1,0 +1,16 @@
+created: 20170105063455647
+modified: 20170116032217448
+tags: [[Generative Adversarial Network]]
+title: Density Ratio GANs
+type: text/vnd.tiddlywiki
+
+[[Learning in Implicit Generative Models|https://arxiv.org/abs/1610.03483]]
+
+We can test the hypothesis that the true data distribution $p^*(x)$ and our model distribution $q(x)$ are equal, using the density ratio function $r(x) = p^*(x)/q(x)$. We can compute this ratio with
+
+# class-probability estimation
+# [[divergence minimization|Divergence Classed GANs]
+# ratio matching
+# moment matching
+
+The original objective can be obtained by add a Bernoulli (logarithmic) loss over the discriminator $\mathcal D(x;\phi) = p(y=+1|x)$.

@@ -1,0 +1,11 @@
+created: 20161215081101314
+modified: 20170120093902478
+tags: [[On Optimization in Deep Learning]] [[ICLR 2017]]
+title: On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1609.04836]], [[code|https://github.com/keskarnitish/large-batch-training]], [[reddit discussion|https://www.reddit.com/r/MachineLearning/comments/53lexr/160904836v1_on_largebatch_training_for_deep/]]
+
+According to [[Hybrid Deterministic-Stochastic Methods for Data Fitting|https://arxiv.org/abs/1104.2373]] and [[Tail bounds for stochastic approximation|https://arxiv.org/abs/1304.5586]], there is also a notion of "sharpness" of minima which is appears as the condition number of the problem.
+
+Very relavent to a 1997 Schmidhuber's paper: [[Flat Minima|http://www.bioinf.jku.at/publications/older/3304.pdf]].

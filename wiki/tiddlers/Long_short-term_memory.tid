@@ -1,5 +1,5 @@
 created: 20161027093636025
-modified: 20161031070149283
+modified: 20170116090450551
 title: Long short-term memory
 type: text/vnd.tiddlywiki
 
@@ -7,9 +7,14 @@ type: text/vnd.tiddlywiki
 
 * [[LSTM Basic]]
 
+! Applications
+* Image recognition
+** [[Feedback Networks|https://arxiv.org/abs/1612.09508]]
+
 ! Bib
 * [[Recurrent Highway Networks|http://arxiv.org/abs/1607.03474]]
 ** Residual connection for RNN
 * [[A-LSTM|http://arxiv.org/abs/1610.06258]]
 ** a decaying recent hidden state weight matrix called fast accociative memory.
 ** can be used in visual attention
+* [[Hybrid LSTM]]

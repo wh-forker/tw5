@@ -1,5 +1,5 @@
 created: 20150514112544567
-modified: 20161117074905316
+modified: 20161219031339065
 tags: Open-source [[Deep Learning Tools]]
 title: Caffe
 type: text/vnd.tiddlywiki
@@ -12,3 +12,25 @@ type: text/vnd.tiddlywiki
 # See [[this example|http://nbviewer.jupyter.org/github/BVLC/caffe/blob/master/examples/pascal-multilabel-with-datalayer.ipynb]] for accuracy test
 
 !! Invalid Device Ordinal
+
+! Variations
+* [[MS Caffe|https://github.com/Microsoft/caffe/tree/master]]: for Faster-RCNN and R-FCN
+* [[mem caffe|https://github.com/yjxiong/caffe/tree/mem#features]]: MPI 
+
+!! Merging the 2
+move layer files into /layers
+
+* net.hpp
+** ForwardPrefilled: deprecated in ms caffe, replaced with Forward
+** input_blob is set before calling Forward
+** run memoryoptimize
+** add learnable parameters
+* syncedmem.hpp
+** add use_cuda flag to CaffeMallocHost
+** cudaMallocHost improves performance and stability in multi GPU training
+* _caffe.cpp
+** python_layer moved to layers
+* common.cpp
+** cluster_seedgen(bool sync)
+* base_data_layer.cpp
+** StartInternalThread replace CreatePrefetchThread

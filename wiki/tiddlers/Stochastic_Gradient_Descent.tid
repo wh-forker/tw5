@@ -1,0 +1,29 @@
+created: 20161226065652883
+modified: 20170205124852896
+tags: [[Optimization Algorithms]]
+title: Stochastic Gradient Descent
+type: text/vnd.tiddlywiki
+
+! Videos
+* [[Optimization for Machine Learning|https://simons.berkeley.edu/talks/elad-hazan-01-23-2017-1]]
+! [[A Variational Analysis of Stochastic Gradient Algorithms|https://arxiv.org/abs/1602.02666]]
+
+[Robbins and Monro 1951] proves SGD reaches the optimum of the function.
+
+Constant SGD can be interpreted as a stochastic process with a stationary distritbution. It can be interpreted as an Ornstein-Uhlenbeck process. Minimizing the KL, we can relate the optimal step size or preconditioning matrix to the Hessian and noise covariance near the optimum. The resulting criteria strongly resemble AdaGrad, RMSProp and classical Fisher scoring.
+
+Using SGD with a constant learning rate allows simultaneous inference of the posterior and optimization of meta-level parameters.
+$$
+d\theta(t) = -g(\theta)dt+\sqrt{\frac\epsilon S}BdW(t)
+$$
+where $C = BB^\top$ is the constant noise covariance of the gradient $g$, $\Delta g(\theta)\sim\mathcal N(0, C(\theta))$. This results in a specific kind of stochastic process, the multivariate ''Ornstein-Uhlenbeck'' process:
+$$
+d\theta(t)=-A\theta(t)dt+B_{\epsilon/S}dW(t)
+$$
+which has an analytic stationary distribution $q(\theta)$ that is Gaussian $q(\theta)\propto\exp\{-\frac 1 2\theta^\top\Sigma^{-1}\theta\}$. The covariance satisfies
+$$
+\Sigma A^\top+A\Sigma=\frac\epsilon SBB^\top
+$$
+The resulting covariance is proportional to the learning rate $\epsilon$ and inversely proportional to the magnitude of $A$ and minibatch size $S$.
+
+[[On SGD’s Failure in Practice: Characterizing and Overcoming Stalling]]

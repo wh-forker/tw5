@@ -1,0 +1,20 @@
+created: 20161220055104439
+modified: 20161222024040001
+tags: [[CNN for OCR]]
+title: Connectionist Text Proposal Network
+type: text/vnd.tiddlywiki
+
+! Experiment
+!! Merging CTPN to ms
+
+* skipping LSTM for legacy issue.
+* add reverse and transpose
+
+!! RFCN-LSTM
+Base net list of stride 2 layers
+
+* conv1
+* pool1
+* res3a
+* res4a
+

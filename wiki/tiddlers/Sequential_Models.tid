@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20161129030908562
+modified: 20161215115957567
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -17,6 +17,11 @@ type: text/vnd.tiddlywiki
 * [[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
 * [[Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision|https://arxiv.org/abs/1611.00020]]
 ** non-differentiable memory optimized with REINFORCE, improved weakly supervised semantic parsing on WebQuestionsSP.
+* [[Differentiable neural computers|https://deepmind.com/blog/differentiable-neural-computers/]]
+** DeepMind's nature paper
+* [[Tracking the World State with Recurrent Entity Networks|https://openreview.net/forum?id=rJTKKKqeg]]
+** [[tensorflow implementation|https://github.com/jimfleming/recurrent-entity-networks]]
+** the results aren't easily comparable to DNC
 
 ! Memory networks
 !! Bibs

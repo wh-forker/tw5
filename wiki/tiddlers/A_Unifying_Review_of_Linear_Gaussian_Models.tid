@@ -1,0 +1,16 @@
+created: 20170122080821894
+modified: 20170123023920405
+tags: [[Linear Gaussian Model]]
+title: A Unifying Review of Linear Gaussian Models
+type: text/vnd.tiddlywiki
+
+[[link|http://mlg.eng.cam.ac.uk/zoubin/papers/lds.pdf]]
+
+* Hinton et al. (1995) note that factor analysis and PCA are closely related
+* Digalakis et al. (1993) relate the forware-backward algorithm for HMMs to Kalman filtering
+
+From this paper:
+
+* factor analysis and  mixtures of Gaussians can be implemented using autoencoder neural networks
+* ICA can be seen as a nonlinear version of factor analysis
+

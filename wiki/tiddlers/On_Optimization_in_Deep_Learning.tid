@@ -1,5 +1,5 @@
 created: 20160825062557484
-modified: 20161206125918072
+modified: 20170123062623981
 tags: Blog
 title: On Optimization in Deep Learning
 type: text/vnd.tiddlywiki
@@ -10,17 +10,23 @@ Thanks to the constantly envolving hardwares and libraries, we do not have to wo
 
 [[This paper|https://arxiv.org/abs/1605.07110]] has been renewed on ArXiv recently, which leads me to [[this discussion|https://news.ycombinator.com/item?id=11765111]]. Following are what I find interesting.
 
-! Why SGD works
+! Why SGD works?
 [Choromaska et al, AISTATS'15] (also [Dauphin et al, ICML'15] use tools from Statistical Physics to explain the behavior of stochastic gradient methods when training deep neural networks. This offers a macroscopic explanation of why SGD "works", and gives a characterization of the network depth. The model is strongly simplified, and convolution is not considered.
 
-! Saddle points
+!! Saddle points
 We start from discussing saddle points, the vast majority of critical points on the error surfaces of neural networks.
 
 <<<
 Here we argue, ... that a deeper and more profound difficulty originates from the proliferation of saddle points, not local minima, especially in high dimensional problems of practical interest. Such saddle points are surrounded by high error plateaus that can dramatically slow down learning, and give the illusory impression of the existence of a local minimum.
 <<< Dauphin et al, [[Identifying and attacking the saddle point problem in high-dimensional non-convex optimization|http://arxiv.org/abs/1406.2572]]
 
-The authors introduce saddle-free Newton method which requires the estimation of Hessian. Our paper can be regarded as a confirmation of above saddle point hypothesis.
+The authors introduce saddle-free Newton method which requires the estimation of Hessian. They connect the loss function of a deep net to a high-dimensional Gaussian random field. They show that critical points with high training error are exponentially likely to be saddle points with many negative directions, and all local minima are likely to have error that is very close to that of the global minimum. (Described in [[Entropy-SGD: Biasing Gradient Descent Into Wide Valleys|https://arxiv.org/abs/1611.01838]].)
+
+The convergence of gradient descent is affected by the proliferation of saddle points surrounded by high error plateaus --- as opposed to multiple local minima.
+
+<<<
+The time spent by diffusion is inversely proportional to the smallest negative eigenvalue of the Hessian at a saddle point
+<<< Kramer's law
 
 <<<
 It is believed that for many problems including learning deep nets, almost all local minimum have very similar function value to the global optimum, and hence finding a local minimum is good enough.
@@ -34,12 +40,12 @@ Non-convex problems can have ''degenerate saddle points'', whose Hessian is p.s.
 
 To conclude this part, AFAIK, we should care more about escaping from saddle point. And gradient based methods can do a better job than second-order methods in practice.
 
-! Spin-glass Hamiltonian
-[[Charlse Martin: Why Does Deep Learning Works?|https://charlesmartin14.wordpress.com/2015/03/25/why-does-deep-learning-work/]]
+!! Spin-glass Hamiltonian
+[[Charles Martin: Why Does Deep Learning Works?|https://charlesmartin14.wordpress.com/2015/03/25/why-does-deep-learning-work/]]
 
 Both papers mentioned above use ideas from statistical physics and spin-glass models.
 
-!! Hamiltonians
+!!! Hamiltonians
 Statistical physicists refer to $H_x(y)\equiv-\ln p(y|x)$ as the ''Hamiltonian'', quantifying the energy of $y$ given the parameter $x$. And $\mu\equiv -\ln p$ as ''self-information''. We can rewrite Bayes' formula as:
 
 $$
@@ -48,7 +54,7 @@ $$
 
 We can see the features yield by a neural net as Hamiltonian and the softmax computes the classification probability.
 
-!! Spin-glass
+!!! Spin-glass
 <<<
 The long-term behavior of certain neural network models are governed by the statistical mechanism of infinite-range Ising spin-glass Hamiltonians
 <<< LeCun et. al.,  [[The Loss Surfaces of Multilayer Networks, 2015|https://arxiv.org/abs/1412.0233]]
@@ -57,7 +63,15 @@ In this paper, he tries to explain the optimization paradigm with spin-glass the
 
 A bolder hypothesis is that deep networks are spin funnels. And as the net gets larger, the funnel gets sharper. If this is true, our major concern should be to avoid over-training rather than the convexity of the network.
 
-! No poor local minima
+! What does the minima look like?
+
+!! No poor local minima
+<<<
+Deep Learning Networks are (@@color:#859900;roughly@@) Spin Funnels
+<<< a tweak from Charles' post
+
+[[Research at Google and Stanford|https://arxiv.org/abs/1412.6544]] confirms that the Deep Learning Energy Landscapes appear to be roughly convex.
+
 Finally we arrive at the paper itself. Nets are optimized well by local gradient methods and seems not to be affected by local minima. The author claims that every local minimum is a global minimum and "bad" saddle points (degenerated ones) exists for deeper nets. Thm 2.3 gives clear result on linear networks.
 
 The main result Thm 3.2 generalizes [[Choromanska et al, 2015|https://arxiv.org/abs/1412.0233]]'s idea for nonlinear network relies on 4 (seemingly strong) assumptions:
@@ -72,3 +86,11 @@ They relax the majority of the asssumptions, which is very promising, but leave 
 Recently DeepMind came up with [[another paper|https://arxiv.org/abs/1611.06310]] claiming the assumptions are too strong for real data. And devised counter examples with finite datatets for rectified MLPs. For finite sized models/datasets, one does not have a globally good behavior of learning regardless of the model size.
 
 Even though deep learning energy landscapes appear to be roughly convex, or as this post referred to, local minimal free, a deep model has to include more engineering details to aid its convergence. Problems such as covariance shift and overfitting still have to be handled by engineering techniques.
+
+!! Arriving on flatter minima
+<<<
+large-batch methods tend to converge to sharp minimizers of the training and testing functions -- and that sharp minima lead to poorer generalization. In contrast, small-batch methods consistently converge to flat minimizers, and our experiments support a commonly held view that this is due to the inherent noise in the gradient estimation.
+<<< [[On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima]]
+
+! Should 2-nd order methods ever work?
+Basiclly no. Because the Hessian vector product require very low variance estimation, which leads to batch size larger than 1000. But [[some rare cases|https://www.reddit.com/r/MachineLearning/comments/599wbr/project_i_accidentally_wrote_a_quasinewton_lbfgs/]] happen when 2nd order methods with small batch size works.

@@ -1,16 +1,25 @@
 created: 20141224063156564
-modified: 20161107063201290
+modified: 20170118030900810
 tags: Statistics
 title: Graphical Model
 type: text/vnd.tiddlywiki
 
 ! Overview
+Graphical model is a probabilistic model expressing probability distributions via graph.
 
 The graph learning problem is formulated as follows:
 
 * we are given a set of nodes, each with some observed numeric attributes $x_i$.
 * For each node we'd like to predict an output or label $y_i$. We observe these labels for some, but not all, of the nodes.
 * We are also given a set of weighted edges, summarised by an adjacency matrix $A$. The main assumption is that when predicting the output $y_i$ for node $i$, the attributes and connectivity of nearby nodes provide useful side information or additional context.
+
+! Applications
+* in machine learning
+** Learning low-level vision
+* statistical physics
+** Exactly solved models in statistical mechanics
+* theoretical computer science
+** Probabilistic reasoning in intelligent systems: networks of plausible inference
 
 ! Resources
 
@@ -29,11 +38,12 @@ if you fo not reasone according to [[Probability theory]], you can be made to ac
 <<<
 
 ! Inference
-[[Variable Elimination Algorithm]]
+[[Computing Partition Functions of Graphical Models]] 
 
-[[Hammersley-Clifford Theorem]]
-
-[[Junction Tree Algorithm]]
+!! Algorithms
+* [[Variable Elimination Algorithm]]
+* [[Hammersley-Clifford Theorem]]
+* [[Junction Tree Algorithm]]
 
 ! Deep Learning
 

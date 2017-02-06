@@ -1,0 +1,17 @@
+created: 20170118025114313
+modified: 20170118031059488
+tags: [[Graphical Model]]
+title: Computing Partition Functions of Graphical Models
+type: text/vnd.tiddlywiki
+
+[[MCMC assisted by Belief Propagaion|https://arxiv.org/abs/1605.09042]]
+
+! [[MCMC]]
+* pros: exact
+* cons: suffer from slow mixing time
+
+! Belief Propagation
+Deterministic message-passing algorithm
+
+* pros: empirically fast, efficient
+* cons: lack of control over approximation quality

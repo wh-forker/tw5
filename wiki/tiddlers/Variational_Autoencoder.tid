@@ -1,5 +1,5 @@
 created: 20161009032729712
-modified: 20161206125918085
+modified: 20161212090705287
 tags: [[Case study of ConvNets]] [[Deep Generative Models]]
 title: Variational Autoencoder
 type: text/vnd.tiddlywiki
@@ -27,6 +27,18 @@ Nice models
 VAEs are a probabilistic graphical model whose ''explicit goal'' is latent modeling, and accounting for or marginalizing out certain variables (as in the semi-supervised work above) as part of the modeling process. They ''can'' make good generations (cf [[inverse autoregressive flow|https://arxiv.org/abs/1606.04934]], [[discriminative regularization|https://arxiv.org/abs/1602.03220]]) though they are ideal in settings where the latent is important (see [[variational fair autoencoder|https://arxiv.org/abs/1511.00830]]). The VAE naturally collapses most dimensions in the latent representations, and you generally get very interpretable dimensions out, the the training dynamics are generally a bit weird.
 
 The ability to set [[complex priors|https://arxiv.org/abs/1605.06197]] in the latent is also nice especially in cases where you know something should make sense or you have a desired latent distribution. You can also do distributed latents (and priors) over time, as in the [[VRNN paper|https://arxiv.org/abs/1506.02216]] or fixed latents over a sequence as in VRAE, STORN, and Generating Sentences from a Continuous Latent Space. These all learn interesting and powerful latent representations for sequences, and can be combined with many existing models for sequence modeling.
+
+! Model
+Let $\bf x$ be a vector of $D$ observable variables, $\mathbf z\in \mathbb R^M$ a vector of stochastic latent units and let $p(\mathbf x, \mathbf z)$ be a parametric model of the joint distribution. Estimating the marginal likelihood $p(\mathbf x)$ could be intractable when the model is parametrized by a neural network. We can instead optimize the variational lower bound:
+$$
+\ln p(\mathbf x)\ge\mathbf E_{q(\mathbf z|\mathbf x)}[\ln p(\mathbf x|\mathbf z)]-\operatorname{KL}(q(\mathbf z|\mathbf x)\|p(\mathbf z)),
+$$
+where $p(\mathbf x|\mathbf z)$ is called a decoder and $p(\mathbf z)=\cal N(\mathbf z|\mathbf 0, \mathbf I)$ is the prior.
+
+In practice, $q(\mathbf z|\mathbf x)$ is reparametrized:
+$$
+q(\mathbf z|\mathbf x) = \cal N(z|\mu(x), \operatorname{diag}(\sigma^2(x)))
+$$
 
 ! Theory
 
@@ -57,7 +69,7 @@ Often, the variational lower bound can just be computed in closed form and optim
 
 The neural network used in the encoder (variational distribution) does not lead to any richer approximating distribution. It is a way to amortize inference such that the number of parameters does not grow with the size of the data (an incredible feat, but not one for expressivity!) ([[Stuhlmüller et al., 2013|https://papers.nips.cc/paper/4966-learning-stochastic-inverses]]). This is better explained from the perspective of variational inference than auto-encoders. For example, suppose we have a model with latent variables that are Gaussian a priori (as in VAEs). We may choose a fully factorized Gaussian as the variational distribution, where each latent variable is rendered independent. The inference network takes data as input and outputs the local variational parameters relevant to each data point. The optimal inference network outputs the set of Gaussian parameters which maximizes the variational objective. This means a variational auto-encoder with a perfect inference network can only do as well as a fully factorized Gaussian with no inference network.
 
-[[Much recent work, including my own, has tried to improve this simple approximation to improve our approximate inference.|Variational Generative Models]]
+[[Much recent work has tried to improve this simple approximation to improve our approximate inference.|Variational Generative Models]]
 
 ! Bib
 

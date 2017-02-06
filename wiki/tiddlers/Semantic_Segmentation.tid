@@ -1,5 +1,5 @@
 created: 20161212031525021
-modified: 20161212033523492
+modified: 20161212071754761
 tags: [[Object Detection With CNNs]]
 title: Semantic Segmentation
 type: text/vnd.tiddlywiki
@@ -11,3 +11,8 @@ type: text/vnd.tiddlywiki
 ** [[Dilated Convolution]]s
 * [[The One Hundred Layers Tiramisu: Fully Convolutional DenseNets for Semantic Segmentation|http://arxiv.org/abs/1611.09326v2]]
 ** similar architecture as PixelCNN++
+* Fully Convolutional Instance-aware Semantic Segmentation
+** 2016 COCO winner
+** R-FCN for segmentation
+** [[github|https://github.com/daijifeng001/TA-FCN]] code will come up
+

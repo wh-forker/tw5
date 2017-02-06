@@ -1,0 +1,14 @@
+created: 20161215074539633
+modified: 20170205083314182
+tags: [[Probabilistic Inference]]
+title: MCMC
+type: text/vnd.tiddlywiki
+
+* [[Gibbs Sampling]]
+* [[Stochastic Gradient MCMC]]
+* [[Hamilton Monte Carlo]]
+
+To identify the regions of parameter space that dominate expectations we need to consider the behavior of both the density and the volume.
+
+Random Walk Metropolis: $a(q'|q) = \min\left(1, \frac{\pi(q')}{\pi(q)}\right)$. The guess-and-check strategy of Random Walk Metropolis is doomed to fail in high-dimensional spaces where there are an exponential number of directions in which to guess but only a singular number of directions that stay within the typical set and pass the check.
+

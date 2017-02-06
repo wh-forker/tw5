@@ -1,5 +1,5 @@
 created: 20160516024031881
-modified: 20160530014353033
+modified: 20161212080917905
 tags: [[Deep Learning Tools]]
 title: TensorFlow
 type: text/vnd.tiddlywiki
@@ -11,3 +11,6 @@ type: text/vnd.tiddlywiki
 [[Projects|TensorFlow Projects]]
 
 [[TensorFlow Workarounds]]
+
+! Tools
+* [[tfprof|https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/tfprof]]: A Profiling Tool for TensorFlow Models

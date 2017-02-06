@@ -1,0 +1,13 @@
+created: 20161215075235041
+modified: 20161226095224429
+tags: MCMC
+title: Stochastic Gradient MCMC
+type: text/vnd.tiddlywiki
+
+[[A Complete Recipe for Stochastic Gradient MCMC|https://arxiv.org/abs/1506.04696]]
+
+* [[Stochastic Gradient Langevin Dynamics]]
+* SG Hamilton
+* SG Fisher scoring
+
+employ stochastic gradients of $\log p(\theta, \mathbf x)$ to improve convergence and computation of existing sampling algorithms.

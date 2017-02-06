@@ -1,19 +1,37 @@
 created: 20161018054301211
-modified: 20161209072654194
+modified: 20170205121937837
 title: TODOs
 type: text/vnd.tiddlywiki
 
+! Stream of Consciousness
 # Here is a very interesting visual attention idea
 ## conventional projections scale features and lose details
 ## in frequency domain we can compress information without lossing resolution of certain part of the image.
 ## mult is implemented with FFT, so probably frequency domain alright?
-## scattering representation, dilated convolutional, draw inspirations...
+## scattering representation, dilated convolution, draw inspirations...
+### dilated convolution preserve resolution, which is contrary to what I am trying to do
 ## differentiable attention location
-# Side-project: [[Daily News for Stock Market Prediction]]
-# Wait for mxnet problem to be solved at [[Kaggle|https://www.kaggle.com/drn01z3/the-nature-conservancy-fisheries-monitoring/mxnet-xgboost-simple-solution/comments]]
-# Reading generative model papers, follow the reading list.
-## Since best results came from PixelCNN, and the probability is exact. Should follow this lead and extract feature with it. Currently resolution seems to be a big problem
+# The ensemble nature of resnet may encourage refined SGD to modulate the impacts of different paths.
+# Experiment on Cross-convolutional-layer pooling, similar idea as conv-attention
+# Currently the biggest challenge of VQA is numbering problems. Probably this is related to detecting a cluster of similar objects (e.g. character detection).
+
+! Experiments
 # [[Deep generative model tryouts]]
 # Try visual attentions: Juana is doing it.
+# Object detection
+## Look for decent RFCN/Faster-RCNN/SSD implemenations, better in same framework. Google should include them in tensorflow/models later.
+## [[CTPN|Connectionist Text Proposal Network]] implementation out, add character segmentation somehow.
+
+! Side projects
+# [[Daily News for Stock Market Prediction]]
+## Data not very valuable
+# Kaggle fish
+## Wait for mxnet problem to be solved at [[Kaggle|https://www.kaggle.com/drn01z3/the-nature-conservancy-fisheries-monitoring/mxnet-xgboost-simple-solution/comments]]
+
+! Reading List
+# Reading generative model papers, follow the reading list.
+## Since best results came from PixelCNN, and the probability is exact. Should follow this lead and extract feature with it. Currently resolution seems to be a big problem
 # [[Averaging and Wavelets|Understanding Deep ConvNets (Scattering Repr)]]: Continue UBC deep learning topic lecture 3 on wavelets.
 # Watch ICML talks, esp. deep reinforcement learning
+# NIPS videos
+# [[Foundations of Machine Learning Boot Camp|https://simons.berkeley.edu/workshops/machinelearning2017-boot-camp]]

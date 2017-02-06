@@ -1,5 +1,5 @@
 created: 20160614032240671
-modified: 20161212031518240
+modified: 20161222024713724
 tags: [[Deep Learning Applications]]
 title: Object Detection With CNNs
 type: text/vnd.tiddlywiki
@@ -30,14 +30,20 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 ## FRCNN accurate, SSD fast.
 ## SSD does not work well on small objects? or the information is inferred else where?
 # [[ARC-FCN|https://arxiv.org/abs/1612.00534]]
+# [[R-FCN|http://arxiv.org/abs/1605.06409]]
+## [[Implementation|https://github.com/Orpine/py-R-FCN]]
 
 !! Iterative
 # [[AttentionNet|http://arxiv.org/abs/1506.07704]]
 # [[G-CNN|http://arxiv.org/abs/1512.07729]]
 
 !! Other
-# [[R-FCN|http://arxiv.org/abs/1605.06409]]
-## [[Implementation|https://github.com/Orpine/py-R-FCN]]
+* [[The More You Know: Using Knowledge Graphs for Image Classification|https://arxiv.org/abs/1612.04844]]
+** Graph Gated NN: use propagation like recurrent nets.
+** Graph Search Neural Network
 
 !! Implementation
 # [[ReInspect|http://arxiv.org/abs/1506.04878]]: [[tf|https://github.com/Russell91/TensorBox]]
+
+! Data
+* [[MS COCO]]

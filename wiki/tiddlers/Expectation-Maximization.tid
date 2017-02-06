@@ -1,0 +1,8 @@
+created: 20170123023939350
+modified: 20170123033452625
+tags: Statistics
+title: Expectation-Maximization
+type: text/vnd.tiddlywiki
+
+The objective of the EM algorithm is to maximize the likelihood of the observed data.
+

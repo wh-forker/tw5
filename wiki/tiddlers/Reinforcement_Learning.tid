@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20161205071047325
+modified: 20170123092115056
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -7,6 +7,29 @@ type: text/vnd.tiddlywiki
 ! Tutorials
 
 [[WildML: Learning Reinforcement Learning|http://www.wildml.com/2016/10/learning-reinforcement-learning/]]
+
+! Basic
+!! RL agents
+* value based, has a value function where policy can be inferred.
+* policy based, work in decision space
+* actor critic: stores policy and value
+* model free/based
+
+!! Q-Learning
+Q-function is the maximum discounted future reward when we perform action $a$ in state $s$, $Q(s_t, a_t) = \max R_{t+1}$
+
+''Bellman equation'': maximum future reword for this state and action is the immediate reward plus maximum future reward for the next state. $Q(s, a) = r + \gamma\max_{a'}Q(s', a')$
+
+In practice, many of the states are very rarely visited. (maybe a good memory management could speed this process up.) By passing the state through a deep neural net, we can get all Q-values for all actions available immediately.
+
+The network can be optimized with simple squared error loss:
+$$
+L = \frac 1 2[r + \max_{a'}Q(s', a')-Q(s, a)]^2
+$$
+
+Approximation of Q-values using non-linear functions is unstable and takes a week on a single GPU. ''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
+
+DeepMind actually used more tricks, target network, error clipping, reward clipping etc.
 
 ! Bibs
 * [[Faster Deep Reinforcement Learning]]

@@ -1,0 +1,25 @@
+created: 20170205070855847
+modified: 20170205113313535
+tags: MCMC
+title: Hamilton Monte Carlo
+type: text/vnd.tiddlywiki
+
+[[A Conceptual Introduction to Hamiltonian Monte Carlo|https://arxiv.org/abs/1701.02434]]
+
+HMC is a procedure for introducing auxiliary momentum with a probabilistic structure such that one can  generate efficient exploration.
+
+As the system evolves, any compression or expansion in position space must be compensated with a respective expansion or compression in momentum space to ensure that the volume of any neighborhood in position-momentum phase space is unchanged.
+
+$$
+\pi(q, p) = \pi(p|q)\pi(q)
+$$
+is called the canoical distribution. We write it in terms of an invariant Hamilton function:
+$$
+\pi(q, p) = e^{-H(q, p)}
+$$
+The Hamilton
+$$
+H(q, p) = -\log\pi(q, p) = -\log\pi(p|q) - \log\pi(q) = K(p, q)+V(q)
+$$
+where $K$ is the kinetic energy and $V$ is the potential energy.
+

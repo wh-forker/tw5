@@ -1,5 +1,5 @@
 created: 20160614075440602
-modified: 20161111103743222
+modified: 20170124065754091
 tags: [[Object Detection With CNNs]]
 title: CNN for OCR
 type: text/vnd.tiddlywiki
@@ -23,12 +23,14 @@ Segments pixels into characters, and then group characters into words. Previous 
 * Random fern classifier on HoG features, grouped into words with a pictorial structures framework
 * CNNs trained for character classfication can be used as sliding window classifiers
 
-! Examples
+! Papers
 
 # [[Reading Text in the Wild with CNN]]: best performance
 # [[Synthetic Data for Text Localisation in Natural Images]]: best precision and efficiency tradeoff
 # LSTM attention based models for various curvatures
 # [[Handwritten Chinese RNN|http://arxiv.org/abs/1606.06539v1]]
+# [[CTPN|https://github.com/tianzhi0549/CTPN]]
+## Best line detection
 
 !! RNN Approach
 
@@ -48,3 +50,5 @@ Segments pixels into characters, and then group characters into words. Previous 
 # 如果约束背景简单、文字排列整齐、失真变化不大，基于传统分割方法可以达到100字整体正确率（即包含百字的图像没有单字漏判）85%以上。开发需要预期5人天的时间。不过可能适用性不强。
 # 对于更加复杂的问题，复杂背景合成文字，基于目前的目标检测方法，预期至少可以达到90%的准确率和80%的召回率。我们需要做的是增加样本样式等比较基础的训练工作。
 # 去掉图片文字朝向的约束，对于段落文字不应产生较大的影响。但现在开发过程遇到了问题，预期的工作量未知。
+
+[[OCR with BiLSTM]]
