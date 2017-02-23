@@ -1,5 +1,5 @@
 created: 20160614032240671
-modified: 20161222024713724
+modified: 20170222071824455
 tags: [[Deep Learning Applications]]
 title: Object Detection With CNNs
 type: text/vnd.tiddlywiki
@@ -47,3 +47,6 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 
 ! Data
 * [[MS COCO]]
+
+! Topics
+* [[Dealing with Context in Detection]]

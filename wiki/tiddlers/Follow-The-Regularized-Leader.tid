@@ -1,0 +1,56 @@
+created: 20170206112904841
+modified: 20170206125429418
+tags: [[Optimization Algorithms]]
+title: Follow-The-Regularized-Leader
+type: text/vnd.tiddlywiki
+
+from [[Optimization for Machine Learning I|https://simons.berkeley.edu/talks/elad-hazan-01-23-2017-1]]
+
+This is a generalized form of Gradient descent, like a best-in-hindsight plus regularization.
+
+We want to minimize the regret
+$$
+\sum_tf_t(x_t) - \underset{x^*\in K}{\min}\sum_tf_t(x^*)
+$$
+over time. The most natural way of picking $x$ is choosing the best to our knowledge:
+$$
+x_t = \arg\underset{x\in K}{\min}\sum_{i=1}^{t-1}f_i(x)
+$$
+But this result is not stable. We consider linear case, where we replace $f_t$ by $\nabla f_t(x_t)^\top x$, we add regularization:
+$$
+x_t = \arg\underset{x\in K}{\min}\sum_{i=1}^{t-1}\nabla_t^\top x+\frac 1 \eta R(x)
+$$
+if $R(x)$ is strongly convex, we ensure stability:
+$$
+\nabla_t^\top(x_t - x_{t+1}) = O(\eta)
+$$
+
+! Choosign $R$
+!! Euclidean case
+$$
+\begin{align}
+x_t &= \arg\underset{x\in K}{\min}\sum_{i=1}^{t-1}\nabla_t^\top x+\frac 1 \eta \frac 1 2 \|x\|^2\\
+&= \prod_K(-\eta\sum_{i=1}^{t-1}\nabla_t)
+\end{align}
+$$
+This is exactly gradient descent.
+
+!! Multiplicative Weights
+$$
+\begin{align}
+x_t &= \arg\underset{x\in K}{\min}\sum_{i=1}^{t-1}c_i^\top x+\frac 1 \eta \sum_ix_i\log x_i\\
+&= \exp(-\eta\sum_{i=1}^{t-1}c_i)/Z_t
+\end{align}
+$$
+
+!! Online Mirror Descent
+
+! Adaptive Regularization: AdaGrad
+OGD update: $x_{t+1} = x_t - \eta l(a_t, b_t, x)a_t$. The feature $a_t$ is always sparse the learning is slow.
+
+AdaGrad treats the regularization factor as a learning problem:
+$$
+R(x) = |x|^2_A \qquad s.t.\qquad A\succcurlyeq0, Trace(A)=d
+$$
+
+The regret bound can be $\sqrt{d}$ better than SGD.

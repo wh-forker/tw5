@@ -1,5 +1,5 @@
 created: 20160810033635437
-modified: 20161107080415599
+modified: 20170215023439050
 tags: [[Object Detection With CNNs]]
 title: Face Detection
 type: text/vnd.tiddlywiki
@@ -19,6 +19,7 @@ Florian Schroff, Dmitry Kalenichenko, James Philbin, FaceNet: A Unified Embeddin
 
 ! Bibs
 * [[An All-In-One Convolutional Neural Network for Face Analysis|https://arxiv.org/abs/1611.00851]]
+* Best up to now: [[Finding Tiny Faces]]
 
 ! Models
 * [[VGG-Face|http://www.robots.ox.ac.uk/~vgg/software/vgg_face/]]

@@ -1,0 +1,20 @@
+created: 20170222071837062
+modified: 20170222072314075
+tags: [[Object Detection With CNNs]]
+title: Dealing with Context in Detection
+type: text/vnd.tiddlywiki
+
+! Previous work
+
+* [[Stacked Hourglass Networks for Human Pose Estimation|https://arxiv.org/abs/1603.06937]]
+* Hypercolumns for Object Segmentation and Fine-grained Localization
+** Above 2 use deconv as upsampling
+* [[Zoom Out-and-In Network with Recursive Training for Object Proposal|https://arxiv.org/abs/1702.05711]]
+* [[Find Tiny Faces]]
+** 2 examples of using above technique in detection
+
+! Hyper ROI
+
+Instead of upsampling the features, we use ROI Pooling layers of multiple scales.
+
+Should try crop and resize instead of roi, see tf-faster-rcnn code.

@@ -1,0 +1,64 @@
+created: 20170222132201297
+modified: 20170222132205175
+tags: [[Time Series]]
+title: ARMA
+type: text/vnd.tiddlywiki
+
+! Definition
+
+* Stationarity: distribution invariant to time
+* Weak Stationairy:
+** 1st moments: $\mathbb E[Z_t]$ is independent of $t$
+** 2nd momments: $\mathbb E[Z_tZ_{t-j}] = f(j)$
+* Lag operator $\mathfrak LY_t = Y_{t-1}$
+
+! Model
+
+* Autoregression: a linear combination of $p$ history
+* Moving average
+* ARMA: $Y_t = \sum_{i=1}^pa_iY_{t-i}+\epsilon_t+\sum_{j=1}^qb_j\epsilon_{t-j}$
+
+where $\epsilon$ is the noise term. We can rewrite ARMA in terms of the lag operator:
+$$
+(1-\sum_{i=1}^pa_i\mathfrak L^i)Y_t = (1+\sum_{j=1}^q)b_j\mathfrak L^j)\epsilon_t
+$$
+
+L.H.S. is the characteristic polynomial $P(\mathfrak L)$.
+
+<<<
+''Theorem'' [Weak Stationarity of ARMA]<br>
+An ARMA(p, q) process is weakly stationary if the roots of the characteristic polynomial $P(z)$ are outside the unit circle.
+<<<
+
+ARIMA(p, D, q) model is an ARMA(p, q) model for $(1-\mathfrak L)^DY_t$:
+$$
+(1-\sum_{i=1}^pa_i\mathfrak L^i)(1-\mathfrak L)^DY_t = (1+\sum_{j=1}^q)b_j\mathfrak L^j)\epsilon_t
+$$
+
+Other extensions
+
+* seasonal components (SARIMA)
+* side information (ARIMAX)
+* long-memory (ARFIMA)
+* multi-variate time series models (VAR)
+* time-varying coefficients
+* other non-linear models
+
+! Estimation
+
+* Maximum likelihood
+** Requires further parametric assumptions on the noise distribution
+* Method of moments
+** Yule-Walker estimator
+* Conditional/unconditional least square estimation
+** Restricted to certain models.
+
+!! Bounds
+<<<
+''Definition'' [Invertibility of ARMA]<br>
+An ARMA(p, q) process is invertible if the roots of the polynomial
+$$
+Q(z) = 1+\sum_{j=1}^q b_jz^j
+$$
+are outside the unit circle.
+<<<

@@ -1,0 +1,68 @@
+created: 20170206112503701
+modified: 20170206112634937
+tags: [[Optimization Algorithms]]
+title: Gradient Descent
+type: text/vnd.tiddlywiki
+
+Let's say that we have a cost or error function $E(w)$ that we want to minimize. Gradient descent tells us to modify the weights $w$ in the direction of steepest descent in $E$:
+$$
+w_t = w_{t-1}-\eta\frac{\partial E(w)}{\partial w}
+$$
+where $\eta$ is the ''learning rate'', and if it's large you will have a correspondingly large modification of the weights $W$ (in general it shouldn't be too large, otherwise you'll overshoot the local minimum in your cost function).
+
+For a quadratic $E$, 
+$$
+\frac{dE(w)}{dw} = \frac{dE(w_c)}{dw} + (w-w_c)\frac{d^2E(w)}{dw^2}
+$$
+by setting the derivative to $0$ at $w_{min}$
+$$
+w_{min} = w_c-\left(\frac{d^2E(w)}{dw^2}\right)^{-1}\frac{dE(w_c)}{dw}
+$$
+So we can reach optima by setting
+$$
+\eta = \left(\frac{d^2E(w)}{dw^2}\right)^{-1}
+$$
+
+!! Weight decay
+In order to effectively limit the number of free parameters in your model so as to avoid over-fitting, it is possible to regularize the cost function. An easy way to do that is by introducing a zero mean Gaussian prior over the weights, which is equivalent to changing the cost function to $\tilde E(w)=E(w)+\frac\lambda2w^2$. In practice this penalizes large weights and effectively limits the freedom in your model. The regularization parameter $\lambda$ determines how you trade off the original cost $E$ with the large weights penalization.
+
+Applying gradient descent to this new cost function we obtain:
+$$
+w_t=w_{t-1}−\eta\frac{\partial E}{\partial w_{t-1}}-\eta\lambda w_{t-1},
+$$
+The new term $-\eta\lambda w_i$ coming from the regularization causes the weight to decay in proportion to its size. It causes the weights to exponentially decay to zero, if no other update is scheduled.
+
+!! Stochastic gradient descent
+[[Theory|Stochastic Gradient Descent]]
+
+Stochastic Gradient Descent (SGD) simply does away with the expectation in the update and computes the gradient of the parameters using only a single or a few training examples. The new update is given by,
+$$
+w_t = w_{t-1}-\eta\frac{\partial E(w;x_i, y_i)}{\partial w}
+$$
+with a pair $(x_i, y_i)$ from the training set.
+
+!! Stochastic gradient with classical momentum (CM)
+If the objective has the form of a long shallow ravine leading to the optimum and steep walls on the sides, standard SGD will tend to oscillate across the narrow ravine since the negative gradient will point down one of the steep sides rather than along the ravine towards the optimum. The objectives of deep architectures have this form near local optima and thus standard SGD can lead to very slow convergence particularly after the initial steep gains.
+
+To minimize a cost function $f(\theta)$ classical momentum updates amount to, 
+$$
+\begin{align}
+v_t& = \mu v_{t-1}-\eta\nabla E(w_{t-1})\\
+w_t&=w_{t-1}+v_t
+\end{align}
+$$
+where $v_t$ denotes the accumulated gradient update, or velocity, $\eta>0$ is the learning rate, and the momentum constant $\mu\in[0, 1]$ governs how we accumulate the velocity.
+
+[[Polyak 1964|http://www.mathnet.ru/php/getFT.phtml?jrnid=zvmmf&paperid=7713&what=fullt&option_lang=eng]] showed that CM can considerably accelerate convergence to a local minimum, requiring $\sqrt{R}$-times fewer iterations than steepest descent to reach the same level of accuracy, where $R$ is the condition number of th e curvature at the minimum and $\mu$ is set to $(\sqrt{R}-1)(\sqrt{R}+1)$.
+
+! Nesterov's Accelerated Gradient
+$$
+\begin{align}
+v_t& = \mu v_{t-1}-\eta\nabla E(w_{t-1}+\mu v_{t-1})\\
+w_t&=w_{t-1}+v_t
+\end{align}
+$$
+
+To find more about the optimizers, [[caffe document|http://caffe.berkeleyvision.org/tutorial/solver.html]] is a good place to start.
+
+We can find similarity between SGD and Spike-timing Dependent Plasticity in [[this talks|Deep learning in biology]]

@@ -1,0 +1,16 @@
+created: 20170215023451726
+modified: 20170215124644473
+tags: [[Face Detection]]
+title: Finding Tiny Faces
+type: text/vnd.tiddlywiki
+
+* [[link|https://arxiv.org/abs/1612.04402]]
+* [[demo|https://github.com/peiyunh/tiny]]
+
+Improvements
+
+* multi-task modeling of scales: trained detectors from multiple layer features (hypercolumn features). Help with large objects not small ones. Foveal descriptors.
+* process image pyramid to capture large scale variations
+* encode context: high-resolution components are crucial
+* change resolution: to find large objects, use 2x smaller canonical resolution, to find small objects, use 2x larger canonical resolution.
+

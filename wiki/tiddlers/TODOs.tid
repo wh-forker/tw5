@@ -1,5 +1,5 @@
 created: 20161018054301211
-modified: 20170205121937837
+modified: 20170222070035160
 title: TODOs
 type: text/vnd.tiddlywiki
 
@@ -29,8 +29,7 @@ type: text/vnd.tiddlywiki
 ## Wait for mxnet problem to be solved at [[Kaggle|https://www.kaggle.com/drn01z3/the-nature-conservancy-fisheries-monitoring/mxnet-xgboost-simple-solution/comments]]
 
 ! Reading List
-# Reading generative model papers, follow the reading list.
-## Since best results came from PixelCNN, and the probability is exact. Should follow this lead and extract feature with it. Currently resolution seems to be a big problem
+# Videos in [[Most Cited Deep Learning Papers|https://github.com/terryum/awesome-deep-learning-papers#recurrent-neural-network-models]]
 # [[Averaging and Wavelets|Understanding Deep ConvNets (Scattering Repr)]]: Continue UBC deep learning topic lecture 3 on wavelets.
 # Watch ICML talks, esp. deep reinforcement learning
 # NIPS videos

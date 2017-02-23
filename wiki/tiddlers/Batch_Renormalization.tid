@@ -1,0 +1,23 @@
+created: 20170217054733698
+modified: 20170217072747160
+tags: [[Batch Normalization]]
+title: Batch Renormalization
+type: text/vnd.tiddlywiki
+
+BN drawbacks:
+
+* not accurate for small minibatches
+* non-i.i.d. minibatches can overfit (batch norm is not accurate?)
+
+''remark'': suppose these can be reduced by `global_stats`
+
+Using moving average may cause the model to blow up, because the bias or scale may increase without restrictions.
+
+Batch Renormalization ensures the activations computed in the forward pass of the training step depend only on a single example and are identical to the activations computed in inference.
+
+BR normalize like this:
+$$
+\frac{x_i-\mu}{\sigma} = \frac{x_i-\mu_B}{\sigma_B}\cdot r+d, \qquad r = \frac{\sigma_B}{\sigma}, d = \frac{\mu_B-\mu}{\sigma}
+$$
+
+Gradient does not propagate through $r$ and $d$, @@color:#859900;this correct for the fact that the minibatch statistics differ from the population ones.@@

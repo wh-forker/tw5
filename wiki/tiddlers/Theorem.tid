@@ -1,0 +1,11 @@
+caption: Name as shown in menu
+created: 20170222114512516
+modified: 20170222114604730
+tags: $:/tags/TextEditor/Snippet
+title: Theorem
+type: text/vnd.tiddlywiki
+
+<<<
+''Theorem'' [name]<br>
+Descriptions
+<<<

@@ -1,10 +1,11 @@
 created: 20161107090227358
-modified: 20161108102339960
+modified: 20170214094645188
 tags: [[Generative Adversarial Network]]
 title: InfoGAN
 type: text/vnd.tiddlywiki
 
-[[link|https://arxiv.org/abs/1606.03657]]
+* [[link|https://arxiv.org/abs/1606.03657]]
+* [[blog|http://www.inference.vc/infogan-variational-bound-on-mutual-information-twice/]]
 
 In order to maximise the mutual information between generated samples and a small subset of latent variables $c$, the authors make use of a variational lower bound. This, conveniently, results in a recognition model, similar to the one we see in variational autoencoders. The recognition model infers latent representation $c$ from data.
 
@@ -16,3 +17,5 @@ To arrive at the algorithm the authors used, one uses the bound on both mutual i
 
 * When you apply the bound on the first term, you get a lower bound, and you introduce an auxillary distribution that ends up being called the discriminator. This application of the bound is wrong because it bounds the loss function from the wrong side.
 * When you apply the bound on the second term, you end up upper bounding the loss function, because of the negative sign. This is a good thing. The combination of a lower bound and an upper bound means that you don't even know which direction you're bounding or approximating the loss function from anymore, it's neither an upper or a lower bound.
+
+! To use this on WGAN

@@ -1,11 +1,12 @@
 created: 20161102063110959
-modified: 20161212085136979
+modified: 20170222065417262
 tags: Bayesian [[Deep Generative Models]]
 title: Variational Generative Models
 type: text/vnd.tiddlywiki
 
 ! Bib
 
+* [[Variational Autoencoder]]
 * Stochastic Backpropagation and Approximate Inference in Deep Generative Models
 * Markov Chain Monte Carlo and Variational Inference: Bridging the Gap
 * Copula variational inference

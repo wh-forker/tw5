@@ -1,10 +1,13 @@
 created: 20160615090746926
-modified: 20161103093016152
+modified: 20170217061445799
 tags: [[Normalization Layer]]
 title: Batch Normalization
 type: text/vnd.tiddlywiki
 
 [[link|http://arxiv.org/abs/1502.03167]]
+
+! Bib
+* [[Batch Renormalization]]
 
 ! Problem
 ; Internal covariate shift
@@ -34,3 +37,6 @@ Batch Normalization solves such problem with some additional assumptions. Follow
 # Learning of scale and shift for every dimension: Scaled and shifted values are passed to the next layer, whether mean and variances are calculated after getting all mini-batch activation of current layer. So, forward pass of all the samples within the mini-batch should pass layer wise. Backpropagation is required for getting gradient of weights as well as scaling (variance) and shift (mean).
 # Inference: During inference moving averaged mean and variance parameters during mini batch training are considered.
 # Convolution Neural Network: Whitening of intermediate layers, before or after the nonlinearity creates a lot of new innovation pathways
+
+! Remarks
+Besides the reduction of internal covariate shift, in a Gaussian, linear case, the gradients flow through the network, do not explode or vanish.

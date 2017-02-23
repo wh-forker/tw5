@@ -1,0 +1,8 @@
+created: 20170208074243139
+modified: 20170208074316760
+tags: [[Generative Adversarial Network]]
+title: WGAN
+type: text/vnd.tiddlywiki
+
+* [[Wasserstein GAN|https://arxiv.org/abs/1701.07875]]
+* [[Towards Principled Methods for Training Generative Adversarial Networks|https://arxiv.org/abs/1701.04862]]

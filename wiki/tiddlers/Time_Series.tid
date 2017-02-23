@@ -1,0 +1,12 @@
+created: 20170222132212036
+modified: 20170222132258438
+title: Time Series
+type: text/vnd.tiddlywiki
+
+! Models
+
+[[ARMA]]
+
+! Talks
+
+NIPS 2016 Tutorial: [[Theory and Algorithms for Forecasting Non-Stationary Time Series]]
