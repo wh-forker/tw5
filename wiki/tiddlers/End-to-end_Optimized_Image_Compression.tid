@@ -1,0 +1,11 @@
+created: 20170303073416427
+modified: 20170305152954279
+tags: [[ICLR 2017]] [[ICLR Paper Reviews]] Compression
+title: End-to-end Optimized Image Compression
+type: text/vnd.tiddlywiki
+
+Generalized divisive normalization
+
+Similar to VAE, but approximate the discrete problem along the rate-distortion curve.
+
+The distortion measure is MSE. 

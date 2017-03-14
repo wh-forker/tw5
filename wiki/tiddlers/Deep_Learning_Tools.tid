@@ -1,5 +1,5 @@
 created: 20160516024046072
-modified: 20161103061124277
+modified: 20170307023814514
 tags: [[Deep Learning Engineering]]
 title: Deep Learning Tools
 type: text/vnd.tiddlywiki
@@ -19,5 +19,7 @@ Configuration file
 * [[Caffe]]
 * [[DistBelief]]
 * [[CNTK]]
+
+[[Benchmarking State-of-the-Art Tools|https://github.com/hclhkbu/dlbench]]
 
 The problem with this setting is that when we have a very large model, e.g. MS'es 150-layer one, the unit has to be copied many many times.

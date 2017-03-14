@@ -1,0 +1,9 @@
+created: 20170306024334150
+modified: 20170306025941374
+tags: [[Image Retrieval]]
+title: Faiss
+type: text/vnd.tiddlywiki
+
+[[Billion-scale similarity search with GPUs|https://arxiv.org/abs/1702.08734]]
+
+* near-optimal exact and approximate GPU k-selection

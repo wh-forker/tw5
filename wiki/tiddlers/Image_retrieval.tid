@@ -1,12 +1,12 @@
 created: 20151125023155589
-modified: 20161103070055004
-tags: [[Deep Learning Applications]]
+modified: 20170306025239696
 title: Image Retrieval
 type: text/vnd.tiddlywiki
 
 ! Traditional Methods
 !! Descriptors
 * [[LATCH: Learned Arrangements of Three Patch Codes|https://github.com/csp256/cudaLATCH]]
+* Product quantization: IVFADC
 
 ! Autoencoders
 
@@ -27,3 +27,6 @@ Binary codes correspond to addresses in memory.
 # constructing the database is also fast.
 
 The deficit is in codelength scaling, which makes the Hamming ball exponentially larger. In addition, a 32-bit code requires 4Gb memory.
+
+! GPU base fast algorithms
+* [[Faiss]]

@@ -1,0 +1,11 @@
+created: 20170307024447555
+modified: 20170307025717014
+tags: Tools
+title: bug.n
+type: text/vnd.tiddlywiki
+
+[[Default Hotkeys|https://github.com/fuhsjr00/bug.n/blob/master/doc/Default_hotkeys.md]]
+
+|Decrease the gap between windows|`Win`+`Shift`+`Left`|
+|Set the previous-ly set layout|`Win`+`Tab`|
+|Set floating/monocle/tile layout|`WIn`+`f`/`m`/`t`|

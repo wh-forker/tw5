@@ -1,5 +1,5 @@
 created: 20170118034236112
-modified: 20170120093902473
+modified: 20170303061721582
 tags: ICLR
 title: ICLR 2017
 type: text/vnd.tiddlywiki
@@ -7,6 +7,11 @@ type: text/vnd.tiddlywiki
 2017 papers
 
 * [[Hunting through the ICLR 2017 submissions|http://smerity.com/articles/2016/iclr_2017_submissions.html]]
+
+!! Oral Papers
+
+* 8: [[Optimization as a Model for Few-Shot Learning]]
+* 7: [[End-to-end Optimized Image Compression]]
 
 ! Identity Mapping
 * [[Identity Matters in Deep Learning]]

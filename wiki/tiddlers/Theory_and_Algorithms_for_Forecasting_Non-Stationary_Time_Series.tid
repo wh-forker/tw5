@@ -1,5 +1,5 @@
 created: 20170222105104639
-modified: 20170222132151064
+modified: 20170224064103162
 tags: NIPS [[Time Series]]
 title: Theory and Algorithms for Forecasting Non-Stationary Time Series
 type: text/vnd.tiddlywiki
@@ -9,3 +9,10 @@ To predict stock values and other economic variables
 Google Trends: interest over time.
 
 [[ARMA]]
+
+* Many other generative models exist
+* Learning guarantees are asymptotic
+* Model needs to be correctly specified
+* Non-stationarity needs to be modeled explicitly.
+
+[[Generalization Bounds for Non-stationary Mixing Processes]]

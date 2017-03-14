@@ -1,1 +1,1 @@
-tiddlywiki wiki --server 8080 $:/core/save/all text/plain text/html "" "" 10.240.132.79
+tiddlywiki F:\Drive\tw5\wiki --server 8080 $:/core/save/all text/plain text/html "" "" 10.240.132.79

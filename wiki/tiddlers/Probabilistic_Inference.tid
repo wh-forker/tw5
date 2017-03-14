@@ -1,5 +1,5 @@
 created: 20161208114834459
-modified: 20161215074625352
+modified: 20170306084005640
 title: Probabilistic Inference
 type: text/vnd.tiddlywiki
 
@@ -7,3 +7,26 @@ Probabilistic inference is used to handle noisy and imprecise data. Exact infere
 
 * [[Variational Inference]]
 * [[MCMC]]
+
+! Generic class of models
+!! Conjugate
+* Bayesian mixture models
+* Times series models (HMM, linear dynamic systems）
+* Factorial models
+* Matrix factorization (factor analysis, PCA, CCA)
+* Dirichlet process mixures, HDPs
+* Multilevel regression (linear, probit, Poisson)
+* Stochastic block models
+* Mixed-membership models (LDA and some variants)
+
+!! Nonconjugate
+* Nonlinear Time series models
+* Deep latent Gaussian models
+* Models with attention (DRAW)
+* Generalized linear models (Poisson regression)
+* Stochastic volatility models
+* Discrete choice models
+* Bayesian neural networks
+* Deep exponential families (sparse Gamma or Poison)
+* Correlated topic models (nonparametric variants)
+* Sigmoid belief network

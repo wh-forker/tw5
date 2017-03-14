@@ -1,10 +1,21 @@
 created: 20160513091917253
-modified: 20161103065359977
+modified: 20170224074007888
 title: Learning Theory
 type: text/vnd.tiddlywiki
 
-! [[Representation Learning]]
+The reason we need learning theory is that otherwise we have to do parameter searching and design algorithms without principles.
 
-! [[Reproducing Kernel Hilbert Space]]
+! Topics
 
-! [[Kernel Mean Embedding]]
+* [[Representation Learning]]
+* [[Reproducing Kernel Hilbert Space]]
+* PAC-learning
+* bounds
+** VC-dimension bound
+** covering number bound
+** Rademacher complexity bound
+** PAC-Bayesian bound
+
+! Examples
+* [[Kernel Mean Embedding]]
+* [[Generalization Bounds for Non-stationary Mixing Processes]]

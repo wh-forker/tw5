@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20170123092115056
+modified: 20170307024133891
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -34,3 +34,10 @@ DeepMind actually used more tricks, target network, error clipping, reward clipp
 ! Bibs
 * [[Faster Deep Reinforcement Learning]]
 * [[Playing Doom with SLAM-Augmented Deep Reinforcement Learning|https://arxiv.org/abs/1612.00380]]
+
+! Implementations
+Environments
+
+* [[CommAI-env|https://github.com/facebookresearch/CommAI-env]]
+* [[Universe|https://openai.com/blog/universe/]] with [[Gym|https://gym.openai.com/]]
+* [[DeepMind Lab|https://github.com/deepmind/lab]]

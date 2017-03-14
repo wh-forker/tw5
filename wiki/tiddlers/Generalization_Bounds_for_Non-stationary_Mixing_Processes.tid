@@ -1,0 +1,33 @@
+created: 20170224064122101
+modified: 20170303014904329
+tags: [[Time Series]] [[Learning Theory]]
+title: Generalization Bounds for Non-stationary Mixing Processes
+type: text/vnd.tiddlywiki
+
+2nd part of [[Theory and Algorithms for Forecasting Non-Stationary Time Series]]
+
+! Previous work
+
+With assumption of stationarity and $\beta$-mixing:
+
+* PAC-learning preserved in that setting (Vidyasagar, 1997), argues $\beta$-mixing is nice.
+* VC-dimension bounds for binary classification (Yu, 1994)
+* covering number bounds for regression (Meir, 2000)
+* Rademacher complexity bounds for general loss functions (MM and Rostamizadeh, 2000)
+* PAC-Bayesian bounds (Alquier et al., 2014)
+
+And there are algorithm dependent studies. Mixing assumptions are hard to verify. Even if we know the exact form of mixing, estimating the parameters is still a very difficult problem. The hypothesis and loss function sets are not representative enough.
+
+! The bound
+
+We would like more realistic assumptions.
+
+We use weighted discrepancy guided by real numbers $\mathbf q$, this sequence emphasis particular set of samples. The choice of hypothesis set and $q$ are crucial.
+
+We have to use a sequential version of coverting number: 
+
+[[Weighted sequential $\alpha$ cover]]
+
+! Algorithms
+
+* Linear hypothesis

@@ -1,0 +1,168 @@
+created: 20170306062407543
+modified: 20170306154928170
+tags: Blog [[Variational Generative Models]]
+title: Variational Inference for Generative Models
+type: text/vnd.tiddlywiki
+
+Hopefully this would be the goto blog for variational inference if you are interested in Variational Autoencoder, GAN etc.
+
+! References
+
+* [[Variational Inference: Foundations and Modern Methods|https://channel9.msdn.com/Events/Neural-Information-Processing-Systems-Conference/Neural-Information-Processing-Systems-Conference-NIPS-2016/Variational-Inference-Foundations-and-Modern-Methods]]
+* Several posts from [[inFERENCe|http://www.inference.vc/]]
+
+! Variational Inference
+!! Introduction
+We care about the posterior of hidden variable $z$ given observation $x$:
+$$
+p(z|x) = \frac{p(z, x)}{p(x)}
+$$
+This is always intractable because the denominator $p(x)$ is super hard to compute. Let use the notations from [[The Variational Rényi Lower Bound|http://www.inference.vc/variational-renyi-lower-bound/]] for the ease of reading, the evaluation of
+
+* $p(z)$ is very easy 🐣,
+* $p(x|z)$ is easy 🐹,
+* $p(x,z)$ is easy 🐨,
+* $p(x)$ is super-hard 🦂,
+* $p(z|x)$ is mega-hard 🐉
+
+The 2 major approximation methods are
+
+* MCMC, which forms a Markov chain whose posterior is 🐉,
+* Variational inference, which people use to call it what you do when you are waiting for your MCMC sampler to converge.
+
+So it's fast, and it's not very accurate. Anyway, how does it work? VI posit a ''variational family'' of distributions over the latent variables, $q(z;\nu)$,  🦄, and minimize the KL-divergence between 🦄 and 🐉. KL itself is intractable, we turn to the ''evidence lower bound'':
+$$
+g(z, \nu) = \log(🦂)−\operatorname{KL}[🦄\|🐉]=\mathbb E_🦄\log 🐨 - \mathbb E_🦄\log 🦄
+$$
+
+The first term prefers 🦄 to place its mass on the MAP, and the second is the entropy of 🦄 and acts like a regulizer.
+
+If we modify the divergence part, we arrive at other methods:
+
+* Further factorizing 🦄 into $🦄_1(\theta)🦄_2(\mbox(tags))$, the alternating optimization scheme is similar to message passing
+* This should remind you of belief propagation but this topic is beyond this post
+* Rényi Divergence, then we get [[this paper|https://arxiv.org/abs/1602.02311]]
+
+For the drawbacks of VI and ''Rényi Lower Bound'', refer to [[Rényi Divergence Variational Inference|https://arxiv.org/abs/1602.02311]] and [[this blog|http://www.inference.vc/variational-renyi-lower-bound/]].
+
+VI was first introduced to AI world to solve neural networks and picked up by Jordan's lab and generalized to many probabilistic models. Modern VI research touches areas like Bayesian statistics, convex optimization, reinforcement learning and (probably you're interested) neural network.
+
+! Stochastic Gradients of ELBO
+When we have large dataset computing the gradient is expensive. We can update the parameters based on small batches of data.
+
+To optimize ELBO, we have to first take the estimation and then take the gradient. The expectation is not always tractable, for specific models, we use conjugate priors to solve it. Unfortunately, most powerful models don't fall into this category. 
+
+In normal VI we are often limited to exponential family distributions. Here we introduce ways to enable VI for more generalized class of models.
+
+!! REINFORCE gradients
+The problem here is we try to compute the integration before gradient, when we switch these two (true for most cases), we get stochastic optimization scheme. 
+
+$$
+\nabla_\nu\mathcal L = \nabla_\nu\int 🦄g(z, \nu)dz = \mathbb E_🦄[\nabla_\nu\log🦄(\log🐨-\log🦄)]
+$$
+
+This gradient is model independent. The problem with this gradient is that likelihood functions take large values on tail of the distribution, and the variance is too large. 
+
+!! Controling variance
+We can subtract it with functions with expectation 0 to get likelihood functions with same expectation bu t smaller variance. This kind of function is called ''control variates''. For any 🦄, we can use the score function $\nabla_\nu\log 🦄$ as the controller.
+
+Techniques from [[MCMC]] could help as well.
+
+!! Pathwise estimator
+Instead of sampling from 🦄, we sample $\epsilon$ from some standard distribution $s$ and then transform it to $z$ with some fixed function $t$. We also assume 🐨 and 🦄 are differentiable w.r.t. $z$. 
+
+$$
+\nabla_\nu\mathcal L = \mathbb E_s[\nabla_\nu g(t(\epsilon, \nu), \nu)] = \mathbb E_s[\nabla_z[\log🐨-\log🦄]\nabla_\nu t(\epsilon, \nu)]
+$$
+
+This trick yield much better behaved variance. This is also known as the reparameterization gradient.
+
+!! Amortized inference
+We add a global variable $\beta$ to the model. The algorithm becomes slow because we have to run optimization in the stochastic inner loop for each data point.
+
+We can learn a mapping $f_\theta$ from $x_i$ to $\phi_i$:
+$$
+\phi_i = f_\theta(x_i)
+$$
+
+This function is can be learned using neural network. VAE seems quite straight forward with pathwise estimator and amortized inference:
+
+<<<
+''Model'' [Variational Autoencoder]<br>
+We reparametrize observation $x$ with hidden variables $z\sim\mathcal N(0, 1)$ from standard normal: 
+$$
+p(x|z)$ = \mathcal N(\mu_\beta(z), \sigma_\beta^2(z)),
+$$
+and learn the parameters of 🦄 with amortized inference
+$$
+(q(z|x) = \mathcal N(f^\mu_\theta(x), f^\sigma_\theta(x)).
+$$
+Where all functions are deep networks.
+<<<
+
+! Variational Inference for Implicit Models
+🦄 from ''Mean-field family'' is fully factorized, this cannot approximate complex 🐉. Fully factorized as VAE, at the end of the day, we usually output just a single Gaussian. The parametric assumptions we make in mean-field is too strong, and implicit models would be one way to relax these.
+
+One step forward, we can use covariance matrix to control the dependencies between variables. Rank-1 approximation can give us better result than mean-field, but higher order is not acceptable because of the complexity. Another limitation of these methods is that the approximate posterior is always Gaussian.
+
+[[DRAW: A Recurrent Neural Network For Image Generation|https://arxiv.org/abs/1502.04623]] imposes ordering and non-linear dependency on all preceding variables
+$$
+q_{AR}(z;\nu) = \prod_kq_k(z_k|z_{<k};\nu_k).
+$$
+This posterior is called autoregressive distribution. DRAW greatly improved the image generation quality.
+
+A design principle for richer posteriors is as follow:
+
+# introduce new variables
+# adapt bound to compute entropy
+# maintain computational efficiency
+
+!! Change-of-variables
+We transform the random variables with invertible functions, the final distribution is tractible with the rule of change of variables, multiplying the original distribution with the term of determinate of Jacobian:
+$$
+q(z') = q(z)|\det\frac{\partial f}{\partial z}|^{-1}
+$$
+By applying as many functions as we like, we can get models as complex as we need.
+
+* Sampling of these models is easy
+* And we can compute the entropy
+
+This is called a normalising flow.
+
+We want the Jacobian to be triangular so that the computation is fast. There are several choices of transformation functions:
+
+* Planar flow: $z_k = z_{k-1} + uh(\omega^\top z_{k-1}+b)$ is able to learn an identity or an one-layer nonlinear transformation.
+* Real NVP: $y_{1:d} = z_{k-1, 1:d}, y_{d+1:D}=t(z_{k-1, 1:d})+z_{d+1:D}\odot\exp(s(z_{k-1, 1:d}))$
+* Inverse AR flow: $z_k = \frac{z_{k-1}-1-\mu_k(z_{<k, x})}{\sigma_k(z_{<k}, x)}$
+
+We can use latent variables to enrich the posterior approximation. In previous setting, we only allow continuous hidden variable distributions. Now we can use stochastic latent variable $\omega$ and both continuous and discrete distributions.
+
+We introduce ''auxiliary variable'' $\omega$ that depends on $z$ and $x$. We now use ''auxiliary variational bound'', a lower bound on minus entropy term to make the estimation of ELBO tractable:
+$$
+\log p(x)\ge\mathcal L - \mathbb E_{q(z|x)}\operatorname{KL}[q(\omega|z, x)\|r(\omega|z, x)]
+$$
+
+The way of choosing auxiliary prior $r(\omega|z, x)$ and auxiliary posterior $q(\omega|x, z)$ includes
+
+* Hamilton flow: $r(\omega) = \mathcal N(\omega|0, M)$ as independent Gaussian.
+* Input-dependent Gaussian: $r(\omega|x, z)$
+* Auto-regressive: $r(\omega|x, z) = \prod_ir(\omega_t|f_\theta(\omega_{<t}, x))
+* $q(\omega|x, z)$ can be a mixture model, normalising flow, Gaussian process
+
+Another way of doing this is auxiliary variables, where we use entropy bounds and Monte Carlo sampling.
+
+! Variational Inference for GANs
+The idea of applying variational inference to adversarial training has long been establishded. [[Adversarial Autoencoder|http://www.inference.vc/adversarial-autoencoders/]] use amortized inference to 
+
+For estimating the density ratio $\frac{q(z|x}{p(z)}$, we use logistic regression, introducing a discriminator $D$. We amortise the discriminator, learn a logistic regression classifier $D(z, x)$.
+
+The generator $G$ in GAN has loss approximating the ELBO:
+$$
+\mathcal L(G;D) = \frac 1 N\sum_{n=1}^N\mathbb E_q\log D(z, x_n)+\mathbb E_p\log(1-D(z, x_n) = \frac 1 N\sum_{n=1}^N\mathbb E_\epsilon\left[\log\frac{D(G(\epsilon, x_n), x_n)}{1-D(G(\epsilon, x_n), x_n)}-\log p(x_n|z)\right]
+$$
+We can minimise the same loss w.r.t. parameters of $p(x|z)$ to obtain a VAE-like learning algorithm.
+
+* 
+* [[Adversarial Variational Bayes: Unifying Variational Autoencoders and Generative Adversarial Networks|https://arxiv.org/abs/1701.04722]]
+* [[ALI|https://arxiv.org/abs/1606.00704]]
+* [[BiGAN|https://arxiv.org/abs/1605.09782]]

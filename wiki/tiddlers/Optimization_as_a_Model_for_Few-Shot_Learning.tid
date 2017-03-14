@@ -1,0 +1,41 @@
+created: 20170228070807064
+modified: 20170303061056108
+tags: [[ICLR 2017]] [[ICLR Paper Reviews]]
+title: Optimization as a Model for Few-Shot Learning
+type: text/vnd.tiddlywiki
+
+! Reference
+
+* Learning to learn by gradient descent by gradient descent
+
+! idea
+
+Deep learning hard to generalize given few examples because there is no optimization techniques dedicated to this kind of problems.
+
+''Meta-learning'' suggests we learn in 2 steps:
+
+* acquire knowledge within each separate task (fast)
+* extract information across all tasks (slow)
+
+Use LSTM to guide the classifier.
+
+SGD resembles the update for the cell state in an LSTM
+$$
+c_t = f_t\odot c_{t-1} + i_t\odot \tilde c_t
+$$
+we set $c_{t-1} = \theta_{t-1}$, $i_t=\alpha_t$, and $\tilde c_t = -\nabla_{\theta_{t-1}}\mathcal L_t$.
+
+! Tricks in training
+* Meta-training: train learner
+* Meta-testing: train meta-learner
+
+Parameter sharing across all coordinates of the learner gradient, but each has its own hidden and cell states. This is implemented by batching the loss and gradient along there dimensions. @@color:#859900;Batch size should be really large.@@
+
+* Gradients and losses are normalized the same way as in reference. 
+* BP don't pass meta-learner.
+* Init meta-learner's params small
+* 
+
+! Remarks
+
+There are works handling catastrophic forgetting. Should think about it. 

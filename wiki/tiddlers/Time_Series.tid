@@ -1,11 +1,35 @@
 created: 20170222132212036
-modified: 20170222132258438
+modified: 20170224074016415
 title: Time Series
 type: text/vnd.tiddlywiki
+
+! Problem
+!! Time series forecasting
+
+''Training data'': finite sample realization of some stochastic process
+$$
+(X_1, Y_1), \dots, (X_T, Y_T)\in \mathcal Z = \mathcal X\times\mathcal Y.
+$$
+''Loss function'': $L:H\times\mathcal Z\rightarrow[0, 1]$, where $H$ is a hypothesis set of functions mapping from $\mathcal X$ to $\mathcal Y$. The loss function is bounded by 1.
+
+''Problem'': find $h\in H$ with small path-dependent expected loss
+$$
+\mathcal L(h, \mathbf Z_1^T) = \underset{Z_{T+1}}{\mathbb E}[L(h, Z_{T+1})|\mathbf Z_1^T].
+$$
+
+!! Standard Assumptions
+
+* Stationarity
+* Mixing: the dependency between 2 events decays with their gap.
+** beta, alpha, etc. mixing
 
 ! Models
 
 [[ARMA]]
+
+! Papers
+
+* [[Generalization Bounds for Non-stationary Mixing Processes]]
 
 ! Talks
 

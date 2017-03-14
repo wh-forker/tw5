@@ -1,8 +1,10 @@
 created: 20170222132201297
-modified: 20170222132205175
+modified: 20170224075724291
 tags: [[Time Series]]
 title: ARMA
 type: text/vnd.tiddlywiki
+
+1st part of [[Theory and Algorithms for Forecasting Non-Stationary Time Series]]
 
 ! Definition
 
@@ -62,3 +64,5 @@ Q(z) = 1+\sum_{j=1}^q b_jz^j
 $$
 are outside the unit circle.
 <<<
+
+If the ARMA model is weakly stationary and invertible, the least square estimate will converge
