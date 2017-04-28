@@ -1,8 +1,11 @@
 created: 20160920070628746
-modified: 20161122065632039
+modified: 20170428083017854
 tags: 
 title: Vision
 type: text/vnd.tiddlywiki
 
 * Descriptors
 * [[Visual Attention]]
+
+! Multiscale approaches
+In LABGAN, generate a pyramid of images, and use the components of Laplacian filters to recover the whole image. This method is used for video prediction.

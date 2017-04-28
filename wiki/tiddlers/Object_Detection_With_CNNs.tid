@@ -1,5 +1,5 @@
 created: 20160614032240671
-modified: 20170222071824455
+modified: 20170417060130311
 tags: [[Deep Learning Applications]]
 title: Object Detection With CNNs
 type: text/vnd.tiddlywiki
@@ -50,3 +50,6 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 
 ! Topics
 * [[Dealing with Context in Detection]]
+* Hard sampling
+** OHEM
+** [[A-Fast-RCNN: Hard Positive Generation via Adversary for Object Detection|https://arxiv.org/abs/1704.03414]]

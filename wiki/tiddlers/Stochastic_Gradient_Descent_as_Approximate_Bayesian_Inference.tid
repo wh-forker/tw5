@@ -1,0 +1,10 @@
+created: 20170419062056917
+modified: 20170419073710162
+tags: MCMC [[Stochastic Gradient Descent]]
+title: Stochastic Gradient Descent as Approximate Bayesian Inference
+type: text/vnd.tiddlywiki
+
+* Modify SGD in the simplest way s.t. it becomes an efficient approximate Bayesian sampling algorithm
+* Construct other sampling algorithms such as preconditioning, momentum or Polyak averaging
+
+Constant SGD is a stationary stochastic process centered on the optimum and has a certain convariance structure. It is a hybrid of MC and variational algorithms.

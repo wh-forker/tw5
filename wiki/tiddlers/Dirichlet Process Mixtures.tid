@@ -1,6 +1,6 @@
 created: 20150310075400270
-modified: 20150317081502675
-tags: Bayesian
+modified: 20170419063535566
+tags: [[Bayesian Inference]]
 title: Dirichlet Process Mixtures
 type: text/vnd.tiddlywiki
 
@@ -35,3 +35,7 @@ p(k_{lt}|\mathbf k_{\bar l}, k_{l\bar t}, \gamma)&\propto\sum_kM_{k}\delta(k_{lt
 \end{align*}
 $$
 Here, $M_k$ is the number of tables previously assigned to $\theta_k$, and $N_{jt}$ the number of customers already seated at the $t$th table in group $j$.
+
+! Applications
+
+[[HDP-HMM Diarization]]

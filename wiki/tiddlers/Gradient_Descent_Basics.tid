@@ -1,7 +1,7 @@
 created: 20170206112503701
-modified: 20170206112634937
-tags: [[Optimization Algorithms]]
-title: Gradient Descent
+modified: 20170419062359921
+tags: [[Stochastic Gradient Descent]]
+title: Gradient Descent Basics
 type: text/vnd.tiddlywiki
 
 Let's say that we have a cost or error function $E(w)$ that we want to minimize. Gradient descent tells us to modify the weights $w$ in the direction of steepest descent in $E$:

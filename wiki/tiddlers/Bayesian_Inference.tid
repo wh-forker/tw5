@@ -1,12 +1,20 @@
 created: 20161208114834459
-modified: 20170306084005640
-title: Probabilistic Inference
+modified: 20170419065453710
+tags: Bayesian
+title: Bayesian Inference
 type: text/vnd.tiddlywiki
+
+! Theory
 
 Probabilistic inference is used to handle noisy and imprecise data. Exact inference is difficult, so approximate methods like Gibbs sampling are used.
 
 * [[Variational Inference]]
 * [[MCMC]]
+* [[Stochastic Gradient MCMC]]
+
+! Tools
+
+* [[Stan]]
 
 ! Generic class of models
 !! Conjugate
@@ -14,7 +22,7 @@ Probabilistic inference is used to handle noisy and imprecise data. Exact infere
 * Times series models (HMM, linear dynamic systems）
 * Factorial models
 * Matrix factorization (factor analysis, PCA, CCA)
-* Dirichlet process mixures, HDPs
+* [[Dirichlet Process Mixtures]], HDPs
 * Multilevel regression (linear, probit, Poisson)
 * Stochastic block models
 * Mixed-membership models (LDA and some variants)

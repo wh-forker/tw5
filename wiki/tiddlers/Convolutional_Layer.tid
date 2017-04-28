@@ -1,5 +1,5 @@
 created: 20161107061201728
-modified: 20161212033623400
+modified: 20170406124956508
 tags: [[ConvNet Layers]]
 title: Convolutional Layer
 type: text/vnd.tiddlywiki
@@ -61,3 +61,4 @@ $$
 
 * [[Graph Convolution]]
 * [[Dilated Convolution]]
+* [[Deformable Convolution]]

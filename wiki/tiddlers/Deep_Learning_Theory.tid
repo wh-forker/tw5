@@ -1,5 +1,5 @@
 created: 20161012084433429
-modified: 20161103063941566
+modified: 20170419083756253
 tags: [[Deep Learning]]
 title: Deep Learning Theory
 type: text/vnd.tiddlywiki
@@ -42,3 +42,9 @@ The capacity of the network, if measured by the number of pieces in a piecewise 
 These results quantify an upper bound on the empirical risk of deep neural networks. But the bounds might be very pessimistic. We still have to figure out @@color:#dc322f;the superior generalization properties of CNNs versus models with similar capacity@@. 
 
 There is a functional equivalence between models of different depths at equal capacity [Ba and Caruana '14].
+
+! Understanding DNN
+
+* [[Opening the Black Box of Deep Neural Networks via Information|https://arxiv.org/abs/1703.00810]]
+* [[Energy Propagation in Deep Convolutional Neural Networks|https://arxiv.org/abs/1704.03636]]
+* [[Exploring loss function topology with cyclical learning rates|https://arxiv.org/abs/1702.04283]]

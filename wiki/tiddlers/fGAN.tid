@@ -1,0 +1,73 @@
+created: 20170428022715893
+modified: 20170428074525023
+tags: [[Divergence Classed GANs]]
+title: fGAN
+type: text/vnd.tiddlywiki
+
+[[f-GAN: Training Generative Neural Samplers using Variational Divergence Minimization|https://arxiv.org/abs/1606.00709]]
+
+* generalize GAN objective to arbitrary $f$-divergences
+* simplify GAN algorithm + local convergence proof
+* demonstrate different divergences
+
+! Objective
+
+<<<
+Any convex $f$ can be represented as point-wise max of linear functions
+<<<
+
+Every convex function $f$ has a convex Fenchel conjugate $f^*$ so that
+$$
+f(u) = \underset{t\in\text{dom}_{f^*}}{\sup}\{tu-f^*(t)\}
+$$
+
+$$
+\begin{align}
+D_f(P\|Q) &= \int_Xq(x)f\left(\frac{p(x)}{q(x)}\right)dx \\
+&= \int_Xq(x)\underset{t_x\in\text{dom}_{f^*}}{\sup}\left\{t_x\frac{p(x)}{q(x)}-f^*(t_x)\right\}dx \\
+&\ge \underset{T\in\mathcal T}{\sup}\left(\int_Xp(x)T(x)dx-\int_Xq(x)f^*(T(x))dx\right) \\
+&= \underset{T\in\mathcal T}{\sup}\left(\mathbb E_{x\sim P}[T(x)]-\mathbb E_{x\sim Q}[f^*(T(x))]\right)
+\end{align}
+$$
+
+This has a structural similarity with GAN. 
+
+* The caveat here is $f^*$ only exist in some cases.
+* Only need to change some LOC to change any GAN implementation into this.
+
+! Algorithm
+
+Original GAN uses a doule-loop algorithm. 
+
+* Inner loop: tighten divergence lower bound
+* Outer loop: minimize generator loss
+
+In practice, the inner loop is run for one step
+
+fGAN proposed single-step algorithm. Which simultaneously take
+
+* a positive gradient w.r.t. variational function $T_\omega(x)$
+* a negative gradient w.r.t. generator function $P_\theta(x)$
+
+! Convergence
+The ''local'' convergence theorem around a saddle point. Assume:
+
+* $F$ is locally (strongly) convex w.r.t. $\theta$
+* $F$ is (strongly) concave w.r.t. $\omega$
+
+that is,
+$$
+\nabla^2F = \left[\begin{array}{cc}
+\nabla_\theta^2F & \nabla_\theta\nabla_\omega F\\ 
+\nabla_\omega\nabla_\theta F& \nabla_\theta^2F
+\end{array}\right], \nabla_\theta^2F\succ 0, \nabla_\omega^2F\prec 0
+$$
+
+The algorithm has geometric rate of convergence. Define $J(\theta, \omega) = \frac 1 2\|\nabla_\theta F\|^2 + \frac 1 2\|\nabla_\omega F\|^2$, then
+$$
+J(\theta^t, \omega^t)\le\left(1-\frac{\delta^2}{L}\right)^tJ(\theta^0, \omega^0)
+$$
+where $\delta$ is strong convexity parameter and $L$ is smoothness parameter.
+
+! Remarks
+The divergence is so noisy that I wonder if this is useful.

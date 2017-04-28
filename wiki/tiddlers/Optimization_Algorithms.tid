@@ -1,5 +1,5 @@
 created: 20150627124407152
-modified: 20170206115509059
+modified: 20170419062234641
 tags: Optimization
 title: Optimization Algorithms
 type: text/vnd.tiddlywiki
@@ -24,7 +24,7 @@ According to chapter 1 of [[Neural Networks: Tricks of the Trade]]
 ** minus free energy from loss and solve with [[Stochastic Gradient Langevin Dynamics]]. 
 
 !! Algorithms
-* [[Gradient Descent]]
+* [[Stochastic Gradient Descent]]
 * [[Follow-The-Regularized-Leader]]
 * AdaGrad
 

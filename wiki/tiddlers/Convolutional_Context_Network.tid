@@ -1,0 +1,14 @@
+created: 20170315115125908
+modified: 20170317103316563
+tags: [[Object Detection With CNNs]]
+title: Convolutional Context Network
+type: text/vnd.tiddlywiki
+
+! RNN
+RNN is hard to train due to vanishing and exploding gradients. 
+
+! Moving average
+Moving average version is [[Quasi-RNN]]
+
+! Autoregressive
+[[WaveNet]] and [[Pixel-CNN]] are examples of autoregressive models 

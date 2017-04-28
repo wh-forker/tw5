@@ -1,12 +1,12 @@
 created: 20161215074539633
-modified: 20170306090413569
-tags: [[Probabilistic Inference]]
+modified: 20170419073513446
+tags: [[Bayesian Inference]]
 title: MCMC
 type: text/vnd.tiddlywiki
 
 * [[Gibbs Sampling]]
-* [[Stochastic Gradient MCMC]]
 * [[Hamilton Monte Carlo]]
+* [[Stochastic Gradient Descent as Approximate Bayesian Inference]]
 
 To identify the regions of parameter space that dominate expectations we need to consider the behavior of both the density and the volume.
 

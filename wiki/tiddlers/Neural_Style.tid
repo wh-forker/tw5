@@ -1,5 +1,5 @@
 created: 20161011084441404
-modified: 20161212031301556
+modified: 20170323080424602
 tags: 
 title: Neural Style
 type: text/vnd.tiddlywiki
@@ -53,3 +53,4 @@ $$
 ** written in lua
 * Google's [[Supercharging Style Transfer|https://research.googleblog.com/2016/10/supercharging-style-transfer.html]]
 ** No code released
+* Real otf one: [[AdaIN|https://github.com/xunhuang1995/AdaIN-style]]

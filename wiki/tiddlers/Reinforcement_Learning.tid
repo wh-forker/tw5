@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20170307024133891
+modified: 20170405110220498
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -34,6 +34,7 @@ DeepMind actually used more tricks, target network, error clipping, reward clipp
 ! Bibs
 * [[Faster Deep Reinforcement Learning]]
 * [[Playing Doom with SLAM-Augmented Deep Reinforcement Learning|https://arxiv.org/abs/1612.00380]]
+* [[Learning to Communicate|https://blog.openai.com/learning-to-communicate/]]: differentiable language for RL
 
 ! Implementations
 Environments

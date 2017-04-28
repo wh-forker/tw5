@@ -1,12 +1,12 @@
 created: 20161215074243368
-modified: 20161226110955152
+modified: 20170419065617679
 tags: [[Stochastic Gradient MCMC]]
 title: Stochastic Gradient Langevin Dynamics
 type: text/vnd.tiddlywiki
 
 ! Bibs
 * [[Bayesian Learning via stochastic Gradient Langevin Dynamics|http://people.ee.duke.edu/~lcarin/398_icmlpaper.pdf]]
-* [[A Variational Analysis of Stochastic Gradient Algorithms]]
+* [[A Variational Analysis of Stochastic Gradient Algorithms|https://arxiv.org/abs/1602.02666]]
 ** Langevin dynamics is the discrete-time approximation of a continous-time stochastic differential equation.
 * [[Approximation analysis of stochastic gradient Langevin dynamics by using Fokker-Planck equation and Ito process|http://www.jmlr.org/proceedings/papers/v32/satoa14.html]]
 ** detailed convergence analysis

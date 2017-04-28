@@ -1,5 +1,5 @@
 created: 20160425022224634
-modified: 20161008113202631
+modified: 20170405104606869
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
@@ -69,3 +69,6 @@ is to analysis and represent the semantic content of a sentence for purposes of 
 ** time-delay nets based on convolutional operations
 
 ! [[CNN for NLP]]
+
+! Topics
+* [[Question Answering]]

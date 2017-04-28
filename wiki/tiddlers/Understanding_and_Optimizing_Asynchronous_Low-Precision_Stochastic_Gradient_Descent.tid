@@ -1,0 +1,27 @@
+created: 20170420094100728
+modified: 20170424124634578
+tags: [[Low Precision Training]] [[Stochastic Gradient Descent]]
+title: Understanding and Optimizing Asynchronous Low-Precision Stochastic Gradient Descent
+type: text/vnd.tiddlywiki
+
+[[paper|http://web.stanford.edu/~cdesa/papers/isca_buckwild_submission.pdf]]
+
+Proof of low precision doesn't harm training. 
+
+Things that matter:
+
+* rounding strategy
+* precision
+* sparsity of input
+
+basic facts:
+
+* BUCKWILD! is based on HOGWILD!. 
+* The conversion in the AXPY operation decreases the number of bits used to represent the number and introduces round-off error.
+
+! DMGC model
+Numbers used by a parallel SGD can be separated into:
+* data, quantized once and saved in DRAM. dataset precision, index precision for sparse data
+* model, always stored in the last-level of cache. Quantize after AXPY, standard/unbiased rounding.
+* gradient, 
+* communicate

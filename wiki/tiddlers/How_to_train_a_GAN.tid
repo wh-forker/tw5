@@ -1,0 +1,48 @@
+created: 20170426160100975
+modified: 20170427132045598
+tags: [[Generative Adversarial Network]]
+title: How to train a GAN
+type: text/vnd.tiddlywiki
+
+From NIPS 2016 GAN Workshop
+
+# Normalize the inputs
+#* normalize the images between -1 and 1
+#* Tanh as the last layer of the generator output
+# Modified loss function
+#* change $\min\log(1-D)$ into $\max\log(D)$: first has vanishing gradient early on
+#* Flip labels when training generator
+# Use spherical $z$
+#* interpolation via great circle from [[Sampling Generative Networks|https://arxiv.org/abs/1609.04468]]
+#* probably because of loss?
+# Use BatchNorm properly
+#* different batches for real and fake
+#* when batchnorm is not an option, use instance norm, anyone tried weight norm?
+# Avoid Sparse Gradients: ReLU, MaxPool
+#* use LeakyReLU both $G$ and $D$
+#* downsampling by: ave pooling, conv+stride
+#* upsampling by: PixelShuffle, ConvTranspose2d+stride
+# Soft and noisy labels
+#* label smoothing
+#* making the labels noisy a bit for the discriminator, sometimes
+# DCGANs / Hybrid models
+#* DCGAN when you can
+#* if you can't use CDGANs, and no model is stable, use a hybrid model: KL+GAN or VAE+GAN
+# Stability tricks from RL
+#* experience replay
+#* things that work for deep deterministic policy gradients
+#* See [[Connecting Generative Adversarial Networks and Actor-Critic Methods|https://arxiv.org/abs/1610.01945]]
+# Use Adam
+#* at least for generators
+# Track failures early
+#* $D$ loss = 0
+#* check norms of gradients
+#* $D$ loss should have low variance and goes down over times
+#* if loss of generator steadily decreases, then it's fooling $D$ with garbage
+# Don't balance via loss statistics
+# If you have labels, use them
+# Add noise to inputs, decay over time
+#* Add some artificial noise to inputs to D ([[Arjovsky et. al|https://openreview.net/forum?id=Hk4_qw5xe]], Huszar, 2016) [[inFERENCe|http://www.inference.vc/instance-noise-a-trick-for-stabilising-gan-training/]]
+#* Add Gaussian noise to every layer of generator (EBGAN)
+#* Improved GANs: OpenAI code also has it (commented out)
+# Train discriminator more

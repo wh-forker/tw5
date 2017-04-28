@@ -1,5 +1,5 @@
 created: 20161027080318158
-modified: 20161103061112539
+modified: 20170420094040407
 tags: [[Deep Learning]]
 title: Deep Learning Engineering
 type: text/vnd.tiddlywiki
@@ -7,7 +7,9 @@ type: text/vnd.tiddlywiki
 ! Implementations
 [[GitXiv Projects]]
 
-! [[Deep Learning Tools]]
+* [[Deep Learning Tools]]
+* [[Low Precision Training]]
+* [[Deep Model Compression]]
 
 ! Parallell Training
 * [[A Framework for Parallel and Distributed Training of Neural Networks|https://arxiv.org/abs/1610.07448]]

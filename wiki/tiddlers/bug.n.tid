@@ -1,5 +1,5 @@
 created: 20170307024447555
-modified: 20170307025717014
+modified: 20170427074444089
 tags: Tools
 title: bug.n
 type: text/vnd.tiddlywiki
@@ -8,4 +8,7 @@ type: text/vnd.tiddlywiki
 
 |Decrease the gap between windows|`Win`+`Shift`+`Left`|
 |Set the previous-ly set layout|`Win`+`Tab`|
-|Set floating/monocle/tile layout|`WIn`+`f`/`m`/`t`|
+|Set floating/monocle/tile layout|`Win`+`f`/`m`/`t`|
+|Toggle active window floating|`Win`+`Shift`+`f`|
+|Rotate the layout axis|`Win`+`Ctrl`+`t`|
+|Open the command GUI|`Win`+`y`|

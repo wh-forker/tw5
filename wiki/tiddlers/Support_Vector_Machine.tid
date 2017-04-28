@@ -1,0 +1,11 @@
+created: 20170406090123018
+modified: 20170406103701648
+tags: Algorithms
+title: Support Vector Machine
+type: text/vnd.tiddlywiki
+
+* [[Geometric Insights into Support Vector Machine Behavior using the KKT Conditions|http://arxiv.org/abs/1704.00767]]
+
+The naive Bayes classifier is equivalent to first standardizing the data then computing the mean difference. In the small $C$ regime soft margin SVM behaves like the MD classifier or a cropped version of the MD. In the large $C$ regime SVM is related to the maximal data piling direction.
+
+The dimensionality of the space and the class sizes have strong impacts on SVM's behavior.

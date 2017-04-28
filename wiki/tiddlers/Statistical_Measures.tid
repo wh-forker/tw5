@@ -1,0 +1,66 @@
+created: 20170427153639938
+modified: 20170427163600499
+tags: Statistics
+title: Statistical Measures
+type: text/vnd.tiddlywiki
+
+We want to learn a true distribution $Q$, which can be observed from i.i.d. samples. We have a parametric class of models $\mathcal P$ and we have parameters identify an individual model $P$. The task is to navigate through the class of models and find a good one.
+
+We assume $P$ is capable of:
+
+* sample from, (random field models, graphical models are examples cannot sample from)
+* compute parameter gradient w.r.t. samples
+* strongest assumption is we can compute the likelihood
+
+[[GAN|Generative Adversarial Network]] is a likelihood-free model which can be sampled from. Because many possible input could be mapped to the same output. To compute a pointwise likelihood, we have to find the preimage, which is not tractable.
+
+! Measure the distance
+
+!! Integral Probability Metrics
+
+* Muller, 1997
+* Sriperumbunder et al., 2010
+
+Taking the supremum over a difference of expectations. 
+$$
+\gamma_{\mathcal F}(P, Q) = \underset{f\in\mathcal F}{\sup}\left|\int fdP-\int fdQ\right|
+$$
+
+Depending on the structure of $\mathcal F$, we get different measures. 
+
+* Energy statistics [Szekely, 1997]
+* Kernel MMD [Gretton et al. 2012] [Smola et al. 2007]
+* Wasserstein distance [Cuturi, 2013]
+* DISCO Nets [Bouchacourt et al. 2016]
+
+Because we use integral here, we can compute this distance with samples.
+
+!! Proper scoring rules
+
+* [Gneiting and Raftery, 2007]
+
+We take expectation of a score of how well the distribution $P$ fits the realization $x$.
+$$
+S(P, Q) = \int S(P, x)dQ(x)
+$$
+The scores can be used are:
+
+* log-likelihood: then this is maximum likelihood
+* Bayes score
+* Quadratic score
+
+!! $f$-divergence
+
+* [Ali and Silvey, 1966]
+* [[Divergence Classed GANs]]
+
+$f$-divergence is a generalization of KL divergence. Now we require knowing the distribution of both $P$ and $Q$
+$$
+D_f(P\|Q) = \int_Xq(x)f\left(\frac{p(x)}{q(x)}\right)dx
+$$
+where $f$ is a convex function of likelihood ratio. Examples are
+
+* [[Kullback-Leibler divergence]]
+* [[Jensen-Shannon divergence]]
+* Total variation
+* Pearson $\chi^2$

@@ -1,10 +1,11 @@
 created: 20161019092508242
-modified: 20161205111347046
+modified: 20170428081950405
 tags: [[Deep Learning Applications]]
 title: Deep Generative Models
 type: text/vnd.tiddlywiki
 
-! [[Overview|Deep Generative Model Overview]]
+! Overview
+* [[Deep Generative Model Overview]]
 
 ! Models
 
@@ -14,12 +15,23 @@ type: text/vnd.tiddlywiki
 * [[Generative Adversarial Network]]
 * [[Input Convex Neural Network]]
 * [[Variational Generative Models]]
-* [[Pixel-CNN]]
 * [[TCL|Time-Contrastive Learning]]
 * Inverse Autoregressive Flow
 ** [[paper|https://arxiv.org/abs/1606.04934]], [[tf implementation|https://github.com/openai/iaf]]
 * [[Real NVP|http://arxiv.org/abs/1605.08803]]
 * [[Attentive Generative Models]]
+
+!! Autoregressive models
+
+* [[WaveNet]]
+* [[Pixel-CNN]]
+* Video Pixel Network
+* ByteNet
+* [[A Neural Parametric Singing Synthesizer|http://arxiv.org/abs/1704.03809v1]]
+** What is the Causual conv input?
+** How's the model trained
+** How's the time sequence represented
+** Hints for OCR context?
 
 [[GANs vs VAEs]]
 
@@ -27,8 +39,11 @@ type: text/vnd.tiddlywiki
 
 * [[yingzhen's reading list|http://www.yingzhenli.net/home/blog/?p=566]]
 * [[Magenta's reviews|https://github.com/tensorflow/magenta/tree/master/magenta/reviews]]
-
 * [[What does it take to generate natural textures?]]
+
+on evaluation
+
+* [[On the Quantitative Analysis of Decoder-Based Generative Models|https://openreview.net/forum?id=B1M8JF9xx&noteId=B1M8JF9xx]]
 
 ! Applications
 * [[Neural Style]]

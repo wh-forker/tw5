@@ -1,5 +1,5 @@
 created: 20160516024046072
-modified: 20170307023814514
+modified: 20170414100109962
 tags: [[Deep Learning Engineering]]
 title: Deep Learning Tools
 type: text/vnd.tiddlywiki
@@ -13,6 +13,8 @@ Programmatic generation
 * [[Torch]]
 * [[Theano]]
 * [[TensorFlow]]
+* PyTorch
+** [[The Incredible PyTorch|https://github.com/ritchieng/the-incredible-pytorch]]
 
 Configuration file
 

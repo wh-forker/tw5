@@ -1,19 +1,28 @@
 color: #00e600
 created: 20141010100715798
-modified: 20161103065815339
+modified: 20170427163322691
 tags: Math
 title: Statistics
 type: text/vnd.tiddlywiki
 
 ! Foundamentals
-[[Inequalities]]
+* [[Inequalities]]
+* [[Principle of maximum entropy]]
+* [[Statistical manifold]]
+* [[Stochastic Processes]]
+* [[Graphical Model]]
+* [[Bayesian]]
 
-[[Principle of maximum entropy]]
+The three axioms of Probability theory
 
-[[Statistical manifold]]
+# $P(A)\ge0$ for all events $A$
+# $P(\Omega) = 1$
+# $P(A\cup B)=P(A)+P(B)$ for disjoint events $A$ and $B$
 
-[[Stochastic Processes]]
+! Distributions
 
-[[Graphical Model]]
+* [[Gaussian]]
 
-[[Bayesian]]
+! Probabilistic Models
+
+* [[Statistical Measures]]

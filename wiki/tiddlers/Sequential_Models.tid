@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20161215115957567
+modified: 20170328110016967
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 * Tapes
 * Arrays
 * Stacks
-* [[QRNN|http://metamind.io/research/new-neural-network-building-block-allows-faster-and-more-accurate-text-understanding/]]
+* [[Quasi-RNN]]
 
 !! Bibs
 
@@ -24,6 +24,21 @@ type: text/vnd.tiddlywiki
 ** the results aren't easily comparable to DNC
 
 ! Memory networks
+Memory-augmented networks
+
+* Memory Network
+* End-To-End Memory Network: make the supervision indirect, supervision signal on output
+* Key-Value Memory Network: makes matchings more relavant
+* Forward Prediction Memory Network
+* Recurrent Entity Network
+
+Some related models
+
+* NTM
+* Stack RNNs
+* Dynamic Mem. Nets
+* DNC
+
 !! Bibs
 
 * [[MemN2N|http://arxiv.org/abs/1604.06045]]

@@ -1,0 +1,25 @@
+created: 20170315055401144
+modified: 20170316064100268
+tags: [[Sequential Models]]
+title: Quasi-RNN
+type: text/vnd.tiddlywiki
+
+* [[blog|http://metamind.io/research/new-neural-network-building-block-allows-faster-and-more-accurate-text-understanding/]]
+
+! 2D variance: spatial qrnn
+Given an input sequence $\mathbf X\in\mathbb R^{W\times H\times n}$, spatial qrnn performs convolutions with a bank of $m$ filters, producing a sequence $\mathbf Z\in\mathbb R^{W\times H\times m}$.
+
+To adopt the original function to 2-dimensional images, fo:
+$$
+\begin{align}
+c_t &= \frac 1 2 f_t\odot(c_{t-1}+c'_{t+1}) + (1-f_t)z_t\\
+h_t &= o_t\odot c_t
+\end{align}
+$$
+f:
+$$
+h_t = \frac 1 2 f_t\odot(h_{t-1}+h'_{t+1})+(1-f_t)z_t
+$$
+
+! Implementations
+* [[tensorflow|https://github.com/Kyubyong/quasi-rnn]]

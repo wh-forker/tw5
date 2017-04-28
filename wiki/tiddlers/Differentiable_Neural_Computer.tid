@@ -1,0 +1,43 @@
+created: 20170424122232412
+modified: 20170427072239316
+tags: [[Recurrent Neural Networks]]
+title: Differentiable Neural Computer
+type: text/vnd.tiddlywiki
+
+! Paper
+!! Components
+
+* ''controller'': reads environment input $x$ and emits action (RL) or prediction (supervised) $y$, reads and writes ''memory'' with ''interface vectors'', implemented as a LSTM.
+* ''interface parameters'': is a set of keys $k$, strengths $\beta$, gates $f$ and erase and write vectors $e$ and $v$.
+* ''memory'': Memory $M$ provides read vectors $r$. The memory is expandable because memory can be reused.
+* ''links'': a ''precedence weight'' $p_t$ keeps track of which locations were most recently written to. Temporal order is necessary so iterate through memories in the order they were written. Temporal link matrix $L_t[i,j]$ represents teh degree to which location $i$ was the location written to after location $j$.
+* ''usage'': 
+
+!! Access
+Weights are bounded by a simplex. $a, w, p\in\Delta_N$, where $N$ is the number of locations in memory.
+
+# Update usage: Usage is automatically increased after each write ($w^W_t$) and optionally decreased after each read ($w^{r, i}_t$) by @@color:#859900;free gates@@ ($f^i_t$): $u_{t+1} = (u_t +w^W_t - u_t\circ w_t^W)\circ\prod_{i=1}^R(1-f^i_{t+1}w_t^{r,i})$. $R$ is the number of read vectors.
+# Compute write weights: The controller then uses an @@color:#859900;allocation gate@@ ($g_t^a$) to interpolate between writing to a newly allocated ($a_t$) location, or an existing one found by content ($c^w_t$): $w_t^W = g_t^W[g_t^aa_t+(1-g_t^a)c_t^W]$
+# Erase and write memory: $M_t = M_{t-1}\circ(E-w^W_te_t^\top)+w^W_tv_t^\top$
+# Set linkage states
+# Compute read weights: interpolates among backward weighting $b$, forward weighting $f$ and content read weighting $c$: $w_t^{r,i} = \pi_1b_t^i+\pi_2c_t^{r, i}+\pi_3f_t^i$
+# Read words: $r_t^i = M_t^\top w_t^{r, i}$
+
+!! Comparing to NTM
+In NMT, NTM and [[Memory Networks]], a searching by ''content-based addressing'' memory mechanism is used, just a softmax.
+
+* NTM could only 'allocate' memory in contiguous blocks, leading to memory management problems
+* DNC defines a differentiable @@color:#859900;free list@@ tracking the @@color:#859900;usage@@ ($u_t$) of each memory location
+
+!! Tasks DNC is capable of
+The field can feel too open. Infer implicit graph structure. The graph traverse is done by associative key-value memory able to be queried by incomplete keys. 
+
+* Question answering
+* Navigation
+* Program learning
+
+! Code
+* `access` reads `controller`'s ouput and emits contents read from memory.
+* `controller` is a feedforward or LSTM network.
+
+What's the strength of using sonnet?

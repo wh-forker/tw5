@@ -1,12 +1,29 @@
 created: 20161021080332245
-modified: 20170208074153106
+modified: 20170428074115698
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
 
 ! Theory
+!! Understanding GAN
 
 * Ian's [[Generative Adversarial Network Talk]]
+* [[OpenAI's survey|https://openai.com/blog/generative-models/]]
+* [[What Arora thinks about GANs|GANs, Some Open Questions]]
+* [[How to train a GAN]]
+
+!! Research Directions
+* Generate HQ images. Image is a good field for generative models, because we are sensible to image plausibility.
+* Address GAN training difficulties
+** [[Amortised MAP Inference for Image Super-resolution|https://arxiv.org/abs/1610.04490]]
+** [[Towards Principled Methods for Training Generative Adversarial Networks|https://arxiv.org/abs/1701.04862]]
+** When training GAN, we collpase distribution dimensionalities, but when the 2 distributions does not intersect, we get problem training. So we convolve the distribution and later recover the full distribution.
+* Leverage Kullback-Leibler divergence
+** Do maximum-likelihood estimation in a likelihood free setting. Similar to approximate Bayesian computation.
+** The reverse of KL divergence, use GAN in Variational inference.
+* More applications
+** Text (large discrete ouput spaces)
+** Reinforcement learning.
 
 ! Bibs
 
@@ -16,12 +33,14 @@ type: text/vnd.tiddlywiki
 ** Laplacian Pyramid of GANs is further suggested to generate high quality image in a coarse-to-fine manner.
 * [[DCGAN|Unsupervised representation learning with deep convolutional generative adversarial networks]]
 * [[SeqGAN|http://arxiv.org/abs/1609.05473]]
+* [[Stacked GAN|https://arxiv.org/abs/1612.04357]]
+* [[Super-Resolution GAN|https://arxiv.org/abs/1609.04802]]
 * [[InfoGAN]]
 * [[WGAN]]
 
 !! Theory
 
-* [[Towards Principled Methods for Training Generative Adversarial Networks]]
+
 * [[Divergence Classed GANs]]
 * [[Density Ratio GANs]]
 

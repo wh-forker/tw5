@@ -1,0 +1,10 @@
+created: 20170421030838483
+modified: 20170426055229440
+tags: Tools
+title: tmux
+type: text/vnd.tiddlywiki
+
+[[cheatsheet|https://gist.github.com/MohamedAlaa/2961058]]
+
+|List sessions|`tmux ls`|
+|Kill session|`tmux kill-session -t ID`|

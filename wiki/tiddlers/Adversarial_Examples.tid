@@ -1,5 +1,5 @@
 created: 20161027055701742
-modified: 20161027072851466
+modified: 20170417055659032
 tags: [[Deep Learning Tricks]]
 title: Adversarial Examples
 type: text/vnd.tiddlywiki
@@ -16,6 +16,7 @@ The talk generalizes following works:
 * “Distributional Smoothing with Virtual Adversarial Training” Miyato et al 2015 (not my own work)
 * “Virtual Adversarial Training for Semi-Supervised Text Classification” Miyato et al 2016
 * “Adversarial Examples in the Physical World” Kurakin et al 2016
+* [[The Space of Transferable Adversarial Examples|https://arxiv.org/abs/1704.03453]]: some conditions
 
 Neural networks (esp. softmax regressions) are easily fooled. We can add noise-like filters to attack a neural net, misleading it to wrong prediction while making no perceptional difference to human. For example, we can perform gradient ascent on the input to change its prediction.
 

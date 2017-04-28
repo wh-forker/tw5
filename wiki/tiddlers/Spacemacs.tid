@@ -1,10 +1,10 @@
 created: 20170307025828804
-modified: 20170307030047398
+modified: 20170427105557486
 tags: Tools
 title: Spacemacs
 type: text/vnd.tiddlywiki
 
-添加下面的代码到`.spacemacs`的`dotspacemacs/user-init()`
+国内melpa无法访问，添加下面的代码到`.spacemacs`的`dotspacemacs/user-init()`
 
 ```
 (setq configuration-layer--elpa-archives
@@ -12,3 +12,7 @@ type: text/vnd.tiddlywiki
       ("org-cn"   . "http://elpa.emacs-china.org/org/")
       ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
 ```
+
+! Helm
+
+* projectile-ag search: `spc s p`, jump back with `Ctrl-o`

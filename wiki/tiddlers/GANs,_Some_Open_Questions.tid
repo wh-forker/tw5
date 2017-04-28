@@ -1,0 +1,9 @@
+created: 20170322053906726
+modified: 20170322130332597
+tags: [[Generative Adversarial Network]] Theory
+title: GANs, Some Open Questions
+type: text/vnd.tiddlywiki
+
+Looking forward to off the convex path's new post and paper on GAN.
+
+The generator tries to maximize $E_u[f(D(G(h)))]$. The original GAN uses $f(x)=\log(x)$, making the training more sentitive to terrible generations. If generator wins, $P_{real}$ and $P_{synth}$ are close in JS divergence. While [[WGAN]] uses $f(x)=x$, the two distributions are close in Wasserstein or earth-mover distance. In practice, the analysis can be very off.

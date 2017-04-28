@@ -1,0 +1,8 @@
+created: 20170420094049607
+modified: 20170420094206644
+tags: [[Deep Learning Engineering]]
+title: Low Precision Training
+type: text/vnd.tiddlywiki
+
+* [[WRPN: Training and Inference using Wide Reduced-Precision Networks|https://arxiv.org/abs/1704.03079]]
+* [[Understanding and Optimizing Asynchronous Low-Precision Stochastic Gradient Descent]]

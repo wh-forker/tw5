@@ -1,0 +1,15 @@
+created: 20170414082607202
+modified: 20170419062043684
+tags: Bayesian
+title: Bayesian DL
+type: text/vnd.tiddlywiki
+
+Bayesian methods give RNNs another way to express their uncertainty. Using a prior to integrate out the parameters to average across many models acts as a regularizer.
+
+* [[Dropout as a Bayesian Approximation]]
+* weight decay as a variational inference scheme
+* [[Stochastic Gradient Langevin Dynamics]] to truncated backpropagation in time directly.
+* [[Stochastic Gradient Descent as Approximate Bayesian Inference]]
+* Bayes by Backprop
+** with centralized Gaussian, KL term can be seen as a form of weight decay, tuned by the std fo the prior and posterior.
+* [[Bayesian Recurrent Neural Networks]]

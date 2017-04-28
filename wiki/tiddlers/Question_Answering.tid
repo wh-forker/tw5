@@ -1,0 +1,8 @@
+created: 20170405104624230
+modified: 20170405104712491
+tags: NLP
+title: Question Answering
+type: text/vnd.tiddlywiki
+
+! Open Domain
+* [[Reading Wikipedia to Answer Open-Domain Questions|https://arxiv.org/abs/1704.00051]]: Useful datasets and benchmarks provided

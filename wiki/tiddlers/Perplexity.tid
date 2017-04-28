@@ -1,0 +1,11 @@
+created: 20170322054105136
+modified: 20170322054222301
+tags: [[Information Theory]]
+title: Perplexity
+type: text/vnd.tiddlywiki
+
+[[definition|https://en.wikipedia.org/wiki/Perplexity]]
+
+Perplexity is sometimes used as a measure of how hard a prediction problem is. This is not always accurate. If you have two choices, one with probability 0.9, then your chances of a correct guess are 90 percent using the optimal strategy. The perplexity is $2^{−0.9 \log_2 0.9 - 0.1 \log_2 0.1}= 1.38$. The inverse of the perplexity (which, in the case of the fair k-sided die, represents the probability of guessing correctly), is 1/1.38 = 0.72, not 0.9.
+
+The perplexity is the exponentiation of the entropy, which is a more clearcut quantity. The entropy is a measure of the expected, or "average", number of bits required to encode the outcome of the random variable, using a theoretical optimal variable-length code, cf. the next section. It can equivalently be regarded as the expected information gain from learning the outcome of the random variable, where information is measured in bits.

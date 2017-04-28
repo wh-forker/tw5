@@ -1,0 +1,11 @@
+created: 20170426055828438
+modified: 20170426085400039
+tags: [[Recurrent Neural Networks]] NLP
+title: Memory Networks
+type: text/vnd.tiddlywiki
+
+* [[Key-Value Memory Network]]
+* [[Recurrent Entity Network]]
+
+! Code
+[[fb MemNN|https://github.com/facebook/MemNN]]

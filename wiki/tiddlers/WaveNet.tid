@@ -1,6 +1,9 @@
 created: 20160920072908374
-modified: 20161103065637025
-tags: 
+modified: 20170419030104220
+tags: [[Deep Generative Models]]
 title: WaveNet
 type: text/vnd.tiddlywiki
 
+[[paper|https://arxiv.org/abs/1609.03499]]
+
+* [[Fast implementation by caching|https://github.com/tomlepaine/fast-wavenet]]

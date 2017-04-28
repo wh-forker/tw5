@@ -1,0 +1,10 @@
+created: 20170405111817517
+modified: 20170406085803366
+tags: [[Distributed Training]] TensorFlow
+title: Deep Learning with Dynamic Computation Graphs
+type: text/vnd.tiddlywiki
+
+* [[blog|https://research.googleblog.com/2017/02/announcing-tensorflow-fold-deep.html]]
+* [[paper|https://arxiv.org/abs/1702.02181]]
+
+Implements binary Tree-LSTM and graph convolution model

@@ -1,0 +1,17 @@
+created: 20170426064041629
+modified: 20170427105556783
+tags: [[Memory Networks]]
+title: Key-Value Memory Network
+type: text/vnd.tiddlywiki
+
+[[paper|https://arxiv.org/abs/1606.03126]]
+
+! Access
+
+# Key Hashing: inverted index finds kvs where k shares at least one word with the question (with frequency $< F = 1000$ to ignore stop words). The retrieval scheme can be complicated. 
+# Key Addressing: should allow approximate association. aka ''content-based addressing'': $p_{h_i} = \text{Softmax}(A\Phi_X(x)\cdot A\Phi_K(k_{h_i}))$, comparing the question to each key.
+# Value Reading: weighted sum of mem values using p_{h_i}$.
+
+! Code
+why base model is called `mlp`?
+

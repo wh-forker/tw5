@@ -1,15 +1,18 @@
 created: 20161102054547779
-modified: 20161102063147889
+modified: 20170419063229266
 title: Bayesian
 type: text/vnd.tiddlywiki
-
-! Theory
-
-* [[Variational Inference]]
 
 ! Bib
 
 * [[Maximum likelihood approaches to variance component estimation and to related problems|http://www.lce.esalq.usp.br/arquivos/aulas/2012/LCE5872/Harville1977.pdf]]: The distinction between frequentist and Bayesian models is practically none
 
+!! Textbooks
+
+* [[Bayesian Choice]]
+
 ! Applications
 [[Bayesian information criterion]]
+
+! Theory
+* [[Bayesian Inference]]

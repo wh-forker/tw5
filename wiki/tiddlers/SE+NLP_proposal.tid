@@ -1,0 +1,55 @@
+created: 20170426082034620
+modified: 20170427072154649
+tags: Blog NLP
+title: SE+NLP proposal
+type: text/vnd.tiddlywiki
+
+! Introduction
+Reading comprehension and question answering in real world is enormously difficult to handle for computer. Teaching intelligent natural languages is one of the cornerstones to solve AI. If we could build models to comprehend natural languages, it wouldn't be thus far to build intelligent systems and understand human mind. And it has huge value for consumers.
+
+Recurrent Neural Networks (RNN) trained by Back Propagation are up to now the closest imitation to what brain does. Wesbros et al.~\cite{werbos2016regular} carried out an empirical study to find their relationships. These are the models on our smartphones recognizing and answering our questions when we talk to Siri and Google Assistant. This subject is so challenging and promising that it has attracted some of the best research teams in AI fields such as DeepMind, Facebook Research and OpenAI. Mikolov et al.~\cite{mikolov2015roadmap} pose different intelligent tasks as dialogue, or Question Answering (QA), where the learner should develop memory, perform reasoning accordingly and understand indirect supervision.
+
+Software society offers valuable datasets for NLP. Online code corpora like GitHub, question answering forums like StackOverflow and documentations of various softwares and programming tools are highly structured and rich in content. In return, training an agent who can understand Software Engineering (SE) materials can help develop SE theory and tools. We have seen applications of NLP in code refactoring, language models for code~\cite{dam2016deep} and information retrieval of answers, projects and documentation. But compared with other deep learning applications, this field is still growing and requires more research, tasks and well-established datasets.
+
+! Research Questions and Aims
+The ultimate goal of this project is to train an agent to be able to interact with humans, solving specific SE problems. However, this is too big a problem to solve, I decide to design incremental tasks and solve them in an iterative manner. Basic tasks are for example comment sentiment analysis and locating callings in code, basic fact Q\&A in documentation. More advanced tasks are like code completion, similar snippets retrieval and automatic problem solving or even let the program code itself. I will identify what tasks can be solved with current technologies and what are the preliminary tasks we have to solve before the ultimate problem. Although these tasks seem to be distantly related, answering the following questions is important to attack all of them.
+
+# ''How to achieve indirect supervision through dialogue?'' Dialogue is human communication tool. This is how issues and knowledge are discussed on GitHub and StackOverflow and where we would like the agent to learn. But we have to design simpler tasks and rewarding mechanisms for the learner to understand normal feedback before the agent can learn from arbitrary forms of communication happening on these online communities.
+# ''How to represent context and let the agent memorize it?'' Main stream NLP algorithms always use a RNN as an encoder of the context~\cite{cho2014learning} and use attention mechanism to associate certain parts of context to related queries~\cite{bahdanau2014neural}. In these 2 years, there are many advanced memory mechanisms and models being proposed. I will review them in the next part and show how to incorporate these structures to solve SE problems.
+# ''How can we enhance current models?'' Sequence-to-sequence (seq2seq) models based on RNN~\cite{sutskever2014sequence} are widely used in Neural Machine Translation (NMT) and Automatic Speech Recognition (ASR). They have a chain-like structure. However, in computational linguistics and compiler theory, we use a different tree-like structure, the grammar tree, which shares similarities with another kind of deep model, the Recursive Neural Network. Combining Recurrent and Recursive Neural Networks we arrive at a structure-to-structure modeling. For example we can use Neural Tensor Network~\cite{socher2013reasoning} to do a syntactic to semantic tree reasoning.
+
+! Related Work
+''Seq2seq''~\cite{sutskever2014sequence,cho2014learning} learning is one of the most widely used models in NLP. In the original papers, an encoder RNN reads the input and generates a context vector $\mathbf c$ from the last hidden unit. Then $\mathbf c$ is connected to another RNN called the decoder, which generates the output sequence. Bahdanau et al.~\cite{bahdanau2014neural} use a sequence as the context and propose \textbf{attention mechanism} to adapt the weights of context associated with certain output stage.
+
+More recent studies enable the intelligent learner to handle long and short term memories and apply them to reasoning for tasks such as language understanding and dialogue. The agent takes the following inputs:
+
+* A ''query'' $q$ is the last utterance the speaker said in a general dialogue setting, or the question in a QA setting.
+* A ''memory'' vector $\mathbf m$ is the knowledge of the agent plus the dialogue history. The knowledge could be as large as the whole code base or documentation as long as the model is powerful enough to scale to that.
+
+The agent use these modules to handle the inputs:
+
+* An ''encoder'' converts $q$ into a vector. This is a RNN in \cite{cho2014learning} or a simpler word embedding~\cite{mikolov2013efficient}.
+* A ''memory module'' $M$ finds the best part of $\mathbf m$ related to $q$. This is called the \textbf{addressing} stage.
+* A ''controller module'' $C$ sends $q$ to $M$ and reads back the relevant memory, adds that to the state. In practice we always cycle this process to enable complicate reasoning.
+* A ''decoder'' generates output from the final states.
+
+The classic Memory Network~\cite{weston2014memory} is trained in a fully supervised setting, labels of the best part of memory is given at every stage of the memory addressing. Its follow-up End-to-End Memory Network~\cite{sukhbaatar2015end} use soft attention for memory addressing to relax the supervision. This enables to train the attention in back propagation and the only supervision we need is on the output. Using one memory unit to match both the query and the state limits the expressiveness. By splitting the memory into a key-value pair, [[Millor et al.|Key-Value Memory Network]] encodes prior knowledge and gets better results. [[Recurrent Entity Network]] demonstrates how we can enhance the memory unit by letting the agent learn how to read and write the memory to track the facts. Weston~\cite{weston2016dialog} generalize this model to unsupervised learning, by adding a new stage to generate answers and predict replies.
+
+This kind of model is tested on various tasks. For example, basic reasoning on 20 bAbI tasks~\cite{weston2015towards}, reading children's books~\cite{hill2015goldilocks}, understanding real dialogues from movies~\cite{dodge2015evaluating}, etc. All of the tasks plus some others can be found at the bAbI project~\footnote{https://research.fb.com/projects/babi/}. Machine comprehension is another important task, related corpora are CNN and Daily Mail datasets~\footnote{https://github.com/deepmind/rc-data}.
+
+! Theoretical framework and methods
+Considering the development of current NLP society, I sort these SE-related tasks by their difficulty.
+
+''Code based reasoning.'' Like in the 20 bAbI task, we can teach our learner to understand the syntactic structure of code and query about the variables, operands or outputs. Of course we can achieve this with the compiler or a corresponding REPL, here we want to build a model to learn the programming language by itself. Applications of this system include code refactoring, auto-generation and translation between natural languages and programming languages.
+
+Seq2seq~\cite{sutskever2014sequence} is state-of-the-art in solving this task. In theory, there exists finite RNNs that are Turing complete~\cite{siegelmann1992computational}, the question is can we train one with back propagation. To add structured information and build complicated models, I will evaluate the encoding performance of different sequence models, such as autoregressive models, RNN, recursive nets and generalize the model into a struct2struct fashion. We can utilize previous structure learning schemes such as \cite{huang2013learning} and \cite{socher2013reasoning}. Programming languages offer stricter grammars and more convenient parsing tools than natural language, which can be converted to supervision on the encoder training.
+
+''Semi-close domain QA.'' In this stage, we no longer restrict the agent to answering fixed tasks but only specify a topic. we train a chatbot to simulate human responses to certain questions. There are already some datasets dedicated to this task. Google used IT troubleshooting chat logs to train their famous conversational agent~\cite{vinyals2015neural}. Lowe et al.~\cite{lowe2015ubuntu} released the Ubuntu Dialogue Corpus containing 1M dialogues on Ubuntu-related problems. Now the challenge is not only to generate answers which seem plausible, but really make sense. Thus we can lower the cost of labor in some software service areas.
+
+Memory network is suitable for this task. To have more flexible memory, I will reach out to Neural Turing Machine~\cite{graves2014neural}, Dynamic Memory Network~\cite{kumar2015ask} and [[Differentiable Neural Computer]] for insights.
+
+''Reading comprehension.'' Then we push the agent's reading and reasoning ability to the limit by letting it read longer and more complex documents. We pose a question to the agent and give it some documents as reference. Then the agent should locate related passages and summarize the answer. Microsoft released a general purpose reading comprehension dataset called MS MARCO~\cite{nguyen2016ms} and provided several benchmarks run by some of the current learning algorithms. We can migrate this case to SE scenario, where we search answers from software documents to users queries.
+
+MS MARCO provides a [[leaderboard|http://www.msmarco.org/leaders.aspx]] to keep track of the best algorithms on this task. The current leaders are Prediction~\cite{wang2016machine} and ReasoNet~\cite{shen2016reasonet}. Prediction use match-LSTM~\cite{wang2015learning} to match the query to informative passages and a modified Pointer Network~\cite{kumar2015ask,trischler2016natural} for answer generation. ReasoNet is a memory network with a termination state.
+
+''The great convergence.'' If we can solve previous individual problems, we are ready to combine these studies to create a universal Software Engineering bot, handling real world SE problems referring to some of the most popular communities. Such an agent could find answering to project, software or language specific questions and help us with development, documenting and quality assurance.

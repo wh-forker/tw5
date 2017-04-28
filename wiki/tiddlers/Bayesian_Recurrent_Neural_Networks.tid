@@ -1,0 +1,9 @@
+created: 20170414091502145
+modified: 20170419063140851
+tags: [[Bayesian DL]] [[Recurrent Neural Networks]]
+title: Bayesian Recurrent Neural Networks
+type: text/vnd.tiddlywiki
+
+[[paper|http://arxiv.org/abs/1704.02798]]
+
+remark: MCMC solution is given. What abount VI and Evolution Strategies

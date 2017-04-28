@@ -1,5 +1,5 @@
 created: 20170306062407543
-modified: 20170306154928170
+modified: 20170419064127699
 tags: Blog [[Variational Generative Models]]
 title: Variational Inference for Generative Models
 type: text/vnd.tiddlywiki
@@ -35,7 +35,7 @@ $$
 g(z, \nu) = \log(🦂)−\operatorname{KL}[🦄\|🐉]=\mathbb E_🦄\log 🐨 - \mathbb E_🦄\log 🦄
 $$
 
-The first term prefers 🦄 to place its mass on the MAP, and the second is the entropy of 🦄 and acts like a regulizer.
+The first term prefers 🦄 to place its mass on the MAP, @@color:#859900;and the second is the entropy of 🦄 and acts like a regulizer@@.
 
 If we modify the divergence part, we arrive at other methods:
 

@@ -1,13 +1,18 @@
 created: 20161215075235041
-modified: 20161226095224429
-tags: MCMC
+modified: 20170419073536148
+tags: [[Stochastic Gradient Descent]] [[Bayesian Inference]]
 title: Stochastic Gradient MCMC
 type: text/vnd.tiddlywiki
 
-[[A Complete Recipe for Stochastic Gradient MCMC|https://arxiv.org/abs/1506.04696]]
+! Bibs
+* [[A Complete Recipe for Stochastic Gradient MCMC|https://arxiv.org/abs/1506.04696]]
 
+! Models
 * [[Stochastic Gradient Langevin Dynamics]]
 * SG Hamilton
+* SG thermostats
 * SG Fisher scoring
 
-employ stochastic gradients of $\log p(\theta, \mathbf x)$ to improve convergence and computation of existing sampling algorithms.
+SGD with a constant learning rate simulates a Markov chain with a stationary distribution. SG has been used in the service of scalable Bayesian MCMC methods, where the goal is to generate samples from a conditional distribution of latent variables given a data set.
+
+SG MCMCs employ stochastic gradients of $\log p(\theta, \mathbf x)$ to improve convergence and computation of existing sampling algorithms.

@@ -1,16 +1,20 @@
 created: 20160516024031881
-modified: 20161212080917905
+modified: 20170405111751549
 tags: [[Deep Learning Tools]]
 title: TensorFlow
 type: text/vnd.tiddlywiki
 
+! Practices
 [[CS224D 2016|Stanford NLP Course]] has a decent tf tutorial.
 
-[[TensorBoard]]
+! Features
+* [[TensorBoard]]
+* TensorFlow Serving
+* [[TensorFlow Fold|Deep Learning with Dynamic Computation Graphs]]: Parallel dynamic batching
 
-[[Projects|TensorFlow Projects]]
+! [[Projects|TensorFlow Projects]]
 
-[[TensorFlow Workarounds]]
+! [[TensorFlow Workarounds]]
 
 ! Tools
 * [[tfprof|https://github.com/tensorflow/tensorflow/tree/master/tensorflow/tools/tfprof]]: A Profiling Tool for TensorFlow Models

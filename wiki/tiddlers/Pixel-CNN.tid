@@ -1,19 +1,23 @@
 created: 20161107062404477
-modified: 20161205065049302
+modified: 20170419034547106
 tags: [[Deep Generative Models]]
 title: Pixel-CNN
 type: text/vnd.tiddlywiki
 
+! Bibs
 * [[Pixel-RNN|https://arxiv.org/abs/1601.06759]]
 * [[Conditional Image Generation with PixelCNN Decoders|https://arxiv.org/abs/1606.05328]]
 ** use horizontal stack with skip connection for current row, vertical stack for previous rows. no blind spot.
 ** 1xn and nxn masked convolution can be implemented by half-sized convs followed by a shift in pixels by padding and cropping.
 ** [[tensorflow implementation|https://github.com/anantzoid/Conditional-PixelCNN-decoder]]
+* Generating interpretable images with controllable structure
+* 
+
+! Implementations
 * Pixel-CNN++
 ** OpenAI implementation with python3/tf. quite memory consuming (even though optimized from original implementation by logistic mixture sampling of pixels), 12G takes 12 in a batch.
 ** [[tensorflow implementation|https://github.com/openai/pixel-cnn]]
+* [[fast-pixel-cnn|https://github.com/PrajitR/fast-pixel-cnn]]: speed up with cache trick for [[Dilated Convolution]]
 
-! Implementations
-!! 
-
-
+! Gated conv
+* [[Conditional Image Generation with PixelCNN Decoders|https://arxiv.org/abs/1606.05328]]

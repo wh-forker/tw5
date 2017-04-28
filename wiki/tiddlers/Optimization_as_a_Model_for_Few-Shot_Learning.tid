@@ -1,5 +1,5 @@
 created: 20170228070807064
-modified: 20170303061056108
+modified: 20170317104327686
 tags: [[ICLR 2017]] [[ICLR Paper Reviews]]
 title: Optimization as a Model for Few-Shot Learning
 type: text/vnd.tiddlywiki
@@ -38,4 +38,4 @@ Parameter sharing across all coordinates of the learner gradient, but each has i
 
 ! Remarks
 
-There are works handling catastrophic forgetting. Should think about it. 
+There are works [[handling catastrophic forgetting|Overcoming catastrophic forgetting in NNs]]. Should think about it. 
