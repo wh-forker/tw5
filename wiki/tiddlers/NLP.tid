@@ -1,10 +1,14 @@
 created: 20160425022224634
-modified: 20170405104606869
+modified: 20170518080900659
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
 
-[[NLP Bibs]]
+[[Stanford NLP Course]]
+
+! Topics
+* [[Question Answering]]
+* [[Dialog]]
 
 ! Task & State-of-the-art techniques
 
@@ -32,6 +36,12 @@ Chinese characters are more similar to English syllables than English characters
 
 !! Datasets
 Lee collected [[these datasets|http://www.cs.cornell.edu/home/llee/data/]].
+
+* [[Google Research Datasets|https://github.com/google-research-datasets]]
+** [[Online Discussion|https://github.com/google-research-datasets/coarse-discourse]]
+* [[Facebook ParlAI|https://github.com/facebookresearch/ParlAI]]
+** bAbI and wiki stuff
+** SQuAD
 
 !!! [[Sentense Classification Datasets]]
 
@@ -69,6 +79,3 @@ is to analysis and represent the semantic content of a sentence for purposes of 
 ** time-delay nets based on convolutional operations
 
 ! [[CNN for NLP]]
-
-! Topics
-* [[Question Answering]]

@@ -1,6 +1,6 @@
 created: 20170424122232412
-modified: 20170427072239316
-tags: [[Recurrent Neural Networks]]
+modified: 20170502084950483
+tags: [[New Directions for RNNs]] [[Neural Abstract Machines]]
 title: Differentiable Neural Computer
 type: text/vnd.tiddlywiki
 
@@ -8,10 +8,13 @@ type: text/vnd.tiddlywiki
 !! Components
 
 * ''controller'': reads environment input $x$ and emits action (RL) or prediction (supervised) $y$, reads and writes ''memory'' with ''interface vectors'', implemented as a LSTM.
-* ''interface parameters'': is a set of keys $k$, strengths $\beta$, gates $f$ and erase and write vectors $e$ and $v$.
 * ''memory'': Memory $M$ provides read vectors $r$. The memory is expandable because memory can be reused.
-* ''links'': a ''precedence weight'' $p_t$ keeps track of which locations were most recently written to. Temporal order is necessary so iterate through memories in the order they were written. Temporal link matrix $L_t[i,j]$ represents teh degree to which location $i$ was the location written to after location $j$.
-* ''usage'': 
+* ''heads'': read or write memory
+* ''interface parameters'': is a set of keys $k$, strengths $\beta$, gates $f$ and erase and write vectors $e$ and $v$.
+* ''links'': a ''precedence weight'' $p_t$ keeps track of which locations were most recently written to. Temporal order is necessary so iterate through memories in the order they were written. Temporal link matrix $L_t[i,j]$ represents teh degree to which location $i$ was the location written to after location $j$. Facilitates 2 congnitively important fucntions:
+** Sequence chunking: don't write at every step
+** Recording: iteratively reprocess a sequence, chunking each time
+* ''free list'': tracks the usage of each memory location, usage is automatically increased after each write and optionally decreased after each read. The network can choose to write to the most free location.
 
 !! Access
 Weights are bounded by a simplex. $a, w, p\in\Delta_N$, where $N$ is the number of locations in memory.
@@ -41,3 +44,7 @@ The field can feel too open. Infer implicit graph structure. The graph traverse 
 * `controller` is a feedforward or LSTM network.
 
 What's the strength of using sonnet?
+
+! Remarks
+* DNC fails at bAbI basic induction task (16).
+* A problem is how to scale it up.

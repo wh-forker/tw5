@@ -1,5 +1,5 @@
 created: 20150505093817222
-modified: 20161103062934673
+modified: 20170503023301088
 tags: [[Deep Learning Basics]]
 title: Deep Neural Networks Architectures
 type: text/vnd.tiddlywiki
@@ -11,3 +11,8 @@ type: text/vnd.tiddlywiki
 ! State-of-the-Art
 * [[Convolutional Neural Network]]
 * [[Recurrent Neural Networks]]
+
+Neural Architecture Search: 
+* generally a parameter search with RL
+* try some low complexity methods like random forest?
+* what those models indicate?

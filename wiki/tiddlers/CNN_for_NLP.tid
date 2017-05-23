@@ -1,5 +1,5 @@
 created: 20160518070249069
-modified: 20161029053336523
+modified: 20170511070844499
 tags: NLP [[Deep Learning Applications]]
 title: CNN for NLP
 type: text/vnd.tiddlywiki
@@ -11,6 +11,10 @@ And this course： [[Stanford CNN for NLP]]
 [[A Convolutional Neural Network for Modelling Sentences]]: A good paper to read. The model is kind of too complex.
 
 [[Convolutional Neural Networks for Sentence Classification]]: A one-layer CNN approach with simplicity and empirical performance. This has become the standard baseline for new text classification publications.
+
+! NMT
+
+* [[Convolutional Sequence to Sequence Learning]]
 
 ! Practices
 

@@ -1,0 +1,53 @@
+created: 20170502081717728
+modified: 20170503094538049
+tags: [[Recurrent Neural Networks]] [[ICLR 2017]] Talks
+title: New Directions for RNNs
+type: text/vnd.tiddlywiki
+
+
+! External Memory
+
+RNN memory is stored in the vector of hidden activations
+
+* fragile
+** tends to be overwritten by new information
+** vanishing gradients leverages by gates
+* computation grows with memory size
+** $O(N^2)$
+** read a whole book once into memory and operate on that
+* hard-coded locations make @@color:#859900;indirection (and hence variables)@@ hard
+
+External memory
+
+* less fragile, only some memory is touched at each step
+* indirection is possible: memory ''content'' is independent of ''location''
+* separates ''computation'' from ''memory''
+
+[[Differentiable Neural Computer]] is the new toy. Finding new ways of accessing memory.
+
+2 directions
+
+* [[Memory Networks]]: simple and SOTA
+* [[Neural Abstract Machines]]: for complex structured tasks
+
+! Learning When to Halt
+
+* Problem: The number of steps of computation an RNN gets before emitting an output is determined by the length fo the input sequence, not the difficulty of the task.
+* Solution: Train the network to learn how long to 'think' before it 'acts'.
+** separate computation time from data time.
+** [[Adaptive Computation Time with RNNs|https://arxiv.org/abs/1603.08983]]: reveal the difficulty of data.
+
+
+! Beyond BPTT
+
+* Problems
+** Memory cost increases with sequence length
+** Weight update frequency decreases
+** The better RNNs get, the longer the sequences we train them on
+
+* Solutions
+** Truncated backprop (misses long range interactions)
+** RTRL (too expensive)
+** Approximate/local [[RTRL|Real-Time Recurrent Learning]] (promising)
+** [[Synthetic Gradients]] (drastic)
+

@@ -1,0 +1,25 @@
+created: 20170502085952003
+modified: 20170502092313992
+tags: [[ICLR 2017]] Talks
+title: NPI via Recursion
+type: text/vnd.tiddlywiki
+
+[[Making Neural Programming Architectures Generalize via Recursion|https://arxiv.org/abs/1704.06611]]
+
+Challenges:
+
+* Generalization to more complex inputs
+* Proof of generalization
+
+Approach:
+
+* Instantiation: incorporate recursion into Neural Programmer-Interpreter
+* Training methods: As a first step, strong supervision with explicit execution traces to learn a recursive neural program
+
+! NPI
+
+* input: environment observation
+* list of predefined functions
+* NPI controller: A LSTM takes observation and caller func/args as inputs, modifies states and emits next operation
+
+NPI is trained with execution traces divided by caller functions.

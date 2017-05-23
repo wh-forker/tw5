@@ -1,5 +1,5 @@
 created: 20170426082034620
-modified: 20170427072154649
+modified: 20170504075949419
 tags: Blog NLP
 title: SE+NLP proposal
 type: text/vnd.tiddlywiki
@@ -19,6 +19,14 @@ The ultimate goal of this project is to train an agent to be able to interact wi
 # ''How can we enhance current models?'' Sequence-to-sequence (seq2seq) models based on RNN~\cite{sutskever2014sequence} are widely used in Neural Machine Translation (NMT) and Automatic Speech Recognition (ASR). They have a chain-like structure. However, in computational linguistics and compiler theory, we use a different tree-like structure, the grammar tree, which shares similarities with another kind of deep model, the Recursive Neural Network. Combining Recurrent and Recursive Neural Networks we arrive at a structure-to-structure modeling. For example we can use Neural Tensor Network~\cite{socher2013reasoning} to do a syntactic to semantic tree reasoning.
 
 ! Related Work
+!! Goal-Directed [[Dialog]]
+
+* [[Learning End-to-End Goal-Oriented Dialog|https://arxiv.org/abs/1605.07683]] test on (6) Dialog bAbI task.
+
+!! Program Induction
+Popular program induction algorithm is [[Neural Abstract Machines]]
+
+!! Memory Networks
 ''Seq2seq''~\cite{sutskever2014sequence,cho2014learning} learning is one of the most widely used models in NLP. In the original papers, an encoder RNN reads the input and generates a context vector $\mathbf c$ from the last hidden unit. Then $\mathbf c$ is connected to another RNN called the decoder, which generates the output sequence. Bahdanau et al.~\cite{bahdanau2014neural} use a sequence as the context and propose \textbf{attention mechanism} to adapt the weights of context associated with certain output stage.
 
 More recent studies enable the intelligent learner to handle long and short term memories and apply them to reasoning for tasks such as language understanding and dialogue. The agent takes the following inputs:

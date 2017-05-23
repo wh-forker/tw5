@@ -1,5 +1,5 @@
 created: 20170208074243139
-modified: 20170405094341198
+modified: 20170522090031902
 tags: [[Generative Adversarial Network]]
 title: WGAN
 type: text/vnd.tiddlywiki
@@ -10,3 +10,10 @@ type: text/vnd.tiddlywiki
 ! Implementations
 
 * [[tf|https://github.com/igul222/improved_wgan_training]]
+
+! Details
+
+WGAN uses a critic instead of a discriminator. The critic is trained to provide an approximation of the Wasserstein distance between the real data distribution $P_r$ and the generator distribution $P_g$. The approximation is based on the Kantorovich-Rubinstein duality (see [[this blog|https://vincentherrmann.github.io/blog/wasserstein/]] for more):
+$$
+W(P_r, P_g)\propto \underset{f}{\max}\mathbb E_{x\sim P_r}[f(x)]-\mathbb E_{x\sim P_g}[f(x)]
+$$

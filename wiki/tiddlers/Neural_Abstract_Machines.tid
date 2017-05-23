@@ -1,0 +1,42 @@
+created: 20170502084841487
+modified: 20170504074531919
+tags: [[Sequential Models]]
+title: Neural Abstract Machines
+type: text/vnd.tiddlywiki
+
+* NTM: could only 'allocate' memory in contiguous blocks, leading to management problems
+* [[Differentiable Neural Computer]]
+
+! Applications
+The model must interact with a symbolic executor through non-differentiable operations to search over a large program space. 
+
+Differentiable communication? [[Gumbel-Softmax|https://arxiv.org/abs/1611.01144]] trick can to approximate discrete communication decisions with a continuous representation during training.
+
+!! Semantic parsing
+
+* Train from manually ''annotated programs'' and avoiding program execution at training time.
+* Train model with backprop: limited discrete operations
+** low-level memory
+** require memory to be differentiable
+
+!! Program Induction
+Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest Path. 
+
+* Neural Turing Machine
+* Reinforcement Learning Neural Turing Machines
+* Stack Recurrent Nets
+* Neural Programmer
+* Neural Programmer-Interpreter
+* Neural GPU
+* Learning Simple Algorithms from Examples
+* [[Differentiable Neural Computer]]
+* [[NPI via Recursion]]
+
+!! Bibs
+
+* [[Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision]]
+
+!! Challenges
+
+* Existign neural program architecutures do not generalize well.
+* No Proof of Generalization

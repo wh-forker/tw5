@@ -1,5 +1,5 @@
 created: 20170118034236112
-modified: 20170303061721582
+modified: 20170504085100889
 tags: ICLR
 title: ICLR 2017
 type: text/vnd.tiddlywiki
@@ -10,8 +10,14 @@ type: text/vnd.tiddlywiki
 
 !! Oral Papers
 
-* 8: [[Optimization as a Model for Few-Shot Learning]]
 * 7: [[End-to-end Optimized Image Compression]]
+
+!! Talks
+[[Talk|https://www.facebook.com/iclr.cc/videos/vb.1026262914069441/1713144705381255/?type=2&theater]]
+
+* [[New Directions for RNNs]]
+* Best Paper Award: [[NPI via Recursion]]
+* 8: [[Optimization as a Model for Few-Shot Learning]]
 
 ! Identity Mapping
 * [[Identity Matters in Deep Learning]]
@@ -24,7 +30,12 @@ type: text/vnd.tiddlywiki
 * [[Understanding Deep Learning Requires Re-thinking Generalization|https://arxiv.org/abs/1611.03530]]
 * [[Categorical Reparameterization with Gumbel-Softmax|https://arxiv.org/abs/1611.01144]]
 
-! RNN
-
 ! NLP
 * [[Tracking the world state with recurrent entity networks|https://arxiv.org/abs/1612.03969]]
+* Deep Biaffine Attention for Neural Dependency Pasrsing
+* ReasoNet: Learning to Stop Reading in Machine Comprehension
+* Vocabulary Selection Strategies for Neural Machine Translation
+* Deep Character-Level Neural Machine Translation by Learning Morphology
+* Iterative Refinement for Machine Translation
+* A Convolutional Encoder Model for Neural Machine Translation
+* Reference-Aware Language Models

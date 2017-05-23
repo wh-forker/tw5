@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20170328110016967
+modified: 20170503094731806
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -12,7 +12,14 @@ type: text/vnd.tiddlywiki
 * Stacks
 * [[Quasi-RNN]]
 
-!! Bibs
+!! Memory networks
+* [[Memory Networks]]
+* [[Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]]
+* (Stack) RNNs with attention
+* Dynamic Mem. Nets
+* [[Neural Abstract Machines]]
+
+! Bibs
 
 * [[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
 * [[Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision|https://arxiv.org/abs/1611.00020]]
@@ -23,21 +30,9 @@ type: text/vnd.tiddlywiki
 ** [[tensorflow implementation|https://github.com/jimfleming/recurrent-entity-networks]]
 ** the results aren't easily comparable to DNC
 
-! Memory networks
-Memory-augmented networks
 
-* Memory Network
-* End-To-End Memory Network: make the supervision indirect, supervision signal on output
-* Key-Value Memory Network: makes matchings more relavant
-* Forward Prediction Memory Network
-* Recurrent Entity Network
 
-Some related models
-
-* NTM
-* Stack RNNs
-* Dynamic Mem. Nets
-* DNC
+Most networks with external memory use some form of ''content-based'' memory access, find the memory closest to some ''key vector'' emitted by the network, return either the memory content or an associated ''value vector''.
 
 !! Bibs
 

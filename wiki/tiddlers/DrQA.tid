@@ -1,0 +1,20 @@
+created: 20170517054340299
+modified: 20170517093637960
+tags: NLP
+title: DrQA
+type: text/vnd.tiddlywiki
+
+Data:
+
+* question: $q$
+* paragraph: $p$
+** with 300-dim Glove embedding, fine-tune 1000 most frequent ones
+** 3 match indicators
+** token features, POS, NER, TF
+** alighed question embedding
+
+Architecture:
+
+* Retriever: find 5 wikipedia articles given any question
+* Reader: Similar to [[Attentive Reader]]
+** encoder: 3-layer biLSTM

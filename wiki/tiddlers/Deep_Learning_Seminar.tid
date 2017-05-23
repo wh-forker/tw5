@@ -1,5 +1,5 @@
 created: 20161019015132102
-modified: 20161122074622910
+modified: 20170523081733414
 tags: Books
 title: Deep Learning Seminar
 type: text/vnd.tiddlywiki
@@ -47,6 +47,6 @@ Unless otherwise specified the course lectures and meeting times are:
 |9 |9.{1-5} |CONV, POOL, other strategies |Suggested Readings:<br><li>[[Fast Algorithms for Convolutional Neural Networks|https://arxiv.org/abs/1509.09308]]</li><li>[[cs231n lecture notes|http://cs231n.github.io/convolutional-networks/]]</li> |侯章军 |
 |10 |9.{6-11} |Structured output, unsupervised training, relation with neuroscience |Suggested Readings:<br><li>[[Fully Convolutional Networks for Semantic Segmentation|https://arxiv.org/abs/1411.4038]]</li><li>[[Super resolution with CONV|https://arxiv.org/abs/1609.07009]]</li> |张鹏 |
 |11 |10.{1-3} |RNN, Bi-RNN |Suggested Readings:<br><li>[[Speech recognition with RNN|http://www.cs.toronto.edu/~fritz/absps/RNN13.pdf]]</li><li>[[The Unreasonable Effectiveness of RNN|http://karpathy.github.io/2015/05/21/rnn-effectiveness/]]</li> |周立峰 |
-|12 |10.{4-6} |Seq2seq, recursive NN |Suggested Readings:<br><li>[[Sequence to Sequence Learning with Neural Networks|https://arxiv.org/abs/1409.3215]]</li><li>[[Tensorflow Tutorial: Sequence-to-Sequence Models|https://www.tensorflow.org/versions/r0.11/tutorials/seq2seq/index.html]]</li><li>[[Parsing Natural Scenes and Natural Language with Recursive NNs|http://www-nlp.stanford.edu/pubs/SocherLinNgManning_ICML2011.pdf]]</li> |陈昊 |
+|12 |10.{4-6} |Seq2seq, recursive NN, [[slides|https://docs.google.com/presentation/d/1fiS5J2a7IqgLZhVEoSC-XvreMILKiyZERWLTNzwL7Lo/edit?usp=sharing]] |Suggested Readings:<br><li>[[Sequence to Sequence Learning with Neural Networks|https://arxiv.org/abs/1409.3215]]</li><li>[[Tensorflow Tutorial: Sequence-to-Sequence Models|https://www.tensorflow.org/versions/r0.11/tutorials/seq2seq/index.html]]</li><li>[[Parsing Natural Scenes and Natural Language with Recursive NNs|http://www-nlp.stanford.edu/pubs/SocherLinNgManning_ICML2011.pdf]]</li> |陈昊 |
 |13 |10.{7-12} |Long-term dependency, echo state networks, Gated RNNs, optimization, explicit memory |Suggested Readings:<br><li>[[MemNN|http://arxiv.org/pdf/1410.3916v8.pdf]]</li><li>[[LSTM: A Search Space Odyssey|http://arxiv.org/abs/1503.04069]]</li><li>[[Towards AI-Complete Question Answering: A Set of Prerequisite Toy Tasks|https://arxiv.org/abs/1502.05698]]</li> |白海 |
 |14 |11.{1-6} |Tuning model performance w.r.t. hyperparameters, debugging strategies, SVT example |Suggested Readings:<br><li>[[Google Street View paper|https://arxiv.org/abs/1312.6082v4]]</li> |杨旭东 |

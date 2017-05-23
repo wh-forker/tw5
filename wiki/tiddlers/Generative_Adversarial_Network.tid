@@ -1,5 +1,5 @@
 created: 20161021080332245
-modified: 20170428074115698
+modified: 20170502081328083
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
@@ -14,6 +14,7 @@ type: text/vnd.tiddlywiki
 
 !! Research Directions
 * Generate HQ images. Image is a good field for generative models, because we are sensible to image plausibility.
+** Higher resolution images can be generated in a multiscale fashion.
 * Address GAN training difficulties
 ** [[Amortised MAP Inference for Image Super-resolution|https://arxiv.org/abs/1610.04490]]
 ** [[Towards Principled Methods for Training Generative Adversarial Networks|https://arxiv.org/abs/1701.04862]]
@@ -24,6 +25,9 @@ type: text/vnd.tiddlywiki
 * More applications
 ** Text (large discrete ouput spaces)
 ** Reinforcement learning.
+* Reducing variance?
+** Many networks like GAN are stochastic, depends on a non-stationary sampling
+** Look into RL literatures where value distribution depends on policy.
 
 ! Bibs
 

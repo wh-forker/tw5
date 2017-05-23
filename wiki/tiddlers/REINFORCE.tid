@@ -1,0 +1,10 @@
+created: 20170508090744243
+modified: 20170508091832276
+tags: [[Reinforcement Learning]]
+title: REINFORCE
+type: text/vnd.tiddlywiki
+
+REINFORCE approximates the expectation with independent samples from the policy distribution, yielding the policy gradient
+$$
+\nabla\mathcal L_{RL}\approx\sum_{t=1}\nabla\log\pi(\hat y_t|\hat y_{<t}, D, A)\frac{R(\hat Y)-\mu_R}{\sigma_R}
+$$

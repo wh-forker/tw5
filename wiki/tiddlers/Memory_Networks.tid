@@ -1,11 +1,23 @@
 created: 20170426055828438
-modified: 20170426085400039
-tags: [[Recurrent Neural Networks]] NLP
+modified: 20170504063640963
+tags: NLP [[Sequential Models]]
 title: Memory Networks
 type: text/vnd.tiddlywiki
 
-* [[Key-Value Memory Network]]
+This family uses a universal access mechanism (c.f. associative computers).
+
+* End-To-End Memory Network: make the supervision indirect, supervision signal on output
+* [[Key-Value Memory Network]]: makes matchings more relavant, easy to do pointers.
+* Forward Prediction Memory Network
 * [[Recurrent Entity Network]]
+
+! Sparse Memory Access
+* [[Scaling Memory-Augmented Neural Networks with Sparse Reads and Writes|https://arxiv.org/abs/1610.09027]]
+** restrict read write size to constant
+** kNN memory matching
 
 ! Code
 [[fb MemNN|https://github.com/facebook/MemNN]]
+
+! Remarks
+Maybe not the most convenient for all tasks: e.g. we search real computers using many more mechanisms (text, trees, read/write time, title/tags).

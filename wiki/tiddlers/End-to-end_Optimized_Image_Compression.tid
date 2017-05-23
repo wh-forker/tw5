@@ -1,11 +1,17 @@
 created: 20170303073416427
-modified: 20170305152954279
-tags: [[ICLR 2017]] [[ICLR Paper Reviews]] Compression
+modified: 20170508062114912
+tags: [[ICLR 2017]] [[ICLR Paper Reviews]] [[Variational Generative Models]]
 title: End-to-end Optimized Image Compression
 type: text/vnd.tiddlywiki
 
-Generalized divisive normalization
+* [[paper|https://openreview.net/forum?id=rJxdQ3jeg&noteId=rJxdQ3jeg]]
 
-Similar to VAE, but approximate the discrete problem along the rate-distortion curve.
+Generalized divisive normalization. “which has previously been shown to be highly efficient in Gaussianizing the local joint statistics of natural images.” Gaussianizing here means mapping the data onto a normal distribution. The normalisation operation looks like this, where $w_{i}^{(k)}(m,n)$ is the output of the downsampling step,corresponding to spatial location $(m,n)$, and $\beta$, $\gamma$ are learned parameters.
 
-The distortion measure is MSE. 
+The distortion measure is MSE. Since no reliable perceptual metric for colored image.
+
+Questions
+
+* What is adaptive entropy coder.
+* This should be at least useful in generating images.
+* Similar to VAE, but approximate the discrete problem along the rate-distortion curve. Study eq 10, the equivalence to VAE holds at least for any norm, and any affine and invertible perceptual transform.

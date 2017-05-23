@@ -1,0 +1,15 @@
+created: 20170502081900132
+modified: 20170503030342551
+tags: [[Recurrent Neural Networks]] [[New Directions for RNNs]] Meta-Learning
+title: Synthetic Gradients
+type: text/vnd.tiddlywiki
+
+! DNI
+
+* [[Decoupled Neural Interfaces using Synthetic Gradients|https://arxiv.org/abs/1608.05343]]
+** We can create a model of error gradients using local information
+** The result is Layer 1 can now update before the execution of Layer 2.
+** Analogous to return prediction bootstrapping in RL (TD learing/Actor-Critic): 'Learn a guess from a guess'
+
+! Multi Network
+Two RNNs tick at different clock speeds. Don't have to train synchronized.

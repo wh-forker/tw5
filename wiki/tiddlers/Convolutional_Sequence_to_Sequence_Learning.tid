@@ -1,0 +1,23 @@
+created: 20170511070906805
+modified: 20170515105703930
+tags: [[CNN for NLP]] [[Neural Machine Translation]]
+title: Convolutional Sequence to Sequence Learning
+type: text/vnd.tiddlywiki
+
+! Structure
+
+* WeightNorm after each Conv
+* Skip connection with each Conv
+* The encoder stack will receive gradients //twice// for each attention.
+
+! Code
+Lua code is so unintuitive. It brings me headache.
+
+* EncoderStack: EncoderConv with skip connection
+* DecoderConvBlock
+
+! Ideas
+
+* More general seq2seq usages
+* Cache mechanism useful?
+* Multilanguage

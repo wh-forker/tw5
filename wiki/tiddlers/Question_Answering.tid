@@ -1,8 +1,23 @@
 created: 20170405104624230
-modified: 20170405104712491
+modified: 20170508090743085
 tags: NLP
 title: Question Answering
 type: text/vnd.tiddlywiki
 
 ! Open Domain
 * [[Reading Wikipedia to Answer Open-Domain Questions|https://arxiv.org/abs/1704.00051]]: Useful datasets and benchmarks provided
+
+! Examples
+* Machine Comprehension by Text-to-Text Neural Question Generation
+
+! SOTA
+!! Seq2seq
+
+* Encoder
+** BiLSTM, read document $D$, generate augmented document sequence $\mathbf h^d$
+** BiLSTM, read query $Q$ and subset $\mathbf h^d$, generate encoding $\mathbf h^q$ (original paper used answer as query so that words came from document)
+** compute initial state for decoder
+* Decoder
+** Location, pointer network over document tokens, softmax $\mathbf\alpha$, compute context vector $\mathbf v$
+** Shortlist, reads $\mathbf v$, softmax over answer vocabulary $\mathbf o$
+** Source switching network (2-layer MLP) enables model to interpolate between these distributions

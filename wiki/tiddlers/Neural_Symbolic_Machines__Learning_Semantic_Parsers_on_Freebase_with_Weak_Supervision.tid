@@ -1,0 +1,19 @@
+created: 20170503085036768
+modified: 20170504070227487
+tags: [[Neural Abstract Machines]]
+title: Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision
+type: text/vnd.tiddlywiki
+
+components
+
+* manager: provides weak supervision
+* programmer: seq2seq
+* computer: symbolic non-differentiable Lisp interpreter
+
+contributions
+
+# augment seq2seq model with a key-variable memory
+# generalize the weakly supervised semantic parsing framework
+#* execute partial program
+#* prune search space
+# REINFORCE + iterative maximum likelihood training process

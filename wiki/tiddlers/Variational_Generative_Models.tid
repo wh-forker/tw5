@@ -1,5 +1,5 @@
 created: 20161102063110959
-modified: 20170419064220508
+modified: 20170508061631300
 tags: [[Deep Generative Models]]
 title: Variational Generative Models
 type: text/vnd.tiddlywiki
@@ -22,3 +22,7 @@ type: text/vnd.tiddlywiki
 ! Theory
 
 * [[Variational Inference for Generative Models]]
+
+! Applications
+
+* [[End-to-end Optimized Image Compression]]

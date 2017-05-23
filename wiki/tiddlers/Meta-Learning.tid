@@ -1,0 +1,29 @@
+created: 20170503023704453
+modified: 20170503030443263
+tags: Vision [[Recurrent Neural Networks]]
+title: Meta-Learning
+type: text/vnd.tiddlywiki
+
+Deep learning hard to generalize given few examples because there is no optimization techniques dedicated to this kind of problems.
+
+''Meta-learning'' suggests we learn in 2 steps:
+
+* acquire knowledge within each separate task (fast)
+* extract information across all tasks (slow)
+
+Consider a training algorithm
+
+* input: training set $D_{train} = \{(X_t, Y_t)\}^T_{t=1}$
+* output: parameters $\theta$ of model $M$
+* obejctive: good performance on test set $D_{test} = (X, Y)$
+
+Desire a meta-learning algorithm
+
+* input: meta-training set $\mathcal D_{meta-train} = \{(D_{train}^{n}, D_{test}^n)\}_{n=1}^N$, where $D_{train}^{n}$ is a set of training set.
+* output: parameters $\Theta$ representing a training algorithm
+* objective: good performance on meta-test set $\mathcal D_{meta-test} = \{(D_{train}^{n'}, D_{test}^{n'})\}_{n'=1}^{N'}$
+
+! Examples
+
+* [[Optimization as a Model for Few-Shot Learning]]
+* [[Synthetic Gradients]]

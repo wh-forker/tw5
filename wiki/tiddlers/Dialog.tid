@@ -1,0 +1,7 @@
+created: 20170504075955912
+modified: 20170504080002136
+tags: NLP
+title: Dialog
+type: text/vnd.tiddlywiki
+
+* [[Learning End-to-End Goal-Oriented Dialog|https://arxiv.org/abs/1605.07683]] test on (6) Dialog bAbI task.
