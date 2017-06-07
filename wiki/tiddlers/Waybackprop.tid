@@ -1,0 +1,7 @@
+created: 20170602065901274
+modified: 20170602070301650
+tags: [[Recurrent Neural Networks]]
+title: Waybackprop
+type: text/vnd.tiddlywiki
+
+Repeatedly running the model forward and backing it up again seems like a silly thing to do. Indeed online methods for training recurrent neural networks are an active area of research.

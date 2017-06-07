@@ -1,5 +1,5 @@
 created: 20160516024046072
-modified: 20170414100109962
+modified: 20170605082855192
 tags: [[Deep Learning Engineering]]
 title: Deep Learning Tools
 type: text/vnd.tiddlywiki
@@ -8,19 +8,13 @@ For Speech
 
 * [[Kaldi]]
 
-Programmatic generation
 
 * [[Torch]]
-* [[Theano]]
 * [[TensorFlow]]
 * PyTorch
 ** [[The Incredible PyTorch|https://github.com/ritchieng/the-incredible-pytorch]]
-
-Configuration file
-
 * [[Caffe]]
-* [[DistBelief]]
-* [[CNTK]]
+* [[DyNet|https://github.com/clab/dynet]]: supports on-the-fly batching
 
 [[Benchmarking State-of-the-Art Tools|https://github.com/hclhkbu/dlbench]]
 

@@ -1,5 +1,5 @@
 created: 20161018054301211
-modified: 20170222070035160
+modified: 20170605030313393
 title: TODOs
 type: text/vnd.tiddlywiki
 
@@ -14,6 +14,8 @@ type: text/vnd.tiddlywiki
 # The ensemble nature of resnet may encourage refined SGD to modulate the impacts of different paths.
 # Experiment on Cross-convolutional-layer pooling, similar idea as conv-attention
 # Currently the biggest challenge of VQA is numbering problems. Probably this is related to detecting a cluster of similar objects (e.g. character detection).
+# NLP
+## Compute word vectors from definition?
 
 ! Experiments
 # [[Deep generative model tryouts]]

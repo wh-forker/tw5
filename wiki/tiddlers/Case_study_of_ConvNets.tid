@@ -1,5 +1,5 @@
 created: 20151112075540768
-modified: 20161206125918067
+modified: 20170606071820675
 tags: [[Convolutional Neural Network]]
 title: Case study of ConvNets
 type: text/vnd.tiddlywiki
@@ -12,7 +12,7 @@ There are several architectures in the field of Convolutional Networks that have
 # [[GoogLeNet|GoogLeNet]]. The ILSVRC 2014 winner was a Convolutional Network from Szegedy et al. from Google. Its main contribution was the development of an Inception Module that dramatically reduced the number of parameters in the network (4M, compared to AlexNet with 60M).
 # [[VGGNet]]. The runner-up in ILSVRC 2014 was the network from Karen Simonyan and Andrew Zisserman that became known as the VGGNet. Its main contribution was in showing that the depth of the network is a critical component for good performance. Their final best network contains 16 CONV/FC layers and, appealingly, features an extremely homogeneous architecture that only performs 3x3 convolutions and 2x2 pooling from the beginning to the end. It was later found that despite its slightly weaker classification performance, the VGG ConvNet features outperform those of GoogLeNet in multiple transfer learning tasks. Hence, the VGG network is currently the most preferred choice in the community when extracting CNN features from images. In particular, their pretrained model is available for plug and play use in Caffe. A downside of the VGGNet is that it is more expensive to evaluate and uses a lot more memory and parameters (140M).
 # [[ResNet]]. The ILSVRC 2015 winner.
-# [[DCNN|Deep Convolutional Neural Networks]]: A long lost Baidu model. 2015 ImageNet contender.
+# [[DiracNet]]
 
 Prototype networks:
 

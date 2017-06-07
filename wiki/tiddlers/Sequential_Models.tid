@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20170503094731806
+modified: 20170602070243892
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -17,6 +17,7 @@ type: text/vnd.tiddlywiki
 * [[Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]]
 * (Stack) RNNs with attention
 * Dynamic Mem. Nets
+* [[Using Fast Weights to Attend to the Recent Past]]
 * [[Neural Abstract Machines]]
 
 ! Bibs

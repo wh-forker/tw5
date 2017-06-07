@@ -1,5 +1,5 @@
 created: 20170502084841487
-modified: 20170504074531919
+modified: 20170531073051523
 tags: [[Sequential Models]]
 title: Neural Abstract Machines
 type: text/vnd.tiddlywiki
@@ -31,6 +31,7 @@ Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest P
 * Learning Simple Algorithms from Examples
 * [[Differentiable Neural Computer]]
 * [[NPI via Recursion]]
+* [[Program Induction by Rational Generation: Learning to Solve and Explain Algebraic Word Problems]]
 
 !! Bibs
 

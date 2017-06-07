@@ -1,5 +1,5 @@
 created: 20160425022224634
-modified: 20170518080900659
+modified: 20170605082519901
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
@@ -7,8 +7,12 @@ type: text/vnd.tiddlywiki
 [[Stanford NLP Course]]
 
 ! Topics
+* [[CNN for NLP]]
 * [[Question Answering]]
 * [[Dialog]]
+
+! Tools
+* [[LSTMVis|https://github.com/HendrikStrobelt/LSTMVis]]
 
 ! Task & State-of-the-art techniques
 
@@ -78,4 +82,3 @@ is to analysis and represent the semantic content of a sentence for purposes of 
 ** recursive nets
 ** time-delay nets based on convolutional operations
 
-! [[CNN for NLP]]

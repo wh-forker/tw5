@@ -1,10 +1,17 @@
 created: 20161021080332245
-modified: 20170502081328083
+modified: 20170605074357041
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
 
 ! Theory
+The GAN framework consists of two players - the //generator// $G_\phi(z)$ whose aim is to create realistic samples and the //discriminator// $D_\theta(x)$ whose aim is to classify an instance as having come from training data or the generator. Their cost functions are defined as:
+$$J^{(D)}(\phi, \theta) = -\frac12\mathbb E_{x\sim p_{real}}\log D_\theta(x)-\frac12\mathbb E_z\log(1-D_\theta(G_\phi(z)))$$
+$$J^{(G)}(\phi, \theta) = \frac12\mathbb E_z\log(1-D_\theta(G_\phi(z)))$$
+The complete game can be specified as:
+$$\underset{\phi}{\min}\underset{\theta}{\max} g(\phi, \theta) = \mathbb E_{x\sim p_{real}}\log D_\theta(x) + \mathbb E_z\log(1-D_\theta(G_\phi(z)))$$
+At equilibrium, JS divergence between the data and model distributions is minimized meaning G has converged to $P_{real}$ and D outputs 1/2 for all x.
+
 !! Understanding GAN
 
 * Ian's [[Generative Adversarial Network Talk]]
@@ -35,12 +42,14 @@ type: text/vnd.tiddlywiki
 
 * [[Unsupervised representation learning with deep convolutional generative adversarial networks]]
 ** Laplacian Pyramid of GANs is further suggested to generate high quality image in a coarse-to-fine manner.
-* [[DCGAN|Unsupervised representation learning with deep convolutional generative adversarial networks]]
+* [[DCGAN|Unsupervised representation learning with deep convolutional generative adversarial networks]]: a stable family of architecture in training.
 * [[SeqGAN|http://arxiv.org/abs/1609.05473]]
 * [[Stacked GAN|https://arxiv.org/abs/1612.04357]]
 * [[Super-Resolution GAN|https://arxiv.org/abs/1609.04802]]
 * [[InfoGAN]]
-* [[WGAN]]
+* LS-GAN enforces $D_\theta(G_\phi(z)) - D_\theta(x)\ge\delta(x, G_\phi(z))$ and @@color:#859900;impose a Lipschitz constraint on both G and D using weight decay@@. This leads to D having non-vanishing gradients everywhere between all real and fake sample pairs.
+* [[WGAN]] uses Earth-Mover distance as the objective. This requires the discriminator to be a Lipschitz function and they use weight clipping to achieve that.
+* [[Improved WGAN|https://arxiv.org/abs/1704.00028]] imposes $\|\nabla_{\hat x}D_{\theta}(\hat x)\|_2\approx 1$ where $\hat x = \epsilon x+(1-\epsilon)G_\phi(z)$. This leads to D having norm 1 gradients everywhere between all real and fake sample pairs in the limit.
 
 !! Theory
 

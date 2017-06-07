@@ -1,0 +1,23 @@
+created: 20170531085416027
+modified: 20170602025425469
+tags: [[Sequential Models]] [[Attention Mechanism]]
+title: Using Fast Weights to Attend to the Recent Past
+type: text/vnd.tiddlywiki
+
+This paper propses a biologically plausible way of modeling memory in RNNs. The authors claim short-term memory is not modeled well by hidden layer in classic RNN, so they add more layers to the recurrent unit.
+
+<<<
+Plastic mechanisms are more accurately modeled by a memory with $O(H^2)$ capacity than the $O(H)$ of standard recurrent artificial recurrent neural nets and LSTMs.
+<<<
+
+I think this structure is similar to a RNN with deep hidden layer and skip connections under the hood. The Hebbian-like rule for updating the fast weights $A(t)$ is like embedding a Hopfield network.
+$$
+A(t) = \lambda A(t-1)+\eta h(t)h(t)^\top
+$$
+We don't have to compute the fast weight matrxi:
+$$
+A(t)h_s(t+1) = \eta\sum_{\tau=1}{\tau=t}\lambda^{t-\tau}h(\tau)[h(\tau)^\top h_s(t+1)]
+$$
+The $h(\tau)^\top h_s(t+1)$ part can be interpreted as attention. This auto associate rule from Hopfield net is not memory efficient. It can only store $\log(N)$ number of the patterns. The fact that is is learned through backprop makes it more efficient in some way.
+
+The decay rate is different from the original idea.

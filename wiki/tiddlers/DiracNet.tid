@@ -1,0 +1,10 @@
+created: 20170606071844157
+modified: 20170606071932579
+tags: [[Case study of ConvNets]]
+title: DiracNet
+type: text/vnd.tiddlywiki
+
+* [[paper|https://arxiv.org/abs/1706.00388]]
+* [[Implementation|https://github.com/szagoruyko/diracnets]]
+
+able to outperform ResNet-1000 with plain DiracNet with only 34 layers

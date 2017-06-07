@@ -1,5 +1,5 @@
 created: 20170405104624230
-modified: 20170508090743085
+modified: 20170607063530640
 tags: NLP
 title: Question Answering
 type: text/vnd.tiddlywiki
@@ -21,3 +21,8 @@ type: text/vnd.tiddlywiki
 ** Location, pointer network over document tokens, softmax $\mathbf\alpha$, compute context vector $\mathbf v$
 ** Shortlist, reads $\mathbf v$, softmax over answer vocabulary $\mathbf o$
 ** Source switching network (2-layer MLP) enables model to interpolate between these distributions
+
+! Bibs
+
+* [[DrQA]]
+* [[R-Net]]: SOTA on SQuAD

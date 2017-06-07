@@ -1,5 +1,5 @@
 created: 20160615090746926
-modified: 20170217061445799
+modified: 20170602030220849
 tags: [[Normalization Layer]]
 title: Batch Normalization
 type: text/vnd.tiddlywiki
@@ -8,6 +8,7 @@ type: text/vnd.tiddlywiki
 
 ! Bib
 * [[Batch Renormalization]]
+* [[Recurrent Batch Normalization]]
 
 ! Problem
 ; Internal covariate shift

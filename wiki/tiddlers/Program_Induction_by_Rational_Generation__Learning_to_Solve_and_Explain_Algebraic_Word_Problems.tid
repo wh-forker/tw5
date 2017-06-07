@@ -1,0 +1,27 @@
+created: 20170531073120250
+modified: 20170531075013618
+tags: [[Neural Abstract Machines]]
+title: Program Induction by Rational Generation: Learning to Solve and Explain Algebraic Word Problems
+type: text/vnd.tiddlywiki
+
+Operations: 
+
+* Id, Add, Subtract, Multiply, Divide, Power, Log, Sqrt, Sine, Cosine, Tangent, Factorial, nchoosek.
+* Radians Degrees convertion
+* Str Float convertion
+
+
+The instruction $z_i$ is a tuple consisting of
+
+* an operation ($o_i$)
+* an ordered sequence of its arguments ($\mathbf a_i$)
+* a decision about where its results will be placed($r_i$), to output or memory
+* the result of applying the operation to its arguments ($v_i$).
+
+Controller generates 3 kind of instructions
+
+* softmax
+* copy input
+* copy output
+
+TODO: convert to a "scratch paper" input (stack, heap, tape etc like?)

@@ -1,17 +1,18 @@
 created: 20161008091826135
-modified: 20170405110220498
+modified: 20170606024402298
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
 
 ! Tutorials
 
-[[WildML: Learning Reinforcement Learning|http://www.wildml.com/2016/10/learning-reinforcement-learning/]]
+* [[WildML: Learning Reinforcement Learning|http://www.wildml.com/2016/10/learning-reinforcement-learning/]]
+* [[Simple Reinforcement Learning with Tensorflow|https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0]]
 
 ! Basic
 !! RL agents
 * value based, has a value function where policy can be inferred.
-* policy based, work in decision space
+* policy based, work in decision space, more direct. Policy Graident.
 * actor critic: stores policy and value
 * model free/based
 
@@ -29,12 +30,17 @@ $$
 
 Approximation of Q-values using non-linear functions is unstable and takes a week on a single GPU. ''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
 
-DeepMind actually used more tricks, target network, error clipping, reward clipping etc.
+!! Tricks
+
+* Freezing target network
+* Error clipping, reward clipping
+* Experience replay
 
 ! Bibs
 * [[Faster Deep Reinforcement Learning]]
 * [[Playing Doom with SLAM-Augmented Deep Reinforcement Learning|https://arxiv.org/abs/1612.00380]]
 * [[Learning to Communicate|https://blog.openai.com/learning-to-communicate/]]: differentiable language for RL
+* [[Curiosity-driven Exploration by Self-supervised Prediction|https://pathak22.github.io/noreward-rl/]]: training with sparse reward
 
 ! Implementations
 Environments

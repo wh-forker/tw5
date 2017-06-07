@@ -1,0 +1,19 @@
+created: 20170607063627712
+modified: 20170607071444483
+tags: [[Question Answering]]
+title: R-Net
+type: text/vnd.tiddlywiki
+
+! Implementation
+Attempts to implement based on ParlAI and PyTorch. A torch version of [[match-lstm and pointer network|https://github.com/shuohangwang/SeqMatchSeq]] should be helpful.
+
+!! Encoder
+* character-level embedding
+!! Attention
+* gated attention-based RNN: corner stone but kind of complicated. Wang & Jiang's match-lstm.
+!! Output Layer
+* [working] Wang & Jiang's adoption of Pointer Network
+!! Visualization
+* Attention weights $c_t$.
+!! Other Ideas
+* DeepMind releases a [[Relation network|https://arxiv.org/abs/1706.01427]], which is similar to attention, in a sum fashion, should be considered.
