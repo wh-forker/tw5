@@ -1,15 +1,17 @@
 created: 20161115080334482
-modified: 20161116082009782
+modified: 20170720124840078
 tags: Math
 title: Optimization
 type: text/vnd.tiddlywiki
 
-! Basics
+! Theory
 * [[Optimization Algorithms]]
+* [[On the universality of potential well dynamics]]
 
 ! Convex Optimization
 !! Bib
 * [[Convex Optimization: Algorithms and Complexity|https://arxiv.org/abs/1405.4980]]
+* [[Smooth Distributed Convex Optimization]]
 
 ! Non-Convex Optimization
 !! Some properties to look for in non-convex optimization
@@ -32,3 +34,4 @@ in which case gradient descent converges at the slow non-smooth rate $1/\sqrt{t}
 * [[On Optimization in Deep Learning]]
 * [[Identity Matters in Deep Learning]]
 * [[Optimizing RNN]]
+* [[Escaping Saddle Points]]

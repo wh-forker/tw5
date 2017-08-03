@@ -1,5 +1,5 @@
 created: 20170427153639938
-modified: 20170427163600499
+modified: 20170710144504599
 tags: Statistics
 title: Statistical Measures
 type: text/vnd.tiddlywiki
@@ -29,9 +29,14 @@ $$
 Depending on the structure of $\mathcal F$, we get different measures. 
 
 * Energy statistics [Szekely, 1997]
-* Kernel MMD [Gretton et al. 2012] [Smola et al. 2007]
+* $\mathcal F$ is a unit-ball in a RKHS $\mathcal H$: Kernel [[MMD|Maximum Mean Discrepancy]]
 * Wasserstein distance [Cuturi, 2013]
-* DISCO Nets [Bouchacourt et al. 2016]
+* [[DISCO Net]]s [Bouchacourt et al. 2016]
+
+**Wasserstein Distance**:
+$$
+W_c(P\|Q):=\inf_{\rho:\rho_X=P, \rho_Y=Q}\int\int c(x, y)d\rho(x, y)
+$$
 
 Because we use integral here, we can compute this distance with samples.
 
@@ -43,11 +48,15 @@ We take expectation of a score of how well the distribution $P$ fits the realiza
 $$
 S(P, Q) = \int S(P, x)dQ(x)
 $$
+$$
+S(P, P) \ge S(P, Q), \forall P, Q\in\mathcal P
+$$
 The scores can be used are:
 
-* log-likelihood: then this is maximum likelihood
+* log-likelihood, $S(P, x)=\log P(x)$ then this is maximum likelihood
 * Bayes score
-* Quadratic score
+* Quadratic score, $S(P, x) = 2P(x)-\|P\|^2_2$
+* Pseudoshperical score, $S(P, x) = P(x)^{\alpha-1}/\|P\|_{\alpha}^{\alpha-1}$
 
 !! $f$-divergence
 
@@ -56,11 +65,19 @@ The scores can be used are:
 
 $f$-divergence is a generalization of KL divergence. Now we require knowing the distribution of both $P$ and $Q$
 $$
-D_f(P\|Q) = \int_Xq(x)f\left(\frac{p(x)}{q(x)}\right)dx
+D_f(P\|Q) = \int f\left(\frac{dP(x)}{dQ(x)}\right)dQ(x)
 $$
-where $f$ is a convex function of likelihood ratio. Examples are
+where $f$ is a convex function of likelihood ratio. $f: \mathbb R\rightarrow\mathbb R\cup\{+\infty\}$. Properties:
 
-* [[Kullback-Leibler divergence]]
-* [[Jensen-Shannon divergence]]
-* Total variation
+# $D_f(P\|Q)\ge 0$ and $D_f(P\|Q) = 0$ when $P=Q$;
+# $D_f(P\|Q)=D_g(P\|Q)$ for any $g(x) = f(x) + \lambda(x-1)$
+# Taking $f_0(x) := f(x)-(x-1)f'(1)$ is good. It's nonnegative, nonincreasing on $(0, 1]$ and nondecreasing on $[1, \infty)$;
+# Taking the convec restriction $f_+(x) = f(x)$ if $x\ge0$ and $\infty$ otherwise.
+
+Examples are
+
+* [[Kullback-Leibler divergence]]: $f = x\log x$
+* Reverse KL: $f(x) = -\log x$
+* [[Jensen-Shannon divergence]]: $f(x) = -(x+1)\log\frac{x+1}{2}+x\log x$
+* Total variation: $f(x) = |x-1|$
 * Pearson $\chi^2$

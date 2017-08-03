@@ -1,0 +1,18 @@
+created: 20170629090425858
+modified: 20170630055819449
+tags: [[Deep Learning Engineering]]
+title: Sobolev Training for Neural Networks
+type: text/vnd.tiddlywiki
+
+[[paper|https://arxiv.org/abs/1706.04859]]
+
+Optimising neural networks to not only approximate the function's outputs but also the function's derivatives. When the ground truth function is a network:
+
+* model compression
+* model distillation
+* gradient synthesis
+
+Foundations
+
+* Hornik proved the universal approximation theorems for neural networks in Sobolev spaces - metric spaces where distances between functions are defined both in terms of their differences in values and differences in values of their derivatives.
+* Sigmoid network's derivates w.r.t. its inputs can approximate the corresponding derivates of the ground truth function arbirarily well too.

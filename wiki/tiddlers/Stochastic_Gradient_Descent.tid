@@ -1,5 +1,5 @@
 created: 20161226065652883
-modified: 20170420094525152
+modified: 20170612080657746
 tags: [[Optimization Algorithms]]
 title: Stochastic Gradient Descent
 type: text/vnd.tiddlywiki
@@ -9,6 +9,7 @@ type: text/vnd.tiddlywiki
 
 ! Theory
 * [[Gradient Descent Basics]]
+* [[Gradient Descent Properties]]
 * [[Stochastic Gradient MCMC]]
 * [[On SGD’s Failure in Practice: Characterizing and Overcoming Stalling]]
 

@@ -1,0 +1,24 @@
+created: 20170705060606623
+modified: 20170710071857040
+tags: 
+title: Deep Learning Researchers
+type: text/vnd.tiddlywiki
+
+! Probabilistic Models
+
+* [[David Duvenaud|https://www.cs.toronto.edu/~duvenaud/]]: PhD@Cambridge, Harvard, AP@TorontoU. Good PyTorch Coder.
+** Talks: [[Generator-aware Discriminators & Discriminator-aware Generators|DALI 2017 GAN Workshop]]
+* [[David Pfau|http://davidpfau.com/]]: DeepMind
+** Working on GAN, RL and Meta Learning
+* Bharath K. Sriperumbudur
+* Bernhard Schölkopf
+
+! Optimization
+
+* Sanjeev Arora
+* Rong Ge
+* Tengyu Ma
+
+! Modelling
+* [[Oriol Vinyals|https://research.google.com/pubs/OriolVinyals.html]]: DeepMind, PhD@UCB
+** Sequence modeling: Seq2Seq, Bayesian RNN, LSTM variants.

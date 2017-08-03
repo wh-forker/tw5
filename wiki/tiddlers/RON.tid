@@ -1,0 +1,13 @@
+created: 20170724071208658
+modified: 20170724091532584
+tags: [[Object Detection With CNNs]]
+title: RON
+type: text/vnd.tiddlywiki
+
+! Feature map sizes
+To adopt original strides:
+
+* 1/8 from stage2_unit4: _plus6
+* 1/16 from res4: _plus12
+* 1/32 from res5: _plus15
+* 1/64 from conv6: 

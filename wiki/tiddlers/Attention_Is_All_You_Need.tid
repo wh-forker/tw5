@@ -1,0 +1,15 @@
+created: 20170614091907892
+modified: 20170614092945194
+tags: [[Neural Machine Translation]]
+title: Attention Is All You Need
+type: text/vnd.tiddlywiki
+
+Multi-head attention allows the model to jointly attend to information from different representation subspaces at different positions.
+
+To prevent leftward information flow, all values in the input of the softmax are masked out.
+
+! Remarks
+
+* TODO: this attention should work with segmentation. (Probably too much computation, how does this compared to CRF?)
+* TODO: attention in stock market?
+* Multi-level attention for detection and other large scale memories?

@@ -1,5 +1,5 @@
 created: 20170503023704453
-modified: 20170503030443263
+modified: 20170724061130978
 tags: Vision [[Recurrent Neural Networks]]
 title: Meta-Learning
 type: text/vnd.tiddlywiki
@@ -23,7 +23,8 @@ Desire a meta-learning algorithm
 * output: parameters $\Theta$ representing a training algorithm
 * objective: good performance on meta-test set $\mathcal D_{meta-test} = \{(D_{train}^{n'}, D_{test}^{n'})\}_{n'=1}^{N'}$
 
-! Examples
+! Bibs
 
 * [[Optimization as a Model for Few-Shot Learning]]
 * [[Synthetic Gradients]]
+* [[Meta-Learning with Temporal Convolutions|https://arxiv.org/abs/1707.03141]]

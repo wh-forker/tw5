@@ -1,0 +1,9 @@
+created: 20170612080715319
+modified: 20170612081725712
+tags: [[Stochastic Gradient Descent]]
+title: Gradient Descent Properties
+type: text/vnd.tiddlywiki
+
+* For general non-convex problems, GD finds a stationary point in polynomial time. 
+* GD almost always escapes saddle points asymptotically. [[(Lee et al. 2016) Gradient descent converges to minimizers|https://arxiv.org/abs/1602.04915]]
+* GD with perturbations is not slowed down by saddle points. [[(Ge et al. 2015) Escaping From Saddle Points - Online Stochastic Gradient for Tensor Decomposition|https://arxiv.org/abs/1503.02101]], [[(Jin et al. 2017) How to escape saddle points efficiently|https://arxiv.org/abs/1703.00887]]

@@ -1,5 +1,5 @@
 created: 20161027080318158
-modified: 20170420094040407
+modified: 20170719055435293
 tags: [[Deep Learning]]
 title: Deep Learning Engineering
 type: text/vnd.tiddlywiki
@@ -10,6 +10,22 @@ type: text/vnd.tiddlywiki
 * [[Deep Learning Tools]]
 * [[Low Precision Training]]
 * [[Deep Model Compression]]
+* [[Model Distillation]]
+* [[Visualizing a ConvNet]]
 
-! Parallell Training
+! Hardware
+
+* [[CATERPILLAR: Coarse Grain Reconfigurable Architecture for Accelerating the Training of Deep Neural Networks|https://arxiv.org/abs/1706.00517]]
+
+! Training Techniques
+* [[Sobolev Training for Neural Networks]]
+
+!! Parallell Training
 * [[A Framework for Parallel and Distributed Training of Neural Networks|https://arxiv.org/abs/1610.07448]]
+
+! Serving Frameworks
+
+* [[TensorFlow Serving|https://tensorflow.github.io/serving/]]: Serving tf models
+* [[MXNet-Lambda|https://github.com/awslabs/mxnet-lambda]]: Deploy Apache MXNet with AWS Lambda
+* [[deepdetect|https://github.com/beniz/deepdetect]]: Deep Learning API and Server in C++11 with Python bindings and support for Caffe, Tensorflow, XGBoost and TSNE
+* [[tf-docker-demo|https://g.hz.netease.com/mi-demo/tf-docker-demo]]: Serving tf models within Docker as Flask application

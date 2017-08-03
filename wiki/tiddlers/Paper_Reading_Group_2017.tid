@@ -1,0 +1,63 @@
+created: 20170621070604151
+modified: 20170801060057043
+tags: [[Deep Learning Bib]] Papers
+title: Paper Reading Group 2017
+type: text/vnd.tiddlywiki
+
+! MI Team reading schedule
+!! Guidelines
+
+# The lecturer is encouraged to pick his own material, even beyond the list or our recent study fields, as long as he finds his topic more helpful to the group. If so, create your own entry in the list beforehand. You can find some interesting papers from
+#* [[Arxiv Sanity Preserver|http://www.arxiv-sanity.com/]]
+#* [[DeepMind Publications|https://deepmind.com/research/publications/]]
+#* [[FAIR Publications|https://research.fb.com/publications/]]
+#* [[Google Brain Publications|https://research.google.com/pubs/BrainTeam.html]]
+# The lecturer is suggested to upload the slides to [[this git repo|https://g.hz.netease.com/mi-tools/mi-course/tree/dev/seminar]] before seminar. 
+# The scribe should keep the notes of the seminar for later reference. A nice script format is `.pdf` or `.html`. Choosing between LaTeX/Markdown as the markup language according to the lecture content is strongly recommended. You may download the LaTeX template from [[here|https://g.hz.netease.com/mi-tools/mi-course/raw/dev/seminar/template.zip]].
+
+!! Rotation
+|!Lecturer |!Scribe |
+|郭贺 |杨旭东 |
+|胡孟 |侯章军 |
+|陈昊 |胡孟 |
+|汪丰 |魏凯峰 |
+|刘智雯 |周立峰 |
+|杨旭东 |刘智雯 |
+|邸新汉 |陈昊 |
+|侯章军 |邸新汉 |
+|刘丽娟 |曽杨 |
+|周立峰 |郭贺 |
+|魏凯峰 |刘丽娟 |
+|曽杨 |汪丰 |
+
+
+!! Listed papers
+Let's start from some 2017 conference orals. Each paper has plenty of discussion online to help with understanding.
+
+|!Subject |!Title |!Conference |!Lecturer |!(Planned) Date |!Materials |
+|Vision |Attention-based Extraction of Structured Information from Street View Imagery | arXiv 2017|汪丰 |7/18 ||
+|Vision |[[Interleaved Group Convolutions for Deep Neural Networks|https://arxiv.org/abs/1707.02725]] | ICCV 2017| | ||
+|Vision |Feature Pyramid Networks for Object Detection | CVPR 2017|胡孟 |7/4||
+|Vision |A-Fast-RCNN: Hard positive generation via adversary for object detection | CVPR 2017|周立峰 |7/18 ||
+|Vision |Fully Convolutional Instance-aware Semantic Segmentation | CVPR 2017|胡孟 |8/1 |[[GitHub|https://github.com/msracver/FCIS]]|
+|Vision |YOLO9000: Better, Faster, Stronger | CVPR 2017|魏凯峰 |8/15 ||
+|Vision |Look Closer to See Better: Recurrent Attention Convolutional Neural Network for Fine-Grained Image Recognition | CVPR 2017| | ||
+|Vision |UberNet: Training a Universal Convolutional Neural Network for Low-, Mid-, and High-Level Vision using Diverse Datasets and Limited Memory | CVPR 2017| | ||
+|Vision |Network Dissection: Quantifying Interpretability of Deep Visual Representations | CVPR 2017|杨旭东 | ||
+|Vision |AGA: Attribute Guided Augmentation | CVPR 2017| | |[[arxiv|https://arxiv.org/pdf/1612.02559.pdf]],[[Github-Torch|https://github.com/rkwitt/GuidedAugmentation]]|
+|Vision |Semi-supervised Knowledge Transfer for Deep Learning from Private Training Data | ICLR 2017| | |[[arxiv|https://arxiv.org/abs/1610.05755]][[No Open Source|..]]|
+|Vision |End-to-end Optimized Image Compression | ICLR 2017| | ||
+|Vision |Amortised MAP Inference for Image Super-resolution | ICLR 2017| | ||
+|Modelling |Neural Architecture Search with Reinforcement Learning | ICLR 2017|邸新汉 |10/24 |[[arxiv|https://arxiv.org/abs/1611.01578]],[[github-chainer|https://github.com/nutszebra/neural_architecture_search_with_reinforcement_learning_appendix_a]],[[DenseNet-Compared-Github|https://github.com/liuzhuang13/DenseNet]]|
+|GAN |Towards Principled Methods for Training Generative Adversarial Networks | ICLR 2017|邸新汉 |7/25 |[[WGAN|https://arxiv.org/abs/1701.07875]],[[Github-Tensorflow|https://github.com/shekkizh/WassersteinGAN.tensorflow]]|
+|NLP |Learning End-to-End Goal-Oriented Dialog | ICLR 2017| | ||
+|Theory |Probabilistic Deep Learning | DALI 2017|陈昊 |7/11 |<li>[[slides|https://docs.google.com/presentation/d/1DQpGu7sgnh787Hqjs1cBq485rbuZnylqcWefiCJr8PQ/edit?usp=sharing]]</li><li>[[Statistical Measures]]</li><li>[[fGAN]]</li><li>[[Variational Autoencoder]]</li>|
+|Theory |Global Optimality in Neural Network Training | ICLR 2017| | ||
+|Theory |[[On Large-Batch Training for Deep Learning: Generalization Gap and Sharp Minima]] | ICLR 2017| | ||
+|RL |Q-Prop: Sample-Efficient Policy Gradient with An Off-Policy Critic | CVPR 2017| | |[[arxiv|https://arxiv.org/abs/1611.02247]],[[Github-Tensorflow-rllab++|https://github.com/shaneshixiang/rllabplusplus]]|
+|RL |Learning to Act by Predicting the Future | ICLR 2017| | ||
+|RL |Reinforcement Learning with Unsupervised Auxiliary Tasks | ICLR 2017| | |[[arxiv|https://arxiv.org/abs/1611.05397]],[[Github-Tensorflow+DeepMind+Environment|https://github.com/miyosuda/unreal]]|
+
+! Previous Sessions
+* [[Deep Learning Seminar]]
+* [[Paper Reading Group 2016]]

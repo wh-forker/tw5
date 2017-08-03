@@ -1,0 +1,16 @@
+created: 20170706080113241
+modified: 20170706080414949
+tags: [[Optimization Algorithms]]
+title: Nesterov's Accelerated Gradient Descent
+type: text/vnd.tiddlywiki
+
+[[blog|https://blogs.princeton.edu/imabandit/2014/03/06/nesterovs-accelerated-gradient-descent-for-smooth-and-strongly-convex-optimization/]]
+
+$$
+\begin{align}
+v_t& = \mu v_{t-1}-\eta\nabla E(w_{t-1}+\mu v_{t-1})\\
+w_t&=w_{t-1}+v_t
+\end{align}
+$$
+
+Nesterov solves the serial problem in time $O(\sqrt{\kappa}\log(1/\epsilon))$.

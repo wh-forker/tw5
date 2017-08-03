@@ -1,10 +1,13 @@
 created: 20170205070855847
-modified: 20170205113313535
+modified: 20170720131624512
 tags: MCMC
 title: Hamilton Monte Carlo
 type: text/vnd.tiddlywiki
 
-[[A Conceptual Introduction to Hamiltonian Monte Carlo|https://arxiv.org/abs/1701.02434]]
+! Introduction
+HMC makes use of Hamiltonian dynamics in MCMC, following Newton's laws of motion. HMC is based on dynamical simulation that does not rely on any prior assumptions about the form of the posterior distribution. HMC can be difficult to work with, as setting the leapfrog step sizes is hard. This method does not scale to large data. This is simplified by [[Langevin method|Stochastic Gradient Langevin Dynamics]].
+
+! [[A Conceptual Introduction to Hamiltonian Monte Carlo|https://arxiv.org/abs/1701.02434]]
 
 HMC is a procedure for introducing auxiliary momentum with a probabilistic structure such that one can  generate efficient exploration.
 

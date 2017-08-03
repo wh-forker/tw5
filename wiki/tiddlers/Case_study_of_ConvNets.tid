@@ -1,5 +1,5 @@
 created: 20151112075540768
-modified: 20170606071820675
+modified: 20170801073827575
 tags: [[Convolutional Neural Network]]
 title: Case study of ConvNets
 type: text/vnd.tiddlywiki
@@ -20,3 +20,4 @@ Prototype networks:
 # NIN
 # DropConnect
 # [[Densely Connected Convolutional Networks|https://github.com/liuzhuang13/DenseNet]]
+# [[Interleaved Group Convolution|https://arxiv.org/abs/1707.02725]]

@@ -1,0 +1,23 @@
+created: 20170801084409652
+modified: 20170801091140028
+tags: NLP
+title: ACL 2017
+type: text/vnd.tiddlywiki
+
+! Google
+
+* [[A Polynomial-Time Dynamic Programming Algorithm for Phrase-Based Decoding with a Fixed Distortion Limit|https://www.transacl.org/ojs/index.php/tacl/article/view/1020]]
+* [[Cross-Sentence N-ary Relation Extraction with Graph LSTMs|https://www.transacl.org/ojs/index.php/tacl/article/view/1028]]
+* [[Neural Symbolic Machines: Learning Semantic Parsers on Freebase with Weak Supervision|https://arxiv.org/abs/1611.00020]]
+* [[Coarse-to-Fine Question Answering for Long Documents|https://homes.cs.washington.edu/~eunsol/papers/acl17eunsol.pdf]]
+* [[Automatic Compositor Attribution in the First Folio of Shakespeare|https://arxiv.org/abs/1704.07875]]
+* [[A Nested Attention Neural Hybrid Model for Grammatical Error Correction|https://arxiv.org/abs/1707.02026]]
+* [[Get To The Point: Summarization with Pointer-Generator Networks|https://arxiv.org/abs/1704.04368]]
+* [[Identifying 1950s American Jazz Composers: Fine-Grained IsA Extraction via Modifier Composition|https://www.seas.upenn.edu/~epavlick/papers/finegrained-isa.pdf]]
+* [[Learning to Skim Text|https://arxiv.org/abs/1704.06877]]
+
+! Facebook
+
+* [[Automatically Generating Rhythmic Verse with Neural Networks|https://research.fb.com/publications/automatically-generating-rhythmic-verse-with-neural-networks/]]
+* [[Enriching Word Vectors with Subword Information|https://research.fb.com/publications/enriching-word-vectors-with-subword-information-2]]
+* Reading Wikipedia to Answer Open-Domain Questions

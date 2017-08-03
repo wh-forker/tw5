@@ -1,6 +1,6 @@
 created: 20161009032729712
-modified: 20170222065350143
-tags: [[Case study of ConvNets]] [[Deep Generative Models]] [[Variational Generative Models]]
+modified: 20170710122246415
+tags: [[Deep Generative Models]] [[Variational Generative Models]]
 title: Variational Autoencoder
 type: text/vnd.tiddlywiki
 
@@ -18,8 +18,20 @@ Nice models
 
 * [[PixelVAE|https://arxiv.org/abs/1611.05013]]: not much perceptual gain but a good point to start.
 
+Inference networks
+
+* Amortized inference [Stuhlmuller et al., NIPS 2013]
+* Inference networks, recognition networks [Kingma and Welling, 2014]
+* Informed sampler [Jampani et al., 2014]
+* Memory-based approach [Kulkarni et al., 2015]
+
 ! Background
 ''Directed graphical models'' rely on an ''ancestral sampling procedure'', which is appealing both for its conceptual and computational simplicity. They lack, however, the conditional independence structure of undirected models, making exact and approximate posterior inference on latent variables cumbersome [[Saul et al. 1996|https://arxiv.org/abs/cs/9603102]]. Recent advances in ''stochastic variational inference'' and ''amortized inference'', allowed efficient approximate inference and learning of deep directed graphical models by maximizing a variational lower bound on the log-likelihood. In particular, VAE simultaneously learns a generative network, that maps gaussian latent variables $z$ to samples $x$, and semantically meaningful features by exploiting the reparametrization trick.
+
+We optimize the ELBO:
+$$
+\max_{w, \theta}\mathbb E_{z\sim q(z|x,w)}[\log p(x|z, \theta)]-D_{KL}(q(z|x, w)\|p(z))
+$$
 
 ! Introduction
 [[Reddit discussion|https://www.reddit.com/r/MachineLearning/comments/4r3pjy/variational_autoencoders_vae_vs_generative/]]

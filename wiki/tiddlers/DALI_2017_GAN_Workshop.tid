@@ -1,0 +1,36 @@
+created: 20170703075221213
+modified: 20170706111939909
+tags: [[Generative Adversarial Network]] Talks The
+title: DALI 2017 GAN Workshop
+type: text/vnd.tiddlywiki
+
+[[Link|https://www.youtube.com/watch?v=ItDroviU_Vs&list=PL-tWvTpyd1VB928jOYmlK7S_A8UUsCJLW]]
+
+! Classifier-Based Two-Sample Tests
+Define distance to be the ''Integral Probability Metrics'': $\rho_{\mathcal F}(P, Q) = \sup_{f\in\mathcal F}[\mathbb E_{X\sim P}f(X)-\mathbb E_{Y\sim Q}f(Y)] = 2\text{ accuracy}-1$. Where $\mathcal F$ is a set of classifiers. 
+
+* If we make $\mathcal F$ be the family of 1-Lipschitz functions， we get [[WGAN]].
+* If $\|f\|_\infty\le 1$, its total variance used in EBGAN (almost)
+* If we use the mean error of auto-encoders: BEGAN
+
+In this talk, $\|f\|_{\mathcal H}\le1$ from a unit ball, the metric is [[MMD|Maximum Mean Discrepancy]] used in GMMN.
+
+A optimal classifier can be found with gradient descent of MMD. The theory seems to be broken in the optimization part
+
+! GANs, Actor-Critic and Multilevel Optimization
+GAN is trained as a multilevel optimization:
+$$
+\phi^* = \arg\min_\phi F(\theta^*, \phi)
+$$
+where $F$ is a major goal
+$$
+\theta^*(\phi) = \arg\min_\theta f(\theta, \phi)
+$$
+and $f$ is a sub goal against it. This is NP-Hard even for bilevel linear programming.
+
+! Generator-aware Discriminators & Discriminator-aware Generators
+When the discriminator can look at the generator parameters, the training process becomes much stable. This take into account how discriminator will adjust, like [[Unrolled GAN]]s. The problem is @@color:#859900;how can we build a network whose inputs are the weights of another network?@@ Ideally we want a parameterization invariant representation.
+
+We can use Hamiltonian Variational Inference. Use gradients of generator w.r.t. $z$ to adjust $z$. The idea is recently used in Bayesian RNNs "posterior sharpening".
+
+A straight forward analog to GAN: generate multiple samples, choose one the discriminator likes best.

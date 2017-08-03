@@ -1,13 +1,11 @@
 created: 20160817113834467
-modified: 20160912025645592
+modified: 20170726134422955
 tags: Papers
 title: ICML
 type: text/vnd.tiddlywiki
 
 # [[ICML 2015]]
-
-[[Invariance Principles for Neural Network Training]]
-
-[[video recordings|http://dpkingma.com/?page_id=483]]
-
+#* [[Invariance Principles for Neural Network Training]]
+#* [[video recordings|http://dpkingma.com/?page_id=483]]
 # [[ICML 2016]]
+# [[ICML 2017]]

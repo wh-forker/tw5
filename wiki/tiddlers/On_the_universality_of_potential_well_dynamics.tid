@@ -1,0 +1,11 @@
+created: 20170720074015621
+modified: 20170720075621121
+tags: Optimization
+title: On the universality of potential well dynamics
+type: text/vnd.tiddlywiki
+
+[[blog|https://terrytao.wordpress.com/2017/07/11/on-the-universality-of-potential-well-dynamics/]]
+
+''Theorem 1'' A smooth compact non-singular dynamics $(M, X)$ can be embedded smoothly in a potential well system iff it admits a strongly adapted 1-form.
+
+The if direction is mainly a comsequence of the Nash embedding theorem. The only if direction

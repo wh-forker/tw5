@@ -1,0 +1,41 @@
+created: 20170721025126864
+modified: 20170721075027049
+tags: [[Quantitative Finance]]
+title: Stochastic Portfolio Theory
+type: text/vnd.tiddlywiki
+
+! Quant's View
+
+Summary of [[YLK Samo et al. 2016|https://arxiv.org/abs/1605.02654]]
+
+!! Problem
+The goal is to find a portfolio selection to outperform the market index with probability 1. Such a strategy is called a ''relative arbitrage''. We evaluate those strategies based on certain metrics. The chosen performance metric may depart from the excess return, for instance by adjusting the risk taken.
+
+!! Assumptions
+Relative arbitrage can be achieved under some certain assumtions of the market:
+
+* Fernholz's ''master equation'': free from stochastic integration
+* Stock capitalisation models
+
+The dynamics of the $n$ positive stock capitalisation processes $X_i(\cdot)$, $i=1, \dots, n$ are described by the following system of SDEs:
+$$
+dX_i(t) = X_i(t)(b_i(t)dt+\sum_{\nu=1}^d\sigma_{i\nu}(t)dW_\nu(t)).
+$$
+for $t\ge0$ and $W_\nu$ are independent standard Brownian motions with $d\ge n$, and $X_i(0)>0$. The ''rates of return'' $b_i(\cdot)$, and ''volatilities'' $\sigma$ are some unspecified $\mathbb F$-progressively measurable processes (filtration for stochastic processes means cannot see into the future) and are assumed to satisfy the integrability condition
+$$
+\sum_{i=1}^n\int_0^T(|b_i(t)|+\sum_{\nu=1}^d\sigma_{i\nu}(t)^2)dt<\infty, \qquad \mathbb P-a.s.,
+$$
+for all $T\in(0, \infty)$, and the ''non-degeneracy'' condition
+$$
+\exists\epsilon>0:\xi^T\sigma(t)\sigma^T(t)\xi\ge\epsilon\|\xi\|^2,
+$$
+
+!! Difficulties
+
+* Inverse problem: the search space is too large to prove a strategy is optimal.
+* Several market imperfections are ignored, e.g. bankruptcy
+* Driven only by @@color:#859900;market capitalisations@@
+
+! DL Practitioner's View
+!! Sequence Prediction
+We can construct an end-to-end sequence model to predict the price, variance

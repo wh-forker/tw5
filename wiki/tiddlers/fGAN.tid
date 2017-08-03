@@ -1,5 +1,5 @@
 created: 20170428022715893
-modified: 20170428074525023
+modified: 20170710074201147
 tags: [[Divergence Classed GANs]]
 title: fGAN
 type: text/vnd.tiddlywiki
@@ -11,6 +11,12 @@ type: text/vnd.tiddlywiki
 * demonstrate different divergences
 
 ! Objective
+
+Divergence between two distributions
+$$
+D_f(P\|Q) = \int_{\mathcal X}q(x)f\left(\frac{p(x)}{q(x)}\right)dx
+$$
+$f$ is convex and $f(1) = 0$. 
 
 <<<
 Any convex $f$ can be represented as point-wise max of linear functions
@@ -29,6 +35,8 @@ D_f(P\|Q) &= \int_Xq(x)f\left(\frac{p(x)}{q(x)}\right)dx \\
 &= \underset{T\in\mathcal T}{\sup}\left(\mathbb E_{x\sim P}[T(x)]-\mathbb E_{x\sim Q}[f^*(T(x))]\right)
 \end{align}
 $$
+
+$\mathcal T$ is a function family e.g. some neural networks. We can approximate $f$-divergence from sampling from $Q$ and $P$.
 
 This has a structural similarity with GAN. 
 

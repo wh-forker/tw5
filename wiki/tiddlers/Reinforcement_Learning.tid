@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20170606024402298
+modified: 20170721064441325
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -13,7 +13,7 @@ type: text/vnd.tiddlywiki
 !! RL agents
 * value based, has a value function where policy can be inferred.
 * policy based, work in decision space, more direct. Policy Graident.
-* actor critic: stores policy and value
+* [[Actor-Critic Method]]: stores policy and value
 * model free/based
 
 !! Q-Learning
@@ -42,9 +42,14 @@ Approximation of Q-values using non-linear functions is unstable and takes a wee
 * [[Learning to Communicate|https://blog.openai.com/learning-to-communicate/]]: differentiable language for RL
 * [[Curiosity-driven Exploration by Self-supervised Prediction|https://pathak22.github.io/noreward-rl/]]: training with sparse reward
 
+! Topics
+*  [[Imitation Learning]]
+* [[Noisy Networks for Exploration|https://arxiv.org/abs/1706.10295]]
+
 ! Implementations
 Environments
 
 * [[CommAI-env|https://github.com/facebookresearch/CommAI-env]]
 * [[Universe|https://openai.com/blog/universe/]] with [[Gym|https://gym.openai.com/]]
 * [[DeepMind Lab|https://github.com/deepmind/lab]]
+* [[Facebook ELF|https://github.com/facebookresearch/ELF]]

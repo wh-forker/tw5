@@ -1,8 +1,11 @@
 created: 20161029053257205
-modified: 20170123033521180
-tags: [[CNN for NLP]] Stock
+modified: 20170803072005745
+tags: [[CNN for NLP]] [[Daily Stock Forecast]]
 title: Daily News for Stock Market Prediction
 type: text/vnd.tiddlywiki
+
+! Bibs
+ * [[Detecting and Explaining Causes From Text For a Time Series Event|https://arxiv.org/abs/1707.08852]]
 
 ! Introduction
 Data and task are posted [[here|https://www.kaggle.com/aaron7sun/stocknews]]. I am curious about how to take a whole sentence as an entity in a higher hierarchy, i.e., we have to find a representation for headlines to be the input of each day's stock prediction.

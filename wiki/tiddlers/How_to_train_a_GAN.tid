@@ -1,5 +1,5 @@
 created: 20170426160100975
-modified: 20170427132045598
+modified: 20170703091419161
 tags: [[Generative Adversarial Network]]
 title: How to train a GAN
 type: text/vnd.tiddlywiki
@@ -10,7 +10,8 @@ From NIPS 2016 GAN Workshop
 #* normalize the images between -1 and 1
 #* Tanh as the last layer of the generator output
 # Modified loss function
-#* change $\min\log(1-D)$ into $\max\log(D)$: first has vanishing gradient early on
+#* change $\min\log(1-D)$ into $\max\log(D)$: first has vanishing gradient early on.
+#* $\mathcal L_G(\theta, \phi) = -\mathbb E_{q_\phi(x)}[\log(D_\theta(x))]$
 #* Flip labels when training generator
 # Use spherical $z$
 #* interpolation via great circle from [[Sampling Generative Networks|https://arxiv.org/abs/1609.04468]]

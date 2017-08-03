@@ -1,5 +1,5 @@
 created: 20150627124407152
-modified: 20170419062234641
+modified: 20170706080108618
 tags: Optimization
 title: Optimization Algorithms
 type: text/vnd.tiddlywiki
@@ -25,6 +25,7 @@ According to chapter 1 of [[Neural Networks: Tricks of the Trade]]
 
 !! Algorithms
 * [[Stochastic Gradient Descent]]
+* [[Nesterov's Accelerated Gradient Descent]]
 * [[Follow-The-Regularized-Leader]]
 * AdaGrad
 

@@ -1,0 +1,14 @@
+created: 20170706054808615
+modified: 20170706075851475
+tags: Optimization
+title: Smooth Distributed Convex Optimization
+type: text/vnd.tiddlywiki
+
+[[link|https://blogs.princeton.edu/imabandit/2017/07/05/smooth-distributed-convex-optimization/]]
+
+! Setting
+The goal is to find in a distributed way the optimal "consensus" point
+$$
+x^*\in \arg\min_{x\in\mathbb R^d}\sum_{v\in V}f_v(x)
+$$
+where $v$ is a computing unit with access to a private dataset. $f$ is $\beta$-smooth and $\alpha$-strongly convex ($\kappa=\beta/\alpha$ is the condition number). We expect ''linear convergence'', i.e., the scaling of $T_\epsilon$ should be $\log(1/\epsilon)$.

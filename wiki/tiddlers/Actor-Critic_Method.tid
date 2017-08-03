@@ -1,0 +1,10 @@
+created: 20170703093110210
+modified: 20170703115023336
+tags: [[Reinforcement Learning]]
+title: Actor-Critic Method
+type: text/vnd.tiddlywiki
+
+This is derived from Policy Gradient Theorem. We want to optimize a expected discounted reward
+$$
+\eta(\pi_\theta) = \mathbb E_{\pi_\theta}\left[\sum_{t=1}^\infty\gamma^{t-1}r_t|s_0\right]
+$$

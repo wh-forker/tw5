@@ -1,13 +1,36 @@
 created: 20161027083034244
-modified: 20161027083547214
+modified: 20170714092909167
 tags: [[Deep Learning Tricks]]
 title: Data Augmentation
 type: text/vnd.tiddlywiki
 
+! Techniques
+* Brightness, saturation, contrast
+* [[Color augmentation|https://arxiv.org/abs/1312.5402]]
+* PCA Jittering: since AlexNet
+* Resize: Scale / Aspect Ratio / Random crop
+* Flip
+* Rotation
+* Affine translation: random image interpolation
+* Gaussian noise
+* Smoothing
+* Label Shuffle
+
 ! Implementations
-!! Caffe
- * Data augmentation on the fly
- 
- ! Papers
- 
- * [[A data augmentation methodology for training machine/deep learning gait recognition algorithms|https://arxiv.org/abs/1610.07570]]: simulated walking posture data.
+
+* [[Caffe Augmentation|https://github.com/kevinlin311tw/caffe-augmentation]]
+* [[FB ResNet Torch|https://github.com/facebook/fb.resnet.torch]]
+
+! In Practice
+
+|Trick |ResNet Torch|Hikvision ImageNet |
+|Brightness, saturation, contrast | | |
+|[[Color augmentation|https://arxiv.org/abs/1312.5402]] | T | |
+|PCA Jittering | T | T |
+|Scale / Aspect Ratio / Random crop| T | T |
+|Flip| | |
+|Rotation| | |
+|Affine translation| | T |
+|Gaussian noise| | |
+|Smoothing| | |
+|Label Shuffle| | T |

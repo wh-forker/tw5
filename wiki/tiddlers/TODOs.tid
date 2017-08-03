@@ -1,5 +1,5 @@
 created: 20161018054301211
-modified: 20170605030313393
+modified: 20170727080652962
 title: TODOs
 type: text/vnd.tiddlywiki
 
@@ -16,6 +16,10 @@ type: text/vnd.tiddlywiki
 # Currently the biggest challenge of VQA is numbering problems. Probably this is related to detecting a cluster of similar objects (e.g. character detection).
 # NLP
 ## Compute word vectors from definition?
+## A writing style transfer network
+# Optimization
+## Batchsize affects saddle points? Smaller learning rate easier to escape?
+## Backpropagation, good or evil?
 
 ! Experiments
 # [[Deep generative model tryouts]]
@@ -33,6 +37,6 @@ type: text/vnd.tiddlywiki
 ! Reading List
 # Videos in [[Most Cited Deep Learning Papers|https://github.com/terryum/awesome-deep-learning-papers#recurrent-neural-network-models]]
 # [[Averaging and Wavelets|Understanding Deep ConvNets (Scattering Repr)]]: Continue UBC deep learning topic lecture 3 on wavelets.
-# Watch ICML talks, esp. deep reinforcement learning
 # NIPS videos
 # [[Foundations of Machine Learning Boot Camp|https://simons.berkeley.edu/workshops/machinelearning2017-boot-camp]]
+# [[DALI 2017 GAN Workshop]], also, the data efficient reinforcement learning workshop

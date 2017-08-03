@@ -1,0 +1,38 @@
+created: 20170720124855666
+modified: 20170721030032617
+tags: Optimization
+title: Escaping Saddle Points
+type: text/vnd.tiddlywiki
+
+From a series of work by Rong Ge:
+
+* [[Escaping From Saddle Points --- Online Stochastic Gradient for Tensor Decomposition|https://arxiv.org/abs/1503.02101]]: [[blog|http://www.offconvex.org/2016/03/22/saddlepoints/]]
+* [[Gradient Descent Converges to Minimizers|https://arxiv.org/abs/1602.04915]]: [[blog|http://www.offconvex.org/2016/03/24/saddles-again/]]
+* [[How to Escape Saddle Points Efficiently|https://arxiv.org/abs/1703.00887]]: [[blog|http://www.offconvex.org/2017/07/19/saddle-efficiency/]]
+
+Pertubing Gradient Descent can escape saddle points if already there. Two simple methods have been studied:
+
+* ''Intermittent perturbations'': [Ge et al. 2015] considered adding occasional random perturbations to GD, and were able to provide the first polynomial time guarantee for GD to escape saddle points.
+* ''Random Initialization'': [Lee et al. 2016] showed that with only random initialization, GD provably avoids saddle points asymptotically.
+
+<<<
+''Perturbed gradient descent''
+
+# ''for'' $t = 1, 2, \dots$ ''do''
+# $\qquad x_t\rightarrow x_{t-1}-\eta\nabla f(x_{t-1})$
+# $\qquad$ ''if'' perturbation condition holds ''then''
+# $\qquad \qquad x_t\rightarrow x_t+\xi_t$
+<<<
+
+We make the following two assumptions regarding smoothness:
+
+* Assumption 1: $f$ is $l$-gradient-Lipschitz, i.e. $\forall x_1, x_2, |\nabla f(x_1)-\nabla f(x_2)|\le l|x_1-x_2|$.
+* Assumption 2: $f$ is $\rho$-Hessian-Lipschitz, i.e. $\forall x_1, x_2, |\nabla^2 f(x_1)-\nabla^2 f(x_2)|\le \rho|x_1-x_2|$.
+
+A point $x$ is an $\epsilon$-first-order stationary point if $|\nabla f(x)|\le\epsilon$. Further more, if $\lambda_{\min}(\nabla^2f(x))\ge-\sqrt{\rho\epsilon}$, $x$ is a $\epsilon$-second-order stationary point. $\rho$ is the Hessian Lipschitz constant introduced above.
+
+''Theorem'': If Assumption 1 holds, then GD, with $\eta = 1/l$, finds an $\epsilon$-first-order stationary point in $2l(f(x_0)-f^*)/\epsilon^2$ iterations.
+
+For second-order stationary points, same property can be found:
+
+''Main Theorem'': If Assumption 1 and 2 holds, then PGD, with $\eta = O(1/l)$, finds an $\epsilon$-second-order stationary point in $\tilde{O}(2l(f(x_0)-f^*)/\epsilon^2)$ iterations.

@@ -1,0 +1,7 @@
+created: 20170629091817353
+modified: 20170629091846445
+tags: [[Deep Learning Engineering]]
+title: Model Distillation
+type: text/vnd.tiddlywiki
+
+The ground truth function is itself a neural network.

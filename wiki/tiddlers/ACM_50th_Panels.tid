@@ -1,0 +1,14 @@
+created: 20170626063545034
+modified: 20170626120256718
+tags: Talks
+title: ACM 50th Panels
+type: text/vnd.tiddlywiki
+
+Don Knuth opened for this panel!!! Computer science is similar to math in that we can create our own problems. Knuth don't believe in letting an algorithm to compose music. He thinks computers should help people to reduce the search space. He does believe in automatic theorem proving. He mentioned literate programming many times. I think we should refer to it when considering program induction. 
+
+Jokes
+
+# I don't know what a //deep theorem// is, but I think it's similar to what found by deep learning. 
+# By the time I won Turing award, the prize is 1M$ less than today. But I do got a silver plate that my wife and I used to use it to serve strawberries all the time. Strawberries actually taste much better.
+
+Barbara Liskov introduces the impact of Turing Recipients work. John McCarthy's work on non-monotonic reasoning is mentioned. Maybe related to reasoning the correctness of code.

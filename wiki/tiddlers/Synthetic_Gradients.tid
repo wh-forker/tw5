@@ -1,5 +1,5 @@
 created: 20170502081900132
-modified: 20170503030342551
+modified: 20170727064407338
 tags: [[Recurrent Neural Networks]] [[New Directions for RNNs]] Meta-Learning
 title: Synthetic Gradients
 type: text/vnd.tiddlywiki
@@ -10,6 +10,10 @@ type: text/vnd.tiddlywiki
 ** We can create a model of error gradients using local information
 ** The result is Layer 1 can now update before the execution of Layer 2.
 ** Analogous to return prediction bootstrapping in RL (TD learing/Actor-Critic): 'Learn a guess from a guess'
+* [[Understanding Synthetic Gradients and Decoupled Neural Interfaces|https://arxiv.org/abs/1703.00522]]
+** Synthetic gradients don't change the critical points
+** Convergence proof: for very simple networks
+** Difference of networks: 
 
 ! Multi Network
 Two RNNs tick at different clock speeds. Don't have to train synchronized.

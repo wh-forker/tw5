@@ -1,0 +1,13 @@
+created: 20170802080831077
+modified: 20170803071733739
+tags: 
+title: Cyber Security
+type: text/vnd.tiddlywiki
+
+! Automatic evaluation of software for deficiencies
+
+* buffer overflow
+* double-free
+* use-after-free
+
+! Black Hat

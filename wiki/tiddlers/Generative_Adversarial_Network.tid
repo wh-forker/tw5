@@ -1,5 +1,5 @@
 created: 20161021080332245
-modified: 20170605074357041
+modified: 20170703115122444
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
@@ -12,6 +12,12 @@ The complete game can be specified as:
 $$\underset{\phi}{\min}\underset{\theta}{\max} g(\phi, \theta) = \mathbb E_{x\sim p_{real}}\log D_\theta(x) + \mathbb E_z\log(1-D_\theta(G_\phi(z)))$$
 At equilibrium, JS divergence between the data and model distributions is minimized meaning G has converged to $P_{real}$ and D outputs 1/2 for all x.
 
+If we plug in the optimal discrinimator
+$$
+D^* = \frac{p^*(x)}{p^*(x)+q_{\phi}(x)}
+$$
+The loss $\mathcal L(\theta^*, \phi) = 2\mathrm{JS}(p^*\|q_\phi)-\log(4)$.
+
 !! Understanding GAN
 
 * Ian's [[Generative Adversarial Network Talk]]
@@ -20,6 +26,7 @@ At equilibrium, JS divergence between the data and model distributions is minimi
 * [[How to train a GAN]]
 
 !! Research Directions
+* [[GAN Stablizing Strategies]]
 * Generate HQ images. Image is a good field for generative models, because we are sensible to image plausibility.
 ** Higher resolution images can be generated in a multiscale fashion.
 * Address GAN training difficulties
@@ -50,9 +57,9 @@ At equilibrium, JS divergence between the data and model distributions is minimi
 * LS-GAN enforces $D_\theta(G_\phi(z)) - D_\theta(x)\ge\delta(x, G_\phi(z))$ and @@color:#859900;impose a Lipschitz constraint on both G and D using weight decay@@. This leads to D having non-vanishing gradients everywhere between all real and fake sample pairs.
 * [[WGAN]] uses Earth-Mover distance as the objective. This requires the discriminator to be a Lipschitz function and they use weight clipping to achieve that.
 * [[Improved WGAN|https://arxiv.org/abs/1704.00028]] imposes $\|\nabla_{\hat x}D_{\theta}(\hat x)\|_2\approx 1$ where $\hat x = \epsilon x+(1-\epsilon)G_\phi(z)$. This leads to D having norm 1 gradients everywhere between all real and fake sample pairs in the limit.
+* [[CycleGAN and pix2pix|https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix]]: pretty good image effects.
 
 !! Theory
-
 
 * [[Divergence Classed GANs]]
 * [[Density Ratio GANs]]
@@ -65,3 +72,7 @@ At equilibrium, JS divergence between the data and model distributions is minimi
 * [[Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network]]
 * [[Learning to Pivot with Adversarial Networks|https://arxiv.org/abs/1611.01046]]
 ** joint training adversarial networks to constrain the predictive model to be robust on nuisance parameter.
+
+!! Talks
+* [[How to train a GAN]]
+* [[DALI 2017 GAN Workshop]]

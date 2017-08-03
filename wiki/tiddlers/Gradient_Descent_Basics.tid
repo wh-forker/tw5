@@ -1,5 +1,5 @@
 created: 20170206112503701
-modified: 20170419062359921
+modified: 20170706080039687
 tags: [[Stochastic Gradient Descent]]
 title: Gradient Descent Basics
 type: text/vnd.tiddlywiki
@@ -54,14 +54,6 @@ $$
 where $v_t$ denotes the accumulated gradient update, or velocity, $\eta>0$ is the learning rate, and the momentum constant $\mu\in[0, 1]$ governs how we accumulate the velocity.
 
 [[Polyak 1964|http://www.mathnet.ru/php/getFT.phtml?jrnid=zvmmf&paperid=7713&what=fullt&option_lang=eng]] showed that CM can considerably accelerate convergence to a local minimum, requiring $\sqrt{R}$-times fewer iterations than steepest descent to reach the same level of accuracy, where $R$ is the condition number of th e curvature at the minimum and $\mu$ is set to $(\sqrt{R}-1)(\sqrt{R}+1)$.
-
-! Nesterov's Accelerated Gradient
-$$
-\begin{align}
-v_t& = \mu v_{t-1}-\eta\nabla E(w_{t-1}+\mu v_{t-1})\\
-w_t&=w_{t-1}+v_t
-\end{align}
-$$
 
 To find more about the optimizers, [[caffe document|http://caffe.berkeleyvision.org/tutorial/solver.html]] is a good place to start.
 

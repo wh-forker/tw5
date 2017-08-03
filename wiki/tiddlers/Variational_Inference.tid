@@ -1,5 +1,5 @@
 created: 20150114062559893
-modified: 20170419064157762
+modified: 20170731090227531
 tags: [[Pattern Recognition and Machine Learning]] [[Bayesian Inference]]
 title: Variational Inference
 type: text/vnd.tiddlywiki
@@ -28,6 +28,22 @@ Unfortunately, in machine learning the things we need to calculate are exactly t
 Variational lower bounds give us ways to approximately perform both inference and maximum likelihood parameter learning.
 
 ! Standard variational (VI) lower bound
+$$
+p(x|\theta) = \int p(x|z, \theta)p(z)dz
+$$
+
+Maximizing this term is intractable, so we do @@color:#859900;per-instance@@ variational approximation.
+$$
+\begin{align}
+\log p(x|\theta) &= \log\int p(x|z, \theta)p(z)dz\\
+&= \log\int p(x|z, \theta)\frac{q(z)}{q(z)}p(z)dz\\
+&= \log\int p(x|z, \theta)\frac{p(z)}{q(z)}q(z)dz\\
+&= \log\mathbb E_{z\sim q(z)}[p(x|z, \theta)\frac{p(z)}{q(z)}]\\
+&\ge \mathbb E_{z\sim q(z)}[\log p(x|z, \theta)\frac{p(z)}{q(z)}]\\
+&= \mathbb E_{z\sim q(z)}[\log p(x|z, \theta)]-D_{KL}(q(z)\|p(z))
+\end{align}
+$$
+
 To nice auxiliary distribution $q(x,\psi)$ 🦄, that is both easy to evaluate analytically and easy to sample from, and define the lower bound as follows:
 $$
 L(x,\theta,\psi)=\log p(x;\theta)−\operatorname{KL}[q(z;\psi)\|p(z|x;\theta)],
@@ -53,3 +69,9 @@ CAVI fixes other variational factors and compute the optimal $q_j(z_j)$ by its '
 ! Variations
 
 * [[Variational Generative Models]]
+
+! Computation
+
+* Computing the expected log likelihood $\mathbb E_{z\sim q(z)}[\log p(x|z, \theta)]$
+** MC estimator
+** Adversarial Variational Bayes

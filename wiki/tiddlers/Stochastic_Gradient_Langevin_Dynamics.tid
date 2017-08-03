@@ -1,5 +1,5 @@
 created: 20161215074243368
-modified: 20170419065617679
+modified: 20170720053157613
 tags: [[Stochastic Gradient MCMC]]
 title: Stochastic Gradient Langevin Dynamics
 type: text/vnd.tiddlywiki
@@ -12,6 +12,21 @@ type: text/vnd.tiddlywiki
 ** detailed convergence analysis
 ** [[video|http://techtalks.tv/talks/approximation-analysis-of-stochastic-gradient-langevin-dynamics-by-using-fokker-planck-equation-and-ito-process/61010/]]
 
+! Introduction
+
+The Langevin method is a simpification of Hamiltonian dynamics where only a single leapfrog step is used.
+
 This algorithm samples from a Bayesian posterior by adding artificial noise to the stochastic gradient which, at long times, dominates the SGD noise. Though elegant, one disadvantage of SGLD is that the learning rate must be decreased to achieve the correct sampling regime, and the algorithm can suffer from slow mixing times.
 
 SG Fisher scoring speeds up mixing times in SGLD by preconditioning a gradient with the inverse sampling noise covariance.
+
+! Computation
+The SGLD technique generates a set of samples $\{\hat\omega_t\}$ from the model's posterior over the random variable $\omega$ by adding stochastic gradient steps to @@color:#859900;the previously generated samples@@:
+
+$$
+\delta\omega = \frac\epsilon2(\nabla\log p(\omega)+\frac NM\sum_{i\in S}\nabla\log p(y_i|x_i,\omega))+\eta
+$$
+where $\eta\sim\mathcal N(0, \epsilon)$ and $S$ is a randomly sampled set of $M$ indices from $\{1, \dots, N\}$. $\epsilon$ is decreased in magnitude following the Robbins-Monro equations. @@color:#859900;The approximate posterior structure need not be specified.@@
+
+! Remarks
+SGLD often collapses to a single mode.

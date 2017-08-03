@@ -1,6 +1,6 @@
 color: #501464
 created: 20141010102453511
-modified: 20170421030829893
+modified: 20170720132425100
 tags: Programming
 title: Tools
 type: text/vnd.tiddlywiki
@@ -13,3 +13,4 @@ type: text/vnd.tiddlywiki
 * [[Awesome WM]]
 * [[bug.n]]
 * [[tmux]]
+* [[LaTeX]]

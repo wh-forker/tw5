@@ -1,5 +1,5 @@
 created: 20170502084841487
-modified: 20170531073051523
+modified: 20170613071251422
 tags: [[Sequential Models]]
 title: Neural Abstract Machines
 type: text/vnd.tiddlywiki
@@ -32,6 +32,8 @@ Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest P
 * [[Differentiable Neural Computer]]
 * [[NPI via Recursion]]
 * [[Program Induction by Rational Generation: Learning to Solve and Explain Algebraic Word Problems]]
+* [[Learning Neural Programs To Parse Programs|https://github.com/liuchangacm/neuralparser]]
+** predict output by learning the compiler and run the program? what is the point? (m)any applications?
 
 !! Bibs
 

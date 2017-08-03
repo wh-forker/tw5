@@ -1,8 +1,17 @@
 created: 20160121094234831
-modified: 20160513092207174
+modified: 20170703083434199
 tags: [[Learning Theory]]
 title: Reproducing Kernel Hilbert Space
 type: text/vnd.tiddlywiki
+
+! Quick Facts
+We define a feature map $\phi:\mathcal X\rightarrow\mathcal H$, for $\mathcal H$ an RKHS, $\varphi$ corresponds to a kernel $k: \mathcal X\times\mathcal X\rightarrow \mathbb R$ by $k(x, y) = \langle\varphi(x), \varphi(y)\rangle_{\mathcal H}$. For any p.s.d. $k$, a matching $\mathcal H$ and $\phi$ exist:
+
+* e.g. we can use the Gaussian kernal: $k(x, y) = \exp(-\frac{1}{2\sigma^2}\|x-y\|^2)$
+
+The **reproducing property** assures: $\forall f\in\mathcal H, f(x) = \langle f, \varphi(x)\rangle_{\mathcal H}$.
+
+! Definition
 
 ; RKHS
 : We say that $\mathcal H$ is a reproducing kernel Hilbert space of functions $f:\mathcal X\rightarrow\mathcal Y$, when for any $y\in\mathcal Y$ and $x\in\mathcal X$ the linear functional which maps $f\in\mathcal H$ to $(y,f(x))$ is continuous on $\mathcal H$.

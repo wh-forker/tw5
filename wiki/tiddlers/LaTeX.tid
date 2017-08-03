@@ -1,10 +1,12 @@
 color: #8b8b00
 created: 20141010021349422
-modified: 20141010095440037
-tags: Languages
+modified: 20170720132450374
+tags: Languages Tools
 title: LaTeX
 type: text/vnd.tiddlywiki
 
 [[LaTeX Snippets]]
 
-In Browser: [[MathJax]]
+! Tools
+* [[Detexify|http://detexify.kirelabs.org/classify.html]]
+* In Browser: [[MathJax]]

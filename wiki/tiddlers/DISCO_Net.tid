@@ -1,0 +1,9 @@
+created: 20170710144416887
+modified: 20170710153323560
+tags: [[Deep Generative Models]]
+title: DISCO Net
+type: text/vnd.tiddlywiki
+
+$$
+\min_f\mathbb E_{(x, y)}\mathbb E_{\epsilon}[\mathcal l(y, f(x, \epsilon))-\frac{1}{2}\mathbb E_{\epsilon_1,\epsilon_2}[\mathcal l(f(x,\epsilon_1),f(x, \epsilon_2))]]
+$$

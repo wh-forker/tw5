@@ -1,0 +1,7 @@
+created: 20170712082332363
+modified: 20170719055122566
+tags: [[Reinforcement Learning]] [[Deep Generative Models]]
+title: Imitation Learning
+type: text/vnd.tiddlywiki
+
+DeepMind use GAN and VAE to learn human actions: [[Robust Imitation of Diverse Behaviors|https://arxiv.org/abs/1707.02747]]

@@ -1,0 +1,40 @@
+created: 20170703081653248
+modified: 20170710142943841
+tags: [[Statistical Measures]]
+title: Maximum Mean Discrepancy
+type: text/vnd.tiddlywiki
+
+! Bibs
+
+* [Gretton et al. 2012]
+* [Smola et al. 2007]
+* [[Training generative neural networks via Maximum Mean Discrepancy optimization|https://arxiv.org/abs/1505.03906]]
+
+MMD can be thought as difference between feature means. It lets us do the optimization in closed form
+
+* Can get optimum value on each minibatch
+* Avoids two-step optimization issue in GAN
+
+! Definition
+RKHS $H$, feature map $\varphi: \mathcal X\rightarrow\mathcal H$, $f(x)=\langle f, \varphi(x)\rangle_{\mathcal H}$, we look at the mean feature difference in $\mathcal H$:
+$$
+\|\mu_P-\mu_Q\|_{\mathcal H} = \|\mathbb E_{X\sim P}\varphi(X)-\mathbb E_{Y\sim Q}\varphi(Y)\|_{\mathcal H}
+$$
+Here $\mu_P$ is the [[Kernel Mean Embedding]] of a probability measure
+$$
+\mu_P = \int k(x, \cdot)P(dx)
+$$
+We take its operator norm and get
+$$
+\underset{f:\|f\|_{\mathcal H}\le 1}{\sup}|\langle f, E_{X\sim P}\varphi(X)-\mathbb E_{Y\sim Q}\varphi(Y)\rangle_{\mathcal H}|
+$$
+And with linearity and reproducing property
+$$
+\underset{f:\|f\|_{\mathcal H}\le 1}{\sup}|E_{X\sim P}f(X)-\mathbb E_{Y\sim Q}f(Y)|
+$$
+
+! Computation
+Estimator given sample $X = (x_1, \cdots, x_N)$ and $Y = (y_1, \cdots, y_M)$, we just have to take certain sum of kernels.
+$$
+MMD^2(X, Y) = \frac{1}{N(N-1)}\sum_{n\neq n'}k(x_n, x_{n'})+\frac{1}{M(M-1)}\sum_{m\neq m'}k(y_m, y_{m'})-\frac{2}{MN}\sum_{m=1}^M\sum_{n=1}^Nk(x_n, y_m)
+$$

@@ -1,5 +1,5 @@
 created: 20160425022224634
-modified: 20170605082519901
+modified: 20170614091744071
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
@@ -10,6 +10,7 @@ type: text/vnd.tiddlywiki
 * [[CNN for NLP]]
 * [[Question Answering]]
 * [[Dialog]]
+* [[Neural Machine Translation]]
 
 ! Tools
 * [[LSTMVis|https://github.com/HendrikStrobelt/LSTMVis]]

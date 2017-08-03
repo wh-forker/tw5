@@ -1,5 +1,5 @@
 created: 20161208114834459
-modified: 20170419065453710
+modified: 20170725081618592
 tags: Bayesian
 title: Bayesian Inference
 type: text/vnd.tiddlywiki
@@ -15,6 +15,7 @@ Probabilistic inference is used to handle noisy and imprecise data. Exact infere
 ! Tools
 
 * [[Stan]]
+* [[BOPP|https://github.com/probprog/bopp/]]: favorite tool in favorite language, based on [[Anglican|https://github.com/probprog/anglican/blob/master/doc/codemap.md]]
 
 ! Generic class of models
 !! Conjugate

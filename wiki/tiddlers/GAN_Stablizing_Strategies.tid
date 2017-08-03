@@ -1,0 +1,12 @@
+created: 20170703115133772
+modified: 20170703120255786
+tags: [[Generative Adversarial Network]]
+title: GAN Stablizing Strategies
+type: text/vnd.tiddlywiki
+
+* Batch normalization
+* Historical averaging (Salimans et al 2016): A reinvention of Polyak averaging in RL
+* Minibatch discrimination (Salimans et al 2016): Like 2 sample test, try classify dataset
+* Instance noise (Sonderby et al 2016)
+* Weight clipping or approximate Wasserstein loss (Arjovsky et al 2017)
+* [[Unrolling SGD (Metz et al 2017)|https://github.com/poolio/unrolled_gan]]

@@ -1,5 +1,5 @@
 created: 20170208074243139
-modified: 20170522090031902
+modified: 20170615075015262
 tags: [[Generative Adversarial Network]]
 title: WGAN
 type: text/vnd.tiddlywiki
@@ -17,3 +17,5 @@ WGAN uses a critic instead of a discriminator. The critic is trained to provide 
 $$
 W(P_r, P_g)\propto \underset{f}{\max}\mathbb E_{x\sim P_r}[f(x)]-\mathbb E_{x\sim P_g}[f(x)]
 $$
+
+[[Optimal Transport GAN and VAE Explaination|https://arxiv.org/abs/1706.01807]]

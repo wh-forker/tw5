@@ -1,0 +1,7 @@
+created: 20170726134522681
+modified: 20170726134911254
+tags: ICML
+title: ICML 2017
+type: text/vnd.tiddlywiki
+
+* [[Decoupled Neural Interfaces using Synthetic Gradients|https://arxiv.org/abs/1608.05343]]: summarized in [[Synthetic Gradients]], together with another paper [[on DNI|https://arxiv.org/abs/1703.00522]]

@@ -1,8 +1,10 @@
 created: 20161209033609466
-modified: 20161209034017804
+modified: 20170630054950024
 tags: Clustering NIPS
 title: Fast and Provably Good Seeding for k-Means
 type: text/vnd.tiddlywiki
+
+[[code|https://github.com/obachem/kmc2]]
 
 Random seeding can lead to arbitrarily bad clustering result. K-means++ is slow.
 

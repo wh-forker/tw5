@@ -1,5 +1,5 @@
 created: 20161102063110959
-modified: 20170508061631300
+modified: 20170710121622246
 tags: [[Deep Generative Models]]
 title: Variational Generative Models
 type: text/vnd.tiddlywiki
@@ -7,17 +7,23 @@ type: text/vnd.tiddlywiki
 ! Bib
 
 * [[Variational Autoencoder]]
+* NICE [Dinh et al., 2015]
+* Hamiltonian variational inference [Salimans et al., 2015]
 * Stochastic Backpropagation and Approximate Inference in Deep Generative Models
 * Markov Chain Monte Carlo and Variational Inference: Bridging the Gap
 * Copula variational inference
 * The Variational Gaussian Process
-* Importance Weighted Autoencoders
+* Importance Weighted Autoencoders (IWAE) [Burda et al., 2016]
 * Hierarchical Variational Models
-* Auxiliary Deep Generative Models
+* Auxiliary Deep Generative Models [Maaløe et al., 2016]
 * Variational inference for Monte Carlo objectives
-* [[Improving Variational Inference with Normalizing Flows]]
-** Improving Variational Inference with Inverse Autoregressive Flow
-** [[Improving Variational Auto-Encoders using Householder Flow|http://arxiv.org/abs/1611.09630]]
+* [[Improving Variational Inference with Normalizing Flows]] [Rezende and Mohamed, 2016]
+** Improving Variational Inference with Inverse Autoregressive Flow [Kingma et al., NIPS 2016]
+** [[Improving Variational Auto-Encoders using Householder Flow|http://arxiv.org/abs/1611.09630]] [Tomczak and Welling, 2017]
+* [[Adversarial Variational Bayes]] (AVB) [Mescheder et al., 2017]
+** Hierarchical Implicit Models [Tran et al., 2017]
+** Variational Inference Using Implicit Distributions [Huszar, 2017]
+** Adversarial Message Passing for Graphical Models [Karaletsos, 2016]
 
 ! Theory
 
