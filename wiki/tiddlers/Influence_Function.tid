@@ -1,0 +1,24 @@
+created: 20170821031511865
+modified: 20170822055655071
+tags: Statistics
+title: Influence Function
+type: text/vnd.tiddlywiki
+
+Influence function is a classic technique from robust statistics that tells us how the model parameters change as we upweight a training point by an infinitesimal amount. We want to estimate the counterfactual:
+
+<<<
+How would the model's predictions change if we did not have this training point?
+<<<
+
+IFs give us an efficient approximation by computing the parameter change if $x$ were upweighted by some small $\epsilon$:
+$$
+\hat{\theta}_{-z} = \min_{\theta\in\Theta}\sum_{z_i\neq z}\frac 1 n\sum_{i=1}^nL(z_i, \theta)+\epsilon L(z,\theta)
+$$
+The influence of upweighting $z$ on the parameters $\hat\theta$ is given by
+$$
+\mathcal I_{up,params}(z)=\frac{d\hat\theta_{\epsilon, z}}{d\epsilon}|_{\epsilon=0}=-H_{\hat\theta}^{-1}\nabla_\theta L(z, \hat\theta)
+$$
+where $H_{\hat\theta} = \frac1n\sum_{i=1}^nL(z_i, \hat\theta)$ is the Hessian and is positive definite (PD) by assumption. The computation of Hessian and its reverse is expensive. The Hessian vector product can be approximated by conjugate gradient:
+$$
+H^{-1}v = \arg\min_t \frac12t^THt-v^Tt
+$$

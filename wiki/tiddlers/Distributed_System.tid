@@ -1,0 +1,13 @@
+created: 20170817065653440
+modified: 20170817070730909
+tags: Programming
+title: Distributed System
+type: text/vnd.tiddlywiki
+
+[[An illustrated proof of CAP theorem|http://mwhittaker.github.io/2014/08/16/illustrated-proof-cap-theorem/]]
+
+Violations to strict serializability
+
+* stale reads: caused by network partitions. reads historical values.
+* dirty reads: caused by promoted update failure. read rolled back txns.
+* lost updates: caused by other nodes don't respond. write something but lost.

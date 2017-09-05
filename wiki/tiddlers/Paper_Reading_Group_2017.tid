@@ -1,8 +1,12 @@
 created: 20170621070604151
-modified: 20170801060057043
+modified: 20170829021036808
 tags: [[Deep Learning Bib]] Papers
 title: Paper Reading Group 2017
 type: text/vnd.tiddlywiki
+
+Music~
+
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1327228511/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="http://wormwood-official.bandcamp.com/album/ghostlands-wounds-from-a-bleeding-earth">Ghostlands - Wounds From a Bleeding Earth by Wormwood</a></iframe>
 
 ! MI Team reading schedule
 !! Guidelines
@@ -35,13 +39,15 @@ type: text/vnd.tiddlywiki
 Let's start from some 2017 conference orals. Each paper has plenty of discussion online to help with understanding.
 
 |!Subject |!Title |!Conference |!Lecturer |!(Planned) Date |!Materials |
+|Vision |Learning Transferable Architectures for Scalable Image Recognition | arXiv 2017| | ||
+|Vision |Dual Path Networks | arXiv 2017| | ||
 |Vision |Attention-based Extraction of Structured Information from Street View Imagery | arXiv 2017|汪丰 |7/18 ||
-|Vision |[[Interleaved Group Convolutions for Deep Neural Networks|https://arxiv.org/abs/1707.02725]] | ICCV 2017| | ||
+|Vision |[[Interleaved Group Convolutions for Deep Neural Networks|https://arxiv.org/abs/1707.02725]] | ICCV 2017|侯章军 | ||
 |Vision |Feature Pyramid Networks for Object Detection | CVPR 2017|胡孟 |7/4||
 |Vision |A-Fast-RCNN: Hard positive generation via adversary for object detection | CVPR 2017|周立峰 |7/18 ||
 |Vision |Fully Convolutional Instance-aware Semantic Segmentation | CVPR 2017|胡孟 |8/1 |[[GitHub|https://github.com/msracver/FCIS]]|
 |Vision |YOLO9000: Better, Faster, Stronger | CVPR 2017|魏凯峰 |8/15 ||
-|Vision |Look Closer to See Better: Recurrent Attention Convolutional Neural Network for Fine-Grained Image Recognition | CVPR 2017| | ||
+|Vision |Look Closer to See Better: Recurrent Attention Convolutional Neural Network for Fine-Grained Image Recognition | CVPR 2017|刘丽娟 | ||
 |Vision |UberNet: Training a Universal Convolutional Neural Network for Low-, Mid-, and High-Level Vision using Diverse Datasets and Limited Memory | CVPR 2017| | ||
 |Vision |Network Dissection: Quantifying Interpretability of Deep Visual Representations | CVPR 2017|杨旭东 | ||
 |Vision |AGA: Attribute Guided Augmentation | CVPR 2017| | |[[arxiv|https://arxiv.org/pdf/1612.02559.pdf]],[[Github-Torch|https://github.com/rkwitt/GuidedAugmentation]]|

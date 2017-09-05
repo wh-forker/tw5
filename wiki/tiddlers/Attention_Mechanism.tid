@@ -1,8 +1,20 @@
 created: 20170602025305444
-modified: 20170602025408728
+modified: 20170829085047420
 title: Attention Mechanism
 type: text/vnd.tiddlywiki
 
 * [[Visual Attention]]
 * Sequential attention
 ** [[Using Fast Weights to Attend to the Recent Past]]
+** [[Attentive Recurrent Comparators]]
+* Adaptive Computation Time
+** [[Adaptive Computation Time for Recurrent Neural Networks|https://arxiv.org/abs/1603.08983]]
+** [[tf implementation|https://github.com/DeNeutoy/act-tensorflow]], pretty slow
+
+! Tutorials
+
+* [[Attention and Augmented Recurrent Neural Networks|https://distill.pub/2016/augmented-rnns/#attentional-interfaces]]
+
+! Bibs
+
+* [[Online and Linear-Time Attention by Enforcing Monotonic Alignments|https://arxiv.org/abs/1704.00784]]: [[blog|http://colinraffel.com/blog/online-and-linear-time-attention-by-enforcing-monotonic-alignments.html]]

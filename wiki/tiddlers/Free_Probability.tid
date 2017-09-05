@@ -1,0 +1,12 @@
+created: 20170816090759622
+modified: 20170816125828570
+tags: Statistics
+title: Free Probability
+type: text/vnd.tiddlywiki
+
+Terrence talking about [[Free Probability|https://terrytao.wordpress.com/2010/02/10/245a-notes-5-free-probability/#more-3466]]. 
+
+Speicher: solutions to noncommutative functions
+
+* Tensor product: $\varphi_{xy}(X_1Y_1\dots X_nY_n) = \varphi_x(X_1\dots X-n)\varphi_y(Y_1\dots Y_n)$
+* Free product: Anytime $\varphi(X_i)=\varphi(Y_i)=0$ $\forall i$, $\varphi(X_1Y_1\dots X_nY_n) = 0$

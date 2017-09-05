@@ -1,5 +1,5 @@
 created: 20170208074243139
-modified: 20170615075015262
+modified: 20170815082812971
 tags: [[Generative Adversarial Network]]
 title: WGAN
 type: text/vnd.tiddlywiki
@@ -10,6 +10,9 @@ type: text/vnd.tiddlywiki
 ! Implementations
 
 * [[tf|https://github.com/igul222/improved_wgan_training]]
+
+! Idea
+Directly learning $P_\theta$ is bad because it'll be very unlikely that all of $P_r$ lies within $P_\theta$'s support. We can add random noise to $P_\theta$.
 
 ! Details
 

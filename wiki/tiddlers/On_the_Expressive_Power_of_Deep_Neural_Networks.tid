@@ -1,0 +1,35 @@
+created: 20170817150105047
+modified: 20170817152056421
+title: On the Expressive Power of Deep Neural Networks
+type: text/vnd.tiddlywiki
+
+! Bibs
+* [[Exact solutions to the nonlinear dynamics of learning in deep linear neural networks|https://arxiv.org/abs/1312.6120]]
+* [[Exponential expressivity in deep neural networks through transient chaos|https://arxiv.org/abs/1606.05340]]
+* [[On the Expressive Power of Deep Neural Networks|https://arxiv.org/abs/1606.05336]]
+* [[Deep Information Propagation|https://arxiv.org/abs/1611.01232]]
+
+! Summary
+We have combined Riemannian geometry with dynamical mean field theory to study the emergent deterministic properties of signal propagation in deep nonlinear nets.
+
+We derived analytic recursion relations for Euclidean length, correlations, curvature, and Grassmannian length as simple input manifolds propagate forward through the network.
+
+We obtain an excellent quantitative match between theory and simulations
+
+Our results reveal the existence of a transient chaotic phase in which the network expands input manifolds without straightening them out, leading to "space filling" curves that explore many dimensions while turning at a constant rate. The number of turns grows exponentially with depth.
+
+Such exponential growth does not happen with width in a shallow net.
+
+Chaotic deep random networks can also take exponentially curved N-1 Dimensional decision boundaries in the input and flatten them into Hyperplane decision boundaries in the final layer: exponential disentangling!
+
+An order to chaos phase transition governs the dynamics of random deep networks, often used for initialization.
+
+Not all networks at the edge of chaos - with neither vanishing nor exploding gradients are created equal.
+
+The entire Jacobian singular value distribution, and not just its second moment impacts learning speed.
+
+We used introduced free probability theory to deep learning to compute this entire distribution.
+
+We found tanh networks with orthogonal weights have well conditioned Jacobians, but ReLU networks with orthogonal weights, or any network with Gaussian weights does not.
+
+Correspondingly, we found that with orthogonal weights, tanh networks learn Faster than ReLU networks.

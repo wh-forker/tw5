@@ -1,5 +1,5 @@
 created: 20161012084433429
-modified: 20170419083756253
+modified: 20170822070329034
 tags: [[Deep Learning]]
 title: Deep Learning Theory
 type: text/vnd.tiddlywiki
@@ -32,7 +32,8 @@ where $K$ is the number of training points, $N$ is the number of neurons, $m$ is
 This formula combines approximation and estimation error. We cannot explain why @@color:#dc322f;online/stochastic optimization works better than batch normalization@@. 
 
 ! Plausible Optimization
-[[On Optimization in Deep Learning]]
+* [[On Optimization in Deep Learning]]
+* [[Rethinking Generalization]]
 
 ! Statistical Learning Theory
 The complexity or capacity of NNs can be computed by measuring how many configurations can be shattered (VC-dimension)

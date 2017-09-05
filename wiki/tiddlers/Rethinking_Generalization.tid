@@ -1,0 +1,14 @@
+created: 20170822070228367
+modified: 20170822071209200
+tags: [[Stochastic Gradient Descent]] [[Deep Learning Theory]]
+title: Rethinking Generalization
+type: text/vnd.tiddlywiki
+
+! Bibs
+
+* [[Understanding deep learning requires rethinking generalization|https://arxiv.org/abs/1611.03530]]
+* [[Convergence properties of the randomized extended Gauss-Seidel and Kaczmarz methods|https://arxiv.org/abs/1503.08235]]
+* [[Train faster, generalize better: Stability of stochastic gradient descent|https://arxiv.org/abs/1509.01240]]
+
+! Summary
+By conventional wisdom, if the model happens to fit the training set exactly, then your model is probably not simple enough, meaning it will not fit the test set very well. According to Ben, this conventional wisdom is wrong. He demonstrates this by allowing the number of parameters to far exceed the size of the training set, and in doing so, he fit the training set exactly, and yet he still managed to fit the test set well. He suggested that generalization was successful here because stochastic gradient descent implicitly regularizes. For reference, in the linear case, stochastic gradient descent (aka the randomized Kaczmarz method) finds the solution of minimal 2-norm, and it converges faster when the optimal solution has smaller 2-norm. Along these lines, Ben has some work to demonstrate that even in the nonlinear case, fast convergence implies generalization.

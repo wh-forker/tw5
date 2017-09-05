@@ -1,5 +1,5 @@
 created: 20161029053257205
-modified: 20170803072005745
+modified: 20170805133149613
 tags: [[CNN for NLP]] [[Daily Stock Forecast]]
 title: Daily News for Stock Market Prediction
 type: text/vnd.tiddlywiki
@@ -21,6 +21,12 @@ Following is my take on this task:
 # Fine-tune the word embedding (deeply doubt if this works, too few words in dataset, should generalize poorly)
 # There's very little chance this small dataset can support a dilated convolution layer. That is what I am up to in the very end.
 
+! Tasks
+
+* [[reddit headlines|https://www.kaggle.com/hsrobo/d/aaron7sun/stocknews/tf-idf-svm-baseline]]: data probabily not that relavant
+* [[SemEval-2017|http://alt.qcri.org/semeval2017/task5/]]
+** [[Team UWaterloo report|https://arxiv.org/abs/1707.09448]]
+
 ! Results
 !! Simple tweaks
 Added called nltk tokenizer to preprocess the data. ROC-AUC dropped to .527. Too much new words.
@@ -33,4 +39,8 @@ As in the baseline approach, we can join the 25 headlines, we can carry on class
 * [[WildML one|http://www.wildml.com/2015/12/implementing-a-cnn-for-text-classification-in-tensorflow/]]
 * [[The new one on Github with pretrained word embedding|https://github.com/mangate/ConvNetSent]]
 
-!! 
+! TODOs
+
+# run baseline on semeval
+# n-gram as embedding?
+# shallow feedforward or convnet

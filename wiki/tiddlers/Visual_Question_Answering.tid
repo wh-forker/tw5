@@ -1,8 +1,12 @@
 created: 20161009015842435
-modified: 20161027130400281
+modified: 20170811081904915
 tags: [[Deep Learning Applications]]
 title: Visual Question Answering
 type: text/vnd.tiddlywiki
+
+! Dataset
+
+* [[COCO VQA Challenge|http://www.visualqa.org/]]
 
 ! Tutorial
 [[Visual Turing test tutorial|https://github.com/mateuszmalinowski/visual_turing_test-tutorial]]

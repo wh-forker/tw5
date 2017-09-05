@@ -1,0 +1,18 @@
+created: 20170808075846873
+modified: 20170815074112611
+tags: Meta-Learning
+title: Meta Networks
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1703.00837]]
+
+Use loss gradients as meta information. 2 types of loss functions:
+
+* representation loss for good representation learner criteria
+* main loss for the input task objective
+
+Slow training with [[REINFORCE]]. 
+
+Generates fast weights at two time-scales by operating in meta space. To integrate fast weights with slow weights, layer augmentation is used.
+
+External memory for rapid learning and generalization.

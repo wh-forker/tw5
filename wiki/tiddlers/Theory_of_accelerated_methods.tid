@@ -1,0 +1,21 @@
+created: 20170815112923908
+modified: 20170815115501046
+tags: [[Optimization Algorithms]]
+title: Theory of accelerated methods
+type: text/vnd.tiddlywiki
+
+$$
+Ax=b \qquad A\succ0\qquad\kappa=K(A)=\frac{\lambda_{\text{max}}(A)}{\lambda_{\text{min}}(A)}
+$$
+Taylor expansion
+$$
+A^{-1}=\frac{1}{\lambda_{\text{max}}}(\frac{A}{\lambda_{\text{max}}})^{-1} = \frac{1}{\lambda_{\text{max}}}(I-(I-\frac{A}{\lambda_{\text{max}}}))^{-1}=\sum_{k=0}^{\infty}(I-\frac{A}{\lambda_{\text{max}}})^k\frac{1}{\lambda_{\text{max}}}
+$$
+
+<<<
+''Theorem'' [name]<br>
+$$
+\|p_n(A)b-A^{-1}b\|\le\epsilon\|b\|\qquad\ni\qquad n\ge\Omega(\kappa\log\frac1\epsilon)
+$$
+<<<
+By acceleration, we mean to find a tighter bound such as $\Omega(\sqrt\kappa\log\frac1\epsilon)$

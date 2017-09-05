@@ -1,5 +1,5 @@
 created: 20170703093110210
-modified: 20170703115023336
+modified: 20170823075144024
 tags: [[Reinforcement Learning]]
 title: Actor-Critic Method
 type: text/vnd.tiddlywiki
@@ -8,3 +8,27 @@ This is derived from Policy Gradient Theorem. We want to optimize a expected dis
 $$
 \eta(\pi_\theta) = \mathbb E_{\pi_\theta}\left[\sum_{t=1}^\infty\gamma^{t-1}r_t|s_0\right]
 $$
+
+It has 2 networks (or one net with two heads):
+
+* Actor: predict action from state
+* Critic:  evaluate state (can also evaluate state and action)
+
+The update iteration is:
+
+# take action $a\sim\pi_\theta(a|s)$, get $(s, a, s', r)$
+# update $\hat V_\phi^\pi$ using target $r+\gamma\hat V_\phi^\pi(s')$
+# evaluate $\hat A^\pi(s, a)=r(s, a)+\gamma V_\phi^\pi(s')-\hat V_\phi^\pi(s)$
+# $\nabla_\theta J(\theta)\approx\nabla_\theta\log\pi_\theta(a|s)\hat A^\pi(s, a)$
+# $\theta\leftarrow\theta+\alpha\nabla_\theta J(\theta)$
+
+Value and policy update work best with a batch. We can design better estimators of advantage: [[Generalized advantage estimation|https://arxiv.org/abs/1506.02438]]
+
+! Bibs
+
+* Classic papers
+** Policy gradient methods for reinforcement learning with function approximation: actor-critic algorithms with value function approximation
+* Deep RL
+** Asynchronous methods for deep reinforcement learning: A3C -- parallel online actor-critic
+** High-dimensional continuous control using generalized advantage estimation: batch-mode actor-critic with blended Monte Carlo and function approximator returns
+** Q-Prop: sample-efficient policy-gradient with an off-policy critic: policy gradient with Q-function control variate

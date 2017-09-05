@@ -1,0 +1,42 @@
+created: 20170823075606996
+modified: 20170823092409072
+tags: [[Reinforcement Learning]]
+title: Q-Learning
+type: text/vnd.tiddlywiki
+
+We want to omit policy gradient and choose best action directly. But run into problems like need to know $p(s'|s, a)$ and need to represent $V(s)$. So we approximate $E[V(s')]$ with $\max_{a'}Q_\phi(s_i', a_i')$. By this we skip simulation of actions.
+
+* pros: works even for off-policy samples; only one network
+* cons: no convergence guarantees
+
+Q-function is the maximum discounted future reward when we perform action $a$ in state $s$, $Q(s_t, a_t) = \max R_{t+1}$
+
+''Bellman equation'': maximum future reword for this state and action is the immediate reward plus maximum future reward for the next state. $Q(s, a) = r + \gamma\max_{a'}Q(s', a')$
+
+In practice, many of the states are very rarely visited. (maybe a good memory management could speed this process up.) By passing the state through a deep neural net, we can get all Q-values for all actions available immediately.
+
+The network can be optimized with simple squared error loss:
+$$
+L = \frac 1 2[r + \max_{a'}Q(s', a')-Q(s, a)]^2
+$$
+
+Approximation of Q-values using non-linear functions is unstable and takes a week on a single GPU:
+
+* sequential states are strongly correlated
+* target value is always changing
+* Q-learning is not gradient descent
+
+''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
+
+! Bibs
+
+* Classic
+** Learning from delayed rewards: introduces Q-learning
+** Neural fitted Q-iteration: batch-mode Q-learning with neural networks
+* Deep RL
+** Deep auto-encoder neural networks in reinforcement learning: early image-based Q-learning method using autoencoders to construct embeddings
+** Human-level control through deep reinforcement learning: Q-learning with convolutional networks for playing Atari.
+** Deep reinforcement learning with double Q-learning: a very effective trick to improve performance of deep Q-learning.
+** Continuous control with deep reinforcement learning: continuous Q-learning with actor network for approximate maximization.
+** Continuous deep Q-learning with model-based acceleration: continuous Q-learning with action-quadratic value functions.
+** Dueling network architectures for deep reinforcement learning: separates value and advantage estimation in Q-function.

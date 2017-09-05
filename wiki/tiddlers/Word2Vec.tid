@@ -1,15 +1,26 @@
 created: 20160425022459698
-modified: 20170504080730619
+modified: 20170904070406030
 tags: [[Stanford NLP Course]]
 title: Word2Vec
 type: text/vnd.tiddlywiki
 
-refs:
+! Ideas to try
+
+* character level word embedding learning
+** learn word embedding model end2end to avoid storing large stuff 
+** probably better word root stuff?
+* definition based word embedding learning
+
+! refs
 
 * [[Distributed Representations of Words and Phrases and their Compositionality|https://arxiv.org/abs/1310.4546]]
 * [[Enriching Word Vectors with Subword Information|https://arxiv.org/abs/1607.04606]]
 * [[Bag of Tricks for Efficient Text Classification|https://arxiv.org/abs/1607.01759]]
 ** [[fastText supervised tutorial|https://github.com/facebookresearch/fastText/blob/master/tutorials/supervised-learning.md]]
+
+!! Similarity to Count-Based Models
+* [[Neural Word Embedding as Implicit Matrix Factorization|https://papers.nips.cc/paper/5477-neural-word-embedding-as-implicit-matrix-factorization]]: Word2Vec == PMI matrix factorization of count based models
+* Count based and most neural models have equivalent performace when properly hyperoptimized.
 
 Word similarity is hard to represent. High-dim vectors are not robust. Usually around 25-1000 dim.
 

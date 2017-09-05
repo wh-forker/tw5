@@ -1,0 +1,9 @@
+created: 20170805135208050
+modified: 20170805135438361
+tags: [[CNN for Video]]
+title: Video Object Segmentation
+type: text/vnd.tiddlywiki
+
+! Dataset
+* [[DAVIS Challenge 2017|http://davischallenge.org/code.html]]
+** [[Video Object Segmentation with Re-identification|https://arxiv.org/abs/1708.00197]]: winner entry

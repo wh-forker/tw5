@@ -1,0 +1,99 @@
+created: 20160810015649477
+modified: 20170805135050599
+tags: [[Deep Learning Applications]] Blog
+title: CNN for Video Classification
+type: text/vnd.tiddlywiki
+
+! Bib
+* [[Asynchronous Temporal Fields for Action Recognition|https://arxiv.org/abs/1612.06371]]
+** fully-connected temporal CRF model for reasoning
+* Audio in video
+** [[CNN Architectures for Large-Scale Audio Classification|http://arxiv.org/abs/1609.09430]]
+
+! Video Classification
+Hand-crafted local space-time features like 3D-SIFT, ESURF, HOG3D, MBH, local trinary pattern have reasonable performance on simple datasets such as recognizing human actions, etc. They do not require algorithms to detect human body and are robust to background variations. 
+
+[[Improved trajectories|https://hal.inria.fr/hal-00873267v2/document]] is the state-of-the-art low level trajectory extraction method. The main idea is to densely sample feature points in each frame, and track them in the video based on optical flow. Improved trajectories boost the recognition performance by taking camera motion into account, using SURF to complement optical flow matching. Then use RANSAC to estimate homography matrix. This technique achieves 91.2% on UCF-50, 87.9% on UCF-101 and 66.8% on HMDB-51, which is unsurpassed by many deep methods.
+
+These local features lack semantics and discriminative capacity.
+
+!! Datasets & Challenges
+
+* ''MED'14'': 20 events, 8k videos for training and 23k as dry-run validation (1.2k hr in total), 200k videos in test.
+* ''UCF-101 & THUMOS-2014'': 13,320 video clips with 101 annotated classes, THUMOS adds 5k+ videos.
+* ''Sports-1M'': 1m videos in 487 classes, annotation generated automaticly from YouTube, released by Stanford U.
+* ''HMDB-15'': 6,766 videos in 51 classes, more challenging because the context is complicated.
+* ''Columbia Consumer Videos'': 9,317 videos in 20 classes.
+
+!! Image-Based
+[[Zha et al. BMVC 2015|https://arxiv.org/abs/1503.04144]] gets mAP 38.74% on MED'14:
+
+* AlexNet and VGG19 as base model but features from hidden7 yield best performance
+* uses Spatio Temporal Pooling to extract features from 8 different regions
+* classification with kernel SVM
+* fusion with IDT Fisher Vectors improve results
+* claims uniform sampling yields same performance as keyframe detection.
+
+[[Xu et al. CVPR 2015|https://arxiv.org/abs/1411.4006]] uses VLAD encoding on VGG19 feature with SPP and gets 36.8% on MED'14.
+
+!! End-to-End CNN Architectures
+Due to the limited ability of capturing spatial-temporal patterns, using video directly as input has been considered. The most straight forward attempt is [[Ji et al. ICML 2010|http://www.cs.odu.edu/~sji/papers/pdf/Ji_ICML10.pdf]], where continous frames are stacked and processed with a 3-dim matrix as conv kernel. 
+
+[[Karpathy et al. CVPR 2014|http://cs.stanford.edu/people/karpathy/deepvideo/]] experimented with different fusion and transfer learning schemes. Instead of stacking the frames all at once, they introduce a fusion technique called ''Slow Fusion'' to aggregate temperal information stepwisely. Highest accuracy on UCF-101 model is 65.4%, achieved by fine-tuning the top 3 layers of Sports-1M pretrained model.
+
+[img[slow_fusion.PNG]]
+
+[[Tran et al. ICCV 2015|https://arxiv.org/abs/1412.0767v4]] argues that previous models loss temporal information because they perform CONVs and POOLs only spatially. Slow Fusion can handle temporal information better because temporal information are grouped gradually. They propose C3D architecture that uses full frames as input, with 3x3x3 CONVs and 2x2x2 POOLs and achieve 72.26% on UCF101.
+
+''Remark'': it is not CNN's strength to capture temporal information, spatial and temporal pooling works differently in human perception. And the 3D conv architecture is very memory and time consuming.
+
+[[Sun et al. ICCV 2015|https://arxiv.org/abs/1510.00562]] factorized 3D CONV into spatio and temporal operations and propose F,,ST,,CN:
+
+[img[FSTCN.PNG]]
+
+The score of video clips are fusioned with ''Sparsity Concentration Index'', which puts more weights on the score vectors that have higher degrees of sparsity. Predicts 88.1% on UCF-101 and 59.1% on HMDB-51.
+
+[[Simonyan & Zisserman, NIPS 2014|https://arxiv.org/abs/1406.2199]] propose a two-stream approach, static frames and optical flow stack are convolved separately:
+
+[img[2-stream cnn.PNG]]
+
+Authors argue information which hand-crafted local descriptors care about, i.e., histograms of orientations, kinematic features (divergence, curl and shear) and trajactory feature can all be captured by CONV. The scores of the two stream are fused with linear SVM. 88.0% on UCF-101 and 59.4% on HMDB-51.
+
+''Remark'': Still no advantage over IDT. Optical flow probably can be replaced with deep methods.
+
+[[Wang et al. CVPR 2015|http://arxiv.org/abs/1505.04868]] propose Trajectory-Pooled Deep-Convolutional Descriptors. Replacing optical flows with improved trajectories as input of temporal stream. The so-called TDD is extracted by trajectory pooling trajectories and CONV feature maps. 91.5% on UCF-101 and 65.9% on HMDB-51 with early fusion of TDDs and iDT.
+
+[[Feichtenhofer et al. CVPR 2016|https://www.robots.ox.ac.uk/~vgg/publications/2016/Feichtenhofer16/feichtenhofer16.pdf]] use 3D Conv + 3D pooling to fuse spatial and temporal outputs and combine it with temporal outputs. Base model VGG16, 93.5% on UCF101 and 69.2% on HMDB51.
+
+[[Wang et al. ECCV 2016|https://arxiv.org/abs/1608.00859]] adds RGB difference and warped optical flow to input. Base model Inception-BN, 94.2% on UCF-101 and 69.4% on HMDB51.
+
+[[Wang et al. CVPR 2016|https://arxiv.org/abs/1512.00795]] learn feature representation by modeling an action as a transformation between an initial state (condition) to a new state (effect) with two Siamese CNNs:
+
+[img[Siamese.PNG]]
+
+63.4% on HMDB51 and 92.4 on UCF101. The advantage is the action type is learned.
+
+[[Bilen et al. CVPR 2016|http://www.robots.ox.ac.uk/~vgg/publications/2016/Bilen16a/]] introduced the dynamic image to represent motions with rank pooling in videos, upon which a CNN model is trained for recognition. 65.2% on HMDB51 and 89.1% on UCF101.
+
+''Remark'': the dynamic image is hard for human to recognize.
+
+!! Modeling Long-Term Temporal Dynamics
+[[Donahue et al. CVPR 2015|http://arxiv.org/abs/1411.4389]] trained a 2-layer LSTM with features from the two-stream approach. 
+
+!! Incorporating Visual Attention
+
+
+# "Delving Deeper into Convolutional Networks for Learning Video Representations", Nicolas Ballas, Li Yao, Pal Chris, Aaron Courville, ICLR 2016. [[link|http://arxiv.org/pdf/1511.06432v4.pdf]]
+# "Deep Multi Scale Video Prediction Beyond Mean Square Error", Michael Mathieu, camille couprie, Yann Lecun, ICLR 2016. [[link|http://arxiv.org/pdf/1511.05440v6.pdf]]
+# Hierarchical Attention Network for Action Recognition in Videos (HAN) [[link|http://arxiv.org/abs/1607.06416]]
+
+! Object Tracking
+
+# Online Tracking by Learning Discriminative Saliency Map with Convolutional Neural Network, Seunghoon Hong, Tackgeun You, Suha Kwak, Bohyung Han, arXiv:1502.06796. [[link|http://arxiv.org/pdf/1502.06796]]
+# DeepTrack: Learning Discriminative Feature Representations by Convolutional Neural Networks for Visual Tracking, Hanxi Li, Yi Li and Fatih Porikli, BMVC, 2014. [[link|http://www.bmva.org/bmvc/2014/files/paper028.pdf]]
+# Learning a Deep Compact Image Representation for Visual Tracking, N Wang, DY Yeung, NIPS, 2013. [[link|http://winsty.net/papers/dlt.pdf]]
+# Hierarchical Convolutional Features for Visual Tracking, Chao Ma, Jia-Bin Huang, Xiaokang Yang and Ming-Hsuan Yang, ICCV 2015 [[link|http://www.cv-foundation.org/openaccess/content_iccv_2015/papers/Ma_Hierarchical_Convolutional_Features_ICCV_2015_paper.pdf]] [[Code|https://github.com/jbhuang0604/CF2]]
+# Visual Tracking with fully Convolutional Networks, Lijun Wang, Wanli Ouyang, Xiaogang Wang, and Huchuan Lu, ICCV 2015 [[link|http://202.118.75.4/lu/Paper/ICCV2015/iccv15_lijun.pdf]] [[Code|https://github.com/scott89/FCNT]]
+# Learning Multi-Domain Convolutional Neural Networks for Visual Tracking, Hyeonseob Namand Bohyung Han, [[link|http://arxiv.org/pdf/1510.07945.pdf]] [[Code|https://github.com/HyeonseobNam/MDNet]] [[Project Page|http://cvlab.postech.ac.kr/research/mdnet/]]
+
+! [[Video Captioning]]

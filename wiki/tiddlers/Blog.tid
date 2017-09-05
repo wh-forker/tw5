@@ -1,11 +1,11 @@
 created: 20160818075557033
-modified: 20170629145711407
+modified: 20170808070823306
 tags: 
 title: Blog
 type: text/vnd.tiddlywiki
 
 * [[Variational Inference for Generative Models]]
-* [[CNN for Video]]
+* [[CNN for Video Classification]]
 * [[Generative Adversarial Network Talk]]
 * [[Guaranteed Non-convex Learning Algorithms through Tensor Factorization]]
 * [[On Optimization in Deep Learning]]

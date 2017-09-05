@@ -1,5 +1,5 @@
 created: 20161011084441404
-modified: 20170323080424602
+modified: 20170829071220290
 tags: 
 title: Neural Style
 type: text/vnd.tiddlywiki
@@ -15,6 +15,10 @@ type: text/vnd.tiddlywiki
 ** brilliant idea and result
 * [[A Learned Representation For Artistic Style|http://arxiv.org/abs/1610.07629]]
 ** conditional instance normalization, surprising result, why should this work?
+* [[Prisma's Texture Networks|https://github.com/DmitryUlyanov/texture_nets]]: an improved implementation
+* [[Deep Photo Style Transfer|https://arxiv.org/abs/1703.07511]]
+** preserve reality by making sure transformation is locally affine in color space
+** Style loss term updated with segmentation mask
 
 ! Basic
 !! Objective

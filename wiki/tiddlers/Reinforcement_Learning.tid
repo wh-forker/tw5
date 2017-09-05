@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20170721064441325
+modified: 20170831032436057
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -16,25 +16,34 @@ type: text/vnd.tiddlywiki
 * [[Actor-Critic Method]]: stores policy and value
 * model free/based
 
-!! Q-Learning
-Q-function is the maximum discounted future reward when we perform action $a$ in state $s$, $Q(s_t, a_t) = \max R_{t+1}$
+!! Anatomy of a RL algorithm
+Iterate these 3 steps：
 
-''Bellman equation'': maximum future reword for this state and action is the immediate reward plus maximum future reward for the next state. $Q(s, a) = r + \gamma\max_{a'}Q(s', a')$
-
-In practice, many of the states are very rarely visited. (maybe a good memory management could speed this process up.) By passing the state through a deep neural net, we can get all Q-values for all actions available immediately.
-
-The network can be optimized with simple squared error loss:
-$$
-L = \frac 1 2[r + \max_{a'}Q(s', a')-Q(s, a)]^2
-$$
-
-Approximation of Q-values using non-linear functions is unstable and takes a week on a single GPU. ''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
+# Generate samples (i.e. run the policy)
+# Fit a model to estimate return
+#* MC policy gradient: compute $\hat Q = \sum_{t'=t}^T\gamma^{t'-t}r_{t'}$
+#* [[Actor-Critic Method]], [[Q-Learning]]: fit $Q_\phi(s, a)$
+#* Model-based: estimate $p(s'|s, a)$
+# Improve the policy
+#* [[Policy Gradient]]: $\theta\leftarrow\theta+\alpha\nabla_\theta J(\theta)$
+#* Q-learning: $\pi(s) = \arg\max Q_\phi(s, a)$
+#* Model-based: optimize $\pi_\theta(a|s)$
 
 !! Tricks
 
 * Freezing target network
 * Error clipping, reward clipping
 * Experience replay
+
+!! Training steps
+On training half-cheetah, each one is 10x easier than previous. (each episodes is 1000 steps)
+
+* gradient-free methods, e.g. evolution strategies, CMA, etc. 
+* fully online methods, e.g. A3C, 100,000 episodes ~15 days
+* policy gradient methods, e.g. TRPO, 10,000 episodes
+* relay buffer value estimation, e.g. Q-learning, DDPG, NAF, etc., 1,000 episodes
+* model-based deep RL, e.g. guided policy search
+* model-based shallow RL, e.g. PILCO
 
 ! Bibs
 * [[Faster Deep Reinforcement Learning]]
@@ -43,8 +52,10 @@ Approximation of Q-values using non-linear functions is unstable and takes a wee
 * [[Curiosity-driven Exploration by Self-supervised Prediction|https://pathak22.github.io/noreward-rl/]]: training with sparse reward
 
 ! Topics
-*  [[Imitation Learning]]
+* [[Imitation Learning]]
+* [[Meta-Learning]]
 * [[Noisy Networks for Exploration|https://arxiv.org/abs/1706.10295]]
+* [[Soft Optimality]]
 
 ! Implementations
 Environments

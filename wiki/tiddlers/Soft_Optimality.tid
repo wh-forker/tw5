@@ -1,0 +1,39 @@
+created: 20170824025606050
+modified: 20170824075619329
+tags: [[Reinforcement Learning]]
+title: Soft Optimality
+type: text/vnd.tiddlywiki
+
+Soft here means entropy regularized. With entropy regularization, we need to alter our notion of a greedy policy, as the optimal policy is stochastic.
+$$
+V(s') = \text{soft}\max_{a'}Q_\phi(s', a') = \log\int\exp(Q_\phi(s', a'))da'
+$$
+$\pi(a|s)=\exp(Q_\phi(s, a)-V(s))$ optimizes $\sum_tE_{\pi(s_t, a_t)}[r(s_t, a_t)]+E_{\pi(s_t)}[\mathcal H(\pi(a_t|s_t))]$
+The intuition is that $\pi(a|s)\propto\exp(Q_\phi(s, a))$ when $\pi$ minimizes $D_{KL}(\pi(a|s)||\frac1Z\exp(Q(s,a)))$
+$$
+D_{KL}(\pi(a|s)||\frac1Z\exp(Q(s,a))) = E_{\pi(a|s)}[Q(s, a)]-\mathcal H(\pi)
+$$
+This method combats premature entropy collapse and is closely related to soft Q-learning.
+
+!! Benefits
+
+* Improve exploration and prevent entropy collapse
+* Principled approach to break ties
+* Can reduce to hard optimality as reward magnitude increases
+* Good model for modeling human bebavior
+* Compositionality: $Q_1+Q_2$ is the soft Q-function for $r_1+r_2$
+
+!! Soft Q-learning
+
+
+! Bibs
+
+* Linearly solvable Markov decision problems: one framework for reasoning about soft optimality.
+* General duality between optimal control and estimation: primer on the equivalence between inference and control.
+* Optimal control as a graphical model inference problem: frames control as an inference problem in a graphical model.
+* Modeling interaction via the principle of maximal causal entropy: connection between soft optimality and maximum entropy modeling.
+* On stochastic optimal control and reinforcement learning by approximate inference: temporal difference style algorithm with soft optimality.
+* Reinforcement learning with deep energy based models: soft Q-learning algorithm, deep RL with continuous actions and soft optimality
+* Bridging the gap between value and policy based reinforcement learning.
+* Equivalence between policy gradients and soft Q-learning.
+** Soft Q-learning loss gradient can be interpreted as a policy gradient term plus a baseline-error-gradient term, corresponding to policy gradient instantiations such as A3C.

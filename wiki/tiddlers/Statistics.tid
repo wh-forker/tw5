@@ -1,23 +1,27 @@
 color: #00e600
 created: 20141010100715798
-modified: 20170427163322691
+modified: 20170822034214975
 tags: Math
 title: Statistics
 type: text/vnd.tiddlywiki
 
 ! Foundamentals
-* [[Inequalities]]
 * [[Principle of maximum entropy]]
 * [[Statistical manifold]]
 * [[Stochastic Processes]]
 * [[Graphical Model]]
 * [[Bayesian]]
+* [[Influence Function]]
 
 The three axioms of Probability theory
 
 # $P(A)\ge0$ for all events $A$
 # $P(\Omega) = 1$
 # $P(A\cup B)=P(A)+P(B)$ for disjoint events $A$ and $B$
+
+In probability theory, in contrast, it is the events and their probabilities that are viewed as being fundamental, with the sample space $\Omega$ being abstracted away as much as possible, and with the random variables and expectations being viewed as derived concepts. 
+
+[[Free Probability]]
 
 ! Distributions
 

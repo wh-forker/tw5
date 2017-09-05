@@ -1,16 +1,34 @@
 created: 20160425022224634
-modified: 20170614091744071
+modified: 20170904084902803
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
 
 [[Stanford NLP Course]]
 
+* [[NLP Data]]
+
 ! Topics
+* Perceiving and representing text
+** handling unknown words
+** tokenize? spelling? characters? bytes?
+** smaller perceptual units need more complex models, but have fewer OOVs (doubt)
+* Text categorisation
+* Natual language generation
+** Language Modelling
+*** [[DLSS 2017 Talks Phil Blunsom]]
+** Conditional language modelling
+*** speech recognition
+*** caption generation
+*** [[Question Answering]]
+*** [[Dialog]]
+*** [[Neural Machine Translation]]
+*** following instructions
+*** summarisation
+* Analytic applications
+** topic modelling
+** linguistic analysis (discourse, semantics, syntax, morphology)
 * [[CNN for NLP]]
-* [[Question Answering]]
-* [[Dialog]]
-* [[Neural Machine Translation]]
 
 ! Tools
 * [[LSTMVis|https://github.com/HendrikStrobelt/LSTMVis]]
@@ -27,29 +45,6 @@ The performance is always dominated by the size of high quality data.
 Probably the most successful concept is to use distributed representation of words. For example, neural network based language models significantly outperform N-gram models.
 <<< [[Efficient Estimation of Word Representations in Vector Space|Word2Vec]]
 
-! Data
-Size of vocabulary: speech 20K, PTB 50K, Google 1T
-
-This is what Baidu used in //End-to-End Speech Recognition in English and Mandarin//
-
-* Language model: Kneser-Ney smoothed character level 5-gram model.
-* English: 850mil n-grams trained with KenLM on Common Crawl Repository
-* Chinese: 2bil n-grams
-
-!! Chinese vs English
-Chinese characters are more similar to English syllables than English characters. In speech, there are 14.1 chars/s in English, 3.3 chars/s in Mandarin. Shannon entropy per char 4.9 bits in English, 12.6 bits in Mandarin.
-
-!! Datasets
-Lee collected [[these datasets|http://www.cs.cornell.edu/home/llee/data/]].
-
-* [[Google Research Datasets|https://github.com/google-research-datasets]]
-** [[Online Discussion|https://github.com/google-research-datasets/coarse-discourse]]
-* [[Facebook ParlAI|https://github.com/facebookresearch/ParlAI]]
-** bAbI and wiki stuff
-** SQuAD
-
-!!! [[Sentense Classification Datasets]]
-
 ! Features
 * BoW
 * Distributed word embeddings
@@ -59,6 +54,7 @@ Lee collected [[these datasets|http://www.cs.cornell.edu/home/llee/data/]].
 ** LDA, computationally expensive on large datasets
 ** [[Word2Vec]]
 ** [[GloVe|Global Vectors for Word Representation]]
+* [[Hashed Character $n$-gram|https://arxiv.org/abs/1511.06018]]
 
 ! Sentence model
 is to analysis and represent the semantic content of a sentence for purposes of classification or generation.

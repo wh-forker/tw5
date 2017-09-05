@@ -1,5 +1,5 @@
 created: 20170703075221213
-modified: 20170706111939909
+modified: 20170815080538529
 tags: [[Generative Adversarial Network]] Talks The
 title: DALI 2017 GAN Workshop
 type: text/vnd.tiddlywiki
@@ -18,6 +18,8 @@ In this talk, $\|f\|_{\mathcal H}\le1$ from a unit ball, the metric is [[MMD|Max
 A optimal classifier can be found with gradient descent of MMD. The theory seems to be broken in the optimization part
 
 ! GANs, Actor-Critic and Multilevel Optimization
+Related paper [[Connecting Generative Adversarial Networks and Actor-Critic Methods|https://arxiv.org/abs/1610.01945]]
+
 GAN is trained as a multilevel optimization:
 $$
 \phi^* = \arg\min_\phi F(\theta^*, \phi)

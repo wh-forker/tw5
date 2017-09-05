@@ -1,7 +1,21 @@
 created: 20170712082332363
-modified: 20170719055122566
+modified: 20170824081514942
 tags: [[Reinforcement Learning]] [[Deep Generative Models]]
 title: Imitation Learning
 type: text/vnd.tiddlywiki
+
+* given: state & action space, roll-out from $\pi^*$, dynamics model
+* goal: recover reward function, then use reward to get policy
+
+The challenges are:
+
+* underdefined problem
+* difficult to evaluate a learned reward
+* demonstrations may not be precisely optimal
+
+Imitation learning is very similar to GAN:
+
+* a generator generate policy samples from $\pi$ and update policy in the outer loop
+* a discriminator update reward using samples & demos and update reward in the inner loop
 
 DeepMind use GAN and VAE to learn human actions: [[Robust Imitation of Diverse Behaviors|https://arxiv.org/abs/1707.02747]]

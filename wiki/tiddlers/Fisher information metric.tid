@@ -1,6 +1,6 @@
 created: 20150213071121294
-modified: 20150213080426712
-tags: Analysis Statistics
+modified: 20170824072556633
+tags: Analysis Statistics [[Reinforcement Learning]]
 title: Fisher information metric
 type: text/vnd.tiddlywiki
 
@@ -16,4 +16,9 @@ $$
 Cencov proved that for a non-singular transformation of the parameters $\lambda=f(\theta)$, the information matrix
 $$
 I(\lambda)=\left[\frac{\partial\theta_i}{\partial\lambda_j}\right]I(\theta)\left[\frac{\partial\theta_i}{\partial\lambda_j}\right].
+$$
+
+In reinforcement learning, the natural gradient is defined as $F^{-1}g$, where $F$ is the average Fisher information matrix
+$$
+F = \mathbb E_{s, a\sim\pi}[(\nabla_\theta\log\pi_\theta(a|s))^T(\nabla_\theta\log\pi_\theta(a|s))]
 $$

@@ -1,0 +1,8 @@
+created: 20170829063616223
+modified: 20170829064117710
+tags: [[ICML 2017]] [[Deep Model Compression]]
+title: Training Quantized Nets: A Deeper Understanding
+type: text/vnd.tiddlywiki
+
+* [[arxiv|https://arxiv.org/abs/1706.02379]]
+* [[ICML|http://vip.ece.cornell.edu/papers/17ICML_WS_qnets.pdf]]

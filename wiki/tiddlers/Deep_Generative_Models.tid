@@ -1,5 +1,5 @@
 created: 20161019092508242
-modified: 20170712082539610
+modified: 20170808064038829
 tags: [[Deep Learning Applications]]
 title: Deep Generative Models
 type: text/vnd.tiddlywiki
@@ -25,9 +25,11 @@ type: text/vnd.tiddlywiki
 !! Autoregressive models
 
 * [[WaveNet]]
+* [[Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders]]
 * [[Pixel-CNN]]
 * [[SampleRNN]]
 * Video Pixel Network
+* [[Parallel Multiscale Autoregresssive Density Estimation]]
 * ByteNet
 * [[A Neural Parametric Singing Synthesizer|http://arxiv.org/abs/1704.03809v1]]
 ** What is the Causual conv input?

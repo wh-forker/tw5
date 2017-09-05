@@ -1,5 +1,5 @@
 created: 20170502084841487
-modified: 20170613071251422
+modified: 20170825065042218
 tags: [[Sequential Models]]
 title: Neural Abstract Machines
 type: text/vnd.tiddlywiki
@@ -25,7 +25,7 @@ Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest P
 * Neural Turing Machine
 * Reinforcement Learning Neural Turing Machines
 * Stack Recurrent Nets
-* Neural Programmer
+* [[Neural Programmer]]
 * Neural Programmer-Interpreter
 * Neural GPU
 * Learning Simple Algorithms from Examples

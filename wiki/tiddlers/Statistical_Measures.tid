@@ -1,5 +1,5 @@
 created: 20170427153639938
-modified: 20170710144504599
+modified: 20170815082053475
 tags: Statistics
 title: Statistical Measures
 type: text/vnd.tiddlywiki
@@ -81,3 +81,9 @@ Examples are
 * [[Jensen-Shannon divergence]]: $f(x) = -(x+1)\log\frac{x+1}{2}+x\log x$
 * Total variation: $f(x) = |x-1|$
 * Pearson $\chi^2$
+
+Direct MLE 
+$$
+\max_{\theta\in\mathbb R^d}\frac1m\sum_{i=1}^m\log P_\theta(x^i)
+$$
+is equivalent to minimizing the KL-divergence $KL(P_r\|P_\theta)$.

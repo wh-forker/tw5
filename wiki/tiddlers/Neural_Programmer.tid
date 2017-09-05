@@ -1,0 +1,9 @@
+created: 20170825065047968
+modified: 20170826070129335
+tags: [[Neural Abstract Machines]]
+title: Neural Programmer
+type: text/vnd.tiddlywiki
+
+[[paper|https://arxiv.org/abs/1511.04834]]
+
+Neural Programmer learns to create programs without needing examples of correct programs. 

@@ -1,0 +1,39 @@
+created: 20170815074938266
+modified: 20170829084902929
+tags: [[ICML 2017]]
+title: ICML 2017 Papers
+type: text/vnd.tiddlywiki
+
+* [[Decoupled Neural Interfaces using Synthetic Gradients|https://arxiv.org/abs/1608.05343]]: summarized in [[Synthetic Gradients]], together with another paper [[on DNI|https://arxiv.org/abs/1703.00522]]
+* [[Meta Networks|https://arxiv.org/abs/1703.00837]]
+* [[On the Expressive Power of Deep Neural Networks]]
+* [[Training Quantized Nets: A Deeper Understanding]]
+* [[Attentive Recurrent Comparators]]
+
+! Facebook
+
+* High-Dimensional Variance-Reduced Stochastic Gradient Expectation-Maximization Algorithm. //Rongda Zhu, Lingxiao Wang, Chengxiang Zhai, Quanquan Gu//
+* An Analytical Formula of Population Gradient for two-layered ReLU network and its Applications in Convergence and Critical Point Analysis. //Yuandong Tian//
+* [[Convolutional Sequence to Sequence Learning]]. //Jonas Gehring, Michael Auli, David Grangier, Denis Yarats, Yann Dauphin//
+* Efficient softmax approximation for GPUs. //Edouard Grave, Armand Joulin, Moustapha Cisse, David Grangier, Hervé Jégou//
+* Gradient Boosted Decision Trees for High Dimensional Sparse Output. //Si Si, Huan Zhang, Sathiya Keerthi, Dhruv Mahajan, Inderjit Dhillon, Cho-Jui Hsieh//
+* Language Modeling with Gated Convolutional Networks. //Yann Dauphin, Angela Fan, Michael Auli, David Grangier//
+* Parseval Networks: Improving Robustness to Adversarial Examples. //Moustapha Cissem, Piotr Bojanowski, Edouard Grave//
+* Unsupervised Learning by Predicting Noise. //Piotr Bojanowski, Armand Joulin//
+* [[Wasserstein Generative Adversarial Networks|WGAN]]. //Martin Arjovsky, Soumith Chintala, Leon Bottou//
+
+! DeepMind
+
+* [[Parallel Multiscale Autoregresssive Density Estimation]]
+* [[Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders]]
+* Reinforcement Learning
+** [[Why is Posterior Sampling Better than Optimism for Reinforcement Learning?]]
+** [[DARLA: Improving Zero-Shot Transfer in Reinforcement Learning]]
+** [[Automated Curriculum Learning for Neural Networks]]
+** [[Learning to learn without gradient descent by gradient descent]]
+** [[A Distributional Perspective on Reinforcement Learning]]
+** [[A Laplacian Framework for Option Discovery in Reinforcement Learning]]
+
+! Tencent Recommendations
+
+* [[FeUdal Networks for Hierarchical Reinforcement Learning]]

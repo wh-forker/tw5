@@ -1,17 +1,17 @@
 created: 20170503023704453
-modified: 20170724061130978
-tags: Vision [[Recurrent Neural Networks]]
+modified: 20170829085012461
+tags: Vision [[Recurrent Neural Networks]] [[Reinforcement Learning]]
 title: Meta-Learning
 type: text/vnd.tiddlywiki
 
-Deep learning hard to generalize given few examples because there is no optimization techniques dedicated to this kind of problems.
+Deep learning hard to generalize given few examples because there is no optimization techniques dedicated to this kind of problems. I will include ''rapid learning'' and ''continual learning'' literatures here.
 
 ''Meta-learning'' suggests we learn in 2 steps:
 
 * acquire knowledge within each separate task (fast)
 * extract information across all tasks (slow)
 
-Consider a training algorithm
+The goal of metal-learner is to acquire knowledge of different tasks. Consider a training algorithm
 
 * input: training set $D_{train} = \{(X_t, Y_t)\}^T_{t=1}$
 * output: parameters $\theta$ of model $M$
@@ -19,7 +19,7 @@ Consider a training algorithm
 
 Desire a meta-learning algorithm
 
-* input: meta-training set $\mathcal D_{meta-train} = \{(D_{train}^{n}, D_{test}^n)\}_{n=1}^N$, where $D_{train}^{n}$ is a set of training set.
+* input: meta-training set $\mathcal D_{meta-train} = \{(D_{train}^{n}, D_{test}^n)\}_{n=1}^N$, where $D_{train}^{n}$ is a set of training set. Slow learning can be done by i.e. [[REINFORCE]].
 * output: parameters $\Theta$ representing a training algorithm
 * objective: good performance on meta-test set $\mathcal D_{meta-test} = \{(D_{train}^{n'}, D_{test}^{n'})\}_{n'=1}^{N'}$
 
@@ -28,3 +28,18 @@ Desire a meta-learning algorithm
 * [[Optimization as a Model for Few-Shot Learning]]
 * [[Synthetic Gradients]]
 * [[Meta-Learning with Temporal Convolutions|https://arxiv.org/abs/1707.03141]]
+* [[Meta Networks]]
+
+! Rapid learning
+
+* probabilistic programming approach (pen stroke generation)
+* Siamese networks for one-shot classification
+* end2end differentiable nearest neighbor method for one-shot learning
+* memory-based approach and trained NTM
+* LSTM-based one-shot optimizer
+** [[Attentive Recurrent Comparators]]
+
+!! Meta optimizer
+
+* Controlling fast weight update rate: [[Overcoming catastrophic forgetting in NNs]]
+* Use fast weights to replace soft attention mechanism

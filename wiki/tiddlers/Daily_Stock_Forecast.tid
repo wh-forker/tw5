@@ -1,5 +1,5 @@
 created: 20170412080154477
-modified: 20170721060315882
+modified: 20170807111446051
 tags: [[Quantitative Finance]]
 title: Daily Stock Forecast
 type: text/vnd.tiddlywiki
@@ -51,4 +51,4 @@ RCquant
 ! Bibs
 * [[Stochastic Portfolio Theory]]
 * [[Deep learning bank distress from news and numerical financial data|https://arxiv.org/abs/1706.09627]]
-* Learning to Generate Market Comments from Stock Prices
+* Learning to Generate Market Comments from Stock Prices: an ordinary seq2seq pointer network

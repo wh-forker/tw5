@@ -1,9 +1,14 @@
 created: 20160920072908374
-modified: 20170419030104220
+modified: 20170830063145665
 tags: [[Deep Generative Models]]
 title: WaveNet
 type: text/vnd.tiddlywiki
 
 [[paper|https://arxiv.org/abs/1609.03499]]
 
+* [[A clean tf implementation|https://github.com/ibab/tensorflow-wavenet]]
 * [[Fast implementation by caching|https://github.com/tomlepaine/fast-wavenet]]
+* [[ByteNet based on it|https://github.com/paarthneekhara/byteNet-tensorflow]]
+** [[ByteNet paper|https://arxiv.org/abs/1610.10099]]
+
+WaveNet like papers have been used in audio generation, NMT and ASR. 

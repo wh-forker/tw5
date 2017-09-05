@@ -1,20 +1,22 @@
 created: 20160516024046072
-modified: 20170605082855192
+modified: 20170904084707465
 tags: [[Deep Learning Engineering]]
 title: Deep Learning Tools
 type: text/vnd.tiddlywiki
 
-For Speech
+* Static
+** [[Torch]]
+** [[TensorFlow]]
+** [[Caffe]]
+* Dynamic: write codes that computes predictions, symbolic representation of computation is written down implicitly (based on operator overloading) by toolkit.
+** PyTorch
+*** [[The Incredible PyTorch|https://github.com/ritchieng/the-incredible-pytorch]]
+** [[DyNet|https://github.com/clab/dynet]]: supports on-the-fly batching
+
+! Others
 
 * [[Kaldi]]
-
-
-* [[Torch]]
-* [[TensorFlow]]
-* PyTorch
-** [[The Incredible PyTorch|https://github.com/ritchieng/the-incredible-pytorch]]
-* [[Caffe]]
-* [[DyNet|https://github.com/clab/dynet]]: supports on-the-fly batching
+* docker-compose: save docker run settings
 
 [[Benchmarking State-of-the-Art Tools|https://github.com/hclhkbu/dlbench]]
 

@@ -1,9 +1,10 @@
 created: 20170720124855666
-modified: 20170721030032617
-tags: Optimization
+modified: 20170904022322775
+tags: Optimization [[Stochastic Gradient Descent]]
 title: Escaping Saddle Points
 type: text/vnd.tiddlywiki
 
+! Perturbed SGD
 From a series of work by Rong Ge:
 
 * [[Escaping From Saddle Points --- Online Stochastic Gradient for Tensor Decomposition|https://arxiv.org/abs/1503.02101]]: [[blog|http://www.offconvex.org/2016/03/22/saddlepoints/]]
@@ -36,3 +37,10 @@ A point $x$ is an $\epsilon$-first-order stationary point if $|\nabla f(x)|\le\e
 For second-order stationary points, same property can be found:
 
 ''Main Theorem'': If Assumption 1 and 2 holds, then PGD, with $\eta = O(1/l)$, finds an $\epsilon$-second-order stationary point in $\tilde{O}(2l(f(x_0)-f^*)/\epsilon^2)$ iterations.
+
+! Operator Analysis POV
+[[On the Importance of Consistency in Training Deep Neural Networks|https://arxiv.org/abs/1708.00631]]claims that @@color:#859900;some layers are harder to train (esp. with GD), thus are the bottleneck of the whole training process. According to ''the law of minimum''@@. 
+
+Because gradient as an operator is contractive? The proposed SGD2 is just a perturbed SGD.
+
+! Natasha 2

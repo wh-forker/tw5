@@ -1,5 +1,5 @@
 created: 20170322053925500
-modified: 20170322054054509
+modified: 20170804123015073
 tags: 
 title: Information Theory
 type: text/vnd.tiddlywiki
@@ -9,3 +9,7 @@ type: text/vnd.tiddlywiki
 
 ! Theorems
 [[Principle of maximum entropy]]
+
+! Bibs
+
+* [[On Unlimited Sampling|http://www.mit.edu/~ayush/MIT/Unlimited_Sampling.html]]: higher bandwidth sampling on ADC.
