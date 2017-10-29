@@ -1,0 +1,59 @@
+created: 20170911121004820
+modified: 20170919101849647
+tags: [[Sequential Models]]
+title: SRU
+type: text/vnd.tiddlywiki
+
+* [[paper|https://arxiv.org/abs/1709.02755]]
+* [[code|https://github.com/taolei87/sru]]
+
+A simplified GRU omitting $h_{t-1}$ in gemms in gates and input value computation. This makes GEMMs parallelizable. Use [[Highway Connections]] and [[Variational Dropout]]
+
+!! CUDA optimization
+Merging 3 GEMMs togather. This is a common LSTM speedup. But now we can do whole period at once.
+
+! Implementation
+Implemented with CuPy and pynvrtc
+
+!! DrQA example
+
+Different batch structure:
+
+* SRU
+** context_id, context_feature, context_tag, context_ent, context_mask, question_id, question_mask, (y_s, y_e,) text, span
+** 
+* parlai
+** x1, x1_f, x1_mask, x2, x2_mask, (y_s, y_e,) text, spans
+** torch.cuda.ByteTensor of size 30x20
+
+Have auxiliary input of tag and entity: POS and NER
+
+`model.py` modifications:
+
+* change the logger name
+* save & load optimizer state dict
+* change the dimension of inputs (for POS and NER features): 2 new features
+
+`rnn_reader.py` modifications:
+
+* different input order for question embedding
+* add 'pos' and 'ner' features
+* support embedding random initialization
+
+`layers.py`
+
+* don't pad during evaluation
+* replace LSTM with SRUCell
+* dropout implemented within layer
+* the output is contiguous, input size could be different?
+
+I migrated the code into ParlAI, still have to figure out the data changes
+
+* where to get the embeddings?
+* differences in opt?
+
+! Remarks
+
+* Compare embedding implementation
+* Add POS and NER in parlai
+* Prepare different initialization methods

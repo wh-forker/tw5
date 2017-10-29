@@ -1,6 +1,11 @@
 created: 20160516091835011
-modified: 20160516091836156
+modified: 20170913124912415
 tags: TensorFlow
 title: TensorBoard
 type: text/vnd.tiddlywiki
 
+[[Google Research Blog|https://research.googleblog.com/2017/09/build-your-own-machine-learning.html]]
+
+Interesting demos
+
+* [[Beholder|https://github.com/chrisranderson/beholder]]: A TensorBoard plugin for visualizing arbitrary tensors in a video as your network trains.

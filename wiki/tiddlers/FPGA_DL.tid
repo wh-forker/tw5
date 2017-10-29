@@ -1,6 +1,17 @@
 created: 20170322055713754
-modified: 20170322092156361
+modified: 20170921112404587
 tags: 
 title: FPGA DL
 type: text/vnd.tiddlywiki
 
+! Bibs
+* An OpenCL Deep learning on A10
+
+[[Neural Networks on Silicon|https://github.com/fengbintu/Neural-Networks-on-Silicon]]
+
+! Convolution
+divided into 6x8 blocks
+
+* Winograd
+
+computation within one layer is done with local cache, no DDR communication (for 224x224 input)

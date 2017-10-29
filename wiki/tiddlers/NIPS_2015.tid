@@ -1,0 +1,13 @@
+created: 20170914071140445
+modified: 20170914071147692
+tags: NIPS
+title: NIPS 2015
+type: text/vnd.tiddlywiki
+
+* [[Inferring Algorithmic Patterns with Stack-Augmented Recurrent Nets]]
+* [[Gaussian process modulated renewal processes]]
+!! Deep Reinforcement Learning Workshop
+
+* [[Atari Games Reinforcement Learning UMich]]
+* Faster Deep Reinforcement Learning
+** Online Hogwild!-style asynchronous updates

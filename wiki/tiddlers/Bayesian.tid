@@ -1,5 +1,5 @@
 created: 20161102054547779
-modified: 20170419063229266
+modified: 20170908084057416
 title: Bayesian
 type: text/vnd.tiddlywiki
 
@@ -15,4 +15,4 @@ type: text/vnd.tiddlywiki
 [[Bayesian information criterion]]
 
 ! Theory
-* [[Bayesian Inference]]
+* [[Inference Methods]]

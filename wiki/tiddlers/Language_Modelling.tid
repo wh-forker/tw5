@@ -1,0 +1,18 @@
+created: 20170906081910180
+modified: 20171012025540870
+tags: NLP
+title: Language Modelling
+type: text/vnd.tiddlywiki
+
+! Implementations
+
+[[AWD-LSTM|https://github.com/salesforce/awd-lstm-lm]]
+
+! Talks
+[[Language Modelling - Phil Blunsom DLSS 2017]]
+
+! Datasets
+
+* NIST Hub5 2000
+** Switchboard (SWB)
+** CallHome (CH)

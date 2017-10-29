@@ -1,5 +1,5 @@
 created: 20150213071121294
-modified: 20170824072556633
+modified: 20170920073019890
 tags: Analysis Statistics [[Reinforcement Learning]]
 title: Fisher information metric
 type: text/vnd.tiddlywiki
@@ -18,6 +18,9 @@ $$
 I(\lambda)=\left[\frac{\partial\theta_i}{\partial\lambda_j}\right]I(\theta)\left[\frac{\partial\theta_i}{\partial\lambda_j}\right].
 $$
 
+Normalized and de-correlated activation is well known for improving the conditioning of the Fisher information matrix.
+
+! Appearances
 In reinforcement learning, the natural gradient is defined as $F^{-1}g$, where $F$ is the average Fisher information matrix
 $$
 F = \mathbb E_{s, a\sim\pi}[(\nabla_\theta\log\pi_\theta(a|s))^T(\nabla_\theta\log\pi_\theta(a|s))]

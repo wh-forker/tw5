@@ -1,0 +1,15 @@
+created: 20170908080305318
+modified: 20170908083821293
+tags: Statistics
+title: Probabilistic Models
+type: text/vnd.tiddlywiki
+
+* [[Statistical Measures]]
+* [[Inference Methods]]
+
+There are 2 types of genrative models:
+
+* [[Fully-observed Models]]: model from data directly
+* [[Latent Variable Models]]
+** prescribed models: use likelihood and assume observation noise
+** Implicit models: likelihood free

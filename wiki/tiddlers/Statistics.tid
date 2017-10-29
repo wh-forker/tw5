@@ -1,6 +1,6 @@
 color: #00e600
 created: 20141010100715798
-modified: 20170822034214975
+modified: 20170908080257136
 tags: Math
 title: Statistics
 type: text/vnd.tiddlywiki
@@ -27,6 +27,4 @@ In probability theory, in contrast, it is the events and their probabilities tha
 
 * [[Gaussian]]
 
-! Probabilistic Models
-
-* [[Statistical Measures]]
+! [[Probabilistic Models]]

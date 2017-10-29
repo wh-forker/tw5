@@ -1,30 +1,22 @@
 created: 20161103092937981
-modified: 20161104052640394
+modified: 20170917102130440
 tags: [[ConvNet Layers]]
 title: Normalization Layer
 type: text/vnd.tiddlywiki
 
-[[Batch Normalization]]
+! Bibs
 
-! Variations
-!! [[Weight Normalization|https://arxiv.org/abs/1602.07868]]
-openai uses this on ResNet VAEs for IAF. We express the weight vectors in terms of the new parameters using
-$$
-\mathbf w = \frac{g}{\|\mathbf v\|}\mathbf v
-$$
-where $\mathbf v$ is a $k$-dimensional vector, $g$ is a scalar, and $\|\mathbf v\|$ denotes the Euclidean norm of $\mathbf v$. We can differentiate this to obtain the gradient of a loss function $L$ with
-$$
-\nabla_gL = \frac{\mathbf v^\top}{\|\mathbf v\|}\nabla_{\mathbf w}L
-$$
-and the gradient w.r.t. $\mathbf v$ is
+* [[L2 Regularization versus Batch and Weight Normalization|https://arxiv.org/abs/1706.05350]]
+** $L_2$ regularization, in combination with these normalization layers, has no regularization effect, rather strongly influences the learning rate
+** But learning rate in return is a regularization
+
+! Introduction
 
 $$
-\begin{array}
-&&\\
-\nabla_\mathbf{v}L&=&\frac{\partial\mathbf w}{\partial\mathbf v}\nabla_\mathbf{w}L\\
-&=&\frac{g}{\|\mathbf{v}\|}I\nabla_\mathbf{w}L-\frac{\partial\mathbf w}{\partial\|\mathbf v\|}\frac{\partial\|\mathbf v\|}{\partial\mathbf v}\nabla_\mathbf{w}L\\
-&=&\frac{g}{\|\mathbf{v}\|}I\nabla_\mathbf{w}L-\left(\frac{g}{\|\mathbf v\|^2}\mathbf v\right)\frac{\partial\|\mathbf v\|}{\partial\mathbf v}\nabla_\mathbf{w}L\\
-&=&\frac{g}{\|\mathbf{v}\|}\nabla_\mathbf{w}L-\frac{g\mathbf{v}\mathbf{v}^\top}{\|\mathbf{v}\|^3}\nabla_\mathbf{w}L\\
-&=&\frac{g}{\|\mathbf{v}\|}\nabla_\mathbf{w}L-\frac{g\nabla_gL}{\|\mathbf{v}\|^2}\mathbf{v}\\
-\end{array}
+y_{NN}(X;\mathbf w, b) = g(X\mathbf w + b)
 $$
+
+* [[Batch Normalization]]: $y_{BN}(X;\mathbf w, \gamma, \beta) = g(\frac{X\mathbf w - \mu(X\mathbf w)}{\sigma(X\mathbf w)}\gamma + \beta)$
+* [[Weight Normalization]]: $y_{WN}(X;\mathbf w, \gamma, \beta) = g(\frac{X\mathbf w}{\|\mathbf w\|_2}\gamma + \beta)$
+* [[Layer Normalization|https://arxiv.org/abs/1607.06450]]: $y_{BN}(\mathbf x;W, \gamma, \beta) = g(\frac{\mathbf xW - \mu(\mathbf xW)}{\sigma(\mathbf xW)}\gamma + \beta)$
+**  instead of taking the statistics of a single unit over a whole batch of inputs, they are taken for a single input over all units in a layer

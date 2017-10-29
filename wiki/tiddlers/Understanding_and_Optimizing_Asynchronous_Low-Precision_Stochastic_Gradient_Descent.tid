@@ -1,6 +1,6 @@
 created: 20170420094100728
-modified: 20170612075454363
-tags: [[Low Precision Training]] [[Stochastic Gradient Descent]]
+modified: 20170927134904127
+tags: [[Low Precision Training]] [[Stochastic Gradient Descent]] [[Distributed Training]]
 title: Understanding and Optimizing Asynchronous Low-Precision Stochastic Gradient Descent
 type: text/vnd.tiddlywiki
 

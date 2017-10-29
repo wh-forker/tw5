@@ -1,10 +1,17 @@
 created: 20170531085416027
-modified: 20170602025425469
+modified: 20170920065116266
 tags: [[Sequential Models]] [[Attention Mechanism]]
 title: Using Fast Weights to Attend to the Recent Past
 type: text/vnd.tiddlywiki
 
 This paper propses a biologically plausible way of modeling memory in RNNs. The authors claim short-term memory is not modeled well by hidden layer in classic RNN, so they add more layers to the recurrent unit.
+
+TL;DR: Autoassociative memory accumulates the outerproduct of hidden state to form the memory.
+
+The recurrent update:
+$$
+\mathbf h_{t+1} = \tanh(W\mathbf x+A_t\mathbf h_t+\mathbf b)
+$$
 
 <<<
 Plastic mechanisms are more accurately modeled by a memory with $O(H^2)$ capacity than the $O(H)$ of standard recurrent artificial recurrent neural nets and LSTMs.
@@ -14,10 +21,18 @@ I think this structure is similar to a RNN with deep hidden layer and skip conne
 $$
 A(t) = \lambda A(t-1)+\eta h(t)h(t)^\top
 $$
-We don't have to compute the fast weight matrxi:
+We don't have to compute the fast weight matrix:
 $$
 A(t)h_s(t+1) = \eta\sum_{\tau=1}{\tau=t}\lambda^{t-\tau}h(\tau)[h(\tau)^\top h_s(t+1)]
 $$
-The $h(\tau)^\top h_s(t+1)$ part can be interpreted as attention. This auto associate rule from Hopfield net is not memory efficient. It can only store $\log(N)$ number of the patterns. The fact that is is learned through backprop makes it more efficient in some way.
+The $h(\tau)^\top h_s(t+1)$ part can be interpreted as attention. This auto associate rule from [[Hopfield Net]] is not memory efficient. It can only store $\log(N)$ number of the patterns. The fact that is is learned through backprop makes it more efficient in some way.
 
 The decay rate is different from the original idea.
+
+! Remarks
+Although driven by associative memory, the rationale of Fast Weight was explained by attention mechanism, where $A_t\mathbf h_t$ is the attentive sum of $\mathbf h_t$ in history. The reason why Fast Weights could better store inputs than RNNs is explained by correspondence to Hopfield net and its biological intuition.
+
+[[Learning to update Auto-associative Memory in Recurrent Neural Networks for Improving Sequence Memorization|https://scirate.com/arxiv/1709.06493]] change the update rule, specifically, the two hyperparameters $\lambda$ and $\eta$, into learnable weight matrices:
+$$
+A_t = W_A\odot A_{t-1} + W_h\odot \mathbf h_t \mathbf h_t^\top
+$$

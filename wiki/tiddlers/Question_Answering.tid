@@ -1,5 +1,5 @@
 created: 20170405104624230
-modified: 20170607063530640
+modified: 20170918081926127
 tags: NLP
 title: Question Answering
 type: text/vnd.tiddlywiki
@@ -9,6 +9,8 @@ type: text/vnd.tiddlywiki
 
 ! Examples
 * Machine Comprehension by Text-to-Text Neural Question Generation
+* [[A Unified Query-based Generative Model for Question Generation and Question Answering|https://arxiv.org/abs/1709.01058]]
+* [[Attention-based CNN Matching Net|https://arxiv.org/abs/1709.05036]]: a quite naive convolutional attention implementation for making choices
 
 ! SOTA
 !! Seq2seq

@@ -1,8 +1,12 @@
 created: 20161012081206780
-modified: 20161027130412271
+modified: 20170918072757763
 tags: [[Deep Learning Applications]]
 title: Image Captioning
 type: text/vnd.tiddlywiki
 
 ! Implementations
 [[Google|https://github.com/tensorflow/models/tree/master/im2txt]]
+
+! Bibs
+
+* [[Self-Guiding Multimodal LSTM - when we do not have a perfect training dataset for image captioning|https://arxiv.org/abs/1709.05038]]

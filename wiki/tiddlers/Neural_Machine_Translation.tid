@@ -1,8 +1,28 @@
 created: 20170614091659389
-modified: 20170614091721201
+modified: 20171012083104025
 tags: NLP
 title: Neural Machine Translation
 type: text/vnd.tiddlywiki
 
+! Bibs
 * [[Convolutional Sequence to Sequence Learning]]
 * [[Attention Is All You Need]]
+
+! Architectures
+
+''Kalchbrenner and Blunsom 2013''  CSM Encoder, decode with RNN, predict with a linear softmax output.
+
+* Convolutions learn interactions among features in a local context
+* By stacking them, longer range dependencies can be learnt
+* Deep ConvNets have a branching structure similar to trees, but not parser is required
+* To handle variable length, see [[A Convolutional Neural Network for Modelling Sentences|https://arxiv.org/abs/1404.2188]]
+
+''Sutskever et al. 2014'' seq2seq. The hidden state has to remember a lot of information. Following tricks improve performance：
+
+* backwards input
+* decoder ensemble
+
+
+! Toolkit
+* [[OpenNMT|https://github.com/opennmt/opennmt]]
+* [[Nematus|https://github.com/EdinburghNLP/nematus]]: Attention-based encoder-decoder model from EdinburghNLP

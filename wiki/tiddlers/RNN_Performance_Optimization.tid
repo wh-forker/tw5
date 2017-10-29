@@ -1,0 +1,30 @@
+created: 20170906062740143
+modified: 20170918091509947
+tags: [[Recurrent Neural Networks]] [[Long short-term memory]] [[Deep Learning Engineering]]
+title: RNN Performance Optimization
+type: text/vnd.tiddlywiki
+
+! Computation requirement
+For LSTM
+
+* [[GEMM]] (input 2HxB, output 4HxB): for 3 gates (i, f, o) and cell
+** #FLOPS = 16HHB
+** Bytes through memory (fp32) = 4(8HH + 2HB + 4HB)
+** flops:byte = 2HB:3B+4H, typically H>>B
+** from roofline model, the efficient batchsize for H=2048 on P100 is 32
+* Pointwise operations: tanh, sigmoid, add, pointwise mult
+
+! Network Level Optimizations
+
+# Reducing memory traffic
+#* for small batch size, we reduce the amount of times we load matrix
+#* by unrolling over time, freeing input, hidden dependencies
+#* [[Persistent RNNs]]: keep recurrent matrix on-chip. impressive speedup, constraint by on-chip memory
+# Reducing overheads
+#* A naive implementation of pointwise operations is by separate [[GPU Kernel]]s: setup overhead and bandwidth are problem
+#* Fuse into one kernel
+# Increasing parallelism
+
+! refs
+* [[Optimizing Performance of Recurrent Neural Networks on GPUs|https://arxiv.org/abs/1604.01946]]
+* [[Optimizing Recurrent Neural Networks in cuDNN 5|https://devblogs.nvidia.com/parallelforall/optimizing-recurrent-neural-networks-cudnn-5/]]

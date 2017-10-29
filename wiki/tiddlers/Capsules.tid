@@ -1,0 +1,38 @@
+created: 20170918105144345
+modified: 20170919070736380
+tags: 
+title: Capsules
+type: text/vnd.tiddlywiki
+
+! Bibs
+
+* [[Dynamic Routing between Capsules|https://research.google.com/pubs/pub46351.html]]
+
+! [[What is wrong with CNN|https://www.youtube.com/watch?v=Mqt8fs6ZbHk]]?
+
+* Too few levels of structure
+** Neurons, layers, whole nets666
+** For example, we want to have a unit that can detect correlations between input
+** Vector nonlinearity like softmax, analyse the covariance structure
+* We need to group the neurons in each layer into "capsules" that do a lot of internal computation and then output a compact result
+** A capsule is inspired by a mini-column
+
+!! Capsule
+Connection binding problem done in sequence.
+
+Each capsule represents the presence and the instantiation parameters of a multi-dimensional entity of the type that the capsule detects. In the visual pathway, a capsule detects a particular type of object or object-part. It outputs 2 things:
+
+* The probability that an object of that type is present
+* The generalized pose of the object, includes position, orientation, scale, deformation, velocity, color etc.
+
+Convnet problem
+
+* feature extraction layers are interleaved with subsampling
+* relationships between objects not trained
+* the geometric view of vision is discarded
+
+Map the percept to the initial hidden state of a deep recurrent neural net and train the RNN to output captions (without retraining the convnet)
+
+! Remarks
+* Capsule is like a convolutional Gaussian process? Can convolutional kernels capture covariance?
+* Attention may not be good for high dimensional data

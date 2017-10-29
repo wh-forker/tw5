@@ -1,0 +1,14 @@
+created: 20171009043926472
+modified: 20171017104814009
+tags: [[Generative Adversarial Network]]
+title: The Numerics of GANs
+type: text/vnd.tiddlywiki
+
+[[blog|http://www.inference.vc/my-notes-on-the-numerics-of-gans/]]
+
+Simultaneous gradient descent is a generalization, rather than a special case, of gradient descent.
+
+Iff a vector field $v$ is conservative, is there a scalar potential $phi$ whose gradient equals $v$. A vector field defined by an AE is not necessarily conservative.
+
+The solution proposed by Mescheder et al is to construct a conervative vector field from the original as follows: $-\nabla L(x):=-\frac{\partial}{\partial x}\|v(x)\|^2_2$. This new vector field $\-\nabla L$ has the same fix points as $v$.
+

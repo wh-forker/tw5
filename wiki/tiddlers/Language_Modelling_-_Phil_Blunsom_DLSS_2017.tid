@@ -1,0 +1,53 @@
+created: 20170901072750976
+modified: 20171012025550355
+tags: NLP Talks
+title: Language Modelling - Phil Blunsom DLSS 2017
+type: text/vnd.tiddlywiki
+
+! [[Part I|http://videolectures.net/deeplearning2017_blunsom_language_understanding/]]
+
+Much of NLP (e.g. Translation, QA, Dialogue) can be structured as (conditional) language modelling. The simple objective of modelling the next word contains much of the complexity of nature language understanding
+
+<<<
+@@color:red;Alice@@ went to the @@color:blue;beach@@. @@color:blue;There@@ @@color:red;she@@ build a ...
+<<<
+
+Models can be evaluated with cross entropy, a measure of how many bits are needed to encode text with our model：
+$$
+H(w^N_1) = -\frac1N\log_2p(w^N_1)
+$$
+or perplexity, a measure of how surprised our model is on seeing each word:
+$$
+\text{perplexity}(w_1^N) = 2^{H(w_1^N)}
+$$
+
+* Count based N-Gram Models
+** Back-off to lower interpolation: if never observe the trigrams, try bigrams
+** Heap's Law: smoothing techniques match the empirical distribution of languge
+** hard to capture long dependencies, semantic correlations and morphological regualrities.
+* Neural N-Gram Language Models
+* Recurrent Neural Network Language Models
+* Encoder-Decoder Models and Machine Translation
+
+Truncated BPTT is efficient for mini-batching as all sequences have length $T$.
+
+! Part II
+
+Deep RNN Models:
+
+* Stack and skip connections
+* Deep-in-time: Recurrent Highway Networks
+
+Scaling large vocabularies, when the softmax becomes hard to compute
+
+* use the neural LM for the most frequent words, and a traditional ngram LM for the rest. This nullifies the neural LM's main advantage
+* batch local short-lists: choose a subset of the vocabulary for the segment of the data. [[On Using Very Large Target Vocabulary for Neural Machine Translation|https://arxiv.org/abs/1412.2007]]
+* approximate the gradient/change the objective: maximize likelihood by making the log partition function an independent parameter $c$: $\hat p_n = \exp(Wh_n+b)\times\exp(c)$. Mnih and Teh use Noise Contrastive Estimation, to distinguish data from k samples from a noise distribution:
+$$
+p(Data=1|\hat p_n) = \frac{\hat p_n}{\hat p_n+kp_{noise}(w_n)}
+$$
+Now parametrising the log partition function as $c$ does not degenerate. This is effective for speeding up training, but has no impact on testing time.
+
+* Factorise the output vocabulary
+** [[A scalable hierarchical distributed language model|https://papers.nips.cc/paper/3583-a-scalable-hierarchical-distributed-language-model]]
+** [[Efficient softmax approximation for GPUs|https://arxiv.org/abs/1609.04309]]

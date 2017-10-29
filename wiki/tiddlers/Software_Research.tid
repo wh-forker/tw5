@@ -1,0 +1,26 @@
+created: 20170920082817800
+modified: 20170920093216553
+tags: Programming
+title: Software Research
+type: text/vnd.tiddlywiki
+
+! Bibs
+
+* [[A Survey of Machine Learning for Big Code and Naturalness|https://arxiv.org/abs/1709.06182]]
+
+! Methods
+* Theory first approach: formal, or logico-deductive, approach
+** The elegance and rigor of definitions, abstractions, and formal proofs-ofproperties are of dominant concern
+* Machine learning
+
+! Applications
+* program verification
+** Behavioral consistency of C and Verilog programs using bounded model checking (2003)
+* bug finding
+** A few billion lines of code later: using static analysis to find bugs in the real world (2010)
+* refactoring
+** The ASTRÉE analyzer (2005)
+
+! Directions
+* Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.
+* Literate programming: The naturalness hypothesis [[NLP for SE]]

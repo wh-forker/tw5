@@ -1,0 +1,48 @@
+created: 20170925024941441
+modified: 20170925074331589
+tags: [[Information Theory]] [[Deep Learning Theory]]
+title: Information Theory for Deep Learning
+type: text/vnd.tiddlywiki
+
+! The Information Bottleneck Method
+* Approximate Minimal Sufficient Statistics:
+** Markov chain: $Y\rightarrow X\rightarrow S(X)\rightarrow \hat X$: $\hat X=\arg\min_{I(S(X);Y)=I(X;Y)}I(S(X);X)$
+** Relaxation given $p(X;Y)$: $\hat X=\arg\min_{p(\hat X;X)}I(\hat X;X)-\beta I(\hat X;Y)$， $\beta>0$
+* A Rate-Distortion problem with KL-divergence distortion:
+** $d_{IB}(x, \hat x) = D[p(y|x)\|p(y|\hat x)]$
+* The ONLY distributional quantization measure which satisfy both DPI (f-divergences) and Statistical Consistency
+
+! DNN Layer represent
+* A Markov chain of topologically distincy [soft] partitions of the input variable X
+* Successive Refinement of Relevant Information
+* Individual neurons can be easily "scrambled" within each layer
+
+! Input Compression bounds
+We create a generalization bound considering the cardinality of the input. $T_\epsilon$ is the $\epsilon$ partition of the input variable $X$ w.r.t. the distortion
+$$
+d_{IB}(x, t) = D(p(y|x)\|p(y|t)]\ge\frac{1}{2\ln 2}\|p(y|x)-p(y|t)\|^2_1
+$$
+when $p(y|t)=\sum_xp(y|x)p(x|t)$:
+$$
+\langle d_{IB}\rangle=I(X;Y)-I(T;Y)
+$$
+minimizing IB distorion we maximize $I(T;Y)$
+
+$$
+\epsilon^2<\frac{2^{I(T_\epsilon; X)}+\log\frac 1 \delta}{2m}
+$$
+$K$ bits of compression of X are like a factor of $2^K$ training examples
+
+There is another information loss:
+$$
+I(T;Y)\le\hat I_{emp}(T;Y)+O\sqrt{\frac{2^{I(T;Y)}|Y|}{m}}
+$$
+
+! The benefit of the hidden layers
+More layers take much FEWER training epochs for good generalization. The optimization time depend super-linearly (exponentially?) on the compressed information, delta Ix, for each layer
+
+The relaxation time is exponential to the compression rate:
+$$
+\Delta t_k\sim\exp(\Delta S_k)
+$$
+Let the layer compression be: $\Delta S_k = I(X;T_k)-I(X;T_{k-1})$, since $\exp(\sum_k\Delta S_k)>>\sum_k\exp(\Delta S_k)$, exponential boost in relaxation time with K layers!

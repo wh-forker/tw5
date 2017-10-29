@@ -1,0 +1,17 @@
+created: 20170908054527972
+modified: 20170908070232489
+tags: NLP
+title: Semantic Parsing
+type: text/vnd.tiddlywiki
+
+* Train from manually ''annotated programs'' and avoiding program execution at training time.
+* Train model with backprop: limited discrete operations
+** low-level memory
+** require memory to be differentiable
+
+! refs
+* introduced a floating parser to address the large amount of variation in utterances and table schema for semantic parsing on web tables.
+* [[Seq2SQL|https://arxiv.org/abs/1709.00103]]
+** attention on aggregation op, select column and where clause
+** policy gradient training to deal with condition's order issue. @@color:#859900;Policy net is closely related to synthetic gradient@@
+** WikiSQL dataset

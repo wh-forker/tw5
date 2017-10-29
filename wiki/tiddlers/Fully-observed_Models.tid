@@ -1,0 +1,22 @@
+created: 20170908074449581
+modified: 20170908075708296
+tags: [[Probabilistic Models]]
+title: Fully-observed Models
+type: text/vnd.tiddlywiki
+
+|! |!Discrete |!Continuous |
+|!Directed |<li>NADE</li><li>EoNADE</li><li>Fully-visible sigmoid belief networks</li><li>[[Pixel-CNN]]</li><li>[[WaveNet]]</li><li>RNN Language Model</li><li>Context tree switching</li> |<li>Normal Means</li><li>Coninuous Markov Models</li><li>N-AR(p)</li><li>RNADE</li> |
+|!Undirected |<li>[[Boltzmann Machines|Restricted Boltzmann Machines]]</li><li>Discrete Markov Random Fields</li><li>Ising, Hopfield and Potts Models</li> |<li>Gaussian MRFs</li><li>Log-linear models</li> |
+
+@@color:#859900;
+* Can directly encode how observed points are related
+* Any data type can be used
+* For directied graphical models: parameter learning simple
+* Log-likelihood is directly computable, no approximation needed
+* Easy to scale-up, many optimisation tools
+@@
+@@color:red;
+* Order sensitive
+* For undirected models, parameter learning difficult: need to compute normalising constants (like RBM)
+* Generation can be slow: iterate through elements sequentially, or using a Markov chain
+@@

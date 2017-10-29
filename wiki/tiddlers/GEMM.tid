@@ -1,0 +1,8 @@
+created: 20170906060757927
+modified: 20170906061643082
+title: GEMM
+type: text/vnd.tiddlywiki
+
+* C=AB can be parameterized by 3 matrix dimensions: MxN = MxK * KxN.
+* Floating point ops = MN(2K-1)~2MNK (K mult, K-1 sum)
+* Bytes through memory = sizeof(dataType) * (MK + KN + MN)

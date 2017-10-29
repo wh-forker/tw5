@@ -1,5 +1,5 @@
 created: 20161012084433429
-modified: 20170822070329034
+modified: 20171022034702329
 tags: [[Deep Learning]]
 title: Deep Learning Theory
 type: text/vnd.tiddlywiki
@@ -44,8 +44,15 @@ These results quantify an upper bound on the empirical risk of deep neural netwo
 
 There is a functional equivalence between models of different depths at equal capacity [Ba and Caruana '14].
 
+! Information Theory View
+[[Information Theory for Deep Learning]]
+
 ! Understanding DNN
 
 * [[Opening the Black Box of Deep Neural Networks via Information|https://arxiv.org/abs/1703.00810]]
 * [[Energy Propagation in Deep Convolutional Neural Networks|https://arxiv.org/abs/1704.03636]]
 * [[Exploring loss function topology with cyclical learning rates|https://arxiv.org/abs/1702.04283]]
+
+! Interpretability
+* [[Deep learning in biology]]
+* DeepMind: [[Interpreting Deep Neural Networks using Cognitive Psychology|https://deepmind.com/blog/cognitive-psychology/]]

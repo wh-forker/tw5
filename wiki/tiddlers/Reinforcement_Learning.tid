@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20170831032436057
+modified: 20171017063756504
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -8,8 +8,39 @@ type: text/vnd.tiddlywiki
 
 * [[WildML: Learning Reinforcement Learning|http://www.wildml.com/2016/10/learning-reinforcement-learning/]]
 * [[Simple Reinforcement Learning with Tensorflow|https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0]]
+* [[Deep RL Bootcamp 2017 Berkeley|http://nuit-blanche.blogspot.hk/2017/10/slides-and-videos-deep-rl-bootcamp-26.html]]
+
 
 ! Basic
+!! Theorems
+
+<<<
+''Theorem'' [Value iteration converges]<br>
+At convergence, we have found the optimal value function $V^*$ for the discounted infinite horizon problem, which satisfies the Bellman equations
+$$
+\forall S\in S:\qquad V^*(s) = \max_a\sum_{s'}P(s'|s, a)[R(s, a, s')+\gamma V^*(s')]
+$$
+<<<
+
+''Temporal Difference Learning:'' Policy evaluation for the current policy $\pi_k$
+$$
+V^{\pi_k}_{i+1}(s) \leftarrow \sum_{s'}P(s'|s, \pi_k(s))[R(s, \pi_k(s), s')+\gamma V^{\pi_k}_{i}(s')]
+$$
+Policy improvements: find the best action according to one-step look-ahead
+$$
+\pi_{k+1}(s) \leftarrow \arg\max_a\sum_{s'}P(s'|s, a)[R(s, a, s')+\gamma V^{\pi_k}(s')]
+$$
+Tabular methods cannot scale.
+
+@@color:#859900;How to update it as a network?@@
+
+<<<
+''Theorem'' [Policy iteration converges]<br>
+Policy iteration is guaranteed to converge and at convergence, the current policy and its value function ar the optimal policy and the optimal value function.
+<<<
+
+We sample states $\epsilon$-greedily.
+
 !! RL agents
 * value based, has a value function where policy can be inferred.
 * policy based, work in decision space, more direct. Policy Graident.

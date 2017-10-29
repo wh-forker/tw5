@@ -1,8 +1,12 @@
 created: 20161009015842435
-modified: 20170811081904915
+modified: 20170926124032822
 tags: [[Deep Learning Applications]]
 title: Visual Question Answering
 type: text/vnd.tiddlywiki
+
+! Bibs
+* Learning to Compose Neural Networks for Question Answering
+** Use modular neural network architectures. 
 
 ! Dataset
 

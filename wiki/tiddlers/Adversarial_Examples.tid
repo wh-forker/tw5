@@ -1,5 +1,5 @@
 created: 20161027055701742
-modified: 20170417055659032
+modified: 20170913124410059
 tags: [[Deep Learning Tricks]]
 title: Adversarial Examples
 type: text/vnd.tiddlywiki
@@ -17,6 +17,9 @@ The talk generalizes following works:
 * “Virtual Adversarial Training for Semi-Supervised Text Classification” Miyato et al 2016
 * “Adversarial Examples in the Physical World” Kurakin et al 2016
 * [[The Space of Transferable Adversarial Examples|https://arxiv.org/abs/1704.03453]]: some conditions
+* [[Universal adversarial perturbations|https://arxiv.org/abs/1610.08401]], CVPR 2017
+** One mask to fool them all
+** Analyzed model robustness
 
 Neural networks (esp. softmax regressions) are easily fooled. We can add noise-like filters to attack a neural net, misleading it to wrong prediction while making no perceptional difference to human. For example, we can perform gradient ascent on the input to change its prediction.
 

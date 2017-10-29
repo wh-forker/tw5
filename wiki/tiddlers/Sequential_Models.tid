@@ -1,27 +1,37 @@
 created: 20161012083717362
-modified: 20170801080732167
+modified: 20171011123235794
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
 
 ! Models
 
+* [[Hopfield Net]]
 * [[LSTM|Long short-term memory]]
 * Tapes
 * Arrays
 * Stacks
-* [[Quasi-RNN]]
+
 * Restrictions on recurrent weight matrix
 ** uRNN
 ** scoRNN
 
+!! Faster RNN
+* [[Quasi-RNN]]
+* [[SRU]]
+
+!! [[Attention Mechanism]]
+
 !! Memory networks
-* [[Memory Networks]]
-* [[Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]]
-* (Stack) RNNs with attention
-* Dynamic Mem. Nets
-* [[Using Fast Weights to Attend to the Recent Past]]
-* [[Neural Abstract Machines]]
+
+* External Memory
+** [[Memory Networks]]
+** [[Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]]
+** (Stack) RNNs with attention
+** Dynamic Mem. Nets
+** [[Neural Abstract Machines]]
+* Associative memory
+** [[Using Fast Weights to Attend to the Recent Past]]
 
 ! Bibs
 

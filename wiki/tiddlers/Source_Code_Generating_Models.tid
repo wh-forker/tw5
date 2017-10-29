@@ -1,0 +1,42 @@
+created: 20170926070602696
+modified: 20171012144222615
+tags: [[NLP for SE]] [[Deep Generative Models]]
+title: Source Code Generating Models
+type: text/vnd.tiddlywiki
+
+* Language Models
+** Code fixing
+*** 2016 Automated Correction for Syntax Errors in Programming Assignments using Recurrent Neural Networks.
+** Code generation
+*** 2016 Learning Python Code Suggestion with a Sparse Pointer Network
+*** 2016 A deep language model for software code
+*** 2016 Neural Code Completion
+*** 2017 Neural Attribute Machines for Program Generation
+** Benchmark synthesis
+*** 2017 Synthesizing benchmarks for predictive modeling
+* Code Transducer Models: statistical machine translation or deep learning, evaluated by BLEU
+** Code migration
+** Pseudocode generation
+** Code fixing
+*** 2016 sk_p: a neural program corrector for MOOCs
+* Multimodal Models
+** Code systhesis: from natural language to code
+*** 2014 Structured Generative Models of Natural Source Code
+*** 2015 Bimodal modelling of source code and natural language
+*** 2016 [[Latent Predictor Networks for Code Generation]]
+*** 2017 Program synthesis from natural language using recurrent neural networks
+*** 2017 Abstract Syntax Networks for Code Generation and Semantic Parsing
+*** 2017 A Syntactic Neural Model for General-Purpose Code Generation
+**** seq2action2tree permits syntax guarantee, right way to follow
+**** Sequence model kind of simple. Can external memory improve parent supervision? Is conv encoder helpful?
+**** Invent code evaluation metric: something like ''Semantic Textual Similarity''
+** Documentation
+*** 2016 Summarizing source code using a neural attention model
+*** 2017 [[A parallel corpus of Python functions and documentation strings for automated code documentation and code generation|https://arxiv.org/abs/1707.02275]]: provides [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]] and use [[Nematus|https://github.com/EdinburghNLP/nematus]] as baseline model
+* Program Induction
+** [[Neural Abstract Machines]]
+** Program by Examples
+*** [[Glass-Box Program Synthesis: A Machine Learning Approach|https://scirate.com/arxiv/1709.08669]]: search based no ML
+*** [[Neural Program Meta-Induction|https://arxiv.org/abs/1710.04157]]: DeepMind
+**** No explicit program representation, task-specific learning, cross-task knowlege sharing
+**** Conv encoder, lstm decoder

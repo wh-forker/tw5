@@ -1,0 +1,7 @@
+created: 20170920063708270
+modified: 20170920064307194
+tags: [[Sequential Models]]
+title: Hopfield Net
+type: text/vnd.tiddlywiki
+
+The capacity of Hopfield net is limited by the speed of energy decay related to second-order neuron connection weight. This could explain why RNN is inferior: The hidden state is first-order, which means no cross bit connection (such as term $h_t^i*h_t^j$ in hopfield net) is defined in $\mathbf h_t$

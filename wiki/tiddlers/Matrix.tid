@@ -1,0 +1,27 @@
+created: 20161018015131667
+modified: 20170918064540259
+tags: Algebra
+title: Matrix
+type: text/vnd.tiddlywiki
+
+! Exponential
+
+In finite dimensions, we define the matrix exponential $e^A$, $A\in\mathbb C^{n\times n}$, as
+$$
+e^A:=\sum_{k\ge0}\frac{A^k}{k!}.
+$$
+
+! Identities
+$$
+M = \begin{bmatrix}
+    A & B\\
+    C & D
+\end{bmatrix}
+$$
+where $M$ is an $n\times n$ and $A$ is an $(n-k)\times(n-k)$ matrix.
+
+* If $A$ is invertible, we can use the technique of [[Schur complementation|https://en.wikipedia.org/wiki/Schur_complement]] to express the inverse of $M$ (if it exists).
+* [[Inverting the Schur complement|https://terrytao.wordpress.com/2017/09/16/inverting-the-schur-complement-and-large-dimensional-gelfand-tsetlin-patterns/]]
+
+! Others
+* [[Matrix Factorization]]

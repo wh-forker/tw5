@@ -1,0 +1,38 @@
+created: 20161208114834459
+modified: 20170908085729856
+tags: Bayesian [[Probabilistic Models]]
+title: Inference Methods
+type: text/vnd.tiddlywiki
+
+! Theory
+
+Probabilistic inference is used to handle noisy and imprecise data. Exact inference is difficult, so approximate methods like Gibbs sampling are used.
+
+* Exact methods (conjugacy, enumeration)
+* Numerical integration (Quadrature)
+* Generalised method of moments
+* [[Maximum Likelihood Estimation]]
+* Maximum a posteriori
+* [[Expectation-Maximization]]
+* Contastive estimation (NCE)
+* Cavity methods (EP)
+
+!! Approximate Inference
+* Laplace approximation
+* Integrated nested Laplace approximations
+* Importance sampling
+* [[Variational Inference]]
+* Perturbative corrections
+* [[Monte Carlo Methods]]
+
+! Tools
+
+* [[Stan]]
+* [[BOPP|https://github.com/probprog/bopp/]]: favorite tool in favorite language, based on [[Anglican|https://github.com/probprog/anglican/blob/master/doc/codemap.md]]
+
+! Objectives
+* prediction: $p(x_{t+1, \dots, \infty}|x_{-\infty, \dots, t})$
+* planning: $J = \mathbb E_p[\int_0^\infty dtC(x_t)|x_0, u]$
+* parameter estimation: $p(\theta|x_{0, \dots, N})$
+* experiment design: $EIG = D[p(f(x_{t, \dots, \infty})|u);p(f(x_{-\infty, \dots, t}))]$
+* hypothesis testing: $\frac{p(f(x_{-\infty, \dots, t})|H_0)}{p(f(x_{-\infty, \dots, t})|H_1)}$

@@ -1,0 +1,44 @@
+created: 20170920093256697
+modified: 20170927133014519
+tags: [[Software Research]] NLP
+title: NLP for SE
+type: text/vnd.tiddlywiki
+
+! Bibs
+
+* [[On the naturalness of software|http://earlbarr.com/publications/naturalness_cacm.pdf]]: start with language model
+* [[Machine Learning for Big Code and Naturalness|https://ml4code.github.io/papers.html]]
+
+! Introduction
+
+<<<
+''The naturalness hypothesis.'' Software is a form of human communication; software corporahave similar statistical properties to natural language corpora; and these properties can be exploited to build better software engineering tools
+<<<
+
+* [[SE+NLP proposal]]
+
+! Datasets
+
+* Large code corpus
+** [[Learning from Learning from "Big Code"|http://learnbigcode.github.io/]]
+* Documentation
+** Pseudo-code: DJANGO dataset. Project Euler dataset
+** [[card2code|https://github.com/deepmind/card2code]]: DeepMind generates code for MTG and HS cards
+** Docstring: [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]]
+* Debugging
+** Defects4J: a curated corpus of bugs
+
+! Directions
+
+* Language model
+* Learning over execution traces or flows
+* [[Source Code Generating Models]]
+* Representation Model
+* Pattern Mining: find code idioms
+* Debugging
+* Traceability
+* Code completion
+* Inferring code conventions
+* Code defects
+* Code migration, porting and clones
+* Optimizing an algorithm in simulation

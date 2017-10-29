@@ -1,5 +1,5 @@
 created: 20170621070604151
-modified: 20170829021036808
+modified: 20170908074645584
 tags: [[Deep Learning Bib]] Papers
 title: Paper Reading Group 2017
 type: text/vnd.tiddlywiki
@@ -56,6 +56,7 @@ Let's start from some 2017 conference orals. Each paper has plenty of discussion
 |Vision |Amortised MAP Inference for Image Super-resolution | ICLR 2017| | ||
 |Modelling |Neural Architecture Search with Reinforcement Learning | ICLR 2017|邸新汉 |10/24 |[[arxiv|https://arxiv.org/abs/1611.01578]],[[github-chainer|https://github.com/nutszebra/neural_architecture_search_with_reinforcement_learning_appendix_a]],[[DenseNet-Compared-Github|https://github.com/liuzhuang13/DenseNet]]|
 |GAN |Towards Principled Methods for Training Generative Adversarial Networks | ICLR 2017|邸新汉 |7/25 |[[WGAN|https://arxiv.org/abs/1701.07875]],[[Github-Tensorflow|https://github.com/shekkizh/WassersteinGAN.tensorflow]]|
+|GAN |Coulomb GANs: Provably Optimal Nash Equilibria via Potential Fields | arXiv 2017| | | |
 |NLP |Learning End-to-End Goal-Oriented Dialog | ICLR 2017| | ||
 |Theory |Probabilistic Deep Learning | DALI 2017|陈昊 |7/11 |<li>[[slides|https://docs.google.com/presentation/d/1DQpGu7sgnh787Hqjs1cBq485rbuZnylqcWefiCJr8PQ/edit?usp=sharing]]</li><li>[[Statistical Measures]]</li><li>[[fGAN]]</li><li>[[Variational Autoencoder]]</li>|
 |Theory |Global Optimality in Neural Network Training | ICLR 2017| | ||

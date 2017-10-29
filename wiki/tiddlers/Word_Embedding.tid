@@ -1,0 +1,20 @@
+created: 20170905064640805
+modified: 20170905065500505
+tags: NLP
+title: Word Embedding
+type: text/vnd.tiddlywiki
+
+* BoW
+* Distributed word embeddings
+* Continuous ''vector'' representation of words
+** co-occurrence stats to obtain vectors for long phrases
+** LSA, fail to preserve linear regularities among words
+** LDA, computationally expensive on large datasets
+** [[Word2Vec]]
+** [[GloVe|Global Vectors for Word Representation]]
+* [[Hashed Character $n$-gram|https://arxiv.org/abs/1511.06018]]
+
+! Refs
+* [[Supervised Learning of Universal Sentence Representations from Natural Language Inference Data|https://arxiv.org/abs/1705.02364]]
+** embedding sentences on Stanford Natural Language Inference dataset
+** BiLSTM with attention, max-pooling over hidden representation

@@ -1,0 +1,56 @@
+created: 20170914071040191
+modified: 20170914071049535
+tags: NIPS
+title: NIPS 2016
+type: text/vnd.tiddlywiki
+
+!! Sources
+* [[Spotlight Videos|http://nuit-blanche.blogspot.com/2016/12/spotlight-videos-at-nips2016.html]]
+* [[Videos|http://nuit-blanche.blogspot.hk/2017/01/the-nips2016-videos-are-out.html]]
+
+!! Deep Generative Models
+* [[Divergence Classed GANs]]
+
+
+!! NLP
+* Word Movers Distance
+** provided a way of summarizing the difference between documents using their embeddings. For tasks that are supervised (e.g., text classification) this can be taken one step further. The Supervised Word Movers Distance (paper) performs affine transformations and re-weightings to provide class separation, leading to efficient state-of-the-art performance.
+
+!! Deep learning applications
+* SURGE: Surface Regularized Geometry Estimation from a Single Image
+** CNN outputs depth, normal, plane and edge. Embed surface planar information to regularize the surface with a multitask objective function.
+* [[DeepMath — Deep Sequence Models for Premise Selection|https://arxiv.org/abs/1606.04442]]
+** Deep automated theorem proving
+
+!! CNN
+* Natual-Parameter Networks: A Class of Probabilistic Neural Networks
+** Model activation functions with different distributions
+* CNNpack: Packing Convolutional Neural Networks in the Frequency Domain.
+** prune conv filters after DCT. idea is simple, and sure it will work. But how can this help training and model structure?
+* [[Value Iteration Networks|https://arxiv.org/abs/1602.02867]]
+** such models include a differentiable “planning module” which allows networks to make plans and better generalize to unseen domains.
+
+!! RNN
+* [[Sequential Neural Models with Stochastic Layers|https://arxiv.org/abs/1605.07571]]
+** combines ideas from State Space Models (formally best in class for stochastic sequences like audio) and RNNs, leveraging the best of both worlds.
+* [[Phased LSTM: Accelerating Recurrent Network Training for Long or Event-based Sequences|https://arxiv.org/abs/1610.09513]]
+** adds a “time gate” to LSTMs which greatly improves optimization and performance for long sequence data.
+
+!! Bayesian
+* Cooperative Graphical Models
+** For a large class of high-order probabilistic models:
+*** new variational lower and upper bounds
+*** efficient inference algorithms
+*** thorough empirical evaluation
+* Synthesis of MCMC and Belief Propagation
+** [[Computing Partition Functions of Graphical Models]]
+* @@color:#859900;Attend, Infer, Repeat: Fast Scene Understanding with Generative Models@@
+** Presents an inspiring approach to understanding scenes in an image. Using Bayesian and Variational Inference, the authors construct models that understand the number, location, and type of objects in a picture without any supervision. We are intrigued, as their models can reason/infer about distributions outside of training examples. The models do suffer from specification needs, but none-the-less provide interesting avenues for exploration.
+
+!! Algorithms
+* On Regularizing Rademacher Observation Losses
+** Adversarial network for different measure regularization
+* [[Fast and Provably Good Seeding for k-Means]], exciting result, looking forward to the oral.
+
+!! Theory
+* [[Scaled Bregman Theorem]]

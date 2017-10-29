@@ -1,0 +1,15 @@
+created: 20170927071449789
+modified: 20170927111836171
+tags: [[Source Code Generating Models]]
+title: Latent Predictor Networks for Code Generation
+type: text/vnd.tiddlywiki
+
+[[link|http://arxiv.org/abs/1603.06744]]
+
+[[Hugo's review|https://www.evernote.com/shard/s189/sh/1fe4a407-3aa0-4ad2-8340-e58fceeb1b71/baa114c50096b41f341a54d478af8160]]
+
+! Structured Attention
+* Attention before LSTM
+* Learn word representation with C2W: don't have to deal with OOV
+* Choose where to copy from with CRF
+* Code compression while maintaining structure

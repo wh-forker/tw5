@@ -1,0 +1,7 @@
+created: 20170911131812641
+modified: 20170911131901380
+tags: [[Recurrent Neural Networks]]
+title: Variational Dropout
+type: text/vnd.tiddlywiki
+
+[[A Theoretically Grounded Application of Dropout in Recurrent Neural Networks|https://arxiv.org/abs/1512.05287]]

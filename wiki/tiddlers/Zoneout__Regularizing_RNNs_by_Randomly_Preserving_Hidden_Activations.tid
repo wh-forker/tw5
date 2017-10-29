@@ -1,6 +1,6 @@
 created: 20160612074319976
-modified: 20160612091632842
-tags: RNN
+modified: 20170906062952306
+tags: [[Recurrent Neural Networks]]
 title: Zoneout: Regularizing RNNs by Randomly Preserving Hidden Activations
 type: text/vnd.tiddlywiki
 

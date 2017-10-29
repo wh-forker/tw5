@@ -1,5 +1,5 @@
 created: 20170503023704453
-modified: 20170829085012461
+modified: 20171017061914693
 tags: Vision [[Recurrent Neural Networks]] [[Reinforcement Learning]]
 title: Meta-Learning
 type: text/vnd.tiddlywiki
@@ -29,15 +29,15 @@ Desire a meta-learning algorithm
 * [[Synthetic Gradients]]
 * [[Meta-Learning with Temporal Convolutions|https://arxiv.org/abs/1707.03141]]
 * [[Meta Networks]]
+* OpenAI's [[Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments|https://arxiv.org/abs/1710.03641]]
+** [[RoboSumo|https://github.com/openai/robosumo]]
 
 ! Rapid learning
 
+* [[One-shot Learning]]
+* [[Zero-shot Learning]]
 * probabilistic programming approach (pen stroke generation)
-* Siamese networks for one-shot classification
-* end2end differentiable nearest neighbor method for one-shot learning
 * memory-based approach and trained NTM
-* LSTM-based one-shot optimizer
-** [[Attentive Recurrent Comparators]]
 
 !! Meta optimizer
 

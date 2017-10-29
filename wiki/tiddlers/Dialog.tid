@@ -1,7 +1,10 @@
 created: 20170504075955912
-modified: 20170504080002136
+modified: 20170919085919051
 tags: NLP
 title: Dialog
 type: text/vnd.tiddlywiki
 
 * [[Learning End-to-End Goal-Oriented Dialog|https://arxiv.org/abs/1605.07683]] test on (6) Dialog bAbI task.
+* Evaluation
+** [[A Review of Evaluation Techniques for Social Dialogue Systems|https://arxiv.org/abs/1709.04409]]: turn-based metrics often ignore the context and do not account for the fact
+** Adversarial examples for evaluating reading comprehension systems

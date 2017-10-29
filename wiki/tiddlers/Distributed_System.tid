@@ -1,5 +1,5 @@
 created: 20170817065653440
-modified: 20170817070730909
+modified: 20170927140043454
 tags: Programming
 title: Distributed System
 type: text/vnd.tiddlywiki
@@ -11,3 +11,6 @@ Violations to strict serializability
 * stale reads: caused by network partitions. reads historical values.
 * dirty reads: caused by promoted update failure. read rolled back txns.
 * lost updates: caused by other nodes don't respond. write something but lost.
+
+! In Action
+* [[Distributed Training]]

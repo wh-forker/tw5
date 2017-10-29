@@ -1,5 +1,5 @@
 created: 20170815074938266
-modified: 20170829084902929
+modified: 20170918093327703
 tags: [[ICML 2017]]
 title: ICML 2017 Papers
 type: text/vnd.tiddlywiki
@@ -9,6 +9,10 @@ type: text/vnd.tiddlywiki
 * [[On the Expressive Power of Deep Neural Networks]]
 * [[Training Quantized Nets: A Deeper Understanding]]
 * [[Attentive Recurrent Comparators]]
+
+! Google Brain
+
+* [[Neural Message Passing for Quantum Chemistry|http://proceedings.mlr.press/v70/gilmer17a.html]]
 
 ! Facebook
 

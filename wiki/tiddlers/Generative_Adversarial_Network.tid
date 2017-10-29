@@ -1,5 +1,5 @@
 created: 20161021080332245
-modified: 20170703115122444
+modified: 20171009043818430
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
@@ -24,6 +24,7 @@ The loss $\mathcal L(\theta^*, \phi) = 2\mathrm{JS}(p^*\|q_\phi)-\log(4)$.
 * [[OpenAI's survey|https://openai.com/blog/generative-models/]]
 * [[What Arora thinks about GANs|GANs, Some Open Questions]]
 * [[How to train a GAN]]
+* [[The Numerics of GANs]]
 
 !! Research Directions
 * [[GAN Stablizing Strategies]]

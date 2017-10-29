@@ -1,5 +1,5 @@
 created: 20160425022224634
-modified: 20170904084902803
+modified: 20171012030714926
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
@@ -9,22 +9,15 @@ type: text/vnd.tiddlywiki
 * [[NLP Data]]
 
 ! Topics
-* Perceiving and representing text
+* Perceiving and representing text: [[Word Embedding]]
 ** handling unknown words
 ** tokenize? spelling? characters? bytes?
 ** smaller perceptual units need more complex models, but have fewer OOVs (doubt)
-* Text categorisation
+* [[Text Classification]]
+* [[Semantic Parsing]]
 * Natual language generation
-** Language Modelling
-*** [[DLSS 2017 Talks Phil Blunsom]]
-** Conditional language modelling
-*** speech recognition
-*** caption generation
-*** [[Question Answering]]
-*** [[Dialog]]
-*** [[Neural Machine Translation]]
-*** following instructions
-*** summarisation
+** [[Language Modelling]]
+** [[Conditional Language Modelling]]
 * Analytic applications
 ** topic modelling
 ** linguistic analysis (discourse, semantics, syntax, morphology)
@@ -44,17 +37,6 @@ The performance is always dominated by the size of high quality data.
 <<<
 Probably the most successful concept is to use distributed representation of words. For example, neural network based language models significantly outperform N-gram models.
 <<< [[Efficient Estimation of Word Representations in Vector Space|Word2Vec]]
-
-! Features
-* BoW
-* Distributed word embeddings
-* Continuous ''vector'' representation of words
-** co-occurrence stats to obtain vectors for long phrases
-** LSA, fail to preserve linear regularities among words
-** LDA, computationally expensive on large datasets
-** [[Word2Vec]]
-** [[GloVe|Global Vectors for Word Representation]]
-* [[Hashed Character $n$-gram|https://arxiv.org/abs/1511.06018]]
 
 ! Sentence model
 is to analysis and represent the semantic content of a sentence for purposes of classification or generation.

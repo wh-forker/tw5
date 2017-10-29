@@ -1,0 +1,25 @@
+created: 20170927134949931
+modified: 20170928115649214
+tags: [[Deep Learning Engineering]] [[Distributed System]]
+title: Distributed Training
+type: text/vnd.tiddlywiki
+
+* In TensorFlow
+** [[Deep Learning with Dynamic Computation Graphs]]
+* Parallel Framework
+** [[A Framework for Parallel and Distributed Training of Neural Networks|https://arxiv.org/abs/1610.07448]]
+** [[Distributed Training Large-Scale Deep Architectures|https://arxiv.org/abs/1709.06622]]
+** [[Probabilistic Synchronous Parallel|https://arxiv.org/abs/1709.07772]]
+* SGD
+** [[Understanding and Optimizing Asynchronous Low-Precision Stochastic Gradient Descent]]
+
+! Barrier methods
+* Bulk Synchronous Parallel
+** deterministic
+** often serializable
+* Stale Synchronous Parallel
+** fastest worker waits if it is $s$ iterations ahead the slowest 
+* Asynchronous Parallel
+** no restrictions
+** causes delayed updates
+* Probabilistic Synchronous Parallel

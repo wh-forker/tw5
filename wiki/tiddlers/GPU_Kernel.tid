@@ -1,0 +1,11 @@
+created: 20170906065707903
+modified: 20170906065811221
+tags: GPU
+title: GPU Kernel
+type: text/vnd.tiddlywiki
+
+A kernel essentially means:
+
+* CPU launches the kernel to the GPU with some small overhead
+* For each pointwise element, launch one thread
+* This thread reads the value it is responsible for, does a simple operation and writes its result

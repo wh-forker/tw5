@@ -1,0 +1,27 @@
+created: 20171022032628268
+modified: 20171022034305344
+tags: [[Policy Gradient]]
+title: AlphaGo Zero
+type: text/vnd.tiddlywiki
+
+Details:
+
+* dataset of late games change slowly: 5%
+* Dirichlet Noise at the root
+* reflect/rotating the board
+
+<<<
+AlphaGo Zero uses a quite different approach to deep RL than typical (model-free) algorithms such as policy gradient or Q-learning. By using AlphaGo search we massively improve the policy and self-play outcomes - and then we apply simple, gradient based updates to train the next policy + value network. This appears to be much more stable than incremental, gradient-based policy improvements that can potentially forget previous improvements. 
+<<< David Silver [[Reddit AMA|http://www.reddit.com/r/MachineLearning/comments/76xjb5/ama_we_are_david_silver_and_julian_schrittwieser/]]
+
+The stableness of self-play is likely a direct result of using tree search. An RL agent may train unstably for two reasons:
+
+* It may forget pertinent information about positions that it no longer visits (change in data distribution)
+* It learns to exploit a weak opponent (or a weakness of its own), rather than playing the optimal move.
+
+Tree search helps because:
+
+* AlphaGo Zero uses the tree policy in the first 30 moves to explore positions. In our work we use a NN trained to imitate that tree policy. Because MCTS should explore all plausible moves, an opponent that tries to play outside of the data distribution that the NN is trained on will usually have to play some moves that the MCTS has worked out strong responses to, so as you leave the training distribution, the AI will gain an unassailable lead.
+* To overfit to a policy weakness, a player needs to learn to visit a state s where the opponent is weak. However, because MCTS will direct resource to exploring towards s, it can discover improvements to the policy at s during search. MCTS finds these improvements will be found before the neural network is trained to try to play to s. In a method with no look-ahead, the neural network learns to reach s to exploit the weakness immediately. Only later does it realise that V^pi(s) is only large because the policy pi is poor at s, rather than because V*(s) is large.
+
+from [[Thinking Fast and Slow with Deep Learning and Tree Search|https://arxiv.org/abs/1705.08439]]

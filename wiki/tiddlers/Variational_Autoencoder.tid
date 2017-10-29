@@ -1,6 +1,6 @@
 created: 20161009032729712
-modified: 20170710122246415
-tags: [[Deep Generative Models]] [[Variational Generative Models]]
+modified: 20170918071807922
+tags: [[Deep Generative Models]] [[Variational Generative Models]] [[Latent Variable Models]]
 title: Variational Autoencoder
 type: text/vnd.tiddlywiki
 
@@ -92,3 +92,6 @@ The neural network used in the encoder (variational distribution) does not lead 
 ** Hidden units conditioned on GMM as clustering assignment
 * [[Deep Variational Inference Without Pixel-Wise Reconstruction|https://arxiv.org/abs/1611.05209]]
 ** Improve real NVP with VAE.
+* [[A Deep Generative Framework for Paraphrase Generation|https://arxiv.org/abs/1709.05074]]
+** A VAE-LSTM architecture should be able to generate more general text: refer to [[RVAE|https://github.com/kefirski/pytorch_RVAE]]
+** How does it capture higher level features

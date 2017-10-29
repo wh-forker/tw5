@@ -1,0 +1,19 @@
+created: 20171013084744666
+modified: 20171013090013074
+tags: [[Deep Learning Engineering]]
+title: Google TPU
+type: text/vnd.tiddlywiki
+
+[[In-Datacenter Performance Analysis of a Tensor Processing Unit|https://dl.acm.org/citation.cfm?id=3080246]]
+
+* The Matrix Unit: 256x256 8-bit multiply-accumulate units
+* 700MHz clock rate
+* Peak: 92T ops/s
+** 65,536 * 2 * 700M
+* > 25x as many MACs vs GPU
+* > 100x as many MACs vs CPU
+* 4MB of on-chip Accumulator memory
+* 24MB of on-chip Unified Buffer (activation memory)
+* 3.5x as much on-chip memory vs GPU
+* Two 2133 MHz DDR3 DRAM channels
+* 8 GB of off-chip weight DRAM memory

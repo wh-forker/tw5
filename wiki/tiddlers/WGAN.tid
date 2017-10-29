@@ -1,11 +1,15 @@
 created: 20170208074243139
-modified: 20170815082812971
+modified: 20170927124058852
 tags: [[Generative Adversarial Network]]
 title: WGAN
 type: text/vnd.tiddlywiki
 
 * [[Wasserstein GAN|https://arxiv.org/abs/1701.07875]]
 * [[Towards Principled Methods for Training Generative Adversarial Networks|https://arxiv.org/abs/1701.04862]]
+* [[Improved Training of Wasserstein GANs|https://arxiv.org/abs/1704.00028]]
+** A simple way to enforce the Lipschitz constraint on the class of functions, which can be modeled by the neural network, is weight clipping. It was proposed that training can be improved by instead augmenting the loss by a regularization term that penalizes the deviation of the gradient of the critic (as a function of the network's input) from one.
+* [[On the regularization of Wasserstein GANs|https://arxiv.org/abs/1709.08894]]
+** A theoretical proof of using a weaker regularization term enforcing the Lipschitz constraint is preferable
 
 ! Implementations
 

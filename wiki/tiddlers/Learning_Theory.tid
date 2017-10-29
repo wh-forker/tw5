@@ -1,5 +1,5 @@
 created: 20160513091917253
-modified: 20170224074007888
+modified: 20170925070804148
 title: Learning Theory
 type: text/vnd.tiddlywiki
 
@@ -15,6 +15,18 @@ The reason we need learning theory is that otherwise we have to do parameter sea
 ** covering number bound
 ** Rademacher complexity bound
 ** PAC-Bayesian bound
+
+!!! "Old" Generalization bounds
+$$
+\epsilon^2<\frac{\log|H_\epsilon|+\log\frac 1 \delta}{2m}
+$$
+
+* $\epsilon$: generalization error
+* $\delta$: confidence
+* $m$: number of training examples
+* $H_\epsilon$: $\epsilon$-cover of the Hypothesis class (or cardinality)
+
+We typically assume: $|H_\epsilon|\sim (\frac 1 \epsilon)^d$ where $d$ is the class (VC, ...) dimensions
 
 ! Examples
 * [[Kernel Mean Embedding]]

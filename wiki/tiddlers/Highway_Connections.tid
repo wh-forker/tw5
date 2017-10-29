@@ -1,0 +1,10 @@
+created: 20170911131423417
+modified: 20170911131539334
+tags: ResNet
+title: Highway Connections
+type: text/vnd.tiddlywiki
+
+! Bibs
+* [[Training Very Deep Networks|https://arxiv.org/abs/1507.06228]]
+* [[Recurrent Highway Networks|http://arxiv.org/abs/1607.03474]]
+

@@ -1,0 +1,9 @@
+created: 20170918064359519
+modified: 20170918064858337
+tags: Matrix
+title: Matrix Factorization
+type: text/vnd.tiddlywiki
+
+! Deep Factorization
+
+* [[Stable recovery of the factors from a deep matrix product and application to convolution networks|https://arxiv.org/abs/1703.08044]]

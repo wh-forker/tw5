@@ -1,5 +1,5 @@
 created: 20170705060606623
-modified: 20170824033424443
+modified: 20171009033349248
 tags: 
 title: Deep Learning Researchers
 type: text/vnd.tiddlywiki
@@ -24,3 +24,6 @@ type: text/vnd.tiddlywiki
 
 ! RL
 * Xi Chen
+
+! NLP
+* [[Graham Neubig|http://www.phontron.com/publications.php]]: neulab has some very cool implementations for NMT and NL2code

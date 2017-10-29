@@ -1,0 +1,17 @@
+created: 20170906065200959
+modified: 20170906065341730
+tags: [[RNN Performance Optimization]]
+title: Persistent RNNs
+type: text/vnd.tiddlywiki
+
+* [[paper|http://jmlr.org/proceedings/papers/v48/diamos16.pdf]]
+* [[reddit|https://www.reddit.com/r/MachineLearning/comments/4pezja/persistent_rnns_stashing_recurrent_weights_onchip/]]
+
+The peak floating point throughput of a TitanX is 6.144 TFLOP/s. A straightforward implementation of a RNN using GEMM operations achieves 0.099 TFLOP/s at a layer size of 1152 using Nervana Systems GEMM kernels at a mini-batch size of 4. Our initial Persistent RNN implementation with the same layer and mini-batch size achieves over 2.8 TFLOP/s resulting in a 30x speedup.
+
+Synchronization between GPU processors cores is typically achieved implicitly between dependent kernel calls in both CUDA and OpenCL development frameworks. However, this mechanism for synchronization between timesteps requires launching a new kernel that forces the weights to be reloaded from off-chip memory. This causes the synchronization latency of dependent kernels to be approximately 6-10x larger than the time spent performing the math operations for a single timestep, and this cannot be overlapped with computation. We address this problem with an optimized implementation of a global barrier that can be completely overlapped with the math operations for a single timestep.
+
+You can synchronize thread blocks using atomic operations in global memory, as long as you take the weak memory model into account.
+The hardest part is providing a guarantee of concurrency to more than one thread block. There are multiple ways to solve this problem, but we implemented cooperative multithreading where threads will yield the machine if too many synchronizations fail.
+
+CUDA doesn't expose a way to yield. Our approach saves a continuation in GPU memory and then aborts the thread block. Code on the CPU monitors the continuation memory and restarts the kernel if any thread blocks fail. We size the kernel so that this is unlikely to happen, and in practice it occurs extremely rarely.

@@ -1,5 +1,5 @@
 created: 20170322053925500
-modified: 20170804123015073
+modified: 20170925035736851
 tags: 
 title: Information Theory
 type: text/vnd.tiddlywiki
@@ -9,6 +9,24 @@ type: text/vnd.tiddlywiki
 
 ! Theorems
 [[Principle of maximum entropy]]
+
+!! Data Processing Inqeuality (DPI) & Invariance
+Let $I(X;Y)$ be the ''mutual information'':
+
+<<<
+''Definition'' [Mutual Information]<br>
+$I(X;Y)=D[p(x, y)\|p(x)p(y)] = D[p(x|y)\|p(x)]=H(X)-H(X|Y)$
+<<<
+
+for any Markov chain $X\rightarrow Y\rightarrow Z$: $I(X;Y)\ge I(X;Z)$
+
+Reparametrization Invariance: for invertible $\phi, \psi$:
+$$
+I(X;Y) = I(\phi(X);\psi(Y))
+$$
+
+! Talks
+[[Information Theory for Deep Learning]]
 
 ! Bibs
 

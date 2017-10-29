@@ -1,0 +1,81 @@
+created: 20170823075606996
+draft.of: Q-Learning
+draft.title: Q-Learning
+modified: 20171018092010372
+tags: [[Reinforcement Learning]]
+title: Draft of 'Q-Learning'
+type: text/vnd.tiddlywiki
+
+We want to omit policy gradient and choose best action directly. But run into problems like need to know $p(s'|s, a)$ and need to represent $V(s)$. So we approximate $E[V(s')]$ with $\max_{a'}Q_\phi(s_i', a_i')$. By this we skip simulation of actions.
+
+* pros: works even for off-policy samples; only one network
+* cons: no convergence guarantees
+
+Q-function is the maximum discounted future reward when we perform action $a$ in state $s$, $Q(s_t, a_t) = \max R_{t+1}$
+
+''Bellman equation'': maximum future reword for this state and action is the immediate reward plus maximum future reward for the next state. $Q(s, a) = r + \gamma\max_{a'}Q(s', a')$. @@color:#859900;The maximization step leads to en overestimatio bias.@@
+
+In practice, many of the states are very rarely visited. (maybe a good memory management could speed this process up.) By passing the state through a deep neural net, we can get all Q-values for all actions available immediately.
+
+The network can be optimized with simple squared error loss:
+$$
+L = \frac 1 2[r + \max_{a'}Q(s', a')-Q(s, a)]^2
+$$
+
+Approximation of Q-values using non-linear functions is unstable and takes a week on a single GPU:
+
+* sequential states are strongly correlated
+* target value is always changing
+* Q-learning is not gradient descent
+
+''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
+
+! Deep Q-Networks
+At each step, based on the current state, the agent selects an action $\epsilon$-greedily w.r.t. the action values, and adds a transition $(S_t, A_t, R_{t+1}, \gamma_{t+1}, S_{t+1})$ to a replay memory buffer, that holds the lat ''million'' transitions. The parameters of the neural network are optimized by using SGD to minimize the loss
+$$
+(R_{t+1}+\gamma_{t+1}\max_{a'}q_{\bar\theta}(S_{t+1}, a')-q_\theta(S_t, A_t))^2
+$$
+where $t$ is a time step randomly picked from the replay memory. $\theta$ is the parameters of the //online network//, $\bar\theta$ is a periodic copy which is not directly optimized. This keeps the target function from changing too quickly.
+
+!! Extensions to DQN
+
+[[Rainbow: Combining Improvements in Deep Reinforcement Learning|https://arxiv.org/abs/1710.02298]]
+
+''[[Double Q-learning|https://arxiv.org/abs/1509.06461]]'': maximization performed for the bootstrap target, $\theta$ for the selection of the action and $\bar\theta$ for its evaluation.
+$$
+(R_{t+1}+\gamma_{t+1}q_{\bar\theta}(S_{t+1}, \arg \max_{a'}q_{\theta}(S_{t+1}, a'))-q_\theta(S_t, A_t))^2
+$$
+
+''Prioritized replay'' samples transitions with probability $p_t$ relative to the last encountered absolute //TD error//:
+$$
+p_t\approx|R_{t+1}+\gamma_{t+1}\max_{a'}q_{\bar\theta}(S_{t+1}, a')-q_\theta(S_t, A_t)|^\omega
+$$
+where $\omega$ is a hyper-parameter that determines the shape of the distribution. When $\omega=1$, this is the absolute Bellman error.
+
+''Dueling networks'' features two streams of computation, the value and advantage streams, sharing a convolutional encoder, and merged by a special aggregator:
+$$
+q_\theta(s, a) = v_\eta(f_\xi(s)) + a_\psi(f_\xi(s), a) - \frac{\sum_{a'}a_\psi(f_\xi(s), a')}{N_{\text{actions}}}
+$$
+By factorizing the architecture of the network, we can improve the result ''a lot''.
+
+''Multi-step learning'' can often lead to faster learning. Forward-view //multi-step// targets can be used. We define the trancated n-step return $R_t^{(n)}$ as $\sum_{k=0}^{n-1}\gamma_t^kR_{t+k+1}$. The alternative loss is
+$$
+(R_t^{(n)}+\gamma_t^{(n)}\max_{a'}q_{\bar\theta}(S_{t+n}, a')-q_\theta(S_t, A_t))^2
+$$
+
+''Distributed RL''
+
+''Noisy Nets'' propose a noisy linear layer that combines a deterministic and noisy stream. Sometimes, many actions must be executed to collect the first reward. Adding noise to network parameters is good for exploration. Simple approach is like elementwise linear noise layer.
+
+! Bibs
+
+* Classic
+** Learning from delayed rewards: introduces Q-learning
+** Neural fitted Q-iteration: batch-mode Q-learning with neural networks
+* Deep RL
+** Deep auto-encoder neural networks in reinforcement learning: early image-based Q-learning method using autoencoders to construct embeddings
+** Human-level control through deep reinforcement learning: Q-learning with convolutional networks for playing Atari.
+** Deep reinforcement learning with double Q-learning: a very effective trick to improve performance of deep Q-learning.
+** Continuous control with deep reinforcement learning: continuous Q-learning with actor network for approximate maximization.
+** Continuous deep Q-learning with model-based acceleration: continuous Q-learning with action-quadratic value functions.
+** Dueling network architectures for deep reinforcement learning: separates value and advantage estimation in Q-function.

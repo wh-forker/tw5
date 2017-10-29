@@ -1,5 +1,5 @@
 created: 20160706060121767
-modified: 20161215085455102
+modified: 20170911131448655
 tags: [[Case study of ConvNets]]
 title: ResNet
 type: text/vnd.tiddlywiki
@@ -9,8 +9,9 @@ Residual connection were introduced by He et al. in [[Deep Residual Learning for
 * [[Wide Residual Network|http://arxiv.org/abs/1605.07146]]
 * [[ResNeXt: Aggregated Residual Transformations for Deep Neural Networks|https://arxiv.org/abs/1611.05431]]
 
-! On the absence of pooling
-
+! Bibs
+* [[Highway Connections]]
+* [[Identity Matters in Deep Learning]]
 
 ! Repos
 [[resnet.torch|https://github.com/facebook/fb.resnet.torch]]

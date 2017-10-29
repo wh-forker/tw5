@@ -1,5 +1,5 @@
 created: 20161116081814547
-modified: 20170905030009829
+modified: 20170905030931739
 tags: [[Recurrent Neural Networks]] Optimization
 title: Optimizing RNN
 type: text/vnd.tiddlywiki
@@ -9,6 +9,6 @@ The gradients of the RNN are easy to compute with BPTT, RNNs are difficult to tr
 ! Vanishing gradient problem
 Here is a second order approach: [[Thesis Training RNN]]. Not considered a good solution now.
 
-Merity has [[a blog post about orthogonal initialization|https://smerity.com/articles/2016/orthogonal_init.html]], and has referred to some optimization papers.
+Merity has [[a blog post|https://smerity.com/articles/2016/orthogonal_init.html]] about using orthogonal initialization to avoid explosion and vanishing in  propagation, and has referred to some optimization papers.
 
 ! [[Optimization Properties of Linearized RNN]]

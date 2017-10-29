@@ -1,0 +1,33 @@
+created: 20171016080831102
+modified: 20171016085500823
+tags: Meta-Learning
+title: Zero-shot Learning
+type: text/vnd.tiddlywiki
+
+[[Recent Advances in Zero-shot Recognition|https://arxiv.org/abs/1710.04837]]
+
+! Semantic Representations in Zero-shot Recognition
+
+* Semantic Attributes: has wings, spotted...
+** User-defined Attributes
+** Relative Attributes
+** Data-driven Attributes
+** Video Attributes
+* Semanatic Representation beyond Attributes
+** Concept ontology: e.g. WordNet's semantic distance
+** Semantic word vectors
+
+! Models
+* Embedding Models
+** Bayesian Models
+*** Direct Attribute Prediction
+*** Indirect Attribute Prediction
+** Semantic Embeddings
+** Embeddings into Common Spaces
+** Deep Embedding
+*** [[Learning a Deep Embedding Model for Zero-shot Learning|https://arxiv.org/abs/1611.05088]]
+* Recognition Models in the Embedding Space
+* Problems in Zero-shot Recognition
+** Projection Domain Shift problem
+*** transductive learning
+** Hubness problem

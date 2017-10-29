@@ -1,0 +1,12 @@
+created: 20171016080434657
+modified: 20171022034929132
+tags: Meta-Learning
+title: One-shot Learning
+type: text/vnd.tiddlywiki
+
+* Siamese networks for one-shot classification
+* end2end differentiable nearest neighbor method for one-shot learning
+* LSTM-based one-shot optimizer
+** [[Attentive Recurrent Comparators]]
+* DeepMind NIPS 2016: [[Matching Networks for One Shot Learning|https://arxiv.org/abs/1606.04080]]
+** This model uses recent advances in attention and memory to achieve state-of-the-art performance classifying ImageNet images using only a single example from a class. However, we do not know what assumptions the network is making to classify these images.

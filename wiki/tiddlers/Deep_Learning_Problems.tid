@@ -1,0 +1,21 @@
+created: 20170918085743202
+modified: 20170925083515001
+tags: [[Deep Learning]]
+title: Deep Learning Problems
+type: text/vnd.tiddlywiki
+
+* Making deep networks amenable to (stable!) online updates from weakly supervised data
+** True lifelong learning and open up many applications
+* "Batch normalization" for GANs or Deep RL
+** make everything wants to train by default
+* Moving away from supervised learning
+** [[Capsules]]
+** efficiently use data for more complex problems
+** Come up with better exploration strategies as well as active learning approaches to acquire the relevant information while keeping training manageable
+* Build single machine learning system that can solve thousands or millions of tasks and can draw from the experience in solving these tasks to learn to automatically solve new tasks.
+** [[Jeff's talk|https://www.matroid.com/scaledml/2017/jeff.pdf]]
+* [[New Directions for RNNs]]
+* Biologically plausible neural net systems
+* Exactly solvable DNN models (through symmetry & group theory)
+* New/better learning algorithms & design principles
+* Predictions on the organization of biological layered networks

@@ -1,5 +1,5 @@
 created: 20161027093636025
-modified: 20170315060517091
+modified: 20171011123436446
 tags: [[Sequential Models]]
 title: Long short-term memory
 type: text/vnd.tiddlywiki
@@ -7,6 +7,9 @@ type: text/vnd.tiddlywiki
 ! Theory
 
 * [[LSTM Basic]]
+* [[RNN Performance Optimization]]
+* Gated Recurrent Units
+** [[Revised GRU for speech|https://arxiv.org/abs/1710.00641]]: reset gate removed, replaced tanh with ReLU. Probably not very useful for other tasks
 
 ! Applications
 * Image recognition

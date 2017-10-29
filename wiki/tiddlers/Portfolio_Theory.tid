@@ -1,0 +1,18 @@
+created: 20171016025346680
+modified: 20171017072711634
+tags: [[Computational Finance]]
+title: Portfolio Theory
+type: text/vnd.tiddlywiki
+
+! Bibs
+* [[Stochastic Portfolio Theory]]
+* Non-Euclidean metrics: [[Geometric Learning and Filtering in Finance|https://arxiv.org/abs/1710.05829]]
+
+! Theory
+Markowitz modern portfolio theory (1959):
+
+* ''Trade-off the return and risk:'' one should focus on the trade-off between expected return and the risk measured by the standard deviation
+* This leads to a quadratic optimization with linear constraints.
+* The efficient portforlio is an affine function of the expected return.
+
+Capital Asset Pricing Model (CAPM) generalizes Markowitz by involving a riskless bond.
