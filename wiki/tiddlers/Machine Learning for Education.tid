@@ -1,5 +1,5 @@
 created: 20171030122031255
-modified: 20171030131451125
+modified: 20171030131709056
 tags: 
 title: Machine Learning for Education
 type: text/vnd.tiddlywiki
@@ -18,14 +18,14 @@ type: text/vnd.tiddlywiki
 *** Statistics: robust and precise evaluation of student performance
 *** Decision tree: a useful algorithm for categorizing student within least questions
 ** Examples: Adaptive learning systems: [[dreambox|http://www.dreambox.com]], [[ALEKS|https://www.aleks.com/about_aleks]], [[Knewton|http://www.knewtonhighered.com/]]
-* Game-based learning: idk, maybe just games [[ST Math|https://web.stmath.com/]], [[Mangahigh|https://www.mangahigh.com/en-au/]]. Don't seem very educational
-* Grading systems: score essays, detect plagiarism
+* ''Game-based learning'': idk, maybe just games [[ST Math|https://web.stmath.com/]], [[Mangahigh|https://www.mangahigh.com/en-au/]]. Don't seem very educational
+* ''Grading systems'': score essays, detect plagiarism
 ** Machine learning could be very good at plagiarism detection and can be trained to know language (this is new)
 *** Natural Language Processing can help finding mistakes in writing and grade answers
 *** Deep learning can recognize writing styles, grade longer answers
 ** Examples: [[WriteToLearn|https://www.writetolearn.net/]], [[Lightside|http://turnitin.com/en_us/what-we-offer/revision-assistant]]
 ** Publication: [[The Eras and Trends of Automatic Short Answer Grading|http://www.uni-weimar.de/medien/webis/publications/papers/stein_2015a.pdf]]
-* Data analysis
+* ''Data analysis''
 ** There are some data beyond education could be useful
 *** Statistics can be used wherever there is data
 *** Graph mining on structured data (network)
