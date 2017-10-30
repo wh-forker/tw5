@@ -1,5 +1,5 @@
 created: 20171030122031255
-modified: 20171030130604931
+modified: 20171030131451125
 tags: 
 title: Machine Learning for Education
 type: text/vnd.tiddlywiki
@@ -26,6 +26,9 @@ type: text/vnd.tiddlywiki
 ** Examples: [[WriteToLearn|https://www.writetolearn.net/]], [[Lightside|http://turnitin.com/en_us/what-we-offer/revision-assistant]]
 ** Publication: [[The Eras and Trends of Automatic Short Answer Grading|http://www.uni-weimar.de/medien/webis/publications/papers/stein_2015a.pdf]]
 * Data analysis
-** Statistics can help with anything if there is data
+** There are some data beyond education could be useful
+*** Statistics can be used wherever there is data
+*** Graph mining on structured data (network)
+*** Embedding learning to represent complex data
 ** Examples:
-*** predicting enrollment, dropouts, office hour scheduling etc.
+*** predicting enrollment, dropouts, detecting student social connections and learning interests, good teaching behavior, office hour scheduling etc.
