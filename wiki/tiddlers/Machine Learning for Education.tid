@@ -1,0 +1,31 @@
+created: 20171030122031255
+modified: 20171030130604931
+tags: 
+title: Machine Learning for Education
+type: text/vnd.tiddlywiki
+
+* ''Content Analytics'' that organize and optimize content modules
+** Machine learning method can help teachers organize massive open resources and teaching materials. Related fields are
+*** Knowledge representation: extract relationships and build theasarus
+*** Information retrieval: collect online resources
+*** Knowledge graph: group and visualize complex content
+** Examples
+*** [[Gooru's Open Catalog|http://about.gooru.org/catalog]] is a rich content platform covers different subject areas
+*** [[IBM Watson Content Analytics|https://www.ibm.com/support/knowledgecenter/en/SS5RWK_3.5.0/com.ibm.discovery.es.nav.doc/iiypofnv_prodover_cont.htm]] is an extensive knowledge graph
+* ''Adaptive learning'' that track student knowledge and personalize instructions
+** Machine learning can help with better assessment of individual student (esp. web-based) and adjust the teaching strategy. Related fields are
+*** Reinforcement learning: optimizing the instruction/questioning policy
+*** Statistics: robust and precise evaluation of student performance
+*** Decision tree: a useful algorithm for categorizing student within least questions
+** Examples: Adaptive learning systems: [[dreambox|http://www.dreambox.com]], [[ALEKS|https://www.aleks.com/about_aleks]], [[Knewton|http://www.knewtonhighered.com/]]
+* Game-based learning: idk, maybe just games [[ST Math|https://web.stmath.com/]], [[Mangahigh|https://www.mangahigh.com/en-au/]]. Don't seem very educational
+* Grading systems: score essays, detect plagiarism
+** Machine learning could be very good at plagiarism detection and can be trained to know language (this is new)
+*** Natural Language Processing can help finding mistakes in writing and grade answers
+*** Deep learning can recognize writing styles, grade longer answers
+** Examples: [[WriteToLearn|https://www.writetolearn.net/]], [[Lightside|http://turnitin.com/en_us/what-we-offer/revision-assistant]]
+** Publication: [[The Eras and Trends of Automatic Short Answer Grading|http://www.uni-weimar.de/medien/webis/publications/papers/stein_2015a.pdf]]
+* Data analysis
+** Statistics can help with anything if there is data
+** Examples:
+*** predicting enrollment, dropouts, office hour scheduling etc.
