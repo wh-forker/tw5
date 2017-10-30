@@ -1,5 +1,5 @@
 created: 20170920082817800
-modified: 20170920093216553
+modified: 20171030082046469
 tags: Programming
 title: Software Research
 type: text/vnd.tiddlywiki
@@ -20,7 +20,29 @@ type: text/vnd.tiddlywiki
 ** A few billion lines of code later: using static analysis to find bugs in the real world (2010)
 * refactoring
 ** The ASTRÉE analyzer (2005)
+* Knowledge Representation
+** HDSKG (SANER 2017)
+*** Extract relation triples from stackoverflow tagWiki
+*** Parsing and POS using coreNLP
+*** Relations discovered with rule based methods
+*** Filtered with semi-supervised classification (garbage in garbage out?)
+** Unsupervised Software-Specific Morphological Forms Inference from Informal Discussions (ICSE 2017)
+*** Build SE thesaurus and detecting synonyms from unsupervised corpus i.e. Stack Overflow.
+*** Train a new [[Word Embedding]] (skip-gram) to group similar words
+*** Discriminate synonyms and abbreviations
+** Mining Analogical Libaries in Q&A Discussions (SANER 2016)
+*** Learn similar libraries (of different langs) from stackoverflow tags
+*** association rule mining on tag co-occurence
+*** POS and phrase chunking on tagWiki to classify tags
+*** [[Word2Vec]] library grouping
+** TechLand: Assiting Technology Landscape Inquiries with Insights from Stack Overflow (ICSME2016)
+*** QA system based on knowledge graph
+*** similar methods with previous paper
+*** Queries are stemmed and parsed, greedily match tech terms
+*** Visualization from tagWiki data and knowledge graph
+*** Recommondation based on co-occurrence and trends
 
 ! Directions
 * Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.
 * Literate programming: The naturalness hypothesis [[NLP for SE]]
+* Automatic test cases generation, distributed system testing and bug finding. It would be great we can relate AI with the security community.
