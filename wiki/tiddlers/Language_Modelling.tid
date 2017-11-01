@@ -1,5 +1,5 @@
 created: 20170906081910180
-modified: 20171012025540870
+modified: 20171031102226214
 tags: NLP
 title: Language Modelling
 type: text/vnd.tiddlywiki
@@ -16,3 +16,8 @@ type: text/vnd.tiddlywiki
 * NIST Hub5 2000
 ** Switchboard (SWB)
 ** CallHome (CH)
+
+! Bibs
+
+* Exploring Asymmetric Encoder-Decoder Structure for Context-based Sentence Representation Learning
+** An unsupervised RNN-CNN hybrid feature extractor that is not very efficient or powerful, should know someone has tried this

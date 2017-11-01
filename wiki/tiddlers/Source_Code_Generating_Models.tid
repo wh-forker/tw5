@@ -1,5 +1,5 @@
 created: 20170926070602696
-modified: 20171012144222615
+modified: 20171031005822730
 tags: [[NLP for SE]] [[Deep Generative Models]]
 title: Source Code Generating Models
 type: text/vnd.tiddlywiki
@@ -18,6 +18,9 @@ type: text/vnd.tiddlywiki
 ** Code migration
 ** Pseudocode generation
 ** Code fixing
+** NLI:
+*** Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning
+**** Policy-based RL helps with the where clause accuracy
 *** 2016 sk_p: a neural program corrector for MOOCs
 * Multimodal Models
 ** Code systhesis: from natural language to code
@@ -40,3 +43,9 @@ type: text/vnd.tiddlywiki
 *** [[Neural Program Meta-Induction|https://arxiv.org/abs/1710.04157]]: DeepMind
 **** No explicit program representation, task-specific learning, cross-task knowlege sharing
 **** Conv encoder, lstm decoder
+
+! Metrics
+* Accuracy: exact match is too strong
+* BLEU does not measure semanics
+* Execution accuracy (for sql query results, and maybe #tests passed?)
+* Static code analysis

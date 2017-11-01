@@ -1,5 +1,5 @@
 created: 20170905064640805
-modified: 20170905065500505
+modified: 20171031100038924
 tags: NLP
 title: Word Embedding
 type: text/vnd.tiddlywiki
@@ -18,3 +18,4 @@ type: text/vnd.tiddlywiki
 * [[Supervised Learning of Universal Sentence Representations from Natural Language Inference Data|https://arxiv.org/abs/1705.02364]]
 ** embedding sentences on Stanford Natural Language Inference dataset
 ** BiLSTM with attention, max-pooling over hidden representation
+* [[One-shot and few-shot learning of word embeddings|https://arxiv.org/abs/1710.10280]]

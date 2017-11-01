@@ -1,5 +1,5 @@
 created: 20171022032628268
-modified: 20171022034305344
+modified: 20171031111729890
 tags: [[Policy Gradient]]
 title: AlphaGo Zero
 type: text/vnd.tiddlywiki
@@ -9,6 +9,16 @@ Details:
 * dataset of late games change slowly: 5%
 * Dirichlet Noise at the root
 * reflect/rotating the board
+* MCTS works as a policy improvement operator
+* When MCTS cannot improve the policy, training is done. MCTS is not needed in run time.
+
+! Computing the policy gradient
+Computing the improvement gradient $\pi-p$ requires gradient w.r.t. policy $p_\theta$ and policy-value network parameters $\theta$. We instead minimize
+$$
+\mathcal L(\theta) = KL(\pi_\theta\|p_\theta)=\pi^T\log p_\theta-c
+$$
+
+
 
 <<<
 AlphaGo Zero uses a quite different approach to deep RL than typical (model-free) algorithms such as policy gradient or Q-learning. By using AlphaGo search we massively improve the policy and self-play outcomes - and then we apply simple, gradient based updates to train the next policy + value network. This appears to be much more stable than incremental, gradient-based policy improvements that can potentially forget previous improvements. 

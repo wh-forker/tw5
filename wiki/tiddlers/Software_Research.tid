@@ -1,5 +1,5 @@
 created: 20170920082817800
-modified: 20171030082046469
+modified: 20171031100432412
 tags: Programming
 title: Software Research
 type: text/vnd.tiddlywiki
@@ -41,6 +41,21 @@ type: text/vnd.tiddlywiki
 *** Queries are stemmed and parsed, greedily match tech terms
 *** Visualization from tagWiki data and knowledge graph
 *** Recommondation based on co-occurrence and trends
+* Neural Language Interface
+** Learning to Extract API Mentions from Informal Natural Language Discussions
+*** matching natural language and APIs, similar to NER
+*** @@color:red;relative small dataset@@
+*** @@color:#859900;broaden the scope to doc2code@@
+*** @@color:red;having trouble disambigurating keywords and common words@@
+*** @@color:#859900;a pointer network should decide when to copy and when to generate@@
+*** Brown clustering and word embeddings quantized features as input of
+*** semi-supervised CRF classifier
+* Predicting Semantically Linkable Knowledge in Developer Online Forums via CNN
+** Use a siamese net for feature extraction
+** @@color:red;sequential information is lost with CNNs@@
+** @@color:#859900;use relation network to model covariance@@
+** @@color:red;relatedness is not linear, should predict with multiheads@@
+** @@color:#859900;triplet loss to learn to rank@@
 
 ! Directions
 * Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.
