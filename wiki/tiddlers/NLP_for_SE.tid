@@ -1,5 +1,5 @@
 created: 20170920093256697
-modified: 20171031051915833
+modified: 20171108055558124
 tags: [[Software Research]] NLP
 title: NLP for SE
 type: text/vnd.tiddlywiki
@@ -16,23 +16,6 @@ type: text/vnd.tiddlywiki
 <<<
 
 * [[SE+NLP proposal]]
-
-! Datasets
-
-* Large code corpus
-** [[Learning from "Big Code"|http://learnbigcode.github.io/]]
-* human annotators, clean but homogeneous
-** Project Euler dataset (pseudo-code as description)
-** Parallel Django dataset (pseudo-code as description): This dataset includes all source code of Python web framework Django with line-by-line English annotation. 
-*** Diverse, spanning a wide variety of real-world use case like string manipulation, IO operations and exception handling.
-** [[card2code|https://github.com/deepmind/card2code]]: DeepMind generates code for MTG and HS cards
-** [[WikiSQL|https://github.com/salesforce/WikiSQL]]
-* Assembled from user-generated descriptions
-** StackOverflow: ACL 2016 Summarizing Source Code using a Neural Attention Model
-** IFTTT: Language to code: Learning semantic parsers for if-this-then-that recipes
-** Docstring: [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]]
-* Debugging
-** Defects4J: a curated corpus of bugs
 
 ! Directions
 
