@@ -1,5 +1,5 @@
 created: 20171108043145050
-modified: 20171108054321440
+modified: 20171108054606006
 tags: [[Software Research]]
 title: The Taxonomy Mind Map
 type: text/vnd.tiddlywiki
@@ -23,7 +23,7 @@ type: text/vnd.tiddlywiki
 * [[Natual language processing|NLP]]
 ** seq2seq model and many [[Neural Machine Translation]] works can be used directly in program analysis
 * [[Sequential Models]]
-** advanced architecture e.g. memory and neural abstract machine are strong and effective
+** advanced architecture e.g. [[Memory Networks]] and [[Neural Abstract Machines]] are strong and effective
 * [[Reinforcement Learning]]
 ** automatic discovery of program context, better training framework and many other applications
 * [[Probabilistic Models]]
