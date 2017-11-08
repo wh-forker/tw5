@@ -1,0 +1,29 @@
+created: 20171104055949188
+modified: 20171104074043600
+tags: [[Data Augmentation]]
+title: mixup
+type: text/vnd.tiddlywiki
+
+[[paper|https://arxiv.org/abs/1710.09412]]
+
+The mixup training loss is
+$$
+\mathcal L(\theta)=\mathbb E_{x,y}\mathbb E_{\lambda\sim\beta(0.1)}\mathcal l(\lambda x_1+(1-\lambda)x_2,\lambda y_1+(1-\lambda)y_2)
+$$
+seems plausible if net is linear. I think this will linearize the classification surface in some way.
+
+If we assume linear loss:
+$$
+\mathcal l(x, py_1+(1-p)y_2) = p\mathcal l(x, y_1)+(1-p)\mathcal l(x, y_2)
+$$
+we can simply the loss into
+$$
+\mathcal L(\theta)=\mathbb E_{x,y}\mathbb E_{\lambda\sim\beta(\alpha, \alpha+1)}\mathcal l(\lambda x+(1-\lambda)x',y)
+$$
+
+When mixup mixes up the empirical distribution of the two classes, it turns them into continuous distributions with perfectly overlapping support. It works because:
+
+* the training loss becomes better defined such that the Bayes-optimal solution is unique and easier to find consistently. The class-conditional distributions end up having fully overlapping support. But proof of this being good solution?
+* data augmentation turns the training distribution closer to the test distribution. The ideal generalization gap can be seen as Bregman divergence between $p_{test}$ and $p_{aug}$, up to a constant. 
+
+This works better than instance noise for GAN. Also works against adversarial examples because some samples generated around the neighborhood might be covering the adversarial examples.

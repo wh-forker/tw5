@@ -1,5 +1,5 @@
 created: 20170908074449581
-modified: 20170908075708296
+modified: 20171103094159848
 tags: [[Probabilistic Models]]
 title: Fully-observed Models
 type: text/vnd.tiddlywiki
@@ -20,3 +20,6 @@ type: text/vnd.tiddlywiki
 * For undirected models, parameter learning difficult: need to compute normalising constants (like RBM)
 * Generation can be slow: iterate through elements sequentially, or using a Markov chain
 @@
+
+! Bib
+* [[Recursive Cortical Network]]

@@ -1,0 +1,29 @@
+created: 20171107063021885
+modified: 20171107065100600
+tags: [[Software Research]]
+title: Security
+type: text/vnd.tiddlywiki
+
+Tactics
+
+* Detect: intrusion, service denial, message integrity, delay
+* Resist: actors, limit access, encrypt data, validate input, separate entities
+* React: revoke access, lock computer, inform actors
+* Recover: maintain audit trail, restore
+
+Security patterns
+
+* identity management
+* authentication
+* access control
+* secure process management
+* web services security
+* cloud computing
+
+Frameworks
+
+* Spring Security
+* Apache Shiro
+* JGuard
+* [[ZK|https://www.zkoss.org/]]: protects xss, ddos and cross-site request forgery attacks
+

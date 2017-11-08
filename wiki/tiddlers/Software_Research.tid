@@ -1,5 +1,5 @@
 created: 20170920082817800
-modified: 20171031100432412
+modified: 20171108043136201
 tags: Programming
 title: Software Research
 type: text/vnd.tiddlywiki
@@ -14,6 +14,7 @@ type: text/vnd.tiddlywiki
 * Machine learning
 
 ! Applications
+* [[Security]]
 * program verification
 ** Behavioral consistency of C and Verilog programs using bounded model checking (2003)
 * bug finding
@@ -61,3 +62,4 @@ type: text/vnd.tiddlywiki
 * Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.
 * Literate programming: The naturalness hypothesis [[NLP for SE]]
 * Automatic test cases generation, distributed system testing and bug finding. It would be great we can relate AI with the security community.
+* [[The Taxonomy Mind Map]]

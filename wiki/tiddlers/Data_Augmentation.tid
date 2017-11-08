@@ -1,5 +1,5 @@
 created: 20161027083034244
-modified: 20170714092909167
+modified: 20171104055930327
 tags: [[Deep Learning Tricks]]
 title: Data Augmentation
 type: text/vnd.tiddlywiki
@@ -34,3 +34,6 @@ type: text/vnd.tiddlywiki
 |Gaussian noise| | |
 |Smoothing| | |
 |Label Shuffle| | T |
+
+! Bibs
+* [[mixup]]

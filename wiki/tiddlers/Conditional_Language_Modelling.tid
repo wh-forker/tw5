@@ -1,5 +1,5 @@
 created: 20171012030732910
-modified: 20171013030935074
+modified: 20171105084758820
 tags: NLP
 title: Conditional Language Modelling
 type: text/vnd.tiddlywiki
@@ -25,25 +25,7 @@ Improving search/inference is an open research question:
 * Guaranteed bounds
 * Limit the model to make search easier
 
-! Attention
-Deterministic soft attention by weighted average:
-$$
-a_t = \text{softmax}(u_t);\qquad c_t = Fa_t
-$$
-Stochastic hard attention (Xu et al., 2015) by sampling a column:
-$$
-\mathcal L=-\log p(w|x) = -\log\sum_sp(s|x)p(w|x, s)\ge-\sum p(s|x)\log p(w|x, s)
-$$
-This can be sampled with MC:
-
-* Sample $N$ sequences of attention decisions from the model
-* The gradient is the probability of the gradient of the probability of this sequence scaled by the log probability of generating the target words using that sequence of attention decisions
-* This is equivalent to using the REINFORCE algorithm (Williams, 1992) using the log probability of the observed words as a "reward function".
-
-Location based attention [[Bahdanau et al., 2014 Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]] 2k+ references. :
-$$
-u_t = v^T\tanh(WF+r_t)
-$$
+! [[Attention Mechanism]]
 
 ! Evaluation
 

@@ -1,5 +1,5 @@
 created: 20161122065117181
-modified: 20170602025258910
+modified: 20171105114715615
 tags: Vision [[Attention Mechanism]]
 title: Visual Attention
 type: text/vnd.tiddlywiki
@@ -23,7 +23,7 @@ For unsupervised tasks
 ** [[Magenta review|https://github.com/tensorflow/magenta/blob/master/magenta/reviews/draw.md]]: the foveation attention model is differentiable and so can be trained end to end with backpropagation. Instead of simply cropping a patch from the input image, DRAW extracts the pixels in the patch by Gaussian interpolation.
 
 !! Attention types
-* Reading attentions are widely used in discriminative tasks, usually transforms an image into a representation in a canonical coordinate space, with the parameters controlling the attentino learned by gradient descent.
+* Reading attentions are widely used in discriminative tasks, usually transforms an image into a representation in a canonical coordinate space, with the parameters controlling the attention learned by gradient descent.
 * Writing (generative) attentions decide which part to generate
 * Randomized
 * Error-based

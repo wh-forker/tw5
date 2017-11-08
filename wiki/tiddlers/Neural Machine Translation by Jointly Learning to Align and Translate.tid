@@ -1,0 +1,25 @@
+created: 20171105085216926
+modified: 20171105094629515
+tags: [[Attention Mechanism]] [[Neural Machine Translation]]
+title: Neural Machine Translation by Jointly Learning to Align and Translate
+type: text/vnd.tiddlywiki
+
+[[Bahdanau et al. 2014|https://arxiv.org/abs/1409.0473]]
+
+Pseudo code:
+
+```
+F = EncodeAsMatrix(f)
+e_0 = <s>
+s_0 = w (Learned initial state; Original paper uses Uh_1)
+t = 0
+while e_t != </s>
+  t = t+1
+  r_t = Vs_{t-1}
+  u_t = v^T tahh(WF + r_t) (computing this matrix product independent from states can be moved outside the loop to speedup)
+  a_t = softmax(u_t)
+  c_t = Fa_t
+  s_t = RNN(s_{t-1}, [e_{t-1};c_t]) (e is a learned embedding)
+  y_t = softmax(Ps_t+b) (P and b are learned parameters)
+  e_t|e_{<t} ~ Categorical(y_t)
+```

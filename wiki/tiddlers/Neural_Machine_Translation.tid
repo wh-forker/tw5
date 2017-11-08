@@ -1,5 +1,5 @@
 created: 20170614091659389
-modified: 20171012083104025
+modified: 20171105095039462
 tags: NLP
 title: Neural Machine Translation
 type: text/vnd.tiddlywiki
@@ -22,6 +22,8 @@ type: text/vnd.tiddlywiki
 * backwards input
 * decoder ensemble
 
+! Improvements
+* [[Attention Mechanism]] add attention to seq2seq translation: +11 BLEU
 
 ! Toolkit
 * [[OpenNMT|https://github.com/opennmt/opennmt]]

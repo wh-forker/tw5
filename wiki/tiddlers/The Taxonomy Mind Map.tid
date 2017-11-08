@@ -1,0 +1,38 @@
+created: 20171108043145050
+modified: 20171108054321440
+tags: [[Software Research]]
+title: The Taxonomy Mind Map
+type: text/vnd.tiddlywiki
+
+! Topics and related fields
+
+* ''Program Synthesis'': natural language to program
+** @@color:#859900;Good place to start because there are high quality datasets and excellent examples of previous work.@@
+** @@color:#ec5300;Generation may get high evaluation score but cannot run or give wrong answers.@@
+** @@color:#ec5300;We have to look for applications of translating from NL (or code) to (not accurate) code.@@
+* ''Program Induction'': sample to sample
+** @@color:#859900;Powerful models that can simulate modern computer architecture and learn programming paradigms like recursion.@@
+** @@color:#ec5300;Now limited to simple tasks.@@
+* ''Program Analysis'': gives proof of correctness in formal language
+** we may find related techniques to design metrics for code generation evaluation
+* ''Grammar Inference'': traditional program analysis problem of extraction FSA from data
+** can be reformulated in the language of machine learning, very close to language modelling
+
+! Algorithms and models
+
+* [[Natual language processing|NLP]]
+** seq2seq model and many [[Neural Machine Translation]] works can be used directly in program analysis
+* [[Sequential Models]]
+** advanced architecture e.g. memory and neural abstract machine are strong and effective
+* [[Reinforcement Learning]]
+** automatic discovery of program context, better training framework and many other applications
+* [[Probabilistic Models]]
+** training with unlabeled data.
+
+! Software applications
+
+||!formal logic way|!deep learning way|
+|Code migration|pattern matching|[[Neural Machine Translation]]|
+|Code fixing|compiler theory|[[Language Modelling]]|
+|Code generation|templates|[[Source Code Generating Models]]|
+|Security|program analysis|sequence classification and [[Reinforcement Learning]]|

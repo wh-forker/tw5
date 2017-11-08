@@ -1,21 +1,45 @@
 created: 20170602025305444
-modified: 20170920060955220
-tags: [[Sequential Models]]
+modified: 20171106065107903
+tags: [[Neural Machine Translation]] [[Conditional Language Modelling]] [[Sequential Models]]
 title: Attention Mechanism
 type: text/vnd.tiddlywiki
 
+! Bibs
 * [[Visual Attention]]
-* Sequential attention
-** [[Using Fast Weights to Attend to the Recent Past]]
-** [[Attentive Recurrent Comparators]]
-* Adaptive Computation Time
-** [[Adaptive Computation Time for Recurrent Neural Networks|https://arxiv.org/abs/1603.08983]]
-** [[tf implementation|https://github.com/DeNeutoy/act-tensorflow]], pretty slow
+Sequential attention
+
+* NIPS 2015 [[Grammar as a foreign language|https://arxiv.org/abs/1412.7449]]: parsing text
+** where it allows the model to glance at words as it generates the parse tree
+* 2015 [[A Neural Conversational Model|https://arxiv.org/abs/1506.05869]]
+** it lets the model focus on previous parts of the conversation as it generates its response
+* [[Using Fast Weights to Attend to the Recent Past]]
+* [[Attentive Recurrent Comparators]]
+* [[Online and Linear-Time Attention by Enforcing Monotonic Alignments|https://arxiv.org/abs/1704.00784]]: [[blog|http://colinraffel.com/blog/online-and-linear-time-attention-by-enforcing-monotonic-alignments.html]]
 
 ! Tutorials
 
 * [[Attention and Augmented Recurrent Neural Networks|https://distill.pub/2016/augmented-rnns/#attentional-interfaces]]
 
-! Bibs
+! Computing
 
-* [[Online and Linear-Time Attention by Enforcing Monotonic Alignments|https://arxiv.org/abs/1704.00784]]: [[blog|http://colinraffel.com/blog/online-and-linear-time-attention-by-enforcing-monotonic-alignments.html]]
+We need a weight for every column: this is an $|\mathbf f|$-length vector $\mathbf a_t$. 
+
+* Deterministic soft attention by weighted average: A simplified version of [[Bahdanau et al.|Neural Machine Translation by Jointly Learning to Align and Translate]]'s solution is with previous hidden states $\mathbf s_{t-1}$, compute the ''expected input embedding'' $\mathbf r_t = V\mathbf s_{t-1}$, then we take product with the source matrix to get the ''attention energy'', $\mathbf u_t = F^T\mathbf r_t$ and exponentiate and normalize to 1: $\mathbf a_t=\text{softmax}(\mathbf u_t)$. Finally the ''input source vector'' $\mathbf c_t=F\mathbf a_t$.
+* Stochastic hard attention (Xu et al., 2015) by sampling a column: $\mathcal L=-\log p(\mathbf w|\mathbf x) = -\log\sum_{\mathbf s}p(\mathbf s|\mathbf x)p(\mathbf w|\mathbf x, \mathbf s)\le-\sum p(\mathbf s|\mathbf x)\log p(\mathbf w|\mathbf x, \mathbf s)$. With Jensen's inequality, we can minimize a upper bound. This can be sampled with MC:
+** $-\sum_sp(s|x)\log p(w|x, s)\approx-\frac 1 N\sum_{i=1}^Np(s^i|x)\log p(w|x, s)$
+** Sample $N$ sequences of attention decisions from the model
+** The gradient is the probability of the gradient of the probability of this sequence scaled by the log probability of generating the target words using that sequence of attention decisions
+** This is equivalent to using the [[REINFORCE]] algorithm (Williams, 1992) using the log probability of the observed words as a "reward function".
+* Location based attention [[Bahdanau et al., 2014|Neural Machine Translation by Jointly Learning to Align and Translate]] 2k+ references. The inner product in attention energy part is replaced by a MLP: $\mathbf u_t = \mathbf v^T\tanh(WF+\mathbf r_t)$.
+
+The method described above is called "early binding", means the attention is computed from previous state. An alternative is we comput hidden states without attention but only apply it at the decoding stage. "late binding" is too late but good for computation. At training time, gradient of attention is independent with the hidden states. Thus easier to parallel.
+
+Attention also clipped the gradient thus help dealing with forgetting problem.
+
+! Comments
+Attention only cares about content
+
+* No obvious bias in favor of diagonals, short jumps, ferfility, etc.
+* Some work has begun to add other "structural" biases (Luong et al., 2015; Cohn et al., 2016), but there are lots more opportunities. @@color:#859900;Seq2tree works here, too. Putting linguistic features into neural networks@@
+
+In practice, attention still can go wild, partly because of the misleading of BLEU score, especially when source sentence is short.

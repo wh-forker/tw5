@@ -1,11 +1,14 @@
 created: 20170502084841487
-modified: 20170908065445358
+modified: 20171106084413741
 tags: [[Sequential Models]]
 title: Neural Abstract Machines
 type: text/vnd.tiddlywiki
 
 * NTM: could only 'allocate' memory in contiguous blocks, leading to management problems
+* Sparse Access Memory 
+* [[Lie-Access NTM]]
 * [[Differentiable Neural Computer]]
+* [[Neural Map: Structured Memory for Deep Reinforcement Learning|https://arxiv.org/abs/1702.08360]]: DNC for 3D navigation RL.
 
 ! Applications
 The model must interact with a symbolic executor through non-differentiable operations to search over a large program space. 

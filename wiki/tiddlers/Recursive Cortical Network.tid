@@ -1,0 +1,19 @@
+created: 20171103094212717
+modified: 20171103110311511
+tags: [[Fully-observed Models]]
+title: Recursive Cortical Network
+type: text/vnd.tiddlywiki
+
+[[link|https://www.vicarious.com/2017/10/26/common-sense-cortex-and-captcha/]]
+
+RCN integrates and builds upon various ideas from compositional models:
+
+* heirarchical composition
+* gradual building of invariances
+* lateral connections for selectivity
+* contour surfaces factorization
+** surfaces modeled using pairwise CRF, smoothness of variations of surface properties.
+** contours modeled using a compositional hierarchy of features
+* joint-explanation based parsing
+
+Inferenced with Belief propagation.

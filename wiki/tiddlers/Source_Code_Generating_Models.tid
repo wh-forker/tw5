@@ -1,5 +1,5 @@
 created: 20170926070602696
-modified: 20171031005822730
+modified: 20171102051949740
 tags: [[NLP for SE]] [[Deep Generative Models]]
 title: Source Code Generating Models
 type: text/vnd.tiddlywiki
@@ -9,8 +9,8 @@ type: text/vnd.tiddlywiki
 *** 2016 Automated Correction for Syntax Errors in Programming Assignments using Recurrent Neural Networks.
 ** Code generation
 *** 2016 Learning Python Code Suggestion with a Sparse Pointer Network
-*** 2016 A deep language model for software code
-*** 2016 Neural Code Completion
+*** 2016 A deep language model for software code: meaningless paper with a concept software called DeepSoft that never exists
+*** 2016 [[Neural Code Completion|https://openreview.net/forum?id=rJbPBt9lg]]: rejected ICLR17, read the review and traditional baseline methods
 *** 2017 Neural Attribute Machines for Program Generation
 ** Benchmark synthesis
 *** 2017 Synthesizing benchmarks for predictive modeling
@@ -18,14 +18,12 @@ type: text/vnd.tiddlywiki
 ** Code migration
 ** Pseudocode generation
 ** Code fixing
-** NLI:
-*** Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning
-**** Policy-based RL helps with the where clause accuracy
 *** 2016 sk_p: a neural program corrector for MOOCs
 * Multimodal Models
 ** Code systhesis: from natural language to code
 *** 2014 Structured Generative Models of Natural Source Code
-*** 2015 Bimodal modelling of source code and natural language
+**** Read for a summary of traditional methods and program induction introduction
+*** 2015 Bimodal modelling of source code and natural language: also traditional method
 *** 2016 [[Latent Predictor Networks for Code Generation]]
 *** 2017 Program synthesis from natural language using recurrent neural networks
 *** 2017 Abstract Syntax Networks for Code Generation and Semantic Parsing
@@ -33,6 +31,8 @@ type: text/vnd.tiddlywiki
 **** seq2action2tree permits syntax guarantee, right way to follow
 **** Sequence model kind of simple. Can external memory improve parent supervision? Is conv encoder helpful?
 **** Invent code evaluation metric: something like ''Semantic Textual Similarity''
+*** Seq2SQL: Generating Structured Queries from Natural Language using Reinforcement Learning
+**** Policy-based RL helps with the where clause accuracy
 ** Documentation
 *** 2016 Summarizing source code using a neural attention model
 *** 2017 [[A parallel corpus of Python functions and documentation strings for automated code documentation and code generation|https://arxiv.org/abs/1707.02275]]: provides [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]] and use [[Nematus|https://github.com/EdinburghNLP/nematus]] as baseline model

@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20171011123235794
+modified: 20171105082800906
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -16,22 +16,24 @@ type: text/vnd.tiddlywiki
 ** uRNN
 ** scoRNN
 
-!! Faster RNN
-* [[Quasi-RNN]]
-* [[SRU]]
-
-!! [[Attention Mechanism]]
-
-!! Memory networks
-
-* External Memory
-** [[Memory Networks]]
-** [[Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]]
-** (Stack) RNNs with attention
-** Dynamic Mem. Nets
-** [[Neural Abstract Machines]]
+!! Advanced Structures
+* Faster RNN
+** [[Quasi-RNN]]
+** [[SRU]]
+* [[Attention Mechanism]]
+* Memory networks
+** External Memory
+*** [[Memory Networks]]
+*** [[Neural Machine Translation by Jointly Learning to Align and Translate|https://arxiv.org/abs/1409.0473]]
+*** (Stack) RNNs with attention
+*** Dynamic Mem. Nets
+* [[Neural Abstract Machines]]
 * Associative memory
 ** [[Using Fast Weights to Attend to the Recent Past]]
+* Adaptive Computation Time
+** [[Adaptive Computation Time for Recurrent Neural Networks|https://arxiv.org/abs/1603.08983]]
+** [[tf implementation|https://github.com/DeNeutoy/act-tensorflow]], pretty slow
+* Neural Programmer
 
 ! Bibs
 

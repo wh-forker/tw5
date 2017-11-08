@@ -1,5 +1,5 @@
 created: 20150514055814821
-modified: 20170911131800599
+modified: 20171106233741005
 tags: [[Deep Neural Networks Architectures]]
 title: Recurrent Neural Networks
 type: text/vnd.tiddlywiki
@@ -29,3 +29,6 @@ RNN is a very deep feedforward neural newwork that has a layer for each timestep
 * [[Synthetic Gradients]]
 * [[Waybackprop]]
 * [[Training Recurrent Networks Online Without Backtracking]]
+
+! Tools
+* [[RNNVis|https://github.com/myaooo/RNNVis]] tf 0.12 visualization
