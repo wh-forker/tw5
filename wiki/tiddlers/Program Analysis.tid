@@ -1,0 +1,11 @@
+created: 20171114043350508
+modified: 20171114044936826
+tags: [[Software Research]]
+title: Program Analysis
+type: text/vnd.tiddlywiki
+
+Build FSA from execution traces.
+FSA generation (specification miner):
+
+* Automatic mining of specifications from invocation traces and method invariants
+* A framework for the evaluation of specification miners based on finite state machines

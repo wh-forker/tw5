@@ -1,8 +1,12 @@
 created: 20171108043145050
-modified: 20171108060217664
+modified: 20171114055424412
 tags: [[Software Research]]
 title: AI for SE Mind Map
 type: text/vnd.tiddlywiki
+
+! Researchers
+* Christoph. Treude
+* David Lo
 
 ! Topics and related fields
 
@@ -13,13 +17,17 @@ type: text/vnd.tiddlywiki
 * ''Program Induction'': sample to sample
 ** @@color:#859900;Powerful models that can simulate modern computer architecture and learn programming paradigms like recursion.@@
 ** @@color:#ec5300;Now limited to simple tasks.@@
-* ''Program Analysis'': gives proof of correctness in formal language
+* [[Program Analysis]]: gives proof of correctness in formal language
 ** we may find related techniques to design metrics for code generation evaluation
 * ''Grammar Inference'': traditional program analysis problem of extraction FSA from data
 ** can be reformulated in the language of machine learning, very close to language modelling
+* [[Software Analysis]]
 
 ! Algorithms and models
 
+* Domain-Specific Language based models
+** Can we learn DSL with rule extraction?
+** Learning from LM or NTM unless it can be done end2end. An idea is to use NTM for [[SimplePrograms|Program Synthesis for Character Level Language Modeling]]
 * [[Natual language processing|NLP]]
 ** seq2seq model and many [[Neural Machine Translation]] works can be used directly in program analysis
 * [[Sequential Models]]
@@ -28,37 +36,27 @@ type: text/vnd.tiddlywiki
 ** automatic discovery of program context, better training framework and many other applications
 * [[Probabilistic Models]]
 ** training with unlabeled data.
+* [[Deep Generative Models]]
+** Adversarial training in unsupervised setting
+* [[Autoregressive Models]]
+** another sequence to sequence translation technique.
 
 ! Software applications
 
 ||!formal logic way|!deep learning way|
 |Code migration|pattern matching|[[Neural Machine Translation]]|
 |Code fixing|compiler theory|[[Language Modelling]]|
-|Code generation|templates|[[Source Code Generating Models]]|
+|Code generation|DSL-based Models|[[Source Code Generating Models]]|
 |Security|program analysis|sequence classification and [[Reinforcement Learning]]|
 
 Other applications I can think of
 
 * testing
 * debugging
+** bug localization: given a bug report, find the program elements related to the bug.
+* documentation
+** 
 * distributed system analysis
 * code optimization
 
-! Tasks and data
-
-* Large code corpus
-** [[Learning from "Big Code"|http://learnbigcode.github.io/]]
-* human annotators, clean but homogeneous
-** Project Euler dataset (pseudo-code as description)
-** Parallel Django dataset (pseudo-code as description): This dataset includes all source code of Python web framework Django with line-by-line English annotation. 
-*** Diverse, spanning a wide variety of real-world use case like string manipulation, IO operations and exception handling.
-** [[card2code|https://github.com/deepmind/card2code]]: DeepMind generates code for MTG and HS cards
-** [[WikiSQL|https://github.com/salesforce/WikiSQL]]
-* Assembled from user-generated descriptions
-** StackOverflow: ACL 2016 Summarizing Source Code using a Neural Attention Model
-** IFTTT: Language to code: Learning semantic parsers for if-this-then-that recipes
-** Docstring: [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]]
-* Debugging
-** Defects4J: a curated corpus of bugs
-
-Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.
+! [[SE Data]]

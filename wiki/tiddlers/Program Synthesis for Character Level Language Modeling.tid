@@ -1,0 +1,30 @@
+created: 20171108062558766
+modified: 20171109020952625
+tags: [[Source Code Generating Models]]
+title: Program Synthesis for Character Level Language Modeling
+type: text/vnd.tiddlywiki
+
+[[link|https://openreview.net/forum?id=ry_sjFqgx]]
+
+* A significantly different approach than the currently accepted NN methods.
+* Character level generation requires delicate rules and logic for the generation.
+
+! The DSL
+* SimpleProgram
+** Move: left/write and find
+** Write: write where? context? more like a read
+*** Hash: write hash between current pos and last write
+*** Dist: dist between current pos and last write
+* SwitchProgram: select subprograms (functions?)
+** guard
+** branch conditions and programs to use
+* StateProgram: The memory block, one integer (for one feature)?
+** modified at each input character
+
+! DNC as DSL
+* Simple
+** random access
+** links work for PREV_CHAR
+** dist not obvious but is this important?
+* Switch
+** 

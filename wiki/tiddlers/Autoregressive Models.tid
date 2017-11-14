@@ -1,0 +1,21 @@
+created: 20171113030627529
+modified: 20171113030958926
+tags: [[Deep Generative Models]]
+title: Autoregressive Models
+type: text/vnd.tiddlywiki
+
+* [[WaveNet]]
+* [[Neural Audio Synthesis of Musical Notes with WaveNet Autoencoders]]
+* [[Pixel-CNN]]
+* [[SampleRNN]]
+* Video Pixel Network
+* [[Parallel Multiscale Autoregresssive Density Estimation]]
+* ByteNet
+* [[A Neural Parametric Singing Synthesizer|http://arxiv.org/abs/1704.03809v1]]
+** What is the Causual conv input?
+** How's the model trained
+** How's the time sequence represented
+** Hints for OCR context?
+* [[VQ-VAE]]
+
+Autoregressive models are trained and evaluated by teacher-forcing, meaning the model receives as input the true values of the variables being conditioned on. During generation, however, these variables are not known, and the model conditions on its own best predictions of their values. This difference between training/evaluation and generation is a known source of trouble: the model only ever learns one-step transitions, and never learns to deal with its own errors. At generation time it can easily run off the tracks.

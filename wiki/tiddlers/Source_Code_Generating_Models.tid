@@ -1,5 +1,5 @@
 created: 20170926070602696
-modified: 20171102051949740
+modified: 20171108062552030
 tags: [[NLP for SE]] [[Deep Generative Models]]
 title: Source Code Generating Models
 type: text/vnd.tiddlywiki
@@ -11,6 +11,7 @@ type: text/vnd.tiddlywiki
 *** 2016 Learning Python Code Suggestion with a Sparse Pointer Network
 *** 2016 A deep language model for software code: meaningless paper with a concept software called DeepSoft that never exists
 *** 2016 [[Neural Code Completion|https://openreview.net/forum?id=rJbPBt9lg]]: rejected ICLR17, read the review and traditional baseline methods
+*** 2016 [[Program Synthesis for Character Level Language Modeling]]
 *** 2017 Neural Attribute Machines for Program Generation
 ** Benchmark synthesis
 *** 2017 Synthesizing benchmarks for predictive modeling

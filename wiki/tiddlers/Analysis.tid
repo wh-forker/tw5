@@ -1,8 +1,11 @@
 created: 20161103065737667
-modified: 20170821031405926
+modified: 20171114082312769
 tags: Math
 title: Analysis
 type: text/vnd.tiddlywiki
 
+* [[Continuous approximations to arithmetic functions]]
 * [[Inequalities]]
+* [[Fisher information metric]]
 * [[Fourier Transform]]
+* [[Wavelet Transform]]

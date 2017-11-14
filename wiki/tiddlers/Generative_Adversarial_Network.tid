@@ -1,5 +1,5 @@
 created: 20161021080332245
-modified: 20171009043818430
+modified: 20171113034955336
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
@@ -59,6 +59,8 @@ The loss $\mathcal L(\theta^*, \phi) = 2\mathrm{JS}(p^*\|q_\phi)-\log(4)$.
 * [[WGAN]] uses Earth-Mover distance as the objective. This requires the discriminator to be a Lipschitz function and they use weight clipping to achieve that.
 * [[Improved WGAN|https://arxiv.org/abs/1704.00028]] imposes $\|\nabla_{\hat x}D_{\theta}(\hat x)\|_2\approx 1$ where $\hat x = \epsilon x+(1-\epsilon)G_\phi(z)$. This leads to D having norm 1 gradients everywhere between all real and fake sample pairs in the limit.
 * [[CycleGAN and pix2pix|https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix]]: pretty good image effects.
+* [[Progressive Growing of GANs for Improved Quality, Stability, and Variation|http://research.nvidia.com/publication/2017-10_Progressive-Growing-of]]
+** Good results
 
 !! Theory
 

@@ -1,0 +1,32 @@
+created: 20171114045308935
+modified: 20171114054131447
+tags: [[Software Research]]
+title: SE Data
+type: text/vnd.tiddlywiki
+
+! Tasks and data
+
+* Large code corpus
+** Karpathy et al. 2015 Linux Kernel Dataset
+** [[Learning from "Big Code"|http://learnbigcode.github.io/]]
+* human annotators, clean but homogeneous
+** Project Euler dataset (pseudo-code as description)
+** Parallel Django dataset (pseudo-code as description): This dataset includes all source code of Python web framework Django with line-by-line English annotation. 
+*** Diverse, spanning a wide variety of real-world use case like string manipulation, IO operations and exception handling.
+** [[card2code|https://github.com/deepmind/card2code]]: DeepMind generates code for MTG and HS cards
+** [[WikiSQL|https://github.com/salesforce/WikiSQL]]
+* Assembled from user-generated descriptions
+** StackOverflow: ACL 2016 Summarizing Source Code using a Neural Attention Model
+** IFTTT: Language to code: Learning semantic parsers for if-this-then-that recipes
+** Docstring: [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]]
+* Debugging
+** Defects4J: a curated corpus of bugs (in total 395)
+** 41 AspectJ bugs are from the iBugs dataset which were collected by Dallmeier and Zimmermann. (code before and after fix) plus some others collected by David Lo's lab. several hundreds in total
+** Eclipse, etc 3k+ instances. Related file but not the exact line.
+* Code review
+** match best reviewer given descriptions
+* Social media
+** find related tweets (keywords or social network mining stuff)
+** text analysis of blogs, StackOverflow posts, feature descriptions
+
+Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.

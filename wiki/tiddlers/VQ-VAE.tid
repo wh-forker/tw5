@@ -1,0 +1,11 @@
+created: 20171113030858462
+modified: 20171114082205197
+tags: [[Autoregressive Models]]
+title: VQ-VAE
+type: text/vnd.tiddlywiki
+
+[[link|https://arxiv.org/abs/1711.00937]]
+
+pretty nice result of combining VAE with pixelRNN. Further work should be done in speaker style conversion.
+
+The quantization method used is so simple. Should consider other approximation methods. [[Continuous approximations to arithmetic functions]]

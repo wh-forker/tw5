@@ -1,0 +1,45 @@
+created: 20171114022015233
+modified: 20171114060701811
+tags: [[Software Research]]
+title: Software Analysis
+type: text/vnd.tiddlywiki
+
+Ahmed E. Hassan
+
+* Analyzing a Decade of Linux System Calls
+** System calls and related commits are extracted
+** analyze the commit type and draw some empirical conclusions
+** find patterns in API evolution
+** some conclusions about software developments are drawn
+* Towards a Better Understanding of the Impact of Experimental Components on Defect Prediction
+** very nice thesis on defect prediction
+
+David Lo
+
+Bug localization
+
+* Information Retrieval and Spectrum Based Bug Localizatin: Better Together
+** use bug report to query defected code parts
+* Compositional Vector Space Models for Improved Bug Localization
+** more data but only searching for file
+** solving LDA with GA seems so weird
+
+similar to a learn to rank task
+
+* Synergizing Specification Miners through Model Fissions and Fusions
+** static program analysis for documentation
+** construct FSA from execution traces
+** fissing FSA to common blocks
+** fuse FSA from a set of LTL constraints
+* Who Should Review This Change? Putting Text and File Location Analyses Together for More Accurate Recommendations
+** text recommendation system to suggest best reviewer for certain piece of code
+** description field of review request in important, also the changed file directory
+** another learn to rank task
+* What Are the Characteristics of High-Rated Apps? A Case Study on Free Android Applications
+** a hypothesis testing on 28 factors of 1,492 apps to the ratings
+** didn't find the description but inferring from the dataset and results, I guess they are doing a 2-class classification.
+* What’s Hot in Software Engineering Twitter Space?
+** Social network mining on twitter
+** Filter out related tweets, rule based methods
+* Deep Learning for Just-In-Time Defect Prediction
+** a simple classification task with RBM, no gimmicks.
