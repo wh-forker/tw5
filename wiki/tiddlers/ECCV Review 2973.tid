@@ -1,0 +1,25 @@
+created: 20180513095043300
+modified: 20180514062026019
+tags: 
+title: ECCV Review 2973
+type: text/vnd.tiddlywiki
+
+''Rating'': Weakly rejection
+
+''Summary'':
+Have proposed a one-stage approach to perform sequential analysis of the scene for instance segmentation. 
+The idea and framework resemble [1] to segment one instance at a time. Different from [1], a categorical label is predicted with instance binary map. This makes the framework capable of multiclass segmentation with only one model. The authors further mined for common object sorting patterns in different aspects. 
+
+''Strengths'':
+The paper is overall well-written, with detailed description of the method and ablation study of the model structure. The proposed method benefits from multitask learning and greatly simplifies the multiclass instance segmentation procedure of previous recurrent approaches. Analysis of object sorting patterns on multiple datasets demonstrates that the model can capture the object distribution of different scenarios. 
+
+''Issues'':
+The authors indicate end-to-end training can boost the performance of the task of instance segmentation. However, the proposed method does not show performance or computation advantage against SOTA RNN approach [2] or 2-stage approach [3].<br>
+Reviewer believes it is more fair to compare the performance based on similar backbone networks. However, ResNet-101 is used in this paper while FCN is used in [1] and [2].<br>
+More experiments are needed to justify the validity of the proposed method on highly multiclass dataset, e.g. MSCOCO.
+
+''Overall Opinion'': Marginally below acceptance threshold. Not enough experiment to support the multitask idea or the ConvLSTM architecture.
+
+* [1] Romera-Paredes, Bernardino, and Philip Hilaire Sean Torr. "Recurrent instance segmentation." European Conference on Computer Vision. Springer, Cham, 2016.
+* [2] Ren, Mengye, and Richard S. Zemel. "End-To-End Instance Segmentation With Recurrent Attention." Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition. 2017.
+* [3] He, Kaiming, et al. "Mask r-cnn." Computer Vision (ICCV), 2017 IEEE International Conference on. IEEE, 2017.

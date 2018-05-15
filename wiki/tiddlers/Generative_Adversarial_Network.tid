@@ -1,5 +1,5 @@
 created: 20161021080332245
-modified: 20171113034955336
+modified: 20180125101805188
 tags: [[Deep Generative Models]]
 title: Generative Adversarial Network
 type: text/vnd.tiddlywiki
@@ -61,6 +61,8 @@ The loss $\mathcal L(\theta^*, \phi) = 2\mathrm{JS}(p^*\|q_\phi)-\log(4)$.
 * [[CycleGAN and pix2pix|https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix]]: pretty good image effects.
 * [[Progressive Growing of GANs for Improved Quality, Stability, and Variation|http://research.nvidia.com/publication/2017-10_Progressive-Growing-of]]
 ** Good results
+* [[SN-GAN]] learns ImageNet
+* [[StarGAN]]
 
 !! Theory
 
@@ -68,7 +70,8 @@ The loss $\mathcal L(\theta^*, \phi) = 2\mathrm{JS}(p^*\|q_\phi)-\log(4)$.
 * [[Density Ratio GANs]]
 
 !! Applications
-
+* Text Generation
+** [[MaskGAN]]
 * [[Learning a Probabilistic Latent Space of Object Shapes via 3D Generative-Adversarial Modeling|https://arxiv.org/abs/1610.07584]]
 * [[Semi-Supervised Learning with Generative Adversarial Networks|http://arxiv.org/abs/1606.01583]]
 ** Better images than DCGAN are generated adding the classification label

@@ -1,11 +1,42 @@
 created: 20161103053934603
-modified: 20161116030455206
+modified: 20180102091336654
 tags: [[Deep Learning]]
 title: Deep Learning Basics
 type: text/vnd.tiddlywiki
 
+! Non-Linearities
 * [[Neural Net Functions]]
+
+! Connectivity Pattern
 * [[Deep Neural Networks Architectures]]
+* Dilated
+* Recurrent
+* Recursive
+* Skip / Residual
+* Random
+
+! Optimizer
 * [[Back Propagation]]
 * [[Optimization Algorithms]]
+
+! Loss
+* Cross Entropy
+* Adversarial
+* Variational
+* Max. Likelihood
+* Sparse
+* L2 Reg
+* REINFORCE
+
+! Hyper Parameters
 * [[Deep Learning Tricks]]
+* Learning Rate
+* Decay
+* Layer Size
+* Batch Size
+* Dropout Rate
+* Weight init
+* Data augmentation
+* Gradient clipping
+* Beta
+* Momemtum

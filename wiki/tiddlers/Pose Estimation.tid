@@ -1,0 +1,17 @@
+created: 20180508101932330
+modified: 20180509095541191
+tags: Vision
+title: Pose Estimation
+type: text/vnd.tiddlywiki
+
+* [[OpenPose|https://github.com/CMU-Perceptual-Computing-Lab/openpose]]
+** a fast inference implementation: [[tf-openpose|https://github.com/ildoonet/tf-openpose]]
+* [[tf-pose-estimation|https://github.com/ildoonet/tf-pose-estimation]]: nice code base
+* [[CPN|https://github.com/chenyilun95/tf-cpn]]: 2017 COCO Keypoints winner
+** GlobalNet: FPN
+** RefineNet: upsample and concat
+** tricks: soft-NMS, ROIAlign
+
+! As segmentation
+* [[Mask R-CNN|https://arxiv.org/abs/1703.06870]]: ROIAlign, keypoints as one-hot masks
+* 

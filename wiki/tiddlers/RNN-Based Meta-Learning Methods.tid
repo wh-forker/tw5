@@ -1,0 +1,31 @@
+created: 20171121041814326
+modified: 20171121045020205
+tags: [[Recurrent Neural Networks]] Meta-Learning
+title: RNN-Based Meta-Learning Methods
+type: text/vnd.tiddlywiki
+
+! Predict outputs
+Meta-learner model $g$ with parameters $\phi$ takes input $x$ and predicts ouput $y$
+$$
+\hat y^* = g(\{(x, y)\}, x^*, \phi)
+$$
+$g$ is always a sequence model iterates over dataset.
+
+!! Bibs
+
+* ICML 2016, Santoro, Meta-learning with memory-augmented neural networks
+* 2016 Duan, Rl2: Fast reinforcement learning via slow reinforcement learning
+* 2016 Wang, Learning to Reinforcement Learn
+* 2017 Mishra, Meta-learning with temporal convolutions
+
+! Predict parameters
+$g$ talks dataset $\mathcal D$ and current learner parameters $\theta$, outputs new parameter $\theta'$
+
+!! Bibs
+
+* 1992, Bengio, On the optimization of a synaptic learning rule
+* 2001, Hochreiter, Learning to learn using gradient descent
+* NIPS 2016, Andrychowicz, Learning to learn by gradient descent by gradient descent
+* ICLR 2017, Li, Learning to optimize
+* ICLR 2017, Ravi, Optimization as a model for few-shot learning
+* ICLR 2017, Ha, Hypernetworks

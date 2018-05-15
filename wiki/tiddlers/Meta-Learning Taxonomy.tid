@@ -1,0 +1,50 @@
+created: 20180105102253470
+modified: 20180514063733329
+tags: Meta-Learning
+title: Meta-Learning Taxonomy
+type: text/vnd.tiddlywiki
+
+* [[RL2]]
+* Meta-sgd: Learning to learn quickly for few shot learning
+* Simple Neural Attentive Meta-Learner
+** replace the LSTM with dilated temporal convolution (like wavenet) + attention
+* [[Model-Agnostic Meta-Learning]]
+* [[Meta Networks]]
+
+!! Model based
+$$
+P_\theta(y|x, S) = f_\theta(x, S)
+$$
+
+* [[Santoro et al. 16|Meta-Learning with Memory Augmented Neural Networks]]
+* Duan et al. 17
+* Wang et al. 17
+* Munkhdalai & Yu 17
+* [[Mishra et al. 17 Meta-Learning with Temporal Convolutions|https://arxiv.org/abs/1707.03141]]
+
+!! Metric Based
+$$
+P_\theta(y|x, S) = \sum_{(x_i, y_i)\in S}k_\theta(x, x_i)y_i
+$$
+
+* Koch 15
+* Vinyals et al. 16
+* Snell et al. 17
+* Shyam et al. 17
+* Sung et al. 17
+
+!! Optimization Based
+$$
+P_\theta(y|x, S) = f_{\theta(S)}(x)
+$$
+$$
+\theta(S) = g_{\theta_g}(\theta_0, \{\nabla_{\theta_0}L(x_i, y_i)\}_{(x_i, y_i)\in S})
+$$
+
+* Schmidhuber 87, 92
+* Bengio et al. 90, 92
+* Hochreiter et al. 01
+* Li & Malik 16
+* Andrychowicz et al. 16
+* Ravi & Larochelle 17
+* Finn et al. 17

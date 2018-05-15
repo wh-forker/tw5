@@ -1,0 +1,14 @@
+created: 20180112010843710
+modified: 20180112044726363
+tags: [[Overcoming Catastrophic Forgetting]]
+title: Reduce representational overlap
+type: text/vnd.tiddlywiki
+
+This can be done at the output, intermediate and also input levels.
+
+* Structural regularization: seeks to prevent major changes in the weights that were important for previous tasks.
+** present in the loss function
+** at a separate merging step
+* Dedicating specific sub-parts of the network for each task is another way of reducing representational overlap
+
+The main trade-off is to effectively distribute the capacity of the network across tasks while maintaining important weights and reusing prvious knowledge.

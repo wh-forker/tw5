@@ -1,0 +1,20 @@
+created: 20180412063645025
+modified: 20180412100008719
+tags: [[Software Analysis]]
+title: Model Checking
+type: text/vnd.tiddlywiki
+
+Process Analysis Toolkit (PAT)
+
+OTF model checking
+
+Markov Decision Process
+
+value iteration: decision making or estimating the equilibrium?
+
+
+
+* Is the states and goals always discrete?
+* First example is quite different from later ones. Is the solution always optimal or heuristic? What are the scope of problems PAT is capable of?
+* How is PAT comparing to the tabular method of value iteration in reinforcement learning?
+* Kuhn poker data: simulated?

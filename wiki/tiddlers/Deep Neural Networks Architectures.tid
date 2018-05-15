@@ -1,5 +1,5 @@
 created: 20150505093817222
-modified: 20170503023301088
+modified: 20180509095739029
 tags: [[Deep Learning Basics]]
 title: Deep Neural Networks Architectures
 type: text/vnd.tiddlywiki
@@ -12,7 +12,14 @@ type: text/vnd.tiddlywiki
 * [[Convolutional Neural Network]]
 * [[Recurrent Neural Networks]]
 
-Neural Architecture Search: 
-* generally a parameter search with RL
-* try some low complexity methods like random forest?
-* what those models indicate?
+! Neural Architecture Search
+
+* Evolutionary
+** hard to scale
+* RL
+** generally a parameter search with RL
+** try some low complexity methods like random forest?
+** what those models indicate?
+** [[ENAS-pytorch|https://github.com/carpedm20/ENAS-pytorch]]
+* Meta-Learner
+** [[SMASH: One-Shot Model Architecture Search through HyperNetworks]]

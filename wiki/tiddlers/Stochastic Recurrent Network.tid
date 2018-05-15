@@ -1,0 +1,21 @@
+created: 20171116090705837
+modified: 20171116103502569
+tags: [[Variational Generative Models]] [[Deep Generative Models]]
+title: Stochastic Recurrent Network
+type: text/vnd.tiddlywiki
+
+* [[NIPS 2017 paper|https://arxiv.org/abs/1711.05411]]
+
+A variational model with RNN as decoder. Similar works are
+
+* STORN
+* VRNN
+* SRNN
+
+In this work
+
+* Backward recurrent network for approximate posterior (SRNN)
+* Condition the recurrent state of the forward auto-regressive model with the stochastic variables and use a conditional prior (VRNN, STORN)
+* auxiliary costs to force the latent variables to encode information about the future.
+
+To deal with the "posterior collapse" issue, often caused by the latent being ignored, they force the latent variables to encode useful information by adding auxiliary training signals for the latent variables.

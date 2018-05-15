@@ -1,5 +1,5 @@
 created: 20161122030025792
-modified: 20161201075516647
+modified: 20171205102705843
 tags: [[Deep Generative Models]] Blog
 title: Attentive Generative Models
 type: text/vnd.tiddlywiki
@@ -13,3 +13,5 @@ refs:
 * [[Attend, Infer, Repeat: Fast Scene Understanding with Generative Models|https://deepmind.com/research/publications/attend-infer-repeat-fast-scene-understanding-generative-models/]]
 ** understanding 3D scenes
 ** where is the attention is yet to find
+
+! [[External memory for one-shot generalization]]

@@ -1,0 +1,35 @@
+created: 20171206041711798
+modified: 20180105063805759
+tags: [[AI for SE Mind Map]]
+title: AI for SE Challenges
+type: text/vnd.tiddlywiki
+
+! Discrete and symbolic representation
+* Discrete
+** Quantized MemNN
+** [[VQ-VAE]]
+** [[Gumbel Machinery]]
+* Symbolic
+** N-Gram Machine: extract information from auto-encoding. neural programming interpreter.
+** Differentiable Program Induction
+** [[Relation Extraction]]
+
+! Data efficient training
+* Hierarchical reinforcement learning?
+* Relate active learning and meta learning
+** [[Sparse Bayesian Learning with RNNs|Multi-Scale RNN]]
+** [[Towards learning to learn distributions|https://arxiv.org/pdf/1710.10304.pdf]]
+
+! Model related
+* Embedding
+** Char embedding for code completion
+* Powerful models
+** Fast-slow LSTM
+** [[Tensorized LSTMs for Sequence Learning]]
+
+! Taks
+* Code completion
+** [[Language Model with FS-LSTM]]
+** generative model and density estimation
+* Program synthesis
+** [[NL2Code]]

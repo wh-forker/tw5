@@ -1,5 +1,5 @@
 created: 20170405104624230
-modified: 20170918081926127
+modified: 20180505063232797
 tags: NLP
 title: Question Answering
 type: text/vnd.tiddlywiki
@@ -27,4 +27,5 @@ type: text/vnd.tiddlywiki
 ! Bibs
 
 * [[DrQA]]
-* [[R-Net]]: SOTA on SQuAD
+* [[R-Net]]
+* [[QANet|https://github.com/NLPLearn/QANet]]: SOTA on SQuAD

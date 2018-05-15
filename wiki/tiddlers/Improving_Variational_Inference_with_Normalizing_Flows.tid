@@ -1,13 +1,17 @@
 created: 20161103082456074
-modified: 20161212092957311
+modified: 20171130051654184
 tags: [[Variational Generative Models]] Papers
 title: Improving Variational Inference with Normalizing Flows
 type: text/vnd.tiddlywiki
 
-Normalizing flows are a series of invertible transformations to latent variables with a simple posterior.
+Normalizing flows are a series of invertible transformations to latent variables with a simple posterior. 
 
 ! General Normalizing Flows
-Aim at formulating the flow for which the Jacobian-determinant is relatively easy to compute. Example is [[Variational Inference with Normalizing Flows|https://arxiv.org/abs/1505.05770]]
+They model a multivariate distribution $p_X(x)$ as an explicit invertible non-linear transformation $f$ of a simple tractable distribution $p_Z(z)$.
+$$
+\log p_X(x) = \log p_Z(z) - \log|\frac{dx}{dz}|
+$$
+Aim at formulating the flow for which the Jacobian-determinant $|\frac{dx}{dz}|$ is relatively easy to compute. Example is [[Variational Inference with Normalizing Flows|https://arxiv.org/abs/1505.05770]]
 
 ! Volume-Preserving Flows
 Design series of transformations s.t. the Jacobian-determinant equals 1 while still it allows to obtain flexible posterior distributions.
@@ -18,6 +22,8 @@ Examples:
 * Hamiltonian Variational Inference
 
 !! Inverse Autoregressive Flow
+IAFs are stochastic generative models whose latent variabels are arranged to that all elements of a high dimensional observable sample can be generated in parallel. IAFs are a special type of normalising flow. 
+
 [[link|https://arxiv.org/abs/1606.04934]] [[github|https://github.com/openai/iaf]]
 
 IAF is the lower triangular inverse Cholesky matrix with ones on the diagonal. It improves nomalizing flow to be computationally cheap to:
@@ -34,6 +40,15 @@ where subtraction and division are elementwise. This has a lower triangular jaco
 $$
 \log\det\left|\frac{dz}{dy}\right| = -\sum_{i=1}^D\log\sigma_i(y)
 $$
+Initially, a random sample is drawn from $z\sim\text{Logistic}(0, I)$. The following transformation is applied to $z$:
+$$
+x_t = z_t\cdot s(z_{<t}, \theta)+\mu(z_{<t}, \theta)
+$$
+$p(x_t|z_{<t})$ follows a logistic distribution:
+$$
+p(x_t|z_{<t}) = \mathbb L(x_t|\mu(z_{<t}, \theta), s(z_{<t}, \theta)),
+$$
+while $\mu(z_{<t}, \theta)$ and $s(z_{<t}, \theta)$ can be any autoregressive model.
 
 !! Householder Flow
 [[paper|http://arxiv.org/abs/1611.09630]]

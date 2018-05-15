@@ -1,0 +1,11 @@
+created: 20171122090513606
+modified: 20171122091034392
+tags: [[Generative Adversarial Network]] [[GAN Stablizing Strategies]]
+title: SN-GAN
+type: text/vnd.tiddlywiki
+
+* The discriminator family could bias the learning algorithm toward mode collapse.
+* The training fails to equilibrate the game
+** as said in [[this blog|http://www.inference.vc/my-notes-on-the-numerics-of-gans/]]
+
+We make the discriminator $f$ $K$-Lipschitz continuous so that the derivative would be bounded.

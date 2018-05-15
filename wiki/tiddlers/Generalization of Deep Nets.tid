@@ -1,0 +1,37 @@
+created: 20180221075249976
+modified: 20180403113519496
+tags: [[Deep Learning Theory]]
+title: Generalization of Deep Nets
+type: text/vnd.tiddlywiki
+
+! Generalization
+
+* [[Rethinking Generalization]] [[code|https://github.com/rharish101/DLGeneralization]]
+** analyzes the Rademacher complexity of a neural network, which measures how much a model fits random noise in the data.
+
+The generalization error is of the order of $\sqrt{N/m}$, $N$ is the number of effective parameters (or complexity measure), $m$ is the number of samples. VC growth fuction $S_{\mathcal F}(m)$
+$$
+S_{\mathcal F}(m) = \sup_{z_1,\dots,z_m}|\mathcal F_{z_1,\dots,z_m}|
+$$
+shows how many ways our training data can be classified by functions in $\mathcal F$. VC bound is too loose to be of no practical use.
+
+Following papers try to quantify the number of true parameters:
+
+* NIPS 2017 [[Spectrally-normalized margin bounds for neural networks|https://arxiv.org/abs/1706.08498]]
+* ICLR 2018 [[A PAC-Bayesian Approach to Spectrally-Normalized Margin Bounds for Neural Networks|https://openreview.net/forum?id=Skz_WfbCZ]]
+* [[Stronger generalization bounds for deep nets via a compression approach|https://arxiv.org/abs/1802.05296]]
+
+We consider a ''Uniform bound'' 
+
+! Compression view
+[[blog|http://www.offconvex.org/2018/02/17/generalization2/]]
+
+Noise-stable nets are compressible.
+$$
+(\sigma_{max}(M))^2 \gg \frac{1}{h} \sum_i (\sigma_i(M)^2)
+$$
+Ratio of left side and right side is called the stable rank and is at most the linear algebraic rank.
+
+remark: much to compress on the channel-wise?
+
+The idea we end up using is to compress the filters using k-wise independence (an idea from theory of hashing schemes), where k is roughly logarithmic in the number of training samples.

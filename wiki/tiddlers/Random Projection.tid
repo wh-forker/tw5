@@ -1,0 +1,15 @@
+created: 20171115012607574
+modified: 20171115012920273
+tags: [[Representation Learning]]
+title: Random Projection
+type: text/vnd.tiddlywiki
+
+! Theory
+
+Universal compression properties derived from the Johnson-Lindenstrauss lemma.
+
+[[L1 Magic|https://statweb.stanford.edu/~candes/l1magic/]]
+
+! Bibs
+
+* [[Biologically Inspired Random Projections]]

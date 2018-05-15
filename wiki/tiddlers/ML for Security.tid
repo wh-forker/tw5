@@ -1,0 +1,12 @@
+created: 20180105053851042
+modified: 20180105064733449
+tags: [[Cyber Security]]
+title: ML for Security
+type: text/vnd.tiddlywiki
+
+! Deep learning related
+* [[Learning Fast and Slow: PROPEDEUTICA for Real-time Malware Detection|https://arxiv.org/abs/1712.01145]]
+* [[Cyberattack Detection in Mobile Cloud Computing: A Deep Learning Approach|https://arxiv.org/abs/1712.05914]]
+
+! Applications
+* [[Android Malware Characterization using Metadata and Machine Learning Techniques|https://arxiv.org/abs/1712.04402]]

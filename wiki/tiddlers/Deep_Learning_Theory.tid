@@ -1,5 +1,5 @@
 created: 20161012084433429
-modified: 20171022034702329
+modified: 20180221075844771
 tags: [[Deep Learning]]
 title: Deep Learning Theory
 type: text/vnd.tiddlywiki
@@ -9,18 +9,7 @@ Nonlinearity of problems like XOR popularized [[non-linear hidden layers|http://
 
 Another well-known example is [[the parity problem|https://en.wikipedia.org/wiki/Perceptrons_(book)]]: although a single non-linear hidden layer is sufficient to represent any function, it is not guaranteed to represent it efficiently, can even require exponentially many more parameters than a deeper model.
 
-! Approximiation Theory
-Deep Networks define a class of "universal approximators":
-
-''Theorem'' [C'89, H'91] Let $\rho()$ be a bounded, non-constant continuous function. Let $I_m$ denote the $m$-dimensional hypercube, and $C(I_m)$ denote the  space of continuous functions on $I_m$. Given any $f\in C(I_m)$ and $\epsilon > 0$, there exists $N > 0$ and $v_i, w_i, b_i, i=1, \dots, N$ such that
-$$
-F(x) = \sum_{i\le N}v_i\rho(w_i^\top x + b_i)\qquad\text{satisfies}
-$$
-$$
-\underset{x\in I_m}{\sup} |f(x)-F(x)|<\epsilon
-$$
-
-This guarantees that  even a single hidden-layer network can represent any classification problem in which the boundary is locally linear (smooth). But we do not know how to choose a good architecture, or how to optimize it.
+! [[Deep Approximiation Theory]]
 
 ! Estimation Theory
 ''Theorem'' [Barron'92] The mean integraded square error between the estimated network $\hat F$ and the target function $f$ is bounded by
@@ -45,7 +34,8 @@ These results quantify an upper bound on the empirical risk of deep neural netwo
 There is a functional equivalence between models of different depths at equal capacity [Ba and Caruana '14].
 
 ! Information Theory View
-[[Information Theory for Deep Learning]]
+* [[Information Theory for Deep Learning]]
+* [[Generalization of Deep Nets]]
 
 ! Understanding DNN
 

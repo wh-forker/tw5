@@ -1,0 +1,21 @@
+created: 20180110092100134
+modified: 20180110092520141
+tags: [[Reinforcement Learning]]
+title: Hierarchical Reinforcement Learning
+type: text/vnd.tiddlywiki
+
+! Bibs
+
+* Dayan and Hinton, 1993 Feudal RL
+* Parr and Russel, 1998 RL with Hierarchies of Machines
+* Sutton, Precup, Singh, 1999 Options
+* Precup, 2000 Temporal abstraction in reinforcement learning
+* Dietterich et al, 2000 MaxQ
+* Fox, Moshkovitz, Tishby, 2016 Principled Option Learning
+* Heess et al, 2016 Learning and tranfer of modulated locomotor controllers
+* Vezhnevets et al 2017 Feudal Networks for HRL
+* Bacon, Harb, Precup, 2017 Option-Critic
+* Florensa, Duan, Abbeel, 2017 SNNs for HRL
+* Andreas, Klein, Levine, 2017 Policy Sketches
+
+[[Meta-Learning for HRL]]

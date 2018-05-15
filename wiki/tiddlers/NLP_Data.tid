@@ -1,5 +1,5 @@
 created: 20170901074915401
-modified: 20170901075726648
+modified: 20180504122612558
 tags: NLP
 title: NLP Data
 type: text/vnd.tiddlywiki
@@ -30,5 +30,8 @@ Lee collected [[these datasets|http://www.cs.cornell.edu/home/llee/data/]].
 * [[Facebook ParlAI|https://github.com/facebookresearch/ParlAI]]
 ** bAbI and wiki stuff
 ** SQuAD
+
+!! Summarization
+* [[NEWSROOM|https://summari.es/]]
 
 !! [[Sentense Classification Datasets]]

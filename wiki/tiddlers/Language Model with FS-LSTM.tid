@@ -1,0 +1,20 @@
+created: 20171222005011801
+modified: 20180124053338245
+tags: Experiments
+title: Language Model with FS-LSTM
+type: text/vnd.tiddlywiki
+
+* Data
+** py ast to character level, character level completion works better when using 1k training examples.
+** training char embedding
+** joint word and char embedding for value
+** end2end training requires integration of PCFG
+* Modeling
+** Replace slow lstm with AR
+*** This idea has been implemented in meta learning (SNAIL), have performance improvement, but the reason of swapping the model is not clear
+** Replace slow lstm with meta learning
+* Theory
+** Argue the relationship between multi-scale RNN and location sensitive attention
+* Code
+** enable cross line prediction
+** train parsing with PCFG end2end

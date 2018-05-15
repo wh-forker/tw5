@@ -1,0 +1,15 @@
+created: 20171129075415152
+modified: 20171129092154210
+tags: [[Generative Adversarial Network]]
+title: StarGAN
+type: text/vnd.tiddlywiki
+
+* [[paper|https://arxiv.org/abs/1711.09020]]
+* [[code|https://github.com/yunjey/StarGAN]]
+
+Training process:
+
+* Training the discriminator
+* Original-to-target domain
+* Target-to-original domain: make sure features don't change much by checking the reconstruction ability
+* Fooling the discriminator

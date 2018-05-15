@@ -1,5 +1,5 @@
 created: 20170614091659389
-modified: 20171105095039462
+modified: 20171231045304399
 tags: NLP
 title: Neural Machine Translation
 type: text/vnd.tiddlywiki
@@ -7,6 +7,7 @@ type: text/vnd.tiddlywiki
 ! Bibs
 * [[Convolutional Sequence to Sequence Learning]]
 * [[Attention Is All You Need]]
+* [[Non-Autoregressive Neural Machine Translation]]
 
 ! Architectures
 
@@ -23,7 +24,7 @@ type: text/vnd.tiddlywiki
 * decoder ensemble
 
 ! Improvements
-* [[Attention Mechanism]] add attention to seq2seq translation: +11 BLEU
+* [[Attention Mechanism]] add attention to seq2seq translation: +11 [[BLEU]]
 
 ! Toolkit
 * [[OpenNMT|https://github.com/opennmt/opennmt]]

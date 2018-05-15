@@ -1,5 +1,5 @@
 created: 20171114022015233
-modified: 20171114060701811
+modified: 20171121040244307
 tags: [[Software Research]]
 title: Software Analysis
 type: text/vnd.tiddlywiki
@@ -43,3 +43,5 @@ similar to a learn to rank task
 ** Filter out related tweets, rule based methods
 * Deep Learning for Just-In-Time Defect Prediction
 ** a simple classification task with RBM, no gimmicks.
+
+[[OOPSLA]]

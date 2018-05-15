@@ -1,5 +1,5 @@
 created: 20170920093256697
-modified: 20171108055558124
+modified: 20180511033003159
 tags: [[Software Research]] NLP
 title: NLP for SE
 type: text/vnd.tiddlywiki
@@ -8,6 +8,10 @@ type: text/vnd.tiddlywiki
 
 * [[On the naturalness of software|http://earlbarr.com/publications/naturalness_cacm.pdf]]: start with language model
 * [[Machine Learning for Big Code and Naturalness|https://ml4code.github.io/papers.html]]
+
+! Sites
+* [[Seminars on Applications of Deep Learning in Software Engineering and Programming Languages|https://sites.google.com/view/mlplse-sp18/]]
+* [[Awesome Machine Learning On Source Code|https://github.com/src-d/awesome-machine-learning-on-source-code]]
 
 ! Introduction
 

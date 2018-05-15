@@ -1,5 +1,5 @@
 created: 20161014064037895
-modified: 20161017073356809
+modified: 20171115012745650
 tags: [[Learning Theory]]
 title: Representation Learning
 type: text/vnd.tiddlywiki
@@ -57,4 +57,5 @@ They can be absorbed by $\Phi$ to varying degrees:
 [[Image Representation Learning]]
 
 ! Algorithms
-[[t-Distributed Stochastic Neighbor Embedding]]
+* [[t-Distributed Stochastic Neighbor Embedding]]
+* [[Random Projection]]

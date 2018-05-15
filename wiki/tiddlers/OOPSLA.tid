@@ -1,0 +1,17 @@
+created: 20171121040256032
+modified: 20171121041559724
+tags: [[Program Analysis]] [[Software Analysis]]
+title: OOPSLA
+type: text/vnd.tiddlywiki
+
+* DéjàVu: a map of code duplicates on GitHub
+** [[paper|https://dl.acm.org/citation.cfm?doid=3152284.3133908]]
+** [[blog|https://blog.acolyer.org/2017/11/20/dejavu-a-map-of-code-duplicates-on-github/]]
+** percentage of duplications are high
+** possibility to learn a large project?
+* A model for reasoning about JavaScript promises
+** extract graphs to find bugs
+* Type test scripts for TypeScript testing
+** test with auto generated probes
+* Fast and precise type checking for JavaScript
+** Facebook's Flow type refinement

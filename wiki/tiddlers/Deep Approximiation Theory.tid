@@ -1,0 +1,22 @@
+created: 20171206060808129
+modified: 20171206062325299
+tags: [[Deep Learning Theory]]
+title: Deep Approximiation Theory
+type: text/vnd.tiddlywiki
+
+Deep Networks define a class of "universal approximators":
+
+''Theorem'' [C'89, H'91] Let $\rho()$ be a bounded, non-constant continuous function. Let $I_m$ denote the $m$-dimensional hypercube, and $C(I_m)$ denote the  space of continuous functions on $I_m$. Given any $f\in C(I_m)$ and $\epsilon > 0$, there exists $N > 0$ and $v_i, w_i, b_i, i=1, \dots, N$ such that
+$$
+F(x) = \sum_{i\le N}v_i\rho(w_i^\top x + b_i)\qquad\text{satisfies}
+$$
+$$
+\underset{x\in I_m}{\sup} |f(x)-F(x)|<\epsilon
+$$
+
+This guarantees that  even a single hidden-layer network can represent any classification problem in which the boundary is locally linear (smooth). But we do not know how to choose a good architecture, or how to optimize it.
+
+! Bibs
+* SLP
+* RNN
+* SGD

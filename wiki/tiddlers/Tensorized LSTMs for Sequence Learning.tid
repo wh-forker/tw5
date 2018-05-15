@@ -1,0 +1,8 @@
+created: 20171218051306069
+modified: 20171219065101586
+tags: [[Conditional Language Modelling]] [[Long short-term memory]]
+title: Tensorized LSTMs for Sequence Learning
+type: text/vnd.tiddlywiki
+
+Hidden states are represented by tensors and updated via a cross-layer convolution.
+

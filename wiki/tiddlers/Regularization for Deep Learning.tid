@@ -1,8 +1,15 @@
 created: 20171104090715974
-modified: 20171104092326894
+modified: 20180216050328421
 tags: [[Deep Learning Tricks]]
 title: Regularization for Deep Learning
 type: text/vnd.tiddlywiki
 
 Stochasticity of the transformation parameters $\theta$
- 
+
+* [[Regularization for Deep Learning A Taxonomy|https://arxiv.org/abs/1710.10686]]
+* [[Regularization for RNNs]]
+* Stochastic
+** [[Dropout]]
+** Swapout
+** DropPath
+** Stochastic depth

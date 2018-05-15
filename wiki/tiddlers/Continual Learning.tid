@@ -1,0 +1,16 @@
+created: 20171208053448158
+modified: 20171211103631524
+tags: Meta-Learning
+title: Continual Learning
+type: text/vnd.tiddlywiki
+
+! Bibs
+For RL
+
+* [[EWC|Overcoming catastrophic forgetting in NNs]]
+* Generative Replay
+* [[Gradient Episodic Memory for Continual Learning|http://papers.nips.cc/paper/7225-gradient-episodic-memory-for-continual-learning]]: [[code|https://github.com/facebookresearch/GradientEpisodicMemory]]
+
+For meta-learning
+
+* use fast weight instead of soft attention? for what? prediction vs attention?

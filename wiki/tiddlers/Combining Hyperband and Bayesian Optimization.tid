@@ -1,0 +1,21 @@
+created: 20180514063922584
+modified: 20180514103251555
+tags: Meta-Learning
+title: Combining Hyperband and Bayesian Optimization
+type: text/vnd.tiddlywiki
+
+* [[pdf|http://ml.informatik.uni-freiburg.de/papers/17-BayesOpt-BOHB.pdf]]
+* [[For Deep Learning|https://openreview.net/forum?id=HJMudFkDf]]
+
+''BO'' uses an aquisition function $a(\mathbf x)$ based on $p(f|D)$ and picks a point that maximizes it. A popular choice for the aquisition function is the expected improvement (EI) over a reference value $\alpha$ under the current model:
+$$
+a(\mathbf x, \alpha) = \int\max(0, \alpha-f(\mathbf x))\,dp(f(x)|D)
+$$
+
+''Tree-of-Parzen-Estimator (TPE)'' is a special instantiation of the general BO, maximizing
+$$
+p(y>\alpha|\mathbf x)/p(y<\alpha|\mathbf x)
+$$
+by drawing samples according to $l(\mathbf x)$ and evaluating the ratio.
+
+''Hyperband'' is a bandit-based strategy for hyperparameter optimization. HB typically outperforms random search and Bayesian optimization.

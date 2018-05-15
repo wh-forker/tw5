@@ -1,0 +1,20 @@
+created: 20180102103540138
+modified: 20180329010506850
+tags: [[Attention Mechanism]]
+title: Pointer Networks
+type: text/vnd.tiddlywiki
+
+Adaptation of seq2seq attention for self referential outputs
+
+Bibs
+
+* Pointer Networks
+* Pointer Sentinal Mixture Models
+* Text understanding with attention sum reader network
+* Pointing the unknown words
+
+! Improving the attention
+Multihead attention is used for speech recognition in [[Self-Attentional Acoustic Models|https://arxiv.org/abs/1803.09519]].
+
+! Code completion
+* 

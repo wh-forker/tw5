@@ -1,5 +1,5 @@
 created: 20161012081206780
-modified: 20170918072757763
+modified: 20180402110732780
 tags: [[Deep Learning Applications]]
 title: Image Captioning
 type: text/vnd.tiddlywiki
@@ -10,3 +10,12 @@ type: text/vnd.tiddlywiki
 ! Bibs
 
 * [[Self-Guiding Multimodal LSTM - when we do not have a perfect training dataset for image captioning|https://arxiv.org/abs/1709.05038]]
+
+! Decoding
+
+* [[ARNet|https://arxiv.org/abs/1803.11439]] [[code|https://github.com/chenxinpeng/ARNet]]
+** regularize by reconstructing last hidden state
+
+! Applications
+
+* [[Video Captioning]]

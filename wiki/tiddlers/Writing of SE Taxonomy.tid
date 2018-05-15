@@ -1,0 +1,11 @@
+created: 20171128062452034
+modified: 20180104050613214
+tags: [[AI for SE Mind Map]]
+title: Writing of SE Taxonomy
+type: text/vnd.tiddlywiki
+
+* Extend attention and add reference of Grammar as a Foreign Language, [[Pointer Networks]]
+* add proof of expressiveness for NN, RNN and SGD: [[Deep Approximiation Theory]] for the part of program induction
+* statistics of previous publications
+* go to li2017code for previous code completion papers and evaluation.
+* go to evans2017learning for program induction related work.

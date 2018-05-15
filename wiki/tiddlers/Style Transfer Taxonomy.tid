@@ -1,0 +1,40 @@
+created: 20180515042005763
+modified: 20180515043212735
+tags: [[Style Transfer]]
+title: Style Transfer Taxonomy
+type: text/vnd.tiddlywiki
+
+* [[Instance Normalization: The Missing Ingredient for Fast Stylization|https://arxiv.org/abs/1607.08022]]
+** claims replacing batch normalization with instance normalization significantly improves the quality of feedforward style transfer models.
+* [[Neural Style Representations and the Large-Scale Classification of Artistic Style|https://arxiv.org/abs/1611.05368]]
+** for classification
+* [[Scribbler: Controlling Deep Image Synthesis with Sketch and Color|https://arxiv.org/abs/1612.00835]]
+** color sketches by training GAN on generated inputs
+** brilliant idea and result
+* [[Prisma's Texture Networks|https://github.com/DmitryUlyanov/texture_nets]]: an improved implementation
+* [[Deep Photo Style Transfer|https://arxiv.org/abs/1703.07511]]
+** preserve reality by making sure transformation is locally affine in color space
+** Style loss term updated with segmentation mask
+
+! Parametric
+
+* Gram matrix
+** A neural algorithm of artistic style
+** Perceptual losses for real-time style transfer and super-resolution
+* Gram approximates
+** Universal style transfer via feature transforms
+** Decoder network over light weight reconstructed feature for fast semantic style transfer
+* Mean/Variance
+** Arbitrary style transfer in real-time with adaptive instance normalization
+** [[A Learned Representation For Artistic Style|http://arxiv.org/abs/1610.07629]]
+*** conditional instance normalization, surprising result, why should this work?
+* Histogram
+** Stable and controllable neural texture synthesis and style transfer using histogram losses
+
+! Non-parametric
+Direcly find neural patches similar to the given example
+
+* Combining Markov random fields and convolutional neural networks for image synthesis
+* Precomputed real-time texture synthesis with markovian generative adversarial networks
+* Fast patch-based style transfer of arbitrary style
+* Visual attribute transfer through deep image analogy

@@ -1,5 +1,5 @@
 created: 20171114043350508
-modified: 20171114044936826
+modified: 20171115044936508
 tags: [[Software Research]]
 title: Program Analysis
 type: text/vnd.tiddlywiki
@@ -9,3 +9,7 @@ FSA generation (specification miner):
 
 * Automatic mining of specifications from invocation traces and method invariants
 * A framework for the evaluation of specification miners based on finite state machines
+
+Use $\lambda$ calculus
+
+* [[A model for reasoning about JavaScript promises]]

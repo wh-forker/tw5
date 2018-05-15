@@ -1,0 +1,8 @@
+created: 20180112010541472
+modified: 20180112010551853
+tags: [[Overcoming Catastrophic Forgetting]]
+title: Rehearsal
+type: text/vnd.tiddlywiki
+
+Generative Replay
+Use a GAN to generate samples of previous tasks.

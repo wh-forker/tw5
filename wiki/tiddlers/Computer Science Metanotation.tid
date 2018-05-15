@@ -1,0 +1,13 @@
+created: 20171118091138608
+modified: 20171118101720178
+tags: Languages
+title: Computer Science Metanotation
+type: text/vnd.tiddlywiki
+
+* built-in datatypes: boolean, lists etc
+* primitive expressions: logic and math
+* user-declared datatypes: record / abstract data type / symbolic expression (BNF = [[Backus-Naur Form]])
+* code: inference rules (Gentzen notation)
+* conditionals: rule dispatch via nondeterministic pattern-matching
+* repetition: overlines and/or ellipsis notations, and sometimes iterators
+* capture-free substitution within a symbolic expression (Church)

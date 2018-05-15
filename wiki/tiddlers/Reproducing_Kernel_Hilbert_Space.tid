@@ -1,5 +1,5 @@
 created: 20160121094234831
-modified: 20170703083434199
+modified: 20180211092232072
 tags: [[Learning Theory]]
 title: Reproducing Kernel Hilbert Space
 type: text/vnd.tiddlywiki
@@ -24,3 +24,7 @@ For every $x, t\in\mathcal X$ we also introduce the linear operator $K(x, t):\ma
 $$
 K(x,t)y:=(K_ty)(x).
 $$
+
+! Applications
+
+* [[View of DL in RKHS]]

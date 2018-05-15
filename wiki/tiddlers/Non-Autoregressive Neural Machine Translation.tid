@@ -1,0 +1,18 @@
+created: 20171129034636906
+modified: 20171129042517033
+tags: [[Neural Machine Translation]]
+title: Non-Autoregressive Neural Machine Translation
+type: text/vnd.tiddlywiki
+
+Naive factorization:
+$$
+p_{NA}(Y|X;\theta) = p_L(T|x_{1:T'};\theta)\cdot\prod_{t=1}^Tp(y_t|x_{1:T'};\theta)
+$$
+
+Decoder input:
+
+* copy source with fertility
+* mask out attending to itself
+* positional attention with positional encoding $p(j, k) = \sin(j/10000^{k/d})$ (for even $j$). Incorporates position into attention process.
+
+Sample $z$ from a prior distribution and then condition on $z$ to non-autoregressively generate a translation.

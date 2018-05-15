@@ -1,0 +1,11 @@
+created: 20180115025530280
+modified: 20180115074242269
+tags: Experiments
+title: pix2code
+type: text/vnd.tiddlywiki
+
+! Bibs
+* Omniglot: [[Human-level concept learning through probabilistic program induction|http://science.sciencemag.org/content/sci/350/6266/1332.full.pdf]]
+** Bayesian program learning
+* [[Learning to Infer Graphics Programs from Hand-Drawn Images|https://arxiv.org/abs/1707.09627]]: very simple DSL, similar to draw
+* 

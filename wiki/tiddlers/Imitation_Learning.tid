@@ -1,5 +1,5 @@
 created: 20170712082332363
-modified: 20170824081514942
+modified: 20180110095446757
 tags: [[Reinforcement Learning]] [[Deep Generative Models]]
 title: Imitation Learning
 type: text/vnd.tiddlywiki
@@ -19,3 +19,7 @@ Imitation learning is very similar to GAN:
 * a discriminator update reward using samples & demos and update reward in the inner loop
 
 DeepMind use GAN and VAE to learn human actions: [[Robust Imitation of Diverse Behaviors|https://arxiv.org/abs/1707.02747]]
+
+! Bibs
+* One-Shot Imitation Learning
+* Learning a One-Shot Imitator with MAML

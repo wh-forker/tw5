@@ -1,5 +1,5 @@
 created: 20161027093636025
-modified: 20171011123436446
+modified: 20171218051300839
 tags: [[Sequential Models]]
 title: Long short-term memory
 type: text/vnd.tiddlywiki
@@ -22,3 +22,4 @@ type: text/vnd.tiddlywiki
 ** a decaying recent hidden state weight matrix called fast accociative memory.
 ** can be used in visual attention
 * [[Hybrid LSTM]]
+* [[Tensorized LSTMs for Sequence Learning]]

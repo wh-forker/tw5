@@ -1,0 +1,18 @@
+created: 20171208052241188
+modified: 20171208052904019
+tags: 
+title: Active Learning
+type: text/vnd.tiddlywiki
+
+Active learning (AL) aims to ease the data collection process by automatically deciding which instances an annotator should label to train an algorithm as quickly and effectively as possible.
+
+* Uncertainty sampling
+* Bandit algorithms (for data selection?)
+
+! Bibs
+* [[Learning Active Learning from Data|http://papers.nips.cc/paper/7010-learning-active-learning-from-data]]: [[code|https://github.com/ksenia-konyushkova/LAL]]
+** with [[Meta-Learning]]
+** medical imaging examples
+
+! Questions
+* applications for vision and language?

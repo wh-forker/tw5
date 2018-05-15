@@ -1,5 +1,5 @@
 created: 20170918105144345
-modified: 20170919070736380
+modified: 20180515035918921
 tags: 
 title: Capsules
 type: text/vnd.tiddlywiki
@@ -32,6 +32,12 @@ Convnet problem
 * the geometric view of vision is discarded
 
 Map the percept to the initial hidden state of a deep recurrent neural net and train the RNN to output captions (without retraining the convnet)
+
+! Computation
+Routing-by-agreement: Each capsule makes a prediction for the parent capsule, which is then compared with the actual output. If the outputs matches, the coupling coefficient is increased. Let $u_i$ be an output of a capsule $i$, and $j$ be the parent capsule, the prediction is calculated as $u_{i|j} = W_{ij}u_i$. The coupling coefficient $c_{ij}$ is computed using softmax. Loss is high when entity is absent and capsule has high instantiation parameters.
+$$
+L_k = T_k\max(0, m^+-\|v^k\|)^2+\lambda(1-T_k)\max(0, \|v^k\| - m^-)^2
+$$
 
 ! Remarks
 * Capsule is like a convolutional Gaussian process? Can convolutional kernels capture covariance?

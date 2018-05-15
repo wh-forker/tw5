@@ -1,8 +1,12 @@
 created: 20161031032129552
-modified: 20161031063903028
+modified: 20180508121619672
 tags: [[Deep Learning Applications]]
 title: Deep Super-Resolution
 type: text/vnd.tiddlywiki
+
+! Refs
+
+* [[curated list|https://github.com/YapengTian/Single-Image-Super-Resolution]]
 
 ! Theory
 2 ways of doing it with covn:
@@ -15,4 +19,16 @@ type: text/vnd.tiddlywiki
 ** examples are fairly simple
 * [[Real-Time Single Image and Video Super-Resolution Using an Efficient Sub-Pixel Convolutional Neural Network|https://arxiv.org/abs/1609.05158]]
 ** [[a supplement|https://arxiv.org/abs/1609.07009]] discussing deconvolution is also worth reading
+* [[EDSR|https://github.com/jmiller656/EDSR-Tensorflow]]
 * [[Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network]]
+* [[RDN|https://arxiv.org/abs/1802.08797]]
+* [[The Contextrual Loss]]
+* [[Image Inpainting for Irregular Holes Using Partial Convolutions|https://arxiv.org/abs/1804.07723]], similar to [[sparsity-invariant conv|https://arxiv.org/abs/1708.06500]]?
+
+! Challenge
+* [[DIV2K|https://data.vision.ee.ethz.ch/cvl/DIV2K/]]
+* [[PIRM 2018|http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=75838&copyownerid=90126]]
+** [[eval|https://github.com/roimehrez/PIRM2018]]
+
+! Experiments
+* [[ENAS for SR]]

@@ -1,0 +1,12 @@
+created: 20171128041711305
+modified: 20171128043034958
+tags: [[Cyber Security]]
+title: STRIDE
+type: text/vnd.tiddlywiki
+
+* Spoofing: violates the authentication security
+** Android [[Intent spoofing|http://blog.palominolabs.com/2013/05/13/android-security/index.html], with a example of forging `SendMoneyActivity` to PayPal.
+** App Cloning, Repacking or Piggybacking
+* Tampering: affects the integrity property and involves a malicious modification of data.
+** Content Pollution
+* Repudiation

@@ -1,5 +1,5 @@
 created: 20170908054527972
-modified: 20170908070232489
+modified: 20171121081202855
 tags: NLP
 title: Semantic Parsing
 type: text/vnd.tiddlywiki
@@ -15,3 +15,6 @@ type: text/vnd.tiddlywiki
 ** attention on aggregation op, select column and where clause
 ** policy gradient training to deal with condition's order issue. @@color:#859900;Policy net is closely related to synthetic gradient@@
 ** WikiSQL dataset
+* [[SQLNet|https://arxiv.org/abs/1711.04436]]
+** better performance since direcly filling the clause.
+** [[code|https://github.com/xxj96/SQLNet]]

@@ -1,5 +1,5 @@
 created: 20170503023704453
-modified: 20171017061914693
+modified: 20180514063836289
 tags: Vision [[Recurrent Neural Networks]] [[Reinforcement Learning]]
 title: Meta-Learning
 type: text/vnd.tiddlywiki
@@ -23,23 +23,37 @@ Desire a meta-learning algorithm
 * output: parameters $\Theta$ representing a training algorithm
 * objective: good performance on meta-test set $\mathcal D_{meta-test} = \{(D_{train}^{n'}, D_{test}^{n'})\}_{n'=1}^{N'}$
 
-! Bibs
+! Theories
+* [[RNN-Based Meta-Learning Methods]]
+* [[Meta-Learning Taxonomy]]
 
-* [[Optimization as a Model for Few-Shot Learning]]
-* [[Synthetic Gradients]]
-* [[Meta-Learning with Temporal Convolutions|https://arxiv.org/abs/1707.03141]]
-* [[Meta Networks]]
-* OpenAI's [[Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments|https://arxiv.org/abs/1710.03641]]
-** [[RoboSumo|https://github.com/openai/robosumo]]
+! Applications
+!! Architecture search
 
-! Rapid learning
+* [[Combining Hyperband and Bayesian Optimization]]
+
+!! Rapid learning
 
 * [[One-shot Learning]]
 * [[Zero-shot Learning]]
 * probabilistic programming approach (pen stroke generation)
 * memory-based approach and trained NTM
+* [[Optimization as a Model for Few-Shot Learning]]
 
 !! Meta optimizer
-
-* Controlling fast weight update rate: [[Overcoming catastrophic forgetting in NNs]]
+* Controlling fast weight update rate: [[Overcoming Catastrophic Forgetting]]
 * Use fast weights to replace soft attention mechanism
+* [[Synthetic Gradients]]
+
+!! [[Continual Learning]]
+* [[Meta-Learning for HRL]]
+* [[Overcoming Catastrophic Forgetting]]
+* OpenAI's [[Continuous Adaptation via Meta-Learning in Nonstationary and Competitive Environments|https://arxiv.org/abs/1710.03641]]
+** [[RoboSumo|https://github.com/openai/robosumo]]
+
+! Resources
+* [[Meta learning symposium|http://metalearning-symposium.ml/]]
+
+
+! Applications
+* [[AutoML]]

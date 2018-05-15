@@ -1,5 +1,5 @@
 created: 20170306062407543
-modified: 20170630022456638
+modified: 20171220084723403
 tags: Blog [[Variational Generative Models]]
 title: Variational Inference for Generative Models
 type: text/vnd.tiddlywiki
@@ -66,7 +66,7 @@ This gradient is model independent. The problem with this gradient is that likel
 !! Controling variance
 We can subtract it with functions with expectation 0 to get likelihood functions with same expectation bu t smaller variance. This kind of function is called ''control variates''. For any 🦄, we can use the score function $\nabla_\nu\log 🦄$ as the controller.
 
-Techniques from [[MCMC]] could help as well.
+Techniques from [[Monte Carlo Methods]] could help as well.
 
 !! Pathwise estimator
 Instead of sampling from 🦄, we sample $\epsilon$ from some standard distribution $s$ and then transform it to $z$ with some fixed function $t$. We also assume 🐨 and 🦄 are differentiable w.r.t. $z$. 
@@ -99,6 +99,8 @@ $$
 $$
 Where all functions are deep networks.
 <<<
+
+Read more from [[Reparametrization Trick]]
 
 ! Variational Inference for Implicit Models
 🦄 from ''Mean-field family'' is fully factorized, this cannot approximate complex 🐉. Fully factorized as VAE, at the end of the day, we usually output just a single Gaussian. The parametric assumptions we make in mean-field is too strong, and implicit models would be one way to relax these.

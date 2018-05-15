@@ -1,0 +1,19 @@
+created: 20171127050546905
+modified: 20171214051041346
+tags: Experiments [[Source Code Generating Models]]
+title: NL2Code
+type: text/vnd.tiddlywiki
+
+TODOs
+
+* reimplement CondAttLSTM with normal sequence and attention blocks
+** LSTM is worked as a cell. Can we join it?
+** figure out what mask do and find a better way of implement it.
+* node and action embedding implemented with tensor, change to variables
+* mask and length, lstm can handle padding
+** tgt masks as input, print `tgt_action_mask_seq`
+** use pack_padded_sequence
+* attention over history not implemented (can use Transformer)
+* other sequence models
+* pretrained embeddings
+* spectral normalization

@@ -1,5 +1,5 @@
 created: 20170920082817800
-modified: 20171108055738881
+modified: 20171115062320486
 tags: Programming
 title: Software Research
 type: text/vnd.tiddlywiki
@@ -36,7 +36,7 @@ type: text/vnd.tiddlywiki
 *** association rule mining on tag co-occurence
 *** POS and phrase chunking on tagWiki to classify tags
 *** [[Word2Vec]] library grouping
-** TechLand: Assiting Technology Landscape Inquiries with Insights from Stack Overflow (ICSME2016)
+** TechLand: Asisting Technology Landscape Inquiries with Insights from Stack Overflow (ICSME2016)
 *** QA system based on knowledge graph
 *** similar methods with previous paper
 *** Queries are stemmed and parsed, greedily match tech terms

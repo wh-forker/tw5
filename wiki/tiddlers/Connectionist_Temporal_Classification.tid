@@ -1,8 +1,28 @@
 created: 20160115030728989
-modified: 20160115030812110
-tags: [[DNN for ASR]]
+modified: 20171129074126862
+tags: [[Sequential Models]] [[DNN for ASR]]
 title: Connectionist Temporal Classification
 type: text/vnd.tiddlywiki
 
-Baidu just released [[their code|https://github.com/baidu-research/warp-ctc]].
+! Resources
+* [[Baidu warp-ctc|https://github.com/baidu-research/warp-ctc]]. Has tf and th binding
+* tf CTC loss and CTC beam search for CPU
+* nv cudnn7 support GPU CTC
+* [[Distill blog|https://distill.pub/2017/ctc/]]
 
+Computing the massive number of alignments is too slow. We can use DP to speedup. Modified beam search can generate more accurate examples. Language model probability can be incorporated in speech recognition.
+
+For numerical stability, compute the loss function in log-space with log-sum-exp trick.
+
+! Properties
+
+* Conditionial independence
+* Alignment
+** alignment free: objective marginalize all the alignments
+** monotonic alignment: strictly sequential
+** many-to-one
+
+! Remarks
+Wonder if we can replace beam search in NMT with this
+
+Is language models incorporated in the character detection framework?

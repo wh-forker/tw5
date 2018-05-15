@@ -1,9 +1,13 @@
 created: 20150629105042912
-modified: 20170605025641816
+modified: 20180102090824863
+tags: [[Optimization Algorithms]]
 title: Second Order Methods
 type: text/vnd.tiddlywiki
 
 2nd order methods are seldom used in deep learning mainly because we cannot approximate Hessian within batches. SDG has some advantages in stability.
+! KFac
+* [[paper|https://arxiv.org/abs/1503.05671]]
+* useful for small autoencoder
 
 ! Newton Algorithm
 Assuming a quadratic loss function $E$ we can compute the weight update along the lines of 

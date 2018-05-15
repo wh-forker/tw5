@@ -1,0 +1,9 @@
+created: 20171231045315487
+modified: 20171231045407112
+tags: [[Neural Machine Translation]]
+title: BLEU
+type: text/vnd.tiddlywiki
+
+Implementation
+
+* [[SacréBLEU|https://github.com/awslabs/sockeye/tree/master/contrib/sacrebleu]]

@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20171017063756504
+modified: 20180416081555460
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 * [[WildML: Learning Reinforcement Learning|http://www.wildml.com/2016/10/learning-reinforcement-learning/]]
 * [[Simple Reinforcement Learning with Tensorflow|https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-0-q-learning-with-tables-and-neural-networks-d195264329d0]]
 * [[Deep RL Bootcamp 2017 Berkeley|http://nuit-blanche.blogspot.hk/2017/10/slides-and-videos-deep-rl-bootcamp-26.html]]
-
+* [[An Outsider's Tour of Reinforcement Learning|http://www.argmin.net/2018/03/26/outsider-rl]]
 
 ! Basic
 !! Theorems
@@ -87,6 +87,8 @@ On training half-cheetah, each one is 10x easier than previous. (each episodes i
 * [[Meta-Learning]]
 * [[Noisy Networks for Exploration|https://arxiv.org/abs/1706.10295]]
 * [[Soft Optimality]]
+* [[Hierarchical Reinforcement Learning]]
+* [[Learn by Generation]]
 
 ! Implementations
 Environments

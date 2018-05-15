@@ -1,5 +1,5 @@
 created: 20170602025305444
-modified: 20171106065107903
+modified: 20180102103612295
 tags: [[Neural Machine Translation]] [[Conditional Language Modelling]] [[Sequential Models]]
 title: Attention Mechanism
 type: text/vnd.tiddlywiki
@@ -15,6 +15,17 @@ Sequential attention
 * [[Using Fast Weights to Attend to the Recent Past]]
 * [[Attentive Recurrent Comparators]]
 * [[Online and Linear-Time Attention by Enforcing Monotonic Alignments|https://arxiv.org/abs/1704.00784]]: [[blog|http://colinraffel.com/blog/online-and-linear-time-attention-by-enforcing-monotonic-alignments.html]]
+
+Other attentions
+
+* Hierarchical attention
+** Learning efficient algorithms with hierarchical attentive memory
+* Tensored attention
+* Multiple heads
+* Pyramidal encoder
+** Listen attend and spell
+* Hard attention
+* [[Pointer Networks]]
 
 ! Tutorials
 

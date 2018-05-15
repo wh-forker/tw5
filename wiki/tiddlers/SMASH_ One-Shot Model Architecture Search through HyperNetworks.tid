@@ -1,0 +1,17 @@
+created: 20171218044350832
+modified: 20171218050719609
+tags: [[Deep Neural Networks Architectures]]
+title: SMASH: One-Shot Model Architecture Search through HyperNetworks
+type: text/vnd.tiddlywiki
+
+* Use HyperNet as auxiliary model to learn a transformation from a binary encoding of an architecture to the weight space.
+* The weights for each node in our network are dynamically generated
+
+Architecure sampling:
+
+* memory-bank view
+* random read/write
+
+Weight sampling:
+
+* HyperNet

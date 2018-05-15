@@ -1,6 +1,6 @@
 created: 20150627124407152
-modified: 20170815112909107
-tags: Optimization
+modified: 20180102091129608
+tags: [[Deep Learning Basics]] Optimization
 title: Optimization Algorithms
 type: text/vnd.tiddlywiki
 
@@ -27,6 +27,9 @@ According to chapter 1 of [[Neural Networks: Tricks of the Trade]]
 !! Algorithms
 * [[Stochastic Gradient Descent]]
 * [[Nesterov's Accelerated Gradient Descent]]
+* Convexified Projected Gradient Descent
+* Non-Convex [[Iterative Hard Thresholding]]
+* Frank-Wolfe
 * [[Follow-The-Regularized-Leader]]
 * AdaGrad
 

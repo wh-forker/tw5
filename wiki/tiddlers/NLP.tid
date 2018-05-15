@@ -1,5 +1,5 @@
 created: 20160425022224634
-modified: 20171012030714926
+modified: 20180130042338188
 tags: 
 title: NLP
 type: text/vnd.tiddlywiki
@@ -13,6 +13,7 @@ type: text/vnd.tiddlywiki
 ** handling unknown words
 ** tokenize? spelling? characters? bytes?
 ** smaller perceptual units need more complex models, but have fewer OOVs (doubt)
+** [[Sentence Representation]]
 * [[Text Classification]]
 * [[Semantic Parsing]]
 * Natual language generation
@@ -23,8 +24,8 @@ type: text/vnd.tiddlywiki
 ** linguistic analysis (discourse, semantics, syntax, morphology)
 * [[CNN for NLP]]
 
-! Tools
-* [[LSTMVis|https://github.com/HendrikStrobelt/LSTMVis]]
+! Basics
+* [[Virterbi decoding]]
 
 ! Task & State-of-the-art techniques
 

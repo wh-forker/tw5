@@ -1,0 +1,8 @@
+created: 20180403113616279
+modified: 20180403113801088
+title: Learn by Generation
+type: text/vnd.tiddlywiki
+
+* [[World Models|https://worldmodels.github.io/]]
+** A Vision model (VAE) encodes the high-dimensional observation into a low-dimensional latent vector
+** A Memory RNN integrates historical codes to create a representation that can predict future states.

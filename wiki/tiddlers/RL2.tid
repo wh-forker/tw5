@@ -1,0 +1,11 @@
+created: 20180110093606352
+list: 
+modified: 20180514062413110
+tags: [[Meta-Learning Taxonomy]]
+title: RL2
+type: text/vnd.tiddlywiki
+
+Objective:
+$$
+\max_\theta\mathbb E_M\mathbb E_{\tau^{(k)}_M}[\sum_{k=1}^KR(\tau^{(k)}_M)|\text{RLagent}_\theta]
+$$

@@ -1,11 +1,14 @@
 color: #e21783
 created: 20141010021510118
-modified: 20160513093123854
+modified: 20171118102205574
 tags: Programming
 title: Languages
 type: text/vnd.tiddlywiki
 
-[[Programming category]]
+! Theory
+* [[Programming category]]
+* [[Computer Science Metanotation]]
+* [[Formal Langugages]]
 
 ! Tutorials
 * [[Learn X in Y Minutes]]

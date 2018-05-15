@@ -1,5 +1,5 @@
 created: 20170208074243139
-modified: 20170927124058852
+modified: 20171114234416124
 tags: [[Generative Adversarial Network]]
 title: WGAN
 type: text/vnd.tiddlywiki
@@ -26,3 +26,6 @@ W(P_r, P_g)\propto \underset{f}{\max}\mathbb E_{x\sim P_r}[f(x)]-\mathbb E_{x\si
 $$
 
 [[Optimal Transport GAN and VAE Explaination|https://arxiv.org/abs/1706.01807]]
+
+! Experiments
+Strided convolution creates checkerboard patterns and introduced

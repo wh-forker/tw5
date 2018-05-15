@@ -1,5 +1,5 @@
 created: 20151112065923275
-modified: 20170710155622583
+modified: 20171129062318206
 tags: [[Deep Learning Engineering]]
 title: Visualizing a ConvNet
 type: text/vnd.tiddlywiki
@@ -13,3 +13,9 @@ Suppose that a ConvNet classifies an image as a dog. How can we be certain that 
 * [[Jason Yosinski|http://yosinski.com/]] prodived [[a great visualization tool|http://devblogs.nvidia.com/parallelforall/harnessing-caffe-framework-deep-visualization/]] based on caffe, implementing the method mentioned above (with slight difference).
 * [[Network Dissection|http://netdissect.csail.mit.edu/]]
 * [[Plug and Play Generative Networks|https://github.com/Evolving-AI-Lab/ppgn]]: generate features
+* Interpreting Deep Visual Representations via Network Dissection
+** [[paper|https://arxiv.org/abs/1711.05611]]: interesting training behaviour and layer property distribution can be inferred.
+** [[code|https://github.com/CSAILVision/NetDissect]]
+* SVCCA for Deep Learning Dynamics and Interpretability
+** SVCCA could align activations by different networks.
+** [[code|https://github.com/google/svcca]]

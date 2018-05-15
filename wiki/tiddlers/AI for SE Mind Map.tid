@@ -1,5 +1,5 @@
 created: 20171108043145050
-modified: 20171114055424412
+modified: 20171221014453259
 tags: [[Software Research]]
 title: AI for SE Mind Map
 type: text/vnd.tiddlywiki
@@ -40,6 +40,8 @@ type: text/vnd.tiddlywiki
 ** Adversarial training in unsupervised setting
 * [[Autoregressive Models]]
 ** another sequence to sequence translation technique.
+* [[Unsupervised Learning]]
+** On mining knowledge from forums, etc.
 
 ! Software applications
 
@@ -55,8 +57,10 @@ Other applications I can think of
 * debugging
 ** bug localization: given a bug report, find the program elements related to the bug.
 * documentation
-** 
 * distributed system analysis
 * code optimization
 
-! [[SE Data]]
+! Related
+* [[SE Data]]
+* [[Writing of SE Taxonomy]]
+* [[AI for SE Challenges]]

@@ -1,0 +1,9 @@
+created: 20171205102142475
+modified: 20171205102806827
+tags: [[External memory for one-shot generalization]] [[Variational Generative Models]] [[Memory Networks]]
+title: Variational Memory Addressing in Generative Models
+type: text/vnd.tiddlywiki
+
+[[paper|https://arxiv.org/abs/1709.07116]]
+
+Refer to this one to compute the discrete attention

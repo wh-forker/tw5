@@ -1,0 +1,12 @@
+created: 20171116065914399
+modified: 20171116065922209
+tags: [[Information Theory]]
+title: Mutual Information
+type: text/vnd.tiddlywiki
+
+<<<
+''Definition'' [Mutual Information]<br>
+$I(X;Y)=D[p(x, y)\|p(x)p(y)] = D[p(x|y)\|p(x)]=H(X)-H(X|Y)$
+<<<
+
+for any Markov chain $X\rightarrow Y\rightarrow Z$: $I(X;Y)\ge I(X;Z)$. The mutual information quantifies the number of relevant bits that the input $X$ contains about the label $Y$, on average.

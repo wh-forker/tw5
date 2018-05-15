@@ -1,13 +1,19 @@
 created: 20170925024941441
-modified: 20170925074331589
+modified: 20171116071929642
 tags: [[Information Theory]] [[Deep Learning Theory]]
 title: Information Theory for Deep Learning
 type: text/vnd.tiddlywiki
+
+* [[talk|https://www.youtube.com/watch?v=bLqJHjXihK8]]
+* [[paper|https://arxiv.org/abs/1703.00810]]
+* [[blog|https://blog.acolyer.org/2017/11/15/opening-the-black-box-of-deep-neural-networks-via-information-part-i/]]
 
 ! The Information Bottleneck Method
 * Approximate Minimal Sufficient Statistics:
 ** Markov chain: $Y\rightarrow X\rightarrow S(X)\rightarrow \hat X$: $\hat X=\arg\min_{I(S(X);Y)=I(X;Y)}I(S(X);X)$
 ** Relaxation given $p(X;Y)$: $\hat X=\arg\min_{p(\hat X;X)}I(\hat X;X)-\beta I(\hat X;Y)$， $\beta>0$
+where the Lagrange multiplier $\beta$ determines the level of relevant information captured by the representation $\hat X, I(\hat X;Y)$. The solution to this problem defines an ''information curvature'': a monotonic concave line of optimal representations that separates the achievable and unachievable regions in the information plane.\
+
 * A Rate-Distortion problem with KL-divergence distortion:
 ** $d_{IB}(x, \hat x) = D[p(y|x)\|p(y|\hat x)]$
 * The ONLY distributional quantization measure which satisfy both DPI (f-divergences) and Statistical Consistency

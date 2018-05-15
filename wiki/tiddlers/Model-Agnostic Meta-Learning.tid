@@ -1,0 +1,11 @@
+created: 20180110095509155
+list: 
+modified: 20180514062413123
+tags: [[Meta-Learning Taxonomy]]
+title: Model-Agnostic Meta-Learning
+type: text/vnd.tiddlywiki
+
+Train a good initialization for fine-tuning on many tasks. 
+$$
+\min_\theta\sum_{t}\mathcal L_{val}(\theta-\alpha\nabla_\theta\mathcal L_{train}(\theta))
+$$

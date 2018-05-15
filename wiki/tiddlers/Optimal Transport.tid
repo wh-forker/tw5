@@ -1,0 +1,35 @@
+created: 20180122090943363
+modified: 20180122105546159
+tags: 
+title: Optimal Transport
+type: text/vnd.tiddlywiki
+
+* [[NIPS 2017 Tutorial|https://vimeo.com/248504509]]
+* [[Homepage|https://optimaltransport.github.io/]]
+
+Optimal transport is the natural geometry for probability measures supported on geometric space.
+
+! Intro
+!! 2 Examples
+
+* Earth moving distance origin Monge's Problem
+* Kantorovich problem as a relaxation that fixed the transportation routes into a table.
+
+<<<
+''Definition'' [Kantorovich Problem]<br>
+Given $\mu, \nu$ in $\mathcal P(\Omega)$; a cost function $c$ on $\Omega\times\Omega$, the Kantorovich problem is
+$$
+\inf_{P\in\Pi(\mu, \nu)}\iint c(x, y)P(dx, dy)
+$$
+<<<
+It's dual is
+$$
+\sup_{\phi\in L_1, \psi\in L_1(\nu), \phi(x)+\psi(y)\le c(x, y)}\int\phi d\mu +\int\psi d\nu
+$$
+
+!! How to compute
+For univariate:
+$$
+W(\mu, \nu) = \int_0^1 c(|F^{-1}_\mu(x)-F^{-1}_\nu(x)|)dx
+$$
+where $F^{-1}$ is the quantile function.

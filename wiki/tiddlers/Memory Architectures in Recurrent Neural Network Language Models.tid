@@ -1,0 +1,9 @@
+created: 20180429085400189
+modified: 20180429085529648
+tags: [[Memory Networks]] [[Language Modelling]]
+title: Memory Architectures in Recurrent Neural Network Language Models
+type: text/vnd.tiddlywiki
+
+[[link|https://openreview.net/forum?id=SkFqf0lAZ]]
+
+Has a continous stack state: merging different configurations probabily mess up with the information?

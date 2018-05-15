@@ -1,6 +1,23 @@
 created: 20170808061058114
-modified: 20171113030958957
-tags: [[Autoregressive Models]]
+modified: 20171220084425539
+tags: [[Statistical Measures]] [[Autoregressive Models]]
 title: Parallel Multiscale Autoregresssive Density Estimation
 type: text/vnd.tiddlywiki
 
+* Density estimation for likelihood-free inference: learn posterior from sampling
+** Fast $\epsilon$-free inference of simulation models with Bayesian conditional density estimation
+* Density estimation for MC
+** Inference networks for sequential MC in graphical models
+
+Density estimators:
+
+* Autoregressive models
+** Neural Autoregressive Distribution Estimation
+* Normalizing flows
+** [[Improving Variational Inference with Normalizing Flows]]: AR models with Gaussian conditionals are flows
+
+Gaussian flow is limited. To adjust the sampling distribution, we can use Masked Autoregressive Flow:
+
+* MADE: Masked Autoencoder for Distribution Estimation: generate random variables from other AR models recurrently
+** Like a inverse of IAF, fast to calculate $p(x)$, slow to sample from.
+** Real NVP is both fast to calculate $p(x)$ and fast to sample from, but limited capacity

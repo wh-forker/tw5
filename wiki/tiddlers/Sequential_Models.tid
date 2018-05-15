@@ -1,5 +1,5 @@
 created: 20161012083717362
-modified: 20171105082800906
+modified: 20171220100955104
 tags: [[Recurrent Neural Networks]]
 title: Sequential Models
 type: text/vnd.tiddlywiki
@@ -11,12 +11,15 @@ type: text/vnd.tiddlywiki
 * Tapes
 * Arrays
 * Stacks
+* [[Stochastic Recurrent Network]]
 
 * Restrictions on recurrent weight matrix
 ** uRNN
 ** scoRNN
 
 !! Advanced Structures
+* [[Multi-Scale RNN]]
+* [[Connectionist Temporal Classification]] loss
 * Faster RNN
 ** [[Quasi-RNN]]
 ** [[SRU]]
@@ -46,13 +49,12 @@ type: text/vnd.tiddlywiki
 ** [[tensorflow implementation|https://github.com/jimfleming/recurrent-entity-networks]]
 ** the results aren't easily comparable to DNC
 
-
-
 Most networks with external memory use some form of ''content-based'' memory access, find the memory closest to some ''key vector'' emitted by the network, return either the memory content or an associated ''value vector''.
-
-!! Bibs
 
 * [[MemN2N|http://arxiv.org/abs/1604.06045]]
 * [[Can Active Memory Replace Attention?|https://arxiv.org/abs/1610.08613]]
 ** Extended Neural GPU with an output tape tensor $p$, which has access to @@color:#859900;all previous outputs@@.
 ** Use teacher forcing in training.
+
+! Tools
+* [[LSTMVis|https://github.com/HendrikStrobelt/LSTMVis]]

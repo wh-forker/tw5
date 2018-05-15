@@ -1,5 +1,5 @@
 created: 20170426055828438
-modified: 20170504063640963
+modified: 20171205102431693
 tags: NLP [[Sequential Models]]
 title: Memory Networks
 type: text/vnd.tiddlywiki
@@ -18,6 +18,10 @@ This family uses a universal access mechanism (c.f. associative computers).
 
 ! Code
 [[fb MemNN|https://github.com/facebook/MemNN]]
+
+! Extensions
+
+* [[Variational Memory Addressing in Generative Models]]
 
 ! Remarks
 Maybe not the most convenient for all tasks: e.g. we search real computers using many more mechanisms (text, trees, read/write time, title/tags).

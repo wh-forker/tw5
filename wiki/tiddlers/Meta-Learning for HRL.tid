@@ -1,0 +1,13 @@
+created: 20180110092607001
+modified: 20180110094630705
+tags: Meta-Learning
+title: Meta-Learning for HRL
+type: text/vnd.tiddlywiki
+
+Agent has to solve a distribution of related long-horizon tasks, with the goal of learning new tasks in the distribution quickly
+
+! Meta-Learning Shared Hierarchies
+Find a set of subpolicies that enable fast learning of the master policy
+$$
+\max_\theta\mathbb E_{\theta_0}\mathbb E_M\mathbb E_{\tau^{(k)}_M}[\sum_{k=1}^KR(\tau^{(k)}_M)|\phi,\text{RLagent}_{\theta_0}]
+$$

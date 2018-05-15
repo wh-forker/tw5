@@ -1,0 +1,7 @@
+created: 20171117034546427
+modified: 20171117034911552
+tags: [[Inference Methods]]
+title: Bayes optimality in auxiliary tasks
+type: text/vnd.tiddlywiki
+
+When your loss function depends on densities of probability distributions you can easily sample from, often you can construct an auxiliary task, whose Bayes optimal solution depends on values of the densities in question. Examples of auxiliary tasks are: binary classification for likelihood ratio estimation, denoising or score matching for estimating the score function.

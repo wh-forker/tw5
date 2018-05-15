@@ -1,0 +1,11 @@
+created: 20171118090853436
+modified: 20171118091143783
+tags: [[Inference Methods]]
+title: Convex Relaxation
+type: text/vnd.tiddlywiki
+
+My $f(\theta)$ is hard to optimize, because it has non-differentiable and non-convex components like the $\mathcal l_0$-norm of a vector in sparse methods, or the Heaviside step function in classification.
+
+Replace teh non-convex component by a convex approximation, turning your objective into a now typically convex $g$.
+
+See [[Random Projection]] for l1 magic

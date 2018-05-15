@@ -1,5 +1,5 @@
 created: 20170802080831077
-modified: 20170803071733739
+modified: 20180105053844578
 tags: 
 title: Cyber Security
 type: text/vnd.tiddlywiki
@@ -10,4 +10,9 @@ type: text/vnd.tiddlywiki
 * double-free
 * use-after-free
 
-! Black Hat
+! Threats
+
+Microsoft [[STRIDE]] model
+
+! Research directions
+* [[ML for Security]]

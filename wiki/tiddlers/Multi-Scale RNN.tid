@@ -1,0 +1,13 @@
+created: 20171220101003373
+modified: 20171221014105946
+tags: [[Sequential Models]]
+title: Multi-Scale RNN
+type: text/vnd.tiddlywiki
+
+* Multi-Loop Iterative Algorithm and Multiscale RNNs
+
+! Solving maximally sparse estimation
+$$
+\min_x\|y-\Phi x\|^2_2+\lambda\|x\|_0
+$$
+where $\Phi$ is over complete. Useful for solving underdetermined inverse problem and removing outliers.

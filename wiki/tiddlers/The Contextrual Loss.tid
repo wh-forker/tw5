@@ -1,0 +1,10 @@
+created: 20180426031530505
+list: 
+modified: 20180515042000652
+tags: [[Style Transfer]] UNSQ [[Deep Super-Resolution]]
+title: The Contextrual Loss
+type: text/vnd.tiddlywiki
+
+* [[Project|http://cgm.technion.ac.il/Computer-Graphics-Multimedia/Software/Contextual/]]
+** A very nice implementation of content loss
+** UNSQ: is this metric slow? how it works in SR?

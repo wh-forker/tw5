@@ -1,0 +1,8 @@
+created: 20180116065832377
+modified: 20180116065944409
+tags: [[CNN for Video]]
+title: Anomaly Detection in Video
+type: text/vnd.tiddlywiki
+
+* [[Real-world Anomaly Detection in Surveillance Videos|http://arxiv.org/abs/1801.04264v1]]
+** Multiple instance learning + ranking loss

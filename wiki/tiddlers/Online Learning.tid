@@ -1,0 +1,7 @@
+created: 20180416082430314
+modified: 20180416082634698
+tags: 
+title: Online Learning
+type: text/vnd.tiddlywiki
+
+The online learning setting is by now fairly well-understood. We know that the optimal regret for a finite action set $|X| = n$ and bounded cost functions is $O(\sqrt{T \log(n)})$[[[ref|https://dl.acm.org/citation.cfm?doid=258128.258179]]]

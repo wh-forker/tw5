@@ -1,0 +1,17 @@
+created: 20180216050336952
+modified: 20180216051505099
+tags: [[Regularization for Deep Learning]]
+title: Regularization for RNNs
+type: text/vnd.tiddlywiki
+
+Finish following list from [[Regularizing and Optimizing LSTM Language Models|https://arxiv.org/abs/1708.02182]]
+
+* Stochastic Hidden States dropout
+* Restrictions on recurrent matrix
+** Restricting the capacity of matrix
+** Elementwise interatcions
+* Act upon activations
+** Batch norm
+** Weight/Layer norm
+** Spectral norm
+* DropConnect mask on hidden-hidden weights

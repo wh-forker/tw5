@@ -1,5 +1,5 @@
 created: 20161116082025079
-modified: 20170222114449334
+modified: 20180125101920971
 tags: [[Optimizing RNN]]
 title: Optimization Properties of Linearized RNN
 type: text/vnd.tiddlywiki
@@ -11,6 +11,7 @@ refs
 ** [[blog|http://www.offconvex.org/2016/10/13/gradient-descent-learns-dynamical-systems/]]
 ** [[paper|https://arxiv.org/abs/1609.05191]]
 * [[Lecture Notes on Linear System Theory|http://control.ee.ethz.ch/~ifalst/docs/LectureNotes.pdf]]
+* A recent paper that analysis identity mapping in gated networks: [[Overcoming the vanishing gradient problem in plain recurrent networks|https://arxiv.org/abs/1801.06105]]
 
 The simplest version of a recurrent neural network is as follows. It is a mapping of the form $(x_1,\dots,x_T) \mapsto (y_1,\dots,y_T)$ (we are thinking of doing sequence to sequence prediction). In these networks the hidden state is updated as $h_{t+1} = \sigma_1(A h_{t} + B x_{t})$ (with $h_1=0$) and the output is $y_t = \sigma_2(C h_t + D x_t)$. With assumption that $(x_t)$ is an i.i.d. isotropic sequence we can decouple $D$ from $A, B, C$ and can be ignored because it's convex. We can consider the idealized risk:
 $$

@@ -1,5 +1,5 @@
 created: 20161027080318158
-modified: 20171013084724155
+modified: 20180224234145150
 tags: [[Deep Learning]]
 title: Deep Learning Engineering
 type: text/vnd.tiddlywiki
@@ -25,6 +25,17 @@ type: text/vnd.tiddlywiki
 
 ! Hardware
 * [[Google TPU]]
+* Nervana
+* FPGA
+* CoreML chips
+
+! Programming Language
+* runtime Automatic Differentiation
+** PyTorch
+** Chainer
+** Gluon: combining dynamic AD with code-tracing to produce "static sub-graphs"
+* Special-purpose compiler stack
+** XLA, ONNX, NNVM, TVM, DLVM
 
 ! Serving Frameworks
 

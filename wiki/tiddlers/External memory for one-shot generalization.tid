@@ -1,0 +1,9 @@
+created: 20171205102713008
+modified: 20171205102733189
+tags: [[One-shot Learning]] [[Attentive Generative Models]]
+title: External memory for one-shot generalization
+type: text/vnd.tiddlywiki
+
+* One-shot generalization in deep generative models
+* [[Variational Memory Addressing in Generative Models]]
+** discrete attention by variational inference

@@ -1,5 +1,5 @@
 created: 20161103092937981
-modified: 20170917102130440
+modified: 20180225135827624
 tags: [[ConvNet Layers]]
 title: Normalization Layer
 type: text/vnd.tiddlywiki
@@ -16,7 +16,17 @@ $$
 y_{NN}(X;\mathbf w, b) = g(X\mathbf w + b)
 $$
 
+! Norms
 * [[Batch Normalization]]: $y_{BN}(X;\mathbf w, \gamma, \beta) = g(\frac{X\mathbf w - \mu(X\mathbf w)}{\sigma(X\mathbf w)}\gamma + \beta)$
 * [[Weight Normalization]]: $y_{WN}(X;\mathbf w, \gamma, \beta) = g(\frac{X\mathbf w}{\|\mathbf w\|_2}\gamma + \beta)$
 * [[Layer Normalization|https://arxiv.org/abs/1607.06450]]: $y_{BN}(\mathbf x;W, \gamma, \beta) = g(\frac{\mathbf xW - \mu(\mathbf xW)}{\sigma(\mathbf xW)}\gamma + \beta)$
 **  instead of taking the statistics of a single unit over a whole batch of inputs, they are taken for a single input over all units in a layer
+* Spectral normalization
+* Self normalization: keep 0 mean and 1 std by solving a fix point equation to the activation function:
+** $selu(x) = \lambda \alpha e^x - \alpha; x<0$
+* Batch renormalization: correction for the discrepancy between minibatch and full-batch moments
+** $\hat x_i\rightarrow \frac{x_i-\mu_B}{\sigma_B}\cdot\frac{\sigma_B}{\sigma}+\frac{\mu_B-\mu}{\sigma}$
+** improves on small/biased minibatches
+
+! Remarks
+Training normalization is a biased estimator of inference normalization. If the minibatch is biased, barch norm fails.

@@ -1,1 +1,1 @@
-tiddlywiki wiki --server 8080 $:/core/save/all text/plain text/html "" "" 129.127.139.150
+tiddlywiki wiki --server 8080 $:/core/save/all text/plain text/html "" "" 192.168.1.102

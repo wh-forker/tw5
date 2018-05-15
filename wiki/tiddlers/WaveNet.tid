@@ -1,5 +1,5 @@
 created: 20160920072908374
-modified: 20171113030958941
+modified: 20171130052759892
 tags: [[Autoregressive Models]] [[Fully-observed Models]]
 title: WaveNet
 type: text/vnd.tiddlywiki
@@ -12,3 +12,22 @@ type: text/vnd.tiddlywiki
 ** [[ByteNet paper|https://arxiv.org/abs/1610.10099]]
 
 WaveNet like papers have been used in audio generation, NMT and ASR. 
+
+$$
+h_i = \sigma(W_{g, i}\ast x_i+V^T_{g, i}c)\odot\tanh(W_{f, i}\ast x_i+V_{f, i}^Tc)
+$$
+where $c$ is the extra conditioning data, $i$ is the layer index. In cases when $c$ encodes spatial or sequential information, matrix products can be replaced by convolution.
+
+To support higher sampling rate, improve convolution filter size from 2 to 3. 16bit audio, categorical distribution is too costly. Model sample with discretized mixture of logistic distribution.
+
+We can use WaveNet as the transformation function for [[IAF|Improving Variational Inference with Normalizing Flows]]. Initially, a random sample is drawn from $z\sim\text{Logistic}(0, I)$. The following transformation is applied to $z$:
+$$
+x_t = z_t\cdot s(z_{<t}, \theta)+\mu(z_{<t}, \theta)
+$$
+$p(x_t|z_{<t})$ follows a logistic distribution:
+$$
+p(x_t|z_{<t}) = \mathbb L(x_t|\mu(z_{<t}, \theta), s(z_{<t}, \theta)),
+$$
+while $\mu(z_{<t}, \theta)$ and $s(z_{<t}, \theta)$ can be WaveNet model.
+
+The inference procedure required to estimate the log-likelihood is sequential and slow.

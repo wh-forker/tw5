@@ -1,10 +1,11 @@
 created: 20171114045308935
-modified: 20171114054131447
+modified: 20180402110301091
 tags: [[Software Research]]
 title: SE Data
 type: text/vnd.tiddlywiki
 
 ! Tasks and data
+[[Deep Coding Baselines|https://github.com/DeepSE/DeepCodingBaselines]]
 
 * Large code corpus
 ** Karpathy et al. 2015 Linux Kernel Dataset
@@ -25,8 +26,13 @@ type: text/vnd.tiddlywiki
 ** Eclipse, etc 3k+ instances. Related file but not the exact line.
 * Code review
 ** match best reviewer given descriptions
+* Code Caption
+** [[HabeasCorpus|https://github.com/kimiyoung/review_net]]: very small, 9 eclipse projects
 * Social media
 ** find related tweets (keywords or social network mining stuff)
 ** text analysis of blogs, StackOverflow posts, feature descriptions
+* Question-Code
+** [[StaQC|https://github.com/LittleYUYU/StackOverflow-Question-Code-Dataset]]
+** [[Conala Corpus|https://conala-corpus.github.io/]]
 
 Make use of community: Open-source software systems such as Linux,MySQL, Django, Ant, and OpenEJB have become ubiquitous. These systems publicly expose not just source code, but also meta-data concerning authorship, bug-fixes, and review processes.

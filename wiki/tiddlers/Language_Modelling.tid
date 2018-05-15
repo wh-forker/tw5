@@ -1,5 +1,5 @@
 created: 20170906081910180
-modified: 20171031102226214
+modified: 20180429085357123
 tags: NLP
 title: Language Modelling
 type: text/vnd.tiddlywiki
@@ -17,7 +17,14 @@ type: text/vnd.tiddlywiki
 ** Switchboard (SWB)
 ** CallHome (CH)
 
+! Tasks
+BPC on Wikipedia
+
+* LayerNorm LSTM is 1.3
+* [[Tensorized LSTMs for Sequence Learning]] 1.198, single model about 1.264
+
 ! Bibs
 
 * Exploring Asymmetric Encoder-Decoder Structure for Context-based Sentence Representation Learning
 ** An unsupervised RNN-CNN hybrid feature extractor that is not very efficient or powerful, should know someone has tried this
+* [[Memory Architectures in Recurrent Neural Network Language Models]]

@@ -1,17 +1,21 @@
 created: 20160920070628746
-modified: 20171106232406150
-tags: 
+modified: 20180509100105854
+tags: [[Deep Learning Applications]]
 title: Vision
 type: text/vnd.tiddlywiki
 
 * Descriptors
 * [[Visual Attention]]
 * [[Meta-Learning]]
+* [[Efficient CNN]]
 
 ! Multiscale approaches
 In LABGAN, generate a pyramid of images, and use the components of Laplacian filters to recover the whole image. This method is used for video prediction.
 
 ! Applications
+* [[Pose Estimation]]
+* [[Image Assessment with NIMA|https://github.com/kentsyx/Neural-IMage-Assessment]]
 
-* [[OpenPose|https://github.com/CMU-Perceptual-Computing-Lab/openpose]]
-** a fast inference implementation: [[tf-openpose|https://github.com/ildoonet/tf-openpose]]
+! Repos
+
+* [[GMS-Feature-Matcher|https://github.com/JiawangBian/GMS-Feature-Matcher]]

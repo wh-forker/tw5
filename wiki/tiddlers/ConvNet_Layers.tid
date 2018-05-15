@@ -1,14 +1,13 @@
 created: 20151112065545766
-modified: 20170522031538374
+modified: 20180330024259552
 tags: [[Convolutional Neural Network]]
 title: ConvNet Layers
 type: text/vnd.tiddlywiki
 
-!! [[Convolutional Layer]]
-
-!! [[Pooling|Pooling Layer]]
-
-!! [[Nonlinearity Layer]]
+* [[Convolutional Layer]]
+* [[Pooling Layer]]
+* [[Nonlinearity Layer]]
+* [[Metric Learning]]
 
 !! [[Normalization Layer]]
 
@@ -18,7 +17,7 @@ The local response normalization layer performs a kind of ''lateral inhibition''
 !! Fully-connected
 This is what is used in traditional neural networks. It gives the network more flexibility to convert a FC to CONV, allowing us to 'slide' the original ConvNet across a larger image.
 
-!! [[Dropout|Dropout Layer]]
+!! [[Dropout]]
 
 !! Loss
 We can use different loss functions for different tasks. 

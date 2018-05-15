@@ -1,10 +1,8 @@
 created: 20170317104352496
-modified: 20170908091307855
-tags: [[Optimization Algorithms]] Meta-Learning [[Laplace Approximation]]
-title: Overcoming catastrophic forgetting in NNs
+modified: 20180112010619768
+tags: [[Overcoming Catastrophic Forgetting]] [[Optimization Algorithms]] [[Laplace Approximation]]
+title: Elastic weight consolidation
 type: text/vnd.tiddlywiki
-
-! EWC
 
 [[link|http://www.pnas.org/content/early/2017/03/13/1611835114.abstract]]
 
@@ -24,6 +22,3 @@ $$
 The penalty around $\theta^A$ has already been taken account.
 
 EWC further required the knowledge of the task it is performing. The tasks here can be different minibatches of the same task.
-
-! Generative Replay
-Use a GAN to generate samples of previous tasks.

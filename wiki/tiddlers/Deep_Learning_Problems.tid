@@ -1,9 +1,13 @@
 created: 20170918085743202
-modified: 20170925083515001
+modified: 20171129061224168
 tags: [[Deep Learning]]
 title: Deep Learning Problems
 type: text/vnd.tiddlywiki
 
+* Training techniques to deal with
+** [[Adversarial Examples]] in classification
+** [[Overcoming catastrophic forgetting in NNs]]
+** mode collapse in generative modelling
 * Making deep networks amenable to (stable!) online updates from weakly supervised data
 ** True lifelong learning and open up many applications
 * "Batch normalization" for GANs or Deep RL

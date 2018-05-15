@@ -1,0 +1,11 @@
+created: 20180504110047260
+modified: 20180504110404758
+tags: AutoML [[Deep Super-Resolution]]
+title: ENAS for SR
+type: text/vnd.tiddlywiki
+
+! TODOs
+* Extra training data, larger resolution
+* RL learning rate
+* modify upsampler for smooth generation
+* RELAX gradient estimation

@@ -1,0 +1,22 @@
+created: 20180104052540227
+modified: 20180104054032021
+tags: 
+title: Sparse Bayesian learning
+type: text/vnd.tiddlywiki
+
+Gaussian likelihood model
+$$
+p(y|x)\approx\exp[-\frac{1}{2\lambda}\|y-\Phi x\|^2_2]
+$$
+and zero-mean Gaussian prior
+$$
+p(x; \gamma)\propto\exp[-\frac 1 2x^T\Gamma^{-1}x],\Gamma\triangleq\text{diag}[\gamma]
+$$
+The posterior $p(x|y;\gamma)$ is also Gaussian:
+$$
+\hat x=\Gamma\Phi^{-1}\Sigma_y^{-1}y,\Sigma_y\triangleq\Phi\Gamma\Phi^T+\lambda I
+$$
+The support pattern, meaning the locations of zero-valued elements will align for $x$ and $\gamma$. We marginalize over $x$ and maximize the resulting ''type-II likelihood function'' w.r.t. $\gamma$. The resulting convolution-of-Gaussian integral is available in closed-form such that we can equivalently minimize the negative log-likelihood
+$$
+\mathcal L(\gamma) = -\log\int p(y|x)p(x;\gamma)dx\equiv y^T\Sigma_y^{-1}y+\log|\Sigma_y|
+$$

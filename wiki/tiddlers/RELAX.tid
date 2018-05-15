@@ -1,0 +1,8 @@
+created: 20180423065601757
+modified: 20180426015750242
+tags: [[Variational Optimization]]
+title: RELAX
+type: text/vnd.tiddlywiki
+
+! Using RELAX for RL
+We want to estimate the gradient of an expectation of a black-box function: $\frac{\partial}{\partial\theta}\mathbb E_{p(\tau|\theta)}[R(\tau)]$. The //de facto// standard approach is the advantage actor-critic estimator (A2C).

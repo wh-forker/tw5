@@ -1,0 +1,11 @@
+created: 20180503054206124
+modified: 20180503054926626
+tags: Tools
+title: Magit
+type: text/vnd.tiddlywiki
+
+* refresh `g` or `G`
+* stage `s` or `S` for all
+* commit `c`
+* push `p`
+* pull `F`

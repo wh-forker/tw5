@@ -1,7 +1,7 @@
 created: 20160518024924373
-modified: 20161010062759676
-tags: [[ConvNet Layers]]
-title: Dropout Layer
+modified: 20171218045220886
+tags: [[Regularization for Deep Learning]] [[ConvNet Layers]]
+title: Dropout
 type: text/vnd.tiddlywiki
 
 [[Understanding Dropout]]

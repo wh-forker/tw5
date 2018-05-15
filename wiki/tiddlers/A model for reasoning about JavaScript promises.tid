@@ -1,0 +1,28 @@
+created: 20171115044945481
+modified: 20171115052807702
+tags: [[Program Analysis]]
+title: A model for reasoning about JavaScript promises
+type: text/vnd.tiddlywiki
+
+components:
+
+* heap $\sigma$ maps address to value
+* promise state map $\psi$ maps address to promise value
+* a map $f$ that maps address to a list of fulfil reactions
+* a map $r$ that maps address to a list of reject reactions
+* a queue $\pi$ that holds scheduled reactions
+
+The promise graph captures control and dataflow in a promise-based program to represent the flow of values through promises, the execution of fulfil and reject reactions, and the dependencies between reactions and promises.
+
+The nodes:
+
+* value
+* promise
+* function
+
+The edges:
+
+* settlement (v to p)
+* registration (p to f)
+* link (p to p)
+* return (f to v)

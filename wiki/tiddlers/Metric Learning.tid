@@ -1,0 +1,13 @@
+created: 20180330024313595
+modified: 20180330024530687
+tags: [[ConvNet Layers]]
+title: Metric Learning
+type: text/vnd.tiddlywiki
+
+* Contrastive loss
+** Learning a similarity metric discriminatively, with application to face verification
+* Triplet loss
+** Distance metric learning for large margin nearest neighbor classification
+** FaceNet: A unified embedding for face recognition and clustering
+* N-pair loss
+** Improved deep metric learning with multi-class n-pair loss objective

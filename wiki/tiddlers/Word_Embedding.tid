@@ -1,5 +1,5 @@
 created: 20170905064640805
-modified: 20171031100038924
+modified: 20180224235826458
 tags: NLP
 title: Word Embedding
 type: text/vnd.tiddlywiki
@@ -12,6 +12,8 @@ type: text/vnd.tiddlywiki
 ** LDA, computationally expensive on large datasets
 ** [[Word2Vec]]
 ** [[GloVe|Global Vectors for Word Representation]]
+** CoVe
+** CoVeR: considers covariate
 * [[Hashed Character $n$-gram|https://arxiv.org/abs/1511.06018]]
 
 ! Refs

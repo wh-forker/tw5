@@ -1,5 +1,5 @@
 created: 20170502084841487
-modified: 20171109020711807
+modified: 20180512095942631
 tags: [[Sequential Models]]
 title: Neural Abstract Machines
 type: text/vnd.tiddlywiki
@@ -21,7 +21,8 @@ The model must interact with a symbolic executor through non-differentiable oper
 
 Differentiable communication? [[Gumbel-Softmax|https://arxiv.org/abs/1611.01144]] trick can to approximate discrete communication decisions with a continuous representation during training.
 
-!! [[Semantic Parsing]]
+* [[Semantic Parsing]]
+* Meta-Learning: [[Meta-Learning with Memory Augmented Neural Networks]]
 
 !! Program Induction
 Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest Path. 

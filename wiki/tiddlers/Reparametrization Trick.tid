@@ -1,0 +1,19 @@
+created: 20171117032408704
+modified: 20171117034415528
+tags: [[Inference Methods]] [[Variational Inference]]
+title: Reparametrization Trick
+type: text/vnd.tiddlywiki
+
+In variational inference, we often encouter gradients of the form:
+$$
+\frac{\partial}{\partial\theta_i}\mathbb E_{x\sim q_\theta}[f(x, q_\theta(x))],
+$$
+where the pdf of the variable appears in the integrand. If we can find a function $h:(\mathcal E, \Theta)\mapsto \mathcal X$ which is differentiable w.r.t. its second argument, and probability distribution $p_\epsilon$ over $\mathcal E$ which is easy to sample from, such that the following holds:
+$$
+x = h(\epsilon, \theta), \epsilon\sim p_\epsilon \Longleftrightarrow x\sim q_\theta
+$$
+We can use the following reformulation of integrals we often encouter in variational upper bounds
+$$
+\frac{\partial}{\partial\theta_i}\mathbb E_{x\sim q_\theta}[f(x, q_\theta(x))]=\mathbb E_{\epsilon\sim p_\epsilon}[\frac{\partial}{\partial\theta_i}f(h(\epsilon, \theta), q_\epsilon(h(\epsilon, \theta)))]
+$$
+A Monte Carlo estimators to this expectation typically have substaintially lower variance than [[REINFORCE]] estimator to the same quantity.
