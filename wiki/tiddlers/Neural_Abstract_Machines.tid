@@ -1,6 +1,6 @@
 created: 20170502084841487
-modified: 20180512095942631
-tags: [[Sequential Models]]
+modified: 20180518071526294
+tags: [[Program Induction]] [[Sequential Models]]
 title: Neural Abstract Machines
 type: text/vnd.tiddlywiki
 
@@ -23,22 +23,7 @@ Differentiable communication? [[Gumbel-Softmax|https://arxiv.org/abs/1611.01144]
 
 * [[Semantic Parsing]]
 * Meta-Learning: [[Meta-Learning with Memory Augmented Neural Networks]]
-
-!! Program Induction
-Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest Path. 
-
-* Neural Turing Machine
-* Reinforcement Learning Neural Turing Machines
-* Stack Recurrent Nets
-* [[Neural Programmer]]
-* Neural Programmer-Interpreter
-* Neural GPU
-* Learning Simple Algorithms from Examples
-* [[Differentiable Neural Computer]]
-* [[NPI via Recursion]]
-* [[Program Induction by Rational Generation: Learning to Solve and Explain Algebraic Word Problems]]
-* [[Learning Neural Programs To Parse Programs|https://github.com/liuchangacm/neuralparser]]
-** predict output by learning the compiler and run the program? what is the point? (m)any applications?
+* [[Program Induction]]
 
 !! Bibs
 

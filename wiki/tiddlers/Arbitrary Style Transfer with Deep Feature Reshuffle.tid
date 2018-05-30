@@ -1,0 +1,11 @@
+created: 20180515053134165
+modified: 20180515063303635
+tags: [[Style Transfer Taxonomy]]
+title: Arbitrary Style Transfer with Deep Feature Reshuffle
+type: text/vnd.tiddlywiki
+
+Permute the spatial location of feature map $F_s$ to reconstruct a new feature map $F_o(p) = F_s(\text{SF}(p))$.
+
+Multi-layer progressive optimization
+
+decoder

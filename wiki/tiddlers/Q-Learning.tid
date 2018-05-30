@@ -1,5 +1,5 @@
 created: 20170823075606996
-modified: 20171018092014245
+modified: 20180526073718363
 tags: [[Reinforcement Learning]]
 title: Q-Learning
 type: text/vnd.tiddlywiki
@@ -29,7 +29,7 @@ Approximation of Q-values using non-linear functions is unstable and takes a wee
 ''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
 
 ! Deep Q-Networks
-At each step, based on the current state, the agent selects an action $\epsilon$-greedily w.r.t. the action values, and adds a transition $(S_t, A_t, R_{t+1}, \gamma_{t+1}, S_{t+1})$ to a replay memory buffer, that holds the lat ''million'' transitions. The parameters of the neural network are optimized by using SGD to minimize the loss
+At each step, based on the current state, the agent selects an action $\epsilon$-greedily w.r.t. the action values, and adds a transition $(S_t, A_t, R_{t+1}, \gamma_{t+1}, S_{t+1})$ to a replay memory buffer, that holds the last ''million'' transitions. The parameters of the neural network are optimized by using SGD to minimize the loss
 $$
 (R_{t+1}+\gamma_{t+1}\max_{a'}q_{\bar\theta}(S_{t+1}, a')-q_\theta(S_t, A_t))^2
 $$
@@ -50,7 +50,7 @@ p_t\approx|R_{t+1}+\gamma_{t+1}\max_{a'}q_{\bar\theta}(S_{t+1}, a')-q_\theta(S_t
 $$
 where $\omega$ is a hyper-parameter that determines the shape of the distribution. When $\omega=1$, this is the absolute Bellman error.
 
-''Dueling networks'' features two streams of computation, the value and advantage streams, sharing a convolutional encoder, and merged by a special aggregator:
+''[[Dueling networks|https://arxiv.org/abs/1511.06581]]'' features two streams of computation, the value and advantage streams, sharing a convolutional encoder, and merged by a special aggregator:
 $$
 q_\theta(s, a) = v_\eta(f_\xi(s)) + a_\psi(f_\xi(s), a) - \frac{\sum_{a'}a_\psi(f_\xi(s), a')}{N_{\text{actions}}}
 $$

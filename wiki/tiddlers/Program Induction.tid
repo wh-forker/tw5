@@ -1,12 +1,32 @@
 created: 20180105063950186
-modified: 20180105064146200
+modified: 20180518071744108
 tags: [[Software Research]]
 title: Program Induction
 type: text/vnd.tiddlywiki
 
+Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest Path. 
+
 ! Approaches
 * [[Neural Abstract Machines]]
 * [[Inductive Logic Programming]]
-
-! Bibs
+* Neural Turing Machine
+* Reinforcement Learning Neural Turing Machines
+* Stack Recurrent Nets
+* Neural GPU
+** Is recurrent but each "timestep" involves a gated convolutional operation.
+* Learning Simple Algorithms from Examples
 * [[Program Induction by Rational Generation: Learning to Solve and Explain Algebraic Word Problems]]
+* [[Learning Neural Programs To Parse Programs|https://github.com/liuchangacm/neuralparser]]
+** predict output by learning the compiler and run the program? what is the point? (m)any applications?
+
+Apply explicitly defined transformations and compose to create complex programs
+
+* [[Neural Programmer|https://arxiv.org/abs/1511.04834]]
+** Neural Programmer learns to create programs without needing examples of correct programs.
+* Neural RAM
+** 14 pre-defined atomic modules., com create coherent programs that span a much higher number of timesteps comparing to DNC.
+* Neural Programmer-Interpreter
+** enables function calls
+** [[NPI via Recursion]]
+* Neural Program Lattices
+** explicitly creates a stack frame hierarchy, and work with less supervision.

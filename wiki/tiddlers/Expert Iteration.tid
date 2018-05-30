@@ -1,0 +1,8 @@
+created: 20180517061608949
+modified: 20180517062802705
+tags: [[Imitation Learning]]
+title: Expert Iteration
+type: text/vnd.tiddlywiki
+
+* [[paper|https://arxiv.org/abs/1705.08439]]
+* [[code|https://github.com/gbrik/expert-iteration]]

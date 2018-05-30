@@ -1,11 +1,13 @@
 created: 20180514063922584
-modified: 20180514103251555
+modified: 20180524113641532
 tags: Meta-Learning
 title: Combining Hyperband and Bayesian Optimization
 type: text/vnd.tiddlywiki
 
 * [[pdf|http://ml.informatik.uni-freiburg.de/papers/17-BayesOpt-BOHB.pdf]]
 * [[For Deep Learning|https://openreview.net/forum?id=HJMudFkDf]]
+
+To minimize a function $f$ given previous observations $D=\{((x_0, y_0), \dots, (x_i, y_i)\}$, where $y(x) = f(x) + \epsilon$
 
 ''BO'' uses an aquisition function $a(\mathbf x)$ based on $p(f|D)$ and picks a point that maximizes it. A popular choice for the aquisition function is the expected improvement (EI) over a reference value $\alpha$ under the current model:
 $$
@@ -16,6 +18,6 @@ $$
 $$
 p(y>\alpha|\mathbf x)/p(y<\alpha|\mathbf x)
 $$
-by drawing samples according to $l(\mathbf x)$ and evaluating the ratio.
+by drawing samples according to $l(\mathbf x)$ and evaluating the ratio. Stochastic optimization can directly be used to parallelize TPE. TPE allows a user-defined prior over the search space; choosing this as the uniform distribution yields a "safe" BO method.
 
 ''Hyperband'' is a bandit-based strategy for hyperparameter optimization. HB typically outperforms random search and Bayesian optimization.

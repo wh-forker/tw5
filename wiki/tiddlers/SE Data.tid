@@ -1,12 +1,10 @@
 created: 20171114045308935
-modified: 20180402110301091
+modified: 20180517063251706
 tags: [[Software Research]]
 title: SE Data
 type: text/vnd.tiddlywiki
 
 ! Tasks and data
-[[Deep Coding Baselines|https://github.com/DeepSE/DeepCodingBaselines]]
-
 * Large code corpus
 ** Karpathy et al. 2015 Linux Kernel Dataset
 ** [[Learning from "Big Code"|http://learnbigcode.github.io/]]
@@ -20,6 +18,7 @@ type: text/vnd.tiddlywiki
 ** StackOverflow: ACL 2016 Summarizing Source Code using a Neural Attention Model
 ** IFTTT: Language to code: Learning semantic parsers for if-this-then-that recipes
 ** Docstring: [[code-docstring-corpus|https://github.com/EdinburghNLP/code-docstring-corpus]]
+** [[NL2Bash|https://github.com/TellinaTool/nl2bash]]: 10,000 bash one-liners
 * Debugging
 ** Defects4J: a curated corpus of bugs (in total 395)
 ** 41 AspectJ bugs are from the iBugs dataset which were collected by Dallmeier and Zimmermann. (code before and after fix) plus some others collected by David Lo's lab. several hundreds in total

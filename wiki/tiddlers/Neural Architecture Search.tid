@@ -1,0 +1,35 @@
+created: 20180524073534350
+modified: 20180524124200051
+tags: Meta-Learning
+title: Neural Architecture Search
+type: text/vnd.tiddlywiki
+
+! Taxonomy
+* Reinforcement Learning
+** NAS
+** ENAS
+* Hyperparameter Optimization
+** [[Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization|https://arxiv.org/abs/1603.06560]]
+** [[Combining Hyperband and Bayesian Optimization]]
+** [[Learning Curve Prediction with Bayesian Neural Networks|https://openreview.net/forum?id=S11KBYclx]]
+*** limitaion of current hyperparameter optimization techniques:
+*** Bayesian NN with SGHMC generates parameters of the learnign curve
+** [[Accelerating Neural Architecture Search using Performance Prediction|https://arxiv.org/abs/1705.10823]]
+** [[Hyperparameter Optimization: A Spectral Approach|https://arxiv.org/abs/1706.00764]]
+** [[Neural Architecture Search with Bayesian Optimisation and Optimal Transport|https://arxiv.org/abs/1802.07191]]
+* Model based
+** [[SMASH: One-Shot Model Architecture Search through HyperNetworks]]
+** [[Simple and efficient architecture search for Convolutional Neural Networks|https://arxiv.org/abs/1711.04528]]
+** [[Progressive Neural Architecture Search|https://arxiv.org/abs/1712.00559]]
+*** sequential model-based optimization, increasing complexity progressively
+** [[PPP-Net: Platform-aware Progressive Search for Pareto-optimal Neural Architectures|https://openreview.net/forum?id=B1NT3TAIM]]
+*** Efficiency is considered
+* Evolutionary
+** [[Hierarchical Representations for Efficient Architecture Search|https://arxiv.org/abs/1711.00436]]
+** [[Regularized Evolution for Image Classifier Architecture Search|https://arxiv.org/abs/1802.01548]]
+*** natural variant of the standard //tournament selection strategy//
+*** Instead of removing the worst performing one, remove the oldest one.
+
+! Problems
+* How to define computation
+* How to evaluate different methods

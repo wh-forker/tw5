@@ -1,8 +1,10 @@
 created: 20170712082332363
-modified: 20180110095446757
+modified: 20180517061828299
 tags: [[Reinforcement Learning]] [[Deep Generative Models]]
 title: Imitation Learning
 type: text/vnd.tiddlywiki
+
+We attempt to solve the MDP by mimicking an expert policy. The learned policy is referred to as the apprentice policy.
 
 * given: state & action space, roll-out from $\pi^*$, dynamics model
 * goal: recover reward function, then use reward to get policy
@@ -23,3 +25,4 @@ DeepMind use GAN and VAE to learn human actions: [[Robust Imitation of Diverse B
 ! Bibs
 * One-Shot Imitation Learning
 * Learning a One-Shot Imitator with MAML
+* [[Expert Iteration]]

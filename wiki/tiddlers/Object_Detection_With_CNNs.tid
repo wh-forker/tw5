@@ -1,5 +1,5 @@
 created: 20160614032240671
-modified: 20170724133126939
+modified: 20180522094555095
 tags: [[Deep Learning Applications]]
 title: Object Detection With CNNs
 type: text/vnd.tiddlywiki
@@ -33,6 +33,9 @@ After that, the bottleneck becomes region-proposal stage. [[Lenc et al.|http://a
 # [[R-FCN|http://arxiv.org/abs/1605.06409]]
 ## [[Implementation|https://github.com/Orpine/py-R-FCN]]
 * [[RON]]
+
+!! Fast Ones
+* [[Object detection at 200 Frames Per Second|https://arxiv.org/abs/1805.06361]]
 
 !! Iterative
 # [[AttentionNet|http://arxiv.org/abs/1506.07704]]

@@ -1,5 +1,5 @@
 created: 20180515042005763
-modified: 20180515043212735
+modified: 20180515053652854
 tags: [[Style Transfer]]
 title: Style Transfer Taxonomy
 type: text/vnd.tiddlywiki
@@ -17,6 +17,9 @@ type: text/vnd.tiddlywiki
 ** Style loss term updated with segmentation mask
 
 ! Parametric
+Start from random, iteratively update.
+
+Style loss on Gram matrix $G(i, j) = \sum_pF(i, p)F(j, p)$.
 
 * Gram matrix
 ** A neural algorithm of artistic style
@@ -32,9 +35,16 @@ type: text/vnd.tiddlywiki
 ** Stable and controllable neural texture synthesis and style transfer using histogram losses
 
 ! Non-parametric
-Direcly find neural patches similar to the given example
+Direcly find neural patches similar to the given example. Match loss (local style loss) is a sum over matching patches:
+$$
+\mathcal L_{match} = \sum_p\|\Psi_p(F_o)-\Psi_{NN(p)}(F_s)\|_F^2
+$$
+and $NN(p)$ is normalized cross-correlation over all local patches
 
 * Combining Markov random fields and convolutional neural networks for image synthesis
 * Precomputed real-time texture synthesis with markovian generative adversarial networks
 * Fast patch-based style transfer of arbitrary style
+** de-VGG
 * Visual attribute transfer through deep image analogy
+** considering bidirectional constraint and pyramids refinement
+* [[Arbitrary Style Transfer with Deep Feature Reshuffle]]

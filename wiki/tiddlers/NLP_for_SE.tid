@@ -1,5 +1,5 @@
 created: 20170920093256697
-modified: 20180511033003159
+modified: 20180518063419368
 tags: [[Software Research]] NLP
 title: NLP for SE
 type: text/vnd.tiddlywiki
@@ -11,6 +11,7 @@ type: text/vnd.tiddlywiki
 
 ! Sites
 * [[Seminars on Applications of Deep Learning in Software Engineering and Programming Languages|https://sites.google.com/view/mlplse-sp18/]]
+* [[Deep Coding Baselines|https://github.com/DeepSE/DeepCodingBaselines]]
 * [[Awesome Machine Learning On Source Code|https://github.com/src-d/awesome-machine-learning-on-source-code]]
 
 ! Introduction
@@ -36,3 +37,4 @@ type: text/vnd.tiddlywiki
 * Code defects
 * Code migration, porting and clones
 * Optimizing an algorithm in simulation
+* [[Forum Mining]]
