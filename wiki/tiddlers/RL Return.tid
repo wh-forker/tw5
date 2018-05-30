@@ -1,0 +1,9 @@
+created: 20180530085636535
+modified: 20180530093657022
+tags: [[Reinforcement Learning]]
+title: RL Return
+type: text/vnd.tiddlywiki
+
+* n-step return
+* $$\lambda$$-return
+* Meta-Gradient RL

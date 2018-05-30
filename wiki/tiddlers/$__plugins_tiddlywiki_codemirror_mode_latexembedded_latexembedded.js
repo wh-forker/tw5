@@ -1,15 +1,8 @@
-created: 20170629133801639
-modified: 20170630025458093
-module-type: library
-tags: 
-title: $:/plugins/tiddlywiki/codemirror/mode/tiddlywiki/tiddlywiki.js
-type: application/javascript
-
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
 // Distributed under an MIT license: http://codemirror.net/LICENSE
 
 /***
-    |''Name''|tiddlywiki.js|
+    |''Name''|latexembedded.js|
     |''Description''|Enables TiddlyWikiy syntax highlighting using CodeMirror|
     |''Author''|PMario|
     |''Version''|0.1.7|
@@ -44,7 +37,7 @@ type: application/javascript
 })(function(CodeMirror) {
   "use strict";
 
-  CodeMirror.defineMode("tiddlywiki", function() {
+  CodeMirror.defineMode("latexembedded", function() {
     "use strict";
     
     // TiddlyWiki variables
@@ -350,5 +343,5 @@ type: application/javascript
     };
   });
 
-  CodeMirror.defineMIME("text/vnd.tiddlywiki", "tiddlywiki");
+  CodeMirror.defineMIME("text/vnd.tiddlywiki", "latexembedded");
 });

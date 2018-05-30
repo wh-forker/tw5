@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20180416081555460
+modified: 20180530085630259
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -89,6 +89,7 @@ On training half-cheetah, each one is 10x easier than previous. (each episodes i
 * [[Soft Optimality]]
 * [[Hierarchical Reinforcement Learning]]
 * [[Learn by Generation]]
+* [[RL Return]]
 
 ! Implementations
 Environments

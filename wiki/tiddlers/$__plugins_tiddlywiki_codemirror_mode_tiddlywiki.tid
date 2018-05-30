@@ -1,0 +1,25 @@
+author: Hao Chen
+created: 20180530103808545
+dependents: 
+description: CodeMirror Mode: Embedded-LaTeX Highlighting
+list: readme
+modified: 20180530103808545
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/codemirror-mode-latexembedded
+type: application/json
+version: 5.1.17
+
+{
+    "tiddlers": {
+        "$:/plugins/tiddlywiki/codemirror/mode/latexembedded/latexembedded.js": {
+            "text": "\n",
+            "type": "application/javascript",
+            "title": "$:/plugins/tiddlywiki/codemirror/mode/latexembedded/latexembedded.js",
+            "module-type": "codemirror"
+        },
+        "$:/plugins/tiddlywiki/codemirror-mode-latexembedded/readme": {
+            "title": "$:/plugins/tiddlywiki/codemirror-mode-latexembedded/readme",
+            "text": "This plugin adds Syntax Highlighting for LaTeX embedded tiddlers (text/vnd.tiddlywiki) to the [[CodeMirror|http://codemirror.net]] text editor. It needs the latest [[CodeMirror plugin|$:/plugins/tiddlywiki/codemirror]] to be installed\n\n"
+        }
+    }
+}

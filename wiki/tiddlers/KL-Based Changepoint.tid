@@ -1,5 +1,5 @@
 created: 20141020071216521
-modified: 20170419063707549
+modified: 20180530091806888
 tags: Speech Blog
 title: KL-Based Changepoint
 type: text/vnd.tiddlywiki
@@ -7,11 +7,11 @@ type: text/vnd.tiddlywiki
 ! Model
 We imagine that data points from a training set are presented sequentially, we can consider that the posterior distribution after the $N$-th point becomes the prior for the next iteration.
 
-With the Bayesian approach, the background information of an observer is captured by his //prior// probability distribution $P_{t-1}(M) = P(M|\mathcal O_{t-1})$ given previous inputs $\mathcal O_{t-1}$ over the models $M$. The effect of a new data $o_t$ on the observer is to change the prior into the //posterior// distribution $P_t(M) = P(M|\mathcal O_t)$ where $\mathcal O_t = o_t\cup\mathcal O_{t-1}$.
+With the Bayesian approach, the background information of an observer is captured by his //prior// probability distribution $$P_{t-1}(M) = P(M|\mathcal O_{t-1})$$ given previous inputs $$\mathcal O_{t-1}$$ over the models $$M$$. The effect of a new data $$o_t$$ on the observer is to change the prior into the //posterior// distribution $$P_t(M) = P(M|\mathcal O_t)$$ where $$\mathcal O_t = o_t\cup\mathcal O_{t-1}$$.
 
 !! Acoustic Surprise
 
-The surprise $S(o_t)$ is measured as the [[Kullback-Leibler divergence]] $D_{\text{KL}}$ between $P_{t-1}$ and $P_t$, 
+The surprise $$S(o_t)$$ is measured as the [[Kullback-Leibler divergence]] $$D_{\text{KL}}$$ between $$P_{t-1}$$ and $$P_t$$, 
 $$
 S(o_t) \doteq D_{\text{KL}}(P_{t-1}||P_{t}) = E_{p_{t-1}}\log\frac{P_{t-1}}{P_{t}}.
 $$
@@ -23,19 +23,19 @@ The unit of surprise, representing a 2-fold variation between $P_t$ and $P_{t-1}
 $$
 H(P_t, P_{t-1}) - H(P_{t-1})
 $$
-where $H(P,Q)$ is the cross entropy of $P$ and $Q$, and $H(P)$ is the entropy of $P$.
+where $$H(P,Q)$$ is the cross entropy of $$P$$ and $$Q$$, and $$H(P)$$ is the entropy of $$P$$.
 
 KL-dviergence is not symmetric, the first parameter is often referred to as ''true'' and the second ''approximate''. [baldi10bits] and [schuerte13wow] use opposite distribution orders which is somehow bad.
 
 Now the problem is how to define these two distributions. A convenient way to represent posteriors of certain distributions (data generating processes) is [[conjugate prior|Conjugate Prior]].
 
 !!! Poisson [itti06bayesian]
-Suppose that data $x_1, \dots, x_n$ are independent and identically distributed from a Poisson process where $\mu$, the mean, is unknown. The value of each $x_i$ is an integer greater than or equal to zero. For data from a Poisson process, the likelihood function, $L(\mu|x_1,\dots,x_n)$, with respect to $\mu$, is 
+Suppose that data $$x_1, \dots, x_n$$ are independent and identically distributed from a Poisson process where $$\mu$$, the mean, is unknown. The value of each $x_i$ is an integer greater than or equal to zero. For data from a Poisson process, the likelihood function, $$L(\mu|x_1,\dots,x_n)$$, with respect to $$\mu$$, is 
 $$
 L(\mu|x_1,\dots,x_n)\propto \mu^{\sum x_i}\exp(-n\mu), \qquad x_i>0.
 $$
 
-The sufficient statistics are $n$, the number of data points, and $\sum x_i$ the sum of the data. This likelihood factor is proportional to a gamma distribution of $\mu$. The conjugate prior, $g(\cdot)$, is a gamma distribution with hyperparameters $k, \theta > 0$,
+The sufficient statistics are $$n$$, the number of data points, and $\sum x_i$ the sum of the data. This likelihood factor is proportional to a gamma distribution of $\mu$. The conjugate prior, $g(\cdot)$, is a gamma distribution with hyperparameters $k, \theta > 0$,
 $$
 g(\mu|k,\theta)=\frac{\mu^{k-1}\exp\frac{-\mu}{\theta}}{\Gamma(k)\theta^k},\qquad \mu>0.
 $$
