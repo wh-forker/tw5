@@ -1,7 +1,23 @@
 created: 20170911131812641
-modified: 20170911131901380
-tags: [[Recurrent Neural Networks]]
+modified: 20180606051343519
+tags: Dropout [[Recurrent Neural Networks]]
 title: Variational Dropout
 type: text/vnd.tiddlywiki
 
-[[A Theoretically Grounded Application of Dropout in Recurrent Neural Networks|https://arxiv.org/abs/1512.05287]]
+$$
+\ln p(Y|X) = \ln \underset{\omega\sim q(\omega)}{\mathbb E}\frac{p(Y|X, \omega)p(\omega)}{q(\omega)}
+$$
+For variational dropout, $$q(\omega)$$ takes the form of a mixture of two gaussians with small variances (drop or not drop). To estimate teh integral in ELBO
+$$
+\int q(\omega)\ln p(y_i|x_i, \omega)d\omega
+$$
+a single sample $$\hat\omega\sim q(\omega)$$ is used. The KL term is implemented as weight decay.
+
+* [[A Theoretically Grounded Application of Dropout in Recurrent Neural Networks|https://arxiv.org/abs/1512.05287]]
+** If dropout masks are shared between time steps, the objective for their proposed variational model is the same as the commonly used dropout objective with an $$\mathcal l_2$$ penalty
+
+Shared masks are not a crucial ingredient of variational dropout in theory or in practice if $$q$$ and $$p$$ are redefined for the non-shared setting.
+
+Making $$q$$ more flexible to approximate the real posterior. In variational dropout the posterior over weights does not concentrate with more data.
+
+We want to do MAP estimation for the model parameters (the means of the distribution of weights, $$\Theta$$):

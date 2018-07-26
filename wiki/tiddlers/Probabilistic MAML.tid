@@ -1,0 +1,15 @@
+created: 20180613065533060
+modified: 20180616092815795
+tags: [[Probabilistic Meta-Learning]] [[Model-Agnostic Meta-Learning]]
+title: Probabilistic MAML
+type: text/vnd.tiddlywiki
+
+! PLATIPUS
+[[paper|https://arxiv.org/abs/1806.02817]]
+
+Train a hierarchical bayesian model over weights. A posterior task-specific parameter distribution is inferred at meta-test time conditioned on a learned weight prior and a (few-shot) training set.
+
+perform approximate inference via MAP on $$$\phi_i$$ to 
+
+! SVGD
+[[paper|https://arxiv.org/abs/1806.03836]]

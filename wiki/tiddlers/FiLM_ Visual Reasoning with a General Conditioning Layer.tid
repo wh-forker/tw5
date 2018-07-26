@@ -1,0 +1,7 @@
+created: 20180711121727272
+modified: 20180711122403398
+tags: [[Visual Question Answering]] [[Feature-wise Transformation]]
+title: FiLM: Visual Reasoning with a General Conditioning Layer
+type: text/vnd.tiddlywiki
+
+GRU encode NL queries into FiLM generator

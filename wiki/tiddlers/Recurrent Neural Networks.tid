@@ -1,5 +1,5 @@
 created: 20150514055814821
-modified: 20171106233741005
+modified: 20180604074911317
 tags: [[Deep Neural Networks Architectures]]
 title: Recurrent Neural Networks
 type: text/vnd.tiddlywiki
@@ -14,6 +14,7 @@ RNN is a very deep feedforward neural newwork that has a layer for each timestep
 ** don't put drop on recurrent connections, on non-recurrent ones. [[Recurrent neural network regularization. Zaremba et al.|https://arxiv.org/abs/1409.2329]]
 ** [[A Theoretically Grounded Application of Dropout in Recurrent Neural Networks. Gal and Ghahramani|https://arxiv.org/abs/1512.05287]] advocate tying the recurrent dropout mask and sampling at evaluation time.
 ** [[Variational Dropout]]
+** Deterministic dropout: [[Pusing the bounds of dropout]]
 
 ! Topics
 

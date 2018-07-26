@@ -1,17 +1,17 @@
 created: 20170823075606996
-modified: 20180526073718363
+modified: 20180605080454688
 tags: [[Reinforcement Learning]]
 title: Q-Learning
 type: text/vnd.tiddlywiki
 
-We want to omit policy gradient and choose best action directly. But run into problems like need to know $p(s'|s, a)$ and need to represent $V(s)$. So we approximate $E[V(s')]$ with $\max_{a'}Q_\phi(s_i', a_i')$. By this we skip simulation of actions.
+We want to omit policy gradient and choose best action directly. But run into problems like need to know $$p(s'|s, a)$$ and need to represent $$V(s)$$. So we approximate $$E[V(s')]$$ with $$\max_{a'}Q_\phi(s_i', a_i')$$. By this we skip simulation of actions.
 
 * pros: works even for off-policy samples; only one network
 * cons: no convergence guarantees
 
-Q-function is the maximum discounted future reward when we perform action $a$ in state $s$, $Q(s_t, a_t) = \max R_{t+1}$
+Q-function is the maximum discounted future reward when we perform action $$a$$ in state $$s$$, $$Q(s_t, a_t) = \max R_{t+1}$$
 
-''Bellman equation'': maximum future reword for this state and action is the immediate reward plus maximum future reward for the next state. $Q(s, a) = r + \gamma\max_{a'}Q(s', a')$. @@color:#859900;The maximization step leads to en overestimatio bias.@@
+''Bellman equation'': maximum future reword for this state and action is the immediate reward plus maximum future reward for the next state. $$Q(s, a) = r + \gamma\max_{a'}Q(s', a')$$. @@color:#859900;The maximization step leads to en overestimatio bias.@@
 
 In practice, many of the states are very rarely visited. (maybe a good memory management could speed this process up.) By passing the state through a deep neural net, we can get all Q-values for all actions available immediately.
 
@@ -26,14 +26,14 @@ Approximation of Q-values using non-linear functions is unstable and takes a wee
 * target value is always changing
 * Q-learning is not gradient descent
 
-''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$\epsilon$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
+''Experience replay'' draws minibatches from previous input to break the similarity of subsequent training samples. In ''$$\epsilon$$-greedy exploration'', with probability $\epsilon$ we choose a random action, otherwise go with the highest Q-value.
 
 ! Deep Q-Networks
-At each step, based on the current state, the agent selects an action $\epsilon$-greedily w.r.t. the action values, and adds a transition $(S_t, A_t, R_{t+1}, \gamma_{t+1}, S_{t+1})$ to a replay memory buffer, that holds the last ''million'' transitions. The parameters of the neural network are optimized by using SGD to minimize the loss
+At each step, based on the current state, the agent selects an action $$\epsilon$$-greedily w.r.t. the action values, and adds a transition $$(S_t, A_t, R_{t+1}, \gamma_{t+1}, S_{t+1})$$ to a replay memory buffer, that holds the last ''million'' transitions. The parameters of the neural network are optimized by using SGD to minimize the loss
 $$
 (R_{t+1}+\gamma_{t+1}\max_{a'}q_{\bar\theta}(S_{t+1}, a')-q_\theta(S_t, A_t))^2
 $$
-where $t$ is a time step randomly picked from the replay memory. $\theta$ is the parameters of the //online network//, $\bar\theta$ is a periodic copy which is not directly optimized. This keeps the target function from changing too quickly.
+where $$t$$ is a time step randomly picked from the replay memory. $$\theta$$ is the parameters of the //online network//, $$\bar\theta$$ is a periodic copy which is not directly optimized. This keeps the target function from changing too quickly.
 
 !! Extensions to DQN
 

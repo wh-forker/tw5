@@ -1,0 +1,50 @@
+created: 20180604045116667
+modified: 20180726045900938
+tags: [[Semantic Segmentation]] [[Neural Architecture Search]]
+title: Neural Architecture Search Tasks
+type: text/vnd.tiddlywiki
+
+! Segmentation
+!! Backbone
+* Cell Operations
+** [[IGCV|https://github.com/hellozting/InterleavedGroupConvolutions]]
+** SepConv, GroupConv
+** Kernel Size (1x3)
+* Block Structure
+** Skip add/concat (SMASH)
+** Bottleneck expansion ([[MobileNetV2|https://arxiv.org/abs/1801.04381]])
+* Additional
+** [[SwitchNorm|https://github.com/switchablenorms/Switchable-Normalization]]
+** ReLUs
+** Augmentation
+
+!! Decoder
+* Context Aggregation
+** Dilation (ASPP)
+** Kernel size ([[Feature Pyramid Pooling|https://arxiv.org/abs/1805.10180]])
+** Pyramid scales
+* Upsampler
+** Bilinear
+** [[Dense Upsample Convoultion|https://arxiv.org/abs/1702.08502]]
+** [[Global Attention Upsampling|https://arxiv.org/abs/1805.10180]]: a feature-wise transformation
+** [[Competition Unpooling|https://arxiv.org/abs/1807.07803]]
+** [[Bottleneck Attention Module|http://arxiv.org/abs/1807.06514]]
+** [[Guided Upsampling|https://arxiv.org/abs/1807.07466]]
+
+! Lightweight modules
+* Reward
+** Computation: FLOPS, mult-add
+** #params
+* Quantization
+** Quantization function
+** Widths (binary, ternary, 4, 8)
+
+! Other Tasks
+* [[Auto-Meta|https://arxiv.org/abs/1806.06927]]
+* [[Few-shot Segmentation|https://arxiv.org/abs/1806.07373]]
+
+! Meta Learning Algorithm
+* Differentiable (DARTS)
+* Reinforcement learning (ENAS)
+* [[Bayesian Optimization|https://arxiv.org/abs/1807.07362]]
+* Evolutionary Strategy ([[Guided ES|https://github.com/brain-research/guided-evolutionary-strategies]])

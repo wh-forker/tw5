@@ -1,5 +1,5 @@
 created: 20160425022459698
-modified: 20171012122017546
+modified: 20180531062902425
 tags: [[Stanford NLP Course]]
 title: Word2Vec
 type: text/vnd.tiddlywiki
@@ -41,16 +41,16 @@ Predicting surrounding words. The object of Skip-gram model is to maximize the a
 $$
 J(\Omega) = \frac 1 T\sum_{t=1}^T\sum_{-c\le j\le c, j\ne0}\log p(w_{t+j}|w_t)
 $$
-Where the input $w_t$ is the center word of a 1-of-V (or one-hot) encoding. The basic Skip-gram formulation defines $p(w_{t+j}|w_t)$ as softmax, whose computation is expensive when vocabulary is large (10^^6^^). 
+Where the input $w_t$ is the center word of a 1-of-V (or one-hot) encoding. The basic Skip-gram formulation defines $$p(w_{t+j}|w_t)$$ as softmax, whose computation is expensive when vocabulary is large (10^^6^^). 
 
 !!! Hierarchical softmax
 $$
 p(w|w_I) = \prod_{j=1}^{L(w)-1}\sigma([n(w, j+1)=ch(n(w,j))]\cdot v_{n(w,j)}'\top v_{w_I})
 $$
-where $v$ and $v'$ are the same as $v_{in}$, $v_{out}$, $\sigma(x)=1/(1+\exp(-x))$, $[x]$ is 1 if $x$ is true otherwise -1.
+where $$v$$ and $$v'$$ are the same as $$v_{in}$$, $$v_{out}$$, $$\sigma(x)=1/(1+\exp(-x))$$, $$[x]$$ is 1 if $$x$$ is true otherwise -1.
 
 So the nagative sampling approximates it as:
 $$
 \log p(w_O|w_I)\approx\log\sigma(\langle v^{w_I}_{in}, v^{w_O}_{out}\rangle)+\sum_{k=1}^K\mathbb E_{wk\sim P_n(w)}[\log \sigma(-\langle v^{w_I}_{in}, v^{w_O}_{out}\rangle)],
 $$
-where $\sigma(x)=\frac 1 {1+\exp(-x)}$ is the sigmoid (logistic) function, and the expectations are computed by drawing random words.
+where $$\sigma(x)=\frac 1 {1+\exp(-x)}$$ is the sigmoid (logistic) function, and the expectations are computed by drawing random words.

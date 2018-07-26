@@ -1,0 +1,8 @@
+created: 20180711124917549
+modified: 20180711125008466
+tags: [[Feature-wise Transformation]]
+title: Gated-Attention Reader
+type: text/vnd.tiddlywiki
+
+* [[code|https://github.com/bdhingra/ga-reader]]
+* [[paper|https://arxiv.org/abs/1606.01549]]

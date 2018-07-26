@@ -1,0 +1,10 @@
+created: 20180605063929069
+modified: 20180605070303287
+tags: [[Deep Learning Theory]]
+title: Nonlinearity Coefficient
+type: text/vnd.tiddlywiki
+
+[[The exploding gradient problem demystified - definition, prevalence, impact, origin, tradeoffs, and solutions|https://arxiv.org/abs/1712.05577]] introduces a rigorous measurement of the present of pathological exploding gradient: Gradient scale coefficient (GSC)
+
+* A random change to $$F_l$$ of relative size $$\frac{1}{GSC(l, L+1)}$$ leads to a change in the error of quadratic expectation $$e(F_l)$$ according to the local linear approximation induced by the network gradient.
+* as the GSC increases, the relative size of the region that satisfies the first Wolfe condition shrinks proportionally.

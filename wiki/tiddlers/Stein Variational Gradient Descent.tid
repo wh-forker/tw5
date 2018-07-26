@@ -1,0 +1,10 @@
+created: 20180617113734837
+modified: 20180617114204333
+tags: [[Inference Methods]]
+title: Stein Variational Gradient Descent
+type: text/vnd.tiddlywiki
+
+* Stein variational gradient descent
+* Stein variational policy gradient
+
+Obtain $$M$$ samples from target distribution. Have to compute a PSD of weights

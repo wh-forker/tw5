@@ -1,5 +1,5 @@
 created: 20161102063110959
-modified: 20171220084859755
+modified: 20180710105219136
 tags: [[Deep Generative Models]]
 title: Variational Generative Models
 type: text/vnd.tiddlywiki
@@ -22,13 +22,14 @@ type: text/vnd.tiddlywiki
 ** [[Improving Variational Auto-Encoders using Householder Flow|http://arxiv.org/abs/1611.09630]] [Tomczak and Welling, 2017]
 * Inverse Autoregressive Flow: $z_k = \frac{z_{k-1}-1-\mu_k(z_{<k, x})}{\sigma_k(z_{<k}, x)}$
 ** Fast to sample, slow to calculate density
-* [[Real NVP|http://arxiv.org/abs/1605.08803]]:$y_{1:d} = z_{k-1, 1:d}, y_{d+1:D}=t(z_{k-1, 1:d})+z_{d+1:D}\odot\exp(s(z_{k-1, 1:d}))$
+* [[Real NVP|http://arxiv.org/abs/1605.08803]]:$$y_{1:d} = z_{k-1, 1:d}, y_{d+1:D}=t(z_{k-1, 1:d})+z_{d+1:D}\odot\exp(s(z_{k-1, 1:d}))$$
 ** Fast in both density calculation and sample, limited capacity
 * [[Masked Autoregressive Flow|Parallel Multiscale Autoregresssive Density Estimation]]
 * [[Adversarial Variational Bayes]] (AVB) [Mescheder et al., 2017]
 ** Hierarchical Implicit Models [Tran et al., 2017]
 ** Variational Inference Using Implicit Distributions [Huszar, 2017]
 ** Adversarial Message Passing for Graphical Models [Karaletsos, 2016]
+* [[Glow]]
 
 ! Theory
 

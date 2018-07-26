@@ -1,5 +1,5 @@
 created: 20150312095330467
-modified: 20160513085718774
+modified: 20180712005033115
 tags: Python Snippets
 title: Python Snippets
 type: text/vnd.tiddlywiki
@@ -9,6 +9,18 @@ Display a number with leading zeros
 ```python
 "%02d" % (1,)
 '{num:02d}'.format(num=i)
+```
+
+Batch iterator
+
+```python
+def batch(iterable, n=1):
+    l = len(iterable)
+    for ndx in range(0, l, n):
+        yield iterable[ndx:min(ndx + n, l)]
+
+for x in batch(range(0, 10), 3):
+    print x
 ```
 
 ! Machine learning

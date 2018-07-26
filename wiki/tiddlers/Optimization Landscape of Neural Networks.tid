@@ -1,0 +1,25 @@
+created: 20180620093612396
+modified: 20180627080100114
+tags: [[Deep Learning Theory]]
+title: Optimization Landscape of Neural Networks
+type: text/vnd.tiddlywiki
+
+Current best mechanism to control generalization gap has two key ingredients
+
+* stochastic optimization
+** during training, it adds the sampling noise that corresponds to empirical population mismatch
+* make the model convolutional and very large
+
+
+Overparametrication affects the energy landscape
+
+Refs
+
+* Models from statistical physics have been considered as possible approximations: [[On Optimization in Deep Learning]]
+* Tensor factorization models capture some of the non convexity essence [Anandukar et al. 15, Cohen et al. 15, Haeffele et al. 15]
+* [Shafran and Shamir 15] studies bassins of attraction in neural networks in the overparametrized regime
+* [Soudry 16, Song et al 16] study Empirical Risk Minimization in two-layer ReLU networks, also in the over-parametrized regime
+* [Tian 17] studies learning dynamics in a gaussian generative setting
+* [Chaudhari et al 17] studies local smoothing of energy landscape using the local entropy method from statistical physics
+* [Pennington bahri 17] Hessian analysis using random matrix theory
+* [Soltanolkotabi, Javanmard, Lee 17] layer-wise quadratic NNs

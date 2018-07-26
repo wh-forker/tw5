@@ -1,5 +1,5 @@
 created: 20161107021510958
-modified: 20170428055102167
+modified: 20180613080734818
 tags: [[Generative Adversarial Network]] [[Statistical Measures]]
 title: Divergence Classed GANs
 type: text/vnd.tiddlywiki
@@ -30,13 +30,13 @@ D(x) = \frac{1}{1+e^{-s(x)}}
 $$
 The training criterion for $s$ becomes:
 $$
-\begin{array}
+\begin{aligned}
 \mathcal L(s) &= & \mathbb E_{x\sim P}\log D(x)+E_{x\sim Q}\log (1-D(x))\\
 &=& \mathbb E_{x\sim P}\text{softminus}(s(x))+E_{x\sim Q}\text{softplus}(s(x))
-\end{array}
+\end{aligned}
 $$
 
-The optimal $s$ minimizes $KL[Q\|P]$. If we choose nonlinearity $f=\text{softplus}$ in the outer loop, we recover the GAN variant which minimizes [[Jensen-Shannon-divergence|https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence]], while choosing $f=\text{softminus}$ recovers the version the authors use in the original paper and in DCGAN.
+The optimal $$s$$ minimizes $$KL[Q\|P]$$. If we choose nonlinearity $$f=\text{softplus}$$ in the outer loop, we recover the GAN variant which minimizes [[Jensen-Shannon-divergence|https://en.wikipedia.org/wiki/Jensen%E2%80%93Shannon_divergence]], while choosing $f=\text{softminus}$ recovers the version the authors use in the original paper and in DCGAN.
 
 It is also worth noticing that what teh original GAN objective trying to minimize is a lower bound of the GAN loss. Which may explain for the difficulty of training. (See [[this|http://www.inference.vc/infogan-variational-bound-on-mutual-information-twice/]])
 
@@ -50,4 +50,7 @@ s^*(x) = \frac{Q(s(x))}{P(x)}
 $$
 the same as logistic regression but without the logarithm, and this turns out to be a very important difference. For the very simple and intuitive derivation , see [[Kanamori et al, 2009|http://www.jmlr.org/papers/volume10/kanamori09a/kanamori09a.pdf]].
 
-This is similar to the definition of the Rényi $\alpha$-divergence I wrote about last week, except for a missing logarithm. If you choose a nonlinearity $(x)=x^{\alpha−2}$, you can recover Rényi divergences for different alpha.
+This is similar to the definition of the Rényi $$\alpha$$-divergence I wrote about last week, except for a missing logarithm. If you choose a nonlinearity $$(x)=x^{\alpha-2}$$, you can recover Rényi divergences for different alpha.
+
+! Gradient Estimators
+* [[Gradient Estimators for Implicit Models|https://arxiv.org/abs/1705.07107]]

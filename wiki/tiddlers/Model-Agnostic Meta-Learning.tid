@@ -1,6 +1,6 @@
 created: 20180110095509155
 list: 
-modified: 20180514062413123
+modified: 20180710004128226
 tags: [[Meta-Learning Taxonomy]]
 title: Model-Agnostic Meta-Learning
 type: text/vnd.tiddlywiki
@@ -9,3 +9,10 @@ Train a good initialization for fine-tuning on many tasks.
 $$
 \min_\theta\sum_{t}\mathcal L_{val}(\theta-\alpha\nabla_\theta\mathcal L_{train}(\theta))
 $$
+
+[[Reptile|https://blog.openai.com/reptile/]] is a first-order approximation to MAML
+
+! Extentions
+* [[Probabilistic MAML]]
+* [[Modular MAML|https://sites.google.com/view/modular-meta-learning]]
+* [[Auto-Meta|https://arxiv.org/abs/1806.06927]]

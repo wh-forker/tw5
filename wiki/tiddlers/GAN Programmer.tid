@@ -1,0 +1,18 @@
+created: 20180607053034606
+modified: 20180617081748131
+tags: 
+title: GAN Programmer
+type: text/vnd.tiddlywiki
+
+! Previous sequential GANs
+* For LM
+** SeqGAN
+** MaskGAN
+* For Neural Dialog
+** [[Neural Dialogue Generation|https://github.com/jiweil/Neural-Dialogue-Generation]]
+* For NMT
+** [[ngohoanhkhoa|https://github.com/ngohoanhkhoa/GAN-NMT]]
+** [[ZhenYangIACAS|https://github.com/ZhenYangIACAS/NMT_GAN]]
+
+! Theory
+[[Conditional generative models|https://t.co/mD8RR7CA4M]]

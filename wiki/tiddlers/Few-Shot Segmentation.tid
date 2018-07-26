@@ -1,0 +1,7 @@
+created: 20180708072714603
+modified: 20180708072755420
+tags: [[Semantic Segmentation]]
+title: Few-Shot Segmentation
+type: text/vnd.tiddlywiki
+
+* [[Few-shot segmentation with guided networks|https://github.com/shelhamer/revolver]]

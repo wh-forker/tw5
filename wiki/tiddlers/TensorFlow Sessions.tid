@@ -1,0 +1,13 @@
+created: 20180531062815770
+modified: 20180531103013973
+tags: TensorFlow
+title: TensorFlow Sessions
+type: text/vnd.tiddlywiki
+
+Session handles
+
+* initialization
+* restoring
+* hooks: tools that run in the process of training/evaluation of the model
+
+! MonitoredSession

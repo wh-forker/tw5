@@ -1,12 +1,10 @@
 created: 20160426125544011
-modified: 20160517020959669
+modified: 20180531062549917
 tags: NLP
 title: Stanford NLP Course
 type: text/vnd.tiddlywiki
 
-[[Lecture 2|Word Vectors]]
-
-[[Lecture 7|Stanford Introduction to TensorFlow]]
-
-
-[[Lecture 13|Stanford CNN for NLP]]
+! Lecture Notes
+* [[Lecture 2|Word2Vec]]
+* [[Lecture 7|Stanford Introduction to TensorFlow]]
+* [[Lecture 13|Stanford CNN for NLP]]

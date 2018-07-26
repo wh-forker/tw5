@@ -1,5 +1,5 @@
 created: 20161109113629523
-modified: 20161109115809720
+modified: 20180709013200200
 tags: [[ConvNet Layers]]
 title: Softmax Layer
 type: text/vnd.tiddlywiki
@@ -18,3 +18,7 @@ p(y_i=j) = \text{softmax}(j, \mathbf w^T_1\mathbf x_i+b_1, \cdots, \mathbf w^T_K
 $$
 
 The softmax function thus serves as the equivalent of the logistic function in binary logistic regression.
+
+! Extensions
+
+[[Sparsemax]]

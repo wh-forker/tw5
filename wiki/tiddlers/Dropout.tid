@@ -1,10 +1,8 @@
 created: 20160518024924373
-modified: 20171218045220886
+modified: 20180604081601376
 tags: [[Regularization for Deep Learning]] [[ConvNet Layers]]
 title: Dropout
 type: text/vnd.tiddlywiki
-
-[[Understanding Dropout]]
 
 Since a fully connected layer occupies most of the parameters, it is prone to overfitting. The dropout method is introduced to prevent overfitting. At each training stage, individual nodes are either "dropped out" of the net with probability 1-p or kept with probability p, so that a reduced network is left; incoming and outgoing edges to a dropped-out node are also removed. Only the reduced network is trained on the data in that stage. The removed nodes are then reinserted into the network with their original weights.
 
@@ -14,4 +12,12 @@ At testing time after training has finished, we would ideally like to find a sam
 
 By avoiding training all nodes on all training data, dropout decreases overfitting in neural nets. The method also significantly improves the speed of training. This makes model combination practical, even for deep neural nets.
 
-! [[Bayesian interpretation|Dropout as a Bayesian Approximation]]
+! Bibs
+The dominant perspective today views dropout as either
+
+* an implicit ensemble method
+** [[Understanding Dropout]]
+* averaging over an approximate Bayesian posterior
+** [[Dropout as a Bayesian Approximation]]
+** [[Variational Dropout]]
+* [[Pusing the bounds of dropout]]

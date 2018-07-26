@@ -1,0 +1,36 @@
+created: 20180531030219465
+modified: 20180531033929594
+tags: [[Deep Learning Theory]]
+title: Depth for Optimization
+type: text/vnd.tiddlywiki
+
+
+
+! Literatures
+
+* Expressive power
+** http://proceedings.mlr.press/v49/eldan16.pdf
+** http://proceedings.mlr.press/v70/raghu17a/raghu17a.pdf
+** http://proceedings.mlr.press/v65/lee17a/lee17a.pdf
+** http://proceedings.mlr.press/v49/cohen16.pdf
+** http://proceedings.mlr.press/v65/daniely17a/daniely17a.pdf
+** https://openreview.net/pdf?id=B1J_rgWRW
+* Landscape characterization
+** https://papers.nips.cc/paper/6112-deep-learning-without-poor-local-minima.pdf
+** https://openreview.net/pdf?id=ryxB0Rtxx
+** http://proceedings.mlr.press/v38/choromanska15.pdf
+** http://openaccess.thecvf.com/content_cvpr_2017/papers/Haeffele_Global_Optimality_in_CVPR_2017_paper.pdf
+** https://arxiv.org/pdf/1605.08361.pdf
+** https://arxiv.org/pdf/1712.08968.pdf
+
+! Accelerate optimization
+* [[On the Optimization of Deep Networks: Implicit Acceleration by Overparameterization|https://arxiv.org/abs/1802.06509]]
+* [[blog|http://www.offconvex.org/2018/03/02/acceleration-overparameterization/]]
+
+By adding a scalar to the simple $$\mathcal l_p$$ regression problem, the ''induced dynamics'' on the overall model contains a memory of past gradients.
+$$
+\mathbf{w}^{(t+1)}\leftarrow\mathbf{w}^{(t)}-\rho^{(t)}\nabla{L}(\mathbf{w}^{(t)})-\sum_{\tau=1}^{t-1}\mu^{(t,\tau)}\nabla{L}(\mathbf{w}^{(\tau)})
+$$
+where $$\rho^{(t)}$$ and $$\mu^{(t,\tau)}$$ are appropriately defined (time-dependent) coefficients.
+
+Deeper linear layer although have similar expressiveness, can also benefits by this acceleration.

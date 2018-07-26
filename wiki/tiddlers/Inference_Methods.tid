@@ -1,5 +1,5 @@
 created: 20161208114834459
-modified: 20180207061931213
+modified: 20180702062805084
 tags: Bayesian [[Probabilistic Models]]
 title: Inference Methods
 type: text/vnd.tiddlywiki
@@ -22,13 +22,14 @@ Probabilistic inference is used to handle noisy and imprecise data. Exact infere
 !! Approximate Inference
 * Laplace approximation
 * Integrated nested Laplace approximations
-* Importance sampling
+* [[Importance sampling]]
 * [[Variational Optimization]]
 * [[Variational Inference]]
 * Perturbative corrections
 * [[Monte Carlo Methods]]
 * [[Reparametrization Trick]]: use MC to estimate variational bound
 * [[Convex Relaxation]]
+* [[Stein Variational Gradient Descent]]
 
 ! Tools
 

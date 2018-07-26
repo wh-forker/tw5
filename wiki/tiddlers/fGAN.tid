@@ -1,5 +1,5 @@
 created: 20170428022715893
-modified: 20170710074201147
+modified: 20180709122525007
 tags: [[Divergence Classed GANs]]
 title: fGAN
 type: text/vnd.tiddlywiki
@@ -28,12 +28,12 @@ f(u) = \underset{t\in\text{dom}_{f^*}}{\sup}\{tu-f^*(t)\}
 $$
 
 $$
-\begin{align}
+\begin{aligned}
 D_f(P\|Q) &= \int_Xq(x)f\left(\frac{p(x)}{q(x)}\right)dx \\
 &= \int_Xq(x)\underset{t_x\in\text{dom}_{f^*}}{\sup}\left\{t_x\frac{p(x)}{q(x)}-f^*(t_x)\right\}dx \\
 &\ge \underset{T\in\mathcal T}{\sup}\left(\int_Xp(x)T(x)dx-\int_Xq(x)f^*(T(x))dx\right) \\
 &= \underset{T\in\mathcal T}{\sup}\left(\mathbb E_{x\sim P}[T(x)]-\mathbb E_{x\sim Q}[f^*(T(x))]\right)
-\end{align}
+\end{aligned}
 $$
 
 $\mathcal T$ is a function family e.g. some neural networks. We can approximate $f$-divergence from sampling from $Q$ and $P$.

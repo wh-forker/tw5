@@ -1,16 +1,24 @@
 created: 20161009015842435
-modified: 20170926124032822
+modified: 20180713014027652
 tags: [[Deep Learning Applications]]
 title: Visual Question Answering
 type: text/vnd.tiddlywiki
 
 ! Bibs
 * Learning to Compose Neural Networks for Question Answering
-** Use modular neural network architectures. 
+** Use modular neural network architectures.
+* [[FiLM: Visual Reasoning with a General Conditioning Layer]]
+* Learning visual reasoning without strong priors
+** GRU encode NL queries into FiLM generator
+* Modulating early visual processing by language
 
 ! Dataset
 
 * [[COCO VQA Challenge|http://www.visualqa.org/]]
+* [[GuessWhat?! Visual object discovery through multi-modal dialogue|https://github.com/GuessWhatGame/guesswhat]]
+* [[MovieQA|http://movieqa.cs.toronto.edu/home/]]
+* [[FigureQA|https://datasets.maluuba.com/FigureQA]]
+* [[Textbook Question Answering|http://data.allenai.org/tqa/]]
 
 ! Tutorial
 [[Visual Turing test tutorial|https://github.com/mateuszmalinowski/visual_turing_test-tutorial]]

@@ -1,5 +1,5 @@
 created: 20180524073534350
-modified: 20180524124200051
+modified: 20180708071734009
 tags: Meta-Learning
 title: Neural Architecture Search
 type: text/vnd.tiddlywiki
@@ -8,6 +8,11 @@ type: text/vnd.tiddlywiki
 * Reinforcement Learning
 ** NAS
 ** ENAS
+** [[EAS and PathLevel|https://github.com/han-cai/PathLevel-EAS]]
+** [[RENA|https://arxiv.org/abs/1806.07912]]
+* Gradient Based
+** [[DARTS]]
+** [[Auto-Meta|https://arxiv.org/abs/1806.06927]]: Architecture for few-shot learning. The network is narrow and deep.
 * Hyperparameter Optimization
 ** [[Hyperband: A Novel Bandit-Based Approach to Hyperparameter Optimization|https://arxiv.org/abs/1603.06560]]
 ** [[Combining Hyperband and Bayesian Optimization]]

@@ -1,5 +1,5 @@
 created: 20150114062559893
-modified: 20171117032505248
+modified: 20180702065009448
 tags: [[Pattern Recognition and Machine Learning]] [[Inference Methods]]
 title: Variational Inference
 type: text/vnd.tiddlywiki
@@ -15,17 +15,17 @@ Following borrowed from [[here|http://www.inference.vc/variational-renyi-lower-b
 
 One way to define a probabilistic generative model for some variable $x$ is via latent variables: We introduce hidden variables $z$ and define the joint distribution between $x$ and $z$. In such a model, typically:
 
-* $p(z)$ is very easy 🐣,
-* $p(x|z)$ is easy 🐹,
-* $p(x,z)$ is easy 🐨,
-* $p(x)$ is super-hard 🦂,
-* $p(z|x)$ is mega-hard 🐉
+* $$p(z)$$ is very easy 🐣,
+* $$p(x|z)$$ is easy 🐹,
+* $$p(x,z)$$ is easy 🐨,
+* $$p(x)$$ is super-hard 🦂,
+* $$p(z|x)$$ is mega-hard 🐉
 to evaluate.
 
 Unfortunately, in machine learning the things we need to calculate are exactly the bad guys, 🦂 and 🐉:
 
-* inference is evaluating $p(z|x)$
-* learning (via maximum likelihood) involves $p(x)$ or at least its gradients
+* inference is evaluating $$p(z|x)$$
+* learning (via maximum likelihood) involves $$p(x)$$ or at least its gradients
 
 Variational lower bounds give us ways to approximately perform both inference and maximum likelihood parameter learning.
 
@@ -36,37 +36,37 @@ $$
 
 Maximizing this term is intractable, so we do @@color:#859900;per-instance@@ variational approximation.
 $$
-\begin{align}
+\begin{aligned}
 \log p(x|\theta) &= \log\int p(x|z, \theta)p(z)dz\\
 &= \log\int p(x|z, \theta)\frac{q(z)}{q(z)}p(z)dz\\
 &= \log\int p(x|z, \theta)\frac{p(z)}{q(z)}q(z)dz\\
 &= \log\mathbb E_{z\sim q(z)}[p(x|z, \theta)\frac{p(z)}{q(z)}]\\
 &\ge \mathbb E_{z\sim q(z)}[\log p(x|z, \theta)\frac{p(z)}{q(z)}]\\
 &= \mathbb E_{z\sim q(z)}[\log p(x|z, \theta)]-D_{KL}(q(z)\|p(z))
-\end{align}
+\end{aligned}
 $$
 
-To nice auxiliary distribution $q(x,\psi)$ 🦄, that is both easy to evaluate analytically and easy to sample from, and define the lower bound as follows:
+To nice auxiliary distribution $$q(x,\psi)$$ 🦄, that is both easy to evaluate analytically and easy to sample from, and define the lower bound as follows:
 $$
-L(x,\theta,\psi)=\log p(x;\theta)−\operatorname{KL}[q(z;\psi)\|p(z|x;\theta)],
+L(x,\theta,\psi)=\log p(x;\theta)-\operatorname{KL}[q(z;\psi)\|p(z|x;\theta)],
 $$
-where $\theta$ are the parameters of the generative model. Hey, but doesn't that formula have the two things we can't evaluate? The good thing is that the lower bound can be rearranged to a form where we don't need either of those:
+where $$\theta$$ are the parameters of the generative model. Hey, but doesn't that formula have the two things we can't evaluate? The good thing is that the lower bound can be rearranged to a form where we don't need either of those:
 $$
 L(x,\theta,\psi)=\mathbb E_q\log p(x,y;\theta)q(x;\psi)
 $$
 So basically:
 $$
-\log(🦂)−\operatorname{KL}[🦄\|🐉]=\mathbb E_🦄\log\frac{🐨}{🦄}
+\log(\text{🦂})-\operatorname{KL}[\text{🦄}\|\text{🐉}]=\mathbb E_\text{🦄}\log\frac{\text{🐨}}{\text{🦄}}
 $$
 so we only have to deal with koalas and unicorns. Sweet.
 
 For the drawbacks of VI and ''Rényi Lower Bound'', refer to [[Rényi Divergence Variational Inference|https://arxiv.org/abs/1602.02311]] and [[this blog|http://www.inference.vc/variational-renyi-lower-bound/]].
 
 ! Relationship with EM
-$\mathbb E_🐉\log🐨$ is the ''expected complete log-likelihood'', which is optimized by EM. Variational inference does not estimate fixed model parameters, it is often used in a Bayesian setting where classical parameters are treated as latent variables. Variational inference applies to models where we cannot compute the exact conditional of the latent variables.
+$$\mathbb E_🐉\log🐨$$ is the ''expected complete log-likelihood'', which is optimized by EM. Variational inference does not estimate fixed model parameters, it is often used in a Bayesian setting where classical parameters are treated as latent variables. Variational inference applies to models where we cannot compute the exact conditional of the latent variables.
 
 ! Coordinate ascent mean-field variational inference
-CAVI fixes other variational factors and compute the optimal $q_j(z_j)$ by its ''complete conditional''. This can be seen as a ''message passing'' algorithm, and is closely related to Gibbs sampling.
+CAVI fixes other variational factors and compute the optimal $$q_j(z_j)$$ by its ''complete conditional''. This can be seen as a ''message passing'' algorithm, and is closely related to Gibbs sampling.
 
 ! Variations
 
@@ -74,7 +74,11 @@ CAVI fixes other variational factors and compute the optimal $q_j(z_j)$ by its '
 
 ! Computation
 
-* Computing the expected log likelihood $\mathbb E_{z\sim q(z)}[\log p(x|z, \theta)]$
+* Computing the expected log likelihood $$\mathbb E_{z\sim q(z)}[\log p(x|z, \theta)]$$
 ** MC estimator
 ** Adversarial Variational Bayes
 * [[Reparametrization Trick]]
+
+! Theory
+
+* [[Variational Inference Diagnostics]]

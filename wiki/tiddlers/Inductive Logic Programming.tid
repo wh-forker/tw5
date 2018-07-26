@@ -1,5 +1,5 @@
 created: 20180105064200087
-modified: 20180105064329550
+modified: 20180607084453814
 tags: [[Program Induction]]
 title: Inductive Logic Programming
 type: text/vnd.tiddlywiki
@@ -10,3 +10,7 @@ type: text/vnd.tiddlywiki
 
 ! CSP
 * [[Constraint and Mathematical Programming Models for Integrated Port Container Terminal Operations|https://arxiv.org/abs/1712.05302]]
+
+! Relational inductive biases
+
+* [[Graph Networks]]

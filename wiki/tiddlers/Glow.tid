@@ -1,0 +1,9 @@
+created: 20180710105226786
+modified: 20180712063643837
+tags: [[Variational Generative Models]]
+title: Glow
+type: text/vnd.tiddlywiki
+
+* [[code|https://github.com/openai/glow]]
+* [[paper|https://d4mucfpksywv.cloudfront.net/research-covers/glow/paper/glow.pdf]]
+

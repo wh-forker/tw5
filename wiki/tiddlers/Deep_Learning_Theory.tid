@@ -1,5 +1,5 @@
 created: 20161012084433429
-modified: 20180221075844771
+modified: 20180620093606098
 tags: [[Deep Learning]]
 title: Deep Learning Theory
 type: text/vnd.tiddlywiki
@@ -23,6 +23,9 @@ This formula combines approximation and estimation error. We cannot explain why 
 ! Plausible Optimization
 * [[On Optimization in Deep Learning]]
 * [[Rethinking Generalization]]
+* [[Batch Normalization]]
+* [[Depth for Optimization]]
+* [[Optimization Landscape of Neural Networks]]
 
 ! Statistical Learning Theory
 The complexity or capacity of NNs can be computed by measuring how many configurations can be shattered (VC-dimension)
@@ -42,6 +45,10 @@ There is a functional equivalence between models of different depths at equal ca
 * [[Opening the Black Box of Deep Neural Networks via Information|https://arxiv.org/abs/1703.00810]]
 * [[Energy Propagation in Deep Convolutional Neural Networks|https://arxiv.org/abs/1704.03636]]
 * [[Exploring loss function topology with cyclical learning rates|https://arxiv.org/abs/1702.04283]]
+
+! Gradient measures
+
+* [[Nonlinearity Coefficient]]
 
 ! Interpretability
 * [[Deep learning in biology]]

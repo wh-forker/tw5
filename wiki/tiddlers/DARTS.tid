@@ -1,0 +1,13 @@
+created: 20180708064604423
+modified: 20180708064713666
+tags: [[Neural Architecture Search]]
+title: DARTS
+type: text/vnd.tiddlywiki
+
+[[code|https://github.com/quark0/darts]]
+
+Problems with DARTS:
+
+* Training is not sparse
+* Learning rate schedule for different parameters
+* Multi-GPU

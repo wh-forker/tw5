@@ -1,0 +1,20 @@
+created: 20180711122021204
+modified: 20180712063656202
+title: Feature-wise Transformation
+type: text/vnd.tiddlywiki
+
+* [[Blog|https://distill.pub/2018/feature-wise-transformations/]]
+
+! Applications
+* VQA
+** [[FiLM: Visual Reasoning with a General Conditioning Layer]]
+* Style Transfering
+** FiLM parameters are computed as the spatial mean and standard deviation statistics of the style feature maps.
+* Image Recognition
+** Highway Network
+** Squeeze-and-Excitation networks
+* NLP
+** [[Gated-Attention Reader]]
+* Reinforcement Learning
+** Gated-attention architectures for task-oriented language grounding
+** 

@@ -1,12 +1,14 @@
 created: 20170906081910180
-modified: 20180429085357123
+modified: 20180617081236792
 tags: NLP
 title: Language Modelling
 type: text/vnd.tiddlywiki
 
 ! Implementations
 
-[[AWD-LSTM|https://github.com/salesforce/awd-lstm-lm]]
+* [[AWD-LSTM|https://github.com/salesforce/awd-lstm-lm]]
+* ENAS cell
+* Transformer: openai's [[finetune-transformer-lm|https://github.com/openai/finetune-transformer-lm]]
 
 ! Talks
 [[Language Modelling - Phil Blunsom DLSS 2017]]

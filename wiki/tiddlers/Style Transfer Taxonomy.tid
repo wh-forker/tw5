@@ -1,5 +1,5 @@
 created: 20180515042005763
-modified: 20180515053652854
+modified: 20180711123802808
 tags: [[Style Transfer]]
 title: Style Transfer Taxonomy
 type: text/vnd.tiddlywiki
@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
 ! Parametric
 Start from random, iteratively update.
 
-Style loss on Gram matrix $G(i, j) = \sum_pF(i, p)F(j, p)$.
+Style loss on Gram matrix $$G(i, j) = \sum_pF(i, p)F(j, p)$$.
 
 * Gram matrix
 ** A neural algorithm of artistic style
@@ -28,6 +28,9 @@ Style loss on Gram matrix $G(i, j) = \sum_pF(i, p)F(j, p)$.
 ** Universal style transfer via feature transforms
 ** Decoder network over light weight reconstructed feature for fast semantic style transfer
 * Mean/Variance
+** A learned representation for artistic style
+*** use a simple embedding lookup to produce instance normalization parameters
+** Exploring the structure of a real-time, arbitrary neural artistic stylization network
 ** Arbitrary style transfer in real-time with adaptive instance normalization
 ** [[A Learned Representation For Artistic Style|http://arxiv.org/abs/1610.07629]]
 *** conditional instance normalization, surprising result, why should this work?

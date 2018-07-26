@@ -1,5 +1,5 @@
 created: 20161008091826135
-modified: 20180530085630259
+modified: 20180706065724368
 tags: [[Deep Learning Applications]]
 title: Reinforcement Learning
 type: text/vnd.tiddlywiki
@@ -98,3 +98,4 @@ Environments
 * [[Universe|https://openai.com/blog/universe/]] with [[Gym|https://gym.openai.com/]]
 * [[DeepMind Lab|https://github.com/deepmind/lab]]
 * [[Facebook ELF|https://github.com/facebookresearch/ELF]]
+* [[TextWorld|https://www.microsoft.com/en-us/research/project/textworld/]]

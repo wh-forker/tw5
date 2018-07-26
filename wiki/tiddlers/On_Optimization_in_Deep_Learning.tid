@@ -1,5 +1,5 @@
 created: 20160825062557484
-modified: 20171030015126144
+modified: 20180620093525115
 tags: Blog [[Deep Learning Theory]]
 title: On Optimization in Deep Learning
 type: text/vnd.tiddlywiki
@@ -46,7 +46,7 @@ To conclude this part, AFAIK, we should care more about escaping from saddle poi
 Both papers mentioned above use ideas from statistical physics and spin-glass models.
 
 !!! Hamiltonians
-Statistical physicists refer to $H_x(y)\equiv-\ln p(y|x)$ as the ''Hamiltonian'', quantifying the energy of $y$ given the parameter $x$. And $\mu\equiv -\ln p$ as ''self-information''. We can rewrite Bayes' formula as:
+Statistical physicists refer to $$H_x(y)\equiv-\ln p(y|x)$$ as the ''Hamiltonian'', quantifying the energy of $$y$$ given the parameter $$x$$. And $$\mu\equiv -\ln p$$ as ''self-information''. We can rewrite Bayes' formula as:
 
 $$
 p(y) = \sigma(-H(y)-\mu)

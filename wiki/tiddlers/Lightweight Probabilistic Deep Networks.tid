@@ -1,0 +1,7 @@
+created: 20180603105938557
+modified: 20180604074609023
+tags: [[Probabilistic Deep Learning]]
+title: Lightweight Probabilistic Deep Networks
+type: text/vnd.tiddlywiki
+
+Restrict the expectation propagation framework to assumed density filtering (ADF)

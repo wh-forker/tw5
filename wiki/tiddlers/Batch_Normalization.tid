@@ -1,5 +1,5 @@
 created: 20160615090746926
-modified: 20170602030220849
+modified: 20180531024721148
 tags: [[Normalization Layer]]
 title: Batch Normalization
 type: text/vnd.tiddlywiki
@@ -9,6 +9,13 @@ type: text/vnd.tiddlywiki
 ! Bib
 * [[Batch Renormalization]]
 * [[Recurrent Batch Normalization]]
+
+! Theory
+* [[Reducing Gradient Variance|https://arxiv.org/abs/1805.11604]]
+* [[Towards a Theoretical Understanding of Batch Normalization|https://arxiv.org/abs/1805.10694]]
+** BN can provably accelerate GD in the settings where no "internal covariate" shift is present
+** Decoupling the loss minimization problem into optimizing direction and length of the parameters separately
+** Reduces cross-dependencies between layers and thus simplifies curvature structure and GD dynamics
 
 ! Problem
 ; Internal covariate shift

@@ -1,0 +1,34 @@
+created: 20180607084219384
+modified: 20180618103718024
+tags: [[Inductive Logic Programming]]
+title: Graph Networks
+type: text/vnd.tiddlywiki
+
+! refs
+* [[Summary|https://arxiv.org/abs/1806.01261]]
+
+Structured representations and computations, and in particular, systems that operate on graphs
+
+! Representations
+* edge and node outputs are lists of vectors or tensors
+* global outputs correspond to a single vector
+
+The output of a GN block can also be tailored to the demand of tasks
+
+* edge-focused
+* node-focused
+* graph-focused
+
+! Structure
+
+* input specifies the relation
+* relational structure must be inferred
+ 
+Examples
+
+* Message-passing NN
+* Non-local NN
+** intra-/self- attention: computes pairwise attention
+** vertex-/graph- attention: handle explicit edges by setting to zero the weights between nodes do not share edges
+
+

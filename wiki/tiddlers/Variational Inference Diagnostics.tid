@@ -1,0 +1,21 @@
+created: 20180702065018672
+modified: 20180702071108532
+tags: [[Variational Inference]]
+title: Variational Inference Diagnostics
+type: text/vnd.tiddlywiki
+
+* [[paper|https://arxiv.org/abs/1802.02538]]
+* [[blog|https://apeiroto.pe/ml/yes-but-did-it-work-evaluating-variational-inference.html]]
+
+! Pareto Smoothing Importance Sampling
+
+# Run VI, get variational distribution $$q(z)$$ approximating $$p(z|x)$$
+# Sample a bunch of $$z$$s from $$q(z)$$
+# Calculate the importance ratios $$p(z, x)/q(z)$$
+# Fit a generalised Pareto distribution to the largest $$M$$ importance ratios
+# Report the (estimated) shape parameter $$k$$
+
+! Variational Simulation-Based Calibration Diagnostic
+PSIS diagnostics looks at the full approximate posterior. VSBC evaluates the quality of point estimates by checking how far the distribution of calibration probabilities deviates from normal, or in this paper, how asymmetric this probability is.
+
+For neural networks, VSBC may be computationally impractical because it puts the whole VI procedure inside an inner loop.

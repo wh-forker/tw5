@@ -1,10 +1,14 @@
 created: 20180105063950186
-modified: 20180518071744108
+modified: 20180603104435984
 tags: [[Software Research]]
 title: Program Induction
 type: text/vnd.tiddlywiki
 
-Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest Path. 
+Neural Program Synthesis Tasks: Copy, Grade-school addition, Sorting, Shortest Path, word algebra problems.
+
+! Problems
+
+* Program sketch setting of [[diffrentiable Forth|https://arxiv.org/abs/1605.06640]]: filling holes in given programs trained on input-output examples
 
 ! Approaches
 * [[Neural Abstract Machines]]
@@ -30,3 +34,8 @@ Apply explicitly defined transformations and compose to create complex programs
 ** [[NPI via Recursion]]
 * Neural Program Lattices
 ** explicitly creates a stack frame hierarchy, and work with less supervision.
+
+Probabilistic Programming
+
+* [[aProbLog|https://pdfs.semanticscholar.org/e865/6f24a63b4b824d147655f669ae54738b3a81.pdf]]
+* DeepProbLog

@@ -1,0 +1,10 @@
+created: 20180702062817175
+modified: 20180702063654231
+tags: [[Inference Methods]]
+title: Importance sampling
+type: text/vnd.tiddlywiki
+
+IS is a technique which enables us to estimate expectations under a distribution which is difficult to sample from (the target distribution), using an approximating proposal distribution. You sample from your proposal distribution, then weight those samples by the ratio of target distribution to the proposal distribution (evaluated at the sample point). These weights are called importance ratios.
+
+In the event that the proposal distribution is a poor fit to the target distribution, these weights can have a very high variance. Pareto smoothing is a way to control this variance. It builds on the idea of simply truncating the importance ratios by instead fitting a Pareto distribution to them.
+

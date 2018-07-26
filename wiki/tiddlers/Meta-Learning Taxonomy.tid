@@ -1,5 +1,5 @@
 created: 20180105102253470
-modified: 20180514063733329
+modified: 20180708071026181
 tags: Meta-Learning
 title: Meta-Learning Taxonomy
 type: text/vnd.tiddlywiki
@@ -23,6 +23,7 @@ $$
 * [[Mishra et al. 17 Meta-Learning with Temporal Convolutions|https://arxiv.org/abs/1707.03141]]
 
 !! Metric Based
+The meta-learner attempts to learn a metric which can be used to compare two different examples effectively and performs tasks in the learning metric space.
 $$
 P_\theta(y|x, S) = \sum_{(x_i, y_i)\in S}k_\theta(x, x_i)y_i
 $$

@@ -1,0 +1,9 @@
+created: 20180709013114062
+modified: 20180709050824161
+tags: [[Softmax Layer]]
+title: Sparsemax
+type: text/vnd.tiddlywiki
+
+$$
+sparsemax(z)=\arg\min_{p\in\Delta^{K-1}}\|p-z\|^2
+$$

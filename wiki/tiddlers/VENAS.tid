@@ -1,0 +1,25 @@
+created: 20180606084415406
+modified: 20180723065136772
+tags: [[Neural Architecture Search]]
+title: VENAS
+type: text/vnd.tiddlywiki
+
+The training of ENAS:
+
+* Sample $$\phi$$ from $$q = RNN()$$ amortised inference?
+* Compute adapted parameters with gradient descent on $$\log p(y|x, \phi)$$
+
+The goal is handle the uncertainty and ambiguity that occurs when learning from sampled architectures. Trajectory distribution?
+
+* best model architecture and weights $$p(\theta)$$, Gaussian
+* sampled model architecture and weights $$p(\phi|\theta)$$, Gaussian with mean $$\theta$$
+
+! Useful results
+* Gradient descent for a fixed number of iterations using $$x$$, $$y$$ corresponds to MAP of $$p(\phi|x, y, \theta)$$ under a Gaussian prior $$p(\phi|\theta)$$. [[ref|https://www.sciencedirect.com/science/article/pii/0024379594001146]]
+* [[SVGD|Stein Variational Gradient Descent]] reduces the distance between the approximate distribution defined by the particles and the target distribution.
+
+
+! Experiments
+build upon [[PathLevel-EAS|https://github.com/han-cai/PathLevel-EAS]]
+
+! Search space
